@@ -329,3 +329,32 @@ Before publishing, verify:
 - Report: `gofreight_[month]_[year]_report.html`
 - GitHub Pages: Copy to `index.html`
 - Data archive: Save raw data to `data/` folder
+
+---
+
+## Publishing Workflow
+
+### Step 1: Generate Report
+Save report as `gofreight_[month]_[year]_report.html` and copy to `index.html`.
+
+### Step 2: User Validation
+**REQUIRED**: Present the report to the user for review before publishing.
+
+User should verify:
+- All metrics match source data
+- Content status is accurate
+- No missing sections or tables
+- Calculations are correct
+
+### Step 3: Publish to GitHub (After User Approval)
+Only after user confirms accuracy, push to GitHub:
+
+```bash
+git add gofreight_[month]_[year]_report.html index.html
+git commit -m "Update [Month Year] AEO report"
+git push origin main
+```
+
+**GitHub Pages URL**: https://goblin2929.github.io/gofreight-aeo-report-dec2025/
+
+**Important**: Never push to GitHub without explicit user validation of report accuracy.
