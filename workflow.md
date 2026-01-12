@@ -326,8 +326,8 @@ Before publishing, verify:
 
 ## Output Files
 
-- Report: `gofreight_[month]_[year]_report.html`
-- GitHub Pages: Copy to `index.html`
+- Report: `gofreight_[start_date]_to_[end_date]_report.html`
+- GitHub Pages: Each report gets its own URL (do NOT overwrite index.html)
 - Data archive: Save raw data to `data/` folder
 
 ---
@@ -335,7 +335,13 @@ Before publishing, verify:
 ## Publishing Workflow
 
 ### Step 1: Generate Report
-Save report as `gofreight_[month]_[year]_report.html` and copy to `index.html`.
+Save report with filename matching the full data period.
+
+**File Naming Convention** (include full date range):
+- `gofreight_jan_1_10_2026_report.html` → Jan 1-10, 2026
+- `gofreight_jan_11_20_2026_report.html` → Jan 11-20, 2026
+- `gofreight_dec_2025_report.html` → Full month December 2025
+- `index.html` → Default report (do NOT overwrite)
 
 ### Step 2: User Validation
 **REQUIRED**: Present the report to the user for review before publishing.
