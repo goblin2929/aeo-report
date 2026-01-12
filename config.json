@@ -1,0 +1,43 @@
+{
+  "client": "GoFreight",
+  "report_month": "December 2024",
+
+  "data_sources": {
+    "gsc": {
+      "site_url": "sc-domain:gofreight.com",
+      "domains": ["gofreight.com", "archive.gofreight.com"]
+    },
+    "ga4": {
+      "property_id": "373075091",
+      "quota_project": "seo-agency-478605"
+    },
+    "workduo": {
+      "project_id": "cmhk59aw9001mlo33c3t8n3rj",
+      "public_key": "pk-wd-6c43585a-401c-4bf2-8036-be374783db92"
+    },
+    "content_tracker": {
+      "spreadsheet_id": "1D7MDm4_4HpuIfjUe2CBTYat2AoTWRFLK2XgGBI8gpUc",
+      "sheet_name": "Novastacks Content delivery Tracker"
+    }
+  },
+
+  "subfolders": [
+    {"path": "/blog", "name": "Blog"},
+    {"path": "/solutions", "name": "Solutions"},
+    {"path": "/customers", "name": "Customers"},
+    {"path": "/pricing", "name": "Pricing"},
+    {"path": "/get-demo", "name": "Get Demo"}
+  ],
+
+  "competitors": [
+    "CargoWise",
+    "Magaya Supply Chain",
+    "Descartes Forwarder Enterprise",
+    "Shipthis"
+  ],
+
+  "report_output": {
+    "filename_pattern": "gofreight_{month}_{year}_report.html",
+    "github_repo": "goblin2929/gofreight-aeo-report-dec2025"
+  }
+}
