@@ -132,15 +132,45 @@ Show top 12 keywords by clicks with MoM comparison.
 1. **Top 12 Subtotal** row (background: #f0f9ff, bold, border-top)
 2. **% of Total (X clicks)** row (background: #e8f5e9, italic)
 
-### 10. Core Keyword Tracking
-Track priority commercial keywords from Ahrefs/SEMrush.
+### 10. Core Keyword Tracking (REQUIRED)
+Track priority commercial keywords. Data source: DataForSEO or Ahrefs/SEMrush.
+
+**Core Keywords to Track:**
+- freight forwarding software
+- freight management software
+- freight management system
+- freight management system software
+- air freight forwarding software
+- best freight forwarding software
+- ocean freight management software
+- global freight management system
+- best freight management software
 
 **Required columns:**
 - Core Keyword
 - Search Volume
 - Prev Position / Current Position
-- Δ Position (with trend arrow)
+- Δ Position (with trend arrow ▲/▼)
 - Ranking URL
+
+**Required summary rows:**
+1. **Total Search Volume** row (background: #f0f9ff, bold)
+2. **Keywords Ranking** row (background: #e8f5e9, italic) - X of Y keywords
+
+**Required insight box:**
+- Key position changes
+- Content gaps (keywords not ranking)
+- Action items
+
+**Data Collection:**
+```javascript
+mcp__dataforseo__dataforseo_labs_google_ranked_keywords({
+  target: "gofreight.com",
+  filters: [["keyword_data.keyword", "in", [/* core keywords */]]],
+  language_code: "en",
+  location_name: "United States"
+})
+```
 
 ### 11. AEO Metrics (if Workduo data available)
 | Metric | Source |
@@ -324,18 +354,9 @@ Before publishing, verify:
 
 ---
 
-## Output Files
+## Output Files & Publishing
 
-- Report: `gofreight_[start_date]_to_[end_date]_report.html`
-- GitHub Pages: Each report gets its own URL (do NOT overwrite index.html)
-- Data archive: Save raw data to `data/` folder
-
----
-
-## Publishing Workflow
-
-### Step 1: Generate Report
-Save report with filename matching the full data period.
+All HTML reports are pushed directly to GitHub (single source of truth).
 
 **File Naming Convention** (include full date range):
 - `gofreight_jan_1_10_2026_report.html` → Jan 1-10, 2026
@@ -343,24 +364,32 @@ Save report with filename matching the full data period.
 - `gofreight_dec_2025_report.html` → Full month December 2025
 - `index.html` → Default report (do NOT overwrite)
 
-### Step 2: User Validation
-**REQUIRED**: Present the report to the user for review before publishing.
+**GitHub Pages URL**: https://goblin2929.github.io/gofreight-aeo-report-dec2025/
 
-User should verify:
-- All metrics match source data
-- Content status is accurate
-- No missing sections or tables
-- Calculations are correct
+---
 
-### Step 3: Publish to GitHub (After User Approval)
-Only after user confirms accuracy, push to GitHub:
+## Publishing Workflow
+
+### Step 1: Generate & Push Report
+After generating the HTML report, immediately push to GitHub:
 
 ```bash
-git add gofreight_[month]_[year]_report.html index.html
-git commit -m "Update [Month Year] AEO report"
+git add gofreight_[date_range]_report.html
+git commit -m "Add [date range] AEO report"
 git push origin main
 ```
 
-**GitHub Pages URL**: https://goblin2929.github.io/gofreight-aeo-report-dec2025/
+### Step 2: User Validation
+User reviews the live GitHub Pages URL and provides feedback on:
+- Data accuracy
+- Missing sections
+- Calculation errors
 
-**Important**: Never push to GitHub without explicit user validation of report accuracy.
+### Step 3: Iterate if Needed
+If corrections needed, update the file and push again:
+
+```bash
+git add gofreight_[date_range]_report.html
+git commit -m "Fix [issue] in [date range] report"
+git push origin main
+```

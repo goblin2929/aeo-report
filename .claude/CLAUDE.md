@@ -95,29 +95,26 @@ Ask user for Workduo screenshot location, then read image to extract:
 
 ### Step 6: Generate HTML Report
 - Use Novastacks brand styling (from global CLAUDE.md)
-- Save as `gofreight_[start_date]_to_[end_date]_report.html`
+- Save as `gofreight_[date_range]_report.html`
 - Do NOT overwrite index.html (each report gets its own URL)
 
-### Step 7: User Validation (REQUIRED)
-Present report to user for review before publishing. User must verify:
-- All metrics match source data
-- Content status is accurate
-- No missing sections or tables
-
-### Step 8: Publish to GitHub (AFTER USER APPROVAL ONLY)
-Only after user explicitly confirms accuracy:
+### Step 7: Push to GitHub Immediately
+All reports are pushed directly to GitHub (single source of truth):
 ```bash
 git add gofreight_[date_range]_report.html
 git commit -m "Add [date range] AEO report"
 git push origin main
 ```
 
+### Step 8: User Reviews Live URL
+User validates at GitHub Pages URL. If corrections needed, update and push again.
+
+**GitHub Pages URL**: https://goblin2929.github.io/gofreight-aeo-report-dec2025/
+
 **File Naming** (include full date range):
 - `gofreight_jan_1_10_2026_report.html` → Jan 1-10, 2026
 - `gofreight_jan_11_20_2026_report.html` → Jan 11-20, 2026
 - `gofreight_dec_2025_report.html` → Full month December 2025
-
-**IMPORTANT**: Never push without explicit user validation.
 
 ---
 
@@ -138,7 +135,17 @@ git push origin main
 
 ---
 
-## Output Files
-- Report: `gofreight_{period}_report.html`
-- GitHub Pages: `index.html`
-- Data archive: `data/` folder
+## Required Report Sections
+
+See `workflow.md` for complete report structure. Key sections:
+1. Header & KPI Cards
+2. Executive Summary
+3. Query Segment Breakdown (MoM Variance)
+4. Subfolder Performance Analysis
+5. Top Pages Performance
+6. Impression Gainers
+7. Top Keywords Performance
+8. **Core Keyword Tracking (REQUIRED)** - Use DataForSEO
+9. AEO Metrics (if Workduo data available)
+10. Daily Performance Charts
+11. Key Insights (green/yellow/red callouts)
