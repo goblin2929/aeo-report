@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoFreight AEO Performance Report — January 2026</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>GoFreight AEO Performance Reports</title>
     <style>
         :root {
             --primary-blue: #01aac1;
@@ -14,8 +13,6 @@
             --medium-gray: #333333;
             --light-gray: #f5f5f5;
             --success-green: #22c55e;
-            --warning-yellow: #eab308;
-            --danger-red: #ef4444;
         }
 
         * {
@@ -29,1073 +26,148 @@
             background: var(--light-gray);
             color: var(--dark-gray);
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        /* Header */
         .header {
             background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
             color: white;
             padding: 40px;
             border-radius: 12px;
             margin-bottom: 30px;
+            text-align: center;
         }
 
         .header h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 8px;
         }
 
         .header .subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
             color: var(--accent-blue);
         }
 
-        .header .meta {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* KPI Cards */
-        .kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .kpi-card {
+        .reports-list {
             background: white;
             border-radius: 12px;
-            padding: 24px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .kpi-card .label {
-            font-size: 0.85rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .kpi-card .value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-            margin: 8px 0;
-        }
-
-        .kpi-card .change {
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .kpi-card .change.positive { color: var(--success-green); }
-        .kpi-card .change.negative { color: var(--danger-red); }
-
-        /* Section Headers */
-        .section-header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%);
-            color: white;
-            padding: 16px 24px;
-            border-radius: 8px;
-            margin: 30px 0 20px;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        /* Callout Boxes */
-        .callout {
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid;
-        }
-
-        .callout.blue {
-            background: linear-gradient(135deg, rgba(1,170,193,0.1) 0%, rgba(1,215,244,0.1) 100%);
-            border-color: var(--primary-blue);
-        }
-
-        .callout.green {
-            background: linear-gradient(135deg, rgba(34,197,94,0.1) 0%, rgba(34,197,94,0.05) 100%);
-            border-color: var(--success-green);
-        }
-
-        .callout.yellow {
-            background: linear-gradient(135deg, rgba(234,179,8,0.1) 0%, rgba(234,179,8,0.05) 100%);
-            border-color: var(--warning-yellow);
-        }
-
-        .callout.red {
-            background: linear-gradient(135deg, rgba(239,68,68,0.1) 0%, rgba(239,68,68,0.05) 100%);
-            border-color: var(--danger-red);
-        }
-
-        .callout h3 {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        /* Tables */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin: 20px 0;
         }
 
-        .data-table th {
-            background: var(--medium-gray);
-            color: white;
-            padding: 14px 16px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .data-table th.right,
-        .data-table td.right {
-            text-align: right;
-        }
-
-        .data-table td {
-            padding: 12px 16px;
+        .report-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
             border-bottom: 1px solid #eee;
+            transition: background 0.2s;
         }
 
-        .data-table tbody tr:hover {
-            background: #f9f9f9;
+        .report-item:last-child {
+            border-bottom: none;
         }
 
-        .data-table .subtotal-row {
-            background: #D9EBD9 !important;
-            font-weight: bold;
-        }
-
-        .data-table .percent-row {
-            background: #E6E6E6 !important;
-            font-weight: bold;
-            font-style: italic;
-        }
-
-        .trend-up { color: var(--success-green); font-weight: 600; }
-        .trend-down { color: var(--danger-red); font-weight: 600; }
-
-        /* Segment Cards */
-        .segment-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .segment-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .segment-card h4 {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 8px;
-        }
-
-        .segment-card .metric {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-        }
-
-        .segment-card .bar {
-            height: 8px;
-            background: #eee;
-            border-radius: 4px;
-            margin-top: 12px;
-            overflow: hidden;
-        }
-
-        .segment-card .bar-fill {
-            height: 100%;
-            background: var(--primary-blue);
-            border-radius: 4px;
-        }
-
-        /* Charts */
-        .chart-container {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin: 20px 0;
-        }
-
-        .chart-container h3 {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        /* AEO Section */
-        .aeo-card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin: 20px 0;
-        }
-
-        .aeo-query {
+        .report-item:hover {
             background: var(--light-gray);
-            padding: 12px 16px;
+        }
+
+        .report-info h3 {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 4px;
+        }
+
+        .report-info .date {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .report-link {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px 20px;
             border-radius: 6px;
-            margin: 10px 0;
-            font-family: monospace;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
         }
 
-        .aeo-result {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
+        .report-link:hover {
+            background: var(--teal);
         }
 
-        .aeo-result .status {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-        }
-
-        .aeo-result .status.mentioned {
+        .badge {
+            display: inline-block;
             background: var(--success-green);
             color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 8px;
+            font-weight: 600;
         }
 
-        .aeo-result .status.not-mentioned {
-            background: var(--danger-red);
-            color: white;
-        }
-
-        /* Footer */
         .footer {
             text-align: center;
             padding: 30px;
             color: #666;
             font-size: 0.9rem;
-            border-top: 1px solid #ddd;
-            margin-top: 40px;
-        }
-
-        /* Recommendations Section */
-        .recommendations {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
-            color: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .recommendations h3 {
-            margin-bottom: 20px;
-            color: var(--accent-blue);
-        }
-
-        .recommendations ul {
-            list-style: none;
-        }
-
-        .recommendations li {
-            padding: 10px 0;
-            padding-left: 24px;
-            position: relative;
-        }
-
-        .recommendations li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-blue);
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-            .segment-grid { grid-template-columns: 1fr; }
-        }
-
-        @media print {
-            .container { max-width: 100%; }
-            .header, .section-header, .recommendations { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <header class="header">
-            <h1>GoFreight AEO Performance Report</h1>
-            <div class="subtitle">Search Visibility & AI Engine Optimization Analysis</div>
-            <div class="meta">
-                <strong>Period:</strong> January 1–12, 2026 &nbsp;|&nbsp;
-                <strong>Comparison:</strong> December 19–31, 2025 &nbsp;|&nbsp;
-                <strong>Prepared by:</strong> Novastacks
-            </div>
+            <h1>GoFreight AEO Performance Reports</h1>
+            <p class="subtitle">Search Visibility & Traffic Analysis</p>
         </header>
 
-        <!-- KPI Cards -->
-        <div class="kpi-grid">
-            <div class="kpi-card">
-                <div class="label">Total Clicks</div>
-                <div class="value">944</div>
-                <div class="change positive">↑ +20.1% vs prev period</div>
-            </div>
-            <div class="kpi-card">
-                <div class="label">Total Impressions</div>
-                <div class="value">171.9K</div>
-                <div class="change positive">↑ +13.2% vs prev period</div>
-            </div>
-            <div class="kpi-card">
-                <div class="label">Average CTR</div>
-                <div class="value">0.55%</div>
-                <div class="change positive">↑ +0.06pp vs prev period</div>
-            </div>
-            <div class="kpi-card">
-                <div class="label">Avg Position</div>
-                <div class="value">19.7</div>
-                <div class="change positive">↑ Improved from 21.2</div>
-            </div>
-        </div>
-
-        <!-- Executive Summary -->
-        <h2 class="section-header">Executive Summary</h2>
-
-        <div class="callout blue">
-            <h3>📊 January 2026 in Review</h3>
-            <p>GoFreight's organic search performance showed strong momentum in early January 2026, with clicks up 20% and impressions up 13% compared to the previous period. Brand queries continue to dominate traffic, while educational content on the blog is driving significant impression growth.</p>
-        </div>
-
-        <div class="callout green">
-            <h3>✅ Key Highlights</h3>
-            <ul style="margin-left: 20px; margin-top: 10px;">
-                <li><strong>Homepage dominance:</strong> 491 clicks (52% of total), up from 396 (+24%)</li>
-                <li><strong>CargoWise Pricing blog post:</strong> 40 clicks, top non-brand content performer</li>
-                <li><strong>Support articles gaining traction:</strong> Bond Status article at 34 clicks</li>
-                <li><strong>Blog section growth:</strong> +51% clicks (220 vs 146 previous)</li>
-            </ul>
-        </div>
-
-        <div class="callout yellow">
-            <h3>⚠️ Areas to Monitor</h3>
-            <ul style="margin-left: 20px; margin-top: 10px;">
-                <li><strong>Glossary content:</strong> Slightly down (-7% clicks), consider refresh</li>
-                <li><strong>Archive pages:</strong> Still receiving significant traffic - migration strategy needed</li>
-                <li><strong>Position volatility:</strong> Daily avg position ranges from 13.6 to 25.6</li>
-            </ul>
-        </div>
-
-        <!-- Query Segment Breakdown -->
-        <h2 class="section-header">Query Segment Breakdown</h2>
-
-        <div class="segment-grid">
-            <div class="segment-card">
-                <h4>Exact Brand ("gofreight")</h4>
-                <div class="metric">230</div>
-                <div style="font-size: 0.9rem; color: #666;">clicks (+26% from 182)</div>
-                <div class="bar"><div class="bar-fill" style="width: 45%"></div></div>
-                <div style="font-size: 0.8rem; color: #888; margin-top: 8px;">45% of total clicks</div>
-            </div>
-            <div class="segment-card">
-                <h4>Branded Related</h4>
-                <div class="metric">163</div>
-                <div style="font-size: 0.9rem; color: #666;">clicks (+18% from 138)</div>
-                <div class="bar"><div class="bar-fill" style="width: 32%"></div></div>
-                <div style="font-size: 0.8rem; color: #888; margin-top: 8px;">32% of total clicks</div>
-            </div>
-            <div class="segment-card">
-                <h4>Non-Branded</h4>
-                <div class="metric">115</div>
-                <div style="font-size: 0.9rem; color: #666;">clicks (+12% from 103)</div>
-                <div class="bar"><div class="bar-fill" style="width: 23%"></div></div>
-                <div style="font-size: 0.8rem; color: #888; margin-top: 8px;">23% of total clicks</div>
-            </div>
-        </div>
-
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Segment</th>
-                    <th class="right">Current Clicks</th>
-                    <th class="right">Previous Clicks</th>
-                    <th class="right">Click Δ</th>
-                    <th class="right">% of Change</th>
-                    <th class="right">Impr Δ</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Exact Brand</td>
-                    <td class="right">230</td>
-                    <td class="right">182</td>
-                    <td class="right"><span class="trend-up">+48</span></td>
-                    <td class="right">56%</td>
-                    <td class="right"><span class="trend-up">+39</span></td>
-                </tr>
-                <tr>
-                    <td>Branded Related</td>
-                    <td class="right">163</td>
-                    <td class="right">138</td>
-                    <td class="right"><span class="trend-up">+25</span></td>
-                    <td class="right">29%</td>
-                    <td class="right"><span class="trend-up">+226</span></td>
-                </tr>
-                <tr>
-                    <td>Non-Branded</td>
-                    <td class="right">115</td>
-                    <td class="right">103</td>
-                    <td class="right"><span class="trend-up">+12</span></td>
-                    <td class="right">14%</td>
-                    <td class="right"><span class="trend-up">+16,647</span></td>
-                </tr>
-                <tr class="subtotal-row">
-                    <td><strong>TOTAL</strong></td>
-                    <td class="right"><strong>508</strong></td>
-                    <td class="right"><strong>423</strong></td>
-                    <td class="right"><strong>+85</strong></td>
-                    <td class="right"><strong>100%</strong></td>
-                    <td class="right"><strong>+16,912</strong></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Subfolder Performance -->
-        <h2 class="section-header">Subfolder Performance Analysis</h2>
-
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Subfolder</th>
-                    <th class="right">Prev Clicks</th>
-                    <th class="right">Curr Clicks</th>
-                    <th class="right">Click Δ</th>
-                    <th class="right">Prev Impr</th>
-                    <th class="right">Curr Impr</th>
-                    <th class="right">Impr Δ</th>
-                    <th class="right">Trend</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Homepage & Other</td>
-                    <td class="right">420</td>
-                    <td class="right">525</td>
-                    <td class="right"><span class="trend-up">+105 (+25%)</span></td>
-                    <td class="right">47,627</td>
-                    <td class="right">35,614</td>
-                    <td class="right"><span class="trend-down">-12,013</span></td>
-                    <td class="right">📈</td>
-                </tr>
-                <tr>
-                    <td>/blog</td>
-                    <td class="right">146</td>
-                    <td class="right">220</td>
-                    <td class="right"><span class="trend-up">+74 (+51%)</span></td>
-                    <td class="right">80,904</td>
-                    <td class="right">91,202</td>
-                    <td class="right"><span class="trend-up">+10,298</span></td>
-                    <td class="right">🚀</td>
-                </tr>
-                <tr>
-                    <td>support.gofreight.com</td>
-                    <td class="right">52</td>
-                    <td class="right">98</td>
-                    <td class="right"><span class="trend-up">+46 (+88%)</span></td>
-                    <td class="right">4,126</td>
-                    <td class="right">5,688</td>
-                    <td class="right"><span class="trend-up">+1,562</span></td>
-                    <td class="right">🚀</td>
-                </tr>
-                <tr>
-                    <td>/glossary (archive)</td>
-                    <td class="right">70</td>
-                    <td class="right">65</td>
-                    <td class="right"><span class="trend-down">-5 (-7%)</span></td>
-                    <td class="right">32,138</td>
-                    <td class="right">28,714</td>
-                    <td class="right"><span class="trend-down">-3,424</span></td>
-                    <td class="right">⚠️</td>
-                </tr>
-                <tr>
-                    <td>/archive-other</td>
-                    <td class="right">27</td>
-                    <td class="right">24</td>
-                    <td class="right"><span class="trend-down">-3 (-11%)</span></td>
-                    <td class="right">4,013</td>
-                    <td class="right">3,959</td>
-                    <td class="right"><span class="trend-down">-54</span></td>
-                    <td class="right">➡️</td>
-                </tr>
-                <tr>
-                    <td>/solutions</td>
-                    <td class="right">11</td>
-                    <td class="right">19</td>
-                    <td class="right"><span class="trend-up">+8 (+73%)</span></td>
-                    <td class="right">13,308</td>
-                    <td class="right">8,992</td>
-                    <td class="right"><span class="trend-down">-4,316</span></td>
-                    <td class="right">📈</td>
-                </tr>
-                <tr>
-                    <td>/pricing</td>
-                    <td class="right">12</td>
-                    <td class="right">16</td>
-                    <td class="right"><span class="trend-up">+4 (+33%)</span></td>
-                    <td class="right">6,385</td>
-                    <td class="right">3,081</td>
-                    <td class="right"><span class="trend-down">-3,304</span></td>
-                    <td class="right">📈</td>
-                </tr>
-                <tr>
-                    <td>/customers</td>
-                    <td class="right">2</td>
-                    <td class="right">5</td>
-                    <td class="right"><span class="trend-up">+3 (+150%)</span></td>
-                    <td class="right">228</td>
-                    <td class="right">437</td>
-                    <td class="right"><span class="trend-up">+209</span></td>
-                    <td class="right">📈</td>
-                </tr>
-                <tr class="subtotal-row">
-                    <td><strong>SUBTOTAL</strong></td>
-                    <td class="right"><strong>740</strong></td>
-                    <td class="right"><strong>972</strong></td>
-                    <td class="right"><strong>+232 (+31%)</strong></td>
-                    <td class="right"><strong>188,729</strong></td>
-                    <td class="right"><strong>177,687</strong></td>
-                    <td class="right"><strong>-11,042</strong></td>
-                    <td class="right"></td>
-                </tr>
-                <tr class="percent-row">
-                    <td><em>% of Site Total</em></td>
-                    <td class="right" colspan="6"><em>Represents all tracked subfolders</em></td>
-                    <td class="right"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Top Pages Performance -->
-        <h2 class="section-header">Top Pages Performance</h2>
-
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Page</th>
-                    <th class="right">Curr Clicks</th>
-                    <th class="right">Prev Clicks</th>
-                    <th class="right">Δ Clicks</th>
-                    <th class="right">Curr Impr</th>
-                    <th class="right">Position</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><a href="https://gofreight.com/" target="_blank">gofreight.com/</a></td>
-                    <td class="right">491</td>
-                    <td class="right">396</td>
-                    <td class="right"><span class="trend-up">+95 (+24%)</span></td>
-                    <td class="right">20,688</td>
-                    <td class="right">12</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><a href="https://gofreight.com/blog/cargowise-pricing-2025" target="_blank">/blog/cargowise-pricing-2025</a></td>
-                    <td class="right">40</td>
-                    <td class="right">—</td>
-                    <td class="right"><span class="trend-up">New</span></td>
-                    <td class="right">1,172</td>
-                    <td class="right">5</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><a href="https://support.gofreight.com/hc/en-us/articles/14378165476751" target="_blank">support: Bond Status Article</a></td>
-                    <td class="right">34</td>
-                    <td class="right">—</td>
-                    <td class="right"><span class="trend-up">New</span></td>
-                    <td class="right">599</td>
-                    <td class="right">4</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td><a href="https://archive.gofreight.com/blog/education/10-best-books-on-freight-forwarding" target="_blank">archive: Best Books on FF</a></td>
-                    <td class="right">17</td>
-                    <td class="right">15</td>
-                    <td class="right"><span class="trend-up">+2 (+13%)</span></td>
-                    <td class="right">567</td>
-                    <td class="right">12</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><a href="https://gofreight.com/pricing" target="_blank">/pricing</a></td>
-                    <td class="right">16</td>
-                    <td class="right">12</td>
-                    <td class="right"><span class="trend-up">+4 (+33%)</span></td>
-                    <td class="right">3,081</td>
-                    <td class="right">4</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td><a href="https://archive.gofreight.com/blog/education/how-to-apply-for-nvocc-license" target="_blank">archive: NVOCC License</a></td>
-                    <td class="right">15</td>
-                    <td class="right">7</td>
-                    <td class="right"><span class="trend-up">+8 (+114%)</span></td>
-                    <td class="right">980</td>
-                    <td class="right">9</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td><a href="https://archive.gofreight.com/tracking-portal" target="_blank">archive: Tracking Portal</a></td>
-                    <td class="right">15</td>
-                    <td class="right">20</td>
-                    <td class="right"><span class="trend-down">-5 (-25%)</span></td>
-                    <td class="right">1,060</td>
-                    <td class="right">7</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td><a href="https://archive.gofreight.com/glossary/maher-terminal-tracking" target="_blank">archive: Maher Terminal</a></td>
-                    <td class="right">13</td>
-                    <td class="right">8</td>
-                    <td class="right"><span class="trend-up">+5 (+63%)</span></td>
-                    <td class="right">2,351</td>
-                    <td class="right">6</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td><a href="https://gofreight.com/blog/education/how-to-do-custom-clearance" target="_blank">/blog: Custom Clearance USA</a></td>
-                    <td class="right">13</td>
-                    <td class="right">—</td>
-                    <td class="right"><span class="trend-up">New</span></td>
-                    <td class="right">4,932</td>
-                    <td class="right">7</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td><a href="https://archive.gofreight.com/solutions/customer-portal" target="_blank">archive: Customer Portal</a></td>
-                    <td class="right">10</td>
-                    <td class="right">6</td>
-                    <td class="right"><span class="trend-up">+4 (+67%)</span></td>
-                    <td class="right">1,150</td>
-                    <td class="right">5</td>
-                </tr>
-                <tr class="subtotal-row">
-                    <td colspan="2"><strong>SUBTOTAL (Top 10)</strong></td>
-                    <td class="right"><strong>664</strong></td>
-                    <td class="right"><strong>464</strong></td>
-                    <td class="right"><strong>+200</strong></td>
-                    <td class="right"><strong>36,580</strong></td>
-                    <td class="right"></td>
-                </tr>
-                <tr class="percent-row">
-                    <td colspan="2"><em>% of Site Total (944 clicks)</em></td>
-                    <td class="right"><em>70%</em></td>
-                    <td class="right" colspan="4"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Top Keywords -->
-        <h2 class="section-header">Top Keywords Performance</h2>
-
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Keyword</th>
-                    <th class="right">Curr Clicks</th>
-                    <th class="right">Prev Clicks</th>
-                    <th class="right">Δ</th>
-                    <th class="right">Position</th>
-                    <th>Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>gofreight</td>
-                    <td class="right">230</td>
-                    <td class="right">182</td>
-                    <td class="right"><span class="trend-up">+48</span></td>
-                    <td class="right">2</td>
-                    <td>Brand</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>go freight</td>
-                    <td class="right">89</td>
-                    <td class="right">69</td>
-                    <td class="right"><span class="trend-up">+20</span></td>
-                    <td class="right">9</td>
-                    <td>Brand</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>go freight login</td>
-                    <td class="right">27</td>
-                    <td class="right">20</td>
-                    <td class="right"><span class="trend-up">+7</span></td>
-                    <td class="right">1</td>
-                    <td>Brand</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>gofreight login</td>
-                    <td class="right">22</td>
-                    <td class="right">29</td>
-                    <td class="right"><span class="trend-down">-7</span></td>
-                    <td class="right">1</td>
-                    <td>Brand</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>gofreight software</td>
-                    <td class="right">6</td>
-                    <td class="right">4</td>
-                    <td class="right"><span class="trend-up">+2</span></td>
-                    <td class="right">1</td>
-                    <td>Brand</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>gofreight tracking</td>
-                    <td class="right">6</td>
-                    <td class="right">8</td>
-                    <td class="right"><span class="trend-down">-2</span></td>
-                    <td class="right">1</td>
-                    <td>Brand</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>fenix marine terminal tracking</td>
-                    <td class="right">5</td>
-                    <td class="right">3</td>
-                    <td class="right"><span class="trend-up">+2</span></td>
-                    <td class="right">5</td>
-                    <td>Terminal</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>freight forwarding software</td>
-                    <td class="right">5</td>
-                    <td class="right">8</td>
-                    <td class="right"><span class="trend-down">-3</span></td>
-                    <td class="right">15</td>
-                    <td>Product</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>gofrieght (misspelling)</td>
-                    <td class="right">5</td>
-                    <td class="right">—</td>
-                    <td class="right"><span class="trend-up">+5</span></td>
-                    <td class="right">1</td>
-                    <td>Brand</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>go freight tracking</td>
-                    <td class="right">4</td>
-                    <td class="right">—</td>
-                    <td class="right"><span class="trend-up">+4</span></td>
-                    <td class="right">1</td>
-                    <td>Brand</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>cargowise pricing</td>
-                    <td class="right">3</td>
-                    <td class="right">—</td>
-                    <td class="right"><span class="trend-up">+3</span></td>
-                    <td class="right">9</td>
-                    <td>Education</td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td>maher terminal tracking</td>
-                    <td class="right">3</td>
-                    <td class="right">3</td>
-                    <td class="right">0</td>
-                    <td class="right">5</td>
-                    <td>Terminal</td>
-                </tr>
-                <tr class="subtotal-row">
-                    <td colspan="2"><strong>Top 12 Subtotal</strong></td>
-                    <td class="right"><strong>405</strong></td>
-                    <td class="right"><strong>326</strong></td>
-                    <td class="right"><strong>+79</strong></td>
-                    <td class="right"></td>
-                    <td></td>
-                </tr>
-                <tr class="percent-row">
-                    <td colspan="2"><em>% of Total (508 clicks)</em></td>
-                    <td class="right"><em>80%</em></td>
-                    <td class="right" colspan="4"></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Daily Performance Charts -->
-        <h2 class="section-header">Daily Performance Trends</h2>
-
-        <div class="chart-container">
-            <h3>Daily Clicks (Jan 1-12, 2026)</h3>
-            <canvas id="clicksChart" height="100"></canvas>
-        </div>
-
-        <div class="chart-container">
-            <h3>Daily Impressions (Jan 1-12, 2026)</h3>
-            <canvas id="impressionsChart" height="100"></canvas>
-        </div>
-
-        <!-- AEO Performance -->
-        <h2 class="section-header">AEO (AI Engine Optimization) Analysis</h2>
-
-        <!-- WorkDuo Platform Metrics -->
-        <div class="aeo-card">
-            <h3>🤖 AI Platform Visibility (WorkDuo Data - Last 30 Days)</h3>
-            <p style="color: #666; margin-bottom: 20px;">GoFreight visibility across major AI platforms based on tracked queries.</p>
-
-            <div class="segment-grid">
-                <div class="segment-card">
-                    <h4>Google AI Overview</h4>
-                    <div class="metric" style="color: var(--primary-blue);">19%</div>
-                    <div style="font-size: 0.85rem; color: #666;">Visibility Score</div>
-                    <div style="font-size: 0.8rem; margin-top: 8px;">11-12 mentions | SOV: 12-16%</div>
-                    <div style="font-size: 0.8rem; color: #888;">Avg Position: 55</div>
+        <div class="reports-list">
+            <div class="report-item">
+                <div class="report-info">
+                    <h3>January 2026 Monthly Report <span class="badge">Latest</span></h3>
+                    <p class="date">Period: January 1-13, 2026</p>
                 </div>
-                <div class="segment-card">
-                    <h4>ChatGPT</h4>
-                    <div class="metric" style="color: var(--success-green);">14%</div>
-                    <div style="font-size: 0.85rem; color: #666;">Visibility Score</div>
-                    <div style="font-size: 0.8rem; margin-top: 8px;">9-10 mentions | SOV: 7-11%</div>
-                    <div style="font-size: 0.8rem; color: #888;">Avg Position: 43</div>
+                <a href="gofreight_jan_2026_report.html" class="report-link">View Report</a>
+            </div>
+
+            <div class="report-item">
+                <div class="report-info">
+                    <h3>January 5-11, 2026 Weekly Report</h3>
+                    <p class="date">Period: January 5-11, 2026</p>
                 </div>
-                <div class="segment-card">
-                    <h4>Perplexity</h4>
-                    <div class="metric" style="color: var(--teal);">10%</div>
-                    <div style="font-size: 0.85rem; color: #666;">Visibility Score</div>
-                    <div style="font-size: 0.8rem; margin-top: 8px;">9-10 mentions | SOV: 8-13%</div>
-                    <div style="font-size: 0.8rem; color: #888;">Avg Position: 54</div>
+                <a href="gofreight_jan_5_11_2026_report.html" class="report-link">View Report</a>
+            </div>
+
+            <div class="report-item">
+                <div class="report-info">
+                    <h3>January 1-10, 2026 Weekly Report</h3>
+                    <p class="date">Period: January 1-10, 2026</p>
                 </div>
+                <a href="gofreight_jan_1_10_2026_report.html" class="report-link">View Report</a>
+            </div>
+
+            <div class="report-item">
+                <div class="report-info">
+                    <h3>December 2025 Monthly Report</h3>
+                    <p class="date">Period: December 2025</p>
+                </div>
+                <a href="gofreight_december_2025_report.html" class="report-link">View Report</a>
             </div>
         </div>
 
-        <!-- Funnel Stage Performance -->
-        <div class="aeo-card">
-            <h3>📊 AEO Performance by Funnel Stage</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Funnel Stage</th>
-                        <th class="right">Mentions</th>
-                        <th class="right">Visibility</th>
-                        <th class="right">Share of Voice</th>
-                        <th class="right">Avg Position</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>BOFU</strong> (Bottom of Funnel)</td>
-                        <td class="right">3</td>
-                        <td class="right"><span class="trend-up">100%</span></td>
-                        <td class="right">20%</td>
-                        <td class="right">79</td>
-                        <td><span style="color: var(--success-green);">✓ Strong</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Branded</strong></td>
-                        <td class="right">21</td>
-                        <td class="right">—</td>
-                        <td class="right">—</td>
-                        <td class="right">40</td>
-                        <td><span style="color: var(--success-green);">✓ Strong</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>MOFU</strong> (Middle of Funnel)</td>
-                        <td class="right">5-6</td>
-                        <td class="right">18%</td>
-                        <td class="right">10%</td>
-                        <td class="right">76</td>
-                        <td><span style="color: var(--warning-yellow);">⚠ Monitor</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>TOFU</strong> (Top of Funnel)</td>
-                        <td class="right">0</td>
-                        <td class="right"><span class="trend-down">0%</span></td>
-                        <td class="right">0%</td>
-                        <td class="right">—</td>
-                        <td><span style="color: var(--danger-red);">✗ Gap</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Competitor Tracking -->
-        <div class="aeo-card">
-            <h3>🏆 Tracked Competitors</h3>
-            <p style="color: #666; margin-bottom: 15px;">WorkDuo is tracking GoFreight against these competitors across AI platforms:</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <span style="background: #f0f0f0; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">CargoWise</span>
-                <span style="background: #f0f0f0; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Magaya</span>
-                <span style="background: #f0f0f0; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Descartes</span>
-                <span style="background: #f0f0f0; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">GoComet</span>
-                <span style="background: #f0f0f0; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Neurored</span>
-                <span style="background: #f0f0f0; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Shipthis</span>
-                <span style="background: #f0f0f0; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Freightview</span>
-            </div>
-        </div>
-
-        <!-- ChatGPT Live Test Results -->
-        <div class="aeo-card">
-            <h3>🔍 ChatGPT Live Query Tests (Jan 13, 2026)</h3>
-            <p style="color: #666; margin-bottom: 20px;">Real-time validation of GoFreight mentions in ChatGPT responses.</p>
-
-            <div class="aeo-result">
-                <div class="status not-mentioned">✗</div>
-                <div>
-                    <div class="aeo-query">"best freight forwarding software"</div>
-                    <div style="color: #666; font-size: 0.9rem;">GoFreight NOT mentioned. Competitors cited: CargoWise, Magaya, Descartes, Transporeon</div>
-                </div>
-            </div>
-
-            <div class="aeo-result">
-                <div class="status mentioned">✓</div>
-                <div>
-                    <div class="aeo-query">"freight forwarding software for small business"</div>
-                    <div style="color: var(--success-green); font-size: 0.9rem;">GoFreight mentioned at #2 position with description: "Cloud-native FP workflow, Modern UI, tracking"</div>
-                </div>
-            </div>
-
-            <div class="aeo-result">
-                <div class="status mentioned">✓</div>
-                <div>
-                    <div class="aeo-query">"gofreight freight forwarding software"</div>
-                    <div style="color: var(--success-green); font-size: 0.9rem;">Comprehensive branded response with 6 source citations to gofreight.com</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="callout red">
-            <h3>🚨 Critical AEO Gap: TOFU Visibility = 0%</h3>
-            <p>GoFreight has <strong>zero visibility</strong> in Top-of-Funnel AI queries like "How is technology transforming freight forwarding?" and "How does freight management software handle multi-modal shipments?" This is a significant missed opportunity for awareness-stage prospects.</p>
-        </div>
-
-        <div class="callout yellow">
-            <h3>⚠️ MOFU Gap: Only 18% Visibility</h3>
-            <p>Middle-of-funnel queries show weak performance. Queries like "Best TMS for NVOCCs with heavy ocean export volume?" return 0 mentions for GoFreight. Competitors are capturing this consideration-stage traffic.</p>
-        </div>
-
-        <div class="callout green">
-            <h3>✅ Strong: BOFU at 100% Visibility</h3>
-            <p>GoFreight dominates bottom-of-funnel queries where buyers are comparing specific solutions. The 21 branded mentions and strong position (avg 40) indicate healthy brand recognition among active buyers.</p>
-        </div>
-
-        <!-- Recommendations -->
-        <div class="recommendations">
-            <h3>📋 Next Period Priorities & Recommendations</h3>
-            <ul>
-                <li><strong>AEO Priority:</strong> Publish comprehensive "Best Freight Forwarding Software" comparison content targeting ChatGPT inclusion</li>
-                <li><strong>Content Migration:</strong> Migrate top-performing archive pages (glossary, tracking portal) to main domain</li>
-                <li><strong>Blog Momentum:</strong> Continue publishing competitive comparison content (CargoWise pricing success template)</li>
-                <li><strong>Support SEO:</strong> Optimize top support articles for featured snippets (Bond Status article has potential)</li>
-                <li><strong>Position Improvement:</strong> Target position 10→5 for "freight forwarding software" keyword</li>
-                <li><strong>Third-party Reviews:</strong> Pursue listings on SoftwareConnect, G2, Capterra to boost AEO visibility</li>
-            </ul>
-        </div>
-
-        <!-- Footer -->
         <footer class="footer">
-            <p><strong>Prepared by Novastacks</strong> | Data Sources: Google Search Console, WorkDuo, DataForSEO ChatGPT Scraper</p>
-            <p>Report Date: January 13, 2026 | Period: January 1-13, 2026</p>
+            <p><strong>Prepared by Novastacks</strong></p>
         </footer>
     </div>
-
-    <script>
-        // Daily Clicks Chart
-        const clicksCtx = document.getElementById('clicksChart').getContext('2d');
-        new Chart(clicksCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan 1', 'Jan 2', 'Jan 3', 'Jan 4', 'Jan 5', 'Jan 6', 'Jan 7', 'Jan 8', 'Jan 9', 'Jan 10', 'Jan 11', 'Jan 12'],
-                datasets: [{
-                    label: 'Clicks',
-                    data: [23, 67, 18, 54, 133, 136, 123, 136, 72, 41, 58, 83],
-                    borderColor: '#01aac1',
-                    backgroundColor: 'rgba(1, 170, 193, 0.1)',
-                    fill: true,
-                    tension: 0.3,
-                    pointBackgroundColor: '#01aac1',
-                    pointRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false }
-                },
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
-        });
-
-        // Daily Impressions Chart
-        const impressionsCtx = document.getElementById('impressionsChart').getContext('2d');
-        new Chart(impressionsCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan 1', 'Jan 2', 'Jan 3', 'Jan 4', 'Jan 5', 'Jan 6', 'Jan 7', 'Jan 8', 'Jan 9', 'Jan 10', 'Jan 11', 'Jan 12'],
-                datasets: [{
-                    label: 'Impressions',
-                    data: [11471, 12705, 9603, 11681, 14730, 13930, 15210, 18472, 17421, 15365, 17095, 14278],
-                    borderColor: '#017d8e',
-                    backgroundColor: 'rgba(1, 125, 142, 0.1)',
-                    fill: true,
-                    tension: 0.3,
-                    pointBackgroundColor: '#017d8e',
-                    pointRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false }
-                },
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
-
