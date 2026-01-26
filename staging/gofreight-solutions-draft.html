@@ -6,21 +6,26 @@
     <title>Freight Forwarding Solutions | Ocean, Air & Ground | GoFreight</title>
     <meta name="description" content="Explore GoFreight's freight forwarding solutions for ocean, air, and ground shipping. Purpose-built software to streamline operations. Get a demo today.">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Inter + Roboto - matches GoFreight) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
+        /* GoFreight Brand Colors */
         :root {
-            --primary-blue: #01aac1;
-            --accent-blue: #01d7f4;
-            --teal: #017d8e;
-            --dark-gray: #111111;
-            --medium-gray: #2a2a2a;
-            --light-gray: #f5f5f5;
-            --white: #ffffff;
-            --success-green: #22c55e;
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+            --gf-warning: #f59e0b;
         }
 
         * {
@@ -30,92 +35,125 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--dark-gray);
+            font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gf-text-primary);
             line-height: 1.6;
+            background: var(--gf-bg-white);
         }
 
         /* Navigation Placeholder */
         .nav-placeholder {
-            background: var(--white);
+            background: var(--gf-bg-white);
             padding: 1rem 2rem;
-            border-bottom: 1px solid #e5e5e5;
-            text-align: center;
-            color: #666;
-            font-size: 0.875rem;
+            border-bottom: 1px solid var(--gf-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        /* Hero Section */
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gf-teal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            color: var(--gf-text-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links span {
+            cursor: pointer;
+        }
+
+        .nav-cta {
+            background: var(--gf-teal);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        /* Hero Section - Light background, two-column */
         .hero {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%);
             padding: 5rem 2rem;
-            text-align: center;
         }
 
         .hero-container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+        .hero-content h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--gf-text-primary);
+            margin-bottom: 1.25rem;
             line-height: 1.2;
         }
 
         .hero-subhead {
-            font-size: 1.25rem;
-            color: #b0b0b0;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.125rem;
+            color: var(--gf-text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
 
         .hero-ctas {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .btn-primary {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 1rem 2rem;
+            background: var(--gf-teal);
+            color: white;
+            padding: 0.875rem 1.75rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             display: inline-block;
         }
 
         .btn-primary:hover {
-            background: var(--teal);
+            background: var(--gf-teal-dark);
+            transform: translateY(-1px);
         }
 
-        .btn-secondary {
-            color: var(--accent-blue);
+        .btn-outline {
+            background: transparent;
+            color: var(--gf-text-primary);
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 500;
-            padding: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--gf-border);
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        .btn-secondary:hover {
-            text-decoration: underline;
+        .btn-outline:hover {
+            border-color: var(--gf-teal);
+            color: var(--gf-teal);
         }
 
         .trust-badges {
             display: flex;
-            gap: 2rem;
-            justify-content: center;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
 
@@ -124,25 +162,32 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.875rem;
-            color: #b0b0b0;
+            color: var(--gf-text-secondary);
         }
 
         .trust-badge-icon {
-            width: 20px;
-            height: 20px;
-            background: var(--primary-blue);
-            border-radius: 50%;
+            color: var(--gf-teal);
+            font-size: 1.1rem;
+        }
+
+        .hero-image {
+            background: var(--gf-bg-white);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            aspect-ratio: 4/3;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
-            color: white;
+            color: var(--gf-text-light);
+            font-size: 0.9rem;
+            border: 1px solid var(--gf-border);
         }
 
         /* Solutions Grid */
         .solutions-section {
             padding: 5rem 2rem;
-            background: var(--white);
+            background: var(--gf-bg-white);
         }
 
         .section-container {
@@ -156,82 +201,82 @@
         }
 
         .section-header h2 {
-            font-size: 2.25rem;
+            font-size: 2rem;
             font-weight: 700;
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
+            color: var(--gf-text-primary);
+            margin-bottom: 0.75rem;
         }
 
         .section-header p {
-            color: #666;
-            font-size: 1.125rem;
+            color: var(--gf-text-secondary);
+            font-size: 1.05rem;
             max-width: 600px;
             margin: 0 auto;
         }
 
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
 
         .solution-card {
-            background: var(--white);
-            border: 1px solid #e5e5e5;
+            background: var(--gf-bg-white);
+            border: 1px solid var(--gf-border);
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.75rem;
             transition: all 0.3s ease;
         }
 
         .solution-card:hover {
-            border-color: var(--primary-blue);
-            box-shadow: 0 8px 30px rgba(1, 170, 193, 0.15);
-            transform: translateY(-4px);
+            border-color: var(--gf-teal);
+            box-shadow: 0 8px 30px rgba(1, 170, 193, 0.12);
         }
 
         .solution-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%);
-            border-radius: 12px;
+            width: 48px;
+            height: 48px;
+            background: var(--gf-bg-mint);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             font-size: 1.5rem;
+            color: var(--gf-teal);
         }
 
         .solution-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+            color: var(--gf-text-primary);
         }
 
         .solution-card p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            color: var(--gf-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
             line-height: 1.6;
         }
 
         .solution-link {
-            color: var(--primary-blue);
+            color: var(--gf-teal);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.35rem;
         }
 
         .solution-link:hover {
-            color: var(--teal);
+            color: var(--gf-teal-dark);
         }
 
         .solution-card-cta {
-            background: linear-gradient(135deg, var(--light-gray) 0%, #eee 100%);
-            border: 2px dashed #ccc;
+            background: var(--gf-bg-light);
+            border: 2px dashed var(--gf-border);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -239,72 +284,71 @@
             text-align: center;
         }
 
-        .solution-card-cta h3 {
-            font-size: 1.125rem;
-        }
-
-        .solution-card-cta p {
-            margin-bottom: 1rem;
+        .solution-card-cta:hover {
+            border-color: var(--gf-teal);
+            background: var(--gf-bg-mint);
         }
 
         /* Value Props Section */
         .value-props-section {
             padding: 5rem 2rem;
-            background: var(--light-gray);
+            background: var(--gf-bg-light);
         }
 
         .value-props-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
 
         .value-prop {
             text-align: center;
-            padding: 1.5rem;
+            padding: 1.5rem 1rem;
         }
 
         .value-prop-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--white);
+            width: 56px;
+            height: 56px;
+            background: var(--gf-bg-white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.25rem;
-            font-size: 1.75rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .value-prop-stat {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: var(--gf-teal);
+            border: 1px solid var(--gf-border);
         }
 
         .value-prop h3 {
-            font-size: 1rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--gf-teal);
+        }
+
+        .value-prop h4 {
+            font-size: 0.95rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--dark-gray);
+            color: var(--gf-text-primary);
         }
 
         .value-prop p {
-            color: #666;
-            font-size: 0.9rem;
+            color: var(--gf-text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.6;
         }
 
         /* Pain Points Section */
         .pain-points-section {
             padding: 5rem 2rem;
-            background: var(--white);
+            background: var(--gf-bg-white);
         }
 
         .pain-points-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
         }
 
@@ -312,57 +356,61 @@
             display: flex;
             align-items: center;
             padding: 1.25rem 1.5rem;
-            background: var(--light-gray);
-            border-radius: 8px;
+            background: var(--gf-bg-light);
+            border-radius: 10px;
             text-decoration: none;
-            color: var(--dark-gray);
+            color: var(--gf-text-primary);
             transition: all 0.3s ease;
-            border-left: 4px solid transparent;
+            border: 1px solid transparent;
         }
 
         .pain-point-card:hover {
-            background: var(--white);
-            border-left-color: var(--primary-blue);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: var(--gf-bg-white);
+            border-color: var(--gf-teal);
+            box-shadow: 0 4px 15px rgba(1, 170, 193, 0.1);
         }
 
         .pain-point-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--white);
+            width: 36px;
+            height: 36px;
+            background: var(--gf-bg-white);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 1rem;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
+            color: var(--gf-teal);
             flex-shrink: 0;
+            border: 1px solid var(--gf-border);
         }
 
         .pain-point-card:hover .pain-point-icon {
-            background: var(--primary-blue);
+            background: var(--gf-teal);
+            color: white;
+            border-color: var(--gf-teal);
         }
 
         .pain-point-text {
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            flex: 1;
         }
 
         .pain-point-arrow {
-            margin-left: auto;
-            color: #ccc;
-            font-size: 1.25rem;
+            color: var(--gf-text-light);
+            font-size: 1.1rem;
+            margin-left: 0.5rem;
         }
 
         .pain-point-card:hover .pain-point-arrow {
-            color: var(--primary-blue);
+            color: var(--gf-teal);
         }
 
         /* Social Proof Section */
         .social-proof-section {
             padding: 5rem 2rem;
-            background: var(--dark-gray);
-            color: var(--white);
+            background: var(--gf-bg-light);
         }
 
         .social-proof-content {
@@ -374,150 +422,199 @@
         .customer-logos {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
             margin-bottom: 3rem;
-            opacity: 0.7;
         }
 
         .customer-logo {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #999;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gf-text-light);
             padding: 0.5rem 1rem;
-            border: 1px solid #444;
-            border-radius: 4px;
+            background: var(--gf-bg-white);
+            border-radius: 6px;
+            border: 1px solid var(--gf-border);
+        }
+
+        .testimonial-card {
+            background: var(--gf-bg-white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
 
         .testimonial-quote {
-            font-size: 1.75rem;
+            font-size: 1.35rem;
             font-weight: 500;
-            margin-bottom: 1.5rem;
-            line-height: 1.4;
+            color: var(--gf-text-primary);
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
         }
 
         .testimonial-quote span {
-            color: var(--accent-blue);
+            color: var(--gf-teal);
+            font-weight: 700;
         }
 
         .testimonial-author {
-            color: #999;
-            font-size: 1rem;
+            color: var(--gf-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author strong {
+            color: var(--gf-text-primary);
         }
 
         .g2-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: var(--medium-gray);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-top: 2.5rem;
+            background: linear-gradient(135deg, var(--gf-bg-white) 0%, #f0fdf4 100%);
+            padding: 0.875rem 1.25rem;
+            border-radius: 10px;
+            border: 1px solid var(--gf-success);
         }
 
         .g2-stars {
-            color: #f59e0b;
-            font-size: 1.25rem;
+            color: var(--gf-warning);
+            font-size: 1.1rem;
+        }
+
+        .g2-rating {
+            background: var(--gf-success);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
         }
 
         .g2-text {
-            font-size: 0.9rem;
-            color: #b0b0b0;
-        }
-
-        .g2-text strong {
-            color: var(--white);
+            font-size: 0.85rem;
+            color: var(--gf-text-secondary);
         }
 
         /* Final CTA Section */
         .final-cta-section {
             padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%);
+            color: white;
             text-align: center;
         }
 
         .final-cta-content {
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
         .final-cta-content h2 {
-            font-size: 2.25rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .final-cta-content p {
-            font-size: 1.125rem;
+            font-size: 1.05rem;
             opacity: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: 1.75rem;
         }
 
         .btn-white {
-            background: var(--white);
-            color: var(--teal);
-            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--gf-teal-dark);
+            padding: 0.875rem 2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             display: inline-block;
             transition: all 0.3s ease;
         }
 
         .btn-white:hover {
-            background: var(--light-gray);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .final-cta-phone {
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            opacity: 0.8;
+            margin-top: 1.25rem;
+            font-size: 0.9rem;
+            opacity: 0.85;
         }
 
         .final-cta-phone a {
-            color: var(--white);
+            color: white;
             text-decoration: underline;
         }
 
         /* Footer Placeholder */
         .footer-placeholder {
-            background: var(--dark-gray);
+            background: var(--gf-text-primary);
             padding: 2rem;
             text-align: center;
-            color: #666;
+            color: var(--gf-text-light);
             font-size: 0.875rem;
-            border-top: 1px solid #333;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-ctas, .trust-badges {
+                justify-content: center;
+            }
+
+            .hero-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .solutions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .value-props-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pain-points-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
-            }
-
-            .hero-subhead {
-                font-size: 1rem;
             }
 
             .section-header h2 {
                 font-size: 1.75rem;
             }
 
-            .trust-badges {
-                flex-direction: column;
-                gap: 1rem;
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .value-props-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pain-points-grid {
+                grid-template-columns: 1fr;
             }
 
             .testimonial-quote {
-                font-size: 1.25rem;
+                font-size: 1.125rem;
             }
 
-            .final-cta-content h2 {
-                font-size: 1.75rem;
+            .nav-links {
+                display: none;
             }
 
             .customer-logos {
@@ -528,38 +625,48 @@
 </head>
 <body>
 
-    <!-- Navigation Placeholder -->
-    <div class="nav-placeholder">
-        [GoFreight Navigation Bar - Placeholder]
-    </div>
+    <!-- Navigation -->
+    <nav class="nav-placeholder">
+        <div class="nav-logo">GoFreight</div>
+        <div class="nav-links">
+            <span>Solutions ▾</span>
+            <span>Resources ▾</span>
+            <span>Customers</span>
+            <span>Pricing</span>
+        </div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <h1>Freight Forwarding Software That Works the Way You Do</h1>
-            <p class="hero-subhead">
-                Purpose-built solutions for ocean, air, and ground freight—from quote to delivery.
-                Manage every shipment, automate the busywork, and scale without the headaches.
-            </p>
-            <div class="hero-ctas">
-                <a href="/get-demo" class="btn-primary">Get a Demo</a>
-                <a href="#" class="btn-secondary">
-                    <span>&#9658;</span> Watch 2-Minute Overview
-                </a>
+            <div class="hero-content">
+                <h1>Freight Forwarding Software That Works the Way You Do</h1>
+                <p class="hero-subhead">
+                    Purpose-built solutions for ocean, air, and ground freight—from quote to delivery.
+                    Manage every shipment, automate the busywork, and scale without the headaches.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#" class="btn-outline">See How It Works</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">★</span>
+                        <span><strong>4.8/5</strong> on G2</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">✓</span>
+                        <span>125+ Carrier Integrations</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">⚡</span>
+                        <span>4-8 Week Implementation</span>
+                    </div>
+                </div>
             </div>
-            <div class="trust-badges">
-                <div class="trust-badge">
-                    <span class="trust-badge-icon">&#9733;</span>
-                    <span><strong>4.8/5</strong> on G2 (88 reviews)</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="trust-badge-icon">&#10003;</span>
-                    <span>125+ Carrier Integrations</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="trust-badge-icon">&#8634;</span>
-                    <span>4-8 Week Implementation</span>
-                </div>
+            <div class="hero-image">
+                [Dashboard Screenshot Placeholder]
             </div>
         </div>
     </section>
@@ -574,57 +681,57 @@
             <div class="solutions-grid">
                 <!-- Ocean Import -->
                 <div class="solution-card">
-                    <div class="solution-icon">&#128674;</div>
+                    <div class="solution-icon">🚢</div>
                     <h3>Ocean Import</h3>
                     <p>End-to-end FCL and LCL import management. Track containers, automate milestones, and eliminate demurrage surprises.</p>
-                    <a href="/solutions/ocean-import" class="solution-link">Learn More &rarr;</a>
+                    <a href="/solutions/ocean-import" class="solution-link">Learn More →</a>
                 </div>
 
                 <!-- Ocean Export -->
                 <div class="solution-card">
-                    <div class="solution-icon">&#128674;</div>
+                    <div class="solution-icon">🚢</div>
                     <h3>Ocean Export</h3>
                     <p>Streamline bookings, documentation, and carrier communication for every export shipment.</p>
-                    <a href="/solutions/ocean-export" class="solution-link">Learn More &rarr;</a>
+                    <a href="/solutions/ocean-export" class="solution-link">Learn More →</a>
                 </div>
 
                 <!-- Air Import -->
                 <div class="solution-card">
-                    <div class="solution-icon">&#9992;</div>
+                    <div class="solution-icon">✈️</div>
                     <h3>Air Import</h3>
                     <p>Fast-moving air freight deserves fast-moving software. Real-time AWB tracking and automated alerts.</p>
-                    <a href="/solutions/air-import" class="solution-link">Learn More &rarr;</a>
+                    <a href="/solutions/air-import" class="solution-link">Learn More →</a>
                 </div>
 
                 <!-- Air Export -->
                 <div class="solution-card">
-                    <div class="solution-icon">&#9992;</div>
+                    <div class="solution-icon">✈️</div>
                     <h3>Air Export</h3>
                     <p>Quote, book, and manage air exports with carrier connectivity and compliance built in.</p>
-                    <a href="/solutions/air-export" class="solution-link">Learn More &rarr;</a>
+                    <a href="/solutions/air-export" class="solution-link">Learn More →</a>
                 </div>
 
                 <!-- Trucking & Drayage -->
                 <div class="solution-card">
-                    <div class="solution-icon">&#128666;</div>
+                    <div class="solution-icon">🚛</div>
                     <h3>Trucking & Drayage</h3>
                     <p>Coordinate domestic trucking, drayage, and last-mile delivery from a single dashboard.</p>
-                    <a href="/solutions/trucking" class="solution-link">Learn More &rarr;</a>
+                    <a href="/solutions/trucking" class="solution-link">Learn More →</a>
                 </div>
 
                 <!-- Customs Brokerage -->
                 <div class="solution-card">
-                    <div class="solution-icon">&#128221;</div>
+                    <div class="solution-icon">📋</div>
                     <h3>Customs Brokerage</h3>
                     <p>Simplify ISF filing, AMS/ACI compliance, and customs documentation with automated workflows.</p>
-                    <a href="/solutions/customs" class="solution-link">Learn More &rarr;</a>
+                    <a href="/solutions/customs" class="solution-link">Learn More →</a>
                 </div>
 
                 <!-- CTA Card -->
                 <div class="solution-card solution-card-cta">
                     <h3>Not sure where to start?</h3>
                     <p>Tell us about your operations, and we'll show you the right solution.</p>
-                    <a href="/get-demo" class="btn-primary">Talk to an Expert</a>
+                    <a href="/get-demo" class="btn-primary" style="margin-top: 0.5rem;">Talk to an Expert</a>
                 </div>
             </div>
         </div>
@@ -638,28 +745,28 @@
             </div>
             <div class="value-props-grid">
                 <div class="value-prop">
-                    <div class="value-prop-icon">&#9201;</div>
-                    <div class="value-prop-stat">4-8 weeks</div>
-                    <h3>to go live</h3>
-                    <p>Not 6-12 months. Our implementation team gets you operational fast.</p>
+                    <div class="value-prop-icon">⏱️</div>
+                    <h3>4-8 weeks</h3>
+                    <h4>to go live</h4>
+                    <p>Not 6-12 months. Our team gets you operational fast.</p>
                 </div>
                 <div class="value-prop">
-                    <div class="value-prop-icon">&#128176;</div>
-                    <div class="value-prop-stat">Predictable</div>
-                    <h3>pricing</h3>
-                    <p>No per-transaction fees, no hidden modules. Know your costs upfront.</p>
+                    <div class="value-prop-icon">💰</div>
+                    <h3>Predictable</h3>
+                    <h4>pricing</h4>
+                    <p>No per-transaction fees, no hidden modules.</p>
                 </div>
                 <div class="value-prop">
-                    <div class="value-prop-icon">&#128106;</div>
-                    <div class="value-prop-stat">Teams</div>
-                    <h3>love it</h3>
-                    <p>Intuitive interface means staff are productive in days, not months.</p>
+                    <div class="value-prop-icon">👥</div>
+                    <h3>Teams</h3>
+                    <h4>love it</h4>
+                    <p>Intuitive interface—productive in days, not months.</p>
                 </div>
                 <div class="value-prop">
-                    <div class="value-prop-icon">&#128222;</div>
-                    <div class="value-prop-stat">24-hour</div>
-                    <h3>support</h3>
-                    <p>Real humans, real help. Email response within 24 hours, dedicated CSM included.</p>
+                    <div class="value-prop-icon">💬</div>
+                    <h3>24-hour</h3>
+                    <h4>support</h4>
+                    <p>Real humans, real help. Dedicated CSM included.</p>
                 </div>
             </div>
         </div>
@@ -674,34 +781,34 @@
             </div>
             <div class="pain-points-grid">
                 <a href="/get-demo" class="pain-point-card">
-                    <div class="pain-point-icon">&#128202;</div>
+                    <div class="pain-point-icon">📊</div>
                     <span class="pain-point-text">"We're drowning in spreadsheets"</span>
-                    <span class="pain-point-arrow">&rarr;</span>
+                    <span class="pain-point-arrow">→</span>
                 </a>
                 <a href="/compare/gofreight-vs-cargowise" class="pain-point-card">
-                    <div class="pain-point-icon">&#128736;</div>
-                    <span class="pain-point-text">"Our current software is too complex"</span>
-                    <span class="pain-point-arrow">&rarr;</span>
+                    <div class="pain-point-icon">🔧</div>
+                    <span class="pain-point-text">"Our software is too complex"</span>
+                    <span class="pain-point-arrow">→</span>
                 </a>
                 <a href="/pricing" class="pain-point-card">
-                    <div class="pain-point-icon">&#128178;</div>
-                    <span class="pain-point-text">"We're paying too much for what we use"</span>
-                    <span class="pain-point-arrow">&rarr;</span>
+                    <div class="pain-point-icon">💸</div>
+                    <span class="pain-point-text">"We're overpaying for what we use"</span>
+                    <span class="pain-point-arrow">→</span>
                 </a>
                 <a href="/solutions/ocean-import" class="pain-point-card">
-                    <div class="pain-point-icon">&#128065;</div>
+                    <div class="pain-point-icon">👁️</div>
                     <span class="pain-point-text">"We can't see shipments in real-time"</span>
-                    <span class="pain-point-arrow">&rarr;</span>
+                    <span class="pain-point-arrow">→</span>
                 </a>
                 <a href="/solutions/accounting" class="pain-point-card">
-                    <div class="pain-point-icon">&#128197;</div>
+                    <div class="pain-point-icon">📅</div>
                     <span class="pain-point-text">"Month-end close takes forever"</span>
-                    <span class="pain-point-arrow">&rarr;</span>
+                    <span class="pain-point-arrow">→</span>
                 </a>
                 <a href="/solutions/ocean-import" class="pain-point-card">
-                    <div class="pain-point-icon">&#9888;</div>
-                    <span class="pain-point-text">"We keep getting hit with demurrage fees"</span>
-                    <span class="pain-point-arrow">&rarr;</span>
+                    <div class="pain-point-icon">⚠️</div>
+                    <span class="pain-point-text">"We keep getting hit with demurrage"</span>
+                    <span class="pain-point-arrow">→</span>
                 </a>
             </div>
         </div>
@@ -718,15 +825,18 @@
                 <span class="customer-logo">Transmodal</span>
                 <span class="customer-logo">Seamax Freight</span>
             </div>
-            <p class="testimonial-quote">
-                "<span>50% time saved</span> on daily operations. Switching to GoFreight was a game-changer."
-            </p>
-            <p class="testimonial-author">
-                — Jason Hsu, Owner, Whale US
-            </p>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">
+                    "<span>50% time saved</span> on daily operations. Switching to GoFreight was a game-changer."
+                </p>
+                <p class="testimonial-author">
+                    — <strong>Jason Hsu</strong>, Owner, Whale US
+                </p>
+            </div>
             <div class="g2-badge">
-                <span class="g2-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span class="g2-text"><strong>4.8/5</strong> on G2 &nbsp;|&nbsp; 88 Reviews &nbsp;|&nbsp; #1 in Ease of Use</span>
+                <span class="g2-stars">★★★★★</span>
+                <span class="g2-rating">4.8</span>
+                <span class="g2-text">88 reviews on G2 · #1 Ease of Use</span>
             </div>
         </div>
     </section>
@@ -743,7 +853,7 @@
 
     <!-- Footer Placeholder -->
     <div class="footer-placeholder">
-        [GoFreight Footer - Placeholder]
+        [GoFreight Footer]
     </div>
 
 </body>
