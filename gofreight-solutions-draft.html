@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Forwarding Solutions | Ocean, Air & Ground | GoFreight</title>
+    <meta name="description" content="Explore GoFreight's freight forwarding solutions for ocean, air, and ground shipping. Purpose-built software to streamline operations. Get a demo today.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #01aac1;
+            --accent-blue: #01d7f4;
+            --teal: #017d8e;
+            --dark-gray: #111111;
+            --medium-gray: #2a2a2a;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --success-green: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Navigation Placeholder */
+        .nav-placeholder {
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e5e5e5;
+            text-align: center;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subhead {
+            font-size: 1.25rem;
+            color: #b0b0b0;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--teal);
+        }
+
+        .btn-secondary {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            text-decoration: underline;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #b0b0b0;
+        }
+
+        .trust-badge-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: white;
+        }
+
+        /* Solutions Grid */
+        .solutions-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .solution-card {
+            background: var(--white);
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 8px 30px rgba(1, 170, 193, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .solution-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .solution-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark-gray);
+        }
+
+        .solution-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .solution-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .solution-link:hover {
+            color: var(--teal);
+        }
+
+        .solution-card-cta {
+            background: linear-gradient(135deg, var(--light-gray) 0%, #eee 100%);
+            border: 2px dashed #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .solution-card-cta h3 {
+            font-size: 1.125rem;
+        }
+
+        .solution-card-cta p {
+            margin-bottom: 1rem;
+        }
+
+        /* Value Props Section */
+        .value-props-section {
+            padding: 5rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .value-props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-prop {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .value-prop-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 1.75rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .value-prop-stat {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-prop h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .value-prop p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Pain Points Section */
+        .pain-points-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .pain-point-card {
+            display: flex;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            background: var(--light-gray);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--dark-gray);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .pain-point-card:hover {
+            background: var(--white);
+            border-left-color: var(--primary-blue);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .pain-point-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .pain-point-card:hover .pain-point-icon {
+            background: var(--primary-blue);
+        }
+
+        .pain-point-text {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .pain-point-arrow {
+            margin-left: auto;
+            color: #ccc;
+            font-size: 1.25rem;
+        }
+
+        .pain-point-card:hover .pain-point-arrow {
+            color: var(--primary-blue);
+        }
+
+        /* Social Proof Section */
+        .social-proof-section {
+            padding: 5rem 2rem;
+            background: var(--dark-gray);
+            color: var(--white);
+        }
+
+        .social-proof-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .customer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            opacity: 0.7;
+        }
+
+        .customer-logo {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #999;
+            padding: 0.5rem 1rem;
+            border: 1px solid #444;
+            border-radius: 4px;
+        }
+
+        .testimonial-quote {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .testimonial-quote span {
+            color: var(--accent-blue);
+        }
+
+        .testimonial-author {
+            color: #999;
+            font-size: 1rem;
+        }
+
+        .g2-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--medium-gray);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 2.5rem;
+        }
+
+        .g2-stars {
+            color: #f59e0b;
+            font-size: 1.25rem;
+        }
+
+        .g2-text {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        .g2-text strong {
+            color: var(--white);
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta-content h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta-content p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--teal);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-white:hover {
+            background: var(--light-gray);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .final-cta-phone {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .final-cta-phone a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* Footer Placeholder */
+        .footer-placeholder {
+            background: var(--dark-gray);
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.875rem;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subhead {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .testimonial-quote {
+                font-size: 1.25rem;
+            }
+
+            .final-cta-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .customer-logos {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Placeholder -->
+    <div class="nav-placeholder">
+        [GoFreight Navigation Bar - Placeholder]
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Freight Forwarding Software That Works the Way You Do</h1>
+            <p class="hero-subhead">
+                Purpose-built solutions for ocean, air, and ground freight—from quote to delivery.
+                Manage every shipment, automate the busywork, and scale without the headaches.
+            </p>
+            <div class="hero-ctas">
+                <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                <a href="#" class="btn-secondary">
+                    <span>&#9658;</span> Watch 2-Minute Overview
+                </a>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">&#9733;</span>
+                    <span><strong>4.8/5</strong> on G2 (88 reviews)</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">&#10003;</span>
+                    <span>125+ Carrier Integrations</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">&#8634;</span>
+                    <span>4-8 Week Implementation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Grid Section -->
+    <section class="solutions-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Our Solutions</h2>
+                <p>Everything you need to manage ocean, air, and ground freight operations from a single platform.</p>
+            </div>
+            <div class="solutions-grid">
+                <!-- Ocean Import -->
+                <div class="solution-card">
+                    <div class="solution-icon">&#128674;</div>
+                    <h3>Ocean Import</h3>
+                    <p>End-to-end FCL and LCL import management. Track containers, automate milestones, and eliminate demurrage surprises.</p>
+                    <a href="/solutions/ocean-import" class="solution-link">Learn More &rarr;</a>
+                </div>
+
+                <!-- Ocean Export -->
+                <div class="solution-card">
+                    <div class="solution-icon">&#128674;</div>
+                    <h3>Ocean Export</h3>
+                    <p>Streamline bookings, documentation, and carrier communication for every export shipment.</p>
+                    <a href="/solutions/ocean-export" class="solution-link">Learn More &rarr;</a>
+                </div>
+
+                <!-- Air Import -->
+                <div class="solution-card">
+                    <div class="solution-icon">&#9992;</div>
+                    <h3>Air Import</h3>
+                    <p>Fast-moving air freight deserves fast-moving software. Real-time AWB tracking and automated alerts.</p>
+                    <a href="/solutions/air-import" class="solution-link">Learn More &rarr;</a>
+                </div>
+
+                <!-- Air Export -->
+                <div class="solution-card">
+                    <div class="solution-icon">&#9992;</div>
+                    <h3>Air Export</h3>
+                    <p>Quote, book, and manage air exports with carrier connectivity and compliance built in.</p>
+                    <a href="/solutions/air-export" class="solution-link">Learn More &rarr;</a>
+                </div>
+
+                <!-- Trucking & Drayage -->
+                <div class="solution-card">
+                    <div class="solution-icon">&#128666;</div>
+                    <h3>Trucking & Drayage</h3>
+                    <p>Coordinate domestic trucking, drayage, and last-mile delivery from a single dashboard.</p>
+                    <a href="/solutions/trucking" class="solution-link">Learn More &rarr;</a>
+                </div>
+
+                <!-- Customs Brokerage -->
+                <div class="solution-card">
+                    <div class="solution-icon">&#128221;</div>
+                    <h3>Customs Brokerage</h3>
+                    <p>Simplify ISF filing, AMS/ACI compliance, and customs documentation with automated workflows.</p>
+                    <a href="/solutions/customs" class="solution-link">Learn More &rarr;</a>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="solution-card solution-card-cta">
+                    <h3>Not sure where to start?</h3>
+                    <p>Tell us about your operations, and we'll show you the right solution.</p>
+                    <a href="/get-demo" class="btn-primary">Talk to an Expert</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Props Section -->
+    <section class="value-props-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Why Freight Forwarders Choose GoFreight</h2>
+            </div>
+            <div class="value-props-grid">
+                <div class="value-prop">
+                    <div class="value-prop-icon">&#9201;</div>
+                    <div class="value-prop-stat">4-8 weeks</div>
+                    <h3>to go live</h3>
+                    <p>Not 6-12 months. Our implementation team gets you operational fast.</p>
+                </div>
+                <div class="value-prop">
+                    <div class="value-prop-icon">&#128176;</div>
+                    <div class="value-prop-stat">Predictable</div>
+                    <h3>pricing</h3>
+                    <p>No per-transaction fees, no hidden modules. Know your costs upfront.</p>
+                </div>
+                <div class="value-prop">
+                    <div class="value-prop-icon">&#128106;</div>
+                    <div class="value-prop-stat">Teams</div>
+                    <h3>love it</h3>
+                    <p>Intuitive interface means staff are productive in days, not months.</p>
+                </div>
+                <div class="value-prop">
+                    <div class="value-prop-icon">&#128222;</div>
+                    <div class="value-prop-stat">24-hour</div>
+                    <h3>support</h3>
+                    <p>Real humans, real help. Email response within 24 hours, dedicated CSM included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What's Holding Your Operations Back?</h2>
+                <p>Select a challenge to see how GoFreight can help.</p>
+            </div>
+            <div class="pain-points-grid">
+                <a href="/get-demo" class="pain-point-card">
+                    <div class="pain-point-icon">&#128202;</div>
+                    <span class="pain-point-text">"We're drowning in spreadsheets"</span>
+                    <span class="pain-point-arrow">&rarr;</span>
+                </a>
+                <a href="/compare/gofreight-vs-cargowise" class="pain-point-card">
+                    <div class="pain-point-icon">&#128736;</div>
+                    <span class="pain-point-text">"Our current software is too complex"</span>
+                    <span class="pain-point-arrow">&rarr;</span>
+                </a>
+                <a href="/pricing" class="pain-point-card">
+                    <div class="pain-point-icon">&#128178;</div>
+                    <span class="pain-point-text">"We're paying too much for what we use"</span>
+                    <span class="pain-point-arrow">&rarr;</span>
+                </a>
+                <a href="/solutions/ocean-import" class="pain-point-card">
+                    <div class="pain-point-icon">&#128065;</div>
+                    <span class="pain-point-text">"We can't see shipments in real-time"</span>
+                    <span class="pain-point-arrow">&rarr;</span>
+                </a>
+                <a href="/solutions/accounting" class="pain-point-card">
+                    <div class="pain-point-icon">&#128197;</div>
+                    <span class="pain-point-text">"Month-end close takes forever"</span>
+                    <span class="pain-point-arrow">&rarr;</span>
+                </a>
+                <a href="/solutions/ocean-import" class="pain-point-card">
+                    <div class="pain-point-icon">&#9888;</div>
+                    <span class="pain-point-text">"We keep getting hit with demurrage fees"</span>
+                    <span class="pain-point-arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof-section">
+        <div class="social-proof-content">
+            <div class="customer-logos">
+                <span class="customer-logo">Whale US</span>
+                <span class="customer-logo">Headwin Global</span>
+                <span class="customer-logo">TG Cargo</span>
+                <span class="customer-logo">GC Logistics</span>
+                <span class="customer-logo">Transmodal</span>
+                <span class="customer-logo">Seamax Freight</span>
+            </div>
+            <p class="testimonial-quote">
+                "<span>50% time saved</span> on daily operations. Switching to GoFreight was a game-changer."
+            </p>
+            <p class="testimonial-author">
+                — Jason Hsu, Owner, Whale US
+            </p>
+            <div class="g2-badge">
+                <span class="g2-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="g2-text"><strong>4.8/5</strong> on G2 &nbsp;|&nbsp; 88 Reviews &nbsp;|&nbsp; #1 in Ease of Use</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section">
+        <div class="final-cta-content">
+            <h2>Ready to Run Your Freight Business, Not Your Software?</h2>
+            <p>See how GoFreight can streamline your operations with a personalized demo.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+            <p class="final-cta-phone">Or call us: <a href="tel:+1-888-123-4567">1-888-123-4567</a></p>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div class="footer-placeholder">
+        [GoFreight Footer - Placeholder]
+    </div>
+
+</body>
+</html>
