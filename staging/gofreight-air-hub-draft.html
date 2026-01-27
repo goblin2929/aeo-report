@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Freight Management Software | AWB Automation | GoFreight</title>
+    <meta name="description" content="Manage air import and export operations in one platform. AWB automation, MAWB/HAWB generation, AES filing, and airline EDI. Get a demo.">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Air Freight Management Software",
+        "description": "Complete air freight management system for import and export operations. AWB automation, compliance filing, and workflow automation.",
+        "url": "https://gofreight.com/solutions/air-freight-management",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://gofreight.com/solutions"},
+                {"@type": "ListItem", "position": 3, "name": "Air Freight Management", "item": "https://gofreight.com/solutions/air-freight-management"}
+            ]
+        },
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "GoFreight Air Freight Management",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web-based",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "Contact for pricing"
+            }
+        }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+            --gf-warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Roboto', -apple-system, sans-serif;
+            color: var(--gf-text-primary);
+            line-height: 1.6;
+            background: var(--gf-bg-white);
+        }
+
+        /* Navigation */
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        /* Breadcrumb */
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        /* Product Cards */
+        .products-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .product-card { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 16px; padding: 2rem; transition: all 0.3s; }
+        .product-card:hover { border-color: var(--gf-teal); box-shadow: 0 8px 30px rgba(1,170,193,0.12); }
+        .product-card h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .product-card p { color: var(--gf-text-secondary); margin-bottom: 1.25rem; line-height: 1.6; }
+        .product-features { list-style: none; margin-bottom: 1.5rem; }
+        .product-features li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; color: var(--gf-text-secondary); font-size: 0.95rem; }
+        .product-features li::before { content: "✓"; position: absolute; left: 0; color: var(--gf-teal); font-weight: 600; }
+        .product-link { color: var(--gf-teal); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem; }
+        .product-link:hover { color: var(--gf-teal-dark); }
+
+        /* Features Section */
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        /* AWB Section */
+        .awb-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .awb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .awb-content h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; }
+        .awb-content p { color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .awb-list { list-style: none; }
+        .awb-list li { padding: 0.75rem 0; padding-left: 2rem; position: relative; border-bottom: 1px solid var(--gf-border); }
+        .awb-list li:last-child { border-bottom: none; }
+        .awb-list li::before { content: "✓"; position: absolute; left: 0; color: var(--gf-success); font-weight: 700; font-size: 1.1rem; }
+        .awb-list strong { color: var(--gf-text-primary); }
+        .awb-image { background: var(--gf-bg-light); border-radius: 12px; padding: 2rem; text-align: center; color: var(--gf-text-light); min-height: 300px; display: flex; align-items: center; justify-content: center; }
+
+        /* Compliance Section */
+        .compliance-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .compliance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .compliance-content h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; }
+        .compliance-content p { color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .compliance-list { list-style: none; }
+        .compliance-list li { padding: 0.75rem 0; padding-left: 2rem; position: relative; border-bottom: 1px solid var(--gf-border); }
+        .compliance-list li:last-child { border-bottom: none; }
+        .compliance-list li::before { content: "✓"; position: absolute; left: 0; color: var(--gf-success); font-weight: 700; font-size: 1.1rem; }
+        .compliance-list strong { color: var(--gf-text-primary); }
+        .compliance-image { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 12px; padding: 2rem; text-align: center; color: var(--gf-text-light); min-height: 300px; display: flex; align-items: center; justify-content: center; }
+
+        /* Integrations */
+        .integrations-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .integrations-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .integration-badge { background: var(--gf-bg-light); border: 1px solid var(--gf-border); border-radius: 8px; padding: 0.75rem 1.25rem; font-size: 0.9rem; font-weight: 500; color: var(--gf-text-primary); }
+
+        /* Testimonial */
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-white); border-radius: 16px; padding: 2.5rem; text-align: center; border: 1px solid var(--gf-border); }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+
+        /* CTA Section */
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        /* FAQ Section */
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-light); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Footer */
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container, .awb-grid, .compliance-grid { grid-template-columns: 1fr; }
+            .products-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/solutions">Solutions</a><span>›</span>
+        Air Freight Management
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Air Freight Management Software for Import & Export</h1>
+                <p class="hero-subhead">
+                    Manage air cargo from quote to delivery. Automate AWB generation, file AES directly, and send e-AWB data to airlines via EDI—all in one platform.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#features" class="btn-outline">See Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">40%</div>
+                        <div class="hero-stat-label">More shipments, same team</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">50%</div>
+                        <div class="hero-stat-label">Time savings</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">200%</div>
+                        <div class="hero-stat-label">Efficiency gain</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Air Freight Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Air Import & Export Solutions</h2>
+                <p>Two specialized workflows designed for how air freight actually moves.</p>
+            </div>
+            <div class="products-grid">
+                <!-- Air Import -->
+                <div class="product-card">
+                    <h3>✈️ Air Import</h3>
+                    <p>Manage inbound air shipments with automated AWB handling, arrival notices, and streamlined quote-to-invoice workflows.</p>
+                    <ul class="product-features">
+                        <li>Automated AWB number management</li>
+                        <li>Auto-fill default charges and remarks</li>
+                        <li>Quote-to-shipment conversion</li>
+                        <li>Automated arrival notices</li>
+                        <li>Branded customer portal</li>
+                    </ul>
+                    <a href="/solutions/air-import" class="product-link">Learn more about Air Import →</a>
+                </div>
+
+                <!-- Air Export -->
+                <div class="product-card">
+                    <h3>✈️ Air Export</h3>
+                    <p>Streamline outbound air cargo with MAWB/HAWB automation, AES filing, and direct EDI to airlines.</p>
+                    <ul class="product-features">
+                        <li>Auto-generate MAWB and HAWB</li>
+                        <li>e-AWB via EDI to airlines</li>
+                        <li>Direct AES and AFR filing</li>
+                        <li>Centralized rate management</li>
+                        <li>Batch arrival notice delivery</li>
+                    </ul>
+                    <a href="/solutions/air-export" class="product-link">Learn more about Air Export →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Key Features for Air Freight Operations</h2>
+                <p>Everything your team needs to manage air shipments efficiently.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>AWB Automation</h3>
+                    <p>Auto-generate MAWB and HAWB documents from shipment data. Maintain AWB number sequences and IATA codes automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Quote & Rate Management</h3>
+                    <p>Access contract and spot rates in one place. Generate quotes from templates and convert to shipments with one click.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Airline EDI</h3>
+                    <p>Send e-AWB data directly to airlines via EDI integration. Reduce manual entry and speed up cargo acceptance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Task Management</h3>
+                    <p>Track pending tasks, follow-ups, and confirmations. Never miss an arrival notice or customer update.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Customer Portal</h3>
+                    <p>Give customers a branded portal to track shipments, view documents, and get automated status updates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Invoicing & Charges</h3>
+                    <p>Auto-populate charges from quotes. Built-in logic prevents duplicate or missing charges. Calculate agent profit shares automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWB Section -->
+    <section class="awb-section">
+        <div class="section-container">
+            <div class="awb-grid">
+                <div class="awb-content">
+                    <h2>MAWB & HAWB Automation</h2>
+                    <p>Generate air waybills automatically from shipment data. No more manual typing or copy-paste errors.</p>
+                    <ul class="awb-list">
+                        <li><strong>Auto-generate MAWB</strong> — Create Master Air Waybills from pre-set templates with one click</li>
+                        <li><strong>Auto-generate HAWB</strong> — Create House Air Waybills linked to shipment data</li>
+                        <li><strong>AWB Number Management</strong> — Maintain sequences and prevent duplicates automatically</li>
+                        <li><strong>IATA Code Maintenance</strong> — Keep airline and agent codes up to date</li>
+                        <li><strong>e-AWB Transmission</strong> — Send electronic AWB data to airlines via EDI</li>
+                    </ul>
+                </div>
+                <div class="awb-image">
+                    [AWB Generation Screenshot]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="compliance-section">
+        <div class="section-container">
+            <div class="compliance-grid">
+                <div class="compliance-image">
+                    [Compliance Dashboard Screenshot]
+                </div>
+                <div class="compliance-content">
+                    <h2>Air Export Compliance, Automated</h2>
+                    <p>Stay compliant with U.S. and international export requirements. File directly from GoFreight without switching systems.</p>
+                    <ul class="compliance-list">
+                        <li><strong>AES Filing</strong> — Submit Automated Export System filings for U.S. air exports directly from shipment data</li>
+                        <li><strong>AFR LPT-II Filing</strong> — File for air cargo entering Japan</li>
+                        <li><strong>Filing Status Tracking</strong> — Monitor submission status within your operational workflow</li>
+                        <li><strong>Deadline Management</strong> — Automated alerts to prevent missed filing deadlines</li>
+                        <li><strong>Audit Trail</strong> — Complete filing history for compliance reviews</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="integrations-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Airline & System Integrations</h2>
+                <p>Connect to airlines and customs systems for streamlined operations.</p>
+            </div>
+            <div class="integrations-grid">
+                <span class="integration-badge">e-AWB / EDI</span>
+                <span class="integration-badge">AES Direct</span>
+                <span class="integration-badge">AFR LPT-II</span>
+                <span class="integration-badge">IATA Cargo-XML</span>
+                <span class="integration-badge">QuickBooks</span>
+                <span class="integration-badge">Xero</span>
+                <span class="integration-badge">+ More integrations</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">
+                "We handle <span>40% more shipments</span> with the same team. GoFreight's workflows help new hires get productive faster."
+            </p>
+            <p class="testimonial-author">
+                — <strong>Kanav Bhalla</strong>, Owner, Transmodal Group (scaled 5 → 25 employees)
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is air freight management software?</div>
+                    <div class="faq-answer">Air freight management software is a platform that helps freight forwarders manage air cargo shipments from booking to delivery. It includes AWB automation, compliance filing (AES), rate management, and customer communication tools.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can GoFreight generate MAWB and HAWB automatically?</div>
+                    <div class="faq-answer">Yes. GoFreight auto-generates Master Air Waybills (MAWB) and House Air Waybills (HAWB) from shipment data using pre-set templates. AWB number sequences are maintained automatically.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight support e-AWB transmission?</div>
+                    <div class="faq-answer">Yes. GoFreight can send electronic AWB data directly to airlines via EDI integration, reducing manual entry at cargo acceptance and speeding up the shipping process.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I file AES directly from GoFreight?</div>
+                    <div class="faq-answer">Yes. GoFreight includes direct AES (Automated Export System) filing for U.S. air exports. Data flows from your shipment record into the filing, and you can track submission status within the platform.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Streamline Your Air Freight Operations?</h2>
+            <p>See how GoFreight can help you manage import and export shipments more efficiently.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
