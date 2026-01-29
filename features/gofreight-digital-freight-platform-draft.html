@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Freight Platform | Digital Forwarding | GoFreight</title>
+    <meta name="description" content="Digitize your freight forwarding. Online quoting, electronic documents, customer portal, mobile access. Modern platform for modern forwarders.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Digital Freight Platform for Modern Forwarders",
+        "description": "Digitize your entire forwarding operation from quoting to delivery.",
+        "url": "https://gofreight.com/features/digital-freight-platform",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://gofreight.com/features"},
+                {"@type": "ListItem", "position": 3, "name": "Digital Freight Platform", "item": "https://gofreight.com/features/digital-freight-platform"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a digital freight platform?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A digital freight platform provides freight forwarders with modern, cloud-based tools to manage operations electronically—from online quoting and booking through digital documentation and customer portals. It replaces paper-based workflows with efficient digital processes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does digitization improve freight forwarding?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Digitization reduces manual data entry, eliminates paper documents, speeds up quote turnaround, provides customers with self-service access, and enables remote work. Forwarders using digital platforms typically see significant efficiency improvements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can my customers access shipment information online?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight includes a branded customer portal where shippers can track shipments, download documents, view invoices, and receive automated notifications—all without calling your team."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight support paperless operations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight enables fully digital operations with electronic document generation (BOL, AWB, commercial docs), digital signatures, online invoicing, and automated customer communications. Paper is optional, not required."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .benefits-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .benefit-card { background: var(--gf-bg-light); border-radius: 12px; padding: 2rem; }
+        .benefit-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .benefit-card p { color: var(--gf-text-secondary); font-size: 0.95rem; }
+        .benefit-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-light); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+        .testimonial-result { margin-top: 1rem; font-size: 0.9rem; color: var(--gf-teal); font-weight: 600; }
+
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .benefits-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .benefits-grid, .features-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/features">Features</a><span>›</span>
+        Digital Freight Platform
+    </div>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Digital Freight Platform for Modern Forwarders</h1>
+                <p class="hero-subhead">
+                    Digitize your entire forwarding operation. From quoting to delivery, give your team and customers a modern digital experience.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#features" class="btn-outline">See Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">End-to-End</div>
+                        <div class="hero-stat-label">Digital</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Customer</div>
+                        <div class="hero-stat-label">Portal</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Mobile</div>
+                        <div class="hero-stat-label">Access</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Digital Platform Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>A digital freight platform</strong> provides freight forwarders with modern, cloud-based tools to manage operations electronically—from online quoting and booking through digital documentation and customer portals. It replaces paper-based workflows with efficient digital processes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Digital Transformation Benefits</h2>
+                <p>Why forwarders are going digital.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Faster Quote Turnaround</h3>
+                    <p>Build and send quotes in minutes, not hours. Win more business with speed.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📄</div>
+                    <h3>Paperless Documentation</h3>
+                    <p>Generate BOL, AWB, and commercial docs digitally. No more paper shuffling.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Customer Self-Service</h3>
+                    <p>Let customers track, view docs, and get updates without calling you.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📍</div>
+                    <h3>Real-Time Visibility</h3>
+                    <p>See shipment status across your entire operation instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Digital Platform Features</h2>
+                <p>Everything you need for modern freight forwarding.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Digital Quoting</h3>
+                    <p>Online quote generation and delivery. Professional quotes in minutes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Electronic Documentation</h3>
+                    <p>BOL, AWB, commercial docs. Generate from shipment data, share digitally.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Customer Portal</h3>
+                    <p>Self-service shipment visibility. Branded portal for your customers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Automated Workflows</h3>
+                    <p>Reduce manual data entry. Tasks and notifications trigger automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Digital Payments</h3>
+                    <p>Online invoicing and payment. Faster collections, less AR hassle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Platform</h3>
+                    <p>Access operations anywhere. Full functionality on any device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">
+                "GoFreight is my first choice because it's a <span>perfect package</span>."
+            </p>
+            <p class="testimonial-author">
+                — <strong>Rebecca Zhang</strong>, CEO, TG Cargo Inc.
+            </p>
+            <p class="testimonial-result">200% efficiency improvement through digitization</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is a digital freight platform?</div>
+                    <div class="faq-answer">A digital freight platform provides freight forwarders with modern, cloud-based tools to manage operations electronically—from online quoting and booking through digital documentation and customer portals. It replaces paper-based workflows with efficient digital processes.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does digitization improve freight forwarding?</div>
+                    <div class="faq-answer">Digitization reduces manual data entry, eliminates paper documents, speeds up quote turnaround, provides customers with self-service access, and enables remote work. Forwarders using digital platforms typically see significant efficiency improvements.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can my customers access shipment information online?</div>
+                    <div class="faq-answer">Yes. GoFreight includes a branded customer portal where shippers can track shipments, download documents, view invoices, and receive automated notifications—all without calling your team.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight support paperless operations?</div>
+                    <div class="faq-answer">Yes. GoFreight enables fully digital operations with electronic document generation (BOL, AWB, commercial docs), digital signatures, online invoicing, and automated customer communications. Paper is optional, not required.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Digitize Your Freight Operations?</h2>
+            <p>See how GoFreight modernizes freight forwarding.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>

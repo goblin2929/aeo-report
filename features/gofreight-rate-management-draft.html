@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Rate Management Software | Centralized Rates | GoFreight</title>
+    <meta name="description" content="Store contract and spot rates in one searchable database. Quote faster, never use expired rates. Multi-currency support for global forwarding.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Freight Rate Management Software",
+        "description": "Centralize carrier rates, contract agreements, and tariffs in a searchable database.",
+        "url": "https://gofreight.com/features/rate-management",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://gofreight.com/features"},
+                {"@type": "ListItem", "position": 3, "name": "Rate Management", "item": "https://gofreight.com/features/rate-management"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is freight rate management software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freight rate management software centralizes carrier rates, contract agreements, and tariffs in a searchable database. Instead of hunting through emails and spreadsheets, forwarders can instantly find the right rate when building quotes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I store both contract and spot rates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight stores both contract rates with validity periods and spot rates for one-time use. Both are searchable and can be pulled directly into customer quotes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I import rates from carriers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can manually enter rates or import them via spreadsheet upload. GoFreight accepts rate files from major carriers and maps them to your rate database structure."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight support multi-currency rates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight handles multi-currency rates with built-in exchange rate management. Store rates in the carrier's currency and convert automatically when quoting customers in their preferred currency."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        .benefits-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .benefits-content h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; }
+        .benefits-list { list-style: none; }
+        .benefits-list li { padding: 0.75rem 0; padding-left: 2rem; position: relative; border-bottom: 1px solid var(--gf-border); }
+        .benefits-list li:last-child { border-bottom: none; }
+        .benefits-list li::before { content: "✓"; position: absolute; left: 0; color: var(--gf-success); font-weight: 700; font-size: 1.1rem; }
+        .benefits-image { background: var(--gf-bg-light); border-radius: 12px; padding: 2rem; text-align: center; color: var(--gf-text-light); min-height: 300px; display: flex; align-items: center; justify-content: center; }
+
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-white); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+        .testimonial-result { margin-top: 1rem; font-size: 0.9rem; color: var(--gf-teal); font-weight: 600; }
+
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-light); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container, .benefits-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/features">Features</a><span>›</span>
+        Rate Management
+    </div>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Freight Rate Management Software</h1>
+                <p class="hero-subhead">
+                    Store, search, and use all your rates in one place. Contract rates, spot rates, and carrier tariffs—instantly accessible when quoting.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#features" class="btn-outline">See Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">All Rates</div>
+                        <div class="hero-stat-label">Centralized</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Instant</div>
+                        <div class="hero-stat-label">Quote faster</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Never</div>
+                        <div class="hero-stat-label">Expired rates</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Rate Management Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>Freight rate management software</strong> centralizes carrier rates, contract agreements, and tariffs in a searchable database. Instead of hunting through emails and spreadsheets, forwarders can instantly find the right rate when building quotes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Rate Management Features</h2>
+                <p>All your rates in one searchable place.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🗄️</div>
+                    <h3>Centralized Rate Database</h3>
+                    <p>All carriers, all modes, one place. Stop hunting through emails and spreadsheets.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Contract Rate Management</h3>
+                    <p>Store negotiated rates with validity periods. Know exactly when contracts expire.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Spot Rate Entry</h3>
+                    <p>Quick entry for one-time rates. Capture spot rates as they come in.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Rate Search</h3>
+                    <p>Find the best rate by lane, carrier, or service level in seconds.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Expiration Alerts</h3>
+                    <p>Get notified before rates expire. Never accidentally quote an expired rate.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Quote Integration</h3>
+                    <p>Pull rates directly into customer quotes. No copy-paste, no errors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="section-container">
+            <div class="benefits-grid">
+                <div class="benefits-content">
+                    <h2>Stop Hunting for Rates</h2>
+                    <ul class="benefits-list">
+                        <li><strong>Quote faster</strong> with instant rate access</li>
+                        <li><strong>Never accidentally quote expired rates</strong></li>
+                        <li><strong>Compare options</strong> across carriers quickly</li>
+                        <li><strong>Track rate trends</strong> over time</li>
+                        <li><strong>Multi-currency support</strong> for global lanes</li>
+                    </ul>
+                </div>
+                <div class="benefits-image">
+                    [Rate Search Interface Screenshot]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">
+                "We used to handle 100 shipments a month, and suddenly, we were managing <span>200</span>."
+            </p>
+            <p class="testimonial-author">
+                — <strong>Joan Chou</strong>, VP, Headwin Global Logistics
+            </p>
+            <p class="testimonial-result">2x shipment capacity with the same team</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is freight rate management software?</div>
+                    <div class="faq-answer">Freight rate management software centralizes carrier rates, contract agreements, and tariffs in a searchable database. Instead of hunting through emails and spreadsheets, forwarders can instantly find the right rate when building quotes.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I store both contract and spot rates?</div>
+                    <div class="faq-answer">Yes. GoFreight stores both contract rates with validity periods and spot rates for one-time use. Both are searchable and can be pulled directly into customer quotes.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I import rates from carriers?</div>
+                    <div class="faq-answer">You can manually enter rates or import them via spreadsheet upload. GoFreight accepts rate files from major carriers and maps them to your rate database structure.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight support multi-currency rates?</div>
+                    <div class="faq-answer">Yes. GoFreight handles multi-currency rates with built-in exchange rate management. Store rates in the carrier's currency and convert automatically when quoting customers in their preferred currency.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Centralize Your Rates?</h2>
+            <p>See how GoFreight makes rate management simple and searchable.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>

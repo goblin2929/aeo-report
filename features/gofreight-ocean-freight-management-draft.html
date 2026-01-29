@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Freight Management Software | FCL LCL | GoFreight</title>
+    <meta name="description" content="Manage FCL, LCL, and consolidation in one system. Container tracking across 75+ carriers. Ocean documentation and agent settlements built-in.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Ocean Freight Management Software",
+        "description": "Specialized tools for sea cargo operations—FCL, LCL, container tracking, and ocean documentation.",
+        "url": "https://gofreight.com/features/ocean-freight-management",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://gofreight.com/features"},
+                {"@type": "ListItem", "position": 3, "name": "Ocean Freight Management", "item": "https://gofreight.com/features/ocean-freight-management"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is ocean freight management software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ocean freight management software provides freight forwarders with specialized tools for sea cargo operations—FCL and LCL shipment management, container tracking across carriers, consolidation workflows, and ocean-specific documentation like bills of lading and ISF filings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight handle both FCL and LCL?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight manages Full Container Load (FCL) shipments as well as Less-than-Container Load (LCL) with full consolidation workflow support. You can group multiple shippers, manage house and master bills, and handle split invoicing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does container tracking work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight integrates with 75+ ocean carriers for real-time container tracking. Status updates flow automatically—vessel departure, transshipment, port arrival, customs clearance, and delivery. Automated alerts notify you of key milestones and potential delays."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I manage consolidations in GoFreight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight supports full LCL consolidation workflows. Create consolidations with multiple shippers, generate house and master bills of lading, track containers at the consolidation level, and handle split invoicing to individual shippers."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .modes-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .modes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .mode-card { background: var(--gf-bg-light); border-radius: 12px; padding: 2rem; text-align: center; }
+        .mode-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .mode-card p { color: var(--gf-text-secondary); font-size: 0.95rem; }
+        .mode-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        .products-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .product-card { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 16px; padding: 2rem; transition: all 0.3s; }
+        .product-card:hover { border-color: var(--gf-teal); box-shadow: 0 8px 30px rgba(1,170,193,0.12); }
+        .product-card h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .product-card p { color: var(--gf-text-secondary); margin-bottom: 1.25rem; line-height: 1.6; }
+        .product-link { color: var(--gf-teal); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem; }
+        .product-link:hover { color: var(--gf-teal-dark); }
+
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-white); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+        .testimonial-result { margin-top: 1rem; font-size: 0.9rem; color: var(--gf-teal); font-weight: 600; }
+
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-light); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .modes-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .products-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .modes-grid, .features-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/features">Features</a><span>›</span>
+        Ocean Freight Management
+    </div>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Ocean Freight Management Software</h1>
+                <p class="hero-subhead">
+                    Manage FCL, LCL, and consolidation in one system. Container tracking, ocean documentation, and agent settlements—built for ocean forwarders.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#features" class="btn-outline">See Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">FCL + LCL</div>
+                        <div class="hero-stat-label">Both modes</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">75+</div>
+                        <div class="hero-stat-label">Ocean carriers</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">53%</div>
+                        <div class="hero-stat-label">Demurrage reduction</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Ocean Freight Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>Ocean freight management software</strong> provides freight forwarders with specialized tools for sea cargo operations—FCL and LCL shipment management, container tracking across carriers, consolidation workflows, and ocean-specific documentation like bills of lading and ISF filings.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="modes-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Ocean Freight Modes</h2>
+                <p>FCL, LCL, and consolidation in one platform.</p>
+            </div>
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <div class="mode-icon">📦</div>
+                    <h3>FCL (Full Container)</h3>
+                    <p>Full container load management from booking through delivery. Single shipper, dedicated container.</p>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">📦📦</div>
+                    <h3>LCL (Less Than Container)</h3>
+                    <p>Less-than-container shipments. Share space, manage individual house bills.</p>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">🔗</div>
+                    <h3>Consolidation</h3>
+                    <p>Group multiple shippers into containers. House and master bills, split invoicing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Ocean Freight Features</h2>
+                <p>Everything you need for sea cargo operations.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>FCL Shipments</h3>
+                    <p>Full container lifecycle management from booking to delivery.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>LCL & Consolidation</h3>
+                    <p>Multi-shipper workflows. House bills, master bills, split invoicing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Container Tracking</h3>
+                    <p>75+ carrier integrations. Real-time status across the voyage.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Ocean Documentation</h3>
+                    <p>BOL, ISF, AMS, arrival notices. Generate from shipment data.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Port Management</h3>
+                    <p>Demurrage and detention tracking. Alerts before fees hit.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Agent Settlements</h3>
+                    <p>Overseas partner financials. Track what's owed each direction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Ocean Import & Export Solutions</h2>
+                <p>Specialized workflows for each direction.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>🚢 Ocean Import</h3>
+                    <p>Manage inbound FCL and LCL shipments with container tracking, ISF filing, and automated arrival notices.</p>
+                    <a href="/solutions/ocean-import" class="product-link">Learn about Ocean Import →</a>
+                </div>
+                <div class="product-card">
+                    <h3>🚢 Ocean Export</h3>
+                    <p>Streamline outbound shipments with rate management, AES filing, and document generation.</p>
+                    <a href="/solutions/ocean-export" class="product-link">Learn about Ocean Export →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">
+                "Our demurrage issues that required write-offs reduced from 4 to 5 a month to 1 or 2 per month—a decrease of around <span>53%</span>."
+            </p>
+            <p class="testimonial-author">
+                — <strong>Jeff Lee</strong>, Sales Manager, UCM
+            </p>
+            <p class="testimonial-result">Container tracking preventing costly delays</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is ocean freight management software?</div>
+                    <div class="faq-answer">Ocean freight management software provides freight forwarders with specialized tools for sea cargo operations—FCL and LCL shipment management, container tracking across carriers, consolidation workflows, and ocean-specific documentation like bills of lading and ISF filings.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight handle both FCL and LCL?</div>
+                    <div class="faq-answer">Yes. GoFreight manages Full Container Load (FCL) shipments as well as Less-than-Container Load (LCL) with full consolidation workflow support. You can group multiple shippers, manage house and master bills, and handle split invoicing.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does container tracking work?</div>
+                    <div class="faq-answer">GoFreight integrates with 75+ ocean carriers for real-time container tracking. Status updates flow automatically—vessel departure, transshipment, port arrival, customs clearance, and delivery. Automated alerts notify you of key milestones and potential delays.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I manage consolidations in GoFreight?</div>
+                    <div class="faq-answer">Yes. GoFreight supports full LCL consolidation workflows. Create consolidations with multiple shippers, generate house and master bills of lading, track containers at the consolidation level, and handle split invoicing to individual shippers.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Streamline Your Ocean Freight Operations?</h2>
+            <p>See how GoFreight manages FCL, LCL, and consolidation in one system.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>

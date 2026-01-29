@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-Based Freight Forwarding Software | Web Access | GoFreight</title>
+    <meta name="description" content="Access your freight operations anywhere. Browser-based, SOC 2 compliant, 99.9% uptime. No servers, no IT headaches—just modern freight software.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Cloud-Based Freight Forwarding Software",
+        "description": "Access your freight operations from anywhere with browser-based cloud software.",
+        "url": "https://gofreight.com/features/cloud-platform",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://gofreight.com/features"},
+                {"@type": "ListItem", "position": 3, "name": "Cloud Platform", "item": "https://gofreight.com/features/cloud-platform"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is cloud-based freight software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cloud-based freight software delivers freight forwarding capabilities through web browsers, eliminating the need for on-premise servers and IT infrastructure. Updates happen automatically, data is securely backed up, and teams can access the system from any location with internet connectivity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is cloud freight software secure?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight is SOC 2 compliant with data encryption at rest and in transit. Enterprise-grade security measures protect your data, and regular backups ensure business continuity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I access GoFreight from mobile devices?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight is fully browser-based and works on any device with internet access—desktop, laptop, tablet, or mobile phone. No app installation required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do updates work with cloud software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Updates are automatic. GoFreight releases new features and improvements regularly, and you're always on the latest version without any action required. No IT involvement needed for updates."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .benefits-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .benefit-card { background: var(--gf-bg-light); border-radius: 12px; padding: 2rem; }
+        .benefit-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .benefit-card p { color: var(--gf-text-secondary); font-size: 0.95rem; }
+        .benefit-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-light); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+        .testimonial-result { margin-top: 1rem; font-size: 0.9rem; color: var(--gf-teal); font-weight: 600; }
+
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .benefits-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .benefits-grid, .features-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/features">Features</a><span>›</span>
+        Cloud Platform
+    </div>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Cloud-Based Freight Forwarding Software</h1>
+                <p class="hero-subhead">
+                    Access your freight operations from anywhere. No servers to manage, no software to install—just log in and work.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#features" class="btn-outline">See Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">99.9%</div>
+                        <div class="hero-stat-label">Uptime</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">SOC 2</div>
+                        <div class="hero-stat-label">Compliant</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Auto</div>
+                        <div class="hero-stat-label">Updates</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Cloud Platform Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>Cloud freight software</strong> delivers freight forwarding capabilities through web browsers, eliminating the need for on-premise servers and IT infrastructure. Updates happen automatically, data is securely backed up, and teams can access the system from any location with internet connectivity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Cloud vs. On-Premise</h2>
+                <p>Why modern forwarders choose cloud software.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>No Hardware Investment</h3>
+                    <p>No servers to buy, maintain, or replace. All infrastructure is managed by GoFreight.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💾</div>
+                    <h3>Automatic Backups</h3>
+                    <p>Your data is automatically backed up. No manual backup procedures needed.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Remote Team Access</h3>
+                    <p>Work from anywhere with internet. Office, home, or on the road.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Always Current Version</h3>
+                    <p>Updates happen automatically. You're always on the latest version with newest features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Cloud Platform Features</h2>
+                <p>Enterprise-grade cloud infrastructure for freight forwarding.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Browser-Based Access</h3>
+                    <p>Work from any device with internet. No software installation required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Automatic Updates</h3>
+                    <p>Always on the latest version. New features and improvements delivered automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Data Security</h3>
+                    <p>SOC 2 compliance, encryption at rest and in transit. Enterprise-grade security.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>99.9% Uptime</h3>
+                    <p>Enterprise-grade reliability. Your operations stay running.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Scalability</h3>
+                    <p>Grow without infrastructure changes. Add users and volume as you scale.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Access</h3>
+                    <p>Manage shipments on the go. Full functionality on mobile devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">
+                "Every task that used to take me four hours now takes <span>two</span>."
+            </p>
+            <p class="testimonial-author">
+                — <strong>Jason Hsu</strong>, Owner, EchoGlobal Logistics
+            </p>
+            <p class="testimonial-result">50% time savings enabled by anywhere-access</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is cloud-based freight software?</div>
+                    <div class="faq-answer">Cloud-based freight software delivers freight forwarding capabilities through web browsers, eliminating the need for on-premise servers and IT infrastructure. Updates happen automatically, data is securely backed up, and teams can access the system from any location with internet connectivity.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is cloud freight software secure?</div>
+                    <div class="faq-answer">Yes. GoFreight is SOC 2 compliant with data encryption at rest and in transit. Enterprise-grade security measures protect your data, and regular backups ensure business continuity.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I access GoFreight from mobile devices?</div>
+                    <div class="faq-answer">Yes. GoFreight is fully browser-based and works on any device with internet access—desktop, laptop, tablet, or mobile phone. No app installation required.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do updates work with cloud software?</div>
+                    <div class="faq-answer">Updates are automatic. GoFreight releases new features and improvements regularly, and you're always on the latest version without any action required. No IT involvement needed for updates.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Move Your Freight Operations to the Cloud?</h2>
+            <p>See how GoFreight makes cloud freight software simple and secure.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>

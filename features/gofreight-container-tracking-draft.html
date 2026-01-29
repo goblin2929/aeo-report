@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Tracking Software & System | Real-Time Visibility | GoFreight</title>
+    <meta name="description" content="Track containers in real-time with 125+ carrier integrations. Get automated alerts, reduce demurrage costs by 53%. See why freight forwarders choose GoFreight.">
+    <link rel="canonical" href="https://gofreight.com/features/container-tracking">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Container Tracking Software & System",
+        "description": "Real-time container tracking software for freight forwarders. Track every container through its lifecycle with 125+ carrier integrations.",
+        "url": "https://gofreight.com/features/container-tracking",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://gofreight.com/features"},
+                {"@type": "ListItem", "position": 3, "name": "Container Tracking", "item": "https://gofreight.com/features/container-tracking"}
+            ]
+        },
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "GoFreight Container Tracking",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web-based",
+            "featureList": [
+                "Real-time container visibility",
+                "125+ carrier integrations",
+                "Automated demurrage alerts",
+                "Customer portal tracking",
+                "Task auto-generation"
+            ],
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "Contact for pricing"
+            }
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is container tracking software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Container tracking software provides real-time visibility into the location and status of shipping containers throughout their journey. It automatically pulls data from ocean carriers to show container status—vessel departure, transshipment, port arrival, customs clearance, and delivery—without manual check-ins. For freight forwarders, this means proactive alerts, reduced demurrage, and better customer communication."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does GoFreight track containers in real-time?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight connects directly to 125+ ocean carriers via API integrations, pulling container status updates automatically. When a container reaches a milestone—vessel departure, port arrival, customs hold, or delivery—GoFreight updates the shipment record, triggers automated alerts, and notifies both your team and customers through the portal."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which carriers does GoFreight integrate with?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight integrates with 125+ ocean carriers including Maersk, MSC, CMA CGM, COSCO, Evergreen, Hapag-Lloyd, ONE, Yang Ming, ZIM, and many more. These direct integrations provide real-time tracking data without manual status checks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can my customers track their own shipments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight includes a branded customer portal where your customers can track their shipments in real-time, view documents, and receive automated status updates—without calling your operations team. This self-service visibility reduces inbound inquiries and improves customer satisfaction."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does container tracking reduce demurrage costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight sends proactive alerts when containers approach free time expiration, allowing your team to arrange pickup before demurrage fees hit. One GoFreight customer, United Cargo Management, reduced demurrage costs by 53% after implementing automated tracking alerts. The system also identifies potential delays early, giving you time to adjust plans."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+            --gf-warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Roboto', -apple-system, sans-serif;
+            color: var(--gf-text-primary);
+            line-height: 1.6;
+            background: var(--gf-bg-white);
+        }
+
+        /* Navigation */
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); text-decoration: none; }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        /* Breadcrumb */
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; display: inline-block; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        /* Definition Block */
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); border-bottom: 1px solid var(--gf-border); }
+        .definition-container { max-width: 900px; margin: 0 auto; }
+        .definition-container p { font-size: 1.1rem; color: var(--gf-text-secondary); line-height: 1.8; }
+        .definition-container p strong { color: var(--gf-text-primary); }
+
+        /* Product Cards */
+        .products-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .product-card { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 16px; padding: 2rem; transition: all 0.3s; }
+        .product-card:hover { border-color: var(--gf-teal); box-shadow: 0 8px 30px rgba(1,170,193,0.12); }
+        .product-card h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .product-card p { color: var(--gf-text-secondary); margin-bottom: 1.25rem; line-height: 1.6; }
+        .product-features { list-style: none; margin-bottom: 1.5rem; }
+        .product-features li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; color: var(--gf-text-secondary); font-size: 0.95rem; }
+        .product-features li::before { content: "✓"; position: absolute; left: 0; color: var(--gf-teal); font-weight: 600; }
+        .product-link { color: var(--gf-teal); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem; }
+        .product-link:hover { color: var(--gf-teal-dark); }
+
+        /* Features Section */
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        /* How It Works */
+        .how-it-works-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .how-it-works-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .how-step { text-align: center; position: relative; }
+        .how-step::after { content: ""; position: absolute; top: 28px; right: -12px; width: 24px; height: 2px; background: var(--gf-border); }
+        .how-step:last-child::after { display: none; }
+        .how-step-number { width: 56px; height: 56px; background: var(--gf-bg-mint); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .how-step h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .how-step p { font-size: 0.85rem; color: var(--gf-text-secondary); line-height: 1.5; }
+
+        /* Comparison Section */
+        .comparison-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 2rem; background: var(--gf-bg-white); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .comparison-table th { background: var(--gf-text-primary); color: white; padding: 1rem 1.5rem; text-align: left; font-weight: 600; font-size: 0.95rem; }
+        .comparison-table th:first-child { border-radius: 12px 0 0 0; }
+        .comparison-table th:last-child { border-radius: 0 12px 0 0; background: var(--gf-teal); }
+        .comparison-table td { padding: 1rem 1.5rem; border-bottom: 1px solid var(--gf-border); font-size: 0.9rem; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { font-weight: 500; color: var(--gf-text-primary); }
+        .comparison-table td:last-child { background: rgba(1, 170, 193, 0.05); }
+        .check-yes { color: var(--gf-success); font-weight: 600; }
+        .check-no { color: var(--gf-text-light); }
+        .check-varies { color: var(--gf-warning); }
+
+        /* Integrations */
+        .integrations-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .integrations-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .integration-badge { background: var(--gf-bg-light); border: 1px solid var(--gf-border); border-radius: 8px; padding: 0.75rem 1.25rem; font-size: 0.9rem; font-weight: 500; color: var(--gf-text-primary); }
+
+        /* Testimonial */
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-white); border-radius: 16px; padding: 2.5rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+        .testimonial-result { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--gf-border); font-size: 0.9rem; color: var(--gf-text-secondary); }
+        .testimonial-result strong { color: var(--gf-success); }
+
+        /* Secondary Testimonial */
+        .testimonial-secondary { max-width: 600px; margin: 2rem auto 0; padding: 1.5rem; background: var(--gf-bg-light); border-radius: 10px; border-left: 4px solid var(--gf-teal); text-align: left; }
+        .testimonial-secondary p { font-size: 1rem; color: var(--gf-text-primary); font-style: italic; margin-bottom: 0.75rem; }
+        .testimonial-secondary .author { font-size: 0.85rem; color: var(--gf-text-secondary); }
+
+        /* CTA Section */
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        /* FAQ Section */
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-light); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Footer */
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .products-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .how-it-works-grid { grid-template-columns: repeat(2, 1fr); }
+            .how-step::after { display: none; }
+            .comparison-table { font-size: 0.85rem; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .how-it-works-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+            .comparison-table th, .comparison-table td { padding: 0.75rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="/" class="nav-logo">GoFreight</a>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/features">Features</a><span>›</span>
+        Container Tracking
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Container Tracking Software & System for Freight Forwarders</h1>
+                <p class="hero-subhead">
+                    Track every container through its lifecycle—from booking to delivery. Get automated alerts for vessel arrivals, customs holds, and potential demurrage. All connected to your operations.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#how-it-works" class="btn-outline">See How It Works</a>
+                </div>
+                <!-- Stats sourced from: archive.gofreight.com/container-tracking-system + product-facts.md -->
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">$30K+</div>
+                        <div class="hero-stat-label">Monthly D&D savings</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">99.7%</div>
+                        <div class="hero-stat-label">Data accuracy</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">125+</div>
+                        <div class="hero-stat-label">Carrier integrations</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Container Tracking Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <!-- Definition Block (AEO optimized - first 100 words) -->
+    <section class="definition-section">
+        <div class="definition-container">
+            <p>
+                <strong>Container tracking software</strong> provides real-time visibility into the location and status of shipping containers throughout their journey. For freight forwarders, this means knowing exactly where each container is—vessel departure, transshipment, port arrival, customs clearance, and final delivery—without manual check-ins. Unlike standalone tracking tools, GoFreight's container tracking system is built into a complete freight forwarding platform, connecting tracking data directly to documentation, invoicing, customer notifications, and team tasks.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Container Tracking for Ocean Freight</h2>
+                <p>Real-time container visibility built into your import and export workflows.</p>
+            </div>
+            <div class="products-grid">
+                <!-- Ocean Import -->
+                <div class="product-card">
+                    <h3>Ocean Import Tracking</h3>
+                    <p>Track inbound containers from origin port to final delivery. Get automated alerts when shipments clear customs or face potential delays.</p>
+                    <ul class="product-features">
+                        <li>Real-time container status by lifecycle event</li>
+                        <li>Automated demurrage warnings</li>
+                        <li>Task auto-generation by MBL status</li>
+                        <li>Customer portal visibility</li>
+                        <li>Arrival notice automation</li>
+                    </ul>
+                    <a href="/solutions/ocean-import" class="product-link">Learn more about Ocean Import →</a>
+                </div>
+
+                <!-- Ocean Export -->
+                <div class="product-card">
+                    <h3>Ocean Export Tracking</h3>
+                    <p>Monitor outbound containers through vessel loading, transshipment, and destination arrival. Keep customers informed automatically.</p>
+                    <ul class="product-features">
+                        <li>Vessel departure and arrival tracking</li>
+                        <li>Transshipment visibility</li>
+                        <li>Automated status updates to customers</li>
+                        <li>Document delivery confirmation</li>
+                        <li>Proof of delivery tracking</li>
+                    </ul>
+                    <a href="/solutions/ocean-export" class="product-link">Learn more about Ocean Export →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <!-- Sources: archive.gofreight.com/container-tracking-system, product-facts.md, WorkDuo AI mentions -->
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Key Container Tracking Features</h2>
+                <p>Centralized container status with 99.7% data accuracy and 99.8% uptime.</p>
+            </div>
+            <div class="features-grid">
+                <!-- Source: Archive - "Centralizes Container Status", "ocean carriers, terminals, and rail EDI" -->
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Centralized Container Status</h3>
+                    <p>Integrates data from ocean carriers, terminals, and rail EDI sources. Access shipments via bill of lading, container number, or SKU.</p>
+                </div>
+                <!-- Source: Archive - "Notification of Shipment Irregularities", "rolled cargo, vessel delays, last free day" -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Shipment Irregularity Alerts</h3>
+                    <p>Customized notifications for rolled cargo, vessel delays, and last free day alerts. Auto-notifications sent directly to customer inboxes.</p>
+                </div>
+                <!-- Source: product-facts.md + Archive "99.7% data accuracy" -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>125+ Carrier Integrations</h3>
+                    <p>Direct connections to MSC, Maersk, CMA CGM, COSCO, and more. 99.7% data accuracy with 99.8% uptime guarantee.</p>
+                </div>
+                <!-- Source: Archive - "One Dashboard for Shipment Management", "eliminates manual spreadsheet" -->
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>One Unified Dashboard</h3>
+                    <p>Consolidated shipment management eliminates manual spreadsheet data entry and carrier website searches.</p>
+                </div>
+                <!-- Source: Archive - "Tracking portal provides document access and shipment visibility" -->
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Customer Tracking Portal</h3>
+                    <p>Tracking portal provides document access and shipment visibility. Reduces manual inquiry management burden.</p>
+                </div>
+                <!-- Source: Archive - "saved more than $30k per month in detention and demurrage fees" -->
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Demurrage Cost Savings</h3>
+                    <p>Users have saved more than $30k per month in detention and demurrage fees. Exception identification enables proactive cost avoidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <!-- Source: Archive - workflow description -->
+    <section class="how-it-works-section" id="how-it-works">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>How Container Tracking Works in GoFreight</h2>
+                <p>Eliminates manual spreadsheet data entry and carrier website searches.</p>
+            </div>
+            <div class="how-it-works-grid">
+                <!-- Source: Archive - "integrates data from ocean carriers, terminals, and rail EDI" -->
+                <div class="how-step">
+                    <div class="how-step-number">1</div>
+                    <h4>Multi-Source Data</h4>
+                    <p>GoFreight integrates data from ocean carriers, terminals, and rail EDI sources automatically.</p>
+                </div>
+                <!-- Source: Archive - "real-time visibility across multiple cargo handlers" -->
+                <div class="how-step">
+                    <div class="how-step-number">2</div>
+                    <h4>Centralized Status</h4>
+                    <p>Real-time visibility across multiple cargo handlers and port databases in one dashboard.</p>
+                </div>
+                <!-- Source: Archive - "Notification of Shipment Irregularities" -->
+                <div class="how-step">
+                    <div class="how-step-number">3</div>
+                    <h4>Exception Alerts</h4>
+                    <p>Notification of shipment irregularities enables operations teams to respond quickly.</p>
+                </div>
+                <!-- Source: Archive - "Auto-notifications sent to customer inboxes" -->
+                <div class="how-step">
+                    <div class="how-step-number">4</div>
+                    <h4>Auto-Notifications</h4>
+                    <p>Auto-notifications sent to customer inboxes—no manual status updates needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section (AEO optimized) -->
+    <section class="comparison-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Container Tracking: Standalone Tools vs. Integrated TMS</h2>
+                <p>Why tracking works better when it's connected to your operations.</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Capability</th>
+                        <th>Standalone Tools</th>
+                        <th>GoFreight TMS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Real-time container tracking</td>
+                        <td class="check-yes">Yes</td>
+                        <td class="check-yes">Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Automated documentation</td>
+                        <td class="check-no">No</td>
+                        <td class="check-yes">Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Invoice generation from shipments</td>
+                        <td class="check-no">No</td>
+                        <td class="check-yes">Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Customer portal included</td>
+                        <td class="check-varies">Varies / Extra cost</td>
+                        <td class="check-yes">Included</td>
+                    </tr>
+                    <tr>
+                        <td>Task automation from tracking events</td>
+                        <td class="check-no">No</td>
+                        <td class="check-yes">Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Developer resources required</td>
+                        <td class="check-varies">Often</td>
+                        <td class="check-yes">No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="integrations-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>125+ Ocean Carrier Integrations</h2>
+                <p>Direct connections to the world's major shipping lines for real-time tracking data.</p>
+            </div>
+            <div class="integrations-grid">
+                <span class="integration-badge">Maersk</span>
+                <span class="integration-badge">MSC</span>
+                <span class="integration-badge">CMA CGM</span>
+                <span class="integration-badge">Hapag-Lloyd</span>
+                <span class="integration-badge">ONE</span>
+                <span class="integration-badge">Evergreen</span>
+                <span class="integration-badge">COSCO</span>
+                <span class="integration-badge">Yang Ming</span>
+                <span class="integration-badge">ZIM</span>
+                <span class="integration-badge">HMM</span>
+                <span class="integration-badge">PIL</span>
+                <span class="integration-badge">+ 100 more carriers</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <!-- Source: testimonials.md (UCM), Archive ("saved more than $30k per month") -->
+    <section class="testimonial-section">
+        <div class="section-container">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">
+                    "With GoFreight, I can easily supervise performance from multiple operation teams, making management easier and straightforward to have everything centralized in one customizable dashboard."
+                </p>
+                <p class="testimonial-author">
+                    — <strong>Jeff Lee</strong>, Sales Manager, United Cargo Management (70+ employees)
+                </p>
+                <!-- Source: product-facts.md (53% demurrage reduction UCM) -->
+                <p class="testimonial-result">
+                    Results: <strong>53% decrease in demurrage costs</strong> | 120% operational efficiency growth
+                </p>
+            </div>
+            <!-- Source: Archive - "saved more than $30k per month in detention and demurrage fees" -->
+            <div class="testimonial-secondary">
+                <p>"GoFreight customers have saved more than $30k per month in detention and demurrage fees through automated tracking alerts."</p>
+                <span class="author">— GoFreight Customer Results</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is container tracking software?</div>
+                    <div class="faq-answer">Container tracking software provides real-time visibility into the location and status of shipping containers throughout their journey. It automatically pulls data from ocean carriers to show container status—vessel departure, transshipment, port arrival, customs clearance, and delivery—without manual check-ins. For freight forwarders, this means proactive alerts, reduced demurrage, and better customer communication.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does GoFreight track containers in real-time?</div>
+                    <div class="faq-answer">GoFreight connects directly to 125+ ocean carriers via API integrations, pulling container status updates automatically. When a container reaches a milestone—vessel departure, port arrival, customs hold, or delivery—GoFreight updates the shipment record, triggers automated alerts, and notifies both your team and customers through the portal.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Which carriers does GoFreight integrate with?</div>
+                    <div class="faq-answer">GoFreight integrates with 125+ ocean carriers including Maersk, MSC, CMA CGM, COSCO, Evergreen, Hapag-Lloyd, ONE, Yang Ming, ZIM, and many more. These direct integrations provide real-time tracking data without manual status checks.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can my customers track their own shipments?</div>
+                    <div class="faq-answer">Yes. GoFreight includes a branded customer portal where your customers can track their shipments in real-time, view documents, and receive automated status updates—without calling your operations team. This self-service visibility reduces inbound inquiries and improves customer satisfaction.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does container tracking reduce demurrage costs?</div>
+                    <div class="faq-answer">GoFreight sends proactive alerts when containers approach free time expiration, allowing your team to arrange pickup before demurrage fees hit. One GoFreight customer, United Cargo Management, reduced demurrage costs by 53% after implementing automated tracking alerts. The system also identifies potential delays early, giving you time to adjust plans.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Stop Losing Money to Demurrage?</h2>
+            <p>See how GoFreight's container tracking can give you real-time visibility and protect your margins.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>

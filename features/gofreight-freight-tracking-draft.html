@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Tracking & Visibility Software | Real-Time Alerts | GoFreight</title>
+    <meta name="description" content="Track ocean and air shipments in real-time with 125+ carrier integrations. Automated alerts, customer portal, connected to your operations.">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Freight Tracking & Visibility Software",
+        "description": "Track ocean and air shipments in real-time with automated alerts and customer visibility.",
+        "url": "https://gofreight.com/features/freight-tracking",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://gofreight.com/features"},
+                {"@type": "ListItem", "position": 3, "name": "Freight Tracking", "item": "https://gofreight.com/features/freight-tracking"}
+            ]
+        },
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "GoFreight Freight Tracking",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web-based"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is freight tracking software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freight tracking software provides real-time visibility into shipment location and status across carriers and modes. For freight forwarders, this means one dashboard to see all shipments—ocean, air, and ground—instead of checking multiple carrier websites."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I track both ocean and air shipments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight tracks both ocean and air shipments in a single dashboard. You can see container status for ocean freight and flight/AWB status for air freight, all with automated updates and alerts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does GoFreight integrate with carriers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight integrates with 125+ carriers including major ocean lines (Maersk, MSC, CMA CGM), airlines, and trucking companies. Tracking data flows automatically into your dashboard without manual status checks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can my customers see tracking information?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight includes a branded customer portal where your shippers can track their own shipments, view documents, and receive automated status notifications—all without calling your team."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .modes-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .modes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .mode-card { background: var(--gf-bg-light); border-radius: 12px; padding: 2rem; text-align: center; }
+        .mode-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .mode-card p { color: var(--gf-text-secondary); font-size: 0.95rem; }
+        .mode-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-light); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .modes-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .modes-grid, .features-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/features">Features</a><span>›</span>
+        Freight Tracking
+    </div>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Freight Tracking & Visibility Software</h1>
+                <p class="hero-subhead">
+                    Track ocean and air shipments in real-time. Get automated alerts, share visibility with customers, and connect tracking to your operations.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#features" class="btn-outline">See Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">125+</div>
+                        <div class="hero-stat-label">Carrier integrations</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Ocean + Air</div>
+                        <div class="hero-stat-label">Multi-modal tracking</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Real-Time</div>
+                        <div class="hero-stat-label">Automated alerts</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Freight Tracking Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>Freight tracking software</strong> provides real-time visibility into shipment location and status across carriers and modes. For freight forwarders, this means one dashboard to see all shipments instead of checking multiple carrier websites.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="modes-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Multi-Modal Freight Tracking</h2>
+                <p>Track all your shipments in one place, regardless of mode.</p>
+            </div>
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <div class="mode-icon">🚢</div>
+                    <h3>Ocean Freight</h3>
+                    <p>Container lifecycle tracking from booking through delivery. Vessel schedules, port arrivals, customs status.</p>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">✈️</div>
+                    <h3>Air Freight</h3>
+                    <p>Flight status and AWB tracking. Departure, arrival, and milestone updates across airlines.</p>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">🚛</div>
+                    <h3>Ground/Drayage</h3>
+                    <p>Last-mile visibility for trucking and drayage movements connecting to ocean and air.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Freight Tracking Features</h2>
+                <p>Complete visibility without the manual work.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Real-Time Visibility</h3>
+                    <p>Live status across all carriers. No more checking individual carrier websites.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Multi-Carrier Dashboard</h3>
+                    <p>125+ carrier integrations in one view. Ocean, air, and ground in a single screen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Automated Alerts</h3>
+                    <p>Get notified for delays, arrivals, customs holds, and exceptions before they become problems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Customer Portal</h3>
+                    <p>Share tracking visibility with shippers through a branded self-service portal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚠️</div>
+                    <h3>Exception Management</h3>
+                    <p>Flag issues before they escalate. See problems across all shipments at a glance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Historical Analytics</h3>
+                    <p>Track carrier performance over time. Identify patterns and optimize routing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">
+                "These timely alerts help us <span>avoid detention and demurrage</span>, ensuring smoother operations."
+            </p>
+            <p class="testimonial-author">
+                — <strong>Joseph Park</strong>, Founder, Seamax Freight International
+            </p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is freight tracking software?</div>
+                    <div class="faq-answer">Freight tracking software provides real-time visibility into shipment location and status across carriers and modes. For freight forwarders, this means one dashboard to see all shipments—ocean, air, and ground—instead of checking multiple carrier websites.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I track both ocean and air shipments?</div>
+                    <div class="faq-answer">Yes. GoFreight tracks both ocean and air shipments in a single dashboard. You can see container status for ocean freight and flight/AWB status for air freight, all with automated updates and alerts.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does GoFreight integrate with carriers?</div>
+                    <div class="faq-answer">GoFreight integrates with 125+ carriers including major ocean lines (Maersk, MSC, CMA CGM), airlines, and trucking companies. Tracking data flows automatically into your dashboard without manual status checks.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can my customers see tracking information?</div>
+                    <div class="faq-answer">Yes. GoFreight includes a branded customer portal where your shippers can track their own shipments, view documents, and receive automated status notifications—all without calling your team.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready for Complete Freight Visibility?</h2>
+            <p>See how GoFreight can track all your shipments in one dashboard.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
