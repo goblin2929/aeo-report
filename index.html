@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoFreight AEO Performance Reports</title>
+    <title>GoFreight AEO Performance Report - January 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --primary-blue: #01aac1;
@@ -13,6 +14,8 @@
             --medium-gray: #333333;
             --light-gray: #f5f5f5;
             --success-green: #22c55e;
+            --warning-yellow: #eab308;
+            --danger-red: #ef4444;
         }
 
         * {
@@ -26,155 +29,1632 @@
             background: var(--light-gray);
             color: var(--dark-gray);
             line-height: 1.6;
-            min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
+        /* Header */
         .header {
             background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
             color: white;
             padding: 40px;
             border-radius: 12px;
             margin-bottom: 30px;
-            text-align: center;
         }
 
         .header h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 8px;
         }
 
         .header .subtitle {
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.9;
-            color: var(--accent-blue);
+            margin-bottom: 15px;
         }
 
-        .reports-list {
+        .header .meta {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
             background: white;
             border-radius: 12px;
+            padding: 24px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            overflow: hidden;
         }
 
-        .report-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 24px;
-            border-bottom: 1px solid #eee;
-            transition: background 0.2s;
+        .kpi-card .label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
-        .report-item:last-child {
-            border-bottom: none;
-        }
-
-        .report-item:hover {
-            background: var(--light-gray);
-        }
-
-        .report-info h3 {
-            font-size: 1.1rem;
+        .kpi-card .value {
+            font-size: 2rem;
+            font-weight: 700;
             color: var(--dark-gray);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
-        .report-info .date {
+        .kpi-card .change {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .trend-up { color: var(--success-green); }
+        .trend-down { color: var(--danger-red); }
+
+        /* Section Headers */
+        .section-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--teal));
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            margin: 30px 0 20px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Callout Boxes */
+        .callout {
+            padding: 20px 24px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .callout-blue {
+            background: linear-gradient(135deg, rgba(1, 170, 193, 0.1), rgba(1, 215, 244, 0.05));
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .callout-green {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border-left: 4px solid var(--success-green);
+        }
+
+        .callout-yellow {
+            background: linear-gradient(135deg, #fefce8, #fef3c7);
+            border-left: 4px solid var(--warning-yellow);
+        }
+
+        .callout-red {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border-left: 4px solid var(--danger-red);
+        }
+
+        .callout h3 {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .callout ul {
+            margin-left: 20px;
+        }
+
+        .callout li {
+            margin-bottom: 6px;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .data-table th {
+            background: var(--medium-gray);
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table th.num {
+            text-align: right;
+        }
+
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+
+        .data-table td.num {
+            text-align: right;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+
+        .data-table tr:hover {
+            background: #f9fafb;
+        }
+
+        .data-table tr.subtotal {
+            background: #D9EBD9;
+            font-weight: bold;
+        }
+
+        .data-table tr.percent-total {
+            background: #E6E6E6;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .data-table a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .data-table a:hover {
+            text-decoration: underline;
+        }
+
+        /* Segment Cards */
+        .segment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .segment-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .segment-card .title {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .segment-card .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .segment-card .bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .segment-card .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .segment-card .percent {
             font-size: 0.85rem;
             color: #666;
         }
 
-        .report-link {
-            display: inline-block;
-            background: var(--primary-blue);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.2s;
+        /* Charts */
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
         }
 
-        .report-link:hover {
-            background: var(--teal);
+        .chart-container h3 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
         }
 
-        .badge {
-            display: inline-block;
-            background: var(--success-green);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            margin-left: 8px;
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Status Cards */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .status-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--success-green);
+        }
+
+        .status-card.warning {
+            border-left-color: var(--warning-yellow);
+        }
+
+        .status-card h4 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .status-card .value {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* Deliverables */
+        .deliverable-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .deliverable-item {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border-radius: 8px;
+            padding: 16px;
+            border-left: 4px solid var(--success-green);
+        }
+
+        .deliverable-item.pending {
+            background: linear-gradient(135deg, #fefce8, #fef3c7);
+            border-left-color: var(--warning-yellow);
+        }
+
+        .deliverable-item h4 {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .deliverable-item p {
+            font-size: 0.95rem;
             font-weight: 600;
         }
 
+        /* Priorities Section */
+        .priorities-section {
+            background: linear-gradient(135deg, var(--dark-gray), var(--medium-gray));
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .priorities-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .priorities-section ul {
+            margin-left: 20px;
+        }
+
+        .priorities-section li {
+            margin-bottom: 12px;
+        }
+
+        /* AEO Section */
+        .aeo-kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .aeo-kpi {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .aeo-kpi .label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .aeo-kpi .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        /* Green header table */
+        .data-table.green-header th {
+            background: var(--success-green);
+        }
+
+        /* Footer */
         .footer {
             text-align: center;
             padding: 30px;
             color: #666;
             font-size: 0.9rem;
         }
+
+        @media (max-width: 768px) {
+            .kpi-grid, .segment-grid, .aeo-kpi-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .chart-grid, .status-grid {
+                grid-template-columns: 1fr;
+            }
+            .deliverable-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body { background: white; }
+            .container { max-width: 100%; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <h1>GoFreight AEO Performance Reports</h1>
+        <!-- Header -->
+        <div class="header">
+            <h1>GoFreight AEO Performance Report - January 2026 Monthly Report</h1>
             <p class="subtitle">Search Visibility & Traffic Analysis</p>
-        </header>
+            <p class="meta">Date Range: January 1 - 31, 2026 | Prepared by Novastacks</p>
+        </div>
 
-        <div class="reports-list">
-            <div class="report-item">
-                <div class="report-info">
-                    <h3>January 1-19, 2026 Report <span class="badge">Latest</span></h3>
-                    <p class="date">Period: January 1-19, 2026</p>
-                </div>
-                <a href="gofreight_jan_1_19_2026_report.html" class="report-link">View Report</a>
+        <!-- Executive KPIs -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="label">Total Clicks</div>
+                <div class="value">3,307</div>
+                <div class="change trend-up">+955 (+40.6%) vs Dec</div>
             </div>
-            <div class="report-item">
-                <div class="report-info">
-                    <h3>January 2026 Monthly Report (Jan 1-13)</h3>
-                    <p class="date">Period: January 1-13, 2026</p>
-                </div>
-                <a href="gofreight_jan_2026_report.html" class="report-link">View Report</a>
+            <div class="kpi-card">
+                <div class="label">Total Impressions</div>
+                <div class="value">748,593</div>
+                <div class="change trend-up">+279,982 (+59.7%) vs Dec</div>
             </div>
-
-            <div class="report-item">
-                <div class="report-info">
-                    <h3>January 5-11, 2026 Weekly Report</h3>
-                    <p class="date">Period: January 5-11, 2026</p>
-                </div>
-                <a href="gofreight_jan_5_11_2026_report.html" class="report-link">View Report</a>
+            <div class="kpi-card">
+                <div class="label">Average CTR</div>
+                <div class="value">0.44%</div>
+                <div class="change trend-down">-0.06% vs Dec</div>
             </div>
-
-            <div class="report-item">
-                <div class="report-info">
-                    <h3>January 1-10, 2026 Weekly Report</h3>
-                    <p class="date">Period: January 1-10, 2026</p>
-                </div>
-                <a href="gofreight_jan_1_10_2026_report.html" class="report-link">View Report</a>
-            </div>
-
-            <div class="report-item">
-                <div class="report-info">
-                    <h3>December 2025 Monthly Report</h3>
-                    <p class="date">Period: December 2025</p>
-                </div>
-                <a href="gofreight_december_2025_report.html" class="report-link">View Report</a>
+            <div class="kpi-card">
+                <div class="label">Average Position</div>
+                <div class="value">15.3</div>
+                <div class="change trend-up">Improved from 20.3</div>
             </div>
         </div>
 
-        <footer class="footer">
-            <p><strong>Prepared by Novastacks</strong></p>
-        </footer>
+        <!-- Daily Performance Charts -->
+        <h2 class="section-header">Daily Performance Trends</h2>
+
+        <div class="chart-grid">
+            <div class="chart-container">
+                <h3>Daily Clicks - January 2026</h3>
+                <canvas id="clicksChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Daily Impressions - January 2026</h3>
+                <canvas id="impressionsChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <h2 class="section-header">Executive Summary</h2>
+
+        <div class="callout callout-blue">
+            <h3>Month in Review</h3>
+            <p>January 2026 marked a <strong>significant growth month</strong> for GoFreight's organic search visibility. Total clicks increased by <strong>40.6%</strong> to 3,307 (up from 2,352 in December), while impressions surged <strong>59.7%</strong> to 748,593. This growth was driven by:</p>
+            <ul>
+                <li>Continued momentum from the CargoWise Switcher content initiative with the pricing article generating 98 clicks</li>
+                <li>Successful migration of educational content from archive to main domain (customs clearance guide now #2 page with 179 clicks)</li>
+                <li>Strong blog performance with <strong>+113.4%</strong> click growth vs December</li>
+                <li>Homepage traffic up <strong>22.6%</strong> to 1,472 clicks</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">January Focus Areas</h3>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>What Was Done</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Technical Site Infrastructure</strong></td>
+                    <td style="font-size:0.9rem;">
+                        • XML/sitemap integration + issues resolved<br>
+                        • 301 redirects (archive→main domain) — backend logic in progress<br>
+                        • Schema markup prepared for all pages<br>
+                        • Archive subdomain canonical fix<br>
+                        • Related post module implementation
+                    </td>
+                    <td><span style="color: var(--success-green);">Almost Done</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2. Blog/Content Creation</strong></td>
+                    <td style="font-size:0.9rem;">
+                        • 20 articles drafted and ready for review<br>
+                        • 10 glossary articles for design testing<br>
+                        • CargoWise content cluster<br>
+                        • TMS content cluster<br>
+                        • High-intent content (peak season logistics 2026)<br>
+                        • Article republishing / refresh (2020-2021 content)
+                    </td>
+                    <td><span style="color: var(--success-green);">Done</span></td>
+                </tr>
+                <tr>
+                    <td><strong>3. Core Pages</strong></td>
+                    <td style="font-size:0.9rem;">
+                        <strong>Shipped & Need Review:</strong><br>
+                        • Solution pages (/solutions, /solutions/ocean, /solutions/air)<br>
+                        • Blog migration from archive to main domain<br>
+                        • Customer portal / Tracking portal page rebuild<br>
+                        • Glossary pages redesign<br>
+                        • Pricing page A/B test
+                    </td>
+                    <td><span style="color: var(--warning-yellow);">Shipped — Needs Review</span></td>
+                </tr>
+                <tr>
+                    <td><strong>4. Site Optimization & Conversion</strong></td>
+                    <td style="font-size:0.9rem;">
+                        • Homepage A/B test running<br>
+                        • Product page optimization focus<br>
+                        • CTA banner suggestions for blog pages<br>
+                        • Blog conversion widgets/banners for demo scheduling<br>
+                        • Consumer journey tracking setup — <em>not yet complete</em>
+                    </td>
+                    <td><span style="color: var(--warning-yellow);">In Progress</span></td>
+                </tr>
+                <tr>
+                    <td><strong>5. Analytics & Reporting</strong></td>
+                    <td style="font-size:0.9rem;">
+                        • GSC data review (impressions, CTR, position)<br>
+                        • Mixpanel/GA analytics setup for traffic source separation<br>
+                        • SEO audit completed (+83% clicks, +156% impressions)<br>
+                        • Customer segmentation analysis (T2, T3, CargoWise tiers)
+                    </td>
+                    <td><span style="color: var(--success-green);">Done</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="status-grid">
+            <div class="status-card">
+                <h4>Clicks Growth (MoM)</h4>
+                <div class="value trend-up">+40.6%</div>
+            </div>
+            <div class="status-card">
+                <h4>Impressions Growth (MoM)</h4>
+                <div class="value trend-up">+59.7%</div>
+            </div>
+            <div class="status-card">
+                <h4>Blog Clicks Growth</h4>
+                <div class="value trend-up">+113.6%</div>
+            </div>
+            <div class="status-card warning">
+                <h4>Glossary Clicks</h4>
+                <div class="value trend-down">-21.6%</div>
+            </div>
+        </div>
+
+        <div class="callout callout-yellow">
+            <h3>Items to Monitor</h3>
+            <ul>
+                <li><strong>Glossary performance:</strong> Clicks down 21.6% (264 to 207) despite similar impressions - may need content refresh</li>
+                <li><strong>Pending publications:</strong> 6+ content refreshes approved but not yet live - pushing to February</li>
+                <li><strong>Archive traffic shift:</strong> Archive clicks down slightly as content migrates to main domain (intended)</li>
+            </ul>
+        </div>
+
+        <!-- Priorities -->
+        <div class="priorities-section">
+            <h3>February Strategy & Priorities</h3>
+            <ul>
+                <li><strong>Off-page AEO visibility:</strong> Tracking setup, outreach for AI citations, comparison content (GoFreight vs Magaya/CargoWise), Reddit engagement workflow</li>
+                <li><strong>Positioning statement:</strong> Pending discussion — brand narrative alignment for AI responses</li>
+                <li><strong>On-page AEO tactics:</strong> Add LLM share link in footer, update FAQ content, deploy schema markup</li>
+                <li><strong>GSC & index analysis:</strong> Technical audit, consumer journey tracking completion, navigation bar update</li>
+                <li><strong>Content pipeline:</strong> Publish pending content, TMS cluster rollout, CargoWise articles, solution pages live</li>
+            </ul>
+        </div>
+
+        <!-- Query Segment Breakdown -->
+        <h2 class="section-header">Query Segment Breakdown (MoM Variance)</h2>
+
+        <div class="segment-grid">
+            <div class="segment-card">
+                <div class="title">Exact Brand "gofreight"</div>
+                <div class="value" style="color: var(--primary-blue);">632</div>
+                <div class="bar"><div class="bar-fill" style="width: 53.5%; background: var(--primary-blue);"></div></div>
+                <div class="percent">53.5% of branded clicks | +66 vs Dec (+11.7%)</div>
+            </div>
+            <div class="segment-card">
+                <div class="title">Branded Related</div>
+                <div class="value" style="color: var(--accent-blue);">549</div>
+                <div class="bar"><div class="bar-fill" style="width: 46.5%; background: var(--accent-blue);"></div></div>
+                <div class="percent">46.5% of branded clicks | +172 vs Dec (+45.6%)</div>
+            </div>
+            <div class="segment-card">
+                <div class="title">Non-Branded</div>
+                <div class="value" style="color: var(--success-green);">2,126</div>
+                <div class="bar"><div class="bar-fill" style="width: 64.3%; background: var(--success-green);"></div></div>
+                <div class="percent">64.3% of total clicks | +717 vs Dec (+50.9%)</div>
+            </div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Segment</th>
+                    <th class="num">Jan Clicks</th>
+                    <th class="num">Dec Clicks</th>
+                    <th class="num">Click &Delta;</th>
+                    <th class="num">% of Change</th>
+                    <th class="num">Jan Impr</th>
+                    <th class="num">Dec Impr</th>
+                    <th class="num">Impr &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Exact "gofreight"</td>
+                    <td class="num">632</td>
+                    <td class="num">566</td>
+                    <td class="num trend-up">+66</td>
+                    <td class="num">6.9%</td>
+                    <td class="num">1,698</td>
+                    <td class="num">1,722</td>
+                    <td class="num trend-down">-24</td>
+                </tr>
+                <tr>
+                    <td>Branded Related</td>
+                    <td class="num">549</td>
+                    <td class="num">377</td>
+                    <td class="num trend-up">+172</td>
+                    <td class="num">18.0%</td>
+                    <td class="num">2,384</td>
+                    <td class="num">1,943</td>
+                    <td class="num trend-up">+441</td>
+                </tr>
+                <tr>
+                    <td>Non-Branded</td>
+                    <td class="num">2,126</td>
+                    <td class="num">1,409</td>
+                    <td class="num trend-up">+717</td>
+                    <td class="num">75.1%</td>
+                    <td class="num">744,511</td>
+                    <td class="num">464,946</td>
+                    <td class="num trend-up">+279,565</td>
+                </tr>
+                <tr class="subtotal">
+                    <td>TOTAL</td>
+                    <td class="num">3,307</td>
+                    <td class="num">2,352</td>
+                    <td class="num">+955</td>
+                    <td class="num">100%</td>
+                    <td class="num">748,593</td>
+                    <td class="num">468,611</td>
+                    <td class="num">+279,982</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-green">
+            <h3>Segment Insight</h3>
+            <p>Non-branded traffic accounts for <strong>75.1% of click growth</strong> this month, indicating successful expansion of organic visibility beyond brand searches. The CargoWise-related content and educational articles are capturing new audiences searching for freight forwarding software solutions.</p>
+        </div>
+
+        <!-- Subfolder Performance -->
+        <h2 class="section-header">Subfolder Performance Analysis</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Subfolder</th>
+                    <th class="num">Dec Clicks</th>
+                    <th class="num">Jan Clicks</th>
+                    <th class="num">Click &Delta;</th>
+                    <th class="num">&Delta; %</th>
+                    <th class="num">Dec Impr</th>
+                    <th class="num">Jan Impr</th>
+                    <th class="num">Impr &Delta;</th>
+                    <th>Trend</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Homepage</td>
+                    <td class="num">1,201</td>
+                    <td class="num">1,472</td>
+                    <td class="num trend-up">+271</td>
+                    <td class="num trend-up">+22.6%</td>
+                    <td class="num">49,852</td>
+                    <td class="num">59,097</td>
+                    <td class="num trend-up">+9,245</td>
+                    <td class="trend-up">&#9650;</td>
+                </tr>
+                <tr>
+                    <td>Blog</td>
+                    <td class="num">522</td>
+                    <td class="num">1,115</td>
+                    <td class="num trend-up">+593</td>
+                    <td class="num trend-up">+113.6%</td>
+                    <td class="num">309,811</td>
+                    <td class="num">569,275</td>
+                    <td class="num trend-up">+259,464</td>
+                    <td class="trend-up">&#9650;</td>
+                </tr>
+                <tr>
+                    <td>Support</td>
+                    <td class="num">213</td>
+                    <td class="num">302</td>
+                    <td class="num trend-up">+89</td>
+                    <td class="num trend-up">+41.8%</td>
+                    <td class="num">12,205</td>
+                    <td class="num">17,177</td>
+                    <td class="num trend-up">+4,972</td>
+                    <td class="trend-up">&#9650;</td>
+                </tr>
+                <tr>
+                    <td>Glossary</td>
+                    <td class="num">264</td>
+                    <td class="num">207</td>
+                    <td class="num trend-down">-57</td>
+                    <td class="num trend-down">-21.6%</td>
+                    <td class="num">93,537</td>
+                    <td class="num">87,803</td>
+                    <td class="num trend-down">-5,734</td>
+                    <td class="trend-down">&#9660;</td>
+                </tr>
+                <tr>
+                    <td>Solutions</td>
+                    <td class="num">38</td>
+                    <td class="num">52</td>
+                    <td class="num trend-up">+14</td>
+                    <td class="num trend-up">+36.8%</td>
+                    <td class="num">33,544</td>
+                    <td class="num">24,805</td>
+                    <td class="num trend-down">-8,739</td>
+                    <td class="trend-up">&#9650;</td>
+                </tr>
+                <tr>
+                    <td>API</td>
+                    <td class="num">16</td>
+                    <td class="num">39</td>
+                    <td class="num trend-up">+23</td>
+                    <td class="num trend-up">+143.8%</td>
+                    <td class="num">947</td>
+                    <td class="num">1,249</td>
+                    <td class="num trend-up">+302</td>
+                    <td class="trend-up">&#9650;</td>
+                </tr>
+                <tr>
+                    <td>Pricing</td>
+                    <td class="num">28</td>
+                    <td class="num">34</td>
+                    <td class="num trend-up">+6</td>
+                    <td class="num trend-up">+21.4%</td>
+                    <td class="num">16,579</td>
+                    <td class="num">5,219</td>
+                    <td class="num trend-down">-11,360</td>
+                    <td class="trend-up">&#9650;</td>
+                </tr>
+                <tr>
+                    <td>Archive</td>
+                    <td class="num">66</td>
+                    <td class="num">57</td>
+                    <td class="num trend-down">-9</td>
+                    <td class="num trend-down">-13.6%</td>
+                    <td class="num">10,526</td>
+                    <td class="num">12,260</td>
+                    <td class="num trend-up">+1,734</td>
+                    <td class="trend-down">&#9660;</td>
+                </tr>
+                <tr>
+                    <td>Customers</td>
+                    <td class="num">4</td>
+                    <td class="num">3</td>
+                    <td class="num trend-down">-1</td>
+                    <td class="num trend-down">-25.0%</td>
+                    <td class="num">552</td>
+                    <td class="num">1,103</td>
+                    <td class="num trend-up">+551</td>
+                    <td class="trend-down">&#9660;</td>
+                </tr>
+                <tr>
+                    <td>Other</td>
+                    <td class="num">65</td>
+                    <td class="num">88</td>
+                    <td class="num trend-up">+23</td>
+                    <td class="num trend-up">+35.4%</td>
+                    <td class="num">54,674</td>
+                    <td class="num">24,948</td>
+                    <td class="num trend-down">-29,726</td>
+                    <td class="trend-up">&#9650;</td>
+                </tr>
+                <tr>
+                    <td>Get Demo</td>
+                    <td class="num">1</td>
+                    <td class="num">2</td>
+                    <td class="num trend-up">+1</td>
+                    <td class="num trend-up">+100.0%</td>
+                    <td class="num">13,514</td>
+                    <td class="num">2,013</td>
+                    <td class="num trend-down">-11,501</td>
+                    <td class="trend-up">&#9650;</td>
+                </tr>
+                <tr class="subtotal">
+                    <td>SUBTOTAL</td>
+                    <td class="num">2,352</td>
+                    <td class="num">3,307</td>
+                    <td class="num">+955</td>
+                    <td class="num">+40.6%</td>
+                    <td class="num">468,611</td>
+                    <td class="num">748,593</td>
+                    <td class="num">+279,982</td>
+                    <td></td>
+                </tr>
+                <tr class="percent-total">
+                    <td>% of Site Total</td>
+                    <td class="num">100%</td>
+                    <td class="num">100%</td>
+                    <td class="num">-</td>
+                    <td class="num">-</td>
+                    <td class="num">100%</td>
+                    <td class="num">100%</td>
+                    <td class="num">-</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: Individual subfolder impressions are from page-level data and may count multi-URL search results separately. SUBTOTAL uses site-level totals (date dimension) for accuracy.</em></p>
+
+        <div class="callout callout-green">
+            <h3>Subfolder Insights</h3>
+            <ul>
+                <li><strong>Blog dominates growth:</strong> +593 clicks (+113.6%) - CargoWise content and education articles driving massive gains</li>
+                <li><strong>Support portal growing:</strong> +89 clicks (+41.8%) - Bond status article now #3 page site-wide</li>
+                <li><strong>API traffic surging:</strong> +143.8% growth - developer interest increasing</li>
+            </ul>
+        </div>
+
+        <!-- Top Pages -->
+        <h2 class="section-header">Top Pages Performance</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Page</th>
+                    <th class="num">Jan Clicks</th>
+                    <th class="num">Dec Clicks</th>
+                    <th class="num">&Delta; Clicks</th>
+                    <th class="num">Jan Impr</th>
+                    <th class="num">Dec Impr</th>
+                    <th class="num">&Delta; Impr</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="https://gofreight.com/" target="_blank">gofreight.com/</a></td>
+                    <td class="num">1,472</td>
+                    <td class="num">1,201</td>
+                    <td class="num trend-up">+271 (+22.6%)</td>
+                    <td class="num">59,097</td>
+                    <td class="num">49,852</td>
+                    <td class="num trend-up">+9,245</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="https://gofreight.com/blog/education/how-to-do-custom-clearance-in-usa-for-goods.html" target="_blank">/blog/.../custom-clearance-usa</a></td>
+                    <td class="num">179</td>
+                    <td class="num">55*</td>
+                    <td class="num trend-up">+124 (+225.5%)</td>
+                    <td class="num">63,951</td>
+                    <td class="num">35,086</td>
+                    <td class="num trend-up">+28,865</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="https://support.gofreight.com/hc/en-us/articles/14378165476751-Check-Bond-Status-Importer-Bond-Details-Overview" target="_blank">support.../Check-Bond-Status</a></td>
+                    <td class="num">113</td>
+                    <td class="num">19</td>
+                    <td class="num trend-up">+94 (+494.7%)</td>
+                    <td class="num">1,664</td>
+                    <td class="num">139</td>
+                    <td class="num trend-up">+1,525</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="https://gofreight.com/blog/cargowise-pricing-2025" target="_blank">/blog/cargowise-pricing-2025</a></td>
+                    <td class="num">98</td>
+                    <td class="num">-</td>
+                    <td class="num trend-up">New</td>
+                    <td class="num">4,197</td>
+                    <td class="num">-</td>
+                    <td class="num trend-up">New</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="https://gofreight.com/blog/education/10-best-books-on-freight-forwarding-to-read-in-2021.html" target="_blank">/blog/.../freight-forwarding-books</a></td>
+                    <td class="num">56</td>
+                    <td class="num">42</td>
+                    <td class="num trend-up">+14 (+33.3%)</td>
+                    <td class="num">2,260</td>
+                    <td class="num">1,470</td>
+                    <td class="num trend-up">+790</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="https://archive.gofreight.com/glossary/maher-terminal-tracking" target="_blank">archive.../maher-terminal-tracking</a></td>
+                    <td class="num">45</td>
+                    <td class="num">33</td>
+                    <td class="num trend-up">+12 (+36.4%)</td>
+                    <td class="num">8,609</td>
+                    <td class="num">7,244</td>
+                    <td class="num trend-up">+1,365</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="https://api.gofreight.com/" target="_blank">api.gofreight.com/</a></td>
+                    <td class="num">39</td>
+                    <td class="num">16</td>
+                    <td class="num trend-up">+23 (+143.8%)</td>
+                    <td class="num">1,249</td>
+                    <td class="num">947</td>
+                    <td class="num trend-up">+302</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><a href="https://gofreight.com/blog/education/how-to-apply-for-nvocc-license.html" target="_blank">/blog/.../nvocc-license</a></td>
+                    <td class="num">39</td>
+                    <td class="num">27</td>
+                    <td class="num trend-up">+12 (+44.4%)</td>
+                    <td class="num">3,060</td>
+                    <td class="num">2,428</td>
+                    <td class="num trend-up">+632</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><a href="https://gofreight.com/pricing" target="_blank">/pricing</a></td>
+                    <td class="num">34</td>
+                    <td class="num">28</td>
+                    <td class="num trend-up">+6 (+21.4%)</td>
+                    <td class="num">5,202</td>
+                    <td class="num">16,579</td>
+                    <td class="num trend-down">-11,377</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><a href="https://gofreight.com/blog/education/what-is-the-profit-margin-for-freight-forwarders.html" target="_blank">/blog/.../profit-margin-forwarders</a></td>
+                    <td class="num">31</td>
+                    <td class="num">-</td>
+                    <td class="num trend-up">New</td>
+                    <td class="num">13,007</td>
+                    <td class="num">-</td>
+                    <td class="num trend-up">New</td>
+                </tr>
+                <tr class="subtotal">
+                    <td colspan="2">SUBTOTAL (Top 10)</td>
+                    <td class="num">2,110</td>
+                    <td class="num">1,421</td>
+                    <td class="num">+689</td>
+                    <td class="num">163,766</td>
+                    <td class="num">113,745</td>
+                    <td class="num">+50,021</td>
+                </tr>
+                <tr class="percent-total">
+                    <td colspan="2">% of Site Total (3,307 clicks)</td>
+                    <td class="num">63.4%</td>
+                    <td class="num">60.4%</td>
+                    <td class="num">-</td>
+                    <td class="num">21.6%</td>
+                    <td class="num">24.3%</td>
+                    <td class="num">-</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 20px;">*Dec data from archive URL before migration</p>
+
+        <!-- Impression Gainers -->
+        <h2 class="section-header" style="background: linear-gradient(135deg, var(--success-green), #16a34a);">Top Impression Gainers</h2>
+
+        <table class="data-table green-header">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Page</th>
+                    <th class="num">Jan Impr</th>
+                    <th class="num">Jan Clicks</th>
+                    <th class="num">CTR</th>
+                    <th>Content Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="https://gofreight.com/blog/education/how-to-do-custom-clearance-in-usa-for-goods.html" target="_blank">Custom Clearance USA Guide</a></td>
+                    <td class="num">63,951</td>
+                    <td class="num">179</td>
+                    <td class="num">0.28%</td>
+                    <td>Education</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="https://gofreight.com/" target="_blank">Homepage</a></td>
+                    <td class="num">59,097</td>
+                    <td class="num">1,472</td>
+                    <td class="num">2.49%</td>
+                    <td>Brand</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="https://gofreight.com/blog/education/top-10-freight-forwarding-industry-news-websites-to-follow-in-2021.html" target="_blank">Top Industry News Websites</a></td>
+                    <td class="num">34,926</td>
+                    <td class="num">16</td>
+                    <td class="num">0.05%</td>
+                    <td>Education</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade.html" target="_blank">EXW Meaning Guide</a></td>
+                    <td class="num">32,117</td>
+                    <td class="num">28</td>
+                    <td class="num">0.09%</td>
+                    <td>Education</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html" target="_blank">FOB Shipping Guide</a></td>
+                    <td class="num">30,754</td>
+                    <td class="num">24</td>
+                    <td class="num">0.08%</td>
+                    <td>Education</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="https://gofreight.com/blog/education/understanding-cpt-meaning-in-incoterms.html" target="_blank">CPT Incoterms Guide</a></td>
+                    <td class="num">26,397</td>
+                    <td class="num">25</td>
+                    <td class="num">0.09%</td>
+                    <td>Education</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="https://gofreight.com/blog/industry-insights/top-10-reasons-of-shipping-delays.html" target="_blank">Top 10 Shipping Delays</a></td>
+                    <td class="num">22,366</td>
+                    <td class="num">28</td>
+                    <td class="num">0.13%</td>
+                    <td>Education</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-yellow">
+            <h3>CTR Optimization Opportunity</h3>
+            <p>High-impression educational pages (EXW, FOB, CPT guides) have CTR below 0.1%. These pages rank well but don't convert clicks. Consider:</p>
+            <ul>
+                <li>Improving title tags and meta descriptions with clearer value propositions</li>
+                <li>Adding rich snippets/FAQ schema to stand out in SERPs</li>
+                <li>Refreshing content with "approved yet to publish" updates</li>
+            </ul>
+        </div>
+
+        <!-- Top Keywords -->
+        <h2 class="section-header">Top Keywords Performance</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Keyword</th>
+                    <th class="num">Jan Clicks</th>
+                    <th class="num">Dec Clicks</th>
+                    <th class="num">&Delta;</th>
+                    <th class="num">Position</th>
+                    <th>Type</th>
+                    <th>Ranking URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>gofreight</td>
+                    <td class="num">632</td>
+                    <td class="num">566</td>
+                    <td class="num trend-up">+66</td>
+                    <td class="num">3.0</td>
+                    <td>Brand</td>
+                    <td><a href="https://gofreight.com/" target="_blank">Homepage</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>go freight</td>
+                    <td class="num">273</td>
+                    <td class="num">188</td>
+                    <td class="num trend-up">+85</td>
+                    <td class="num">9.3</td>
+                    <td>Brand</td>
+                    <td><a href="https://gofreight.com/" target="_blank">Homepage</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>go freight login</td>
+                    <td class="num">141</td>
+                    <td class="num">52</td>
+                    <td class="num trend-up">+89</td>
+                    <td class="num">1.5</td>
+                    <td>Brand</td>
+                    <td><a href="https://gofreight.com/" target="_blank">Homepage</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>gofreight login</td>
+                    <td class="num">54</td>
+                    <td class="num">71</td>
+                    <td class="num trend-down">-17</td>
+                    <td class="num">1.9</td>
+                    <td>Brand</td>
+                    <td><a href="https://gofreight.com/" target="_blank">Homepage</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>gofreight api</td>
+                    <td class="num">19</td>
+                    <td class="num">7</td>
+                    <td class="num trend-up">+12</td>
+                    <td class="num">4.7</td>
+                    <td>Product</td>
+                    <td><a href="https://api.gofreight.com/" target="_blank">API Portal</a></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>freight forwarding software</td>
+                    <td class="num">18</td>
+                    <td class="num">28</td>
+                    <td class="num trend-down">-10</td>
+                    <td class="num">12.2</td>
+                    <td>Product</td>
+                    <td><a href="https://gofreight.com/" target="_blank">Homepage</a></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>gofreight software</td>
+                    <td class="num">12</td>
+                    <td class="num">9</td>
+                    <td class="num trend-up">+3</td>
+                    <td class="num">1.0</td>
+                    <td>Brand</td>
+                    <td><a href="https://gofreight.com/" target="_blank">Homepage</a></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>gofreight tracking</td>
+                    <td class="num">11</td>
+                    <td class="num">20</td>
+                    <td class="num trend-down">-9</td>
+                    <td class="num">3.7</td>
+                    <td>Brand</td>
+                    <td><a href="https://gofreight.com/" target="_blank">Homepage</a></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>fenix marine terminal tracking</td>
+                    <td class="num">9</td>
+                    <td class="num">11</td>
+                    <td class="num trend-down">-2</td>
+                    <td class="num">6.0</td>
+                    <td>Terminal</td>
+                    <td><a href="https://archive.gofreight.com/glossary/fenix-marine-terminal-tracking" target="_blank">Glossary</a></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>freight forwarder software</td>
+                    <td class="num">8</td>
+                    <td class="num">6</td>
+                    <td class="num trend-up">+2</td>
+                    <td class="num">12.8</td>
+                    <td>Product</td>
+                    <td><a href="https://gofreight.com/" target="_blank">Homepage</a></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>maher terminal tracking</td>
+                    <td class="num">8</td>
+                    <td class="num">7</td>
+                    <td class="num trend-up">+1</td>
+                    <td class="num">5.3</td>
+                    <td>Terminal</td>
+                    <td><a href="https://archive.gofreight.com/glossary/maher-terminal-tracking" target="_blank">Glossary</a></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>cargowise pricing</td>
+                    <td class="num">7</td>
+                    <td class="num">-</td>
+                    <td class="num trend-up">New</td>
+                    <td class="num">18.1</td>
+                    <td>Product</td>
+                    <td><a href="https://gofreight.com/blog/cargowise-pricing-2025" target="_blank">Blog</a></td>
+                </tr>
+                <tr style="background: #f0f9ff; font-weight: bold; border-top: 2px solid var(--primary-blue);">
+                    <td colspan="2">Top 12 Subtotal</td>
+                    <td class="num">1,184</td>
+                    <td class="num">965</td>
+                    <td class="num">+219</td>
+                    <td class="num">-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr style="background: #e8f5e9; font-style: italic;">
+                    <td colspan="2">% of Total (3,307 clicks)</td>
+                    <td class="num">35.8%</td>
+                    <td class="num">41.0%</td>
+                    <td class="num">-</td>
+                    <td class="num">-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-green">
+            <h3>Keyword Insights</h3>
+            <ul>
+                <li><strong>"cargowise pricing"</strong> is a new entrant - content strategy working to capture competitor traffic</li>
+                <li><strong>Login queries growing:</strong> "go freight login" up 171% - indicates growing user base</li>
+                <li><strong>API interest:</strong> "gofreight api" clicks nearly tripled - developer adoption increasing</li>
+            </ul>
+        </div>
+
+        <!-- Core Keyword Tracking -->
+        <h2 class="section-header">Core Keyword Tracking — Monthly Performance</h2>
+
+        <p style="margin-bottom: 20px; color: #666;">Track ranking positions for priority commercial keywords. <strong>Position trend:</strong> Lower numbers = better rankings. Green = improved, Red = declined. <em>Data source: DataForSEO Historical SERP — Top 10 organic positions (Dec 2025 vs Jan 2026)</em></p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Core Keyword</th>
+                    <th class="num">Search Volume</th>
+                    <th class="num">Dec Position</th>
+                    <th class="num">Jan Position</th>
+                    <th class="num">Δ Position</th>
+                    <th>Ranking URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: #f0fdf4;">
+                    <td><strong>freight forwarding software</strong></td>
+                    <td class="num">390</td>
+                    <td class="num">3</td>
+                    <td class="num">3</td>
+                    <td class="num" style="color: #666;">— (held)</td>
+                    <td><a href="https://gofreight.com/" target="_blank" style="color: #01aac1;">gofreight.com/</a></td>
+                </tr>
+                <tr style="background: #f0fdf4;">
+                    <td><strong>freight forwarder software</strong></td>
+                    <td class="num">390</td>
+                    <td class="num">10</td>
+                    <td class="num">3</td>
+                    <td class="num trend-up">+7 ▲</td>
+                    <td><a href="https://gofreight.com/" target="_blank" style="color: #01aac1;">gofreight.com/</a></td>
+                </tr>
+                <tr style="background: #f0fdf4;">
+                    <td><strong>best freight forwarding software</strong></td>
+                    <td class="num">50</td>
+                    <td class="num">6</td>
+                    <td class="num">5</td>
+                    <td class="num trend-up">+1 ▲</td>
+                    <td><a href="https://gofreight.com/" target="_blank" style="color: #01aac1;">gofreight.com/</a></td>
+                </tr>
+                <tr style="background: #fef2f2;">
+                    <td><strong>air freight forwarding software</strong></td>
+                    <td class="num">40</td>
+                    <td class="num">4</td>
+                    <td class="num">—</td>
+                    <td class="num trend-down">Lost ▼</td>
+                    <td><span style="color: #999;">Not in top 10</span></td>
+                </tr>
+                <tr>
+                    <td><strong>freight management system</strong></td>
+                    <td class="num">390</td>
+                    <td class="num">—</td>
+                    <td class="num">—</td>
+                    <td class="num" style="color: #999;">Not ranking</td>
+                    <td><span style="color: #999;">Content gap</span></td>
+                </tr>
+                <tr>
+                    <td><strong>freight management software</strong></td>
+                    <td class="num">320</td>
+                    <td class="num">—</td>
+                    <td class="num">—</td>
+                    <td class="num" style="color: #999;">Not ranking</td>
+                    <td><span style="color: #999;">Content gap</span></td>
+                </tr>
+                <tr>
+                    <td><strong>freight management system software</strong></td>
+                    <td class="num">90</td>
+                    <td class="num">—</td>
+                    <td class="num">—</td>
+                    <td class="num" style="color: #999;">Not ranking</td>
+                    <td><span style="color: #999;">Content gap</span></td>
+                </tr>
+                <tr>
+                    <td><strong>ocean freight management software</strong></td>
+                    <td class="num">50</td>
+                    <td class="num">—</td>
+                    <td class="num">—</td>
+                    <td class="num" style="color: #999;">Not ranking</td>
+                    <td><span style="color: #999;">Content gap</span></td>
+                </tr>
+                <tr>
+                    <td><strong>global freight management system</strong></td>
+                    <td class="num">30</td>
+                    <td class="num">—</td>
+                    <td class="num">—</td>
+                    <td class="num" style="color: #999;">Not ranking</td>
+                    <td><span style="color: #999;">Content gap</span></td>
+                </tr>
+                <tr>
+                    <td><strong>best freight management software</strong></td>
+                    <td class="num">30</td>
+                    <td class="num">—</td>
+                    <td class="num">—</td>
+                    <td class="num" style="color: #999;">Not ranking</td>
+                    <td><span style="color: #999;">Content gap</span></td>
+                </tr>
+                <tr>
+                    <td><strong>sea freight management software</strong></td>
+                    <td class="num">10</td>
+                    <td class="num">—</td>
+                    <td class="num">—</td>
+                    <td class="num" style="color: #999;">Not ranking</td>
+                    <td><span style="color: #999;">Content gap</span></td>
+                </tr>
+                <tr>
+                    <td><strong>container freight management system</strong></td>
+                    <td class="num">10</td>
+                    <td class="num">—</td>
+                    <td class="num">—</td>
+                    <td class="num" style="color: #999;">Not ranking</td>
+                    <td><span style="color: #999;">Content gap</span></td>
+                </tr>
+                <tr style="background: #f0f9ff; font-weight: bold; border-top: 2px solid var(--primary-blue);">
+                    <td>Total Search Volume Tracked</td>
+                    <td class="num">1,800</td>
+                    <td class="num" colspan="4">—</td>
+                </tr>
+                <tr style="background: #e8f5e9; font-style: italic;">
+                    <td>Keywords in Top 10 (of 12 tracked)</td>
+                    <td class="num" colspan="2">Dec: 4</td>
+                    <td class="num" colspan="2">Jan: 3</td>
+                    <td>25% coverage</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-green">
+            <h3>✓ Core Keyword Wins</h3>
+            <ul>
+                <li><strong>"freight forwarding software"</strong> (390/mo) — Held position #3 (Dec → Jan)</li>
+                <li><strong>"freight forwarder software"</strong> (390/mo) — Jumped from #10 to #3 (+7 positions)</li>
+                <li><strong>"best freight forwarding software"</strong> (50/mo) — Improved from #6 to #5</li>
+            </ul>
+        </div>
+
+        <div class="callout callout-red">
+            <h3>⚠️ Ranking Loss</h3>
+            <ul>
+                <li><strong>"air freight forwarding software"</strong> (40/mo) — Dropped from #4 to outside top 10. The new /solutions/air page should help recapture this keyword.</li>
+            </ul>
+        </div>
+
+        <div class="callout callout-yellow">
+            <h3>Content Gaps: High-Volume Keywords Not Ranking</h3>
+            <ul>
+                <li><strong>"freight management system"</strong> (390/mo) — TMS content cluster in progress should target this</li>
+                <li><strong>"freight management software"</strong> (320/mo) — Needs dedicated landing page or solution page optimization</li>
+                <li><strong>"freight management system software"</strong> (90/mo) — Related to TMS cluster, combined content strategy recommended</li>
+            </ul>
+        </div>
+
+        <!-- AEO/AI Visibility -->
+        <h2 class="section-header">AEO/AI Visibility Metrics</h2>
+
+        <div class="aeo-kpi-grid">
+            <div class="aeo-kpi">
+                <div class="label">AI Visibility</div>
+                <div class="value">14.3%</div>
+            </div>
+            <div class="aeo-kpi">
+                <div class="label">Share of Voice</div>
+                <div class="value">12.7%</div>
+            </div>
+            <div class="aeo-kpi">
+                <div class="label">Total Mentions</div>
+                <div class="value">29</div>
+            </div>
+            <div class="aeo-kpi">
+                <div class="label">Avg Position</div>
+                <div class="value">51.4</div>
+            </div>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Platform Breakdown</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Platform</th>
+                    <th class="num">Mentions</th>
+                    <th class="num">Visibility %</th>
+                    <th class="num">Avg Position</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Perplexity</td>
+                    <td class="num">10</td>
+                    <td class="num">19.1%</td>
+                    <td class="num">42.9</td>
+                </tr>
+                <tr>
+                    <td>Google AI Overview</td>
+                    <td class="num">10</td>
+                    <td class="num">14.3%</td>
+                    <td class="num">60.5</td>
+                </tr>
+                <tr>
+                    <td>ChatGPT</td>
+                    <td class="num">9</td>
+                    <td class="num">9.5%</td>
+                    <td class="num">50.8</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Competitor Visibility Comparison</h3>
+        <div class="chart-container">
+            <canvas id="competitorChart" height="250"></canvas>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th class="num">Total Mentions</th>
+                    <th class="num">Visibility %</th>
+                    <th class="num">Avg Position</th>
+                    <th>Trend</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Magaya Supply Chain</strong></td>
+                    <td class="num">29</td>
+                    <td class="num">30.2%</td>
+                    <td class="num">48.4</td>
+                    <td>Leader</td>
+                </tr>
+                <tr style="background: rgba(1, 170, 193, 0.1);">
+                    <td><strong>GoFreight</strong></td>
+                    <td class="num">29</td>
+                    <td class="num">14.3%</td>
+                    <td class="num">51.4</td>
+                    <td>Tied #1 mentions</td>
+                </tr>
+                <tr>
+                    <td>CargoWise</td>
+                    <td class="num">24</td>
+                    <td class="num">23.8%</td>
+                    <td class="num">43.7</td>
+                    <td>Strong</td>
+                </tr>
+                <tr>
+                    <td>Descartes</td>
+                    <td class="num">16</td>
+                    <td class="num">20.6%</td>
+                    <td class="num">74.9</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td>Shipthis</td>
+                    <td class="num">9</td>
+                    <td class="num">14.3%</td>
+                    <td class="num">53.8</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td>Freightview</td>
+                    <td class="num">3</td>
+                    <td class="num">4.8%</td>
+                    <td class="num">44.0</td>
+                    <td>Minimal</td>
+                </tr>
+                <tr>
+                    <td>GoComet</td>
+                    <td class="num">2</td>
+                    <td class="num">3.2%</td>
+                    <td class="num">148.5</td>
+                    <td>Minimal</td>
+                </tr>
+                <tr>
+                    <td>Neurored</td>
+                    <td class="num">1</td>
+                    <td class="num">1.6%</td>
+                    <td class="num">102.0</td>
+                    <td>Minimal</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-yellow">
+            <h3>AEO Performance: Flat Month-over-Month</h3>
+            <p>AI visibility metrics remained relatively flat in January compared to December. Key observations:</p>
+            <ul>
+                <li><strong>Visibility stable at ~14%:</strong> No significant gains or losses in AI response inclusion</li>
+                <li><strong>Mentions held steady (29):</strong> Tied with Magaya but trailing in visibility % (14.3% vs 30.2%)</li>
+                <li><strong>Position unchanged (~51):</strong> Mentions appearing mid-to-lower in AI responses</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Why flat?</strong> AEO gains typically lag SEO content by 2-3 months as LLMs update their training data and citation sources. January SEO improvements (blog migration, new content) should reflect in AI visibility by late Q1.</p>
+        </div>
+
+        <div class="callout callout-blue">
+            <h3>AEO Focus Areas for February</h3>
+            <ul>
+                <li>Improve position in AI responses by strengthening authority signals (schema, citations)</li>
+                <li>Create more comparison content (GoFreight vs Magaya, GoFreight vs CargoWise)</li>
+                <li>Perplexity showing strongest performance (19.1%) - lean into citation-friendly content</li>
+                <li>Add LLM share links to footer for better AI discoverability</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Prepared by Novastacks | Data sources: Google Search Console (date dimension for totals), Workduo | Report corrected: February 9, 2026</p>
+        </div>
     </div>
+
+    <script>
+        // Brand colors
+        const brandColors = {
+            primary: '#01aac1',
+            accent: '#01d7f4',
+            teal: '#017d8e',
+            success: '#22c55e',
+            warning: '#eab308',
+            danger: '#ef4444'
+        };
+
+        // Daily data - January 2026
+        const janDates = ['Jan 1','Jan 2','Jan 3','Jan 4','Jan 5','Jan 6','Jan 7','Jan 8','Jan 9','Jan 10','Jan 11','Jan 12','Jan 13','Jan 14','Jan 15','Jan 16','Jan 17','Jan 18','Jan 19','Jan 20','Jan 21','Jan 22','Jan 23','Jan 24','Jan 25','Jan 26','Jan 27','Jan 28','Jan 29','Jan 30','Jan 31'];
+        const janClicks = [23,67,18,54,133,136,123,136,72,41,58,129,151,136,97,95,38,47,132,175,135,164,119,55,65,161,191,180,171,146,59];
+        const janImpressions = [11471,12705,9603,11681,14730,13930,15210,18472,17421,15365,17096,22753,22959,24447,23358,24200,18251,19250,30910,33888,34051,35048,28821,23051,24724,36103,38526,40698,41483,39099,29289];
+
+        // Clicks Chart
+        new Chart(document.getElementById('clicksChart'), {
+            type: 'line',
+            data: {
+                labels: janDates,
+                datasets: [{
+                    label: 'Clicks',
+                    data: janClicks,
+                    borderColor: brandColors.primary,
+                    backgroundColor: 'rgba(1, 170, 193, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Impressions Chart
+        new Chart(document.getElementById('impressionsChart'), {
+            type: 'line',
+            data: {
+                labels: janDates,
+                datasets: [{
+                    label: 'Impressions',
+                    data: janImpressions,
+                    borderColor: brandColors.success,
+                    backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Competitor Chart
+        new Chart(document.getElementById('competitorChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Magaya', 'GoFreight', 'CargoWise', 'Descartes', 'Shipthis', 'Freightview', 'GoComet', 'Neurored'],
+                datasets: [{
+                    label: 'Visibility %',
+                    data: [30.2, 14.3, 23.8, 20.6, 14.3, 4.8, 3.2, 1.6],
+                    backgroundColor: [
+                        '#666666',
+                        brandColors.primary,
+                        '#666666',
+                        '#666666',
+                        '#666666',
+                        '#666666',
+                        '#666666',
+                        '#666666'
+                    ]
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 35,
+                        ticks: {
+                            callback: function(value) { return value + '%'; }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
