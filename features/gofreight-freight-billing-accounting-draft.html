@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Billing & Accounting Software | GoFreight</title>
+    <meta name="description" content="Freight billing and accounting built for forwarders. Shipment P&L, invoice generation, agent settlements, payment matching, multi-currency, QuickBooks sync—all in one system.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Freight Billing & Accounting Software",
+        "description": "Purpose-built billing and accounting for freight forwarders. Invoicing, shipment P&L, agent settlements, payment matching, and QuickBooks sync in one platform.",
+        "url": "https://gofreight.com/product/freight-billing-accounting",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Product", "item": "https://gofreight.com/product"},
+                {"@type": "ListItem", "position": 3, "name": "Billing & Accounting", "item": "https://gofreight.com/product/freight-billing-accounting"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is freight billing software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freight billing software handles the unique invoicing and financial needs of freight forwarding: generating invoices from shipment data, tracking profitability by job, managing agent settlements, and supporting multi-currency transactions. Unlike generic billing tools, it's built for how forwarders actually quote, invoice, and collect payment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight integrate with QuickBooks?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight provides native two-way sync with QuickBooks. Invoices, payments, and financial data flow automatically between systems, eliminating duplicate data entry."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I see profitability by shipment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight shows profit and loss on every job—revenue, costs, and margin visible at the shipment level. You can see which lanes, customers, and services are most profitable."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do agent settlements work in GoFreight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight tracks amounts owed to and from your overseas partners at the shipment level. You can run settlement reports to see net positions, generate settlement statements, and record payments when settlements clear."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I match payments to invoices automatically?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight supports payment matching to apply incoming customer payments to outstanding invoices. You can match single payments to multiple invoices or partial payments to individual invoices."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does multi-currency billing and payment work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight handles multi-currency transactions end to end. Invoice customers in their preferred currency, receive payments in another, track costs in carrier currencies, and automatically manage exchange rate conversions and gains/losses for reporting."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is freight settlement software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freight settlement software manages the complex financial flows in freight forwarding—customer receivables, agent settlements with overseas partners, and vendor payables to carriers and truckers. It provides visibility into what's owed in every direction."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight handle both accounts receivable and accounts payable?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight provides full AR and AP management—customer invoicing and payment tracking on the receivable side, vendor and carrier bill management on the payable side, with aging reports, credit limits, and collections tracking across both."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .features-section-alt { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .features-section-alt .feature-card { background: var(--gf-bg-light); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        .workflow-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .workflow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .workflow-content h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; }
+        .workflow-content p { color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .workflow-steps { list-style: none; }
+        .workflow-steps li { padding: 0.75rem 0; padding-left: 2rem; position: relative; border-bottom: 1px solid var(--gf-border); }
+        .workflow-steps li:last-child { border-bottom: none; }
+        .workflow-steps li::before { content: "\2192"; position: absolute; left: 0; color: var(--gf-teal); font-weight: 700; }
+        .workflow-image { background: var(--gf-bg-white); border-radius: 12px; padding: 2rem; text-align: center; color: var(--gf-text-light); min-height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--gf-border); }
+
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-light); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container, .workflow-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/product">Product</a><span>&rsaquo;</span>
+        Billing &amp; Accounting
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Freight Billing &amp; Accounting Software</h1>
+                <p class="hero-subhead">
+                    One system for invoicing, profitability tracking, agent settlements, and payments. Generate invoices from shipment data, sync with QuickBooks, and know exactly where every dollar stands.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#accounting-features" class="btn-outline">See Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">P&amp;L</div>
+                        <div class="hero-stat-label">By shipment</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">QuickBooks</div>
+                        <div class="hero-stat-label">Native sync</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Multi</div>
+                        <div class="hero-stat-label">Currency</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Billing &amp; Accounting Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <!-- DEFINITION -->
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>Freight billing software</strong> handles the unique financial lifecycle of freight forwarding&mdash;from generating invoices tied to shipment data, to tracking profitability by job, managing agent settlements with overseas partners, and processing payments across multiple currencies. Unlike generic accounting or billing tools, it connects your quoting, shipping, invoicing, and payment workflows into a single financial system built for how forwarders actually operate.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCOUNTING & BILLING FEATURES -->
+    <section class="features-section" id="accounting-features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Accounting &amp; Billing Features</h2>
+                <p>Purpose-built freight accounting. Track profitability, generate invoices, and sync with QuickBooks.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Shipment P&amp;L</h3>
+                    <p>Profitability visible on every job. See revenue, costs, and margin at the shipment level&mdash;know which lanes, customers, and services drive your bottom line.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Invoice Generation</h3>
+                    <p>Auto-populate invoices from quotes and shipments. No retyping charges&mdash;charges flow directly from shipment data to customer invoices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Agent Settlements</h3>
+                    <p>Track amounts owed to and from overseas partners at the shipment level. Generate settlement statements and run net position reports when you need them.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💱</div>
+                    <h3>Multi-Currency Accounting</h3>
+                    <p>Built-in exchange rate handling for international operations. Invoice in any currency, track costs in carrier currencies, and report in yours&mdash;with automatic conversions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>QuickBooks Integration</h3>
+                    <p>Native two-way sync. Invoices, payments, and financial data flow automatically between GoFreight and QuickBooks&mdash;no duplicate entry.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>AR/AP Management</h3>
+                    <p>Credit limits, aging reports, and collections tracking. Full receivables and payables management across customers, vendors, and carriers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAYMENT & SETTLEMENT FEATURES -->
+    <section class="features-section-alt" id="payment-features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Payment &amp; Settlement Features</h2>
+                <p>Track every dollar in and out. Customer payments, vendor bills, and partner settlements in one view.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>Accounts Receivable</h3>
+                    <p>Customer invoices and payment tracking. See what's outstanding, what's overdue, and which customers need follow-up&mdash;all in real time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <h3>Accounts Payable</h3>
+                    <p>Vendor and carrier bill management. Track what you owe, when it's due, and approve payments&mdash;with full audit trails.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Payment Matching</h3>
+                    <p>Match incoming payments to invoices. Apply single payments to multiple invoices or partial payments to individual invoices&mdash;no manual reconciliation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Cross-Border Settlements</h3>
+                    <p>Manage agent and partner settlements across borders. Net positions calculated automatically with exchange rate tracking for international payables and receivables.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3>Multi-Currency Payments</h3>
+                    <p>Invoice in one currency, receive payment in another. Track exchange rate gains and losses automatically throughout the payment lifecycle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Aging Reports</h3>
+                    <p>See what's overdue at a glance. AR and AP aging by customer, vendor, and agent&mdash;with drill-down to individual invoices and shipments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKFLOW: QUOTE TO PAYMENT -->
+    <section class="workflow-section">
+        <div class="section-container">
+            <div class="workflow-grid">
+                <div class="workflow-content">
+                    <h2>Quote &rarr; Shipment &rarr; Invoice &rarr; Payment Flow</h2>
+                    <p>Charges flow automatically through your entire financial workflow. No retyping, no errors, no reconciliation headaches.</p>
+                    <ul class="workflow-steps">
+                        <li><strong>Quote:</strong> Build quote with costs and markup</li>
+                        <li><strong>Win:</strong> Convert to shipment with one click</li>
+                        <li><strong>Ship:</strong> Costs populate from actual charges</li>
+                        <li><strong>Invoice:</strong> Generate from shipment data automatically</li>
+                        <li><strong>Payment:</strong> Record incoming payment, match to invoice</li>
+                        <li><strong>Settle:</strong> Calculate net positions with agents and partners</li>
+                        <li><strong>P&amp;L:</strong> Profitability calculated automatically per shipment</li>
+                    </ul>
+                </div>
+                <div class="workflow-image">
+                    [Quote-to-Payment Flow Diagram]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">
+                "With GoFreight, we turned <span>financial complexity into clarity</span>."
+            </p>
+            <p class="testimonial-author">
+                &mdash; <strong>Jane Xu</strong>, Straight Forwarding Inc.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is freight billing software?</div>
+                    <div class="faq-answer">Freight billing software handles the unique invoicing and financial needs of freight forwarding: generating invoices from shipment data, tracking profitability by job, managing agent settlements, and supporting multi-currency transactions. Unlike generic billing tools, it's built for how forwarders actually quote, invoice, and collect payment.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight integrate with QuickBooks?</div>
+                    <div class="faq-answer">Yes. GoFreight provides native two-way sync with QuickBooks. Invoices, payments, and financial data flow automatically between systems, eliminating duplicate data entry.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I see profitability by shipment?</div>
+                    <div class="faq-answer">Yes. GoFreight shows profit and loss on every job&mdash;revenue, costs, and margin visible at the shipment level. You can see which lanes, customers, and services are most profitable.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do agent settlements work in GoFreight?</div>
+                    <div class="faq-answer">GoFreight tracks amounts owed to and from your overseas partners at the shipment level. You can run settlement reports to see net positions, generate settlement statements, and record payments when settlements clear.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I match payments to invoices automatically?</div>
+                    <div class="faq-answer">Yes. GoFreight supports payment matching to apply incoming customer payments to outstanding invoices. You can match single payments to multiple invoices or partial payments to individual invoices.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does multi-currency billing and payment work?</div>
+                    <div class="faq-answer">GoFreight handles multi-currency transactions end to end. Invoice customers in their preferred currency, receive payments in another, track costs in carrier currencies, and automatically manage exchange rate conversions and gains/losses for reporting.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is freight settlement software?</div>
+                    <div class="faq-answer">Freight settlement software manages the complex financial flows in freight forwarding&mdash;customer receivables, agent settlements with overseas partners, and vendor payables to carriers and truckers. It provides visibility into what&rsquo;s owed in every direction.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight handle both accounts receivable and accounts payable?</div>
+                    <div class="faq-answer">Yes. GoFreight provides full AR and AP management&mdash;customer invoicing and payment tracking on the receivable side, vendor and carrier bill management on the payable side, with aging reports, credit limits, and collections tracking across both.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Simplify Your Freight Financials?</h2>
+            <p>See how GoFreight brings billing, accounting, and payments into one system built for freight forwarders.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
