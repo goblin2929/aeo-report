@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Freight Management Software | Import & Export | GoFreight</title>
+    <meta name="description" content="Air freight management software for forwarders. HAWB/MAWB generation, flight tracking, air consolidation, AES filing, and quoting in one platform. 47% faster quoting, 40% less manual documentation.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Air Freight Management Software",
+        "description": "Air freight management software that connects import and export workflows in one platform. HAWB/MAWB, flight tracking, consolidation, and AES filing for freight forwarders.",
+        "url": "https://gofreight.com/solutions/air",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://gofreight.com/solutions"},
+                {"@type": "ListItem", "position": 3, "name": "Air Freight", "item": "https://gofreight.com/solutions/air"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is air freight management software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Air freight management software provides freight forwarders with specialized tools for air cargo operations: house and master air waybill generation, flight tracking, air consolidation workflows, and compliance features like AES filing for exports. Unlike generic logistics tools, it connects quoting, operations, documentation, and billing in one platform built for how air forwarders actually work."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I generate HAWB and MAWB documents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight generates both House Air Waybills (HAWB) and Master Air Waybills (MAWB) directly from shipment data. Documents are formatted correctly and can be printed or sent electronically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does flight tracking work in GoFreight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight tracks air shipments through their journey: departure, arrival, and key milestones. Status updates flow into the system, and you can set alerts to notify your team and customers of flight status changes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight support air consolidations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight supports air consolidation workflows, allowing you to group multiple shippers under a single MAWB. House waybills, master waybills, and split invoicing are all handled in the system."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does GoFreight help air freight quoting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight centralizes contract and spot rates in one searchable database. Your team can build professional quotes in seconds, respond faster than competitors, and convert won quotes into live shipments with one click. Forwarders using GoFreight reply up to 47% faster on air freight inquiries."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight integrate with AES filing for air exports?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight includes direct AES (Automated Export System) filing for air exports. Export shipment data flows directly into the filing, and you receive confirmation through the system. No need to switch between platforms."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+            --gf-red: #ef4444;
+            --gf-amber: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 5rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.2; }
+        .hero h1 em { font-style: normal; color: var(--gf-teal); }
+        .hero-subhead { font-size: 1.1rem; color: var(--gf-text-secondary); margin-bottom: 1rem; line-height: 1.7; }
+        .hero-subtext { font-size: 0.95rem; color: var(--gf-text-secondary); margin-bottom: 2rem; line-height: 1.6; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; display: inline-block; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        /* Definition Block */
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        /* Problem Section */
+        .problem-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 750px; margin: 0 auto; line-height: 1.7; }
+        .problem-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+        .problem-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.5rem; border-top: 4px solid var(--gf-red); text-align: center; }
+        .problem-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Solution Section */
+        .solution-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .solution-intro { max-width: 800px; margin: 0 auto 3rem; text-align: center; }
+        .solution-intro h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .solution-intro p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+        .solution-pillars { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .pillar-card { background: var(--gf-bg-white); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--gf-border); }
+        .pillar-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--gf-text-primary); }
+        .pillar-card ul { list-style: none; padding: 0; margin-bottom: 1.25rem; }
+        .pillar-card ul li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+        .pillar-card ul li::before { content: ""; position: absolute; left: 0; top: 0.75rem; width: 8px; height: 8px; background: var(--gf-teal); border-radius: 50%; }
+        .pillar-result { font-size: 0.9rem; color: var(--gf-teal); font-weight: 600; padding-top: 0.75rem; border-top: 1px solid var(--gf-border); }
+
+        /* Financial Section */
+        .financial-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .financial-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .financial-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+        .financial-content ul { list-style: none; padding: 0; margin-bottom: 1.25rem; }
+        .financial-content ul li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        .financial-content ul li::before { content: ""; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; background: var(--gf-teal); border-radius: 50%; }
+        .financial-content .section-note { color: var(--gf-text-secondary); font-size: 0.95rem; font-style: italic; }
+        .financial-visual { background: var(--gf-bg-white); border-radius: 16px; padding: 2rem; border: 1px solid var(--gf-border); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); }
+
+        /* Modes Section */
+        .modes-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .modes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .mode-card { background: var(--gf-bg-white); border-radius: 12px; padding: 2rem; text-align: center; border: 1px solid var(--gf-border); }
+        .mode-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .mode-card p { color: var(--gf-text-secondary); font-size: 0.95rem; }
+        .mode-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        /* Features Section */
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        /* Products Section */
+        .products-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .product-card { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 16px; padding: 2rem; transition: all 0.3s; }
+        .product-card:hover { border-color: var(--gf-teal); box-shadow: 0 8px 30px rgba(1,170,193,0.12); }
+        .product-card h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .product-card p { color: var(--gf-text-secondary); margin-bottom: 1.25rem; line-height: 1.6; }
+        .product-link { color: var(--gf-teal); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem; }
+        .product-link:hover { color: var(--gf-teal-dark); }
+
+        /* Impact Section */
+        .impact-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .impact-card { background: var(--gf-bg-white); border-radius: 12px; padding: 2rem; text-align: center; border-top: 4px solid var(--gf-teal); }
+        .impact-metric { font-size: 0.85rem; font-weight: 600; color: var(--gf-teal); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        .impact-number { font-size: 1.75rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .impact-desc { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Testimonial Section */
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-white); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-reel { color: var(--gf-text-light); font-size: 1.1rem; margin-bottom: 2rem; padding: 3rem; background: var(--gf-bg-light); border-radius: 12px; }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+
+        /* FAQ Section */
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* CTA Section */
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .solution-pillars { grid-template-columns: 1fr; }
+            .financial-container { grid-template-columns: 1fr; }
+            .impact-grid { grid-template-columns: repeat(2, 1fr); }
+            .problem-grid { grid-template-columns: repeat(2, 1fr); }
+            .modes-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .products-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .modes-grid, .features-grid { grid-template-columns: 1fr; }
+            .problem-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/solutions">Solutions</a><span>&rsaquo;</span>
+        Air Freight
+    </div>
+
+    <!-- Section 1: Hero (GoFreight SSOT + stat badges from ours) -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Air Freight Management Software. <em>Air Freight Moves Fast. Your Operations Should Too.</em></h1>
+                <p class="hero-subhead">
+                    Whether you manage urgent imports, complex export consolidations, or both, GoFreight's air freight management software helps your team quote faster, execute with confidence, and deliver consistent service, all in one connected system built for modern freight forwarders.
+                </p>
+                <p class="hero-subtext">
+                    Air teams using GoFreight reduce manual work, improve shipment visibility, and scale volume without adding headcount.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#solution" class="btn-primary">See How It Works</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">HAWB & MAWB</div>
+                        <div class="hero-stat-label">Full waybill management</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Flight Tracking</div>
+                        <div class="hero-stat-label">Real time visibility</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">AES Filing</div>
+                        <div class="hero-stat-label">Export compliance</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Air Freight Management Dashboard]
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Definition Block (SEO keyword anchor from ours) -->
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>Air freight management software</strong> provides freight forwarders with specialized tools for air cargo operations: house and master air waybill generation, flight tracking, air consolidation workflows, and compliance features like AES filing. Unlike standalone tools, it connects quoting, operations, documentation, and billing in one platform built for how air forwarders actually work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Problem (GoFreight SSOT) -->
+    <section class="problem-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Air Freight Is Built for Speed. Most Systems Aren't.</h2>
+                <p>Without modern workflows, scaling air freight becomes increasingly difficult.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <p>Slow quoting costs you opportunities</p>
+                </div>
+                <div class="problem-card">
+                    <p>Operational complexity reduces control</p>
+                </div>
+                <div class="problem-card">
+                    <p>Manual billing hurts profitability</p>
+                </div>
+                <div class="problem-card">
+                    <p>Reactive updates damage customer experience</p>
+                </div>
+                <div class="problem-card">
+                    <p>Growth depends on adding headcount</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: The Integrated Solution (GoFreight SSOT, 3 pillars) -->
+    <section class="solution-section" id="solution">
+        <div class="solution-intro">
+            <h2>One Air Freight Platform. Built for Speed and Scale.</h2>
+            <p>GoFreight doesn't just store your data; it puts it to work. Our air freight management software is built for the unique demands of air cargo operations.</p>
+        </div>
+        <div class="solution-pillars">
+            <div class="pillar-card">
+                <h3>Win More Air Freight Business</h3>
+                <ul>
+                    <li>Centralize contract and spot rates</li>
+                    <li>Build professional quotes in seconds</li>
+                    <li>Respond faster than competitors</li>
+                    <li>Convert quotes into shipments instantly</li>
+                </ul>
+                <div class="pillar-result">Forwarders using GoFreight reply up to 47% faster, improving close rates and customer confidence.</div>
+            </div>
+            <div class="pillar-card">
+                <h3>Ship More Volume Without Operational Chaos</h3>
+                <ul>
+                    <li>Manage MAWB and HAWB workflows in one system</li>
+                    <li>Use templates and defaults to reduce manual setup</li>
+                    <li>Send e AWB data via EDI to airlines</li>
+                    <li>Keep teams aligned with structured milestones</li>
+                </ul>
+                <div class="pillar-result">Teams typically reduce documentation effort by up to 40%.</div>
+            </div>
+            <div class="pillar-card">
+                <h3>Scale Without Adding Headcount</h3>
+                <ul>
+                    <li>Automate shipment updates and arrival notices</li>
+                    <li>Provide clients with a branded tracking portal</li>
+                    <li>Standardize workflows for faster onboarding</li>
+                    <li>Maintain operational consistency during growth</li>
+                </ul>
+                <div class="pillar-result">Handle more shipments while improving service experience.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Financial Control (GoFreight SSOT) -->
+    <section class="financial-section">
+        <div class="financial-container">
+            <div class="financial-content">
+                <h2>Protect Margins and Improve Cash Flow</h2>
+                <ul>
+                    <li>Carry charges from quote to invoice automatically</li>
+                    <li>Reduce missed billing and manual corrections</li>
+                    <li>Track profitability by shipment and agent</li>
+                    <li>Accelerate invoicing cycles</li>
+                </ul>
+                <p class="section-note">Better visibility leads to stronger air freight profitability.</p>
+            </div>
+            <div class="financial-visual">
+                [Air Freight P&L Dashboard]
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Air Freight Operations (from ours, scannability + SEO) -->
+    <section class="modes-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Air Freight Operations</h2>
+                <p>HAWB/MAWB, tracking, and consolidation in one platform.</p>
+            </div>
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <div class="mode-icon">📄</div>
+                    <h3>HAWB/MAWB Management</h3>
+                    <p>Generate house and master air waybills directly from shipment data.</p>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">✈️</div>
+                    <h3>Flight Tracking</h3>
+                    <p>Track shipments through departure, arrival, and key milestones.</p>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">🔗</div>
+                    <h3>Air Consolidation</h3>
+                    <p>Group multiple shippers under a single MAWB with split invoicing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Air Freight Features (from ours, keyword depth + scannability) -->
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Air Freight Features</h2>
+                <p>Everything you need for air cargo operations.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Air Waybill Generation</h3>
+                    <p>HAWB and MAWB documents. Generated from shipment data, formatted correctly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✈️</div>
+                    <h3>Flight Tracking</h3>
+                    <p>Real time cargo visibility. Departure, arrival, and milestone updates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Air Consolidation</h3>
+                    <p>Multi shipper workflows. House waybills, master waybills, split invoicing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Dimensional Weight</h3>
+                    <p>Automatic DIM calculations. Chargeable weight computed correctly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>AES Filing</h3>
+                    <p>Export compliance integration. File directly from shipment data.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Carrier Management</h3>
+                    <p>Airline rate and booking management. Track by carrier and route.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Air Import & Export Solutions (from ours, internal linking) -->
+    <section class="products-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Air Import and Export Solutions</h2>
+                <p>Specialized workflows for each direction.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>✈️ Air Import</h3>
+                    <p>Manage inbound air shipments with flight tracking, HAWB management, and automated arrival notices.</p>
+                    <a href="/solutions/air-import" class="product-link">Learn about Air Import &rarr;</a>
+                </div>
+                <div class="product-card">
+                    <h3>✈️ Air Export</h3>
+                    <p>Streamline outbound air shipments with MAWB generation, AES filing, and carrier booking.</p>
+                    <a href="/solutions/air-export" class="product-link">Learn about Air Export &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: Impact Results (extracted from GoFreight text into cards) -->
+    <section class="impact-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Air Freight Management Results</h2>
+                <p>GoFreight delivers measurable ROI across your air freight operations.</p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-metric">Quoting Speed</div>
+                    <div class="impact-number">47%</div>
+                    <div class="impact-desc">Faster response to air freight inquiries.</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-metric">Documentation</div>
+                    <div class="impact-number">40%</div>
+                    <div class="impact-desc">Reduction in manual documentation effort.</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-metric">Billing Accuracy</div>
+                    <div class="impact-number">Fewer</div>
+                    <div class="impact-desc">Missed charges with quote to invoice automation.</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-metric">Customer Support</div>
+                    <div class="impact-number">Fewer</div>
+                    <div class="impact-desc">Status inquiry emails via branded tracking portal.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: Testimonial (GoFreight video + our text fallback) -->
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <div class="testimonial-reel">[Customer Videos]</div>
+            <p class="testimonial-quote">
+                "GoFreight's container tracking notifications have been a game changer for operational efficiency."
+            </p>
+            <p class="testimonial-author">
+                &mdash; <strong>Joseph Park</strong>, Operations Manager, Seamax
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 11: FAQ (from ours, expanded for SEO) -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is air freight management software?</div>
+                    <div class="faq-answer">Air freight management software provides freight forwarders with specialized tools for air cargo operations: house and master air waybill generation, flight tracking, air consolidation workflows, and compliance features like AES filing for exports. Unlike generic logistics tools, it connects quoting, operations, documentation, and billing in one platform built for how air forwarders actually work.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I generate HAWB and MAWB documents?</div>
+                    <div class="faq-answer">Yes. GoFreight generates both House Air Waybills (HAWB) and Master Air Waybills (MAWB) directly from shipment data. Documents are formatted correctly and can be printed or sent electronically.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does flight tracking work in GoFreight?</div>
+                    <div class="faq-answer">GoFreight tracks air shipments through their journey: departure, arrival, and key milestones. Status updates flow into the system, and you can set alerts to notify your team and customers of flight status changes.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight support air consolidations?</div>
+                    <div class="faq-answer">Yes. GoFreight supports air consolidation workflows, allowing you to group multiple shippers under a single MAWB. House waybills, master waybills, and split invoicing are all handled in the system.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does GoFreight help air freight quoting?</div>
+                    <div class="faq-answer">GoFreight centralizes contract and spot rates in one searchable database. Your team can build professional quotes in seconds, respond faster than competitors, and convert won quotes into live shipments with one click. Forwarders using GoFreight reply up to 47% faster on air freight inquiries.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight integrate with AES filing for air exports?</div>
+                    <div class="faq-answer">Yes. GoFreight includes direct AES (Automated Export System) filing for air exports. Export shipment data flows directly into the filing, and you receive confirmation through the system. No need to switch between platforms.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 12: Final CTA (GoFreight SSOT) -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Modern Air Freight Forwarding Requires Speed, Precision, and Visibility.</h2>
+            <p>GoFreight's air freight management software gives your team the structure to grow confidently.</p>
+            <a href="/get-demo" class="btn-white">Get a Free Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
