@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Tracking & Operations Software | GoFreight</title>
+    <meta name="description" content="Track every container from discharge to empty return. D&D alerts, milestone-based to-do lists, automated customer notifications, and EDI with overseas agents. Purpose-built for freight forwarders.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Shipment Tracking & Operations Software",
+        "description": "Track every container like it's your only one. D&D alerts, automated notifications, and complete operational control from booking to empty return.",
+        "url": "https://gofreight.com/product/shipment-tracking-operations",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Product", "item": "https://gofreight.com/product"},
+                {"@type": "ListItem", "position": 3, "name": "Operations & Execution", "item": "https://gofreight.com/product/shipment-tracking-operations"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is shipment tracking software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Shipment tracking software provides real-time visibility into shipment location and status across carriers and modes. For freight forwarders, this means one dashboard to see all shipments—ocean, air, and rail—instead of checking multiple carrier websites."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I track both ocean and air shipments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight tracks both ocean and air shipments in a single dashboard. You can see container status for ocean freight and flight/AWB status for air freight, all with automated updates and alerts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does GoFreight integrate with carriers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight integrates with 125+ carriers across ocean, air, and ground. Tracking data flows automatically into your dashboard without manual status checks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can my customers see tracking information?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight includes a branded customer portal where your shippers can track their own shipments, view documents, and receive automated status notifications—all without calling your team."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is cargo management software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cargo management software provides freight forwarders with tools to manage the complete shipment lifecycle—from initial booking through documentation, tracking, and empty return. It handles both ocean and air cargo, including consolidation workflows."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight handle both ocean and air cargo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight manages both ocean cargo (FCL, LCL, consolidation) and air cargo (HAWB/MAWB, flights) in one platform. You can track shipments across modes from a single dashboard."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I manage LCL consolidations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight supports LCL consolidation workflows, allowing you to group multiple shippers into a single container. The system handles house bills, master bills, and split invoicing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do automated tracking alerts work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight sends automated notifications for key shipment milestones—vessel arrivals, customs clearance, delays, and exceptions. You can configure alerts by event type and route them to your team or directly to customers through the portal."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 700px; margin: 0 auto; }
+
+        /* Container Lifecycle Section */
+        .lifecycle-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .lifecycle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .lifecycle-grid.two-col { grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 0 auto; }
+        .lifecycle-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .lifecycle-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .lifecycle-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .lifecycle-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        /* Daily Operations Section */
+        .operations-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .operations-list { max-width: 900px; margin: 0 auto; }
+        .operations-item { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid var(--gf-border); }
+        .operations-item:last-child { border-bottom: none; }
+        .operations-number { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: var(--gf-teal); flex-shrink: 0; }
+        .operations-item h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--gf-text-primary); }
+        .operations-item p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        /* Notifications Section */
+        .notifications-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .notifications-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
+        .notification-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .notification-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .notification-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+        .notification-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+
+        /* Testimonials */
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        .testimonial-card { background: var(--gf-bg-light); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-quote { font-size: 1.15rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .lifecycle-grid { grid-template-columns: repeat(2, 1fr); }
+            .lifecycle-grid.two-col { grid-template-columns: 1fr; }
+            .notifications-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .lifecycle-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/product">Product</a><span>&rsaquo;</span>
+        Operations & Execution
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Shipment Tracking & Operations Software</h1>
+                <p class="hero-subhead">
+                    Track every container like it's your only one. GoFreight keeps your team ahead of D&D fees, customer questions, and cross-team handoffs from booking to empty return.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#container-lifecycle" class="btn-outline">See Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">125+</div>
+                        <div class="hero-stat-label">Carrier integrations</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">53%</div>
+                        <div class="hero-stat-label">D&D fee reduction</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">2,000+</div>
+                        <div class="hero-stat-label">Weekly automated reports</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Shipment Tracking & Operations Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <!-- DEFINITION BLOCK -->
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>Shipment tracking & operations software</strong> provides real-time visibility into shipment location and status while managing the complete cargo lifecycle from booking to empty return. For freight forwarders, this means one platform to track all shipments across carriers and modes, generate documents, manage consolidations, and keep customers informed&mdash;instead of juggling multiple carrier websites and disconnected tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: Container Lifecycle Management -->
+    <section class="lifecycle-section" id="container-lifecycle">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Container Lifecycle Management</h2>
+                <p>Total visibility from discharge to empty return. No more chasing terminals or carriers.</p>
+            </div>
+            <div class="lifecycle-grid">
+                <div class="lifecycle-card">
+                    <div class="lifecycle-icon">📍</div>
+                    <h3>End-to-End Container Visibility</h3>
+                    <p>Track every container event from discharge to empty return. Status updates automatically&mdash;no manual carrier check-ins.</p>
+                </div>
+                <div class="lifecycle-card">
+                    <div class="lifecycle-icon">🔔</div>
+                    <h3>D&D Alerts & Free Time Tracking</h3>
+                    <p>Get notified before free time expires. Act before fees hit, not after. GoFreight customers reduce D&D costs by 53%.</p>
+                </div>
+                <div class="lifecycle-card">
+                    <div class="lifecycle-icon">🏷️</div>
+                    <h3>Color-Coded Stage Tracking</h3>
+                    <p>Custom tags for every stage: A/N sent, customs cleared, D/O ready. Your whole team knows exactly where each container stands at a glance.</p>
+                </div>
+            </div>
+            <div class="lifecycle-grid two-col" style="margin-top: 2rem;">
+                <div class="lifecycle-card">
+                    <div class="lifecycle-icon">📊</div>
+                    <h3>My Containers Dashboard</h3>
+                    <p>Filter and manage all containers in one view&mdash;by status, delay risk, or action needed. No spreadsheets, no hunting.</p>
+                </div>
+                <div class="lifecycle-card">
+                    <div class="lifecycle-icon">📝</div>
+                    <h3>Integrated Memo System</h3>
+                    <p>Add notes at the HBL, MBL, or container level. Handoffs stay clean. Nothing gets lost between teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Daily Operations -->
+    <section class="operations-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Daily Operations</h2>
+                <p>Keep your team organized and your workflow clear from booking to empty return.</p>
+            </div>
+            <div class="operations-list">
+                <div class="operations-item">
+                    <div class="operations-number">1</div>
+                    <div>
+                        <h3>Milestone-Based To-Do Lists</h3>
+                        <p>Task lists that build themselves based on shipment events and conditions. Your team always knows what to do next, no manager required.</p>
+                    </div>
+                </div>
+                <div class="operations-item">
+                    <div class="operations-number">2</div>
+                    <div>
+                        <h3>EDI with Overseas Agents</h3>
+                        <p>Share shipment data with your overseas agents instantly via EDI. No email threads, no manual re-entry, no miscommunication across borders.</p>
+                    </div>
+                </div>
+                <div class="operations-item">
+                    <div class="operations-number">3</div>
+                    <div>
+                        <h3>Document Generation</h3>
+                        <p>BOL, AWB, arrival notices generated from shipment data. No retyping, no errors.</p>
+                    </div>
+                </div>
+                <div class="operations-item">
+                    <div class="operations-number">4</div>
+                    <div>
+                        <h3>Shipment Conditions & SOPs</h3>
+                        <p>Set rules per customer or trade lane. Your team executes consistently, even across regions and new hires.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Automated Customer Notifications -->
+    <section class="notifications-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Automated Customer Notifications</h2>
+                <p>Set it up once. GoFreight handles the rest.</p>
+            </div>
+            <div class="notifications-grid">
+                <div class="notification-card">
+                    <div class="notification-icon">📋</div>
+                    <h3>Custom Shipment Reports</h3>
+                    <p>Format reports per customer's preferences. Send the details they care about, on the schedule they want.</p>
+                </div>
+                <div class="notification-card">
+                    <div class="notification-icon">⏰</div>
+                    <h3>Demurrage Reminders</h3>
+                    <p>Automatically notify customers before return deadlines. They avoid fees. You avoid the blame.</p>
+                </div>
+                <div class="notification-card">
+                    <div class="notification-icon">📅</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Daily, weekly, or event-triggered. You choose when each update goes out.</p>
+                </div>
+                <div class="notification-card">
+                    <div class="notification-icon">📦</div>
+                    <h3>Container Return Alerts</h3>
+                    <p>Automated reminders for empty return deadlines. Keep customers on track without manual follow-up.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Testimonials -->
+    <section class="testimonial-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What Freight Forwarders Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "We send over <span>2,000 automated reports and reminders each week</span> using GoFreight. Our customers are happier, and our team spends far less time chasing updates."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "GoFreight helped us reduce our detention and demurrage fees by <span>more than 50%</span> in just a few months. Their container visibility tools keep us on top of every shipment."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FAQ -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is shipment tracking software?</div>
+                    <div class="faq-answer">Shipment tracking software provides real-time visibility into shipment location and status across carriers and modes. For freight forwarders, this means one dashboard to see all shipments&mdash;ocean, air, and rail&mdash;instead of checking multiple carrier websites.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I track both ocean and air shipments?</div>
+                    <div class="faq-answer">Yes. GoFreight tracks both ocean and air shipments in a single dashboard. You can see container status for ocean freight and flight/AWB status for air freight, all with automated updates and alerts.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does GoFreight integrate with carriers?</div>
+                    <div class="faq-answer">GoFreight integrates with 125+ carriers across ocean, air, and ground. Tracking data flows automatically into your dashboard without manual status checks.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can my customers see tracking information?</div>
+                    <div class="faq-answer">Yes. GoFreight includes a branded customer portal where your shippers can track their own shipments, view documents, and receive automated status notifications&mdash;all without calling your team.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is cargo management software?</div>
+                    <div class="faq-answer">Cargo management software provides freight forwarders with tools to manage the complete shipment lifecycle&mdash;from initial booking through documentation, tracking, and empty return. It handles both ocean and air cargo, including consolidation workflows.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight handle both ocean and air cargo?</div>
+                    <div class="faq-answer">Yes. GoFreight manages both ocean cargo (FCL, LCL, consolidation) and air cargo (HAWB/MAWB, flights) in one platform. You can track shipments across modes from a single dashboard.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I manage LCL consolidations?</div>
+                    <div class="faq-answer">Yes. GoFreight supports LCL consolidation workflows, allowing you to group multiple shippers into a single container. The system handles house bills, master bills, and split invoicing.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do automated tracking alerts work?</div>
+                    <div class="faq-answer">GoFreight sends automated notifications for key shipment milestones&mdash;vessel arrivals, customs clearance, delays, and exceptions. You can configure alerts by event type and route them to your team or directly to customers through the portal.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready for Complete Shipment Visibility & Control?</h2>
+            <p>See how GoFreight tracks and manages all your shipments in one platform.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
