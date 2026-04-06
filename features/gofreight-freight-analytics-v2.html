@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Reporting & Analytics Tools and Software | GoFreight</title>
+    <meta name="description" content="Five built-in BI reports for freight forwarders: inactive customers, overdue AR, credit limits, customer ranking, and port pair insights. Plus automated client reports, shipment P&L, and data export.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Freight Reporting & Analytics Tools and Software",
+        "description": "Built-in BI reports, automated client reporting, shipment P&L, and financial analytics for freight forwarders.",
+        "url": "https://gofreight.com/features/freight-analytics",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://gofreight.com/features"},
+                {"@type": "ListItem", "position": 3, "name": "Reporting & Analytics", "item": "https://gofreight.com/features/freight-analytics"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What reporting does GoFreight include out of the box?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight includes five built-in BI reports: Inactive Customers, Overdue AR, Over Credit Limit, Customer Ranking, and Port Pair Insights. These run automatically and surface the information your team needs to take action, without building reports from scratch. Additional financial reports include shipment P&L, lane analysis, customer profitability, and AR/AP aging."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I see profitability by shipment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight calculates gross profit on every shipment automatically. You can see revenue, costs, and margin at the job level, and aggregate by customer, lane, or time period."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I send automated reports to my customers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can configure custom report formats and delivery schedules per customer. GoFreight sends reports and reminders automatically at the frequency and in the format each client prefers. GoFreight customers send over 2,000 automated reports and reminders per week with no manual effort."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the five BI reports in GoFreight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The five BI reports are: Inactive Customers (spot churn risk early), Overdue AR (track who owes you and for how long), Over Credit Limit (flag high-risk accounts), Customer Ranking (see who drives your profit and volume), and Port Pair Insights (identify your most profitable routes and partners)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I export data to Excel or BI tools?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight supports data export to Excel and CSV. You can export any report or connect GoFreight data to external BI platforms and data warehouses."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do demurrage reminders work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight sends automated notifications to customers before free time expires, so they can return containers on time and avoid detention and demurrage fees. You configure the timing and contacts per customer. GoFreight handles the delivery."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); text-decoration: none; }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.1rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; display: inline-block; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 750px; margin: 0 auto; line-height: 1.7; }
+
+        /* List Sections */
+        .list-section { padding: 4rem 2rem; }
+        .list-section.bg-white { background: var(--gf-bg-white); }
+        .list-section.bg-light { background: var(--gf-bg-light); }
+        .list-items { max-width: 900px; margin: 0 auto; }
+        .list-item { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid var(--gf-border); }
+        .list-item:last-child { border-bottom: none; }
+        .list-number { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: var(--gf-teal); flex-shrink: 0; }
+        .list-item h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--gf-text-primary); }
+        .list-item p { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Testimonial */
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-light); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-label { font-size: 0.85rem; font-weight: 600; color: var(--gf-teal); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .testimonial-quote { font-size: 1.25rem; font-weight: 500; color: var(--gf-text-primary); line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+
+        /* FAQ */
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* CTA */
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="/" class="nav-logo">GoFreight</a>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/features">Features</a><span>&rsaquo;</span>
+        Reporting &amp; Analytics
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Freight Reporting &amp; Analytics Tools and Software</h1>
+                <p class="hero-subhead">
+                    Most TMS platforms give you data. GoFreight gives you decisions. Five built-in BI reports surface the numbers that drive your business: which customers are slipping, which accounts are overdue, which routes make money. Your team sees what needs attention before it becomes a problem.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#bi-dashboard" class="btn-outline">See Reports</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Freight Analytics Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: BI Dashboard -->
+    <section class="list-section bg-white" id="bi-dashboard">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>BI Dashboard</h2>
+                <p>See the numbers that matter most. Make smarter decisions faster with reports designed for freight forwarders. From overdue AR to customer rankings, GoFreight surfaces the insights your team needs to take action.</p>
+            </div>
+            <div class="list-items">
+                <div class="list-item">
+                    <div class="list-number">1</div>
+                    <div>
+                        <h3>Inactive Customers</h3>
+                        <p>Spot customers who have not shipped recently so your team can follow up and re-engage. Stay ahead of churn before it shows up in revenue.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">2</div>
+                    <div>
+                        <h3>Overdue AR</h3>
+                        <p>Know exactly who owes you money, how much, and for how long. Catch cash flow risks early so your collections team can act, not react.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">3</div>
+                    <div>
+                        <h3>Over Credit Limit</h3>
+                        <p>Identify accounts that have exceeded their credit limits. Take action before extending more exposure to high-risk customers.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">4</div>
+                    <div>
+                        <h3>Customer Ranking</h3>
+                        <p>See which customers are driving the most profit and volume. Know who deserves more attention and who needs a conversation.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">5</div>
+                    <div>
+                        <h3>Port Pair Insights</h3>
+                        <p>Understand which routes are most profitable and which agent partners are delivering the best results. Use the data to negotiate better rates and focus on your strongest lanes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Automated Client Reports and Notifications -->
+    <section class="list-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Automated Client Reports and Notifications</h2>
+                <p>Always one step ahead on shipments. Set up reports and reminders once. GoFreight sends them automatically on each client's schedule, in their preferred format.</p>
+            </div>
+            <div class="list-items">
+                <div class="list-item">
+                    <div class="list-number">1</div>
+                    <div>
+                        <h3>Custom Shipment Reports</h3>
+                        <p>Format reports based on each customer's preferences so they get the details they care about. Different clients, different formats, zero extra work from your team.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">2</div>
+                    <div>
+                        <h3>Flexible Scheduling</h3>
+                        <p>Choose when and how often each report goes out. Daily, weekly, or at specific milestones, GoFreight handles the delivery.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">3</div>
+                    <div>
+                        <h3>Demurrage Reminders</h3>
+                        <p>Notify customers before free time deadlines so they can return containers on time. Fewer D&D fees. Fewer disputes. Clients who trust your team to keep them informed.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">4</div>
+                    <div>
+                        <h3>Container Return Alerts</h3>
+                        <p>Send reminders for return deadlines so customers stay on track. Reduce missed returns before they become extra charges.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">5</div>
+                    <div>
+                        <h3>Contact Settings</h3>
+                        <p>Make sure the right people always get the right information. Configure contacts per customer so updates reach the person who needs to act.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Shipment P&L and Financial Reporting -->
+    <section class="list-section bg-white">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Shipment P&amp;L and Financial Reporting</h2>
+                <p>GoFreight's reporting connects operations and accounting. Every shipment carries its full cost and revenue picture.</p>
+            </div>
+            <div class="list-items">
+                <div class="list-item">
+                    <div class="list-number">1</div>
+                    <div>
+                        <h3>Profitability by Shipment</h3>
+                        <p>See gross profit on every job automatically. Revenue, costs, and margin at the shipment level with no manual calculation.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">2</div>
+                    <div>
+                        <h3>Lane and Route Analysis</h3>
+                        <p>Identify your most profitable routes. Understand which port pairs, carriers, and trade lanes drive your margins.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">3</div>
+                    <div>
+                        <h3>Customer Profitability</h3>
+                        <p>Revenue and margin by customer account. Know your best clients and spot accounts that look busy but are not profitable.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">4</div>
+                    <div>
+                        <h3>AR and AP Aging</h3>
+                        <p>Full aging reports for receivables and payables. See what is overdue by customer, vendor, and agent with drill-down to individual shipments.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">5</div>
+                    <div>
+                        <h3>Data Export</h3>
+                        <p>Export any report to Excel or CSV. Connect to BI tools, data warehouses, or share directly with your finance team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Proof -->
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <div class="testimonial-label">Automated Reporting at Scale</div>
+            <p class="testimonial-quote">
+                "We send over <span>2,000 automated reports and reminders</span> to our customers each week using GoFreight. Our customers are happier, and our team spends far less time chasing updates."
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FAQ -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What reporting does GoFreight include out of the box?</div>
+                    <div class="faq-answer">GoFreight includes five built-in BI reports: Inactive Customers, Overdue AR, Over Credit Limit, Customer Ranking, and Port Pair Insights. These run automatically and surface the information your team needs to take action, without building reports from scratch. Additional financial reports include shipment P&amp;L, lane analysis, customer profitability, and AR/AP aging.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I see profitability by shipment?</div>
+                    <div class="faq-answer">Yes. GoFreight calculates gross profit on every shipment automatically. You can see revenue, costs, and margin at the job level, and aggregate by customer, lane, or time period.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I send automated reports to my customers?</div>
+                    <div class="faq-answer">Yes. You can configure custom report formats and delivery schedules per customer. GoFreight sends reports and reminders automatically at the frequency and in the format each client prefers. GoFreight customers send over 2,000 automated reports and reminders per week with no manual effort.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What are the five BI reports in GoFreight?</div>
+                    <div class="faq-answer">The five BI reports are: Inactive Customers (spot churn risk early), Overdue AR (track who owes you and for how long), Over Credit Limit (flag high-risk accounts), Customer Ranking (see who drives your profit and volume), and Port Pair Insights (identify your most profitable routes and partners).</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I export data to Excel or BI tools?</div>
+                    <div class="faq-answer">Yes. GoFreight supports data export to Excel and CSV. You can export any report or connect GoFreight data to external BI platforms and data warehouses.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do demurrage reminders work?</div>
+                    <div class="faq-answer">GoFreight sends automated notifications to customers before free time expires, so they can return containers on time and avoid detention and demurrage fees. You configure the timing and contacts per customer. GoFreight handles the delivery.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>See What Your Numbers Are Telling You</h2>
+            <p>See which customers are slipping, which routes make money, and which AR is overdue. GoFreight puts the right numbers in front of the right people.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
