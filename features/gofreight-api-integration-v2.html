@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight API & Integration Platform | GoFreight</title>
+    <meta name="description" content="Connect GoFreight to your carriers, accounting system, customs, and overseas agents. 125+ carrier integrations, open API for ERPs, native QuickBooks sync, EDI for agent networks.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Freight API & Integration Platform",
+        "description": "Connect GoFreight to your carriers, accounting system, customs, and overseas agents. 125+ carrier integrations, open API, and EDI support.",
+        "url": "https://gofreight.com/product/integrations",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Product", "item": "https://gofreight.com/product"},
+                {"@type": "ListItem", "position": 3, "name": "Integrations & Ecosystem", "item": "https://gofreight.com/product/integrations"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What systems does GoFreight integrate with?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight integrates with 125+ ocean, air, and trucking carriers for real-time tracking; QuickBooks Online for two-way accounting sync; U.S. Customs (CBP/ACE) for ISF, AES, and AMS filing; and overseas agent networks via EDI for settlement and document exchange. An open REST API and webhooks allow custom connections to ERPs, data warehouses, BI tools, and any other system your operation requires."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does integration setup take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight implementation typically takes 4-8 weeks, compared to 6-12 months for legacy freight systems. A dedicated integration support team and assigned Customer Success Manager guide you through the entire process — from data migration to go-live and beyond."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can GoFreight connect to my accounting software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight provides native two-way sync with both QuickBooks Online and QuickBooks Desktop. Invoices, payments, and financial data flow automatically between systems — no duplicate entry, no manual reconciliation. Your books stay current without extra work."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if I need a custom integration?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight offers a full REST API with documentation at developers.gofreight.com. Webhook notifications provide real-time event triggers, so you can connect GoFreight to ERPs, data warehouses like Snowflake, BI tools, or build custom client-facing applications. EDI support is also available for partners who require legacy connectivity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight support EDI for overseas agents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight supports EDI connectivity for sharing shipment data, documents, and settlement information with your overseas agent network. This enables automated data exchange across your global operations without requiring agents to use the same system."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will my data migrate from my current system?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight's onboarding team migrates your customer and partner records, rate agreements, and open shipments from your current system. Your team is productive within days of go-live, not months. A dedicated Customer Success Manager oversees the entire migration process."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); text-decoration: none; }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.1rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; display: inline-block; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        /* Integration Cards */
+        .integrations-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .integrations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .integration-card { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 16px; padding: 2rem; }
+        .integration-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .integration-card > p { color: var(--gf-text-secondary); margin-bottom: 1.25rem; line-height: 1.6; font-size: 0.95rem; }
+        .integration-features { list-style: none; }
+        .integration-features li { padding: 0.35rem 0; padding-left: 1.5rem; position: relative; color: var(--gf-text-secondary); font-size: 0.9rem; }
+        .integration-features li::before { content: "\2713"; position: absolute; left: 0; color: var(--gf-teal); font-weight: 600; }
+
+        /* Onboarding Section */
+        .onboarding-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .onboarding-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .onboarding-card { background: var(--gf-bg-light); border-radius: 12px; padding: 2rem; }
+        .onboarding-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .onboarding-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        /* Testimonial */
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-white); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+
+        /* FAQ */
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-light); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* CTA */
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .integrations-grid, .onboarding-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="/" class="nav-logo">GoFreight</a>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/product">Product</a><span>&rsaquo;</span>
+        Integrations &amp; Ecosystem
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Freight API &amp; Integration Platform</h1>
+                <p class="hero-subhead">
+                    Connect GoFreight to everything you already use. Your carriers, accounting system, customs, and overseas agents&mdash;connected in one platform. Pre-built freight forwarding software integrations for common tools. Open API for everything else.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get Your Demo</a>
+                    <a href="#integrations" class="btn-outline">See Integrations</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">125+</div>
+                        <div class="hero-stat-label">Carrier integrations</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Open API</div>
+                        <div class="hero-stat-label">REST API &amp; Webhooks</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">EDI</div>
+                        <div class="hero-stat-label">Agent network integration</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Integration Platform Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <!-- DEFINITION BLOCK -->
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p>When evaluating freight software, integration capability determines whether you gain efficiency or create another silo. GoFreight connects natively to carriers, accounting systems, customs authorities, and agent networks so your data flows between systems without manual re-entry. One platform where your TMS, accounting system, carrier tracking, and compliance tools all talk to each other.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: Your Systems, Connected -->
+    <section class="integrations-section" id="integrations">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Your Systems, Connected</h2>
+                <p>GoFreight plugs into the tools your team already relies on&mdash;so nothing changes except how fast you move.</p>
+            </div>
+            <div class="integrations-grid">
+                <div class="integration-card">
+                    <h3>🚢 Carrier Visibility</h3>
+                    <p>Stop checking 10 carrier websites. GoFreight pulls tracking data from 125+ ocean lines, airlines, and trucking companies directly into your dashboard.</p>
+                    <ul class="integration-features">
+                        <li>Maersk, MSC, CMA CGM, COSCO, ONE, Hapag-Lloyd</li>
+                        <li>Major airlines and air cargo carriers</li>
+                        <li>Trucking and drayage providers</li>
+                        <li>Real-time status updates without manual checks</li>
+                    </ul>
+                </div>
+                <div class="integration-card">
+                    <h3>🔗 Accounting &amp; ERP</h3>
+                    <p>GoFreight connects to your accounting system via open API. QuickBooks users get a native two-way connector. For Sage, NetSuite, SAP, and other ERP systems, GoFreight's open API handles the integration. Invoices, payments, and financial data flow automatically. No duplicate entry.</p>
+                    <ul class="integration-features">
+                        <li>QuickBooks Online and Desktop, native two-way sync</li>
+                        <li>Open API for Sage, NetSuite, SAP, and enterprise ERP systems</li>
+                        <li>Invoices and payments post automatically</li>
+                        <li>Financial data stays current across systems</li>
+                    </ul>
+                </div>
+                <div class="integration-card">
+                    <h3>📋 Customs &amp; Compliance</h3>
+                    <p>File directly from GoFreight. ABI connectivity for ISF filing, AES for exports, AMS for manifests. One system for operations and compliance&mdash;no switching between platforms.</p>
+                    <ul class="integration-features">
+                        <li>CBP/ACE direct connectivity</li>
+                        <li>ISF (Importer Security Filing)</li>
+                        <li>AES (Automated Export System)</li>
+                        <li>AMS (Automated Manifest System)</li>
+                    </ul>
+                </div>
+                <div class="integration-card">
+                    <h3>🌐 Agent &amp; Partner Network</h3>
+                    <p>Share data with your overseas agents via EDI. Settlement automation, document exchange, and shipment status sharing across your global network&mdash;without requiring agents to use the same system.</p>
+                    <ul class="integration-features">
+                        <li>EDI data sharing with global agents</li>
+                        <li>Automated settlement processing</li>
+                        <li>Document exchange across networks</li>
+                        <li>Shipment status visibility for partners</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Integration Without the Integration Pain -->
+    <section class="onboarding-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Integration Without the Integration Pain</h2>
+                <p>Switching freight software should not mean months of downtime. GoFreight gets you live in weeks, not quarters.</p>
+            </div>
+            <div class="onboarding-grid">
+                <div class="onboarding-card">
+                    <h3>4-8 Week Implementation</h3>
+                    <p>Go live in 4-8 weeks&mdash;not the 6-12 months legacy systems demand. GoFreight's cloud-native architecture means faster setup, fewer surprises, and a clear timeline from day one.</p>
+                </div>
+                <div class="onboarding-card">
+                    <h3>Dedicated Integration Support</h3>
+                    <p>GoFreight assigns a Customer Success Manager to guide your onboarding. Dedicated integration support during every step&mdash;from connecting your systems to verifying data flows.</p>
+                </div>
+                <div class="onboarding-card">
+                    <h3>Full Data Migration</h3>
+                    <p>Customer and partner records, rate agreements, and open shipments migrate from your current system. Nothing gets left behind, and nothing needs to be re-entered manually.</p>
+                </div>
+                <div class="onboarding-card">
+                    <h3>Productive in Days</h3>
+                    <p>Your team is productive within days of go-live, not months. GoFreight's intuitive interface means less training time and faster adoption across your entire operation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">
+                "With everything centralized in one dashboard, management is easier and straightforward."
+            </p>
+            <p class="testimonial-author">
+                &mdash; <strong>Jeff Lee</strong>, Sales Manager, UCM
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What systems does GoFreight integrate with?</div>
+                    <div class="faq-answer">GoFreight integrates with 125+ ocean, air, and trucking carriers for real-time tracking; QuickBooks Online for two-way accounting sync; U.S. Customs (CBP/ACE) for ISF, AES, and AMS filing; and overseas agent networks via EDI for settlement and document exchange. An open REST API and webhooks allow custom connections to ERPs, data warehouses, BI tools, and any other system your operation requires.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How long does integration setup take?</div>
+                    <div class="faq-answer">GoFreight implementation typically takes 4-8 weeks, compared to 6-12 months for legacy freight systems. A dedicated integration support team and assigned Customer Success Manager guide you through the entire process&mdash;from data migration to go-live and beyond.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can GoFreight connect to my accounting software?</div>
+                    <div class="faq-answer">Yes. GoFreight provides native two-way sync with both QuickBooks Online and QuickBooks Desktop. Invoices, payments, and financial data flow automatically between systems&mdash;no duplicate entry, no manual reconciliation. Your books stay current without extra work.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if I need a custom integration?</div>
+                    <div class="faq-answer">GoFreight offers a full REST API with documentation at developers.gofreight.com. Webhook notifications provide real-time event triggers, so you can connect GoFreight to ERPs, data warehouses like Snowflake, BI tools, or build custom client-facing applications. EDI support is also available for partners who require legacy connectivity.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight support EDI for overseas agents?</div>
+                    <div class="faq-answer">Yes. GoFreight supports EDI connectivity for sharing shipment data, documents, and settlement information with your overseas agent network. This enables automated data exchange across your global operations without requiring agents to use the same system.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Will my data migrate from my current system?</div>
+                    <div class="faq-answer">Yes. GoFreight's onboarding team migrates your customer and partner records, rate agreements, and open shipments from your current system. Your team is productive within days of go-live, not months. A dedicated Customer Success Manager oversees the entire migration process.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>See How GoFreight Connects to Your Stack</h2>
+            <p>125+ carrier integrations, native QuickBooks sync, and an open API&mdash;all in one freight platform. See it in action.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
