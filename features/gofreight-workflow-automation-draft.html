@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Forwarding Workflow Automation Software | GoFreight</title>
+    <meta name="description" content="Automate freight forwarding workflows: smart to-do lists, real-time cargo tracking, automated client updates, and quote-to-invoice automation. Your team handles more without hiring.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Freight Forwarding Workflow Automation Software",
+        "description": "Automate freight forwarding operations with smart to-do lists, real-time tracking, automated client updates, and quote-to-invoice workflows.",
+        "url": "https://gofreight.com/features/workflow-automation",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://gofreight.com/features"},
+                {"@type": "ListItem", "position": 3, "name": "Workflow & Automation", "item": "https://gofreight.com/features/workflow-automation"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does GoFreight automate in freight forwarding?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight automates across your entire operation: to-do lists that build based on shipment conditions, container dates that populate from live carrier, terminal, railroad, and AIS data, client notifications sent at key milestones via email or portal, invoices generated from shipment data, and custom reports delivered on each client's schedule. Consistent execution across every shipment, every team member, every day."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the to-do list automation work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight lets you define task conditions per customer. For example, trigger a reminder when an MBL status updates or a container reaches a specific lifecycle stage. Tasks generate automatically for the right team member at the right time. Operations managers see a live overview of all pending tasks across their team."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where does GoFreight's real-time tracking data come from?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight integrates data from ocean carriers, railroads, terminals, and AIS into one platform. ETDs and ETAs update automatically as changes happen. Your team sees the same live data your customers expect without checking multiple carrier websites."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I customize the workflow for different customers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. To-do conditions, memo templates, report formats, notification preferences, and SOPs can all be configured per customer or trade lane. High-touch clients get a tailored workflow — built once, applied automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the memo system reduce miscommunication?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Memos can be added at the HBL, MBL, container, or trade partner list level. They appear consistently wherever your team works — visible from the HBL list, MBL list, and container list. Handoff notes, invoice reminders, and key dates stay attached to the shipment, not an email thread."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the customer portal support enterprise accounts?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight's customer portal supports unlimited tracking users with no per-seat cost. Individual users can also be associated with multiple companies — ideal for importers or group accounts managing multiple entities."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will automation work without IT resources?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Workflow rules, to-do conditions, and report schedules are configured by your operations team through the same interface they use daily. No coding or IT support required."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); text-decoration: none; }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.1rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; display: inline-block; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        /* List Sections */
+        .list-section { padding: 4rem 2rem; }
+        .list-section.bg-white { background: var(--gf-bg-white); }
+        .list-section.bg-light { background: var(--gf-bg-light); }
+        .list-items { max-width: 900px; margin: 0 auto; }
+        .list-item { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid var(--gf-border); }
+        .list-item:last-child { border-bottom: none; }
+        .list-number { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: var(--gf-teal); flex-shrink: 0; }
+        .list-item h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--gf-text-primary); }
+        .list-item p { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Flow Section */
+        .flow-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .flow-steps { max-width: 900px; margin: 0 auto; }
+        .flow-step { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid var(--gf-border); }
+        .flow-step:last-child { border-bottom: none; }
+        .flow-arrow { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: var(--gf-teal); flex-shrink: 0; }
+        .flow-step-content { flex: 1; }
+        .flow-step-content strong { color: var(--gf-text-primary); }
+        .flow-step-content p { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* FAQ */
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* CTA */
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="/" class="nav-logo">GoFreight</a>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/features">Features</a><span>&rsaquo;</span>
+        Workflow & Automation
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Freight Forwarding Workflow Automation Software</h1>
+                <p class="hero-subhead">
+                    Manual work doesn't scale. GoFreight automates the routine: task lists that build themselves, real-time visibility from carriers to terminals, and client updates that send without anyone lifting a finger. Your team handles more. Your service stays consistent. You grow without hiring.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#operations" class="btn-outline">See How It Works</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Workflow Automation Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: Operations Automation -->
+    <section class="list-section bg-white" id="operations">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Operations Automation</h2>
+                <p>Build your workflow once. GoFreight runs it on every shipment.</p>
+            </div>
+            <div class="list-items">
+                <div class="list-item">
+                    <div class="list-number">1</div>
+                    <div>
+                        <h3>Smart To-Do Lists</h3>
+                        <p>Task lists built around your workflow, not a generic template. Customize conditions per customer (e.g., trigger reminders when MBL status updates). Tasks fire automatically at the right milestone for the right team member. Operations managers get a live team overview of all pending tasks, so nothing falls through and nothing needs chasing.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">2</div>
+                    <div>
+                        <h3>SOPs & Workflow Templates</h3>
+                        <p>Define standard procedures per customer. GoFreight applies them automatically to every matching shipment. New hires execute consistently from day one.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">3</div>
+                    <div>
+                        <h3>Quote to Invoice and No Re-Keying</h3>
+                        <p>Charges carry automatically from quote to shipment to invoice. No re-entry, no missed line items, no reconciliation at the end of the month.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">4</div>
+                    <div>
+                        <h3>Memo System</h3>
+                        <p>Add memos to HBLs, MBLs, containers, or trade partner lists, so important notes appear consistently wherever your team needs them. Visible from the HBL list, MBL list, and container list in one place. Handoffs are clean. Nothing gets re-explained.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Visibility & Tracking -->
+    <section class="list-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Visibility & Tracking</h2>
+                <p>Live data across every leg of the journey, pulled in automatically.</p>
+            </div>
+            <div class="list-items">
+                <div class="list-item">
+                    <div class="list-number">1</div>
+                    <div>
+                        <h3>Real-Time Cargo Tracking</h3>
+                        <p>Data from carriers, railroads, terminals, and AIS pulled into one platform automatically. ETDs and ETAs update in real time. Your team sees changes as they happen, not after a customer calls.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">2</div>
+                    <div>
+                        <h3>Container Lifecycle Management</h3>
+                        <p>Manage every container individually through My Containers. Track lifecycle events from discharge to empty return. Get alerted before free time expires, so you avoid detention and demurrage fees instead of disputing them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Client Communication -->
+    <section class="list-section bg-white">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Client Communication</h2>
+                <p>Right information. Right format. Right channel. Right time.</p>
+            </div>
+            <div class="list-items">
+                <div class="list-item">
+                    <div class="list-number">1</div>
+                    <div>
+                        <h3>Automated Shipment Updates & Exception Alerts</h3>
+                        <p>GoFreight automatically generates shipment updates and exception notifications at key milestones sent via email or the customer portal, based on each client's preference. Clients stay informed before they ask.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">2</div>
+                    <div>
+                        <h3>Personalized Reports Per Customer</h3>
+                        <p>Customize report format, content, and delivery schedule per client. A GoFreight customer sends over 2,000 automated reports and reminders to its clients every week, with zero manual effort from their team.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">3</div>
+                    <div>
+                        <h3>Customer Portal</h3>
+                        <p>Clients check cargo status, download shipping documents, and track individual containers without calling or emailing your ops team. Supports unlimited tracking users. Each user can be associated with multiple companies, built for importers and group accounts managing multiple entities.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-number">4</div>
+                    <div>
+                        <h3>Integrations with ERP & POM</h3>
+                        <p>Connect GoFreight to your clients' ERP, POM, and other platforms. Reduces manual data entry on both sides and creates a connected experience for your team and theirs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: How It All Connects -->
+    <section class="flow-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>How It All Connects</h2>
+                <p>Every part of your operation talks to the next.</p>
+            </div>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step-content">
+                        <p><strong>Quote won</strong> &mdash; Charges carry to shipment automatically. No re-entry.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step-content">
+                        <p><strong>Shipment created</strong> &mdash; To-do list builds itself based on shipment type and customer conditions.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step-content">
+                        <p><strong>Milestones reached</strong> &mdash; Container dates update from carrier, terminal, and AIS data. Team tasks trigger. Client gets notified.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step-content">
+                        <p><strong>Exception detected</strong> &mdash; Alert fires to your team and to the customer, before anyone asks.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step-content">
+                        <p><strong>Delivery complete</strong> &mdash; Invoice generates from shipment data. Charges already populated.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step-content">
+                        <p><strong>Reports scheduled</strong> &mdash; Client receives their custom report on their preferred schedule, in their preferred format.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FAQ -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What does GoFreight automate in freight forwarding?</div>
+                    <div class="faq-answer">GoFreight automates across your entire operation: to-do lists that build based on shipment conditions, container dates that populate from live carrier, terminal, railroad, and AIS data, client notifications sent at key milestones via email or portal, invoices generated from shipment data, and custom reports delivered on each client's schedule. Consistent execution across every shipment, every team member, every day.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does the to-do list automation work?</div>
+                    <div class="faq-answer">GoFreight lets you define task conditions per customer. For example, trigger a reminder when an MBL status updates or a container reaches a specific lifecycle stage. Tasks generate automatically for the right team member at the right time. Operations managers see a live overview of all pending tasks across their team.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Where does GoFreight's real-time tracking data come from?</div>
+                    <div class="faq-answer">GoFreight integrates data from ocean carriers, railroads, terminals, and AIS into one platform. ETDs and ETAs update automatically as changes happen. Your team sees the same live data your customers expect without checking multiple carrier websites.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I customize the workflow for different customers?</div>
+                    <div class="faq-answer">Yes. To-do conditions, memo templates, report formats, notification preferences, and SOPs can all be configured per customer or trade lane. High-touch clients get a tailored workflow&mdash;built once, applied automatically.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does the memo system reduce miscommunication?</div>
+                    <div class="faq-answer">Memos can be added at the HBL, MBL, container, or trade partner list level. They appear consistently wherever your team works&mdash;visible from the HBL list, MBL list, and container list. Handoff notes, invoice reminders, and key dates stay attached to the shipment, not an email thread.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does the customer portal support enterprise accounts?</div>
+                    <div class="faq-answer">Yes. GoFreight's customer portal supports unlimited tracking users with no per-seat cost. Individual users can also be associated with multiple companies&mdash;ideal for importers or group accounts managing multiple entities.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Will automation work without IT resources?</div>
+                    <div class="faq-answer">Yes. Workflow rules, to-do conditions, and report schedules are configured by your operations team through the same interface they use daily. No coding or IT support required.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Automate Your Freight Operations?</h2>
+            <p>See how GoFreight connects quoting, operations, tracking, and client communication in one automated workflow.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
