@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Freight Management Software | Import & Export | GoFreight</title>
+    <meta name="description" content="Ocean freight management software for forwarders. Manage FCL, LCL, container tracking, quoting, compliance, and agent settlements in one platform. 47% faster quoting, 50%+ D&D reduction.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Ocean Freight Management Software",
+        "description": "Ocean freight management software that connects import and export workflows in one platform. Container tracking, quoting, compliance, and settlements for freight forwarders.",
+        "url": "https://gofreight.com/solutions/ocean",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://gofreight.com/solutions"},
+                {"@type": "ListItem", "position": 3, "name": "Ocean Freight", "item": "https://gofreight.com/solutions/ocean"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is ocean freight management software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ocean freight management software gives freight forwarders specialized tools for managing sea cargo operations end to end. This includes FCL and LCL shipment management, container tracking across 125+ carriers, consolidation workflows, ocean documentation like bills of lading and ISF filings, and agent settlements. Unlike generic logistics tools, it connects quoting, operations, compliance, and billing in one platform built for how ocean forwarders actually work."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight handle both FCL and LCL shipments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight manages Full Container Load (FCL) and Less than Container Load (LCL) shipments with full consolidation workflow support. You can group multiple shippers, manage house and master bills, and handle split invoicing all in one system."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does GoFreight reduce demurrage and detention costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight sends proactive alerts when containers approach free time expiration, giving your team time to arrange pickup before fees hit. Automated milestone tracking across 125+ carriers means no more missed events. One GoFreight customer reduced D&D costs by over 53% after implementing automated container alerts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can GoFreight handle both ocean import and export?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight provides dedicated workflows for both directions. Ocean import includes container tracking, ISF filing, and arrival notices. Ocean export includes rate management, AES filing, and carrier booking. Both sides share a single database, so quoting, operations, compliance, and billing are fully connected."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does ocean freight quoting work in GoFreight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoFreight stores contract and spot rates in a centralized database. When a rate request comes in, your team searches by lane, carrier, or service level, applies markups, and generates a professional quote all in minutes. When the customer accepts, one click converts the quote to a live shipment with all data carried over. No re entry required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight integrate with customs filing for ocean shipments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight connects directly to CBP's ACE system for ISF (10+2) filings on imports and AES filings on exports. Shipment data auto populates the filing forms. You review, adjust if needed, and submit without switching systems."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+            --gf-red: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 5rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.2; }
+        .hero h1 em { font-style: normal; color: var(--gf-teal); }
+        .hero-subhead { font-size: 1.1rem; color: var(--gf-text-secondary); margin-bottom: 2rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; display: inline-block; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        /* Definition Block */
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        /* Problem Section */
+        .problem-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 750px; margin: 0 auto; line-height: 1.7; }
+        .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .problem-card { background: var(--gf-bg-white); border-radius: 12px; padding: 2rem; border-left: 4px solid var(--gf-red); }
+        .problem-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--gf-text-primary); }
+        .problem-card p { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Solution Section */
+        .solution-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .solution-intro { max-width: 800px; margin: 0 auto 3rem; text-align: center; }
+        .solution-intro h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .solution-intro p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+        .solution-block { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+        .solution-card { background: var(--gf-bg-white); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--gf-border); }
+        .solution-card h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .solution-card .card-subtitle { color: var(--gf-text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; }
+        .solution-card ul { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+        .solution-card ul li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        .solution-card ul li::before { content: ""; position: absolute; left: 0; top: 0.85rem; width: 8px; height: 8px; background: var(--gf-teal); border-radius: 50%; }
+        .solution-card ul li strong { color: var(--gf-text-primary); }
+        .solution-link { color: var(--gf-teal); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem; }
+        .solution-link:hover { color: var(--gf-teal-dark); }
+
+        /* Impact Section */
+        .impact-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .impact-card { background: var(--gf-bg-white); border-radius: 12px; padding: 2rem; text-align: center; border-top: 4px solid var(--gf-teal); }
+        .impact-metric { font-size: 0.85rem; font-weight: 600; color: var(--gf-teal); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        .impact-number { font-size: 1.75rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .impact-desc { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Testimonial Section */
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-light); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-reel { color: var(--gf-text-light); font-size: 1.1rem; }
+
+        /* FAQ Section */
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        /* CTA Section */
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; }
+            .solution-block { grid-template-columns: 1fr; }
+            .impact-grid { grid-template-columns: repeat(2, 1fr); }
+            .problem-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/solutions">Solutions</a><span>&rsaquo;</span>
+        Ocean Freight
+    </div>
+
+    <!-- Section 1: Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Ocean Freight Management Software. <em>Master the Water. Own the Workflow.</em></h1>
+                <p class="hero-subhead">
+                    <!-- TODO: internal link "VIP level service" to Customer Experience page when live -->
+                    Ocean freight forwarders today face pressure from both sides. Import teams must deliver constant visibility and VIP level service, while export teams must quote faster and execute flawlessly to win new business. GoFreight's ocean freight management software connects the full ocean workflow in one platform so you can move cargo efficiently, respond to customers proactively, and grow your shipment volume without growing operational strain.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/solutions/ocean-import" class="btn-primary">Explore Ocean Import</a>
+                    <a href="/solutions/ocean-export" class="btn-outline">Explore Ocean Export</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">FCL + LCL</div>
+                        <div class="hero-stat-label">Both modes</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">125+</div>
+                        <div class="hero-stat-label">Carrier integrations</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">53%</div>
+                        <div class="hero-stat-label">D&D fee reduction</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Ocean Freight Management Dashboard]
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Definition Block -->
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>Ocean freight management software</strong> provides freight forwarders with specialized tools for sea cargo operations: FCL and LCL shipment management, container tracking across carriers, consolidation workflows, and ocean specific documentation like bills of lading and ISF filings. Unlike generic logistics tools, it connects quoting, operations, compliance, and billing in one platform built for how ocean forwarders actually work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: The Problem -->
+    <section class="problem-section">
+        <div class="section-container">
+            <div class="section-header">
+                <!-- TODO: internal link "Ocean Freight Operation" to Operations page when live -->
+                <h2>Is Your Ocean Freight Operation Drifting in Manual Work?</h2>
+                <p>Whether you are moving 50 or 5,000 TEUs, the "Ocean Gap" is real. Most forwarders lose $150 to $400 in hidden labor costs per shipment because their teams are stuck in the "Triple Trap":</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>The Data Trap</h3>
+                    <p>Manually re entering the same MBL/HBL data across AIS, carrier portals, and spreadsheets because your ocean freight tools don't talk to each other.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>The Visibility Trap</h3>
+                    <p>Paying $100s in avoidable D&D fees because a milestone was missed or a "Where's my cargo?" email went buried because your container tracking lives outside your operations system.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>The Margin Trap</h3>
+                    <p>Taking hours to quote an export or file an import entry, while faster competitors with integrated ocean freight forwarding software win the business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Integrated Solution -->
+    <section class="solution-section">
+        <div class="solution-intro">
+            <h2>One Ocean Freight Platform. Total Control from Quay to Door.</h2>
+            <p>GoFreight doesn't just "store" your data; it puts it to work. Our ocean freight management software is built with specific logic for the unique pressures of both sides of the ocean trade.</p>
+        </div>
+        <div class="solution-block">
+            <div class="solution-card">
+                <h3>For the Import Desk: Proactive VIP Service</h3>
+                <p class="card-subtitle">Shift from firefighting to "Fire Prevention." GoFreight's ocean import management tools automatically flag exceptions and update your customers before they have to ask.</p>
+                <ul>
+                    <!-- TODO: internal link "Automated Milestone Tracking" to Container Tracking page when live -->
+                    <li><strong>Automated Milestone Tracking:</strong> Real time container status tied directly to your HBLs. Data from ocean carriers, railroads, terminals, and AIS pulled into one dashboard automatically.</li>
+                    <li><strong>Seamless Compliance:</strong> Integrated ISF filings and arrival notices that reduce penalty risks.</li>
+                    <li><strong>Client Retention:</strong> A branded customer portal with unlimited tracking users and multi-company support that makes you look like a Top 10 global forwarder.</li>
+                    <li><strong>Consolidation and Documentation:</strong> FCL and LCL workflows with BOL generation from shipment data.</li>
+                    <li><strong>Smart To-Do Lists:</strong> Milestone-triggered task lists that build automatically based on shipment type and customer conditions. Your team always knows what to do next.</li>
+                    <li><strong>Integrated Memo System:</strong> Add notes at the HBL, MBL, or container level. Handoffs stay clean across teams.</li>
+                </ul>
+                <a href="/solutions/ocean-import" class="solution-link">Learn more about Ocean Import &rarr;</a>
+            </div>
+            <div class="solution-card">
+                <h3>For the Export Desk: Velocity and Conversion</h3>
+                <p class="card-subtitle">In export, the first one to quote usually wins. GoFreight's ocean export management tools remove the friction between a rate request and a confirmed booking.</p>
+                <ul>
+                    <li><strong>Rapid Quoting:</strong> Turn spot rates into professional quotes in minutes, not hours, with one click quote to shipment conversion.</li>
+                    <li><strong>Direct Filing:</strong> Submit AES and AFR directly from the shipment file. No double entry.</li>
+                    <li><strong>Digital Booking:</strong> Manage carrier allocations, rate contracts, and documentation packets in one centralized view.</li>
+                    <li><strong>Agent Settlements:</strong> Track amounts owed to and from overseas partners at the shipment level. Charges carry from quote to shipment to invoice automatically.</li>
+                    <li><strong>Shipment-Based Accounting:</strong> Every charge is tied to the shipment that generated it. P&L visible on every job.</li>
+                </ul>
+                <a href="/solutions/ocean-export" class="solution-link">Learn more about Ocean Export &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: The Impact -->
+    <section class="impact-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Ocean Freight Management Results That Move the Needle</h2>
+                <p>We don't just promise "efficiency." GoFreight delivers measurable ROI across your ocean freight operations.</p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-metric">Quoting Speed</div>
+                    <div class="impact-number">47%</div>
+                    <div class="impact-desc">Faster turnaround on export inquiries.</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-metric">D&D Costs</div>
+                    <div class="impact-number">50%+</div>
+                    <div class="impact-desc">Reduction through automated container alerts.</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-metric">Manual Overhead</div>
+                    <div class="impact-number">$50k to $75k</div>
+                    <div class="impact-desc">Saved annually in manual document processing.</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-metric">Customer Support</div>
+                    <div class="impact-number">40%</div>
+                    <div class="impact-desc">Fewer "Status Update" emails via the Customer Portal.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Customer Testimonial -->
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-reel">[Customer Testimonial Reel]</p>
+        </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is ocean freight management software?</div>
+                    <div class="faq-answer">Ocean freight management software gives freight forwarders specialized tools for managing sea cargo operations end to end. This includes FCL and LCL shipment management, container tracking across 125+ carriers, consolidation workflows, ocean documentation like bills of lading and ISF filings, and agent settlements. Unlike generic logistics tools, it connects quoting, operations, compliance, and billing in one platform built for how ocean forwarders actually work.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight handle both FCL and LCL shipments?</div>
+                    <div class="faq-answer">Yes. GoFreight manages Full Container Load (FCL) and Less than Container Load (LCL) shipments with full consolidation workflow support. You can group multiple shippers, manage house and master bills, and handle split invoicing all in one system.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does GoFreight reduce demurrage and detention costs?</div>
+                    <div class="faq-answer">GoFreight sends proactive alerts when containers approach free time expiration, giving your team time to arrange pickup before fees hit. Automated milestone tracking across 125+ carriers means no more missed events. One GoFreight customer reduced D&D costs by over 53% after implementing automated container alerts.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can GoFreight handle both ocean import and export?</div>
+                    <div class="faq-answer">Yes. GoFreight provides dedicated workflows for both directions. Ocean import includes container tracking, ISF filing, and arrival notices. Ocean export includes rate management, AES filing, and carrier booking. Both sides share a single database, so quoting, operations, compliance, and billing are fully connected.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does ocean freight quoting work in GoFreight?</div>
+                    <div class="faq-answer">GoFreight stores contract and spot rates in a centralized database. When a rate request comes in, your team searches by lane, carrier, or service level, applies markups, and generates a professional quote all in minutes. When the customer accepts, one click converts the quote to a live shipment with all data carried over. No re entry required.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight integrate with customs filing for ocean shipments?</div>
+                    <div class="faq-answer">Yes. GoFreight connects directly to CBP's ACE system for ISF (10+2) filings on imports and AES filings on exports. Shipment data auto populates the filing forms. You review, adjust if needed, and submit without switching systems.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Final CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Modernize Your Ocean Freight Operations?</h2>
+            <p>See how GoFreight's ocean freight management software supports both import and export workflows in a single modern platform.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
