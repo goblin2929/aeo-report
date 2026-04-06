@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Rate Management & Quoting Software | GoFreight</title>
+    <meta name="description" content="Carrier rate cards loaded in under 24 hours. Buy and sell rates managed in one place. Build accurate, multi-currency quotes in minutes and convert won deals to shipments with one click.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Freight Rate Management & Quoting Software",
+        "description": "Carrier rate cards loaded in under 24 hours. Buy and sell rates managed in one place. Build accurate quotes in minutes and convert won deals to shipments with one click.",
+        "url": "https://gofreight.com/product/rate-management-quoting",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gofreight.com"},
+                {"@type": "ListItem", "position": 2, "name": "Product", "item": "https://gofreight.com/product"},
+                {"@type": "ListItem", "position": 3, "name": "Rate Management & Quoting", "item": "https://gofreight.com/product/rate-management-quoting"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is freight rate management software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freight rate management software centralizes carrier rates, contract agreements, and tariffs in a searchable database. Instead of hunting through emails and spreadsheets, forwarders can instantly find the right rate when building quotes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does freight quoting software speed up the sales process?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freight quoting software pulls rates directly from your centralized database, applies your markups automatically, and generates professional quote documents in minutes. GoFreight takes it further by converting won quotes to shipments with one click—no re-keying required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I store both contract and spot rates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight stores both contract rates with validity periods and spot rates for one-time use. Both are searchable and can be pulled directly into customer quotes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I convert a won quote to a shipment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "One click. When a customer accepts a quote, you convert it to a shipment instantly. All the quote data—rates, charges, customer details—flows into the shipment record. No re-keying required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight support multi-currency rates and quotes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight handles multi-currency rates with built-in exchange rate management. Store rates in the carrier's currency and convert automatically when quoting customers in their preferred currency."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoFreight track quote outcomes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoFreight tracks your quote pipeline, showing which quotes are pending, won, and lost. You can filter by customer, lane, or sales rep to see outcomes across your team."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Roboto', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .nav { background: var(--gf-bg-white); padding: 1rem 2rem; border-bottom: 1px solid var(--gf-border); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--gf-teal); }
+        .nav-cta { background: var(--gf-teal); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+
+        .breadcrumb { background: var(--gf-bg-light); padding: 0.75rem 2rem; font-size: 0.875rem; color: var(--gf-text-secondary); }
+        .breadcrumb a { color: var(--gf-teal); text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+
+        .hero { background: linear-gradient(135deg, var(--gf-bg-white) 0%, var(--gf-bg-mint) 100%); padding: 4rem 2rem; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subhead { font-size: 1.125rem; color: var(--gf-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .btn-primary { background: var(--gf-teal); color: white; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gf-teal-dark); }
+        .btn-outline { background: transparent; color: var(--gf-text-primary); padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; border: 2px solid var(--gf-border); transition: all 0.3s; }
+        .btn-outline:hover { border-color: var(--gf-teal); color: var(--gf-teal); }
+        .hero-stats { display: flex; gap: 2rem; }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 1.75rem; font-weight: 700; color: var(--gf-teal); }
+        .hero-stat-label { font-size: 0.8rem; color: var(--gf-text-secondary); }
+        .hero-image { background: var(--gf-bg-white); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); padding: 1.5rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--gf-text-light); border: 1px solid var(--gf-border); }
+
+        .definition-section { padding: 3rem 2rem; background: var(--gf-bg-white); }
+        .definition-container { max-width: 800px; margin: 0 auto; }
+        .definition-block { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+        .definition-block p { color: var(--gf-text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .features-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--gf-text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .feature-card { background: var(--gf-bg-white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--gf-border); }
+        .feature-icon { width: 48px; height: 48px; background: var(--gf-bg-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.5rem; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gf-text-primary); }
+        .feature-card p { color: var(--gf-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+
+        .features-section-alt { padding: 4rem 2rem; background: var(--gf-bg-white); }
+
+        .workflow-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .workflow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .workflow-content h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; }
+        .workflow-content p { color: var(--gf-text-secondary); margin-bottom: 1.5rem; }
+        .workflow-steps { list-style: none; }
+        .workflow-steps li { padding: 0.75rem 0; padding-left: 2rem; position: relative; border-bottom: 1px solid var(--gf-border); }
+        .workflow-steps li:last-child { border-bottom: none; }
+        .workflow-steps li::before { content: "\2192"; position: absolute; left: 0; color: var(--gf-teal); font-weight: 700; }
+        .workflow-image { background: var(--gf-bg-white); border-radius: 12px; padding: 2rem; text-align: center; color: var(--gf-text-light); min-height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--gf-border); }
+
+        .testimonial-section { padding: 4rem 2rem; background: var(--gf-bg-white); }
+        .testimonial-card { max-width: 800px; margin: 0 auto; background: var(--gf-bg-light); border-radius: 16px; padding: 2.5rem; text-align: center; }
+        .testimonial-quote { font-size: 1.35rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1.25rem; line-height: 1.5; }
+        .testimonial-quote span { color: var(--gf-teal); font-weight: 700; }
+        .testimonial-author { color: var(--gf-text-secondary); }
+        .testimonial-author strong { color: var(--gf-text-primary); }
+
+        .faq-section { padding: 4rem 2rem; background: var(--gf-bg-light); }
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--gf-bg-white); border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+        .faq-question { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .faq-answer { color: var(--gf-text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        .cta-section { padding: 4rem 2rem; background: linear-gradient(135deg, var(--gf-teal) 0%, var(--gf-teal-dark) 100%); color: white; text-align: center; }
+        .cta-content { max-width: 650px; margin: 0 auto; }
+        .cta-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .cta-content p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.75rem; }
+        .btn-white { background: white; color: var(--gf-teal-dark); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+        .footer { background: var(--gf-text-primary); padding: 2rem; text-align: center; color: var(--gf-text-light); font-size: 0.875rem; }
+
+        @media (max-width: 1024px) {
+            .hero-container, .workflow-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">GoFreight</div>
+        <a href="/get-demo" class="nav-cta">Get Demo</a>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a><span>&rsaquo;</span>
+        <a href="/product">Product</a><span>&rsaquo;</span>
+        Rate Management & Quoting
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Freight Rate Management & Quoting Software</h1>
+                <p class="hero-subhead">
+                    Carrier rate cards loaded in under 24 hours. Buy and sell rates managed in one place. Build accurate, multi-currency quotes in minutes and convert won deals to shipments with one click. No re-keying, no expired rate errors.
+                </p>
+                <div class="hero-ctas">
+                    <a href="/get-demo" class="btn-primary">Get a Demo</a>
+                    <a href="#our-feature" class="btn-outline">See Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">47%</div>
+                        <div class="hero-stat-label">Faster quoting</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">1-Click</div>
+                        <div class="hero-stat-label">Quote to shipment</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">Zero</div>
+                        <div class="hero-stat-label">Expired rate errors</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">&lt;24 hrs</div>
+                        <div class="hero-stat-label">Rate cards loaded</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                [Rate Management & Quoting Dashboard Screenshot]
+            </div>
+        </div>
+    </section>
+
+    <!-- DEFINITION BLOCK -->
+    <section class="definition-section">
+        <div class="definition-container">
+            <div class="definition-block">
+                <p><strong>Freight rate management software</strong> centralizes carrier rates, contract agreements, and tariffs in a searchable database so forwarders can instantly find the right rate when building quotes. Combined with <strong>freight quoting tools</strong>, it connects rate lookup, markup management, and professional quote generation in one workflow&mdash;eliminating spreadsheet hunting, expired rate errors, and manual re-entry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: Our Feature -->
+    <section class="features-section" id="our-feature">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Our Feature</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Rate Ingestion</h3>
+                    <p>Upload a carrier rate card, PDF, Excel, or email. GoFreight parses and loads it in under 24 hours. No manual re-entry.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Rate Comparison</h3>
+                    <p>Compare rates from all sources side by side within the platform. Find the most competitive option without leaving GoFreight.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Streamlined Quoting</h3>
+                    <p>Cut quote generation time by up to 50%, helping you respond faster and win more business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Freight Quoting Features -->
+    <section class="features-section-alt" id="quoting">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Freight Quoting Features</h2>
+                <p>Quote faster, win more, convert with one click.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Quote Templates</h3>
+                    <p>Standardized formats for consistency. Professional, branded quotes every time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Markup Management</h3>
+                    <p>Apply margins by customer, lane, or service type. Control profitability at the quote level.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>One-Click Quote to Shipment</h3>
+                    <p>Customer accepts? Convert to a live shipment instantly. All data flows through&mdash;no re-entry.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Quote Pipeline Tracking</h3>
+                    <p>Track pending, won, and lost quotes. See outcomes by customer, lane, or sales rep.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Branded Quote PDFs</h3>
+                    <p>Generate professional PDF proposals with your logo, terms, and detailed pricing breakdown.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔀</div>
+                    <h3>Auto-Status Updates</h3>
+                    <p>Quotes automatically move through Sent, Won, and Expired stages. No manual tracking needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: From Rate Lookup to Live Shipment -->
+    <section class="workflow-section">
+        <div class="section-container">
+            <div class="workflow-grid">
+                <div class="workflow-content">
+                    <h2>From Rate Lookup to Live Shipment</h2>
+                    <p>The entire sales-to-operations handoff in one connected workflow. No spreadsheets, no re-keying, no dropped details.</p>
+                    <ul class="workflow-steps">
+                        <li><strong>Collect rates</strong>&mdash;automatically from emails, contracts, spot, and overseas sources</li>
+                        <li><strong>Compare</strong>&mdash;find the best option by lane and carrier</li>
+                        <li><strong>Build quote</strong>&mdash;add charges, apply markup</li>
+                        <li><strong>Send</strong>&mdash;branded PDF, one click</li>
+                        <li><strong>Win</strong>&mdash;customer accepts, status auto-updates</li>
+                        <li><strong>Convert</strong>&mdash;one click to live shipment</li>
+                        <li><strong>Invoice</strong>&mdash;charges flow automatically</li>
+                    </ul>
+                </div>
+                <div class="workflow-image">
+                    [Rate &rarr; Quote &rarr; Shipment &rarr; Invoice Workflow Diagram]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial-section">
+        <div class="testimonial-card">
+            <p class="testimonial-quote">
+                "Since moving to GoFreight, we've cut our quoting time in half and improved our conversion. The team is more efficient, and our customers notice the difference."
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is freight rate management software?</div>
+                    <div class="faq-answer">Freight rate management software centralizes carrier rates, contract agreements, and tariffs in a searchable database. Instead of hunting through emails and spreadsheets, forwarders can instantly find the right rate when building quotes.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does freight quoting software speed up the sales process?</div>
+                    <div class="faq-answer">Freight quoting software pulls rates directly from your centralized database, applies your markups automatically, and generates professional quote documents in minutes. GoFreight takes it further by converting won quotes to shipments with one click&mdash;no re-keying required.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I store both contract and spot rates?</div>
+                    <div class="faq-answer">Yes. GoFreight stores both contract rates with validity periods and spot rates for one-time use. Both are searchable and can be pulled directly into customer quotes.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I convert a won quote to a shipment?</div>
+                    <div class="faq-answer">One click. When a customer accepts a quote, you convert it to a shipment instantly. All the quote data&mdash;rates, charges, customer details&mdash;flows into the shipment record. No re-keying required.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight support multi-currency rates and quotes?</div>
+                    <div class="faq-answer">Yes. GoFreight handles multi-currency rates with built-in exchange rate management. Store rates in the carrier's currency and convert automatically when quoting customers in their preferred currency.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does GoFreight track quote outcomes?</div>
+                    <div class="faq-answer">Yes. GoFreight tracks your quote pipeline, showing which quotes are pending, won, and lost. You can filter by customer, lane, or sales rep to see outcomes across your team.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Centralize Rates and Quote Faster?</h2>
+            <p>See how GoFreight connects rate management, quoting, and shipment conversion in one platform.</p>
+            <a href="/get-demo" class="btn-white">Get Your Demo</a>
+        </div>
+    </section>
+
+    <div class="footer">
+        [GoFreight Footer]
+    </div>
+
+</body>
+</html>
