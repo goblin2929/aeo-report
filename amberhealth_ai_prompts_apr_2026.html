@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amber Health — AI Visibility Prompts (Discovery)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0; padding: 0; background: #0e1116; color: #e6edf3; line-height: 1.55;
+  }
+  .container { max-width: 980px; margin: 0 auto; padding: 48px 24px 80px; }
+  .header { border-bottom: 1px solid #30363d; padding-bottom: 24px; margin-bottom: 32px; }
+  .eyebrow { color: #58a6ff; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+  h1 { font-size: 32px; margin: 0 0 6px; line-height: 1.2; }
+  .subtitle { color: #8b949e; font-size: 16px; margin: 0; }
+  .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 32px 0; }
+  .meta-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+  .meta-label { font-size: 11px; color: #8b949e; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .meta-value { font-size: 16px; font-weight: 500; }
+  .chip {
+    display: inline-block; padding: 4px 10px; margin: 2px 4px 2px 0;
+    background: #21262d; border: 1px solid #30363d; border-radius: 999px;
+    font-size: 12px; color: #c9d1d9;
+  }
+  .chip.muted { color: #8b949e; }
+  .summary-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 32px; }
+  .summary-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; flex: 1; min-width: 240px; }
+  .summary-card h3 { font-size: 13px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px; }
+  .summary-card table { width: 100%; border-collapse: collapse; }
+  .summary-card table td { padding: 4px 0; font-size: 14px; }
+  .summary-card table td.num { text-align: right; font-weight: 600; color: #58a6ff; }
+  .bucket { margin: 40px 0; }
+  .bucket-head h2 { font-size: 20px; margin: 0 0 4px; display: flex; align-items: baseline; gap: 10px; }
+  .bucket-head .count {
+    font-size: 13px; color: #8b949e; background: #21262d;
+    padding: 2px 10px; border-radius: 999px; font-weight: 500;
+  }
+  .bucket-desc { color: #8b949e; font-size: 14px; margin: 0 0 14px; }
+  table.prompts { width: 100%; border-collapse: collapse; background: #161b22; border-radius: 8px; overflow: hidden; }
+  table.prompts thead th {
+    text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+    color: #8b949e; padding: 10px 14px; background: #0d1117; border-bottom: 1px solid #30363d;
+  }
+  table.prompts thead th.id { width: 60px; }
+  table.prompts thead th.tag { width: 200px; }
+  table.prompts tbody tr { border-bottom: 1px solid #21262d; }
+  table.prompts tbody tr:last-child { border-bottom: none; }
+  table.prompts td { padding: 12px 14px; vertical-align: top; font-size: 14px; }
+  table.prompts td.id { color: #8b949e; font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 12px; }
+  table.prompts td.prompt { color: #e6edf3; }
+  table.prompts td.tag { color: #8b949e; font-size: 12px; text-transform: capitalize; }
+  .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #30363d; color: #8b949e; font-size: 13px; }
+  .footer code { background: #21262d; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="eyebrow">AI Visibility Tracker · Prompt Discovery</div>
+    <h1>Amber Health — AI Prompt Set</h1>
+    <p class="subtitle">amberhealth.hk · Hong Kong · 50 prompts ready to run through AI Overview, ChatGPT, Gemini, Perplexity</p>
+  </header>
+
+  <section class="meta-grid">
+    <div class="meta-card">
+      <div class="meta-label">Brand</div>
+      <div class="meta-value">Amber Health</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-label">Industry</div>
+      <div class="meta-value">specialist medical centre</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-label">Buyer Role</div>
+      <div class="meta-value">patient</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-label">Business Type</div>
+      <div class="meta-value">healthcare</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-label">Market</div>
+      <div class="meta-value">Hong Kong (hk)</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-label">Service Lines (auto-detected)</div>
+      <div class="meta-value"><span class="chip">fertility</span> <span class="chip">gynaecology</span> <span class="chip">obstetrics</span> <span class="chip">dermatology</span> <span class="chip">reconstructive surgery</span></div>
+    </div>
+  </section>
+
+  <section class="summary-row">
+    <div class="summary-card">
+      <h3>Distribution by Bucket</h3>
+      <table><tr><td>Branded + Brand Perception</td><td class="num">8</td></tr>
+<tr><td>TOFU — Awareness</td><td class="num">12</td></tr>
+<tr><td>MOFU — Consideration</td><td class="num">13</td></tr>
+<tr><td>BOFU — Decision</td><td class="num">11</td></tr>
+<tr><td>Blind Spots</td><td class="num">6</td></tr></table>
+    </div>
+    <div class="summary-card">
+      <h3>Competitors used for blind-spot detection</h3>
+      <div><span class="chip">hk-gmc.com</span> <span class="chip">ppmedicalcenter.com.hk</span> <span class="chip">otandp.com</span> <span class="chip">gleneagles.hk</span> <span class="chip">healthymatters.com.hk</span></div>
+    </div>
+  </section>
+
+  <section class="bucket" id="bucket-branded">
+  <div class="bucket-head">
+    <h2>Branded + Brand Perception <span class="count">8</span></h2>
+    <p class="bucket-desc">What AI surfaces say when patients name the brand directly.</p>
+  </div>
+  <table class="prompts">
+    <thead><tr><th class="id">ID</th><th>Prompt</th><th class="tag">Service Line</th></tr></thead>
+    <tbody>
+      <tr><td class="id">P001</td><td class="prompt">What is Amber Health and what services do they offer?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P002</td><td class="prompt">Is Amber Health a trusted specialist medical centre in Hong Kong?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P003</td><td class="prompt">Amber Health review — what do patients say about their experience?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P004</td><td class="prompt">What are the pros and cons of choosing Amber Health for care?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P005</td><td class="prompt">What are the best alternatives to Amber Health in Hong Kong?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P006</td><td class="prompt">Who is Amber Health best suited for as a patient?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P007</td><td class="prompt">How does Amber Health compare to other specialist medical centre options in Hong Kong?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P008</td><td class="prompt">What do real patients say about Amber Health?</td><td class="tag">—</td></tr>
+    </tbody>
+  </table>
+</section>
+<section class="bucket" id="bucket-tofu">
+  <div class="bucket-head">
+    <h2>TOFU — Awareness <span class="count">12</span></h2>
+    <p class="bucket-desc">Awareness-stage queries — what is X, when to see a specialist, condition basics.</p>
+  </div>
+  <table class="prompts">
+    <thead><tr><th class="id">ID</th><th>Prompt</th><th class="tag">Service Line</th></tr></thead>
+    <tbody>
+      <tr><td class="id">P009</td><td class="prompt">What is IVF and how does it work?</td><td class="tag">fertility</td></tr>
+      <tr><td class="id">P010</td><td class="prompt">When should someone see a gynaecologist?</td><td class="tag">gynaecology</td></tr>
+      <tr><td class="id">P011</td><td class="prompt">What are the symptoms of high-risk pregnancy?</td><td class="tag">obstetrics</td></tr>
+      <tr><td class="id">P012</td><td class="prompt">How is acne treated?</td><td class="tag">dermatology</td></tr>
+      <tr><td class="id">P013</td><td class="prompt">Is breast reconstruction safe?</td><td class="tag">reconstructive surgery</td></tr>
+      <tr><td class="id">P014</td><td class="prompt">What can a patient expect during IUI?</td><td class="tag">fertility</td></tr>
+      <tr><td class="id">P015</td><td class="prompt">What services does a specialist medical centre typically offer?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P016</td><td class="prompt">When should a patient visit a specialist medical centre?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P017</td><td class="prompt">How does a specialist medical centre differ from a public hospital in Hong Kong?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P018</td><td class="prompt">Why might someone choose a private specialist medical centre in Hong Kong?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P019</td><td class="prompt">What conditions are commonly treated at a specialist medical centre?</td><td class="tag">—</td></tr>
+      <tr><td class="id">P020</td><td class="prompt">What can a patient expect on a first visit to a specialist medical centre?</td><td class="tag">—</td></tr>
+    </tbody>
+  </table>
+</section>
+<section class="bucket" id="bucket-mofu">
+  <div class="bucket-head">
+    <h2>MOFU — Consideration <span class="count">13</span></h2>
+    <p class="bucket-desc">Evaluation-stage queries — best clinic for X, top specialist for Y, where to do Z.</p>
+  </div>
+  <table class="prompts">
+    <thead><tr><th class="id">ID</th><th>Prompt</th><th class="tag">Service Line</th></tr></thead>
+    <tbody>
+      <tr><td class="id">P021</td><td class="prompt">Best fertility clinic in Hong Kong?</td><td class="tag">fertility</td></tr>
+      <tr><td class="id">P022</td><td class="prompt">Top gynaecologists in Hong Kong?</td><td class="tag">gynaecology</td></tr>
+      <tr><td class="id">P023</td><td class="prompt">Where to do prenatal check-ups in Hong Kong?</td><td class="tag">obstetrics</td></tr>
+      <tr><td class="id">P024</td><td class="prompt">Best dermatologist in Hong Kong for acne?</td><td class="tag">dermatology</td></tr>
+      <tr><td class="id">P025</td><td class="prompt">How do I choose a reconstructive surgeon in Hong Kong?</td><td class="tag">reconstructive surgery</td></tr>
+      <tr><td class="id">P026</td><td class="prompt">Which clinic in Hong Kong is best for IVF?</td><td class="tag">fertility</td></tr>
+      <tr><td class="id">P027</td><td class="prompt">Top-rated gynaecology clinic in Hong Kong for PCOS?</td><td class="tag">gynaecology</td></tr>
+      <tr><td class="id">P028</td><td class="prompt">Where can I get NIPT test in Hong Kong?</td><td class="tag">obstetrics</td></tr>
+      <tr><td class="id">P029</td><td class="prompt">What questions should a patient ask before acne treatment?</td><td class="tag">dermatology</td></tr>
+      <tr><td class="id">P030</td><td class="prompt">How to find a good reconstructive surgeon in Hong Kong?</td><td class="tag">reconstructive surgery</td></tr>
+      <tr><td class="id">P031</td><td class="prompt">Where to do T21 test in Hong Kong?</td><td class="tag">obstetrics</td></tr>
+      <tr><td class="id">P032</td><td class="prompt">Best dermatologist in Hong Kong for eczema?</td><td class="tag">dermatology</td></tr>
+      <tr><td class="id">P033</td><td class="prompt">Which clinic in Hong Kong is best for IUI?</td><td class="tag">fertility</td></tr>
+    </tbody>
+  </table>
+</section>
+<section class="bucket" id="bucket-bofu">
+  <div class="bucket-head">
+    <h2>BOFU — Decision <span class="count">11</span></h2>
+    <p class="bucket-desc">Decision-stage queries — pricing, insurance, recovery, success rates.</p>
+  </div>
+  <table class="prompts">
+    <thead><tr><th class="id">ID</th><th>Prompt</th><th class="tag">Service Line</th></tr></thead>
+    <tbody>
+      <tr><td class="id">P034</td><td class="prompt">How much does IVF cost in Hong Kong?</td><td class="tag">fertility</td></tr>
+      <tr><td class="id">P035</td><td class="prompt">What is the typical price of pap smear in Hong Kong?</td><td class="tag">gynaecology</td></tr>
+      <tr><td class="id">P036</td><td class="prompt">Is prenatal check-ups covered by insurance in Hong Kong?</td><td class="tag">obstetrics</td></tr>
+      <tr><td class="id">P037</td><td class="prompt">Cost of a dermatologist consultation in Hong Kong?</td><td class="tag">dermatology</td></tr>
+      <tr><td class="id">P038</td><td class="prompt">What are the hidden costs of breast reconstruction?</td><td class="tag">reconstructive surgery</td></tr>
+      <tr><td class="id">P039</td><td class="prompt">How long does it take to recover from IUI?</td><td class="tag">fertility</td></tr>
+      <tr><td class="id">P040</td><td class="prompt">What is the success rate of HPV vaccination in Hong Kong?</td><td class="tag">gynaecology</td></tr>
+      <tr><td class="id">P041</td><td class="prompt">Where is the cheapest place to do NIPT test in Hong Kong?</td><td class="tag">obstetrics</td></tr>
+      <tr><td class="id">P042</td><td class="prompt">Is acne treatment worth the cost?</td><td class="tag">dermatology</td></tr>
+      <tr><td class="id">P043</td><td class="prompt">How much does diastasis recti repair cost in Hong Kong?</td><td class="tag">reconstructive surgery</td></tr>
+      <tr><td class="id">P044</td><td class="prompt">What is the typical price of egg freezing in Hong Kong?</td><td class="tag">fertility</td></tr>
+    </tbody>
+  </table>
+</section>
+<section class="bucket" id="bucket-blind_spots">
+  <div class="bucket-head">
+    <h2>Blind Spots <span class="count">6</span></h2>
+    <p class="bucket-desc">Competitive gap keywords + brand perception probes.</p>
+  </div>
+  <table class="prompts">
+    <thead><tr><th class="id">ID</th><th>Prompt</th><th class="tag">Service Line</th></tr></thead>
+    <tbody>
+      <tr><td class="id">P045</td><td class="prompt">Where do most patients go for orthopedic in Hong Kong?</td><td class="tag">competitive gap</td></tr>
+      <tr><td class="id">P046</td><td class="prompt">What are the leading clinics for colonoscopy in Hong Kong?</td><td class="tag">competitive gap</td></tr>
+      <tr><td class="id">P047</td><td class="prompt">Which clinic is best known for dermatologist in Hong Kong?</td><td class="tag">competitive gap</td></tr>
+      <tr><td class="id">P048</td><td class="prompt">Is Amber Health trustworthy? What do real patients say about their experience?</td><td class="tag">brand perception</td></tr>
+      <tr><td class="id">P049</td><td class="prompt">What&#x27;s the reputation of Amber Health as a specialist medical centre in Hong Kong?</td><td class="tag">brand perception</td></tr>
+      <tr><td class="id">P050</td><td class="prompt">Who is Amber Health best suited for — routine care or specialised treatment?</td><td class="tag">brand perception</td></tr>
+    </tbody>
+  </table>
+</section>
+
+  <footer class="footer">
+    Generated 2026-04-26 via Novastacks AI Visibility Tracker —
+    <code>discover-ai-prompts.py</code>. Prompt set version is the input to
+    <code>run-llm-visibility.py</code>; results are visible at
+    <code>/auditv2/ai-visibility-tracker/amberhealth-hk/</code>
+    after the visibility run completes.
+  </footer>
+</div>
+</body>
+</html>
