@@ -341,20 +341,39 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
   <li><strong>May focus:</strong> the new Solutions hub pages (delivered, awaiting GoFreight publish) are designed to capture "ocean freight management software" (currently page 4) and similar intent-specific queries. Publishing these is the highest-leverage action.</li>
 </ul>
 </div>
-<div class="section-header">AEO / AI Visibility (Workduo)</div>
-<div class="note-box"><strong>Data limitation:</strong> Workduo data sparse for April (only Apr 5-6 + Apr 28-29 captured). KPIs below are based on the captured days; trend is uninterpretable until ingestion is fixed. The competitive picture is informational, not authoritative.</div>
+<div class="section-header">AEO / AI Visibility — Non-Branded (Workduo)</div>
+<div class="note-box"><strong>Methodology:</strong> Daily Workduo tracking across non-branded category queries (BOFU + MOFU + TOFU; Branded queries excluded — those are dominated by GoFreight by definition). Period: 2026-04-07 to 2026-05-06 (30 days). Top 5 brands shown per chart by visibility share. Visibility = % of tracked queries where the brand appears in the AI response; SoV = brand mention share among all mentions.</div>
 <div class="kpi-grid">
-  <div class="kpi-card"><div class="label">Visibility</div><div class="value">22.9%</div><div class="change">avg across captured days</div></div>
-  <div class="kpi-card"><div class="label">Share of Voice</div><div class="value">17.1%</div><div class="change">vs 7 tracked competitors</div></div>
-  <div class="kpi-card"><div class="label">Avg Position</div><div class="value">1.64</div><div class="change">when mentioned</div></div>
-  <div class="kpi-card"><div class="label">Competitive Rank</div><div class="value">#4</div><div class="change">by share of voice</div></div>
+  <div class="kpi-card"><div class="label">Visibility (All Platforms)</div><div class="value">26.6%</div><div class="change">30-day avg, non-branded</div></div>
+  <div class="kpi-card"><div class="label">Share of Voice</div><div class="value">19.3%</div><div class="change">among 8 tracked competitors</div></div>
+  <div class="kpi-card"><div class="label">Avg Position (when mentioned)</div><div class="value">1.70</div><div class="change">lower = better; #1 = top of answer</div></div>
+  <div class="kpi-card"><div class="label">Total Mentions</div><div class="value">1097</div><div class="change">across non-branded queries</div></div>
 </div>
-<table class="data-table"><thead><tr><th>AI Platform</th><th class="num">Mentions</th><th class="num">Visibility</th><th class="num">SoV</th><th class="num">Avg Position</th></tr></thead><tbody>
-<tr><td><strong>Perplexity</strong></td><td class="num">40</td><td class="num">30.2%</td><td class="num">20.5%</td><td class="num">1.55</td></tr>
-<tr><td><strong>Google AI Overview</strong></td><td class="num">50</td><td class="num">31.2%</td><td class="num">18.4%</td><td class="num">2.04</td></tr>
-<tr><td><strong>ChatGPT</strong></td><td class="num">30</td><td class="num">14.3%</td><td class="num">12.8%</td><td class="num">1.61</td></tr>
+<div class="chart-container"><h3>Visibility Trend — All AI Platforms (Non-Branded)</h3><div style="height:340px;"><canvas id="trendAll"></canvas></div></div>
+<div class="chart-grid">
+  <div class="chart-container"><h3>Google AI Overview — Visibility Trend</h3><div style="font-size:0.85rem; color:#475569; margin-bottom:8px;">GoFreight 30-day avg: <strong>31.6%</strong> visibility · pos <strong>1.78</strong> · 371 mentions</div><div style="height:300px;"><canvas id="trendAIO"></canvas></div></div>
+  <div class="chart-container"><h3>ChatGPT — Visibility Trend</h3><div style="font-size:0.85rem; color:#475569; margin-bottom:8px;">GoFreight 30-day avg: <strong>17.9%</strong> visibility · pos <strong>1.64</strong> · 323 mentions</div><div style="height:300px;"><canvas id="trendGPT"></canvas></div></div>
+</div>
+<h3 style="margin-top:24px; margin-bottom:12px; color:var(--medium-gray);">Platform Leaderboard — Avg Visibility (Non-Branded, 30d)</h3>
+<table class="data-table"><thead><tr><th>Brand</th><th class="num">Google AIO</th><th class="num">ChatGPT</th><th class="num">All Platforms</th><th class="num">Total Mentions</th><th class="num">Avg Position</th></tr></thead><tbody>
+<tr><td>CargoWise</td><td class="num">36.4%</td><td class="num">33.3%</td><td class="num">33.5%</td><td class="num">896</td><td class="num">1.42</td></tr>
+<tr><td>Magaya Supply Chain</td><td class="num">39.8%</td><td class="num">23.7%</td><td class="num">30.0%</td><td class="num">816</td><td class="num">2.40</td></tr>
+<tr><td>Descartes Forwarder Enterprise</td><td class="num">32.7%</td><td class="num">29.7%</td><td class="num">28.4%</td><td class="num">607</td><td class="num">2.56</td></tr>
+<tr style="background:#e0f7fa; font-weight:600;"><td>GoFreight</td><td class="num">31.6%</td><td class="num">17.9%</td><td class="num">26.6%</td><td class="num">1097</td><td class="num">1.70</td></tr>
+<tr><td>GoComet</td><td class="num">5.1%</td><td class="num">3.5%</td><td class="num">6.1%</td><td class="num">112</td><td class="num">3.11</td></tr>
+<tr><td>Shipthis</td><td class="num">5.4%</td><td class="num">4.3%</td><td class="num">5.9%</td><td class="num">108</td><td class="num">3.11</td></tr>
+<tr><td>Freightview</td><td class="num">1.4%</td><td class="num">3.3%</td><td class="num">5.0%</td><td class="num">90</td><td class="num">3.06</td></tr>
+<tr><td>Neurored TMS & SCM</td><td class="num">2.3%</td><td class="num">2.4%</td><td class="num">2.4%</td><td class="num">43</td><td class="num">3.12</td></tr>
 </tbody></table>
-<div class="chart-container"><h3>Share of Voice — GoFreight vs Competitors (April)</h3><div style="height:340px;"><canvas id="competitorChart"></canvas></div></div>
+<div class="callout callout-blue">
+<h3>AEO Insights — Where GoFreight Stands</h3>
+<ul>
+  <li><strong>Google AIO:</strong> GoFreight averages 31.6% visibility on non-branded freight queries — ranked #4 behind Magaya (39.8%), CargoWise (36.4%), and Descartes (32.7%). Position-wise GoFreight is strong (1.78 avg) — when GoFreight IS cited, it's near the top.</li>
+  <li><strong>ChatGPT gap:</strong> GoFreight visibility drops to 17.9% — still top 4 but with a wider gap to CargoWise (33.3%). ChatGPT seems to weigh long-established brand mentions more heavily, where the legacy players have advantage.</li>
+  <li><strong>Position discipline:</strong> Across both platforms, when GoFreight is mentioned, it's at position 1.6–1.8 — meaning the citation quality is good. The opportunity is breadth (more queries triggering a GoFreight mention), not depth.</li>
+  <li><strong>May focus:</strong> ChatGPT visibility lift is the biggest open lever — content that leans into authoritative third-party citations (G2, Capterra, industry reports) is more likely to surface in ChatGPT than Google AIO.</li>
+</ul>
+</div>
 <div class="section-header">Daily Performance Trends</div>
 <div class="chart-grid">
   <div class="chart-container"><h3>Daily Clicks</h3><div style="height:280px;"><canvas id="dailyClicks"></canvas></div></div>
@@ -398,19 +417,46 @@ new Chart(document.getElementById('segmentDoughnut'), {
   options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'right' } } }
 });
 
-// Competitor SoV
-new Chart(document.getElementById('competitorChart'), {
-  type: 'bar',
-  data: {
-    labels: ['CargoWise', 'Magaya Supply Chain', 'Descartes Forwarder Enterprise', 'GoFreight', 'Neurored TMS & SCM', 'Shipthis', 'GoComet', 'Freightview'],
-    datasets: [{
-      label: 'Share of Voice (%)',
-      data: [25.3, 19.3, 19.3, 17.1, 6.0, 6.0, 3.6, 2.4],
-      backgroundColor: ['#cbd5e1', '#cbd5e1', '#cbd5e1', '#01aac1', '#cbd5e1', '#cbd5e1', '#cbd5e1', '#cbd5e1']
-    }]
-  },
-  options: { responsive:true, maintainAspectRatio:false, indexAxis:'y', plugins:{ legend:{ display:false } }, scales:{ x:{ beginAtZero:true, ticks:{ callback:v=>v+'%' } } } }
-});
+// Workduo trend charts — 5 brands x 30 days
+const WD_DATES = ['2026-04-07', '2026-04-08', '2026-04-09', '2026-04-10', '2026-04-11', '2026-04-12', '2026-04-13', '2026-04-14', '2026-04-15', '2026-04-16', '2026-04-17', '2026-04-18', '2026-04-19', '2026-04-20', '2026-04-21', '2026-04-22', '2026-04-23', '2026-04-24', '2026-04-25', '2026-04-26', '2026-04-27', '2026-04-28', '2026-04-29', '2026-04-30', '2026-05-01', '2026-05-02', '2026-05-03', '2026-05-04', '2026-05-05', '2026-05-06'];
+const BRAND_COLORS = {
+  'GoFreight': '#01aac1',                       // brand teal
+  'CargoWise': '#14b8a6',                       // teal
+  'Magaya Supply Chain': '#f97316',             // orange
+  'Descartes Forwarder Enterprise': '#ef4444',  // red
+  'Shipthis': '#f9a8d4'                          // pink
+};
+
+function buildTrend(canvasId, chartObj) {
+  const datasets = Object.entries(chartObj.series).map(([name, data]) => ({
+    label: name,
+    data: data,
+    borderColor: BRAND_COLORS[name] || '#94a3b8',
+    backgroundColor: name === 'GoFreight' ? 'rgba(1,170,193,0.15)' : 'transparent',
+    borderWidth: name === 'GoFreight' ? 3 : 2,
+    tension: 0.3,
+    fill: name === 'GoFreight',
+    pointRadius: 1.5,
+    pointHoverRadius: 5,
+  }));
+  new Chart(document.getElementById(canvasId), {
+    type: 'line',
+    data: { labels: chartObj.dates.map(d => d.slice(5)), datasets: datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: { legend: { position: 'top', labels: { boxWidth: 12, font: { size: 11 } } } },
+      scales: {
+        y: { beginAtZero: true, ticks: { callback: v => v + '%' }, title: { display: true, text: 'Visibility %' } },
+        x: { ticks: { maxRotation: 45, minRotation: 45, font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+buildTrend('trendAll', {"dates": ["2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06"], "series": {"GoFreight": [27.9, 23.7, 29.0, 28.3, 31.1, 23.7, 30.0, 25.0, 32.8, 24.6, 25.0, 22.9, 24.6, 27.9, 22.9, 25.8, 24.2, 21.0, 33.3, 29.5, 26.2, 22.6, 26.2, 27.9, 28.3, 26.2, 26.7, 25.4, 24.2, 29.5], "CargoWise": [37.7, 39.0, 33.9, 31.7, 32.8, 30.5, 31.7, 30.0, 27.9, 29.5, 38.3, 31.1, 36.1, 39.3, 34.4, 33.9, 32.3, 30.6, 33.3, 37.7, 32.8, 32.3, 32.8, 31.1, 33.3, 32.8, 36.7, 33.9, 33.9, 32.8], "Magaya Supply Chain": [26.2, 28.8, 27.4, 30.0, 31.1, 20.3, 31.7, 28.3, 31.1, 29.5, 30.0, 27.9, 31.1, 34.4, 29.5, 35.5, 25.8, 32.3, 30.0, 36.1, 27.9, 30.6, 31.1, 31.1, 26.7, 29.5, 31.7, 30.5, 30.6, 32.8], "Descartes Forwarder Enterprise": [21.3, 28.8, 25.8, 28.3, 31.1, 28.8, 23.3, 28.3, 26.2, 26.2, 30.0, 27.9, 31.1, 27.9, 31.1, 30.6, 27.4, 29.0, 25.0, 34.4, 29.5, 21.0, 29.5, 27.9, 28.3, 27.9, 31.7, 33.9, 25.8, 34.4], "Shipthis": [13.1, 3.4, 4.8, 1.7, 3.3, 6.8, 15.0, 5.0, 4.9, 6.6, 10.0, 9.8, 1.6, 8.2, 4.9, 6.5, 3.2, 3.2, 3.3, 6.6, 4.9, 3.2, 4.9, 4.9, 6.7, 6.6, 5.0, 3.4, 9.7, 6.6]}});
+buildTrend('trendAIO', {"dates": ["2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06"], "series": {"GoFreight": [36.8, 35.3, 30.0, 33.3, 42.1, 17.6, 33.3, 33.3, 47.4, 31.6, 16.7, 21.1, 21.1, 31.6, 31.6, 25.0, 30.0, 25.0, 44.4, 36.8, 36.8, 30.0, 31.6, 42.1, 27.8, 36.8, 33.3, 35.3, 25.0, 26.3], "CargoWise": [42.1, 41.2, 40.0, 38.9, 42.1, 23.5, 33.3, 33.3, 31.6, 36.8, 33.3, 36.8, 31.6, 47.4, 36.8, 40.0, 30.0, 30.0, 38.9, 31.6, 31.6, 30.0, 36.8, 36.8, 33.3, 42.1, 38.9, 47.1, 40.0, 36.8], "Magaya Supply Chain": [42.1, 47.1, 35.0, 44.4, 42.1, 29.4, 38.9, 50.0, 47.4, 31.6, 33.3, 36.8, 36.8, 47.4, 47.4, 40.0, 35.0, 35.0, 44.4, 42.1, 36.8, 40.0, 42.1, 42.1, 33.3, 36.8, 38.9, 41.2, 40.0, 36.8], "Descartes Forwarder Enterprise": [36.8, 29.4, 30.0, 33.3, 36.8, 29.4, 22.2, 33.3, 31.6, 26.3, 27.8, 31.6, 36.8, 31.6, 31.6, 35.0, 25.0, 20.0, 38.9, 42.1, 36.8, 25.0, 36.8, 36.8, 33.3, 26.3, 38.9, 47.1, 40.0, 31.6], "Shipthis": [15.8, 5.9, 5.0, 5.6, 10.5, 5.9, 11.1, 5.6, 0, 5.3, 5.6, 5.3, 0, 10.5, 0, 10.0, 0, 0, 5.6, 10.5, 0, 0, 0, 0, 11.1, 5.3, 5.6, 5.9, 15.0, 0]}});
+buildTrend('trendGPT', {"dates": ["2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06"], "series": {"GoFreight": [19.1, 9.5, 28.6, 19.1, 23.8, 9.5, 28.6, 14.3, 19.1, 14.3, 28.6, 19.1, 23.8, 19.1, 4.8, 23.8, 14.3, 14.3, 28.6, 19.1, 14.3, 4.8, 23.8, 9.5, 23.8, 14.3, 9.5, 9.5, 14.3, 33.3], "CargoWise": [38.1, 42.9, 38.1, 28.6, 28.6, 38.1, 33.3, 28.6, 23.8, 19.1, 42.9, 23.8, 42.9, 38.1, 38.1, 28.6, 38.1, 28.6, 33.3, 42.9, 33.3, 33.3, 28.6, 33.3, 38.1, 28.6, 38.1, 28.6, 33.3, 28.6], "Magaya Supply Chain": [19.1, 4.8, 33.3, 28.6, 28.6, 14.3, 28.6, 19.1, 28.6, 28.6, 28.6, 19.1, 19.1, 23.8, 9.5, 28.6, 14.3, 28.6, 23.8, 33.3, 19.1, 23.8, 23.8, 23.8, 23.8, 23.8, 28.6, 23.8, 23.8, 33.3], "Descartes Forwarder Enterprise": [9.5, 33.3, 28.6, 33.3, 38.1, 33.3, 28.6, 28.6, 28.6, 33.3, 38.1, 33.3, 33.3, 28.6, 33.3, 33.3, 28.6, 38.1, 23.8, 42.9, 28.6, 19.1, 23.8, 28.6, 28.6, 33.3, 28.6, 23.8, 9.5, 38.1], "Shipthis": [14.3, 0, 4.8, 0, 0, 0, 19.1, 4.8, 9.5, 9.5, 9.5, 9.5, 0, 4.8, 0, 9.5, 0, 0, 4.8, 4.8, 4.8, 0, 4.8, 4.8, 4.8, 0, 0, 0, 0, 4.8]}});
 
 // Daily clicks
 new Chart(document.getElementById('dailyClicks'), {
