@@ -83,27 +83,35 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
   <div class="meta">Period: April 1 – April 30, 2026 &nbsp;|&nbsp; Comparison: March 2026 &nbsp;|&nbsp; Prepared by Novastacks &nbsp;|&nbsp; May 4, 2026</div>
 </div>
 
+<!-- DATA QUALITY NOTICE -->
+<div class="callout callout-yellow" style="margin-bottom:24px;">
+  <h3>⚠ Data-Quality Notice — GSC Logging Bug Affected Mar/Apr Comparison</h3>
+  <p>Google Search Console disclosed (Apr 27, 2026) that a logging error <strong>over-reported impressions, CTR, and average position from May 13, 2025 to Apr 27, 2026</strong>. After the fix you "may notice a decrease in impressions" — meaning earlier numbers were inflated. <strong>Clicks were NOT affected.</strong></p>
+  <p style="margin-top:8px;"><strong>Implication for this report:</strong> the MoM changes on Impressions (-40.1%), CTR, and Average Position are largely a data correction, not a real performance shift. <strong>The clicks decline (-30.2%) is genuine and is the focus of investigation.</strong> Impressions/CTR/position are shown for completeness but should be ignored for MoM interpretation. We recommend resuming MoM tracking on those metrics from the May 2026 report onward (first full post-fix month).</p>
+  <p style="margin-top:8px; font-size:0.85rem; color:#92400e;">A separate, smaller issue (Apr 16–27) affected only "Job listing" / "Job details" search appearance types — not relevant to gofreight.com.</p>
+</div>
+
 <!-- KPI CARDS -->
 <div class="kpi-grid">
   <div class="kpi-card">
-    <div class="label">Total Clicks</div>
+    <div class="label">Total Clicks <span style="display:inline-block; padding:1px 6px; background:#dcfce7; color:#166534; border-radius:4px; font-size:0.65rem; margin-left:4px;">RELIABLE</span></div>
     <div class="value">3,535</div>
     <div class="change trend-down">▼ -1,532 (-30.2%) vs March</div>
   </div>
-  <div class="kpi-card">
-    <div class="label">Total Impressions</div>
+  <div class="kpi-card" style="opacity:0.65;">
+    <div class="label">Total Impressions <span style="display:inline-block; padding:1px 6px; background:#fef3c7; color:#92400e; border-radius:4px; font-size:0.65rem; margin-left:4px;">⚠ GSC BUG</span></div>
     <div class="value">1,047,517</div>
-    <div class="change trend-down">▼ -699,829 (-40.1%) vs March</div>
+    <div class="change" style="color:#94a3b8;">MoM not interpretable — see notice above</div>
   </div>
-  <div class="kpi-card">
-    <div class="label">Average CTR</div>
+  <div class="kpi-card" style="opacity:0.65;">
+    <div class="label">Average CTR <span style="display:inline-block; padding:1px 6px; background:#fef3c7; color:#92400e; border-radius:4px; font-size:0.65rem; margin-left:4px;">⚠ GSC BUG</span></div>
     <div class="value">0.34%</div>
-    <div class="change trend-up">▲ +0.05pp (+16.4%) vs March</div>
+    <div class="change" style="color:#94a3b8;">MoM not interpretable — see notice above</div>
   </div>
-  <div class="kpi-card">
-    <div class="label">Average Position</div>
+  <div class="kpi-card" style="opacity:0.65;">
+    <div class="label">Average Position <span style="display:inline-block; padding:1px 6px; background:#fef3c7; color:#92400e; border-radius:4px; font-size:0.65rem; margin-left:4px;">⚠ GSC BUG</span></div>
     <div class="value">9.72</div>
-    <div class="change trend-down">▲ +1.97 (+25.5%) vs March</div>
+    <div class="change" style="color:#94a3b8;">MoM not interpretable — see notice above</div>
   </div>
 </div>
 
@@ -112,7 +120,9 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 
 <div class="callout callout-blue">
   <h3>Month in Review — April 2026</h3>
-  <p>April was a heavy publishing month — <strong>25 pieces shipped</strong>, weighted toward glossary builds (16 of 25) on April 20–22. Traffic took a sharp step down vs March: clicks fell 30.2% and impressions fell 40.1%, with average position drifting from 7.74 to 9.72. The decline is concentrated in <strong>Blog</strong> (the volume engine that carried Q1) — Blog clicks dropped from 2,890 to 1,476, mirroring the loss in non-branded discovery traffic. <strong>Glossary clicks grew +173%</strong> (76 → 208) as the freshly-published cluster started to land — a leading indicator that the April content investment will compound in May/June. Branded traffic held flat (~1,170 clicks vs ~1,280) while non-branded discovery (the Blog engine) lost the most ground.</p>
+  <p><strong>The headline is the click decline (-30.2% MoM, 5,067 → 3,535).</strong> This is the only KPI not contaminated by the GSC logging bug, and is the focus of this report. April was a heavy publishing month — <strong>25 pieces shipped</strong>, weighted toward glossary builds (16 of 25) on April 20–22.</p>
+  <p style="margin-top:10px;">The click loss is concentrated in <strong>Blog</strong> (the volume engine that carried Q1): 2,890 → 1,476 clicks. Investigation (see Blog Decline Investigation section) shows ~32% of the loss is migration-related — old <code>/blog/glossary/*</code> and <code>/blog/education/*incoterms*</code> URLs were retired in favor of new <code>/glossary/*</code> pages that haven't yet absorbed the rankings. The remaining ~68% is a mix of genuine ranking decline on key commercial pages (best-tms-software, best-freight-management-software, customs clearance) and category-wide search-volume erosion (yearly volume on every core term is down -19% to -86% — see Section 10).</p>
+  <p style="margin-top:10px;"><strong>Glossary clicks grew +173%</strong> (76 → 208) as the freshly-published cluster started to land. Late April showed early recovery: in week 4 (Apr 22–28) /blog clicks rebounded +18.7% WoW, driven almost entirely by one page (custom-clearance-usa-for-goods, +41 of +58) that benefitted from internal links from the new glossary cluster. <strong>This is the May playbook</strong>: replicate the internal-linking pattern across the remaining bleeding pages.</p>
 </div>
 
 <h3 style="margin-top:24px; margin-bottom:12px; color:var(--medium-gray);">Deliverables Shipped — 25 Published in April</h3>
@@ -147,32 +157,33 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
   <div class="deliverable-box pending" style="grid-column:1/-1; text-align:center; font-style:italic; color:#64748b;">+ 5 more delivered/scheduled but not yet live (Product Attribute Pages await GoFreight product team input)</div>
 </div>
 
-<div class="section-header">KPI Outcome Analysis</div>
+<div class="section-header">KPI Outcome Analysis (Click-focused — other metrics suppressed due to GSC bug)</div>
 <div class="status-grid">
   <div class="status-card danger">
-    <h4>Click Volume — Below Target</h4>
-    <p>Clicks dropped 30.2% MoM (5,067 → 3,535). The decline is concentrated in Blog subfolder (-49%), reflecting search-volume drop on freight-software queries (yearly trend on core terms is -50% to -86% — see Section 10) plus end-of-month dip from algorithm fluctuation in late April.</p>
+    <h4>Total Clicks — Below Target (-30.2% MoM)</h4>
+    <p>Clicks dropped 30.2% MoM (5,067 → 3,535). This is the only fully-trusted metric in the report (GSC bug did not affect clicks). The decline is concentrated in Blog (-49% clicks). Investigation in the Blog Decline section shows ~32% is migration-related (old URLs retired, new URLs not yet absorbing) and ~68% is genuine — rank loss on commercial-intent core keywords plus category-wide search-volume erosion.</p>
   </div>
   <div class="status-card danger">
-    <h4>Impression Volume — Below Target</h4>
-    <p>Impressions fell 40.1%. Steepest decline came from cached high-traffic blog URLs that carried inherited authority pre-Q1 cleanup. The new April content is not yet ranked at scale (most pages 0–14 days old).</p>
+    <h4>Core Keyword Position — Real Bleed (GSC)</h4>
+    <p>Despite the absolute-position uncertainty from the bug, the relative MoM shifts are real and informative: "freight forwarding software" 4.8→7.1, "best freight forwarding software" 8.0→16.0, "air freight forwarding software" 3.2→8.4. The commercial-intent core terms bled position. This drives the click decline and is the structural issue to address in May.</p>
   </div>
   <div class="status-card">
-    <h4>CTR — Improving</h4>
-    <p>Despite traffic decline, CTR improved to 0.34% (+16% relative). Impressions fell faster than clicks — meaning the queries we DID surface for were higher-intent. This is consistent with ranking the new commercial-intent glossary pages.</p>
+    <h4>Glossary Subfolder — Strong Growth (+173% Clicks)</h4>
+    <p>Glossary clicks grew 76 → 208 as the freshly-published cluster (16 new pages Apr 20–22) started landing. This is a leading indicator that the April content investment will compound in May/June. Late-April WoW data shows /blog also rebounding (+18.7% week-over-week) driven by internal linking from the new glossary pages.</p>
   </div>
   <div class="status-card warning">
-    <h4>Average Position — Worsening</h4>
-    <p>Position drifted from 7.74 to 9.72 (+25.5%). Expected during a publishing-heavy month — newly-indexed pages enter at lower ranks and pull the impression-weighted average up. Should self-correct as April pages mature (4–8 weeks).</p>
+    <h4>Impressions / CTR / Avg Position — Suppressed</h4>
+    <p>Per the GSC logging bug (May 2025 – Apr 27, 2026), these metrics over-reported during March and most of April. We are not interpreting MoM movement on these metrics this period. Resume MoM tracking from the May 2026 report (first full post-fix month).</p>
   </div>
 </div>
 
 <div class="callout callout-red">
   <h3>⚠ Critical Issues</h3>
   <ul>
-    <li><strong>Blog subfolder bleed:</strong> -49% clicks, -43% impressions. Need to identify the top 5 declining blog URLs and run content-refresh diagnostics. Likely candidates: pages from the pre-Q1 archive that lost rankings to fresher competitor content.</li>
-    <li><strong>Product Attribute Pages stuck:</strong> 11 Product Attribute Pages delivered to GoFreight but only 1 of 11 (Customer Portal) went live in April. These are the highest commercial-intent pages in the pipeline. Recommend sync with GoFreight product team to clear bottleneck.</li>
-    <li><strong>Workduo data gap:</strong> AEO visibility tracking only captured 4 of 30 days (Apr 5–6, Apr 28–29). Workduo project ingestion appears intermittent — needs operational fix before May report or AEO trend will be uninterpretable.</li>
+    <li><strong>Commercial-intent rank bleed:</strong> "freight forwarding software" GSC pos 4.8→7.1, "best freight forwarding software" 8.0→16.0 (page 1 → page 2), "air freight forwarding software" 3.2→8.4. These are the highest-value queries in the keyword set. Refreshing the homepage + best-fms blog content is the highest-priority May action.</li>
+    <li><strong>Blog subfolder click bleed:</strong> -49% clicks (2,890 → 1,476). ~32% migration-related (verify 301s in place from old /blog/glossary/* and /blog/education/incoterms/* to new /glossary/*); ~68% genuine — see top-decliner analysis.</li>
+    <li><strong>Product Attribute Pages stuck:</strong> 11 Product Attribute Pages delivered to GoFreight but only 1 of 11 (Customer Portal, published Apr 21) went live. These target the highest commercial-intent queries. Recommend sync with GoFreight product team to clear the bottleneck — these are the cleanest path to recovering position on intent-specific terms like "ocean freight management software" (page 4).</li>
+    <li><strong>Workduo data gap:</strong> AEO visibility tracking only captured 4 of 30 days (Apr 5–6, Apr 28–29). Ingestion is intermittent — operational fix needed before May or AEO trend becomes uninterpretable.</li>
   </ul>
 </div>
 
@@ -298,29 +309,38 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 <tr class="subtotal"><td colspan="2">TOP 12 SUBTOTAL</td><td class="num">1,175</td><td class="num">1,286</td><td class="num">-111</td><td class="num">—</td><td>—</td></tr>
 <tr class="percent-total"><td colspan="2">% of Site Total (date-dim)</td><td class="num">33.2%</td><td class="num">25.4%</td><td class="num">—</td><td class="num">—</td><td>—</td></tr>
 </tbody></table>
-<div class="section-header">Core Keyword Tracking (DataForSEO)</div>
+<div class="section-header">Core Keyword Tracking — GSC Position (User-Weighted)</div>
+<div class="note-box"><strong>Methodology change:</strong> Position is now reported from <strong>GSC</strong> (impression-weighted average across all real-user queries), not DataForSEO SERP scrape. GSC reflects what your actual users experience across all devices/locations/personalization mix; DataForSEO is a single-snapshot US desktop measurement and was understating real position drift in prior reports. <strong>DataForSEO position is shown as a reference column.</strong> Note: GSC position metric was affected by the May 2025–Apr 27 2026 logging bug, but both March and April data are equally affected so the relative MoM trend remains directionally informative.</div>
 <table class="data-table">
-<thead><tr><th>Keyword</th><th class="num">Search Volume</th><th class="num">Apr Position</th><th class="num">Prev Position</th><th class="num">Δ</th><th>Ranking URL</th></tr></thead>
+<thead><tr><th>Keyword</th><th class="num">Search Volume</th><th class="num">GSC Mar Pos</th><th class="num">GSC Apr Pos</th><th class="num">Δ Pos</th><th class="num">Mar Clicks</th><th class="num">Apr Clicks</th><th class="num">DFS Pos</th><th>Ranking URL</th></tr></thead>
 <tbody>
-<tr><td><strong>freight forwarding software</strong></td><td class="num">320</td><td class="num">3</td><td class="num">3</td><td class="num ">—</td><td><a href=https://gofreight.com/ target=_blank>/</a></td></tr>
-<tr><td><strong>freight management software</strong></td><td class="num">260</td><td class="num">5</td><td class="num">5</td><td class="num ">—</td><td><a href=https://gofreight.com/blog/best-freight-management-software target=_blank>/blog/best-freight-management-software</a></td></tr>
-<tr><td><strong>freight management system</strong></td><td class="num">320</td><td class="num">7</td><td class="num">—</td><td class="num trend-up">★ NEW</td><td><a href=https://gofreight.com/blog/best-freight-management-software target=_blank>/blog/best-freight-management-software</a></td></tr>
-<tr><td><strong>freight management system software</strong></td><td class="num">70</td><td class="num">2</td><td class="num">4</td><td class="num trend-up">▲ 2</td><td><a href=https://gofreight.com/blog/best-freight-management-software target=_blank>/blog/best-freight-management-software</a></td></tr>
-<tr><td><strong>best freight forwarding software</strong></td><td class="num">40</td><td class="num">5</td><td class="num">5</td><td class="num ">—</td><td><a href=https://gofreight.com/ target=_blank>/</a></td></tr>
-<tr><td><strong>best freight management software</strong></td><td class="num">0</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>Not ranking</td></tr>
-<tr><td><strong>air freight forwarding software</strong></td><td class="num">20</td><td class="num">2</td><td class="num">4</td><td class="num trend-up">▲ 2</td><td><a href=https://gofreight.com/ target=_blank>/</a></td></tr>
-<tr><td><strong>global freight management system</strong></td><td class="num">30</td><td class="num">10</td><td class="num">—</td><td class="num trend-up">★ NEW</td><td><a href=https://gofreight.com/blog/best-freight-management-software target=_blank>/blog/best-freight-management-software</a></td></tr>
-<tr><td><strong>ocean freight management software</strong></td><td class="num">50</td><td class="num">41</td><td class="num">—</td><td class="num trend-up">★ NEW</td><td><a href=https://gofreight.com/ target=_blank>/</a></td></tr>
-<tr class="subtotal"><td>Total Search Volume</td><td class="num">1,110</td><td colspan="4">Sum of monthly search volume across 9 core keywords</td></tr>
-<tr class="percent-total"><td>Keywords Ranking</td><td class="num">8/9</td><td colspan="4">89% of core keyword set has at least one ranking URL</td></tr>
+<tr><td><strong>freight forwarding software</strong></td><td class="num">320</td><td class="num">4.8</td><td class="num">7.1</td><td class="num trend-down">▼ 2.3</td><td class="num">20</td><td class="num">13</td><td class="num">3</td><td><a href="https://gofreight.com/" target="_blank">/</a></td></tr>
+<tr><td><strong>freight management software</strong></td><td class="num">260</td><td class="num">7.4</td><td class="num">9.3</td><td class="num trend-down">▼ 1.9</td><td class="num">9</td><td class="num">3</td><td class="num">5</td><td><a href="https://gofreight.com/blog/best-freight-management-software" target="_blank">/blog/best-freight-management-software</a></td></tr>
+<tr><td><strong>freight management system</strong></td><td class="num">320</td><td class="num">9.0</td><td class="num">8.4</td><td class="num trend-up">▲ 0.6</td><td class="num">5</td><td class="num">3</td><td class="num">7</td><td><a href="https://gofreight.com/blog/best-freight-management-software" target="_blank">/blog/best-freight-management-software</a></td></tr>
+<tr><td><strong>freight management system software</strong></td><td class="num">70</td><td class="num">6.9</td><td class="num">7.3</td><td class="num ">— flat</td><td class="num">0</td><td class="num">1</td><td class="num">2</td><td><a href="https://gofreight.com/blog/best-freight-management-software" target="_blank">/blog/best-freight-management-software</a></td></tr>
+<tr><td><strong>best freight forwarding software</strong></td><td class="num">40</td><td class="num">8.0</td><td class="num">16.0</td><td class="num trend-down">▼ 8.0</td><td class="num">1</td><td class="num">0</td><td class="num">5</td><td><a href="https://gofreight.com/" target="_blank">/</a></td></tr>
+<tr><td><strong>best freight management software</strong></td><td class="num">0</td><td class="num">5.1</td><td class="num">6.7</td><td class="num trend-down">▼ 1.6</td><td class="num">1</td><td class="num">2</td><td class="num">—</td><td>—</td></tr>
+<tr><td><strong>air freight forwarding software</strong></td><td class="num">20</td><td class="num">3.2</td><td class="num">8.4</td><td class="num trend-down">▼ 5.2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td><a href="https://gofreight.com/" target="_blank">/</a></td></tr>
+<tr><td><strong>global freight management system</strong></td><td class="num">30</td><td class="num">12.5</td><td class="num">13.2</td><td class="num trend-down">▼ 0.7</td><td class="num">1</td><td class="num">0</td><td class="num">10</td><td><a href="https://gofreight.com/blog/best-freight-management-software" target="_blank">/blog/best-freight-management-software</a></td></tr>
+<tr><td><strong>ocean freight management software</strong></td><td class="num">50</td><td class="num">13.2</td><td class="num">12.2</td><td class="num trend-up">▲ 1.0</td><td class="num">0</td><td class="num">1</td><td class="num">41</td><td><a href="https://gofreight.com/" target="_blank">/</a></td></tr>
+<tr class="subtotal"><td>Total Search Volume</td><td class="num">1,110</td><td colspan="7">Sum of monthly search volume across 9 core keywords</td></tr>
+<tr class="percent-total"><td>Keywords Ranking</td><td class="num">9/9</td><td colspan="7">100% of core keyword set has GSC impressions in April</td></tr>
 </tbody></table>
-<div class="callout callout-blue">
-<h3>Core Keyword Insights</h3>
+<div class="callout callout-red">
+<h3>Core Keyword Insights — Real Position Bleed (GSC Data)</h3>
 <ul>
-  <li><strong>Strong commercial-intent rankings:</strong> "freight management system software" jumped to #2 (from #4); "air freight forwarding software" jumped to #2 (from #4). Both URLs (homepage + best-fms blog) capturing AI Overview placements.</li>
-  <li><strong>New entrants:</strong> "freight management system" (vol 320, #7 NEW) and "global freight management system" (vol 30, #10 NEW) — the best-fms guide is starting to rank for the broader category, not just the modifier-heavy variants.</li>
-  <li><strong>Gaps:</strong> "ocean freight management software" still page 4 (#41) — homepage isn't an ideal target for ocean-specific intent. The forthcoming /solutions/ocean hub page (delivered, awaiting GoFreight publish) is the right answer.</li>
-  <li><strong>Industry headwind:</strong> Search volume on every core term is down YoY (-19% to -86%). This is category-wide, not GoFreight-specific. Position improvement is the right defense — capture more of a shrinking pie.</li>
+  <li><strong>Most commercial-intent core keywords lost ground in April:</strong>
+    <ul style="margin-top:6px;">
+      <li><strong>"freight forwarding software"</strong> (vol 320): GSC pos <strong>4.8 → 7.1</strong> — page 1 mid drifted to page 1 bottom. Click decline 20→13.</li>
+      <li><strong>"best freight forwarding software"</strong> (vol 40): GSC pos <strong>8.0 → 16.0</strong> — page 1 to page 2. The biggest collapse.</li>
+      <li><strong>"air freight forwarding software"</strong> (vol 20): GSC pos <strong>3.2 → 8.4</strong> — top 3 to page-1-bottom.</li>
+      <li><strong>"freight management software"</strong> (vol 260): GSC pos 7.4 → 9.3. Click decline 9→3.</li>
+      <li><strong>"best freight management software"</strong>: GSC pos 5.1 → 6.7. Mild.</li>
+    </ul>
+  </li>
+  <li><strong>Where DataForSEO disagrees with GSC:</strong> DFS shows "freight management system software" at #2 and "air freight forwarding software" at #2 in April — both clean SERP scrapes. GSC shows the user-weighted experience as worse. Both can be true: a snapshot rank is #2 but the weighted average across the long-tail variants and personalized SERPs is closer to 7–8. <strong>For client reporting, GSC is the truer signal.</strong></li>
+  <li><strong>Industry headwind compounds the effect:</strong> Search volume on every core term is down YoY (-19% to -86%) per DataForSEO historical data. Even at stable rank, click volume would have fallen.</li>
+  <li><strong>May focus:</strong> the new Solutions hub pages (delivered, awaiting GoFreight publish) are designed to capture "ocean freight management software" (currently page 4) and similar intent-specific queries. Publishing these is the highest-leverage action.</li>
 </ul>
 </div>
 <div class="section-header">AEO / AI Visibility (Workduo)</div>
