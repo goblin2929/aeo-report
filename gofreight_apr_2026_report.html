@@ -342,11 +342,37 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 <tr><td>10</td><td>Verify 301 redirects on 7 migrated URLs</td><td>2 — Blog</td><td>Tech SEO</td><td>Stop link-equity leak (~99 clicks/wk)</td></tr>
 <tr><td>11</td><td>Listicle quality upgrade — author bylines, 2026 verified data, schema, outcome stats (6 listicles)</td><td>3 — AEO</td><td>Writer + SEO</td><td>Defend AEO citations as algorithms tighten</td></tr>
 <tr><td>12</td><td>Analyze Workduo prompt-level data + Notebook LM for enterprise/compliance content angles → produce blog optimization brief (5–10 articles)</td><td>3 — AEO</td><td>AEO + Content</td><td>Targets prompts where GoFreight is invisible</td></tr>
-<tr><td>13</td><td>Push GoFreight to publish 10 remaining /product/* Product Attribute Pages</td><td>1 + 3</td><td>GoFreight product team sync</td><td>Highest commercial intent capture</td></tr>
-<tr><td>14</td><td>Map GSC queries → content gaps; align FAQs to real customer search intent</td><td>2 + 3</td><td>SEO/Content</td><td>Closes 785-keyword competitor gap (88,670 vol/mo)</td></tr>
+<tr><td>13</td><td>Work with GoFreight to optimise Product Attribute Pages (10 remaining /product/* pages awaiting product team input)</td><td>1 + 3</td><td>GoFreight product team sync</td><td>Highest commercial intent capture</td></tr>
+<tr><td>14</td><td><strong>Map GSC queries → FAQ + content gaps</strong> (key action — see example below)</td><td>2 + 3</td><td>SEO/Content</td><td>Direct conversion of high-impression / low-CTR queries</td></tr>
 </tbody>
 </table>
-<p style="font-size:0.85rem; color:#64748b; font-style:italic; margin-bottom:24px;">Items 1–7 are on-page work, completable in days. Items 8–11 are content sprints, 2–4 weeks. Items 12–15 are 30–90 day initiatives with compounding returns.</p>
+<p style="font-size:0.85rem; color:#64748b; font-style:italic; margin-bottom:16px;">Items 1–7 are on-page work, completable in days. Items 8–11 are content sprints, 2–4 weeks. Items 12–14 are 30–90 day initiatives with compounding returns.</p>
+
+<!-- Example: GSC Query Mapping in action -->
+<div class="callout callout-blue" style="border-left-color:#01aac1;">
+  <h3>Key Action #14 — Worked Example: "what is ddu shipping"</h3>
+  <p>The point of GSC query mapping is finding high-impression, low-CTR queries where users are searching but our existing content doesn't answer cleanly — then closing the gap with a targeted FAQ block on the right page.</p>
+
+  <table class="data-table" style="margin:12px 0;">
+    <thead><tr><th>Query (April GSC)</th><th class="num">Impressions</th><th class="num">Clicks</th><th class="num">CTR</th><th class="num">Avg Pos</th><th>Diagnosis</th></tr></thead>
+    <tbody>
+      <tr><td><strong>"what is ddu shipping"</strong></td><td class="num">383</td><td class="num">1</td><td class="num" style="color:var(--danger-red); font-weight:600;">0.26%</td><td class="num">8.7</td><td>FAQ-shaped, no FAQ answer block on existing page</td></tr>
+      <tr><td>"can container tracking software predict port congestion"</td><td class="num">122</td><td class="num">0</td><td class="num" style="color:var(--danger-red); font-weight:600;">0.00%</td><td class="num">8.4</td><td>Long-tail conversational query — no page answers it directly</td></tr>
+      <tr><td>"how does freight forwarding work"</td><td class="num">202</td><td class="num">4</td><td class="num">1.98%</td><td class="num">5.2</td><td>Top-of-funnel, ranks decently but no expanded FAQ on top blog</td></tr>
+      <tr><td>"what is the width of a shipping container"</td><td class="num">122</td><td class="num">1</td><td class="num" style="color:var(--danger-red); font-weight:600;">0.82%</td><td class="num">6.5</td><td>Existing page covers it but answer not in extractable FAQ form</td></tr>
+      <tr><td>"how to check isf filing status"</td><td class="num">37</td><td class="num">1</td><td class="num">2.70%</td><td class="num">7.0</td><td>Specific procedural query — perfect FAQ candidate</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>What to do (per query):</strong></p>
+  <ol style="margin-top:6px;">
+    <li><strong>Identify the right host page</strong> — for "what is ddu shipping", the host is our existing <code>/glossary/ddu-incoterm</code> (or refresh the older <code>/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid.html</code> if that's the ranking URL).</li>
+    <li><strong>Add a clean FAQ block</strong> at the top of that page: question = exact GSC query phrasing, answer = 40–80 word direct answer in plain language. Mark up with <code>FAQPage</code> schema.</li>
+    <li><strong>Track the lift</strong> — re-pull GSC after 2–3 weeks. The success metric is CTR moving from 0.26% toward the page's average (~3–5%) and clicks moving from 1 to ≥10 on the same impression base.</li>
+    <li><strong>Repeat for the top 20</strong> — May target: at minimum 20 high-impression / low-CTR FAQ-shaped queries get a dedicated answer block on their host page.</li>
+  </ol>
+  <p style="font-size:0.85rem; margin-top:8px; color:#64748b;"><strong>Source:</strong> GSC query data, April 1–30, 2026, filtered to FAQ-shaped queries (queries starting with "what", "how", "can", "is", "should") with ≥30 impressions and CTR &lt;1%.</p>
+</div>
 
 <!-- QUERY SEGMENT BREAKDOWN -->
 <div class="section-header">Query Segment Breakdown — Brand vs Non-Brand</div>
