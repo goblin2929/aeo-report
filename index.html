@@ -321,8 +321,7 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
       Format optimizations: answer-first opening (the listicle's #1 pick stated in the first 100 words, with reason); markdown-friendly structure (clean H2/H3 hierarchy, table comparison); schema (FAQPage + BreadcrumbList + Review/AggregateRating where defensible). (Owner: Writer + SEO)
     </li>
     <li><strong>Strengthen homepage as ChatGPT-fan-out target</strong> — overlaps with Initiative 1's homepage work but also: ensure the homepage explicitly states what GoFreight IS (one-sentence category claim), what it does (3 capability bullets), who uses it (named customer logos + roles), and proof points (3 quantified outcomes). The "What is Freight Forwarding Software?" FAQ also serves AEO. (Owner: Marketing/Web)</li>
-    <li><strong>Automate Workduo daily pull</strong> — daily data is fully available from the public API (params: interval=daily, type=COMPETITOR, pageSize=500). Set up a daily cron pull so the May report continues with an unbroken 60-day trend instead of re-pulling each month. (Owner: AEO ops)</li>
-    <li><strong>Track AEO citation gainers/losers monthly</strong> — Workduo "Owned Citation Count" was 962 (-85.0 in last 7 days screenshot). Set up monthly tracking of which pages get cited and which competitors dominate. (Owner: AEO)</li>
+    <li><strong>Analyze AI search prompts → drive blog optimization</strong> — pull Workduo's prompt-level data (which AI prompts trigger GoFreight mentions, which trigger competitors instead, which produce zero mentions for anyone). Cluster the gap prompts into themes (enterprise, compliance, regional). Use Notebook LM to query the dataset for enterprise customer queries and complex compliance topics. <strong>Output:</strong> a prompt-driven blog brief identifying 5–10 new or refresh-candidate articles whose answer-shape matches the prompts where GoFreight is currently invisible. (Owner: AEO + Content)</li>
   </ol>
 </div>
 
@@ -342,10 +341,9 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 <tr><td>9</td><td>Refresh top 5 commercial decliners (best-tms-software, best-fms, mastering-fob, customs-clearance, cargowise-pricing)</td><td>2 — Blog</td><td>Writer</td><td>Recover position bleed on lead keywords</td></tr>
 <tr><td>10</td><td>Verify 301 redirects on 7 migrated URLs</td><td>2 — Blog</td><td>Tech SEO</td><td>Stop link-equity leak (~99 clicks/wk)</td></tr>
 <tr><td>11</td><td>Listicle quality upgrade — author bylines, 2026 verified data, schema, outcome stats (6 listicles)</td><td>3 — AEO</td><td>Writer + SEO</td><td>Defend AEO citations as algorithms tighten</td></tr>
-<tr><td>12</td><td>G2/Capterra profile refresh + customer review drive</td><td>3 — AEO</td><td>PR/Social</td><td>Third-party citation depth</td></tr>
-<tr><td>13</td><td>Automate Workduo daily pull (cron job using known params: interval=daily, type=COMPETITOR, pageSize=500)</td><td>3 — AEO</td><td>AEO ops</td><td>Unbroken 60-day trend in May report</td></tr>
-<tr><td>14</td><td>Push GoFreight to publish 10 remaining /product/* Product Attribute Pages</td><td>1 + 3</td><td>GoFreight product team sync</td><td>Highest commercial intent capture</td></tr>
-<tr><td>15</td><td>Map GSC queries → content gaps; align FAQs to real customer search intent</td><td>2 + 3</td><td>SEO/Content</td><td>Closes 785-keyword competitor gap (88,670 vol/mo)</td></tr>
+<tr><td>12</td><td>Analyze Workduo prompt-level data + Notebook LM for enterprise/compliance content angles → produce blog optimization brief (5–10 articles)</td><td>3 — AEO</td><td>AEO + Content</td><td>Targets prompts where GoFreight is invisible</td></tr>
+<tr><td>13</td><td>Push GoFreight to publish 10 remaining /product/* Product Attribute Pages</td><td>1 + 3</td><td>GoFreight product team sync</td><td>Highest commercial intent capture</td></tr>
+<tr><td>14</td><td>Map GSC queries → content gaps; align FAQs to real customer search intent</td><td>2 + 3</td><td>SEO/Content</td><td>Closes 785-keyword competitor gap (88,670 vol/mo)</td></tr>
 </tbody>
 </table>
 <p style="font-size:0.85rem; color:#64748b; font-style:italic; margin-bottom:24px;">Items 1–7 are on-page work, completable in days. Items 8–11 are content sprints, 2–4 weeks. Items 12–15 are 30–90 day initiatives with compounding returns.</p>
