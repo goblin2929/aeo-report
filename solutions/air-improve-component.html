@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Freight Page — Missing Components vs. Live (GoFreight)</title>
+    <style>
+        :root {
+            --gf-teal: #01aac1;
+            --gf-teal-dark: #017d8e;
+            --gf-teal-light: #01d7f4;
+            --gf-text-primary: #2D3136;
+            --gf-text-secondary: #5a5f66;
+            --gf-text-light: #8a8f96;
+            --gf-bg-white: #ffffff;
+            --gf-bg-light: #f8fafa;
+            --gf-bg-mint: rgba(229, 252, 247, 0.5);
+            --gf-border: #e5e7eb;
+            --gf-success: #22c55e;
+            --gf-red: #ef4444;
+            --gf-amber: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--gf-text-primary); line-height: 1.6; background: var(--gf-bg-white); }
+
+        .audit-hero { padding: 3rem 2rem 1.5rem; background: var(--gf-bg-light); border-bottom: 1px solid var(--gf-border); }
+        .audit-hero-inner { max-width: 1200px; margin: 0 auto; }
+        .audit-eyebrow { font-size: 0.8rem; font-weight: 700; color: var(--gf-teal); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+        .audit-hero h1 { font-size: 1.85rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .audit-hero p { color: var(--gf-text-secondary); max-width: 820px; }
+        .audit-meta { display: flex; gap: 2rem; margin-top: 1rem; font-size: 0.85rem; color: var(--gf-text-secondary); flex-wrap: wrap; }
+        .audit-meta strong { color: var(--gf-text-primary); }
+        .audit-meta a { color: var(--gf-teal); text-decoration: none; }
+
+        .audit-section { padding: 2.5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .audit-section > h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; }
+        .audit-section > p { color: var(--gf-text-secondary); margin-bottom: 1.5rem; max-width: 900px; }
+
+        table.summary { width: 100%; border-collapse: collapse; font-size: 0.9rem; border: 1px solid var(--gf-border); border-radius: 10px; overflow: hidden; }
+        table.summary thead th { background: var(--gf-text-primary); color: #fff; padding: 0.75rem 1rem; text-align: left; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        table.summary tbody td { padding: 0.85rem 1rem; border-top: 1px solid var(--gf-border); vertical-align: top; }
+        table.summary tbody tr:nth-child(even) { background: var(--gf-bg-light); }
+        .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+        .badge-missing { background: #fee2e2; color: #b91c1c; }
+        .badge-partial { background: #fef3c7; color: #92400e; }
+        .badge-added { background: #dcfce7; color: #166534; }
+        .impact-high { color: #b91c1c; font-weight: 700; }
+        .impact-med { color: #92400e; font-weight: 700; }
+        .impact-low { color: #5a5f66; font-weight: 600; }
+
+        .component-block { border: 1px solid var(--gf-border); border-radius: 14px; margin-bottom: 2rem; overflow: hidden; background: #fff; }
+        .component-head { padding: 1rem 1.25rem; background: var(--gf-text-primary); color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+        .component-head h3 { font-size: 1.05rem; font-weight: 700; }
+        .component-meta { font-size: 0.78rem; color: rgba(255,255,255,0.75); }
+        .component-rationale { padding: 1rem 1.25rem; background: var(--gf-bg-mint); border-bottom: 1px solid var(--gf-border); font-size: 0.92rem; color: var(--gf-text-secondary); }
+        .component-rationale strong { color: var(--gf-text-primary); }
+        .component-preview { padding: 1.25rem; background: #fafbfc; border-bottom: 1px solid var(--gf-border); }
+        .component-preview-label { font-size: 0.72rem; font-weight: 700; color: var(--gf-text-light); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+        details.code-toggle { margin: 0; }
+        details.code-toggle summary { padding: 0.85rem 1.25rem; background: var(--gf-bg-light); cursor: pointer; font-weight: 600; font-size: 0.85rem; color: var(--gf-text-primary); user-select: none; }
+        details.code-toggle summary:hover { background: #eef2f3; }
+        details.code-toggle[open] summary { border-bottom: 1px solid var(--gf-border); }
+        pre.code { margin: 0; padding: 1.25rem; background: #0f172a; color: #e2e8f0; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 0.78rem; line-height: 1.55; overflow-x: auto; white-space: pre; }
+
+        /* Preview styles (mirror live design tokens) */
+        .preview-wrap { font-family: 'Inter', -apple-system, sans-serif; }
+
+        .preview-definition { background: var(--gf-bg-light); border-left: 4px solid var(--gf-teal); padding: 1.5rem 1.75rem; border-radius: 0 8px 8px 0; max-width: 800px; }
+        .preview-definition p { color: var(--gf-text-secondary); font-size: 1rem; line-height: 1.7; }
+        .preview-definition strong { color: var(--gf-text-primary); }
+
+        .preview-impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+        .preview-impact-card { background: #fff; border: 1px solid var(--gf-border); border-radius: 12px; padding: 1.5rem 1rem; text-align: center; border-top: 4px solid var(--gf-teal); }
+        .preview-impact-metric { font-size: 0.75rem; font-weight: 600; color: var(--gf-teal); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+        .preview-impact-number { font-size: 1.6rem; font-weight: 800; color: var(--gf-text-primary); margin-bottom: 0.35rem; }
+        .preview-impact-desc { color: var(--gf-text-secondary); font-size: 0.82rem; line-height: 1.4; }
+
+        .preview-testimonial { max-width: 750px; background: #fff; border: 1px solid var(--gf-border); border-radius: 16px; padding: 2rem 2.25rem; }
+        .preview-testimonial-quote { font-size: 1.1rem; font-weight: 500; color: var(--gf-text-primary); margin-bottom: 1rem; line-height: 1.55; }
+        .preview-testimonial-quote::before { content: "\201C"; color: var(--gf-teal); font-size: 2.5rem; line-height: 0; vertical-align: -0.6em; margin-right: 0.25rem; }
+        .preview-testimonial-author { color: var(--gf-text-secondary); font-size: 0.92rem; }
+        .preview-testimonial-author strong { color: var(--gf-text-primary); }
+
+        .preview-faq { max-width: 800px; }
+        .preview-faq-item { background: #fff; border: 1px solid var(--gf-border); border-radius: 10px; margin-bottom: 0.75rem; padding: 1rem 1.25rem; }
+        .preview-faq-q { font-weight: 600; color: var(--gf-text-primary); margin-bottom: 0.5rem; }
+        .preview-faq-a { color: var(--gf-text-secondary); font-size: 0.92rem; line-height: 1.65; }
+
+        @media (max-width: 900px) {
+            .preview-impact-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .preview-impact-grid { grid-template-columns: 1fr; }
+            table.summary { font-size: 0.78rem; }
+            table.summary thead th, table.summary tbody td { padding: 0.55rem 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="audit-hero">
+    <div class="audit-hero-inner">
+        <div class="audit-eyebrow">Component Gap Audit</div>
+        <h1>Air Freight Solutions Page — Missing Components vs. Live</h1>
+        <p>Comparison between our proposed draft and the version GoFreight shipped. The live page kept the core narrative (problem section, 4 solution blocks) and added customer logos + product screenshots, but dropped several components we proposed that materially affect SEO/AEO performance and quantified credibility. Every missing block below is delivered as drop-in HTML matching the original design tokens so it can be lifted straight onto the live page.</p>
+        <div class="audit-meta">
+            <div><strong>Proposed draft:</strong> <a href="https://goblin2929.github.io/aeo-report/solutions/air-v2.html" target="_blank">air-v2.html</a></div>
+            <div><strong>Live page:</strong> <a href="https://gofreight.com/solutions/air-freight" target="_blank">gofreight.com/solutions/air-freight</a></div>
+            <div><strong>Date:</strong> 2026-05-11</div>
+        </div>
+    </div>
+</header>
+
+<!-- ============================================================
+     SECTION 1 — SUMMARY TABLE
+     ============================================================ -->
+<section class="audit-section">
+    <h2>1. Summary — What's Missing on the Live Page</h2>
+    <p>Five proposed components were dropped on the shipped version. The live page also added two components we did not propose (customer logo strip + per-block product screenshots), which are net positives. Below: every component, status, and the SEO/AEO/UX impact of leaving it off.</p>
+    <p style="font-size:0.85rem; color:var(--gf-text-light); margin-top:-0.75rem;"><em>Note: structured data (FAQPage JSON-LD) will be added manually via in-house tools once the visible components ship, so it is not listed as a deliverable here.</em></p>
+
+    <table class="summary">
+        <thead>
+            <tr>
+                <th style="width: 26%;">Component (Proposed)</th>
+                <th style="width: 13%;">Status</th>
+                <th style="width: 10%;">Impact</th>
+                <th>What's Lost By Leaving It Off</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Per-block result lines</strong><br><span style="font-size:0.78rem; color:var(--gf-text-light);">One outcome statement at the bottom of each solution block (47% faster / 40% reduction / etc.)</span></td>
+                <td><span class="badge badge-missing">Missing</span></td>
+                <td><span class="impact-high">High</span></td>
+                <td>The live page's 4 solution blocks list capabilities but never tie them to an outcome. Each block needs a single line that lands the value — "Forwarders reply up to 47% faster", "Teams reduce documentation effort by up to 40%", etc. These short outcome lines reinforce the bullets locally and are exactly the format AI Overviews quote when answering "how much does X improve Y?". Minimum-invasive change since the blocks already exist.</td>
+            </tr>
+            <tr>
+                <td><strong>Hard-number results strip</strong><br><span style="font-size:0.78rem; color:var(--gf-text-light);">47% faster quoting · 40% docs reduction · fewer missed charges · fewer status emails</span></td>
+                <td><span class="badge badge-missing">Missing</span></td>
+                <td><span class="impact-high">High</span></td>
+                <td>The live page has <strong>zero quantified metrics anywhere</strong>. Our proposed 47% quoting / 40% documentation numbers were either qualitative-only ("quote faster") or stripped entirely. Hard percentages are what buyers screenshot, what AI Overviews extract as proof points, and what differentiates GoFreight from competitor pages that lean on vague claims. The ocean page kept hard numbers (47% / 50%+ / $75k / 40%) — the air page should mirror that pattern for consistency. Pairs well with Component 1 — per-block lines reinforce locally, the strip is the consolidated credibility moment.</td>
+            </tr>
+            <tr>
+                <td><strong>SEO definition block</strong><br><span style="font-size:0.78rem; color:var(--gf-text-light);">"What is air freight management software?" paragraph</span></td>
+                <td><span class="badge badge-missing">Missing</span></td>
+                <td><span class="impact-high">High</span></td>
+                <td>A clean 2–3 sentence definition paragraph near the top of the page is the format Google's AI Overviews and ChatGPT cite for category-defining queries ("what is air freight management software", "air freight software vs TMS"). Without it, the page cannot win the featured snippet for its own head term. Same gap as we flagged on the ocean page.</td>
+            </tr>
+            <tr>
+                <td><strong>Named customer testimonial</strong><br><span style="font-size:0.78rem; color:var(--gf-text-light);">Joseph Park, Operations Manager, Seamax</span></td>
+                <td><span class="badge badge-missing">Missing</span></td>
+                <td><span class="impact-med">Medium</span></td>
+                <td>Live page has a "See How We Drive Success" section with no actual quotes — just a single line of copy. We proposed a named testimonial with title and company (the same pattern the ocean page successfully shipped). Real attributed quotes lift conversion intent and surface in AI-generated answers as social proof.</td>
+            </tr>
+            <tr>
+                <td><strong>FAQ section (6 Q&amp;As)</strong></td>
+                <td><span class="badge badge-missing">Missing</span></td>
+                <td><span class="impact-high">High</span></td>
+                <td>Each FAQ question is a real long-tail search query (HAWB/MAWB generation, flight tracking, air consolidation, quoting workflow, AES filing). Without on-page Q&amp;A, the page can't surface in "People Also Ask" boxes or AI Overview citations for any of those queries. Air freight buyers Google these exact questions before booking a demo.</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="background:#eef2f3; font-weight:600; color:var(--gf-text-primary);">Components shipped roughly as proposed</td>
+            </tr>
+            <tr>
+                <td>Hero headline + subhead</td>
+                <td><span class="badge badge-added">Shipped</span></td>
+                <td>—</td>
+                <td>"Air Freight Moves Fast. Your Operations Should Too." — kept as proposed.</td>
+            </tr>
+            <tr>
+                <td>Problem section (5 pain bullets)</td>
+                <td><span class="badge badge-added">Shipped</span></td>
+                <td>—</td>
+                <td>Kept as proposed.</td>
+            </tr>
+            <tr>
+                <td>Solution blocks (Win More / Ship More Volume / Scale / Protect Margins)</td>
+                <td><span class="badge badge-added">Shipped</span></td>
+                <td>—</td>
+                <td>Live consolidated our 3 pillars + separate Financial section into a cleaner 4-block layout with product screenshots. Net positive structural change.</td>
+            </tr>
+            <tr>
+                <td>Final CTA</td>
+                <td><span class="badge badge-added">Shipped</span></td>
+                <td>—</td>
+                <td>Kept as proposed.</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="background:#eef2f3; font-weight:600; color:var(--gf-text-primary);">Components live page added (good additions — keep)</td>
+            </tr>
+            <tr>
+                <td>Customer logo strip (15 logos)</td>
+                <td><span class="badge badge-added">Added</span></td>
+                <td>—</td>
+                <td>Strong above-the-fold social proof. Same addition as ocean page — worth keeping.</td>
+            </tr>
+            <tr>
+                <td>Per-block product screenshots</td>
+                <td><span class="badge badge-added">Added</span></td>
+                <td>—</td>
+                <td>Each solution block now has an embedded product screenshot. Stronger product proof than our text-only pillar cards. Worth keeping.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ============================================================
+     SECTION 2 — DROP-IN HTML FOR EACH MISSING COMPONENT
+     ============================================================ -->
+<section class="audit-section">
+    <h2>2. Drop-in HTML for Each Missing Component</h2>
+    <p>Each block below is paste-ready. Class names match the original air-v2.html design tokens — the live page can adopt them directly or remap to its own utility classes. Ordered by recommended position on the page.</p>
+
+    <!-- ============================
+         COMPONENT 1 — PER-BLOCK RESULT LINES
+         ============================ -->
+    <div class="component-block">
+        <div class="component-head">
+            <h3>1. Per-block result lines — outcome statement under each solution block</h3>
+            <span class="component-meta">Place: inside each of the 4 existing solution blocks, beneath the bullet list</span>
+        </div>
+        <div class="component-rationale">
+            <strong>Why it matters:</strong> The live solution blocks describe <em>what</em> GoFreight does (the bullets) but never close with <em>what changes for the customer</em>. A single outcome line per block converts "feature list" into "promise" — and the lines double as quotable proof points for AI Overviews. Lowest-effort, highest-impact change because the 4 blocks already exist on the live page.
+        </div>
+        <div class="component-preview">
+            <div class="component-preview-label">Visual preview — one line per block</div>
+            <div class="preview-wrap" style="display:grid; gap:0.85rem; max-width:760px;">
+                <div style="background:#fff; border:1px solid var(--gf-border); border-radius:10px; padding:1rem 1.25rem;">
+                    <div style="font-size:0.78rem; font-weight:700; color:var(--gf-text-light); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.3rem;">Block 1 · Win More Air Freight Business</div>
+                    <div style="color:var(--gf-teal); font-weight:600; font-size:0.95rem;">Forwarders using GoFreight reply up to 47% faster, improving close rates and customer confidence.</div>
+                </div>
+                <div style="background:#fff; border:1px solid var(--gf-border); border-radius:10px; padding:1rem 1.25rem;">
+                    <div style="font-size:0.78rem; font-weight:700; color:var(--gf-text-light); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.3rem;">Block 2 · Ship More Volume Without Operational Chaos</div>
+                    <div style="color:var(--gf-teal); font-weight:600; font-size:0.95rem;">Teams typically reduce documentation effort by up to 40%.</div>
+                </div>
+                <div style="background:#fff; border:1px solid var(--gf-border); border-radius:10px; padding:1rem 1.25rem;">
+                    <div style="font-size:0.78rem; font-weight:700; color:var(--gf-text-light); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.3rem;">Block 3 · Scale Without Adding Headcount</div>
+                    <div style="color:var(--gf-teal); font-weight:600; font-size:0.95rem;">Handle more shipments while improving service experience — without growing the team.</div>
+                </div>
+                <div style="background:#fff; border:1px solid var(--gf-border); border-radius:10px; padding:1rem 1.25rem;">
+                    <div style="font-size:0.78rem; font-weight:700; color:var(--gf-text-light); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.3rem;">Block 4 · Protect Margins and Improve Cash Flow</div>
+                    <div style="color:var(--gf-teal); font-weight:600; font-size:0.95rem;">Better visibility leads to stronger air freight profitability on every shipment.</div>
+                </div>
+            </div>
+        </div>
+        <details class="code-toggle">
+            <summary>Show HTML — append this snippet inside each existing solution block, after the bullet &lt;ul&gt;</summary>
+<pre class="code">&lt;!-- Block 1: Win More Air Freight Business --&gt;
+&lt;div class="pillar-result"&gt;
+    Forwarders using GoFreight reply up to 47% faster, improving close rates and customer confidence.
+&lt;/div&gt;
+
+&lt;!-- Block 2: Ship More Volume Without Operational Chaos --&gt;
+&lt;div class="pillar-result"&gt;
+    Teams typically reduce documentation effort by up to 40%.
+&lt;/div&gt;
+
+&lt;!-- Block 3: Scale Without Adding Headcount --&gt;
+&lt;div class="pillar-result"&gt;
+    Handle more shipments while improving service experience &amp;mdash; without growing the team.
+&lt;/div&gt;
+
+&lt;!-- Block 4: Protect Margins and Improve Cash Flow --&gt;
+&lt;div class="pillar-result"&gt;
+    Better visibility leads to stronger air freight profitability on every shipment.
+&lt;/div&gt;
+
+&lt;style&gt;
+.pillar-result {
+    font-size: 0.95rem;
+    color: #01aac1;
+    font-weight: 600;
+    padding-top: 0.85rem;
+    margin-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    line-height: 1.5;
+}
+&lt;/style&gt;</pre>
+        </details>
+    </div>
+
+    <!-- ============================
+         COMPONENT 2 — SEO DEFINITION BLOCK
+         ============================ -->
+    <div class="component-block">
+        <div class="component-head">
+            <h3>2. SEO definition block — "What is air freight management software?"</h3>
+            <span class="component-meta">Place: directly under hero, before the customer logo strip</span>
+        </div>
+        <div class="component-rationale">
+            <strong>Why it matters:</strong> The exact format Google AI Overviews and ChatGPT cite for category-defining queries. A short, scannable definition placed near the top of the page wins the featured snippet for "air freight management software" and the long-tail variants ("what does air freight management software do", "air freight software vs TMS"). Mirrors the ocean page recommendation.
+        </div>
+        <div class="component-preview">
+            <div class="component-preview-label">Visual preview</div>
+            <div class="preview-wrap">
+                <div class="preview-definition">
+                    <p><strong>Air freight management software</strong> provides freight forwarders with specialized tools for air cargo operations: house and master air waybill (HAWB/MAWB) generation, flight tracking, air consolidation workflows, and compliance features like AES filing for exports. Unlike standalone tools, it connects quoting, operations, documentation, and billing in one platform built for how air forwarders actually work.</p>
+                </div>
+            </div>
+        </div>
+        <details class="code-toggle">
+            <summary>Show HTML</summary>
+<pre class="code">&lt;section class="definition-section"&gt;
+    &lt;div class="definition-container"&gt;
+        &lt;div class="definition-block"&gt;
+            &lt;p&gt;&lt;strong&gt;Air freight management software&lt;/strong&gt; provides freight forwarders with specialized tools for air cargo operations: house and master air waybill (HAWB/MAWB) generation, flight tracking, air consolidation workflows, and compliance features like AES filing for exports. Unlike standalone tools, it connects quoting, operations, documentation, and billing in one platform built for how air forwarders actually work.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;style&gt;
+.definition-section { padding: 3rem 2rem; background: #fff; }
+.definition-container { max-width: 800px; margin: 0 auto; }
+.definition-block { background: #f8fafa; border-left: 4px solid #01aac1; padding: 1.5rem 2rem; border-radius: 0 8px 8px 0; }
+.definition-block p { color: #5a5f66; font-size: 1.05rem; line-height: 1.7; }
+.definition-block strong { color: #2D3136; }
+&lt;/style&gt;</pre>
+        </details>
+    </div>
+
+    <!-- ============================
+         COMPONENT 3 — HARD-NUMBER RESULTS STRIP
+         ============================ -->
+    <div class="component-block">
+        <div class="component-head">
+            <h3>3. Hard-number results strip — 47% quoting · 40% docs · fewer charges · fewer emails</h3>
+            <span class="component-meta">Place: between the 4 solution blocks and the "Customer Success" section</span>
+        </div>
+        <div class="component-rationale">
+            <strong>Why it matters:</strong> The single biggest credibility gap. The live page currently has <em>zero</em> quantified metrics — buyers comparing GoFreight against CargoWise/Magaya cannot screenshot a concrete proof point. Hard numbers are also what AI Overviews extract verbatim when answering "how much faster is X" queries. Mirrors the ocean page's results strip pattern.
+        </div>
+        <div class="component-preview">
+            <div class="component-preview-label">Visual preview</div>
+            <div class="preview-wrap">
+                <div class="preview-impact-grid">
+                    <div class="preview-impact-card">
+                        <div class="preview-impact-metric">Quoting Speed</div>
+                        <div class="preview-impact-number">47%</div>
+                        <div class="preview-impact-desc">Faster response to air freight inquiries.</div>
+                    </div>
+                    <div class="preview-impact-card">
+                        <div class="preview-impact-metric">Documentation</div>
+                        <div class="preview-impact-number">40%</div>
+                        <div class="preview-impact-desc">Reduction in manual documentation effort.</div>
+                    </div>
+                    <div class="preview-impact-card">
+                        <div class="preview-impact-metric">Billing Accuracy</div>
+                        <div class="preview-impact-number">Fewer</div>
+                        <div class="preview-impact-desc">Missed charges with quote-to-invoice automation.</div>
+                    </div>
+                    <div class="preview-impact-card">
+                        <div class="preview-impact-metric">Customer Support</div>
+                        <div class="preview-impact-number">Fewer</div>
+                        <div class="preview-impact-desc">Status inquiry emails via branded tracking portal.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <details class="code-toggle">
+            <summary>Show HTML</summary>
+<pre class="code">&lt;section class="impact-section"&gt;
+    &lt;div class="section-container"&gt;
+        &lt;div class="section-header"&gt;
+            &lt;h2&gt;Air Freight Management Results&lt;/h2&gt;
+            &lt;p&gt;GoFreight delivers measurable ROI across your air freight operations.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="impact-grid"&gt;
+            &lt;div class="impact-card"&gt;
+                &lt;div class="impact-metric"&gt;Quoting Speed&lt;/div&gt;
+                &lt;div class="impact-number"&gt;47%&lt;/div&gt;
+                &lt;div class="impact-desc"&gt;Faster response to air freight inquiries.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="impact-card"&gt;
+                &lt;div class="impact-metric"&gt;Documentation&lt;/div&gt;
+                &lt;div class="impact-number"&gt;40%&lt;/div&gt;
+                &lt;div class="impact-desc"&gt;Reduction in manual documentation effort.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="impact-card"&gt;
+                &lt;div class="impact-metric"&gt;Billing Accuracy&lt;/div&gt;
+                &lt;div class="impact-number"&gt;Fewer&lt;/div&gt;
+                &lt;div class="impact-desc"&gt;Missed charges with quote-to-invoice automation.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="impact-card"&gt;
+                &lt;div class="impact-metric"&gt;Customer Support&lt;/div&gt;
+                &lt;div class="impact-number"&gt;Fewer&lt;/div&gt;
+                &lt;div class="impact-desc"&gt;Status inquiry emails via branded tracking portal.&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;style&gt;
+.impact-section { padding: 4rem 2rem; background: #fff; }
+.section-container { max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+.section-header p { color: #5a5f66; font-size: 1.05rem; max-width: 750px; margin: 0 auto; line-height: 1.7; }
+.impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.impact-card { background: #f8fafa; border-radius: 12px; padding: 2rem; text-align: center; border-top: 4px solid #01aac1; }
+.impact-metric { font-size: 0.85rem; font-weight: 600; color: #01aac1; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.impact-number { font-size: 1.75rem; font-weight: 800; color: #2D3136; margin-bottom: 0.5rem; }
+.impact-desc { color: #5a5f66; font-size: 0.9rem; line-height: 1.5; }
+@media (max-width: 1024px) { .impact-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .impact-grid { grid-template-columns: 1fr; } }
+&lt;/style&gt;</pre>
+        </details>
+    </div>
+
+    <!-- ============================
+         COMPONENT 4 — NAMED TESTIMONIAL
+         ============================ -->
+    <div class="component-block">
+        <div class="component-head">
+            <h3>4. Named customer testimonial — Joseph Park / Seamax</h3>
+            <span class="component-meta">Place: inside the existing "See How We Drive Success" section</span>
+        </div>
+        <div class="component-rationale">
+            <strong>Why it matters:</strong> Live page has the heading for a customer-success section but no actual quote — just one line of copy. Real attributed testimonials lift demo conversion and are routinely cited by AI answers as evidence ("Joseph Park at Seamax says..."). The ocean page shipped three named testimonials successfully; the air page should match that pattern. <strong>Action:</strong> confirm with client whether Seamax/Joseph Park is the right air-freight reference, or swap in another air-specific customer if available.
+        </div>
+        <div class="component-preview">
+            <div class="component-preview-label">Visual preview</div>
+            <div class="preview-wrap">
+                <div class="preview-testimonial">
+                    <p class="preview-testimonial-quote">GoFreight's flight tracking notifications have been a game changer for operational efficiency. We respond to customers before they even ask.</p>
+                    <p class="preview-testimonial-author">&mdash; <strong>Joseph Park</strong>, Operations Manager, Seamax</p>
+                </div>
+            </div>
+        </div>
+        <details class="code-toggle">
+            <summary>Show HTML</summary>
+<pre class="code">&lt;section class="testimonial-section"&gt;
+    &lt;div class="testimonial-card"&gt;
+        &lt;p class="testimonial-quote"&gt;
+            "GoFreight's flight tracking notifications have been a game changer for operational efficiency. We respond to customers before they even ask."
+        &lt;/p&gt;
+        &lt;p class="testimonial-author"&gt;
+            &amp;mdash; &lt;strong&gt;Joseph Park&lt;/strong&gt;, Operations Manager, Seamax
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;style&gt;
+.testimonial-section { padding: 4rem 2rem; background: #f8fafa; }
+.testimonial-card { max-width: 800px; margin: 0 auto; background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 2.5rem; text-align: center; }
+.testimonial-quote { font-size: 1.25rem; font-weight: 500; color: #2D3136; margin-bottom: 1.25rem; line-height: 1.5; }
+.testimonial-author { color: #5a5f66; }
+.testimonial-author strong { color: #2D3136; }
+&lt;/style&gt;</pre>
+        </details>
+    </div>
+
+    <!-- ============================
+         COMPONENT 5 — FAQ SECTION
+         ============================ -->
+    <div class="component-block">
+        <div class="component-head">
+            <h3>5. FAQ section — 6 Q&amp;As</h3>
+            <span class="component-meta">Place: between testimonial and final CTA</span>
+        </div>
+        <div class="component-rationale">
+            <strong>Why it matters:</strong> Each question is a real long-tail search query (HAWB/MAWB generation, flight tracking, air consolidation, quoting workflow, AES filing). Without on-page Q&amp;A, the page cannot surface in PAA boxes or AI Overview citations for any of these. <strong>Note:</strong> FAQPage JSON-LD will be added manually via in-house tools after this ships — keep schema text aligned with the visible Q&amp;A copy.
+        </div>
+        <div class="component-preview">
+            <div class="component-preview-label">Visual preview (first 2 of 6)</div>
+            <div class="preview-wrap">
+                <div class="preview-faq">
+                    <div class="preview-faq-item">
+                        <div class="preview-faq-q">What is air freight management software?</div>
+                        <div class="preview-faq-a">Air freight management software provides freight forwarders with specialized tools for air cargo operations: house and master air waybill generation, flight tracking, air consolidation workflows, and compliance features like AES filing for exports. Unlike generic logistics tools, it connects quoting, operations, documentation, and billing in one platform built for how air forwarders actually work.</div>
+                    </div>
+                    <div class="preview-faq-item">
+                        <div class="preview-faq-q">Can I generate HAWB and MAWB documents?</div>
+                        <div class="preview-faq-a">Yes. GoFreight generates both House Air Waybills (HAWB) and Master Air Waybills (MAWB) directly from shipment data. Documents are formatted correctly and can be printed or sent electronically.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <details class="code-toggle">
+            <summary>Show full HTML (all 6 Q&amp;As)</summary>
+<pre class="code">&lt;section class="faq-section"&gt;
+    &lt;div class="section-container"&gt;
+        &lt;div class="section-header"&gt;
+            &lt;h2&gt;Frequently Asked Questions&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class="faq-grid"&gt;
+            &lt;div class="faq-item"&gt;
+                &lt;div class="faq-question"&gt;What is air freight management software?&lt;/div&gt;
+                &lt;div class="faq-answer"&gt;Air freight management software provides freight forwarders with specialized tools for air cargo operations: house and master air waybill generation, flight tracking, air consolidation workflows, and compliance features like AES filing for exports. Unlike generic logistics tools, it connects quoting, operations, documentation, and billing in one platform built for how air forwarders actually work.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="faq-item"&gt;
+                &lt;div class="faq-question"&gt;Can I generate HAWB and MAWB documents?&lt;/div&gt;
+                &lt;div class="faq-answer"&gt;Yes. GoFreight generates both House Air Waybills (HAWB) and Master Air Waybills (MAWB) directly from shipment data. Documents are formatted correctly and can be printed or sent electronically.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="faq-item"&gt;
+                &lt;div class="faq-question"&gt;How does flight tracking work in GoFreight?&lt;/div&gt;
+                &lt;div class="faq-answer"&gt;GoFreight tracks air shipments through their journey: departure, arrival, and key milestones. Status updates flow into the system, and you can set alerts to notify your team and customers of flight status changes.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="faq-item"&gt;
+                &lt;div class="faq-question"&gt;Does GoFreight support air consolidations?&lt;/div&gt;
+                &lt;div class="faq-answer"&gt;Yes. GoFreight supports air consolidation workflows, allowing you to group multiple shippers under a single MAWB. House waybills, master waybills, and split invoicing are all handled in the system.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="faq-item"&gt;
+                &lt;div class="faq-question"&gt;How does GoFreight help air freight quoting?&lt;/div&gt;
+                &lt;div class="faq-answer"&gt;GoFreight centralizes contract and spot rates in one searchable database. Your team can build professional quotes in seconds, respond faster than competitors, and convert won quotes into live shipments with one click. Forwarders using GoFreight reply up to 47% faster on air freight inquiries.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="faq-item"&gt;
+                &lt;div class="faq-question"&gt;Does GoFreight integrate with AES filing for air exports?&lt;/div&gt;
+                &lt;div class="faq-answer"&gt;Yes. GoFreight includes direct AES (Automated Export System) filing for air exports. Export shipment data flows directly into the filing, and you receive confirmation through the system. No need to switch between platforms.&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;style&gt;
+.faq-section { padding: 4rem 2rem; background: #fff; }
+.section-container { max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-header h2 { font-size: 2rem; font-weight: 700; }
+.faq-grid { max-width: 800px; margin: 0 auto; }
+.faq-item { background: #f8fafa; border: 1px solid #e5e7eb; border-radius: 10px; margin-bottom: 1rem; padding: 1.25rem 1.5rem; }
+.faq-question { font-weight: 600; color: #2D3136; margin-bottom: 0.5rem; }
+.faq-answer { color: #5a5f66; font-size: 0.95rem; line-height: 1.6; }
+&lt;/style&gt;</pre>
+        </details>
+    </div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3 — RECOMMENDED ORDER ON LIVE PAGE
+     ============================================================ -->
+<section class="audit-section">
+    <h2>3. Recommended Section Order on the Live Page</h2>
+    <p>Minimal-disruption insertion plan — keeps the current live content untouched and only adds the missing blocks.</p>
+    <ol style="padding-left: 1.25rem; color: var(--gf-text-secondary); line-height: 2;">
+        <li>Nav (existing)</li>
+        <li>Hero (existing)</li>
+        <li><strong style="color:var(--gf-red);">+ SEO definition block (Component 2)</strong></li>
+        <li>Customer logo strip (existing — keep)</li>
+        <li>Problem section (existing)</li>
+        <li>4 solution blocks with screenshots (existing) — <strong style="color:var(--gf-red);">+ append per-block result line inside each block (Component 1)</strong></li>
+        <li><strong style="color:var(--gf-red);">+ Hard-number results strip (Component 3)</strong></li>
+        <li>"See How We Drive Success" — <strong style="color:var(--gf-red);">+ insert named testimonial (Component 4)</strong></li>
+        <li><strong style="color:var(--gf-red);">+ FAQ section (Component 5)</strong></li>
+        <li>Final CTA (existing)</li>
+        <li>Footer (existing)</li>
+    </ol>
+    <p style="margin-top:1rem; font-size:0.85rem; color:var(--gf-text-light);"><em>FAQPage JSON-LD will be added manually via in-house tools once the FAQ section ships.</em></p>
+</section>
+
+</body>
+</html>
