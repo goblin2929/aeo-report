@@ -1306,6 +1306,125 @@
             </ul>
         </div>
 
+        <!-- Blog Refresh Experiment -->
+        <h2 class="section-header">Blog Refresh Experiment</h2>
+
+        <p style="margin-bottom: 20px; color: #666;">In May we ran a controlled content-refresh experiment across 40 existing blog articles, split into three batches with different selection logic and refresh depth, to learn which refresh style returns the most. <em>Refresh dates: May 14 (Batch 1 &amp; 2) and May 18 (Batch 3). Before vs after measured on Google Search Console.</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Method by Batch</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Approach</th>
+                    <th>Batch 1</th>
+                    <th>Batch 2</th>
+                    <th>Batch 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Selection metric</strong></td>
+                    <td>Top 15 by impressions</td>
+                    <td>Top 10 by clicks (Mar+Apr)</td>
+                    <td>High impressions + low CTR</td>
+                </tr>
+                <tr>
+                    <td><strong>Articles</strong></td>
+                    <td>15</td>
+                    <td>10</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td><strong>Refresh style</strong></td>
+                    <td>Full rewrite</td>
+                    <td>Light touch</td>
+                    <td>Full rewrite (often thin bodies)</td>
+                </tr>
+                <tr>
+                    <td><strong>Title / Meta changed</strong></td>
+                    <td><span style="color: var(--success-green);">Yes</span></td>
+                    <td><span style="color: #999;">No (preserved)</span></td>
+                    <td><span style="color: var(--success-green);">Yes</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Body rewritten</strong></td>
+                    <td><span style="color: var(--success-green);">Yes, branded layout</span></td>
+                    <td><span style="color: #999;">No (preserved)</span></td>
+                    <td><span style="color: var(--success-green);">Yes, full rebuild</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Key Takeaways box + FAQ rebuilt from GSC</strong></td>
+                    <td><span style="color: var(--success-green);">Yes</span></td>
+                    <td><span style="color: var(--success-green);">Yes (the main visible add)</span></td>
+                    <td><span style="color: var(--success-green);">Yes</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Product / solution links added</strong></td>
+                    <td><span style="color: var(--success-green);">Yes</span></td>
+                    <td><span style="color: var(--success-green);">Yes</span></td>
+                    <td><span style="color: var(--success-green);">Yes</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Results (Before &#8594; After)</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Batch</th>
+                    <th class="num">Articles</th>
+                    <th class="num">Clicks</th>
+                    <th class="num">Impressions</th>
+                    <th class="num">CTR</th>
+                    <th class="num">Avg Position</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Batch 1 (full rewrite)</td>
+                    <td class="num">15</td>
+                    <td class="num trend-up">78 &#8594; 109 (+40%)</td>
+                    <td class="num">40,887 &#8594; 40,419 (-1%)</td>
+                    <td class="num trend-up">0.19% &#8594; 0.27%</td>
+                    <td class="num">10.3 &#8594; 10.8</td>
+                </tr>
+                <tr>
+                    <td>Batch 2 (light touch)</td>
+                    <td class="num">10</td>
+                    <td class="num trend-up">374 &#8594; 446 (+19%)</td>
+                    <td class="num">257,942 &#8594; 173,512 (-33%)</td>
+                    <td class="num trend-up">0.14% &#8594; 0.26%</td>
+                    <td class="num">8.9 &#8594; 9.4</td>
+                </tr>
+                <tr>
+                    <td>Batch 3 (full rewrite, thin pages)</td>
+                    <td class="num">15</td>
+                    <td class="num trend-up">66 &#8594; 218 (+230%)</td>
+                    <td class="num trend-up">71,544 &#8594; 87,182 (+22%)</td>
+                    <td class="num trend-up">0.09% &#8594; 0.25%</td>
+                    <td class="num trend-up">19.3 &#8594; 13.9 (+5.4 ranks)</td>
+                </tr>
+                <tr class="subtotal">
+                    <td>Combined (40 articles)</td>
+                    <td class="num">40</td>
+                    <td class="num">518 &#8594; 773 (+49%)</td>
+                    <td class="num">370,373 &#8594; 301,113</td>
+                    <td class="num">0.14% &#8594; 0.26%</td>
+                    <td class="num">n/a</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-green">
+            <h3>What the Experiment Tells Us</h3>
+            <ul>
+                <li><strong>Full rewrites of thin, low-CTR pages win biggest.</strong> Batch 3 delivered +230% clicks and a 5.4-position ranking jump (19.3 to 13.9). Rebuilding empty or thin bodies into proper, structured content is the single highest-ROI refresh move.</li>
+                <li><strong>CTR improved in every batch.</strong> The consistent levers were the Key Takeaways box and the FAQ rebuilt from real GSC queries. Even the light-touch Batch 2, which preserved title, meta, and body, nearly doubled CTR (0.14% to 0.26%) and added +19% clicks from those two changes alone.</li>
+                <li><strong>Refresh beats rewrite-from-scratch on effort.</strong> 40 existing articles produced +255 net clicks (+49%) in roughly two weeks, faster and cheaper than net-new content.</li>
+                <li><strong>Note on Batch 2 impressions (-33%):</strong> impressions dipped on a few high-volume informational pages while clicks and CTR rose, so the refresh traded low-quality impressions for better-qualified clicks. We will keep watching these to confirm it holds.</li>
+            </ul>
+        </div>
+
         <!-- AEO/AI Visibility -->
         <h2 class="section-header">AEO / AI Visibility Metrics</h2>
 
@@ -1394,6 +1513,129 @@
                 <li>Publish the Gong call analysis blog to add authentic, voice-of-customer content that AI engines favor for buyer-intent questions</li>
                 <li>Run fan-out query expansion on Solution and Product pages so they answer the follow-up questions AI engines branch into</li>
                 <li>Keep building comparison content (GoFreight vs CargoWise, vs Magaya) - it is already winning both classic search and AI citations</li>
+            </ul>
+        </div>
+
+        <!-- AI-Citation Publisher Outreach -->
+        <h2 class="section-header" style="background: linear-gradient(135deg, var(--teal), var(--dark-gray));">AI-Citation Publisher Outreach (Batch 2)</h2>
+
+        <div class="callout callout-blue">
+            <h3>Why This Matters for AEO</h3>
+            <p>When AI platforms answer high-intent queries like <strong>"Best Freight Management Software for Enterprise,"</strong> they pull from and cite third-party listicles and software-directory pages, not just vendor websites. If GoFreight is named inside those cited sources, its chance of being mentioned in the AI answer rises sharply. So we are reaching out to the publishers that AI engines already cite for freight management, TMS, customs brokerage, and NVOCC software, to get GoFreight added to their lists. This is the off-page half of the AEO program, complementing the on-page work (llm.txt, schema, author credentials).</p>
+        </div>
+
+        <p style="margin-bottom: 20px; color: #666;">We contacted 11 cited publishers and collected their placement terms. Pricing models vary from free profile claims to reciprocal link exchanges to paid positional placements. Most are now awaiting a go / no-go decision from the GoFreight team.</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Publisher</th>
+                    <th>Target List / Category</th>
+                    <th>Model</th>
+                    <th class="num">Indicative Cost</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="https://www.softwareworld.co/software/gofreight-reviews/" target="_blank">SoftwareWorld</a></td>
+                    <td>GoFreight review profile (unclaimed)</td>
+                    <td>Claim + register</td>
+                    <td class="num"><strong style="color: var(--success-green);">Free</strong></td>
+                    <td>GoFreight team to claim with official email</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="https://gitnux.org/best/nvocc-software/" target="_blank">Gitnux</a></td>
+                    <td>Best NVOCC Software</td>
+                    <td>Annual, by position</td>
+                    <td class="num">$325 to $1,000/yr</td>
+                    <td>Awaiting decision</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="https://wifitalents.com/best/customs-brokerage-software/" target="_blank">WiFiTalents</a></td>
+                    <td>Best Customs Brokerage Software</td>
+                    <td>Annual, by position</td>
+                    <td class="num">$325 to $1,000/yr</td>
+                    <td>Awaiting decision</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="https://zipdo.co/best/freight-forwarding-management-software/" target="_blank">ZipDo</a></td>
+                    <td>Best Freight Forwarding Management Software</td>
+                    <td>Annual, by position</td>
+                    <td class="num">$325 to $1,000/yr</td>
+                    <td>Awaiting decision</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="https://www.cotocus.com/blog/top-10-transportation-management-systems-tms-features-pros-cons-comparison/" target="_blank">Cotocus</a></td>
+                    <td>Top 10 TMS</td>
+                    <td>Per listing, by position</td>
+                    <td class="num">$100 to $200</td>
+                    <td>Awaiting decision</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="https://www.devopsschool.com/blog/top-10-customs-brokerage-software-features-pros-cons-comparison/" target="_blank">DevOpsSchool</a></td>
+                    <td>Top 10 Customs Brokerage Software</td>
+                    <td>Per listing, by position</td>
+                    <td class="num">$100 to $200</td>
+                    <td>Awaiting decision</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="https://scoop.market.us/api-management-market-news/" target="_blank">Market.us (Scoop)</a></td>
+                    <td>API Management Market (DR 66 to 83)</td>
+                    <td>Guest post / link insertion</td>
+                    <td class="num">$229</td>
+                    <td>Awaiting decision</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><a href="https://truckpedia.io/resources/best-trucking-tms-software-2025-complete-carrier-guide" target="_blank">Truckpedia</a></td>
+                    <td>Best Trucking TMS Software 2025</td>
+                    <td>Reciprocal link exchange</td>
+                    <td class="num"><strong style="color: var(--success-green);">No cash</strong></td>
+                    <td>Awaiting decision (feature Truckpedia in return)</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><a href="https://www.flexfulfillment.eu/top-10-real-time-shipment-tracking-tools/" target="_blank">FlexFulfillment</a></td>
+                    <td>Top 10 Real-Time Shipment Tracking Tools</td>
+                    <td>Reciprocal link exchange</td>
+                    <td class="num"><strong style="color: var(--success-green);">No cash</strong></td>
+                    <td>Awaiting decision (feature in return)</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><a href="https://ftm.cloud/customer-portal/" target="_blank">FTM.cloud</a></td>
+                    <td>Customer Portal</td>
+                    <td>Open / negotiable</td>
+                    <td class="num">TBD</td>
+                    <td>Awaiting our offer</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td><a href="https://procurementtactics.com/transportation-management-system/" target="_blank">ProcurementTactics</a></td>
+                    <td>Transportation Management System</td>
+                    <td>Landing page + YouTube</td>
+                    <td class="num">$2,000 + custom</td>
+                    <td>Needs a call</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-green">
+            <h3>Recommended Sequencing</h3>
+            <ul>
+                <li><strong>Do first, zero cost:</strong> Claim the SoftwareWorld profile with an official GoFreight email, and execute the two reciprocal link exchanges (Truckpedia, FlexFulfillment). Three placements at no cash outlay.</li>
+                <li><strong>Then, low-cost and high-intent:</strong> Prioritize the lists tied to the queries AI cites for "best freight management software" buyers, ZipDo (freight forwarding management) and Gitnux (NVOCC), plus the per-listing TMS and customs lists (Cotocus, DevOpsSchool) where entry is only $100 to $200.</li>
+                <li><strong>Hold for review:</strong> The premium ProcurementTactics placement ($2,000) and the open FTM.cloud ask should wait until we confirm citation value and agree a budget.</li>
+                <li><strong>Decision needed:</strong> GoFreight team to confirm budget for paid placements and authorize the free / reciprocal wins to proceed immediately.</li>
             </ul>
         </div>
 
