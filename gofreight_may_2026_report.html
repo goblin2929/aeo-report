@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>May MTD AEO Channel Progress Update — May 28 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --teal: #017d8e;
+    --teal-d: #0e7490;
+    --slate-9: #0f172a;
+    --slate-7: #334155;
+    --slate-5: #64748b;
+    --slate-3: #cbd5e1;
+    --slate-1: #f1f5f9;
+    --green: #16a34a;
+    --amber: #d97706;
+    --red: #dc2626;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: #ffffff;
+    color: var(--slate-9);
+    margin: 0;
+    padding: 28px 36px;
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+  .page {
+    width: 1280px;
+    margin: 0 auto;
+  }
+  html { min-width: 1320px; }
+  header {
+    border-bottom: 2px solid var(--teal);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  header h1 {
+    font-size: 22px;
+    margin: 0;
+    color: var(--slate-9);
+    letter-spacing: -0.01em;
+  }
+  header .meta {
+    font-size: 12px;
+    color: var(--slate-5);
+    text-align: right;
+  }
+  header .meta strong { color: var(--slate-7); }
+
+  .hook {
+    background: linear-gradient(90deg, #ecfeff 0%, #f0fdfa 100%);
+    border-left: 4px solid var(--teal);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .hook strong { color: var(--teal-d); }
+
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .kpi {
+    border: 1px solid var(--slate-3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    background: #fff;
+  }
+  .kpi .label { font-size: 11px; color: var(--slate-5); text-transform: uppercase; letter-spacing: 0.04em; }
+  .kpi .val { font-size: 20px; font-weight: 700; color: var(--slate-9); margin-top: 2px; }
+  .kpi .delta { font-size: 12px; margin-top: 2px; }
+  .delta.flat { color: var(--amber); }
+  .delta.up { color: var(--green); }
+  .delta.down { color: var(--red); }
+
+  .chart-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .chart-card {
+    border: 1px solid var(--slate-3);
+    border-radius: 6px;
+    padding: 12px 14px 10px;
+    background: #fff;
+  }
+  .chart-card h3 {
+    font-size: 13px;
+    margin: 0 0 2px;
+    color: var(--slate-9);
+  }
+  .chart-card .sub {
+    font-size: 11px;
+    color: var(--slate-5);
+    margin-bottom: 8px;
+  }
+  .chart-canvas-wrap {
+    height: 200px;
+    position: relative;
+  }
+  .chart-card .takeaway {
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: var(--slate-7);
+    background: var(--slate-1);
+    padding: 6px 8px;
+    border-radius: 4px;
+  }
+  .chart-card .takeaway b { color: var(--slate-9); }
+
+  .news-strip {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 1px solid var(--slate-3);
+    border-radius: 6px;
+    background: #fafbfc;
+  }
+  .news-strip h2 {
+    font-size: 13px;
+    margin: 0 0 8px;
+    color: var(--teal-d);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .news-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: var(--slate-7);
+  }
+  .news-icon { font-size: 14px; line-height: 1.2; flex-shrink: 0; }
+  .news-body a { color: var(--teal-d); text-decoration: none; }
+  .news-body a:hover { text-decoration: underline; }
+  .news-body code { background: #e2e8f0; padding: 0 4px; border-radius: 3px; font-size: 10.5px; }
+
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  section h2 {
+    font-size: 13px;
+    margin: 0 0 8px;
+    color: var(--teal-d);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--slate-3);
+    padding-bottom: 4px;
+  }
+  .meeting-block {
+    margin-bottom: 10px;
+  }
+  .meeting-block .date {
+    font-size: 11px;
+    color: var(--slate-5);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .meeting-block ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .meeting-block li {
+    margin-bottom: 3px;
+    font-size: 12.5px;
+  }
+  .discussion ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .discussion li {
+    margin-bottom: 6px;
+    font-size: 12.5px;
+  }
+  .discussion li b { color: var(--teal-d); }
+
+  footer {
+    margin-top: 16px;
+    font-size: 10.5px;
+    color: var(--slate-5);
+    text-align: center;
+    border-top: 1px solid var(--slate-3);
+    padding-top: 6px;
+  }
+
+  @media print {
+    body { padding: 16px 20px; font-size: 11.5px; }
+    .chart-canvas-wrap { height: 160px; }
+    header h1 { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <h1>May MTD AEO Channel Progress Update</h1>
+      <div style="font-size:11px; color:var(--slate-5); margin-top:2px;">Internal pre-read · Tina ↔ AEO team</div>
+    </div>
+    <div class="meta">
+      <div><strong>May 28, 2026 · Thursday</strong></div>
+      <div>Data window: Mar 1 – May 27, 2026</div>
+    </div>
+  </header>
+
+  <div class="hook">
+    <strong>Headline:</strong> Non-brand SEO clicks took the April hit (867/wk → 521/wk, -40%) and are in early recovery (640-686/wk in May). AEO went the other way: <strong>non-brand visibility roughly doubled since Jan</strong> across all three engines (Google AI 16→37% · Perplexity 14→35% · ChatGPT 8→19%) and <strong>AI-referred sessions ~3× (≈30/wk → ≈100/wk; 351 last-30-day)</strong>. <strong>Tomorrow's question:</strong> as SEO recovers and AEO accelerates, does monthly reporting re-weight toward AEO/AI traffic as the headline metric?
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="label">Total Clicks · May MTD</div>
+      <div class="val">3,015</div>
+      <div class="delta flat">Non-brand: <b>2,101</b> (69.7%) · Brand: 914 (30.3%)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">AEO Visibility · Non-Brand · May</div>
+      <div class="val">27.7%</div>
+      <div class="delta up">+2.4 pts vs Mar 25.3% (+9.5%)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">AI Traffic · Last 30 Days</div>
+      <div class="val">351</div>
+      <div class="delta up">~82/wk avg · ~3× vs early-Mar baseline</div>
+    </div>
+  </div>
+
+  <div class="chart-row">
+
+    <div class="chart-card">
+      <h3>① Total Clicks vs Non-Brand Clicks (Weekly)</h3>
+      <div class="sub">GSC · non-brand = total minus queries matching "gofreight" / "go freight" / "gofright"</div>
+      <div class="chart-canvas-wrap"><canvas id="chart1"></canvas></div>
+      <div class="takeaway"><b>Read:</b> Both lines moved together — total 1,200/wk → 755-940/wk; <b>non-brand 833-896/wk in March → 516-599/wk April trough → recovering to 640-686/wk in May</b>. Non-brand is consistently 64-77% of total. Non-brand took the April hit and is in early recovery.</div>
+    </div>
+
+    <div class="chart-card">
+      <h3>② AEO Visibility · Non-Brand by Engine (Weekly · Jan→May)</h3>
+      <div class="sub">WorkDuo · 21 non-brand prompts (MOFU+TOFU+BOFU) · % responses citing GoFreight</div>
+      <div class="chart-canvas-wrap"><canvas id="chart2"></canvas></div>
+      <div class="takeaway"><b>Read:</b> All three engines roughly doubled since Jan. Google AI Overview 16% → 37% · Perplexity 14% → 35% · <b>ChatGPT 8% → 19%</b> — still the lagging engine but growing fast in its own range. The Feb→Mar jump is sharpest, May still trending up. <em>Open question: why does ChatGPT lag — needs citation-source analysis (next step).</em></div>
+    </div>
+
+    <div class="chart-card">
+      <h3>③ AI Traffic Sessions (Weekly)</h3>
+      <div class="sub">WorkDuo dashboard · AI-referred sessions to gofreight.com</div>
+      <div class="chart-canvas-wrap"><canvas id="chart3"></canvas></div>
+      <div class="takeaway"><b>Read:</b> Real signal. AI-referred sessions grew from ~30/wk in early March to ~100/wk by mid-late May (~3× growth). <b>Last-30-day total: 351 sessions (WorkDuo UI, ~82/wk avg).</b> Late-May daily peaks hit 27–29/day vs. early-March 0–6/day. % of total traffic climbed from ~0.3% to 4–5%. <b>This is the AEO ROI signal</b> — visibility converting to actual visits.</div>
+    </div>
+
+  </div>
+
+  <section class="news-strip">
+    <h2>AEO/SEO News · This Week</h2>
+    <div class="news-grid">
+      <div class="news-item">
+        <div class="news-icon">🔄</div>
+        <div class="news-body">
+          <a href="https://status.search.google.com/incidents/wdAXJk6LRRihEjpzEeWE" target="_blank" rel="noopener"><b>Google May 2026 core update</b></a> — rolling out from 21 May, up to 2 weeks to complete. Second core update of 2026; likely explains April–May volatility in our SEO clicks.
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-icon">🔦</div>
+        <div class="news-body">
+          <a href="https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring#stability_and_discoverability" target="_blank" rel="noopener"><b>Chrome Lighthouse adds <code>llms.txt</code> check</b></a> — under "Stability and Discoverability." Google's growing nudge toward agent-friendly websites. AEO infrastructure ask we should prioritize.
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-icon">💰</div>
+        <div class="news-body">
+          <a href="https://blog.google/products/ads-commerce/google-marketing-live-search-ads/" target="_blank" rel="noopener"><b>New ad types in AI Mode</b></a> — Conversational Discovery + Highlighted Answers (Google Marketing Live). Ads inside the Highlighted Answer box could squeeze CTR for organic — another reason to lean into AEO citation share.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bottom-grid">
+
+    <section>
+      <h2>What we shipped — last 2 AEO syncs</h2>
+
+      <div class="meeting-block">
+        <div class="date">May 19 · AEO call</div>
+        <ul>
+          <li><b>SEO prompt list refinement:</b> relevance pass + keyword volumes added; TOFU classification cleaned up</li>
+          <li><b>SSOT blog update tracker</b> compiled for content version visibility</li>
+          <li><b>Customer pain → blog mapping</b> for content-gap analysis (Alice-approved articles pushed)</li>
+          <li><b>GSC monitoring</b> initiated on Google algo update impact</li>
+        </ul>
+      </div>
+
+      <div class="meeting-block">
+        <div class="date">May 26 · GoFreight monthly sync</div>
+        <ul>
+          <li><b>Content:</b> 7 new articles published, 56 existing re-optimized this cycle</li>
+          <li><b>Outreach:</b> 4 positive responses from batch 1; batch 2 trigger pending; paid-listicle evaluation in flight</li>
+          <li><b>Reporting automation:</b> moving weekly performance reports to a cloud-tool workflow (free up time for strategic analysis)</li>
+          <li><b>AI vs SEO session split:</b> action item to separate the two in monthly reporting (this deck delivers v1)</li>
+          <li><b>Page-level analysis:</b> blogs vs product vs solutions — quantify each's contribution to SEO + AI traffic</li>
+          <li><b>Alice recommendation report</b> on outreach + link placements due this week</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="discussion">
+      <h2>Tomorrow's agenda</h2>
+      <ol>
+        <li><b>SEO vs AEO metric realignment</b> — propose fine-tune (charts above are the case)</li>
+        <li><b>New AEO prompt suggestions</b> — decision needed</li>
+        <li><b>Gong call analysis</b> — alignment on T1+ Flight proposal</li>
+        <li><b>Off-page outreach</b> — batch 2 update</li>
+        <li><b>Customer story</b> — CargoWise switcher</li>
+        <li><b>ROI calculator</b> — WIP</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <footer>
+    Sources: GSC (sc-domain:gofreight.com, date-dim) · WorkDuo project cmhk59aw9001mlo33c3t8n3rj (21 non-brand prompts: 11 MOFU + 9 TOFU + 1 BOFU; 5,320 non-brand responses Mar 1–May 27) · AI Traffic weekly estimates from WorkDuo dashboard screenshot (2026-05-27 21:03) · Generated 2026-05-27
+  </footer>
+
+</div>
+
+<script>
+const fmt = (n) => n.toLocaleString();
+// Labels for charts 1 + 3 (Mar 2 – May 18, W10–W21)
+const weekLabels = ['Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4','May 11','May 18'];
+// Labels for chart 2 (W01–W21, ISO weeks 2026, Mon date label)
+const weekLabelsFull = ['Dec 29','Jan 5','Jan 12','Jan 19','Jan 26','Feb 2','Feb 9','Feb 16','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4','May 11','May 18'];
+
+// W10..W21 (Mar-May) — used by chart 1 + chart 3
+const clicks = [1201,1149,1126,1116,867,813,820,755,881,827,898,936];
+const nbClicks = [896,848,867,833,599,542,521,516,596,533,640,686];
+const aiSessions = [30,45,55,75,40,45,50,65,55,70,90,100];
+
+// Chart 2 — weekly visibility by engine (W01..W21, 21 weeks Jan→May)
+const chatGpt    = [7.9,12.7,10.2,11.6,10.2,13.6,15.0,14.3,14.3,20.4,21.1,17.7,19.7,18.4,16.3,21.1,17.7,14.3,16.3,19.0,13.6];
+const perplexity = [14.3,15.9,12.2,7.5,17.0,24.5,26.5,23.1,28.6,29.9,25.2,27.2,26.5,26.5,32.7,29.3,29.9,31.3,32.7,35.4,25.2];
+const googleAi   = [15.9,20.6,17.7,20.7,25.4,25.7,28.9,29.1,21.1,24.3,31.8,30.7,33.6,31.3,31.8,29.2,31.9,34.1,34.6,36.7,32.8];
+
+// Chart 1 — Total + Non-brand clicks (single axis)
+new Chart(document.getElementById('chart1'), {
+  type: 'line',
+  data: {
+    labels: weekLabels,
+    datasets: [
+      {
+        label: 'Total clicks',
+        data: clicks,
+        borderColor: '#94a3b8',
+        backgroundColor: 'rgba(148,163,184,0.08)',
+        borderWidth: 2,
+        borderDash: [4,3],
+        tension: 0.25,
+        fill: false,
+        pointRadius: 2.5,
+        pointBackgroundColor: '#94a3b8',
+      },
+      {
+        label: 'Non-brand clicks',
+        data: nbClicks,
+        borderColor: '#017d8e',
+        backgroundColor: 'rgba(1,125,142,0.12)',
+        borderWidth: 2.8,
+        tension: 0.25,
+        fill: true,
+        pointRadius: 3,
+        pointBackgroundColor: '#017d8e',
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: {position:'bottom', labels:{font:{size:10}, boxWidth:14, padding:6}},
+      tooltip: {callbacks:{label:(c)=>`${c.dataset.label}: ${fmt(c.parsed.y)}`}},
+    },
+    scales: {
+      y: {beginAtZero:true, ticks:{font:{size:10}, callback:(v)=>v.toLocaleString()}, grid:{color:'#f1f5f9'}},
+      x: {ticks:{font:{size:10}, maxRotation:0, autoSkip:true, maxTicksLimit:7}, grid:{display:false}}
+    }
+  }
+});
+
+// Chart 2 — AEO non-brand visibility by engine (weekly Jan→May)
+new Chart(document.getElementById('chart2'), {
+  type: 'line',
+  data: {
+    labels: weekLabelsFull,
+    datasets: [
+      {label:'Google AI Overview', data:googleAi,    borderColor:'#0891b2', backgroundColor:'rgba(8,145,178,0.08)', borderWidth:2.2, tension:0.3, pointRadius:2},
+      {label:'Perplexity',         data:perplexity, borderColor:'#16a34a', backgroundColor:'rgba(22,163,74,0.08)', borderWidth:2.2, tension:0.3, pointRadius:2},
+      {label:'ChatGPT',            data:chatGpt,    borderColor:'#d97706', backgroundColor:'rgba(217,119,6,0.08)', borderWidth:2.2, tension:0.3, pointRadius:2}
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: {position:'bottom', labels:{font:{size:10}, boxWidth:10, padding:6}},
+      tooltip: {callbacks:{label:(c)=>`${c.dataset.label}: ${c.parsed.y.toFixed(1)}%`}}
+    },
+    scales: {
+      y: {beginAtZero:true, max:40, ticks:{font:{size:10}, callback:(v)=>v+'%'}, grid:{color:'#f1f5f9'}},
+      x: {ticks:{font:{size:10}, maxRotation:0, autoSkip:true, maxTicksLimit:7}, grid:{display:false}}
+    }
+  }
+});
+
+// Chart 3 — AI Traffic sessions weekly
+new Chart(document.getElementById('chart3'), {
+  type: 'line',
+  data: {
+    labels: weekLabels,
+    datasets: [{
+      label: 'AI sessions',
+      data: aiSessions,
+      borderColor: '#7c3aed',
+      backgroundColor: 'rgba(124,58,237,0.15)',
+      borderWidth: 2.5,
+      tension: 0.3,
+      fill: true,
+      pointRadius: 3,
+      pointBackgroundColor: '#7c3aed'
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: {display:false},
+      tooltip: {callbacks:{label:(c)=>`~${c.parsed.y} AI sessions`}}
+    },
+    scales: {
+      y: {beginAtZero:true, suggestedMax:130, ticks:{stepSize:20, font:{size:10}}, grid:{color:'#f1f5f9'}},
+      x: {ticks:{font:{size:10}, maxRotation:0, autoSkip:true, maxTicksLimit:7}, grid:{display:false}}
+    }
+  }
+});
+</script>
+</body>
+</html>
