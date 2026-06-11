@@ -474,6 +474,30 @@
   </section>
 
   <section>
+    <h2>Blog Refresh Experiment (May): Which Refresh Style Returns the Most</h2>
+    <p class="note" style="margin-bottom:8px;">Controlled refresh across 40 existing articles in 3 batches, varying selection logic and refresh depth. Refresh dates May 14 (Batch 1, Batch 2) and May 18 (Batch 3); before vs after measured on GSC.</p>
+    <table class="t">
+      <thead>
+        <tr><th>Batch</th><th>Selection &amp; style</th><th class="num">Articles</th><th class="num">Clicks (before → after)</th><th class="num">Impressions</th><th class="num">CTR</th><th class="num">Avg Pos</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>Batch 1</b></td><td>Top 15 by impressions · full rewrite (title, meta, body, branded layout)</td><td class="num">15</td><td class="num up">78 → 109 (+40%)</td><td class="num">40,887 → 40,419 (-1%)</td><td class="num up">0.19% → 0.27%</td><td class="num">10.3 → 10.8</td></tr>
+        <tr><td><b>Batch 2</b></td><td>Top 10 by clicks · light touch (Key Takeaways box + FAQ rebuilt only; title/meta/body preserved)</td><td class="num">10</td><td class="num up">374 → 446 (+19%)</td><td class="num down">257,942 → 173,512 (-33%)</td><td class="num up">0.14% → 0.26%</td><td class="num">8.9 → 9.4</td></tr>
+        <tr class="win-row"><td><b>Batch 3</b></td><td>High impr + low CTR · full rewrite (often thin/empty bodies)</td><td class="num">15</td><td class="num up">66 → 218 (+230%)</td><td class="num up">71,544 → 87,182 (+22%)</td><td class="num up">0.09% → 0.25%</td><td class="num up">19.3 → 13.9 (+5.4)</td></tr>
+        <tr class="subtotal"><td>Combined</td><td>40 articles, ~2 weeks</td><td class="num">40</td><td class="num up">518 → 773 (+49%)</td><td class="num">370,373 → 301,113</td><td class="num up">0.14% → 0.26%</td><td class="num">n/a</td></tr>
+      </tbody>
+    </table>
+    <div class="takeaway-box win"><b>What the experiment tells us:</b>
+      <ul>
+        <li><b>Full rewrites of thin, low-CTR pages win biggest.</b> Batch 3 delivered +230% clicks and a 5.4-position ranking jump (19.3 → 13.9). Rebuilding empty or thin bodies into structured content is the single highest-ROI refresh move.</li>
+        <li><b>CTR improved in every batch.</b> The consistent levers were the Key Takeaways box and the FAQ rebuilt from real GSC queries. Even the light-touch Batch 2, with title, meta, and body preserved, nearly doubled CTR (0.14% → 0.26%) and added +19% clicks from those two changes alone.</li>
+        <li><b>Refresh beats net-new on effort:</b> 40 existing articles produced +255 net clicks (+49%) in roughly two weeks.</li>
+        <li><b>Watch, Batch 2 impressions −33%:</b> impressions dipped on a few high-volume informational pages while clicks and CTR rose, trading low-quality impressions for better-qualified clicks. We will keep watching to confirm it holds.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
     <h2>AEO Metrics — Month over Month</h2>
     <table class="t" id="aeoMomTable">
       <thead>
@@ -498,6 +522,38 @@
         <li><b>June MTD signal:</b> Google AI visibility hit a series-high 39.1% in the Jun 1–7 week, and AI sessions are pacing ahead of May (188 in the first 10 days).</li>
         <li><b>Citations are deepening, not widening:</b> total citations +12.7% (4,379 → 4,937) on a slightly smaller page set (112 → 108). The comparison/listicle blogs carry the load — best-freight-management-software (506), best-tms-software (372), gofreight-vs-magaya (336), cargowise-vs-gofreight (305) — validating the June comparison-content priority.</li>
         <li><b>Biggest single-page gain: /product/integrations, 10 → 244 citations.</b> Watch item: Solutions citations fell 129 → 34 — investigate which pages lost coverage in June.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>AI-Citation Publisher Outreach: Getting GoFreight Into AI-Cited Sources</h2>
+    <div class="takeaway-box" style="margin-bottom:10px;"><b>Why this matters for AEO:</b> When AI engines answer buyer-intent prompts like "best freight management software for enterprise," they cite third-party listicles and software directories as sources, not just vendor sites. The most-cited-pages list above shows GoFreight’s own comparison pages already winning citations; the next lever is getting GoFreight <b>named inside the external lists AI already cites</b>. We contacted 11 such publishers across freight management, TMS, customs brokerage, and NVOCC software and collected their placement terms. This is the off-page half of the AEO program, complementing the on-page work (llm.txt, schema, author credentials).</div>
+    <table class="t">
+      <thead>
+        <tr><th>#</th><th>Publisher</th><th>Target list / category</th><th>Model</th><th class="num">Indicative cost</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td><a href="https://www.softwareworld.co/software/gofreight-reviews/" target="_blank">SoftwareWorld</a></td><td>GoFreight review profile (unclaimed)</td><td>Claim + register</td><td class="num up">Free</td><td>GoFreight team to claim with official email</td></tr>
+        <tr><td class="num">2</td><td><a href="https://gitnux.org/best/nvocc-software/" target="_blank">Gitnux</a></td><td>Best NVOCC Software</td><td>Annual, by position</td><td class="num">$325 to $1,000/yr</td><td>Awaiting decision</td></tr>
+        <tr><td class="num">3</td><td><a href="https://wifitalents.com/best/customs-brokerage-software/" target="_blank">WiFiTalents</a></td><td>Best Customs Brokerage Software</td><td>Annual, by position</td><td class="num">$325 to $1,000/yr</td><td>Awaiting decision</td></tr>
+        <tr><td class="num">4</td><td><a href="https://zipdo.co/best/freight-forwarding-management-software/" target="_blank">ZipDo</a></td><td>Best Freight Forwarding Management Software</td><td>Annual, by position</td><td class="num">$325 to $1,000/yr</td><td>Awaiting decision</td></tr>
+        <tr><td class="num">5</td><td><a href="https://www.cotocus.com/blog/top-10-transportation-management-systems-tms-features-pros-cons-comparison/" target="_blank">Cotocus</a></td><td>Top 10 TMS</td><td>Per listing, by position</td><td class="num">$100 to $200</td><td>Awaiting decision</td></tr>
+        <tr><td class="num">6</td><td><a href="https://www.devopsschool.com/blog/top-10-customs-brokerage-software-features-pros-cons-comparison/" target="_blank">DevOpsSchool</a></td><td>Top 10 Customs Brokerage Software</td><td>Per listing, by position</td><td class="num">$100 to $200</td><td>Awaiting decision</td></tr>
+        <tr><td class="num">7</td><td><a href="https://scoop.market.us/api-management-market-news/" target="_blank">Market.us (Scoop)</a></td><td>API Management Market (DR 66 to 83)</td><td>Guest post / link insertion</td><td class="num">$229</td><td>Awaiting decision</td></tr>
+        <tr><td class="num">8</td><td><a href="https://truckpedia.io/resources/best-trucking-tms-software-2025-complete-carrier-guide" target="_blank">Truckpedia</a></td><td>Best Trucking TMS Software 2025</td><td>Reciprocal link exchange</td><td class="num up">No cash</td><td>Awaiting decision (feature Truckpedia in return)</td></tr>
+        <tr><td class="num">9</td><td><a href="https://www.flexfulfillment.eu/top-10-real-time-shipment-tracking-tools/" target="_blank">FlexFulfillment</a></td><td>Top 10 Real-Time Shipment Tracking Tools</td><td>Reciprocal link exchange</td><td class="num up">No cash</td><td>Awaiting decision (feature in return)</td></tr>
+        <tr><td class="num">10</td><td><a href="https://ftm.cloud/customer-portal/" target="_blank">FTM.cloud</a></td><td>Customer Portal</td><td>Open / negotiable</td><td class="num">TBD</td><td>Awaiting our offer</td></tr>
+        <tr><td class="num">11</td><td><a href="https://procurementtactics.com/transportation-management-system/" target="_blank">ProcurementTactics</a></td><td>Transportation Management System</td><td>Landing page + YouTube</td><td class="num">$2,000 + custom</td><td>Needs a call</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Pricing as quoted by each publisher during the May / June outreach (Batch 2). Positional models charge more for higher list placement.</p>
+    <div class="takeaway-box win"><b>Recommended sequencing:</b>
+      <ul>
+        <li><b>Do first, zero cost:</b> claim the SoftwareWorld profile with an official GoFreight email and execute the two reciprocal link exchanges (Truckpedia, FlexFulfillment). Three placements, no cash outlay.</li>
+        <li><b>Then low-cost, high-intent:</b> prioritize the lists tied to the queries AI cites for "best freight management software" buyers, ZipDo (freight forwarding management) and Gitnux (NVOCC), plus the per-listing TMS and customs lists (Cotocus, DevOpsSchool) where entry is only $100 to $200.</li>
+        <li><b>Hold for review:</b> the premium ProcurementTactics placement ($2,000) and the open FTM.cloud ask should wait until citation value is confirmed and a budget is agreed.</li>
+        <li><b>Decision needed:</b> GoFreight team to confirm budget for paid placements and authorize the free and reciprocal wins to proceed now.</li>
       </ul>
     </div>
   </section>
