@@ -475,6 +475,11 @@
     </div>
   </section>
 
+  <div class="note" style="border-top: 1px solid var(--slate-3); padding-top: 8px; margin-top: 18px;">
+    <b>How AI citation counts work (methodology &amp; validation).</b>
+    A "response" is one engine's answer to one tracked prompt on one day — WorkDuo re-asks every prompt on ChatGPT, Perplexity, and Google AI roughly daily, so 28 active prompts produced 2,352 responses in April and 2,404 in May (~flat sampling; May simply has one more day). A "citation" is each time a GoFreight page appears in a response's source list; "pages cited" counts distinct pages. The May citation increase (4,379 → 4,937, +12.7%) is <b>not</b> an artifact of expanded prompt tracking: the 11 prompts added to the project were created June 5 and contributed zero April/May data, so the comparison runs on an identical 28-prompt panel. With sampling flat, citations <i>per response</i> rose 1.86 → 2.05 (+10.3%) — the engines are citing GoFreight more per answer, concentrated in specific pages (/product/integrations 10 → 244; cargowise-vs-gofreight 247 → 305). All citation figures were independently recounted from the WorkDuo API (both months reproduced exactly) and homepage URL variants are deduplicated. June-onward comparisons will be on the 39-prompt basis and will be annotated accordingly.
+  </div>
+
   <footer>
     Sources: GSC (sc-domain:gofreight.com, date-dim for totals; page-dim for page/subfolder relative comparison) · WorkDuo project cmhk59aw9001mlo33c3t8n3rj (28 non-brand prompts, restated basis; AI Visibility/SOV/Mentions from WorkDuo dashboard) · GA4 property 373075091 (sessions, sessionSource ~ chatgpt|gemini|claude|perplexity|copilot|deepseek|grok|…, pulled 2026-06-11) · Monthly tables reproduce the May 2026 draft report (primary-domain basis) · Generated 2026-06-11
   </footer>
