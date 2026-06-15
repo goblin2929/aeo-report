@@ -474,6 +474,44 @@
   </section>
 
   <section>
+    <h2>US Market Position Reality Check: All Pages vs Homepage</h2>
+    <p class="note" style="margin-bottom:8px;">Client follow-up on the two priority commercial queries. The blended GSC average position in the cluster table above counts every country and every GoFreight URL that ranks for a term, so it understates true performance. Below are the same queries filtered to <b>United States, exact match</b>, split by all-pages vs homepage-only (GSC), with an Ahrefs US cross-check.</p>
+    <div class="chart-card" style="margin-bottom:12px;">
+      <h3>US Exact-Query Position Trend (Jan to May): Homepage vs All Pages</h3>
+      <div class="sub">GSC, United States only, exact query · y-axis reversed so higher = better rank · lower lines = the homepage holding top positions</div>
+      <div class="chart-canvas-wrap" style="height:240px;"><canvas id="chartPosition"></canvas></div>
+      <div class="takeaway"><b>Read:</b> The two homepage lines sit near the top of the chart (positions 1 to 5 all year); the two all-pages lines run well below them. <b>That vertical gap is the cannibalization + non-US drag:</b> the same query ranks great on the homepage but the blended average is pulled down by a second URL and weaker markets.</div>
+    </div>
+    <table class="t">
+      <thead>
+        <tr><th>Keyword (US, exact)</th><th>Condition</th><th class="num">Jan</th><th class="num">Feb</th><th class="num">Mar</th><th class="num">Apr</th><th class="num">May</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>freight forwarder software</b></td><td>All pages (blended)</td><td class="num">14.1</td><td class="num">9.2</td><td class="num">5.9</td><td class="num">4.9</td><td class="num down">8.6</td></tr>
+        <tr class="win-row"><td><b>freight forwarder software</b></td><td>Homepage only</td><td class="num">2.8</td><td class="num">1.7</td><td class="num">1.5</td><td class="num">3.4</td><td class="num up">4.4</td></tr>
+        <tr><td><b>freight forwarding software</b></td><td>All pages (blended)</td><td class="num">14.9</td><td class="num">7.5</td><td class="num">5.4</td><td class="num">8.3</td><td class="num down">7.6</td></tr>
+        <tr class="win-row"><td><b>freight forwarding software</b></td><td>Homepage only</td><td class="num">2.4</td><td class="num">n/a</td><td class="num">1.4</td><td class="num">7.5</td><td class="num up">5.4</td></tr>
+      </tbody>
+    </table>
+    <p class="note">"n/a" = homepage recorded no US impressions for that query that month. Ahrefs US cross-check (late May): the homepage ranked #3 for "freight forwarding software" and #4 for "freight forwarder software," while the secondary page gofreight.com/freight-forwarding-software ranked far lower (~17 to 28 before dropping out) for the same terms.</p>
+    <div class="takeaway-box win">
+      <b>Read: the homepage ranks far better than the blended average suggests.</b>
+      <ul>
+        <li>In the US, the homepage holds <b>positions 4 to 5</b> for both queries in May (4.4 and 5.4), versus the blended all-pages numbers of 8.6 and 7.6. The blend is dragged down by (1) weaker non-US impressions and (2) a second GoFreight URL ranking below the homepage for the same term.</li>
+        <li>The all-pages figure is the right number for spotting cannibalization; the <b>homepage-only US figure is the right number for judging how the money page actually ranks</b>. Both belong in the report, which is why the cluster table above (blended) and this view (isolated) tell different parts of the same story.</li>
+      </ul>
+    </div>
+    <div class="takeaway-box watch">
+      <b>Action: fix the internal cannibalization on /freight-forwarding-software</b>
+      <ul>
+        <li><b>Set a canonical</b> from <a href="https://gofreight.com/freight-forwarding-software" target="_blank">gofreight.com/freight-forwarding-software</a> to the homepage (gofreight.com/). It competes with the homepage for the same queries and ranks well below it, splitting ranking signals across two URLs.</li>
+        <li><b>Revisit internal links in the blogs:</b> repoint "freight forwarding software" and "freight forwarder software" anchor text that currently links to /freight-forwarding-software back to the homepage, so internal anchors reinforce one canonical target.</li>
+        <li><b>Expected result:</b> once signals consolidate on the homepage, the blended average position should tighten toward the homepage true US position (top 5), and the apparent decline in the cluster table resolves.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
     <h2>Blog Refresh Experiment (May): Which Refresh Style Returns the Most</h2>
     <p class="note" style="margin-bottom:8px;">Controlled refresh across 40 existing articles in 3 batches, varying selection logic and refresh depth. Refresh dates May 14 (Batch 1, Batch 2) and May 18 (Batch 3); before vs after measured on GSC.</p>
     <table class="t">
@@ -527,33 +565,34 @@
   </section>
 
   <section>
-    <h2>AI-Citation Publisher Outreach: Getting GoFreight Into AI-Cited Sources</h2>
-    <div class="takeaway-box" style="margin-bottom:10px;"><b>Why this matters for AEO:</b> When AI engines answer buyer-intent prompts like "best freight management software for enterprise," they cite third-party listicles and software directories as sources, not just vendor sites. The most-cited-pages list above shows GoFreight’s own comparison pages already winning citations; the next lever is getting GoFreight <b>named inside the external lists AI already cites</b>. We contacted 11 such publishers across freight management, TMS, customs brokerage, and NVOCC software and collected their placement terms. This is the off-page half of the AEO program, complementing the on-page work (llm.txt, schema, author credentials).</div>
+    <h2>AI-Citation Publisher Outreach: Priority Analysis (DR, Traffic, Cost)</h2>
+    <div class="takeaway-box" style="margin-bottom:10px;"><b>Why this matters for AEO:</b> When AI engines answer buyer-intent prompts like "best freight management software for enterprise," they cite third-party listicles and software directories as sources, not just vendor sites. The most-cited-pages list above shows GoFreight’s own comparison pages already winning citations; the next lever is getting GoFreight <b>named inside the external lists AI already cites</b>. We contacted 11 such publishers, pulled <b>Domain Rating and organic traffic from Ahrefs</b>, and scored each by authority, traffic, topical relevance, and cost. This is the off-page half of the AEO program, complementing the on-page work (llm.txt, schema, author credentials).</div>
     <table class="t">
       <thead>
-        <tr><th>#</th><th>Publisher</th><th>Target list / category</th><th>Model</th><th class="num">Indicative cost</th><th>Status</th></tr>
+        <tr><th>Publisher</th><th>Target list / category</th><th class="num">DR</th><th class="num">Org traffic</th><th class="num">Entry cost</th><th>Model</th><th>Priority</th></tr>
       </thead>
       <tbody>
-        <tr><td class="num">1</td><td><a href="https://www.softwareworld.co/software/gofreight-reviews/" target="_blank">SoftwareWorld</a></td><td>GoFreight review profile (unclaimed)</td><td>Claim + register</td><td class="num up">Free</td><td>GoFreight team to claim with official email</td></tr>
-        <tr><td class="num">2</td><td><a href="https://gitnux.org/best/nvocc-software/" target="_blank">Gitnux</a></td><td>Best NVOCC Software</td><td>Annual, by position</td><td class="num">$325 to $1,000/yr</td><td>Awaiting decision</td></tr>
-        <tr><td class="num">3</td><td><a href="https://wifitalents.com/best/customs-brokerage-software/" target="_blank">WiFiTalents</a></td><td>Best Customs Brokerage Software</td><td>Annual, by position</td><td class="num">$325 to $1,000/yr</td><td>Awaiting decision</td></tr>
-        <tr><td class="num">4</td><td><a href="https://zipdo.co/best/freight-forwarding-management-software/" target="_blank">ZipDo</a></td><td>Best Freight Forwarding Management Software</td><td>Annual, by position</td><td class="num">$325 to $1,000/yr</td><td>Awaiting decision</td></tr>
-        <tr><td class="num">5</td><td><a href="https://www.cotocus.com/blog/top-10-transportation-management-systems-tms-features-pros-cons-comparison/" target="_blank">Cotocus</a></td><td>Top 10 TMS</td><td>Per listing, by position</td><td class="num">$100 to $200</td><td>Awaiting decision</td></tr>
-        <tr><td class="num">6</td><td><a href="https://www.devopsschool.com/blog/top-10-customs-brokerage-software-features-pros-cons-comparison/" target="_blank">DevOpsSchool</a></td><td>Top 10 Customs Brokerage Software</td><td>Per listing, by position</td><td class="num">$100 to $200</td><td>Awaiting decision</td></tr>
-        <tr><td class="num">7</td><td><a href="https://scoop.market.us/api-management-market-news/" target="_blank">Market.us (Scoop)</a></td><td>API Management Market (DR 66 to 83)</td><td>Guest post / link insertion</td><td class="num">$229</td><td>Awaiting decision</td></tr>
-        <tr><td class="num">8</td><td><a href="https://truckpedia.io/resources/best-trucking-tms-software-2025-complete-carrier-guide" target="_blank">Truckpedia</a></td><td>Best Trucking TMS Software 2025</td><td>Reciprocal link exchange</td><td class="num up">No cash</td><td>Awaiting decision (feature Truckpedia in return)</td></tr>
-        <tr><td class="num">9</td><td><a href="https://www.flexfulfillment.eu/top-10-real-time-shipment-tracking-tools/" target="_blank">FlexFulfillment</a></td><td>Top 10 Real-Time Shipment Tracking Tools</td><td>Reciprocal link exchange</td><td class="num up">No cash</td><td>Awaiting decision (feature in return)</td></tr>
-        <tr><td class="num">10</td><td><a href="https://ftm.cloud/customer-portal/" target="_blank">FTM.cloud</a></td><td>Customer Portal</td><td>Open / negotiable</td><td class="num">TBD</td><td>Awaiting our offer</td></tr>
-        <tr><td class="num">11</td><td><a href="https://procurementtactics.com/transportation-management-system/" target="_blank">ProcurementTactics</a></td><td>Transportation Management System</td><td>Landing page + YouTube</td><td class="num">$2,000 + custom</td><td>Needs a call</td></tr>
+        <tr class="win-row"><td><a href="https://www.softwareworld.co/software/gofreight-reviews/" target="_blank">SoftwareWorld</a></td><td>GoFreight review profile (unclaimed)</td><td class="num">73</td><td class="num">11,133</td><td class="num up">Free</td><td>Claim + register</td><td><b class="up">HIGH</b></td></tr>
+        <tr class="win-row"><td><a href="https://truckpedia.io/resources/best-trucking-tms-software-2025-complete-carrier-guide" target="_blank">Truckpedia</a></td><td>Best Trucking TMS Software 2025</td><td class="num">26</td><td class="num">145</td><td class="num up">Free</td><td>Reciprocal link exchange</td><td><b class="up">HIGH</b></td></tr>
+        <tr class="win-row"><td><a href="https://www.flexfulfillment.eu/top-10-real-time-shipment-tracking-tools/" target="_blank">FlexFulfillment</a></td><td>Top 10 Real-Time Shipment Tracking Tools</td><td class="num">7</td><td class="num">4,360</td><td class="num up">Free</td><td>Reciprocal link exchange</td><td><b class="up">HIGH</b></td></tr>
+        <tr><td><a href="https://www.devopsschool.com/blog/top-10-customs-brokerage-software-features-pros-cons-comparison/" target="_blank">DevOpsSchool</a></td><td>Top 10 Customs Brokerage Software</td><td class="num">62</td><td class="num">23,059</td><td class="num">$100</td><td>Per listing</td><td><b>HIGH (paid)</b></td></tr>
+        <tr><td><a href="https://gitnux.org/best/nvocc-software/" target="_blank">Gitnux</a></td><td>Best NVOCC Software</td><td class="num">84</td><td class="num">6,881</td><td class="num">$325+</td><td>Annual, by position</td><td><b>HIGH (paid)</b></td></tr>
+        <tr><td><a href="https://zipdo.co/best/freight-forwarding-management-software/" target="_blank">ZipDo</a></td><td>Best Freight Forwarding Management Software</td><td class="num">79</td><td class="num">1,107</td><td class="num">$325+</td><td>Annual, by position</td><td><b>MEDIUM-HIGH</b></td></tr>
+        <tr><td><a href="https://wifitalents.com/best/customs-brokerage-software/" target="_blank">WiFiTalents</a></td><td>Best Customs Brokerage Software</td><td class="num">79</td><td class="num">10,293</td><td class="num">$325+</td><td>Annual, by position</td><td><b>MEDIUM</b></td></tr>
+        <tr><td><a href="https://www.cotocus.com/blog/top-10-transportation-management-systems-tms-features-pros-cons-comparison/" target="_blank">Cotocus</a></td><td>Top 10 TMS</td><td class="num">37</td><td class="num">124</td><td class="num">$100</td><td>Per listing</td><td><b>MEDIUM</b></td></tr>
+        <tr><td><a href="https://scoop.market.us/api-management-market-news/" target="_blank">Market.us (Scoop)</a></td><td>API Management Market</td><td class="num">83</td><td class="num">2,496</td><td class="num">$229</td><td>Guest post / link</td><td><b class="down">LOW (off-topic)</b></td></tr>
+        <tr><td><a href="https://ftm.cloud/customer-portal/" target="_blank">FTM.cloud</a></td><td>Customer Portal</td><td class="num">20</td><td class="num">20</td><td class="num">Open</td><td>Negotiable</td><td><b class="down">LOW</b></td></tr>
+        <tr><td><a href="https://procurementtactics.com/transportation-management-system/" target="_blank">ProcurementTactics</a></td><td>Transportation Management System</td><td class="num">71</td><td class="num">16,431</td><td class="num">$2,000</td><td>Landing page</td><td><b class="down">HOLD (overpriced)</b></td></tr>
       </tbody>
     </table>
-    <p class="note">Pricing as quoted by each publisher during the May / June outreach (Batch 2). Positional models charge more for higher list placement.</p>
-    <div class="takeaway-box win"><b>Recommended sequencing:</b>
+    <p class="note">DR and organic traffic from Ahrefs (site-level overall traffic). "Entry cost" is the lowest qualifying placement; positional models charge more for top spots. Priority weighs authority (DR), site traffic, topical relevance to freight and logistics buyers, and cost. Free claims and reciprocal exchanges are auto-High because they cost nothing.</p>
+    <div class="takeaway-box win">
+      <b>Recommended phased plan</b>
       <ul>
-        <li><b>Do first, zero cost:</b> claim the SoftwareWorld profile with an official GoFreight email and execute the two reciprocal link exchanges (Truckpedia, FlexFulfillment). Three placements, no cash outlay.</li>
-        <li><b>Then low-cost, high-intent:</b> prioritize the lists tied to the queries AI cites for "best freight management software" buyers, ZipDo (freight forwarding management) and Gitnux (NVOCC), plus the per-listing TMS and customs lists (Cotocus, DevOpsSchool) where entry is only $100 to $200.</li>
-        <li><b>Hold for review:</b> the premium ProcurementTactics placement ($2,000) and the open FTM.cloud ask should wait until citation value is confirmed and a budget is agreed.</li>
-        <li><b>Decision needed:</b> GoFreight team to confirm budget for paid placements and authorize the free and reciprocal wins to proceed now.</li>
+        <li><b>Phase 1, this month, ~$0:</b> claim the SoftwareWorld profile (official GoFreight email) and run the two reciprocal link exchanges (Truckpedia, FlexFulfillment). Three placements, zero cash. SoftwareWorld is the standout: DR 73, 11k traffic, and it is a review profile AI cites for "gofreight reviews."</li>
+        <li><b>Phase 2, ~$750, best paid value:</b> DevOpsSchool ($100, DR 62, 23k traffic, the highest authority-per-dollar in the set), Gitnux ($325, DR 84, freight-specific NVOCC list), and ZipDo ($325, DR 79, the only list whose exact topic is "freight forwarding management software"). These three are the most relevant, highest-leverage paid placements.</li>
+        <li><b>Phase 3, optional, ~$425:</b> WiFiTalents ($325, DR 79, customs) and Cotocus ($100, DR 37, TMS) as cheap incremental coverage.</li>
+        <li><b>Hold or skip:</b> ProcurementTactics ($2,000 is roughly 6 to 20x the peer entry cost for similar authority, so negotiate or defer), Market.us (high DR but the API-management topic is off-target for freight buyers), FTM.cloud (DR 20, 20 traffic, minimal value).</li>
       </ul>
     </div>
   </section>
@@ -678,6 +717,31 @@ new Chart(document.getElementById('chart3'), {
     }
   }
 });
+// Chart P — US exact-query position trend (reversed axis: higher = better)
+new Chart(document.getElementById('chartPosition'), {
+  type: 'line',
+  data: {
+    labels: ["Jan","Feb","Mar","Apr","May"],
+    datasets: [
+      {label:'forwarder software · homepage', data:[2.8,1.7,1.5,3.4,4.4], borderColor:'#017d8e', backgroundColor:'rgba(1,125,142,0.10)', borderWidth:2.8, tension:0.25, pointRadius:3, pointBackgroundColor:'#017d8e', fill:false, spanGaps:true},
+      {label:'forwarding software · homepage', data:[2.4,null,1.4,7.5,5.4], borderColor:'#0891b2', backgroundColor:'rgba(8,145,178,0.10)', borderWidth:2.8, tension:0.25, pointRadius:3, pointBackgroundColor:'#0891b2', fill:false, spanGaps:true},
+      {label:'forwarder software · all pages', data:[14.1,9.2,5.9,4.9,8.6], borderColor:'#94a3b8', borderWidth:2, borderDash:[4,3], tension:0.25, pointRadius:2.5, pointBackgroundColor:'#94a3b8', fill:false},
+      {label:'forwarding software · all pages', data:[14.9,7.5,5.4,8.3,7.6], borderColor:'#d97706', borderWidth:2, borderDash:[4,3], tension:0.25, pointRadius:2.5, pointBackgroundColor:'#d97706', fill:false}
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: {position:'bottom', labels:{font:{size:10}, boxWidth:14, padding:6}},
+      tooltip: {callbacks:{label:(c)=> c.parsed.y===null ? `${c.dataset.label}: n/a` : `${c.dataset.label}: pos ${c.parsed.y}`}}
+    },
+    scales: {
+      y: {reverse:true, min:1, suggestedMax:16, title:{display:true, text:'Avg position (1 = top)', font:{size:10}}, ticks:{font:{size:10}}, grid:{color:'#f1f5f9'}},
+      x: {ticks:{font:{size:10}}, grid:{display:false}}
+    }
+  }
+});
+
 </script>
 </body>
 </html>
