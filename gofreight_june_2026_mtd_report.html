@@ -474,20 +474,20 @@
   </section>
 
   <section>
-    <h2>US Market Position Reality Check: All Pages vs Homepage</h2>
-    <p class="note" style="margin-bottom:8px;">Client follow-up on the two priority commercial queries. The blended GSC average position in the cluster table above counts every country and every GoFreight URL that ranks for a term, so it understates true performance. Split into two views below (<b>United States, exact match</b>): the left chart is the GSC blended figure across all ranking URLs; the right chart is the homepage on its own, cross-checked against Ahrefs.</p>
+    <h2>US Market Position Reality Check: Homepage vs the Cannibalizing Page</h2>
+    <p class="note" style="margin-bottom:8px;">Client follow-up on the two priority commercial queries. The blended GSC average position in the cluster table above averages every GoFreight URL that ranks for a term, so it understates how the homepage actually ranks. Split by keyword below (<b>United States, exact match</b>), each chart shows three things: the GSC blended figure (all ranking URLs), the homepage on its own, and the secondary page <b>gofreight.com/freight-forwarding-software</b>. The gap between the green homepage line and the red secondary line is the cannibalization; the blend sits between them.</p>
     <div class="two-col" style="margin-bottom:12px;">
       <div class="chart-card">
-        <h3>All Pages: GSC Blended (US exact)</h3>
-        <div class="sub">Every GoFreight URL that ranks for the term, averaged · y-axis reversed so higher = better rank</div>
-        <div class="chart-canvas-wrap" style="height:240px;"><canvas id="chartAllPages"></canvas></div>
-        <div class="takeaway"><b>Read:</b> The blended line sits at positions 5 to 15 and looks weak. Because this view is already US exact, the gap versus the homepage is caused entirely by other GoFreight URLs ranking for the same term, not by weaker markets and not by the homepage.</div>
+        <h3>freight forwarder software (US exact)</h3>
+        <div class="sub">Green = homepage (the winner) · Red = /freight-forwarding-software (the culprit) · Slate = all-pages blend · solid GSC, dashed Ahrefs · y reversed (higher = better)</div>
+        <div class="chart-canvas-wrap" style="height:260px;"><canvas id="chartFwder"></canvas></div>
+        <div class="takeaway"><b>Read:</b> The homepage holds positions 1 to 5 all year. The secondary page sits at 23 to 33 and then collapses to ~88 in May, which is exactly why the blended line jumps from 4.9 to 8.6 that month even though the homepage barely moved.</div>
       </div>
       <div class="chart-card">
-        <h3>Homepage Only: GSC vs Ahrefs (US exact)</h3>
-        <div class="sub">The money page on its own · solid = GSC, dashed = Ahrefs · two independent sources agree</div>
-        <div class="chart-canvas-wrap" style="height:240px;"><canvas id="chartHomepage"></canvas></div>
-        <div class="takeaway"><b>Read:</b> The homepage holds positions 1 to 5 nearly all year in both tools (April was the one soft month). GSC and Ahrefs track each other closely, confirming the homepage is the strong, stable ranker.</div>
+        <h3>freight forwarding software (US exact)</h3>
+        <div class="sub">Green = homepage (the winner) · Red = /freight-forwarding-software (the culprit) · Slate = all-pages blend · solid GSC, dashed Ahrefs · y reversed (higher = better)</div>
+        <div class="chart-canvas-wrap" style="height:260px;"><canvas id="chartFwding"></canvas></div>
+        <div class="takeaway"><b>Read:</b> Same pattern. The homepage holds 1 to 7, the secondary page never breaks the mid-20s and drops to ~52 in May. The all-pages blend tracks the secondary page down, never the homepage up.</div>
       </div>
     </div>
     <table class="t">
@@ -497,27 +497,29 @@
       <tbody>
         <tr><td><b>freight forwarder software</b></td><td>GSC, all pages (blended)</td><td class="num">14.1</td><td class="num">9.2</td><td class="num">5.9</td><td class="num">4.9</td><td class="num down">8.6</td></tr>
         <tr class="win-row"><td><b>freight forwarder software</b></td><td>GSC, homepage only</td><td class="num">2.8</td><td class="num">1.7</td><td class="num">1.5</td><td class="num">3.4</td><td class="num up">4.4</td></tr>
+        <tr><td><b>freight forwarder software</b></td><td>GSC, /freight-forwarding-software (culprit)</td><td class="num down">33.6</td><td class="num down">31.1</td><td class="num down">23.0</td><td class="num">5.5</td><td class="num down">87.5</td></tr>
         <tr class="win-row"><td><b>freight forwarder software</b></td><td>Ahrefs, homepage</td><td class="num">3</td><td class="num">n/a</td><td class="num">2</td><td class="num">5</td><td class="num up">4</td></tr>
         <tr><td><b>freight forwarding software</b></td><td>GSC, all pages (blended)</td><td class="num">14.9</td><td class="num">7.5</td><td class="num">5.4</td><td class="num">8.3</td><td class="num down">7.6</td></tr>
         <tr class="win-row"><td><b>freight forwarding software</b></td><td>GSC, homepage only</td><td class="num">2.4</td><td class="num">n/a</td><td class="num">1.4</td><td class="num">7.5</td><td class="num up">5.4</td></tr>
+        <tr><td><b>freight forwarding software</b></td><td>GSC, /freight-forwarding-software (culprit)</td><td class="num down">39.3</td><td class="num down">28.9</td><td class="num down">24.4</td><td class="num down">25.2</td><td class="num down">52.2</td></tr>
         <tr class="win-row"><td><b>freight forwarding software</b></td><td>Ahrefs, homepage</td><td class="num">3</td><td class="num">1</td><td class="num">1</td><td class="num">14</td><td class="num up">3</td></tr>
       </tbody>
     </table>
-    <p class="note">GSC United States only, exact query, monthly average. "n/a" = no US impressions / snapshot that month. Ahrefs United States, latest in-month rank snapshot for gofreight.com (homepage). The secondary page gofreight.com/freight-forwarding-software ranked ~17 to 28 in Ahrefs before dropping out, which is what drags the GSC blended figure down.</p>
+    <p class="note">GSC United States only, exact query, monthly average. "n/a" = no US impressions / snapshot that month. Ahrefs United States, latest in-month rank snapshot for gofreight.com (homepage). Secondary page positions pulled from GSC (US, exact, page = gofreight.com/freight-forwarding-software).</p>
     <div class="takeaway-box win">
-      <b>Read: the homepage ranks far better than the blended average suggests, and Ahrefs agrees.</b>
+      <b>Read: the homepage is the winner; gofreight.com/freight-forwarding-software is the culprit.</b>
       <ul>
-        <li>In May the homepage holds <b>positions 4 to 5</b> for both queries in the US (GSC 4.4 / 5.4; Ahrefs 4 / 3), versus the blended all-pages numbers of 8.6 and 7.6. Both figures are US exact, so the entire gap comes from a second GoFreight URL ranking below the homepage for the same term, classic internal cannibalization. (The all-country cluster table above adds non-US markets on top, which is a separate factor.)</li>
-        <li>Two independent sources (GSC and Ahrefs) land within a point or two of each other on the homepage, so this is a reliable read, not a single-tool quirk.</li>
-        <li>The all-pages figure is the right number for spotting cannibalization; the <b>homepage-only figure is the right number for judging how the money page actually ranks</b>. Both belong in the report.</li>
+        <li>For both queries the homepage holds <b>positions 1 to 5</b> in the US (May: GSC 4.4 / 5.4, Ahrefs 4 / 3). The secondary page never breaks the low-20s and <b>collapsed in May to 87.5 (forwarder) and 52.2 (forwarding)</b>.</li>
+        <li>Because GSC averages every ranking URL, that weak secondary page is what pulls the all-pages blend down. The May spike in the blend (up to 8.6 / 7.6) lines up exactly with the secondary page crashing, not with any homepage drop.</li>
+        <li>Two independent sources (GSC and Ahrefs) put the homepage within a point or two of each other, so the strong homepage read is reliable.</li>
       </ul>
     </div>
     <div class="takeaway-box watch">
       <b>Action: fix the internal cannibalization on /freight-forwarding-software</b>
       <ul>
-        <li><b>Set a canonical</b> from <a href="https://gofreight.com/freight-forwarding-software" target="_blank">gofreight.com/freight-forwarding-software</a> to the homepage (gofreight.com/). It competes with the homepage for the same queries and ranks well below it, splitting ranking signals across two URLs.</li>
+        <li><b>Set a canonical</b> from <a href="https://gofreight.com/freight-forwarding-software" target="_blank">gofreight.com/freight-forwarding-software</a> to the homepage (gofreight.com/). It competes with the homepage for the same queries, ranks far below it, and splits ranking signals across two URLs.</li>
         <li><b>Revisit internal links in the blogs:</b> repoint "freight forwarding software" and "freight forwarder software" anchor text that currently links to /freight-forwarding-software back to the homepage, so internal anchors reinforce one canonical target.</li>
-        <li><b>Expected result:</b> once signals consolidate on the homepage, the blended average position should tighten toward the homepage true US position (top 5), and the apparent decline in the cluster table resolves.</li>
+        <li><b>Expected result:</b> once the secondary page is canonicalized away, GSC stops averaging it in, and the blended position should tighten toward the homepage true US position (top 5).</li>
       </ul>
     </div>
   </section>
@@ -728,49 +730,51 @@ new Chart(document.getElementById('chart3'), {
     }
   }
 });
-// Chart A — All Pages blended (GSC), US exact query (reversed axis: higher = better)
-new Chart(document.getElementById('chartAllPages'), {
+// Chart chartFwder (reversed axis: higher = better)
+new Chart(document.getElementById('chartFwder'), {
   type: 'line',
   data: {
     labels: ["Jan","Feb","Mar","Apr","May"],
     datasets: [
-      {label:'freight forwarder software', data:[14.1,9.2,5.9,4.9,8.6], borderColor:'#2563eb', backgroundColor:'rgba(37,99,235,0.08)', borderWidth:2.6, tension:0.25, pointRadius:3, pointBackgroundColor:'#2563eb', fill:false},
-      {label:'freight forwarding software', data:[14.9,7.5,5.4,8.3,7.6], borderColor:'#ea580c', backgroundColor:'rgba(234,88,12,0.08)', borderWidth:2.6, tension:0.25, pointRadius:3, pointBackgroundColor:'#ea580c', fill:false}
+      {label:'All pages (GSC blend)', data:[14.1,9.2,5.9,4.9,8.6], borderColor:'#64748b', borderWidth:2, tension:0.25, pointRadius:2.5, pointBackgroundColor:'#64748b', fill:false, spanGaps:true},
+      {label:'Homepage (GSC)', data:[2.8,1.7,1.5,3.4,4.4], borderColor:'#16a34a', borderWidth:2.8, tension:0.25, pointRadius:3, pointBackgroundColor:'#16a34a', fill:false, spanGaps:true},
+      {label:'Homepage (Ahrefs)', data:[3,null,2,5,4], borderColor:'#16a34a', borderWidth:2, borderDash:[5,4], tension:0.25, pointRadius:2.5, pointBackgroundColor:'#16a34a', fill:false, spanGaps:true},
+      {label:'/freight-forwarding-software (GSC)', data:[33.6,31.1,23,5.5,87.5], borderColor:'#dc2626', borderWidth:2.8, tension:0.25, pointRadius:3, pointBackgroundColor:'#dc2626', fill:false, spanGaps:true}
     ]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
     plugins: {
-      legend: {position:'bottom', labels:{font:{size:10}, boxWidth:14, padding:6}},
-      tooltip: {callbacks:{label:(c)=> `${c.dataset.label}: pos ${c.parsed.y}`}}
+      legend: {position:'bottom', labels:{font:{size:9}, boxWidth:12, padding:5}},
+      tooltip: {callbacks:{label:(c)=> c.parsed.y===null ? `${c.dataset.label}: n/a` : `${c.dataset.label}: pos ${c.parsed.y}`}}
     },
     scales: {
-      y: {reverse:true, min:1, suggestedMax:16, title:{display:true, text:'Avg position (1 = top)', font:{size:10}}, ticks:{font:{size:10}}, grid:{color:'#f1f5f9'}},
+      y: {reverse:true, min:1, suggestedMax:90, title:{display:true, text:'Avg position (1 = top)', font:{size:10}}, ticks:{font:{size:10}}, grid:{color:'#f1f5f9'}},
       x: {ticks:{font:{size:10}}, grid:{display:false}}
     }
   }
 });
 
-// Chart B — Homepage only, GSC vs Ahrefs, US exact query (reversed axis: higher = better)
-new Chart(document.getElementById('chartHomepage'), {
+// Chart chartFwding (reversed axis: higher = better)
+new Chart(document.getElementById('chartFwding'), {
   type: 'line',
   data: {
     labels: ["Jan","Feb","Mar","Apr","May"],
     datasets: [
-      {label:'forwarder software · GSC', data:[2.8,1.7,1.5,3.4,4.4], borderColor:'#2563eb', borderWidth:2.8, tension:0.25, pointRadius:3, pointBackgroundColor:'#2563eb', fill:false, spanGaps:true},
-      {label:'forwarder software · Ahrefs', data:[3,null,2,5,4], borderColor:'#2563eb', borderWidth:2, borderDash:[5,4], tension:0.25, pointRadius:2.5, pointBackgroundColor:'#2563eb', fill:false, spanGaps:true},
-      {label:'forwarding software · GSC', data:[2.4,null,1.4,7.5,5.4], borderColor:'#ea580c', borderWidth:2.8, tension:0.25, pointRadius:3, pointBackgroundColor:'#ea580c', fill:false, spanGaps:true},
-      {label:'forwarding software · Ahrefs', data:[3,1,1,14,3], borderColor:'#ea580c', borderWidth:2, borderDash:[5,4], tension:0.25, pointRadius:2.5, pointBackgroundColor:'#ea580c', fill:false, spanGaps:true}
+      {label:'All pages (GSC blend)', data:[14.9,7.5,5.4,8.3,7.6], borderColor:'#64748b', borderWidth:2, tension:0.25, pointRadius:2.5, pointBackgroundColor:'#64748b', fill:false, spanGaps:true},
+      {label:'Homepage (GSC)', data:[2.4,null,1.4,7.5,5.4], borderColor:'#16a34a', borderWidth:2.8, tension:0.25, pointRadius:3, pointBackgroundColor:'#16a34a', fill:false, spanGaps:true},
+      {label:'Homepage (Ahrefs)', data:[3,1,1,14,3], borderColor:'#16a34a', borderWidth:2, borderDash:[5,4], tension:0.25, pointRadius:2.5, pointBackgroundColor:'#16a34a', fill:false, spanGaps:true},
+      {label:'/freight-forwarding-software (GSC)', data:[39.3,28.9,24.4,25.2,52.2], borderColor:'#dc2626', borderWidth:2.8, tension:0.25, pointRadius:3, pointBackgroundColor:'#dc2626', fill:false, spanGaps:true}
     ]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
     plugins: {
-      legend: {position:'bottom', labels:{font:{size:9.5}, boxWidth:12, padding:5}},
+      legend: {position:'bottom', labels:{font:{size:9}, boxWidth:12, padding:5}},
       tooltip: {callbacks:{label:(c)=> c.parsed.y===null ? `${c.dataset.label}: n/a` : `${c.dataset.label}: pos ${c.parsed.y}`}}
     },
     scales: {
-      y: {reverse:true, min:1, suggestedMax:16, title:{display:true, text:'Avg position (1 = top)', font:{size:10}}, ticks:{font:{size:10}}, grid:{color:'#f1f5f9'}},
+      y: {reverse:true, min:1, suggestedMax:90, title:{display:true, text:'Avg position (1 = top)', font:{size:10}}, ticks:{font:{size:10}}, grid:{color:'#f1f5f9'}},
       x: {ticks:{font:{size:10}}, grid:{display:false}}
     }
   }
