@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freight Forwarder TMS | All in One TMS Software for Freight Forwarders | GoFreight</title>
+<meta name="description" content="GoFreight is the all in one freight forwarder TMS: rate management, quoting, booking, operations, tracking, invoicing and analytics in one transportation management system built for freight forwarders.">
+<style>
+  :root{
+    --brand:#01aac1; --brand-d:#017d8e; --accent:#01d7f4;
+    --cta:#0b63e6; --cta-d:#0a4fbf;
+    --ink:#0f1b2e; --body:#33424f; --muted:#6b7a89;
+    --line:#e4ebf0; --soft:#f3f8fa; --soft2:#eef5f8; --white:#fff;
+    --ok:#16a34a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;color:var(--body);line-height:1.6;background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--ink);line-height:1.2}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-d);background:var(--soft2);padding:6px 12px;border-radius:999px;margin-bottom:16px}
+
+  /* draft banner */
+  .draft{background:#0f1b2e;color:#cfe9ef;font-size:.8rem;text-align:center;padding:8px 16px;letter-spacing:.02em}
+  .draft b{color:#fff}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.25rem;color:var(--ink)}
+  .logo .mark{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--brand),var(--brand-d))}
+  .nav nav{display:flex;gap:26px;font-size:.93rem;font-weight:600;color:#41525f}
+  .nav nav a:hover{color:var(--brand-d)}
+  .nav-cta{display:flex;align-items:center;gap:18px}
+  .nav-cta .signin{font-weight:600;font-size:.93rem}
+  .btn{display:inline-block;font-weight:700;border-radius:9px;padding:11px 20px;font-size:.95rem;transition:.15s;cursor:pointer;border:none}
+  .btn-primary{background:var(--cta);color:#fff}
+  .btn-primary:hover{background:var(--cta-d)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--brand)}
+  .btn-lg{padding:15px 30px;font-size:1.02rem}
+  @media(max-width:880px){.nav nav{display:none}}
+
+  /* hero */
+  .hero{background:radial-gradient(1100px 480px at 78% -8%,rgba(1,215,244,.16),transparent 60%),linear-gradient(180deg,#f7fbfc,#fff)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:64px 0 36px}
+  .hero h1{font-size:3rem;letter-spacing:-.02em;margin-bottom:18px}
+  .hero h1 .hl{color:var(--brand-d)}
+  .hero p.sub{font-size:1.18rem;color:var(--body);margin-bottom:28px;max-width:560px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-note{font-size:.86rem;color:var(--muted);margin-top:16px}
+  .hero-art{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 60px -28px rgba(15,27,46,.32);padding:14px}
+  .hero-art .bar{height:10px;width:120px;border-radius:6px;background:var(--soft2);margin:6px 0 14px}
+  .hero-art .panel{border-radius:11px;background:linear-gradient(135deg,#0f1b2e,#16324a);height:300px;position:relative;overflow:hidden}
+  .hero-art .panel .row{position:absolute;left:18px;right:18px;height:34px;border-radius:8px;background:rgba(255,255,255,.07)}
+  .hero-art .panel .chip{position:absolute;border-radius:8px;background:rgba(1,215,244,.22);border:1px solid rgba(1,215,244,.4)}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;padding:40px 0 20px}.hero h1{font-size:2.2rem}}
+
+  /* feature icon row */
+  .iconrow{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;padding:8px 0 56px}
+  .icell{text-align:center;padding:18px 10px;border:1px solid var(--line);border-radius:13px;background:#fff;transition:.15s}
+  .icell:hover{border-color:var(--brand);transform:translateY(-2px);box-shadow:0 14px 30px -20px rgba(1,125,142,.5)}
+  .icell .ic{width:42px;height:42px;margin:0 auto 10px;border-radius:11px;background:var(--soft2);display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+  .icell span{font-size:.84rem;font-weight:600;color:var(--ink)}
+  @media(max-width:880px){.iconrow{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:520px){.iconrow{grid-template-columns:repeat(2,1fr)}}
+
+  /* logos */
+  .logos{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+  .logos p{text-align:center;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+  .logo-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 34px;align-items:center}
+  .logo-strip span{font-weight:800;color:#9fb0bd;font-size:1.05rem;letter-spacing:.02em}
+
+  /* generic section */
+  section.blk{padding:74px 0}
+  .center{text-align:center;max-width:760px;margin:0 auto 46px}
+  .center h2{font-size:2.1rem;margin-bottom:14px;letter-spacing:-.01em}
+  .center p{font-size:1.1rem;color:var(--body)}
+  .soft{background:var(--soft)}
+
+  /* definition / AEO answer */
+  .answer{background:#fff;border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:14px;padding:30px 34px;max-width:880px;margin:0 auto;box-shadow:0 18px 40px -30px rgba(15,27,46,.3)}
+  .answer h2{font-size:1.5rem;margin-bottom:12px}
+  .answer p{font-size:1.08rem}
+  .answer p+p{margin-top:14px}
+
+  /* compare */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:940px;margin:0 auto}
+  .cmp{border-radius:14px;padding:28px;border:1px solid var(--line)}
+  .cmp.gen{background:#fff}
+  .cmp.ff{background:linear-gradient(180deg,#f0fbfd,#fff);border-color:rgba(1,170,193,.45)}
+  .cmp h3{font-size:1.2rem;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+  .cmp ul{list-style:none}
+  .cmp li{padding:9px 0 9px 28px;position:relative;border-top:1px solid var(--line);font-size:.97rem}
+  .cmp li:first-of-type{border-top:none}
+  .cmp.gen li:before{content:"\00D7";position:absolute;left:6px;color:var(--muted);font-weight:800}
+  .cmp.ff li:before{content:"✓";position:absolute;left:4px;color:var(--brand-d);font-weight:800}
+  @media(max-width:760px){.compare{grid-template-columns:1fr}}
+
+  /* feature blocks */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:30px}
+  .feat.alt{direction:rtl}.feat.alt>*{direction:ltr}
+  .feat h2{font-size:1.9rem;margin-bottom:14px}
+  .feat>div>p{font-size:1.06rem;margin-bottom:20px}
+  .fcards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .fcard{background:#fff;border:1px solid var(--line);border-radius:11px;padding:15px 16px}
+  .fcard b{display:block;color:var(--ink);font-size:.95rem;margin-bottom:3px}
+  .fcard small{color:var(--muted);font-size:.83rem;line-height:1.4;display:block}
+  .shot{border-radius:14px;background:linear-gradient(135deg,#0f1b2e,#16324a);min-height:300px;border:1px solid var(--line);position:relative;overflow:hidden}
+  .shot .g{position:absolute;border-radius:9px;background:rgba(255,255,255,.07)}
+  .shot .acc{position:absolute;border-radius:9px;background:rgba(1,215,244,.22);border:1px solid rgba(1,215,244,.4)}
+  @media(max-width:820px){.feat,.feat.alt{grid-template-columns:1fr;direction:ltr}.fcards{grid-template-columns:1fr}}
+
+  /* small forwarder band */
+  .band{background:linear-gradient(135deg,#0f1b2e,#16324a);color:#dbe9ef;border-radius:18px;padding:52px 44px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+  .band h2{color:#fff;font-size:2rem;margin-bottom:14px}
+  .band p{color:#b9cdd6;font-size:1.08rem}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px}
+  .stat b{display:block;color:#fff;font-size:1.7rem;font-weight:800}
+  .stat small{color:#9fb8c2;font-size:.85rem}
+  @media(max-width:760px){.band{grid-template-columns:1fr;padding:36px 26px}}
+
+  /* pricing teaser */
+  .price{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;max-width:980px;margin:0 auto}
+  .ptier{border:1px solid var(--line);border-radius:14px;padding:26px;background:#fff;text-align:center}
+  .ptier.mid{border-color:var(--brand);box-shadow:0 20px 44px -26px rgba(1,125,142,.5);position:relative}
+  .ptier.mid .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--brand);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:.05em}
+  .ptier h3{font-size:1.05rem;color:var(--brand-d);margin-bottom:8px}
+  .ptier .amt{font-size:1.7rem;font-weight:800;color:var(--ink)}
+  .ptier .amt small{font-size:.85rem;color:var(--muted);font-weight:600}
+  .ptier p{font-size:.9rem;color:var(--muted);margin-top:10px}
+  @media(max-width:760px){.price{grid-template-columns:1fr}}
+
+  /* testimonials */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px}
+  .tcard .q{font-size:1rem;color:var(--ink);margin-bottom:18px}
+  .tcard .who{display:flex;align-items:center;gap:12px}
+  .tcard .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-d));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
+  .tcard .who b{display:block;color:var(--ink);font-size:.92rem}
+  .tcard .who small{color:var(--muted);font-size:.82rem}
+  @media(max-width:820px){.tgrid{grid-template-columns:1fr}}
+
+  /* faq */
+  .faq{max-width:840px;margin:0 auto}
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 22px;margin-bottom:12px}
+  details[open]{border-color:var(--brand)}
+  summary{list-style:none;cursor:pointer;font-weight:700;color:var(--ink);font-size:1.05rem;padding:18px 0;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";color:var(--brand-d);font-size:1.4rem;font-weight:700}
+  details[open] summary:after{content:"\2212"}
+  details .a{padding:0 0 20px;color:var(--body);font-size:1rem}
+
+  /* badges + cta */
+  .finalcta{background:radial-gradient(900px 380px at 50% 120%,rgba(1,215,244,.18),transparent),linear-gradient(180deg,#fff,#f5fafb);text-align:center;padding:70px 0}
+  .finalcta h2{font-size:2.2rem;margin-bottom:14px}
+  .finalcta p{font-size:1.12rem;max-width:600px;margin:0 auto 26px}
+  .badges{display:flex;gap:16px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+  .badge{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-size:.85rem;font-weight:700;color:var(--ink)}
+  .badge .g2{width:30px;height:30px;border-radius:7px;background:#ff492c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem}
+
+  /* footer */
+  footer{background:#0f1b2e;color:#9fb3bf;padding:56px 0 28px;font-size:.9rem}
+  .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:28px;margin-bottom:34px}
+  footer h4{color:#fff;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+  footer a{display:block;padding:5px 0;color:#9fb3bf}
+  footer a:hover{color:var(--accent)}
+  .fbrand .logo{color:#fff;margin-bottom:12px}
+  .fbrand p{font-size:.88rem;max-width:260px}
+  .fbottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:#7d93a0}
+  @media(max-width:820px){.fcols{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="draft">DESIGN MOCKUP &nbsp;·&nbsp; <b>Proposed repurpose of gofreight.com/freight-forwarding-software</b> for "freight forwarder TMS" intent &nbsp;·&nbsp; not a live page</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="mark"></span> GoFreight</div>
+    <nav><a href="#">Product</a><a href="#">Solutions</a><a href="#">Resources</a><a href="#">Company</a><a href="#">Pricing</a></nav>
+    <div class="nav-cta"><a class="signin" href="#">Sign In</a><a class="btn btn-primary" href="#">Get Demo</a></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Freight Forwarder TMS</span>
+      <h1>The <span class="hl">freight forwarder TMS</span> that runs your entire operation</h1>
+      <p class="sub">GoFreight is the all in one transportation management system built for freight forwarders. Manage rates, quotes, bookings, operations, tracking, and invoicing in one platform, instead of stitching together spreadsheets and generic TMS tools made for carriers.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="#">See It In Action</a>
+        <a class="btn btn-ghost btn-lg" href="#">View Pricing</a>
+      </div>
+      <p class="hero-note">Purpose built for ocean and air forwarders · No setup fees · Live in weeks, not months</p>
+    </div>
+    <div class="hero-art">
+      <div class="bar"></div>
+      <div class="panel">
+        <div class="row" style="top:18px"></div>
+        <div class="row" style="top:62px;right:120px"></div>
+        <div class="chip" style="top:60px;right:18px;width:86px;height:36px"></div>
+        <div class="row" style="top:108px"></div>
+        <div class="row" style="top:152px;right:90px"></div>
+        <div class="chip" style="top:150px;right:18px;width:56px;height:36px"></div>
+        <div class="row" style="top:198px"></div>
+        <div class="chip" style="top:242px;left:18px;width:150px;height:40px"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- feature icon row -->
+  <div class="wrap iconrow">
+    <div class="icell"><div class="ic">💱</div><span>Rate Management</span></div>
+    <div class="icell"><div class="ic">📝</div><span>Quotation</span></div>
+    <div class="icell"><div class="ic">📦</div><span>Booking &amp; Filing</span></div>
+    <div class="icell"><div class="ic">🚢</div><span>Forwarding Operation</span></div>
+    <div class="icell"><div class="ic">💳</div><span>Payment &amp; Invoices</span></div>
+    <div class="icell"><div class="ic">📊</div><span>Back Office</span></div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos">
+  <div class="wrap">
+    <p>Trusted by forwarders worldwide</p>
+    <div class="logo-strip">
+      <span>SFI</span><span>Allround</span><span>Seamax</span><span>Transmodal</span><span>Neptune</span><span>UCM</span><span>Headwin</span><span>SeaSky</span><span>Mascot</span><span>FlexCargo</span><span>ANL</span><span>Tanera</span>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IS (AEO answer) -->
+<section class="blk">
+  <div class="wrap">
+    <div class="answer">
+      <h2>What is a freight forwarder TMS?</h2>
+      <p>A freight forwarder TMS (transportation management system) is software that runs the day to day operations of a freight forwarding business: building rates and quotes, booking shipments, filing documents, tracking containers, billing customers, and reporting on margin. Unlike a generic TMS designed for shippers or carriers, a forwarder TMS is built around the forwarder workflow, where you buy and resell transportation, coordinate multiple carriers, and manage both the operations and the back office in one place.</p>
+      <p>GoFreight is an all in one freight forwarder TMS. It replaces the patchwork of spreadsheets, carrier portals, and accounting tools that small and growing forwarders usually rely on, so your team works from a single source of truth.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="blk soft">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Why purpose built matters</span>
+      <h2>A forwarder TMS is not a generic TMS</h2>
+      <p>Most transportation management systems are built for shippers and carriers moving their own freight. Forwarders need something different.</p>
+    </div>
+    <div class="compare">
+      <div class="cmp gen">
+        <h3>Generic shipper / carrier TMS</h3>
+        <ul>
+          <li>Built to move a company's own freight</li>
+          <li>No buy and sell rate margin tracking</li>
+          <li>Limited multi carrier coordination</li>
+          <li>Operations and accounting live in separate tools</li>
+          <li>Customer visibility is an add on, if it exists</li>
+        </ul>
+      </div>
+      <div class="cmp ff">
+        <h3>GoFreight forwarder TMS</h3>
+        <ul>
+          <li>Built around the forwarding workflow end to end</li>
+          <li>Buy and sell rates with live margin on every shipment</li>
+          <li>Ocean and air, import and export, in one system</li>
+          <li>Operations, documents, and invoicing in one platform</li>
+          <li>Branded customer portal included</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 1 -->
+<section class="blk">
+  <div class="wrap">
+    <div class="feat">
+      <div>
+        <span class="eyebrow">Operations</span>
+        <h2>Track every container like it is your only one</h2>
+        <p>Real time milestones across every carrier, so your team and your customers always know where a shipment is, without chasing portals or emails.</p>
+        <div class="fcards">
+          <div class="fcard"><b>End to end visibility</b><small>One live view across ocean and air carriers</small></div>
+          <div class="fcard"><b>Lifecycle alerts</b><small>Automatic flags at every shipment stage</small></div>
+          <div class="fcard"><b>Custom stage tracking</b><small>Match milestones to how you operate</small></div>
+          <div class="fcard"><b>My Containers dashboard</b><small>Everything in motion on one screen</small></div>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="g" style="top:24px;left:24px;right:24px;height:30px"></div>
+        <div class="acc" style="top:74px;left:24px;width:140px;height:90px"></div>
+        <div class="g" style="top:74px;left:180px;right:24px;height:90px"></div>
+        <div class="g" style="top:182px;left:24px;right:24px;height:26px"></div>
+        <div class="g" style="top:222px;left:24px;right:24px;height:26px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 2 -->
+<section class="blk soft">
+  <div class="wrap">
+    <div class="feat alt">
+      <div>
+        <span class="eyebrow">Customer portal</span>
+        <h2>No more "where is my container?"</h2>
+        <p>Give customers a branded self service portal so they can see shipment status, documents, quotes, and invoices, while your team stops answering the same questions all day.</p>
+        <div class="fcards">
+          <div class="fcard"><b>Self service visibility</b><small>Customers track their own shipments</small></div>
+          <div class="fcard"><b>Branded portal access</b><small>Your logo, your brand, your URL</small></div>
+          <div class="fcard"><b>Invoice and quote tracking</b><small>Documents in one shared place</small></div>
+          <div class="fcard"><b>Shipment updates</b><small>Status changes pushed automatically</small></div>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="g" style="top:24px;left:24px;right:24px;height:40px"></div>
+        <div class="acc" style="top:80px;left:24px;right:140px;height:120px"></div>
+        <div class="g" style="top:80px;right:24px;width:96px;height:120px"></div>
+        <div class="g" style="top:216px;left:24px;right:24px;height:30px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 3 -->
+<section class="blk">
+  <div class="wrap">
+    <div class="feat">
+      <div>
+        <span class="eyebrow">Reporting &amp; analytics</span>
+        <h2>See the numbers that matter most</h2>
+        <p>The TMS doubles as your back office. Track margin, AR, and customer health so growing forwarders can make decisions on real data, not gut feel.</p>
+        <div class="fcards">
+          <div class="fcard"><b>Overdue AR</b><small>Know exactly who owes what</small></div>
+          <div class="fcard"><b>Customer ranking</b><small>See your most valuable accounts</small></div>
+          <div class="fcard"><b>Over credit limit</b><small>Catch risk before it ships</small></div>
+          <div class="fcard"><b>Port pair insights</b><small>Spot your strongest lanes</small></div>
+        </div>
+      </div>
+      <div class="shot">
+        <div class="g" style="top:24px;left:24px;right:24px;height:30px"></div>
+        <div class="acc" style="top:72px;left:24px;width:120px;bottom:60px"></div>
+        <div class="g" style="top:72px;left:160px;right:24px;bottom:60px"></div>
+        <div class="g" style="bottom:24px;left:24px;right:24px;height:24px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SMALL FORWARDER BAND -->
+<section class="blk soft">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <span class="eyebrow" style="background:rgba(1,215,244,.18);color:#9be8f4">Built for small &amp; growing forwarders</span>
+        <h2>The TMS that grows with your forwarding business</h2>
+        <p>You do not need an enterprise rollout to run like one. GoFreight gets small and mid size forwarders onto a real TMS fast, with the operations, visibility, and reporting that used to be reserved for the biggest players.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat"><b>1 platform</b><small>Replaces spreadsheets + portals + accounting</small></div>
+        <div class="stat"><b>Weeks</b><small>Typical time to go live, not months</small></div>
+        <div class="stat"><b>Ocean + Air</b><small>Import and export in one system</small></div>
+        <div class="stat"><b>G2 Leader</b><small>Rated by real forwarders</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TEASER -->
+<section class="blk">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Pricing</span>
+      <h2>How much does a freight forwarder TMS cost?</h2>
+      <p>Forwarder TMS pricing usually scales with your team size and shipment volume. GoFreight is priced for forwarders at every stage, with no setup fees. See your exact plan in a quick demo.</p>
+    </div>
+    <div class="price">
+      <div class="ptier"><h3>Starter</h3><div class="amt">For new forwarders</div><p>Core operations, tracking, and invoicing to get off spreadsheets.</p></div>
+      <div class="ptier mid"><span class="tag">MOST POPULAR</span><h3>Growth</h3><div class="amt">For scaling teams</div><p>Full TMS, customer portal, analytics, and back office reporting.</p></div>
+      <div class="ptier"><h3>Enterprise</h3><div class="amt">For large forwarders</div><p>Advanced controls, integrations, and dedicated support.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:30px"><a class="btn btn-primary btn-lg" href="#">Get a Custom Quote</a></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="blk soft">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Customers</span><h2>What forwarders say about GoFreight</h2></div>
+    <div class="tgrid">
+      <div class="tcard">
+        <div class="q">"We run our whole forwarding operation in GoFreight now. One TMS instead of five tools, and our team finally sees margin per shipment in real time."</div>
+        <div class="who"><div class="av">JL</div><div><b>Jeff Lee</b><small>VP, United Cargo Management</small></div></div>
+      </div>
+      <div class="tcard">
+        <div class="q">"As a small forwarder we never thought a real TMS was within reach. We were live in a few weeks and the customer portal alone saved us hours a day."</div>
+        <div class="who"><div class="av">SM</div><div><b>Sarah Martinez</b><small>Operations Director, Pacific Logistics Group</small></div></div>
+      </div>
+      <div class="tcard">
+        <div class="q">"Generic TMS tools never fit how forwarders actually work. GoFreight was clearly built for us, buy and sell rates, filing, and ops in one place."</div>
+        <div class="who"><div class="av">MC</div><div><b>Michael Chen</b><small>CEO, TransGlobal Freight Solutions</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="blk">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">FAQ</span><h2>Freight forwarder TMS questions</h2></div>
+    <div class="faq">
+      <details open><summary>What is a freight forwarder TMS?</summary><div class="a">A freight forwarder TMS is a transportation management system built for freight forwarders. It runs the full forwarding workflow in one platform: rate management, quoting, booking and filing, container tracking, customer communication, and invoicing, plus the back office reporting that shows margin per shipment.</div></details>
+      <details><summary>How is a forwarder TMS different from a generic TMS?</summary><div class="a">A generic TMS is built for shippers or carriers moving their own freight. A forwarder TMS is built around buying and reselling transportation: it tracks buy and sell rates and margin, coordinates multiple carriers across ocean and air, and combines operations with accounting. GoFreight is purpose built for forwarders, so you do not have to force a carrier tool to fit your business.</div></details>
+      <details><summary>How much does a freight forwarder TMS cost?</summary><div class="a">Forwarder TMS pricing typically scales with team size and shipment volume. GoFreight offers plans for forwarders at every stage with no setup fees. The fastest way to get an exact number for your operation is a short demo where we map pricing to your team and volume.</div></details>
+      <details><summary>Is GoFreight a good TMS for small freight forwarders?</summary><div class="a">Yes. GoFreight is designed so small and growing forwarders can get onto a real TMS quickly, usually live in weeks. It replaces spreadsheets, carrier portals, and separate accounting tools with one platform, giving smaller teams the operations, visibility, and reporting that used to require an enterprise system.</div></details>
+      <details><summary>Does the forwarder TMS handle both ocean and air?</summary><div class="a">Yes. GoFreight handles ocean and air, import and export, in a single system, so your team manages every shipment type from one place instead of switching tools by mode.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="finalcta">
+  <div class="wrap">
+    <h2>See the forwarder TMS in action</h2>
+    <p>Get a personalized walkthrough mapped to your lanes, your volume, and your team. No pressure, just a clear look at how GoFreight runs your operation.</p>
+    <a class="btn btn-primary btn-lg" href="#">Get a Demo</a>
+    <div class="badges">
+      <div class="badge"><span class="g2">G2</span> 2025 Leader</div>
+      <div class="badge"><span class="g2">G2</span> 2026 High Performer</div>
+      <div class="badge"><span class="g2">G2</span> 2025 Easiest to Use</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="fbrand">
+        <div class="logo"><span class="mark"></span> GoFreight</div>
+        <p>The all in one freight forwarder TMS for ocean and air forwarders.</p>
+      </div>
+      <div><h4>Product</h4><a href="#">Freight Forwarder TMS</a><a href="#">Why GoFreight</a><a href="#">Pricing</a></div>
+      <div><h4>Solutions</h4><a href="#">Ocean Import</a><a href="#">Ocean Export</a><a href="#">Air Import</a><a href="#">Air Export</a></div>
+      <div><h4>Resources</h4><a href="#">Blog</a><a href="#">Customers</a><a href="#">Whitepapers</a><a href="#">Webinars</a></div>
+      <div><h4>Company</h4><a href="#">About</a><a href="#">Security</a><a href="#">Service Level Agreement</a></div>
+    </div>
+    <div class="fbottom"><span>© 2026 GoFreight. All rights reserved.</span><span>Privacy &amp; Terms</span></div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is a freight forwarder TMS?","acceptedAnswer":{"@type":"Answer","text":"A freight forwarder TMS is a transportation management system built for freight forwarders. It runs the full forwarding workflow in one platform: rate management, quoting, booking and filing, container tracking, customer communication, and invoicing, plus the back office reporting that shows margin per shipment."}},
+    {"@type":"Question","name":"How is a forwarder TMS different from a generic TMS?","acceptedAnswer":{"@type":"Answer","text":"A generic TMS is built for shippers or carriers moving their own freight. A forwarder TMS is built around buying and reselling transportation: it tracks buy and sell rates and margin, coordinates multiple carriers across ocean and air, and combines operations with accounting. GoFreight is purpose built for forwarders, so you do not have to force a carrier tool to fit your business."}},
+    {"@type":"Question","name":"How much does a freight forwarder TMS cost?","acceptedAnswer":{"@type":"Answer","text":"Forwarder TMS pricing typically scales with team size and shipment volume. GoFreight offers plans for forwarders at every stage with no setup fees. The fastest way to get an exact number for your operation is a short demo where we map pricing to your team and volume."}},
+    {"@type":"Question","name":"Is GoFreight a good TMS for small freight forwarders?","acceptedAnswer":{"@type":"Answer","text":"Yes. GoFreight is designed so small and growing forwarders can get onto a real TMS quickly, usually live in weeks. It replaces spreadsheets, carrier portals, and separate accounting tools with one platform, giving smaller teams the operations, visibility, and reporting that used to require an enterprise system."}},
+    {"@type":"Question","name":"Does the forwarder TMS handle both ocean and air?","acceptedAnswer":{"@type":"Answer","text":"Yes. GoFreight handles ocean and air, import and export, in a single system, so your team manages every shipment type from one place instead of switching tools by mode."}}
+  ]
+}
+</script>
+</body>
+</html>
