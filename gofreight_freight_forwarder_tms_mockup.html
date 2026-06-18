@@ -132,6 +132,15 @@
   .ptier p{font-size:.9rem;color:var(--muted);margin-top:10px}
   @media(max-width:760px){.price{grid-template-columns:1fr}}
 
+  /* cloud benefits */
+  .cloudgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .cloudcard{background:#fff;border:1px solid var(--line);border-radius:13px;padding:24px}
+  .cloudcard .ic{width:42px;height:42px;border-radius:11px;background:var(--soft2);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:13px}
+  .cloudcard b{display:block;color:var(--ink);font-size:1rem;margin-bottom:6px}
+  .cloudcard small{color:var(--muted);font-size:.88rem;line-height:1.5;display:block}
+  @media(max-width:820px){.cloudgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.cloudgrid{grid-template-columns:1fr}}
+
   /* testimonials */
   .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .tcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px}
@@ -195,7 +204,7 @@
         <a class="btn btn-primary btn-lg" href="#">See It In Action</a>
         <a class="btn btn-ghost btn-lg" href="#">View Pricing</a>
       </div>
-      <p class="hero-note">Purpose built for ocean and air forwarders · No setup fees · Live in weeks, not months</p>
+      <p class="hero-note">From new forwarders to enterprise networks · Enterprise grade security &amp; SLA · No setup fees</p>
     </div>
     <div class="hero-art">
       <div class="bar"></div>
@@ -353,14 +362,31 @@
   </div>
 </section>
 
+<!-- CLOUD BENEFITS -->
+<section class="blk">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Cloud based</span>
+      <h2>A cloud based TMS your whole team can run from anywhere</h2>
+      <p>Because GoFreight is fully cloud based, there is nothing to install and nothing to maintain. Your operation lives in one secure place that your team, and your customers, can reach from any browser.</p>
+    </div>
+    <div class="cloudgrid">
+      <div class="cloudcard"><div class="ic">🌐</div><b>Work from anywhere</b><small>Run the operation from the office, home, or the port in any browser. No installs, no VPN.</small></div>
+      <div class="cloudcard"><div class="ic">🔄</div><b>Always up to date</b><small>New features and fixes ship automatically, so your team is always on the latest version.</small></div>
+      <div class="cloudcard"><div class="ic">🛠️</div><b>No servers, no IT overhead</b><small>No on premise hardware and no IT team needed. GoFreight handles uptime, scaling, and maintenance.</small></div>
+      <div class="cloudcard"><div class="ic">🔒</div><b>Secure and backed up</b><small>Enterprise grade security, encryption, and automatic backups keep your shipment and customer data safe.</small></div>
+    </div>
+  </div>
+</section>
+
 <!-- SMALL FORWARDER BAND -->
 <section class="blk soft">
   <div class="wrap">
     <div class="band">
       <div>
-        <span class="eyebrow" style="background:rgba(1,215,244,.18);color:#9be8f4">Built for small &amp; growing forwarders</span>
+        <span class="eyebrow" style="background:rgba(1,215,244,.18);color:#9be8f4">From startup to enterprise</span>
         <h2>The TMS that grows with your forwarding business</h2>
-        <p>You do not need an enterprise rollout to run like one. GoFreight gets small and mid size forwarders onto a real TMS fast, with the operations, visibility, and reporting that used to be reserved for the biggest players.</p>
+        <p>You do not need an enterprise rollout to run like one. GoFreight gets small and mid size forwarders onto a real TMS fast, with the operations, visibility, and reporting that used to be reserved for the biggest players. And as you scale, the same platform powers enterprise forwarders running high volume across multiple branches and regions, no replatforming required.</p>
       </div>
       <div class="stat-grid">
         <div class="stat"><b>1 platform</b><small>Replaces spreadsheets + portals + accounting</small></div>
@@ -383,7 +409,7 @@
     <div class="price">
       <div class="ptier"><h3>For New Forwarders</h3><div class="amt">Just getting started</div><p>Core operations, tracking, and invoicing to get off spreadsheets and onto a real TMS.</p></div>
       <div class="ptier mid"><span class="tag">MOST POPULAR</span><h3>For Mid or Growth Company</h3><div class="amt">Scaling your team</div><p>Full TMS, customer portal, analytics, and back office reporting as your volume grows.</p></div>
-      <div class="ptier"><h3>For Enterprise Company</h3><div class="amt">Large operations</div><p>Advanced controls, integrations, and dedicated support for high volume forwarders.</p></div>
+      <div class="ptier"><h3>For Enterprise Company</h3><div class="amt">Large operations</div><p>Enterprise grade security, single sign on, advanced permissions, custom integrations, and a dedicated success team for high volume, multi branch forwarders.</p></div>
     </div>
     <div style="text-align:center;margin-top:30px"><a class="btn btn-primary btn-lg" href="#">Get a Custom Quote</a></div>
   </div>
@@ -419,6 +445,8 @@
       <details><summary>How is a forwarder TMS different from a generic TMS?</summary><div class="a">A generic TMS is built for shippers or carriers moving their own freight. A forwarder TMS is built around buying and reselling transportation: it tracks buy and sell rates and margin, coordinates multiple carriers across ocean and air, and combines operations with accounting. GoFreight is purpose built for forwarders, so you do not have to force a carrier tool to fit your business.</div></details>
       <details><summary>How much does a freight forwarder TMS cost?</summary><div class="a">Forwarder TMS pricing typically scales with team size and shipment volume. GoFreight offers plans for forwarders at every stage with no setup fees. The fastest way to get an exact number for your operation is a short demo where we map pricing to your team and volume.</div></details>
       <details><summary>Is GoFreight a good TMS for small freight forwarders?</summary><div class="a">Yes. GoFreight is designed so small and growing forwarders can get onto a real TMS quickly, usually live in weeks. It replaces spreadsheets, carrier portals, and separate accounting tools with one platform, giving smaller teams the operations, visibility, and reporting that used to require an enterprise system.</div></details>
+      <details><summary>Can GoFreight scale to enterprise and large freight forwarders?</summary><div class="a">Yes. GoFreight runs from new forwarders all the way up to enterprise networks. Large forwarders use it for high shipment volume across multiple branches and regions, with enterprise grade security, single sign on, granular user permissions, custom integrations, and a dedicated customer success team. The same platform that gets a small forwarder live in weeks also supports the controls and scale an enterprise operation needs.</div></details>
+      <details><summary>Is GoFreight a cloud based TMS?</summary><div class="a">Yes. GoFreight is a fully cloud based freight forwarder TMS. Your team runs the whole operation from any browser with nothing to install, you are always on the latest version because updates ship automatically, and there are no on premise servers or IT overhead to manage. Your shipment and customer data is encrypted, backed up, and protected with enterprise grade security.</div></details>
       <details><summary>Does the forwarder TMS handle both ocean and air?</summary><div class="a">Yes. GoFreight handles ocean and air, import and export, in a single system, so your team manages every shipment type from one place instead of switching tools by mode.</div></details>
     </div>
   </div>
@@ -464,6 +492,8 @@
     {"@type":"Question","name":"How is a forwarder TMS different from a generic TMS?","acceptedAnswer":{"@type":"Answer","text":"A generic TMS is built for shippers or carriers moving their own freight. A forwarder TMS is built around buying and reselling transportation: it tracks buy and sell rates and margin, coordinates multiple carriers across ocean and air, and combines operations with accounting. GoFreight is purpose built for forwarders, so you do not have to force a carrier tool to fit your business."}},
     {"@type":"Question","name":"How much does a freight forwarder TMS cost?","acceptedAnswer":{"@type":"Answer","text":"Forwarder TMS pricing typically scales with team size and shipment volume. GoFreight offers plans for forwarders at every stage with no setup fees. The fastest way to get an exact number for your operation is a short demo where we map pricing to your team and volume."}},
     {"@type":"Question","name":"Is GoFreight a good TMS for small freight forwarders?","acceptedAnswer":{"@type":"Answer","text":"Yes. GoFreight is designed so small and growing forwarders can get onto a real TMS quickly, usually live in weeks. It replaces spreadsheets, carrier portals, and separate accounting tools with one platform, giving smaller teams the operations, visibility, and reporting that used to require an enterprise system."}},
+    {"@type":"Question","name":"Can GoFreight scale to enterprise and large freight forwarders?","acceptedAnswer":{"@type":"Answer","text":"Yes. GoFreight runs from new forwarders all the way up to enterprise networks. Large forwarders use it for high shipment volume across multiple branches and regions, with enterprise grade security, single sign on, granular user permissions, custom integrations, and a dedicated customer success team. The same platform that gets a small forwarder live in weeks also supports the controls and scale an enterprise operation needs."}},
+    {"@type":"Question","name":"Is GoFreight a cloud based TMS?","acceptedAnswer":{"@type":"Answer","text":"Yes. GoFreight is a fully cloud based freight forwarder TMS. Your team runs the whole operation from any browser with nothing to install, you are always on the latest version because updates ship automatically, and there are no on premise servers or IT overhead to manage. Your shipment and customer data is encrypted, backed up, and protected with enterprise grade security."}},
     {"@type":"Question","name":"Does the forwarder TMS handle both ocean and air?","acceptedAnswer":{"@type":"Answer","text":"Yes. GoFreight handles ocean and air, import and export, in a single system, so your team manages every shipment type from one place instead of switching tools by mode."}}
   ]
 }
