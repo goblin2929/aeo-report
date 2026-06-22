@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCBC Indonesia · Preliminary SEO &amp; AEO Analysis</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --ns-primary: #01aac1;
+    --ns-accent: #01d7f4;
+    --ns-teal: #017d8e;
+    --ns-teal-glow: rgba(1, 170, 193, 0.15);
+    --ns-dark: #111111;
+    --ns-darker: #0a0a0a;
+    --ns-medium: #2a2a2a;
+    --ns-light: #f5f5f5;
+    --ns-text: #e0e0e0;
+    --ns-text-muted: #888888;
+    --ns-success: #22c55e;
+    --ns-warning: #eab308;
+    --ns-danger: #ef4444;
+    --ns-orange: #f97316;
+    --sidebar-width: 260px;
+    --header-height: 64px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--ns-primary) var(--ns-dark); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ns-dark); }
+::-webkit-scrollbar-thumb { background: var(--ns-teal); border-radius: 3px; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--ns-darker); color: var(--ns-text); line-height: 1.6; font-size: 15px; overflow-x: hidden; }
+
+header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); background: rgba(17,17,17,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--ns-primary), var(--ns-accent)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; color: #fff; font-family: 'Space Grotesk', sans-serif; }
+.logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: #fff; letter-spacing: -0.02em; }
+.logo-text span { color: var(--ns-primary); }
+.header-nav { display: flex; align-items: center; gap: 24px; }
+.header-nav a { color: var(--ns-text-muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.header-nav a:hover { color: var(--ns-primary); }
+.btn-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, var(--ns-primary), var(--ns-teal)); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 13px; border: none; cursor: pointer; transition: all 0.3s; box-shadow: 0 2px 12px rgba(1,170,193,0.3); }
+.btn-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(1,170,193,0.45); }
+
+.side-nav { position: fixed; top: var(--header-height); left: 0; width: var(--sidebar-width); height: calc(100vh - var(--header-height)); background: var(--ns-dark); border-right: 1px solid rgba(255,255,255,0.06); padding: 24px 0; overflow-y: auto; z-index: 900; }
+.side-nav-section { padding: 0 16px; margin-bottom: 8px; }
+.side-nav-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ns-text-muted); padding: 8px 12px; }
+.side-nav-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; color: var(--ns-text-muted); text-decoration: none; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 3px solid transparent; transition: all 0.2s; margin-bottom: 2px; }
+.side-nav-link:hover { background: rgba(255,255,255,0.04); color: var(--ns-text); }
+.side-nav-link.active { background: var(--ns-teal-glow); color: var(--ns-primary); border-left-color: var(--ns-primary); }
+.side-nav-link .nav-icon { font-size: 14px; width: 20px; text-align: center; font-family: 'JetBrains Mono', monospace; }
+
+main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-height: calc(100vh - var(--header-height)); }
+.cover-section { padding: 64px 48px; text-align: center; position: relative; overflow: hidden; background: linear-gradient(180deg, var(--ns-dark) 0%, var(--ns-darker) 100%); }
+.cover-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 30%, rgba(1,170,193,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(1,215,244,0.05) 0%, transparent 50%); }
+.cover-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(1,170,193,0.1); border: 1px solid rgba(1,170,193,0.2); border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--ns-primary); margin-bottom: 24px; position: relative; }
+.cover-domain { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ns-text-muted); margin-bottom: 16px; position: relative; }
+.cover-title { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: #fff; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; position: relative; }
+.cover-subtitle { font-size: 16px; color: var(--ns-text-muted); margin-bottom: 40px; position: relative; max-width: 680px; margin-left:auto; margin-right:auto; }
+.cover-meta { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; position: relative; }
+.cover-meta-item { font-size: 13px; color: var(--ns-text-muted); }
+.cover-meta-item strong { color: var(--ns-text); }
+
+.section { padding: 48px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.section-header { margin-bottom: 32px; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ns-primary); font-weight: 500; margin-bottom: 8px; }
+.section-title { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1.2; }
+.section-subtitle { font-size: 14px; color: var(--ns-text-muted); margin-top: 8px; max-width: 760px; }
+.section p.body { font-size: 15px; color: var(--ns-text); margin-bottom: 16px; max-width: 820px; }
+.section p.body.lead { font-size: 16px; }
+
+.card { background: var(--ns-medium); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+.card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 12px; flex-wrap: wrap; }
+.card-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #fff; }
+.card-badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+.badge-danger { background: rgba(239,68,68,0.15); color: var(--ns-danger); }
+.badge-warning { background: rgba(234,179,8,0.15); color: var(--ns-warning); }
+.badge-success { background: rgba(34,197,94,0.15); color: var(--ns-success); }
+.badge-info { background: rgba(1,170,193,0.15); color: var(--ns-primary); }
+.badge-orange { background: rgba(249,115,22,0.15); color: var(--ns-orange); }
+
+.finding-block { margin: 14px 0; }
+.finding-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.finding-label.found { color: var(--ns-text-muted); }
+.finding-label.why { color: var(--ns-warning); }
+.finding-label.fix { color: var(--ns-success); }
+.finding-block p { font-size: 14px; color: var(--ns-text); }
+.url-ref { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ns-primary); word-break: break-all; }
+.url-list { list-style: none; margin: 6px 0; }
+.url-list li { margin-bottom: 3px; }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.data-table th { text-align: left; padding: 11px 12px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ns-text-muted); border-bottom: 1px solid rgba(255,255,255,0.08); white-space: nowrap; }
+.data-table td { padding: 11px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--ns-text); vertical-align: middle; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: rgba(255,255,255,0.02); }
+.data-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+.data-table .text-right { text-align: right; }
+.data-table tr.highlight td { background: rgba(1,170,193,0.07); }
+.data-table tr.highlight:hover td { background: rgba(1,170,193,0.1); }
+.text-danger { color: var(--ns-danger) !important; }
+.text-warning { color: var(--ns-warning) !important; }
+.text-success { color: var(--ns-success) !important; }
+.text-primary { color: var(--ns-primary) !important; }
+.text-muted { color: var(--ns-text-muted) !important; }
+.fw-700 { font-weight: 700; }
+.table-wrap { overflow-x: auto; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.stat-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px; }
+.stat-card .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ns-text-muted); margin-bottom: 6px; }
+.stat-card .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: #fff; line-height: 1.1; }
+.stat-card .stat-context { font-size: 12px; color: var(--ns-text-muted); margin-top: 6px; }
+
+.callout { background: linear-gradient(135deg, rgba(1,170,193,0.07) 0%, rgba(1,215,244,0.03) 100%); border: 1px solid rgba(1,170,193,0.2); border-left: 4px solid var(--ns-primary); border-radius: 10px; padding: 20px 24px; margin: 20px 0; }
+.callout .callout-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: #fff; margin-bottom: 6px; font-size: 15px; }
+.callout p { font-size: 14px; color: var(--ns-text); }
+
+.priority-list { counter-reset: pr; list-style: none; }
+.priority-item { display: flex; gap: 16px; align-items: flex-start; background: var(--ns-medium); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; }
+.priority-num { counter-increment: pr; flex-shrink: 0; width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, var(--ns-primary), var(--ns-teal)); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #fff; }
+.priority-num::before { content: counter(pr); }
+.priority-item .ptext { font-size: 14px; }
+.priority-item .ptext strong { color: #fff; }
+
+.report-footer { padding: 40px 48px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.report-footer p { font-size: 13px; color: var(--ns-text-muted); }
+.report-footer a { color: var(--ns-primary); text-decoration: none; }
+.draft-banner { background: rgba(234,179,8,0.1); border-bottom: 1px solid rgba(234,179,8,0.25); color: var(--ns-warning); text-align: center; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 16px; text-transform: uppercase; }
+
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0; transition: all 0.3s; }
+.scroll-animate { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-animate.animate-in { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1024px) { .side-nav { display: none; } .side-nav.show { display: block; } main { margin-left: 0; } .cover-title { font-size: 32px; } .hamburger { display: block; } .header-nav { display: none; } }
+@media (max-width: 768px) { .section { padding: 32px 20px; } .cover-section { padding: 48px 20px; } .cover-title { font-size: 28px; } .stat-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .section, .cover-section { padding: 24px 18px; } .cover-title { font-size: 24px; } .stat-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="draft-banner">Preliminary Draft &middot; For Stakeholder Review</div>
+<header>
+    <a href="https://www.novastacks-ai.com" class="logo">
+        <div class="logo-icon">N</div>
+        <div class="logo-text">nova<span>stacks</span></div>
+    </a>
+    <div class="header-nav">
+        <a href="#overview">Overview</a>
+        <a href="#data">Competitive Data</a>
+        <a href="#technical">Technical</a>
+        <a href="#content">Content</a>
+        <a href="https://www.novastacks-ai.com/contact" class="btn-cta">Talk to Our Team</a>
+    </div>
+    <button class="hamburger" onclick="document.querySelector('.side-nav').classList.toggle('show')"><span></span><span></span><span></span></button>
+</header>
+<nav class="side-nav">
+<div class="side-nav-section">
+<div class="side-nav-label">Preliminary Analysis</div>
+<a href="#overview" class="side-nav-link active" data-section="overview"><span class="nav-icon">01</span> Executive Summary</a>
+<a href="#data" class="side-nav-link" data-section="data"><span class="nav-icon">02</span> Competitive Data</a>
+<a href="#technical" class="side-nav-link" data-section="technical"><span class="nav-icon">03</span> Technical Findings</a>
+<a href="#content" class="side-nav-link" data-section="content"><span class="nav-icon">04</span> Content Findings</a>
+<a href="#development" class="side-nav-link" data-section="development"><span class="nav-icon">05</span> Future Development</a>
+<a href="#priorities" class="side-nav-link" data-section="priorities"><span class="nav-icon">06</span> What to Prioritise</a>
+</div>
+</nav>
+<main>
+
+<section id="overview" class="cover-section">
+    <div class="cover-badge">Preliminary SEO &amp; AEO Analysis</div>
+    <div class="cover-domain">www.ocbc.id/id</div>
+    <h1 class="cover-title">OCBC Indonesia</h1>
+    <p class="cover-subtitle">OCBC wins a huge audience through educational content, but that traffic is not converting into product visibility. The pages that sell tabungan, deposito, KPR, and KTA attract only a small fraction of visitors and are hard for Google and AI platforms to understand.</p>
+    <div class="cover-meta">
+        <div class="cover-meta-item"><strong>Market:</strong> Indonesia</div>
+        <div class="cover-meta-item"><strong>Prepared by:</strong> Novastacks AI</div>
+        <div class="cover-meta-item"><strong>Date:</strong> 22 June 2026</div>
+    </div>
+</section>
+
+<!-- EXECUTIVE SUMMARY -->
+<section class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 01 · Executive Summary</div>
+        <h2 class="section-title">Strong at attracting readers, weak at reaching the product</h2>
+    </div>
+    <p class="body lead">OCBC Indonesia already wins a very large audience through educational content. The Ruang meNYALA articles bring in the overwhelming majority of the site's organic visitors. The problem is that this traffic is not turning into product visibility.</p>
+    <p class="body">The pages that actually sell tabungan, deposito, KPR, KTA, and the other core products attract only a small fraction of visitors, and they are built in a way that makes them hard for both Google and AI platforms to understand. In plain terms, OCBC is excellent at getting people to read, and weak at getting people to the product.</p>
+    <div class="stat-grid">
+        <div class="stat-card"><div class="stat-label">Blog share of total traffic</div><div class="stat-value text-warning">95%</div><div class="stat-context">Almost all organic traffic is education content, not product</div></div>
+        <div class="stat-card"><div class="stat-label">OCBC product traffic / page</div><div class="stat-value text-danger">69</div><div class="stat-context">Lowest in the competitor group</div></div>
+        <div class="stat-card"><div class="stat-label">Bank Mandiri / page</div><div class="stat-value text-success">1,457</div><div class="stat-context">21x more efficient per product page</div></div>
+        <div class="stat-card"><div class="stat-label">CIMB product traffic</div><div class="stat-value">12.8x</div><div class="stat-context">CIMB earns 12.8x OCBC's total product traffic</div></div>
+    </div>
+    <p class="body">This analysis groups the findings into three areas: Technical, Content, and Future Development. Each finding explains what we found, why it matters for a non technical reader, and what we recommend.</p>
+</section>
+
+<!-- COMPETITIVE DATA -->
+<section id="data" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 02 · Competitive Data</div>
+        <h2 class="section-title">Where OCBC stands today</h2>
+        <p class="section-subtitle">Ahrefs organic data. OCBC compared against CIMB Niaga, Jenius (digital bank benchmark), BRI (largest bank), and Bank Mandiri (second largest).</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Overall organic traffic</div><span class="card-badge badge-warning">Most pages, 4th in traffic</span></div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Bank</th><th class="text-right">Organic Traffic</th><th class="text-right">Organic Pages</th></tr></thead>
+            <tbody>
+                <tr><td>CIMB Niaga</td><td class="text-right mono">2,669,353</td><td class="text-right mono">2,075</td></tr>
+                <tr><td>BRI</td><td class="text-right mono">1,740,730</td><td class="text-right mono">3,332</td></tr>
+                <tr><td>Bank Mandiri</td><td class="text-right mono">1,363,101</td><td class="text-right mono">2,603</td></tr>
+                <tr class="highlight"><td class="fw-700 text-primary">OCBC</td><td class="text-right mono fw-700">1,249,737</td><td class="text-right mono fw-700">3,664</td></tr>
+                <tr><td>Jenius</td><td class="text-right mono">65,679</td><td class="text-right mono">568</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="body" style="margin-top:14px;margin-bottom:0;">OCBC has the most pages of anyone in this group, yet ranks fourth in traffic. More pages are not producing more visitors.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Product pages · the real issue</div><span class="card-badge badge-danger">Headline finding</span></div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Bank</th><th class="text-right">Product Traffic</th><th class="text-right">Product Pages</th><th class="text-right">Traffic / Page</th></tr></thead>
+            <tbody>
+                <tr><td>CIMB Niaga</td><td class="text-right mono">221,634</td><td class="text-right mono">639</td><td class="text-right mono">347</td></tr>
+                <tr><td>BRI</td><td class="text-right mono">187,438</td><td class="text-right mono">202</td><td class="text-right mono">928</td></tr>
+                <tr><td>Bank Mandiri</td><td class="text-right mono">97,649</td><td class="text-right mono">67</td><td class="text-right mono text-success fw-700">1,457</td></tr>
+                <tr><td>Jenius</td><td class="text-right mono">9,663</td><td class="text-right mono">26</td><td class="text-right mono">372</td></tr>
+                <tr class="highlight"><td class="fw-700 text-primary">OCBC</td><td class="text-right mono fw-700">17,362</td><td class="text-right mono fw-700">251</td><td class="text-right mono text-danger fw-700">69</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="callout" style="margin-bottom:0;">
+            <div class="callout-title">What this means</div>
+            <p>OCBC earns only 69 visitors per product page. Bank Mandiri earns 1,457, which is 21 times more per page. CIMB Niaga pulls almost 13 times OCBC's total product traffic. OCBC has plenty of product pages, but they are the least productive in the group.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Why this happens</div><span class="card-badge badge-info">Diagnosis</span></div>
+        <p class="body" style="margin-bottom:0;">About 95 percent of OCBC's organic traffic comes from the blog and articles. Only a small share reaches the product pages. The educational engine is strong, but the bridge from that audience into product pages is weak, and the product pages themselves are not built to rank or to be cited by AI. The findings below explain exactly why.</p>
+    </div>
+</section>
+
+<!-- TECHNICAL -->
+<section id="technical" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 03 · Technical Findings</div>
+        <h2 class="section-title">How the site speaks to search engines and AI</h2>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.1 &nbsp;No x-default hreflang tag</div><span class="card-badge badge-warning">Technical</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>The site does not declare an x-default version in its hreflang setup.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>hreflang tells search engines which language version to show to which user. The x-default is the fallback for users whose language is not explicitly covered. Without it, Google has to guess which version to serve, which can lead to the wrong page appearing in results.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add an x-default hreflang tag pointing to the Indonesian (id) version as the default.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.2 &nbsp;No llms.txt file</div><span class="card-badge badge-info">AI Readiness</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>The site has no llms.txt file.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>llms.txt is an emerging standard that gives AI platforms a clean map of a site's structure and key products, similar to how a sitemap helps search engines. Without it, AI tools piece together OCBC's product structure on their own, which they often do imperfectly.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Publish an llms.txt that describes the main path structure and the core product lines so AI platforms get accurate context about OCBC.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.3 &nbsp;Calculator links point to empty pages</div><span class="card-badge badge-danger">Broken</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Calculator entries inside the navigation bar point to null or non existent pages.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Customers deciding on a tabungan berjangka or a deposito want to estimate returns before committing. A broken calculator link is a dead end at exactly the moment a customer is most interested, and it wastes the search opportunity around simulation keywords.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Build dedicated, working calculator pages (see Future Development).</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.4 &nbsp;No FAQ structured data</div><span class="card-badge badge-warning">Technical</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Pages that already display an FAQ do not include FAQ structured data.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tanda360-komunitas</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Structured data is a machine readable label that tells Google and AI "this is a question and this is its answer." When present, Google can show questions directly in search results and AI tools can quote the answers confidently. The FAQ content is already written. It is simply not labelled, so the value is left on the table.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add FAQPage structured data to every page that has an FAQ section.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.5 &nbsp;Structured data not maximised on homepage and product pages</div><span class="card-badge badge-danger">High impact</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Structured data coverage is minimal. Our crawl confirmed that the homepage and product pages carry only a Breadcrumb markup, with no Organization, no Website, and no product or service markup.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Structured data is how a site explains itself to machines. Beyond the few types Google shows visually, there is a wider library of universal schema.org types that AI platforms use to understand entities, products, and providers. Right now OCBC gives AI platforms very little to work with, which weakens how OCBC appears in AI generated answers.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Build a full structured data layer. Add Organization and Website markup sitewide, and product or financial service markup to each product page. Use the broader schema.org vocabulary, not only the types Google renders.</p></div>
+    </div>
+</section>
+
+<!-- CONTENT -->
+<section id="content" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 04 · Content Findings</div>
+        <h2 class="section-title">How clearly each page explains its product</h2>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">4.1 &nbsp;No Heading 1 on core business pages</div><span class="card-badge badge-danger">High impact</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Core product pages have no Heading 1.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan-berjangka</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>The Heading 1 is the single most important on page signal of what a page is about. A page with no Heading 1 is like a document with no title. Our crawl confirmed this pattern across the core pages.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Give every core business page a single clear Heading 1 that states the product and its main benefit.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">4.2 &nbsp;Duplicate page titles across products</div><span class="card-badge badge-warning">Content</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Different products share the same visible title (currently set as Heading 2).</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan-berjangka</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/deposito</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When two different products use the same title, search engines and AI cannot tell them apart, and they may compete against each other for the same searches.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Make the main title (which should be the Heading 1) unique for every product within each business group.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">4.3 &nbsp;Page titles of core pages need rewriting</div><span class="card-badge badge-warning">Content</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>The browser titles of several core pages are not built around clear target keywords.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/pinjaman/kredit-pemilikan-rumah</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/pinjaman/kredit-pembelian-mobil/kpm-ocbc</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>The title tag is what shows as the clickable line in search results. A vague title earns fewer clicks and ranks for fewer relevant searches. A clear, benefit led title does both.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Rewrite the titles around the products and their benefits. Suggested direction:</p>
+        <ul class="url-list" style="list-style:disc;padding-left:18px;margin-top:8px;">
+        <li style="color:var(--ns-text);font-size:14px;">KPR page: "Kredit Pemilikan Rumah (KPR): Wujudkan Rumah Impian Anda Lebih Mudah, Angsuran Rendah dan Hingga 25 Tahun"</li>
+        <li style="color:var(--ns-text);font-size:14px;">KPM page: "Kredit Pemilikan Mobil: Beli Mobil Impian Baru atau Second Lebih Mudah, Suku Bunga Ringan hingga 5 Tahun"</li>
+        </ul></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">4.4 &nbsp;No descriptive content for similar products</div><span class="card-badge badge-danger">High impact</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Similar products lack clear on page descriptions, and key information is locked inside PDF files.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tabunganku</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tanda360-komunitas</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When product details sit in a PDF, search engines and AI treat that as a separate file outside the page, so the page itself looks thin and uninformative. Customers also have to download a document just to understand a product. Thin pages do not rank and do not get cited.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Bring the key product information onto the page as readable text, so customers, crawlers, and AI can all understand each product directly. Strengthening the FAQ section is a fast way to add this context.</p></div>
+    </div>
+</section>
+
+<!-- DEVELOPMENT -->
+<section id="development" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 05 · Future Development</div>
+        <h2 class="section-title">New capabilities to build</h2>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">5.1 &nbsp;Build calculator and simulation pages</div><span class="card-badge badge-info">Opportunity</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>There are no working calculator pages for KPR, savings, deposito, and similar products.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Indonesians actively search for terms like Simulasi KPR and Simulasi KPM before choosing a bank. These are high intent searches from people close to a decision. Without these pages, OCBC is invisible for that demand, and competitors capture it.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Create dedicated calculator pages for KPR, KPM, savings, and deposito. They serve customers at the decision moment and open a valuable set of simulation keywords for both Search and AI platforms.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">5.2 &nbsp;Add an SEO content section to category and parent pages</div><span class="card-badge badge-info">Opportunity</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Category and parent pages have no space for descriptive content.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/syariah/pembiayaan</span></li><li><span class="url-ref">https://www.ocbc.id/id/syariah/pembiayaan/kpr</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/pinjaman/kredit-pemilikan-rumah</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Parent and category pages are often the ones that rank for broad, high value searches. With no room for content, the SEO team cannot give these pages the context they need to compete, so they underperform.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add a content section at the bottom of category and parent pages so the team can provide supporting context for Search and AI platforms.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">5.3 &nbsp;Add breadcrumb navigation</div><span class="card-badge badge-warning">Navigation</span></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Some pages lack breadcrumb navigation.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/sme/kelola-dana-bisnis/simpanan/tanda360-plus</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Breadcrumbs show users and crawlers where a page sits in the site. They help visitors navigate, help search engines understand the structure, and can appear directly in search results.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add breadcrumbs, for example: Home &gt; SME &gt; Kelola Dana Bisnis &gt; Simpanan &gt; Tanda 360 Plus.</p></div>
+    </div>
+</section>
+
+<!-- PRIORITIES -->
+<section id="priorities" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 06 · What to Prioritise</div>
+        <h2 class="section-title">Sequencing the work by commercial impact</h2>
+        <p class="section-subtitle">The data and the findings point to one clear theme: the product pages are the weak link. We recommend tackling the highest impact work first.</p>
+    </div>
+    <ol class="priority-list">
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Fix the product pages so they can rank and be understood.</strong> Add a unique Heading 1, rewrite the titles, and bring product details out of PDFs onto the page (4.1, 4.2, 4.3, 4.4). This directly addresses the 69 visitors per page problem.</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Add the structured data layer.</strong> Organization and Website sitewide, product or financial service markup on product pages, and FAQ markup wherever an FAQ exists (3.4, 3.5). This is largely labelling work on content that already exists.</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Build the calculator and simulation pages</strong> to capture high intent decision searches (5.1).</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Strengthen technical foundations for AI:</strong> llms.txt, x-default hreflang, and breadcrumbs (3.1, 3.2, 5.3).</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Open up category and parent pages</strong> with a content section so the SEO team can compete for broad searches (5.2).</div></li>
+    </ol>
+</section>
+
+<div class="report-footer">
+    <p>Prepared by <a href="https://www.novastacks-ai.com">Novastacks AI</a>. This is a preliminary analysis intended to align stakeholders on priorities. A detailed implementation plan follows once the direction is approved.</p>
+</div>
+</main>
+
+<script>
+// Scroll spy + reveal
+const links = document.querySelectorAll('.side-nav-link');
+const sections = document.querySelectorAll('main section[id]');
+const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            const a = document.querySelector('.side-nav-link[data-section="'+e.target.id+'"]');
+            if (a) a.classList.add('active');
+        }
+    });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => spy.observe(s));
+
+const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-in'); reveal.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.scroll-animate').forEach(el => reveal.observe(el));
+
+links.forEach(l => l.addEventListener('click', () => document.querySelector('.side-nav').classList.remove('show')));
+</script>
+</body>
+</html>
