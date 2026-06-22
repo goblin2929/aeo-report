@@ -81,6 +81,8 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
 .badge-success { background: rgba(34,197,94,0.15); color: var(--ns-success); }
 .badge-info { background: rgba(1,170,193,0.15); color: var(--ns-primary); }
 .badge-orange { background: rgba(249,115,22,0.15); color: var(--ns-orange); }
+.badge-cat { background: rgba(136,136,136,0.14); color: var(--ns-text-muted); border: 1px solid rgba(255,255,255,0.08); }
+.badge-group { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 
 .finding-block { margin: 14px 0; }
 .finding-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
@@ -195,6 +197,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
         <div class="stat-card"><div class="stat-label">OCBC product traffic / page</div><div class="stat-value text-danger">69</div><div class="stat-context">Lowest in the competitor group</div></div>
         <div class="stat-card"><div class="stat-label">Bank Mandiri / page</div><div class="stat-value text-success">1,457</div><div class="stat-context">21x more efficient per product page</div></div>
         <div class="stat-card"><div class="stat-label">CIMB product traffic</div><div class="stat-value">12.8x</div><div class="stat-context">CIMB earns 12.8x OCBC's total product traffic</div></div>
+        <div class="stat-card" style="border-color:rgba(1,170,193,0.3);"><div class="stat-label">Calculator pages opportunity</div><div class="stat-value text-primary">+2,600/mo</div><div class="stat-context">High intent clicks within a year, growing to ~8,900 at maturity (see 5.1)</div></div>
     </div>
     <p class="body">This analysis groups the findings into three areas: Technical, Content, and Future Development. Each finding explains what we found, why it matters for a non technical reader, and what we recommend.</p>
 </section>
@@ -258,28 +261,14 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">3.1 &nbsp;No x-default hreflang tag</div><span class="card-badge badge-warning">Technical</span></div>
-        <div class="finding-block"><div class="finding-label found">What we found</div><p>The site does not declare an x-default version in its hreflang setup.</p></div>
-        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>hreflang tells search engines which language version to show to which user. The x-default is the fallback for users whose language is not explicitly covered. Without it, Google has to guess which version to serve, which can lead to the wrong page appearing in results.</p></div>
-        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add an x-default hreflang tag pointing to the Indonesian (id) version as the default.</p></div>
+        <div class="card-header"><div class="card-title">3.1 &nbsp;Structured data not maximised on homepage and product pages</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Structured data coverage is minimal. Our crawl confirmed that the homepage and product pages carry only a Breadcrumb markup, with no Organization, no Website, and no product or service markup.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Structured data is how a site explains itself to machines. Beyond the few types Google shows visually, there is a wider library of universal schema.org types that AI platforms use to understand entities, products, and providers. Right now OCBC gives AI platforms very little to work with, which weakens how OCBC appears in AI generated answers.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Build a full structured data layer. Add Organization and Website markup sitewide, and product or financial service markup to each product page. Use the broader schema.org vocabulary, not only the types Google renders.</p></div>
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">3.2 &nbsp;No llms.txt file</div><span class="card-badge badge-info">AI Readiness</span></div>
-        <div class="finding-block"><div class="finding-label found">What we found</div><p>The site has no llms.txt file.</p></div>
-        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>llms.txt is an emerging standard that gives AI platforms a clean map of a site's structure and key products, similar to how a sitemap helps search engines. Without it, AI tools piece together OCBC's product structure on their own, which they often do imperfectly.</p></div>
-        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Publish an llms.txt that describes the main path structure and the core product lines so AI platforms get accurate context about OCBC.</p></div>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><div class="card-title">3.3 &nbsp;Calculator links point to empty pages</div><span class="card-badge badge-danger">Broken</span></div>
-        <div class="finding-block"><div class="finding-label found">What we found</div><p>Calculator entries inside the navigation bar point to null or non existent pages.</p></div>
-        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Customers deciding on a tabungan berjangka or a deposito want to estimate returns before committing. A broken calculator link is a dead end at exactly the moment a customer is most interested, and it wastes the search opportunity around simulation keywords.</p></div>
-        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Build dedicated, working calculator pages (see Future Development).</p></div>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><div class="card-title">3.4 &nbsp;No FAQ structured data</div><span class="card-badge badge-warning">Technical</span></div>
+        <div class="card-header"><div class="card-title">3.2 &nbsp;No FAQ structured data</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Pages that already display an FAQ do not include FAQ structured data.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tanda360-komunitas</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Structured data is a machine readable label that tells Google and AI "this is a question and this is its answer." When present, Google can show questions directly in search results and AI tools can quote the answers confidently. The FAQ content is already written. It is simply not labelled, so the value is left on the table.</p></div>
@@ -287,10 +276,24 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">3.5 &nbsp;Structured data not maximised on homepage and product pages</div><span class="card-badge badge-danger">High impact</span></div>
-        <div class="finding-block"><div class="finding-label found">What we found</div><p>Structured data coverage is minimal. Our crawl confirmed that the homepage and product pages carry only a Breadcrumb markup, with no Organization, no Website, and no product or service markup.</p></div>
-        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Structured data is how a site explains itself to machines. Beyond the few types Google shows visually, there is a wider library of universal schema.org types that AI platforms use to understand entities, products, and providers. Right now OCBC gives AI platforms very little to work with, which weakens how OCBC appears in AI generated answers.</p></div>
-        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Build a full structured data layer. Add Organization and Website markup sitewide, and product or financial service markup to each product page. Use the broader schema.org vocabulary, not only the types Google renders.</p></div>
+        <div class="card-header"><div class="card-title">3.3 &nbsp;Calculator links point to empty pages</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Calculator entries inside the navigation bar point to null or non existent pages.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Customers deciding on a tabungan berjangka or a deposito want to estimate returns before committing. A broken calculator link is a dead end at exactly the moment a customer is most interested, and it wastes the search opportunity around simulation keywords.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Build dedicated, working calculator pages (see Future Development).</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.4 &nbsp;No llms.txt file</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-info">AI Readiness</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>The site has no llms.txt file.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>llms.txt is an emerging standard that gives AI platforms a clean map of a site's structure and key products, similar to how a sitemap helps search engines. Without it, AI tools piece together OCBC's product structure on their own, which they often do imperfectly.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Publish an llms.txt that describes the main path structure and the core product lines so AI platforms get accurate context about OCBC.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.5 &nbsp;No x-default hreflang tag</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-success">Quick Win</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>The site does not declare an x-default version in its hreflang setup.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>hreflang tells search engines which language version to show to which user. The x-default is the fallback for users whose language is not explicitly covered. Without it, Google has to guess which version to serve, which can lead to the wrong page appearing in results.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add an x-default hreflang tag pointing to the Indonesian (id) version as the default.</p></div>
     </div>
 </section>
 
@@ -302,7 +305,15 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">4.1 &nbsp;No Heading 1 on core business pages</div><span class="card-badge badge-danger">High impact</span></div>
+        <div class="card-header"><div class="card-title">4.1 &nbsp;No descriptive content for similar products</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Similar products lack clear on page descriptions, and key information is locked inside PDF files.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tabunganku</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tanda360-komunitas</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When product details sit in a PDF, search engines and AI treat that as a separate file outside the page, so the page itself looks thin and uninformative. Customers also have to download a document just to understand a product. Thin pages do not rank and do not get cited.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Bring the key product information onto the page as readable text, so customers, crawlers, and AI can all understand each product directly. Strengthening the FAQ section is a fast way to add this context.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">4.2 &nbsp;No Heading 1 on core business pages</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-danger">High Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Core product pages have no Heading 1.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan-berjangka</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>The Heading 1 is the single most important on page signal of what a page is about. A page with no Heading 1 is like a document with no title. Our crawl confirmed this pattern across the core pages.</p></div>
@@ -310,15 +321,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">4.2 &nbsp;Duplicate page titles across products</div><span class="card-badge badge-warning">Content</span></div>
-        <div class="finding-block"><div class="finding-label found">What we found</div><p>Different products share the same visible title (currently set as Heading 2).</p>
-        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan-berjangka</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/deposito</span></li></ul></div>
-        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When two different products use the same title, search engines and AI cannot tell them apart, and they may compete against each other for the same searches.</p></div>
-        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Make the main title (which should be the Heading 1) unique for every product within each business group.</p></div>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><div class="card-title">4.3 &nbsp;Page titles of core pages need rewriting</div><span class="card-badge badge-warning">Content</span></div>
+        <div class="card-header"><div class="card-title">4.3 &nbsp;Page titles of core pages need rewriting</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>The browser titles of several core pages are not built around clear target keywords.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/pinjaman/kredit-pemilikan-rumah</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/pinjaman/kredit-pembelian-mobil/kpm-ocbc</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>The title tag is what shows as the clickable line in search results. A vague title earns fewer clicks and ranks for fewer relevant searches. A clear, benefit led title does both.</p></div>
@@ -330,11 +333,11 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">4.4 &nbsp;No descriptive content for similar products</div><span class="card-badge badge-danger">High impact</span></div>
-        <div class="finding-block"><div class="finding-label found">What we found</div><p>Similar products lack clear on page descriptions, and key information is locked inside PDF files.</p>
-        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tabunganku</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tanda360-komunitas</span></li></ul></div>
-        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When product details sit in a PDF, search engines and AI treat that as a separate file outside the page, so the page itself looks thin and uninformative. Customers also have to download a document just to understand a product. Thin pages do not rank and do not get cited.</p></div>
-        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Bring the key product information onto the page as readable text, so customers, crawlers, and AI can all understand each product directly. Strengthening the FAQ section is a fast way to add this context.</p></div>
+        <div class="card-header"><div class="card-title">4.4 &nbsp;Duplicate page titles across products</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Different products share the same visible title (currently set as Heading 2).</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan-berjangka</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/deposito</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When two different products use the same title, search engines and AI cannot tell them apart, and they may compete against each other for the same searches.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Make the main title (which should be the Heading 1) unique for every product within each business group.</p></div>
     </div>
 </section>
 
@@ -346,14 +349,30 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">5.1 &nbsp;Build calculator and simulation pages</div><span class="card-badge badge-info">Opportunity</span></div>
-        <div class="finding-block"><div class="finding-label found">What we found</div><p>There are no working calculator pages for KPR, savings, deposito, and similar products.</p></div>
-        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Indonesians actively search for terms like Simulasi KPR and Simulasi KPM before choosing a bank. These are high intent searches from people close to a decision. Without these pages, OCBC is invisible for that demand, and competitors capture it.</p></div>
-        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Create dedicated calculator pages for KPR, KPM, savings, and deposito. They serve customers at the decision moment and open a valuable set of simulation keywords for both Search and AI platforms.</p></div>
+        <div class="card-header"><div class="card-title">5.1 &nbsp;Build calculator and simulation pages</div><div class="badge-group"><span class="card-badge badge-cat">Development</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>There are no working calculator pages for KPR, deposito, kredit mobil, and similar products.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Indonesians actively search "simulasi" and "kalkulator" terms before choosing a bank. These are high intent searches from people close to a decision. Without these pages, OCBC is invisible for that demand, and competitors who built simulators capture it.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Create dedicated calculator pages for deposito, KPR, and kredit mobil. They serve customers at the decision moment and open a valuable set of simulation keywords for both Search and AI platforms.</p></div>
+        <div class="callout" style="margin-bottom:0;">
+            <div class="callout-title">Traffic opportunity (Ahrefs, Indonesia)</div>
+            <p style="margin-bottom:14px;">These pages target high intent keywords worth roughly <strong class="text-primary">28,000 generic searches a month</strong>. Modelled capture: about <strong class="text-primary">+2,600 extra organic clicks per month</strong> within the first 6 to 12 months (range 1,700 to 3,700), growing to about <strong class="text-primary">+8,900 per month</strong> at maturity (range 6,200 to 11,700). At maturity that would lift OCBC's product page traffic by roughly half from this one initiative.</p>
+            <div class="table-wrap" style="border-color:rgba(1,170,193,0.2);">
+            <table class="data-table">
+                <thead><tr><th>Calculator page</th><th class="text-right">Demand /mo</th><th class="text-right">Difficulty</th><th class="text-right">Stage 1 clicks/mo</th><th class="text-right">Mature clicks/mo</th></tr></thead>
+                <tbody>
+                    <tr class="highlight"><td>Deposito <span class="text-muted">(easiest, build first)</span></td><td class="text-right mono">~6,950</td><td class="text-right mono text-success">Low</td><td class="text-right mono">+830</td><td class="text-right mono">+2,220</td></tr>
+                    <tr><td>KPR <span class="text-muted">(largest, flagship)</span></td><td class="text-right mono">~14,760</td><td class="text-right mono text-danger">High</td><td class="text-right mono">+1,180</td><td class="text-right mono">+4,720</td></tr>
+                    <tr><td>Kredit Mobil <span class="text-muted">(target "simulasi kredit mobil")</span></td><td class="text-right mono">~6,500</td><td class="text-right mono text-warning">Medium</td><td class="text-right mono">+580</td><td class="text-right mono">+1,950</td></tr>
+                    <tr><td>Tabungan Berjangka <span class="text-muted">(UX tool only)</span></td><td class="text-right mono">~20</td><td class="text-right mono text-muted">No demand</td><td class="text-right mono text-muted">~0</td><td class="text-right mono text-muted">~0</td></tr>
+                </tbody>
+            </table>
+            </div>
+            <p style="margin-top:14px;margin-bottom:0;font-size:13px;" class="text-muted">Two build notes: optimise the car loan page for "simulasi kredit mobil" (5,200/mo), not "simulasi KPM" (30/mo, almost no demand). Tabungan Berjangka has near zero search demand, so build it as an on page tool, not for traffic. Directional estimate: OCBC Search Console is not yet connected, so figures use a clickable conversion proxy and tighten once GSC is available.</p>
+        </div>
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">5.2 &nbsp;Add an SEO content section to category and parent pages</div><span class="card-badge badge-info">Opportunity</span></div>
+        <div class="card-header"><div class="card-title">5.2 &nbsp;Add an SEO content section to category and parent pages</div><div class="badge-group"><span class="card-badge badge-cat">Development</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Category and parent pages have no space for descriptive content.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/syariah/pembiayaan</span></li><li><span class="url-ref">https://www.ocbc.id/id/syariah/pembiayaan/kpr</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/pinjaman/kredit-pemilikan-rumah</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Parent and category pages are often the ones that rank for broad, high value searches. With no room for content, the SEO team cannot give these pages the context they need to compete, so they underperform.</p></div>
@@ -361,7 +380,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">5.3 &nbsp;Add breadcrumb navigation</div><span class="card-badge badge-warning">Navigation</span></div>
+        <div class="card-header"><div class="card-title">5.3 &nbsp;Add breadcrumb navigation</div><div class="badge-group"><span class="card-badge badge-cat">Development</span><span class="card-badge badge-success">Quick Win</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Some pages lack breadcrumb navigation.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/sme/kelola-dana-bisnis/simpanan/tanda360-plus</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Breadcrumbs show users and crawlers where a page sits in the site. They help visitors navigate, help search engines understand the structure, and can appear directly in search results.</p></div>
@@ -378,9 +397,9 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
     <ol class="priority-list">
         <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Fix the product pages so they can rank and be understood.</strong> Add a unique Heading 1, rewrite the titles, and bring product details out of PDFs onto the page (4.1, 4.2, 4.3, 4.4). This directly addresses the 69 visitors per page problem.</div></li>
-        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Add the structured data layer.</strong> Organization and Website sitewide, product or financial service markup on product pages, and FAQ markup wherever an FAQ exists (3.4, 3.5). This is largely labelling work on content that already exists.</div></li>
-        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Build the calculator and simulation pages</strong> to capture high intent decision searches (5.1).</div></li>
-        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Strengthen technical foundations for AI:</strong> llms.txt, x-default hreflang, and breadcrumbs (3.1, 3.2, 5.3).</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Add the structured data layer.</strong> Organization and Website sitewide, product or financial service markup on product pages, and FAQ markup wherever an FAQ exists (3.1, 3.2). This is largely labelling work on content that already exists.</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Build the calculator and simulation pages</strong> to capture high intent decision searches (5.1). Modelled at about +2,600 extra organic clicks per month within a year, growing to about +8,900 at maturity. Start with deposito.</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Strengthen technical foundations for AI:</strong> llms.txt, x-default hreflang, and breadcrumbs (3.4, 3.5, 5.3).</div></li>
         <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Open up category and parent pages</strong> with a content section so the SEO team can compete for broad searches (5.2).</div></li>
     </ol>
 </section>
