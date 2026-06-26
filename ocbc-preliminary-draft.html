@@ -399,6 +399,27 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
+        <div class="card-header"><div class="card-title">Citation condition at scale: OCBC via blog, competitors via product pages</div><div class="badge-group"><span class="card-badge badge-cat">60 Prompts</span><span class="card-badge badge-danger">High Risk</span></div></div>
+        <p class="body">To confirm the pattern, we expanded the test to 60 real audience questions (30 Savings and 30 Credit Card) and resolved every citation to its actual page. Anything that is not a blog article is counted as a product page, including promo and landing pages.</p>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Bank</th><th class="text-right">Cited via blog</th><th class="text-right">Cited via product page</th><th class="text-right">Total</th><th class="text-right">Blog share</th><th class="text-right">Product share</th></tr></thead>
+            <tbody>
+                <tr class="highlight"><td class="fw-700 text-primary">OCBC</td><td class="text-right mono fw-700 text-danger">24</td><td class="text-right mono fw-700">7</td><td class="text-right mono">31</td><td class="text-right mono fw-700 text-danger">77%</td><td class="text-right mono">23%</td></tr>
+                <tr><td>CIMB Niaga</td><td class="text-right mono">16</td><td class="text-right mono">17</td><td class="text-right mono">33</td><td class="text-right mono">48%</td><td class="text-right mono">52%</td></tr>
+                <tr><td>Bank Mandiri</td><td class="text-right mono">5</td><td class="text-right mono">41</td><td class="text-right mono">46</td><td class="text-right mono">11%</td><td class="text-right mono text-success">89%</td></tr>
+                <tr><td>BCA</td><td class="text-right mono">3</td><td class="text-right mono">52</td><td class="text-right mono">55</td><td class="text-right mono">5%</td><td class="text-right mono text-success">95%</td></tr>
+                <tr><td>BRI</td><td class="text-right mono">0</td><td class="text-right mono">10</td><td class="text-right mono">10</td><td class="text-right mono">0%</td><td class="text-right mono text-success">100%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="callout" style="margin-top:14px;margin-bottom:0;">
+            <div class="callout-title">The condition</div>
+            <p>OCBC is the only bank in this group that AI cites mostly through blog articles. Every competitor is cited mostly through product pages: BCA 95 percent, Bank Mandiri 89 percent, BRI 100 percent. When a customer asks a savings or credit card question, AI quotes an OCBC article, while it quotes the competitors' actual product pages, the pages that open the account or the card. A blog citation is easily displaced and does not move the reader toward the product, so the priority is to make OCBC's Savings and Credit Card product pages as citable as its articles already are.</p>
+        </div>
+    </div>
+
+    <div class="card">
         <div class="card-header"><div class="card-title">AI visibility: AI knows OCBC well, but through the blog, not the products</div><div class="badge-group"><span class="card-badge badge-info">AI Answers</span><span class="card-badge badge-success">Strength</span></div></div>
         <p class="body">We measured how often each brand is cited in Google AI answers for core banking topics (deposito, KPR, kredit tanpa agunan, tabungan berjangka, reksa dana, bunga deposito, kartu kredit, bank terbaik Indonesia), using DataForSEO LLM Mentions data for Indonesia.</p>
         <div class="table-wrap">
