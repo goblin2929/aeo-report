@@ -163,11 +163,12 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
 <div class="side-nav-section">
 <div class="side-nav-label">Preliminary Analysis</div>
 <a href="#overview" class="side-nav-link active" data-section="overview"><span class="nav-icon">01</span> Executive Summary</a>
-<a href="#data" class="side-nav-link" data-section="data"><span class="nav-icon">02</span> Competitive &amp; AI Standing</a>
-<a href="#technical" class="side-nav-link" data-section="technical"><span class="nav-icon">03</span> Technical Findings</a>
-<a href="#content" class="side-nav-link" data-section="content"><span class="nav-icon">04</span> Content Findings</a>
-<a href="#development" class="side-nav-link" data-section="development"><span class="nav-icon">05</span> Future Development</a>
-<a href="#priorities" class="side-nav-link" data-section="priorities"><span class="nav-icon">06</span> What to Prioritise</a>
+<a href="#data" class="side-nav-link" data-section="data"><span class="nav-icon">02</span> Competitive &amp; AI (Overall)</a>
+<a href="#data-products" class="side-nav-link" data-section="data-products"><span class="nav-icon">03</span> Competitive &amp; AI (Savings &amp; Card)</a>
+<a href="#technical" class="side-nav-link" data-section="technical"><span class="nav-icon">04</span> Technical Findings</a>
+<a href="#content" class="side-nav-link" data-section="content"><span class="nav-icon">05</span> Content Findings</a>
+<a href="#development" class="side-nav-link" data-section="development"><span class="nav-icon">06</span> Future Development</a>
+<a href="#priorities" class="side-nav-link" data-section="priorities"><span class="nav-icon">07</span> What to Prioritise</a>
 </div>
 </nav>
 <main>
@@ -217,7 +218,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
         </div>
         <div class="callout" style="margin-top:14px;margin-bottom:0;">
             <div class="callout-title">How to read this</div>
-            <p>This year 1 ceiling is led by the blog. OCBC's blog already earns about 1,190,000 visits a month, and the plus 39,000 here is the extra it can win in the first year by covering financial topics it is currently missing, about 3 percent on top of what it has today. The figure is modest in year 1 because new content takes time to rank, and it keeps compounding in later years. The smartest move is to point that blog traffic at the two priority products, by writing topics like "tabungan tanpa biaya admin", "kartu kredit cicilan 0%", and "cara buka rekening online" instead of chasing visits that never become customers. This is a directional estimate because OCBC Search Console is not yet connected, so the ranges tighten once it is.</p>
+            <p>The total year 1 ceiling is about plus 44,000 visits a month, which is about 528,000 additional visits across the first year. It is led by the blog: OCBC's blog already earns about 1,190,000 visits a month, and the plus 39,000 blog share here is what it can win in year 1 by covering financial topics it is currently missing, about 3 percent on top of what it has today. The calculator and simulation pages recommended in the Future Development section are a separate, additional opportunity (about plus 2,600 visits a month) that is not included in this table, so the two can be added together. The smartest move is to point the blog traffic at the two priority products, by writing topics like "tabungan tanpa biaya admin", "kartu kredit cicilan 0%", and "cara buka rekening online" instead of chasing visits that never become customers. This is a directional estimate because OCBC Search Console is not yet connected, so the ranges tighten once it is.</p>
         </div>
     </div>
 
@@ -240,7 +241,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
 <!-- COMPETITIVE DATA -->
 <section id="data" class="section scroll-animate">
     <div class="section-header">
-        <div class="section-number">// 02 · Competitive and AI Standing</div>
+        <div class="section-number">// 02 · Competitive and AI Standing (Overall)</div>
         <h2 class="section-title">Where OCBC stands today</h2>
         <p class="section-subtitle">Ahrefs organic data and DataForSEO AI answer mentions. OCBC compared against CIMB Niaga, Jenius (digital bank benchmark), BRI (largest bank), and Bank Mandiri (second largest).</p>
     </div>
@@ -291,6 +292,111 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     <div class="card">
         <div class="card-header"><div class="card-title">Why this happens</div><span class="card-badge badge-info">Diagnosis</span></div>
         <p class="body" style="margin-bottom:0;">About 95 percent of OCBC's organic traffic comes from the blog and articles. Only a small share reaches the product pages. The educational engine is strong, but the bridge from that audience into product pages is weak, and the product pages themselves are not built to rank or to be cited by AI. The findings below explain exactly why.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">AI visibility: AI knows OCBC well, but through the blog, not the products</div><div class="badge-group"><span class="card-badge badge-info">AI Answers</span><span class="card-badge badge-success">Strength</span></div></div>
+        <p class="body">We measured how often each brand is cited in Google AI answers for core banking topics (deposito, KPR, kredit tanpa agunan, tabungan berjangka, reksa dana, bunga deposito, kartu kredit, bank terbaik Indonesia), using DataForSEO LLM Mentions data for Indonesia.</p>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Brand</th><th class="text-right">AI mentions</th><th class="text-right">Share of voice</th></tr></thead>
+            <tbody>
+                <tr><td>CIMB Niaga</td><td class="text-right mono">23,478</td><td class="text-right mono">44.6%</td></tr>
+                <tr class="highlight"><td class="fw-700 text-primary">OCBC</td><td class="text-right mono fw-700">16,549</td><td class="text-right mono fw-700 text-success">31.4%</td></tr>
+                <tr><td>Bank Mandiri</td><td class="text-right mono">6,205</td><td class="text-right mono">11.8%</td></tr>
+                <tr><td>BRI</td><td class="text-right mono">5,762</td><td class="text-right mono">10.9%</td></tr>
+                <tr><td>Jenius</td><td class="text-right mono">648</td><td class="text-right mono">1.2%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="body" style="margin-top:14px;">The good news is real: OCBC is the second most cited brand in AI answers for these topics, ahead of BRI and Bank Mandiri even though both are much larger banks.</p>
+        <p class="body" style="margin-bottom:6px;">The catch is the same theme as the traffic data. Every OCBC page that AI actually cites is an educational article, not a product page:</p>
+        <ul class="url-list"><li><span class="url-ref">/article/2025/10/01/cara-mengetahui-bank-dari-nomor-rekening</span></li><li><span class="url-ref">/article/2024/08/22/arti-mimpi-dapat-uang-banyak</span></li><li><span class="url-ref">/article/2023/11/22/cara-membuat-e-toll</span></li><li><span class="url-ref">/article/2022/10/03/kegiatan-ekonomi-adalah</span></li></ul>
+        <div class="callout" style="margin-bottom:0;">
+            <div class="callout-title">The one line that matters</div>
+            <p>Not a single deposito, KPR, KTA, or kartu kredit product page appears in AI citations. AI knows OCBC well, but through the blog, not the products. Making the product pages as citable as the articles already are is what converts brand level AI visibility into product level AI visibility, and the findings below are exactly how.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Blog content condition: how much of the blog traffic is actually relevant</div><div class="badge-group"><span class="card-badge badge-cat">Blog Audit</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <p class="body">The blog is OCBC's biggest asset, so we classified all 2,500 blog pages by topic to see how much of that traffic actually serves a future banking customer. We read each topic carefully, so a keyword like "mimpi dapat uang" is treated as Others (dream interpretation), not as financial, even though it contains the word uang.</p>
+        <img src="ocbc-blog-intent-scatter.png" alt="OCBC blog traffic by topic relevance and position" style="width:100%;height:auto;border-radius:10px;border:1px solid rgba(255,255,255,0.08);margin:6px 0 16px;background:#fff;">
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Category</th><th class="text-right">Monthly traffic</th><th class="text-right">Share</th><th class="text-right">Pages</th></tr></thead>
+            <tbody>
+                <tr><td><span style="color:#22c55e;">&#9679;</span> Relevant (high intent)</td><td class="text-right mono">214,287</td><td class="text-right mono">18.6%</td><td class="text-right mono">792</td></tr>
+                <tr><td><span style="color:#eab308;">&#9679;</span> Low intent topic</td><td class="text-right mono">377,707</td><td class="text-right mono">32.7%</td><td class="text-right mono">351</td></tr>
+                <tr><td><span style="color:#94a3b8;">&#9679;</span> Others</td><td class="text-right mono">561,743</td><td class="text-right mono">48.7%</td><td class="text-right mono">1,357</td></tr>
+                <tr class="highlight"><td class="fw-700">Total</td><td class="text-right mono fw-700">1,153,737</td><td class="text-right mono fw-700">100%</td><td class="text-right mono fw-700">2,500</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="body" style="margin-top:14px;">Only 18.6 percent of OCBC's blog traffic comes from relevant, high intent banking topics. Almost half (48.7 percent) is Others, meaning off topic content like dreams, horoscopes, and trivia, and a third is low intent business and economics study material that brings students and jobseekers, not customers. The blog is a large traffic machine, but most of it does not reach someone who could open an account or a card.</p>
+        <div class="card-header" style="margin-top:6px;"><div class="card-title" style="font-size:14px;">Example pages in each category</div></div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Category</th><th>Example pages (full URL)</th></tr></thead>
+            <tbody>
+                <tr><td style="white-space:nowrap;"><span style="color:#22c55e;">&#9679;</span> Relevant</td><td class="mono" style="font-size:11px;line-height:1.9;">https://www.ocbc.id/id/article/2025/06/03/bitcoin-halving-apa-itu-dan-kapan-terjadi-lagi<br>https://www.ocbc.id/id/article/2025/10/01/cara-mengetahui-bank-dari-nomor-rekening-dengan-mudah<br>https://www.ocbc.id/id/article/2023/09/25/nft-adalah<br>https://www.ocbc.id/id/article/2021/05/18/black-card-adalah<br>https://www.ocbc.id/id/article/2021/12/13/syirkah-adalah</td></tr>
+                <tr><td style="white-space:nowrap;"><span style="color:#eab308;">&#9679;</span> Low intent</td><td class="mono" style="font-size:11px;line-height:1.9;">https://www.ocbc.id/id/article/2025/07/30/fungsi-asli-dan-turunan-uang-dalam-kegiatan-ekonomi<br>https://www.ocbc.id/id/article/2023/11/30/owner-adalah<br>https://www.ocbc.id/id/article/2023/12/19/general-affair-adalah<br>https://www.ocbc.id/id/article/2022/03/21/outsourcing-adalah<br>https://www.ocbc.id/id/article/2025/07/18/berapa-besar-gaj13-pns-ini-aturan-dan-rincian-lengkapnya</td></tr>
+                <tr><td style="white-space:nowrap;"><span style="color:#94a3b8;">&#9679;</span> Others</td><td class="mono" style="font-size:11px;line-height:1.9;">https://www.ocbc.id/id/article/2024/08/22/arti-mimpi-dapat-uang-banyak<br>https://www.ocbc.id/id/article/2025/01/03/arti-mimpi-dikasih-uang<br>https://www.ocbc.id/id/article/2024/11/21/mata-uang-tertinggi-di-dunia-2024<br>https://www.ocbc.id/id/article/2021/10/28/budget-adalah<br>https://www.ocbc.id/id/article/2023/10/27/jual-beli-dalam-islam</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">AI visibility tested on 30 real buyer prompts</div><div class="badge-group"><span class="card-badge badge-info">AI Answers</span><span class="card-badge badge-warning">Mixed</span></div></div>
+        <p class="body">We ran 30 real buyer questions live through Google AI Overview, ChatGPT, and Gemini to see where OCBC actually gets cited.</p>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Question type</th><th class="text-right">OCBC cited</th><th>Reading</th></tr></thead>
+            <tbody>
+                <tr><td>Branded (names OCBC)</td><td class="text-right mono text-success">5 / 5</td><td>Always cited when the brand is named</td></tr>
+                <tr><td>Decision stage (rates, syarat, apply)</td><td class="text-right mono text-success">6 / 6</td><td>Strong once the customer is choosing OCBC</td></tr>
+                <tr><td>Feature based (no brand named)</td><td class="text-right mono text-success">6 / 7</td><td>Encouraging, AI reaches for OCBC by capability</td></tr>
+                <tr><td>Category discovery ("best bank for X")</td><td class="text-right mono text-danger">3 / 8</td><td>Weak, this is where new customers look</td></tr>
+                <tr class="highlight"><td class="fw-700">Overall</td><td class="text-right mono fw-700">22 / 30 (73%)</td><td></td></tr>
+                <tr class="highlight"><td class="fw-700 text-primary">Non-branded discovery (honest test)</td><td class="text-right mono fw-700 text-primary">9 / 15 (60%)</td><td>The real new-customer read</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="body" style="margin-top:14px;margin-bottom:0;">The split is the point. OCBC wins when a customer names OCBC or a product. It loses the open "which bank is best for X" questions, which is exactly where a customer who has not chosen a bank yet is looking.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Message gap: what AI is missing from OCBC</div><div class="badge-group"><span class="card-badge badge-cat">Strategic</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <p class="body">For the eight questions in the broad 30 prompt test above where OCBC was not cited, we read what AI actually said and which banks it recommended instead. In 6 of 8 cases OCBC already has the product. It loses because it has never published the message in the framing the question implies, so AI recommends whoever did.</p>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Customer question</th><th>Who AI recommended</th><th class="text-center">OCBC has it</th><th>Message OCBC has not distributed</th></tr></thead>
+            <tbody>
+                <tr><td>Bunga deposito terbaik?</td><td>SeaBank, Neo, Krom, cermati</td><td class="text-center text-success">Yes</td><td>A clear, comparable deposito rate on the page</td></tr>
+                <tr><td>Tabungan terbaik sehari-hari?</td><td>Blu by BCA, Jago</td><td class="text-center text-success">Yes (Nyala)</td><td>"Tabungan tanpa biaya admin" and "fitur pemisahan dana"</td></tr>
+                <tr><td>Investasi reksa dana dan obligasi?</td><td>Mandiri, BCA, Bibit</td><td class="text-center text-success">Yes</td><td>"OCBC is an APERD agent, invest in the app"</td></tr>
+                <tr><td>Wealth management paling lengkap?</td><td>DBS, CIMB</td><td class="text-center text-success">Yes (Premier)</td><td>The complete wealth management narrative</td></tr>
+                <tr><td>Bank digital untuk anak muda dan freelancer?</td><td>Jenius, Blu, Jago</td><td class="text-center text-warning">Partial</td><td>Concrete freelancer features (terima pembayaran luar negeri, kantong dana)</td></tr>
+                <tr><td>Promo kartu kredit terbaik?</td><td>Mandiri, BCA, UOB</td><td class="text-center text-success">Yes</td><td>A dedicated, regularly updated, crawlable promo page</td></tr>
+                <tr><td>KPR terbaik? (mentioned, not cited)</td><td>BTN, CIMB, Mandiri</td><td class="text-center text-success">Yes</td><td>A citable KPR page with rate and tenor as text, not PDF</td></tr>
+                <tr><td>KTA terbaik? (mentioned, not cited)</td><td>aggregators, BCA, DBS</td><td class="text-center text-success">Yes</td><td>A citable KTA page with plafon, bunga, and syarat as a table</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="callout" style="margin-bottom:0;">
+            <div class="callout-title">The headline</div>
+            <p>The gap is message distribution, not product. AI recommends the bank that published the message that matches the question. OCBC published the product but not the message. Closing these gaps is how OCBC enters the answers where new customers are won.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SAVINGS CC -->
+<section id="data-products" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 03 · Competitive and AI Standing (Savings and Credit Card)</div>
+        <h2 class="section-title">The two priority products in detail</h2>
+        <p class="section-subtitle">The same competitive and AI lenses as the section above, applied only to Savings and Credit Card, the two products the client is focusing on first.</p>
     </div>
 
     <div class="card">
@@ -438,119 +544,24 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-header"><div class="card-title">AI visibility: AI knows OCBC well, but through the blog, not the products</div><div class="badge-group"><span class="card-badge badge-info">AI Answers</span><span class="card-badge badge-success">Strength</span></div></div>
-        <p class="body">We measured how often each brand is cited in Google AI answers for core banking topics (deposito, KPR, kredit tanpa agunan, tabungan berjangka, reksa dana, bunga deposito, kartu kredit, bank terbaik Indonesia), using DataForSEO LLM Mentions data for Indonesia.</p>
-        <div class="table-wrap">
-        <table class="data-table">
-            <thead><tr><th>Brand</th><th class="text-right">AI mentions</th><th class="text-right">Share of voice</th></tr></thead>
-            <tbody>
-                <tr><td>CIMB Niaga</td><td class="text-right mono">23,478</td><td class="text-right mono">44.6%</td></tr>
-                <tr class="highlight"><td class="fw-700 text-primary">OCBC</td><td class="text-right mono fw-700">16,549</td><td class="text-right mono fw-700 text-success">31.4%</td></tr>
-                <tr><td>Bank Mandiri</td><td class="text-right mono">6,205</td><td class="text-right mono">11.8%</td></tr>
-                <tr><td>BRI</td><td class="text-right mono">5,762</td><td class="text-right mono">10.9%</td></tr>
-                <tr><td>Jenius</td><td class="text-right mono">648</td><td class="text-right mono">1.2%</td></tr>
-            </tbody>
-        </table>
-        </div>
-        <p class="body" style="margin-top:14px;">The good news is real: OCBC is the second most cited brand in AI answers for these topics, ahead of BRI and Bank Mandiri even though both are much larger banks.</p>
-        <p class="body" style="margin-bottom:6px;">The catch is the same theme as the traffic data. Every OCBC page that AI actually cites is an educational article, not a product page:</p>
-        <ul class="url-list"><li><span class="url-ref">/article/2025/10/01/cara-mengetahui-bank-dari-nomor-rekening</span></li><li><span class="url-ref">/article/2024/08/22/arti-mimpi-dapat-uang-banyak</span></li><li><span class="url-ref">/article/2023/11/22/cara-membuat-e-toll</span></li><li><span class="url-ref">/article/2022/10/03/kegiatan-ekonomi-adalah</span></li></ul>
-        <div class="callout" style="margin-bottom:0;">
-            <div class="callout-title">The one line that matters</div>
-            <p>Not a single deposito, KPR, KTA, or kartu kredit product page appears in AI citations. AI knows OCBC well, but through the blog, not the products. Making the product pages as citable as the articles already are is what converts brand level AI visibility into product level AI visibility, and the findings below are exactly how.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><div class="card-title">Blog content condition: how much of the blog traffic is actually relevant</div><div class="badge-group"><span class="card-badge badge-cat">Blog Audit</span><span class="card-badge badge-danger">High Impact</span></div></div>
-        <p class="body">The blog is OCBC's biggest asset, so we classified all 2,500 blog pages by topic to see how much of that traffic actually serves a future banking customer. We read each topic carefully, so a keyword like "mimpi dapat uang" is treated as Others (dream interpretation), not as financial, even though it contains the word uang.</p>
-        <img src="ocbc-blog-intent-scatter.png" alt="OCBC blog traffic by topic relevance and position" style="width:100%;height:auto;border-radius:10px;border:1px solid rgba(255,255,255,0.08);margin:6px 0 16px;background:#fff;">
-        <div class="table-wrap">
-        <table class="data-table">
-            <thead><tr><th>Category</th><th class="text-right">Monthly traffic</th><th class="text-right">Share</th><th class="text-right">Pages</th></tr></thead>
-            <tbody>
-                <tr><td><span style="color:#22c55e;">&#9679;</span> Relevant (high intent)</td><td class="text-right mono">214,287</td><td class="text-right mono">18.6%</td><td class="text-right mono">792</td></tr>
-                <tr><td><span style="color:#eab308;">&#9679;</span> Low intent topic</td><td class="text-right mono">377,707</td><td class="text-right mono">32.7%</td><td class="text-right mono">351</td></tr>
-                <tr><td><span style="color:#94a3b8;">&#9679;</span> Others</td><td class="text-right mono">561,743</td><td class="text-right mono">48.7%</td><td class="text-right mono">1,357</td></tr>
-                <tr class="highlight"><td class="fw-700">Total</td><td class="text-right mono fw-700">1,153,737</td><td class="text-right mono fw-700">100%</td><td class="text-right mono fw-700">2,500</td></tr>
-            </tbody>
-        </table>
-        </div>
-        <p class="body" style="margin-top:14px;">Only 18.6 percent of OCBC's blog traffic comes from relevant, high intent banking topics. Almost half (48.7 percent) is Others, meaning off topic content like dreams, horoscopes, and trivia, and a third is low intent business and economics study material that brings students and jobseekers, not customers. The blog is a large traffic machine, but most of it does not reach someone who could open an account or a card.</p>
-        <div class="card-header" style="margin-top:6px;"><div class="card-title" style="font-size:14px;">Example pages in each category</div></div>
-        <div class="table-wrap">
-        <table class="data-table">
-            <thead><tr><th>Category</th><th>Example pages (full URL)</th></tr></thead>
-            <tbody>
-                <tr><td style="white-space:nowrap;"><span style="color:#22c55e;">&#9679;</span> Relevant</td><td class="mono" style="font-size:11px;line-height:1.9;">https://www.ocbc.id/id/article/2025/06/03/bitcoin-halving-apa-itu-dan-kapan-terjadi-lagi<br>https://www.ocbc.id/id/article/2025/10/01/cara-mengetahui-bank-dari-nomor-rekening-dengan-mudah<br>https://www.ocbc.id/id/article/2023/09/25/nft-adalah<br>https://www.ocbc.id/id/article/2021/05/18/black-card-adalah<br>https://www.ocbc.id/id/article/2021/12/13/syirkah-adalah</td></tr>
-                <tr><td style="white-space:nowrap;"><span style="color:#eab308;">&#9679;</span> Low intent</td><td class="mono" style="font-size:11px;line-height:1.9;">https://www.ocbc.id/id/article/2025/07/30/fungsi-asli-dan-turunan-uang-dalam-kegiatan-ekonomi<br>https://www.ocbc.id/id/article/2023/11/30/owner-adalah<br>https://www.ocbc.id/id/article/2023/12/19/general-affair-adalah<br>https://www.ocbc.id/id/article/2022/03/21/outsourcing-adalah<br>https://www.ocbc.id/id/article/2025/07/18/berapa-besar-gaj13-pns-ini-aturan-dan-rincian-lengkapnya</td></tr>
-                <tr><td style="white-space:nowrap;"><span style="color:#94a3b8;">&#9679;</span> Others</td><td class="mono" style="font-size:11px;line-height:1.9;">https://www.ocbc.id/id/article/2024/08/22/arti-mimpi-dapat-uang-banyak<br>https://www.ocbc.id/id/article/2025/01/03/arti-mimpi-dikasih-uang<br>https://www.ocbc.id/id/article/2024/11/21/mata-uang-tertinggi-di-dunia-2024<br>https://www.ocbc.id/id/article/2021/10/28/budget-adalah<br>https://www.ocbc.id/id/article/2023/10/27/jual-beli-dalam-islam</td></tr>
-            </tbody>
-        </table>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><div class="card-title">AI visibility tested on 30 real buyer prompts</div><div class="badge-group"><span class="card-badge badge-info">AI Answers</span><span class="card-badge badge-warning">Mixed</span></div></div>
-        <p class="body">We ran 30 real buyer questions live through Google AI Overview, ChatGPT, and Gemini to see where OCBC actually gets cited.</p>
-        <div class="table-wrap">
-        <table class="data-table">
-            <thead><tr><th>Question type</th><th class="text-right">OCBC cited</th><th>Reading</th></tr></thead>
-            <tbody>
-                <tr><td>Branded (names OCBC)</td><td class="text-right mono text-success">5 / 5</td><td>Always cited when the brand is named</td></tr>
-                <tr><td>Decision stage (rates, syarat, apply)</td><td class="text-right mono text-success">6 / 6</td><td>Strong once the customer is choosing OCBC</td></tr>
-                <tr><td>Feature based (no brand named)</td><td class="text-right mono text-success">6 / 7</td><td>Encouraging, AI reaches for OCBC by capability</td></tr>
-                <tr><td>Category discovery ("best bank for X")</td><td class="text-right mono text-danger">3 / 8</td><td>Weak, this is where new customers look</td></tr>
-                <tr class="highlight"><td class="fw-700">Overall</td><td class="text-right mono fw-700">22 / 30 (73%)</td><td></td></tr>
-                <tr class="highlight"><td class="fw-700 text-primary">Non-branded discovery (honest test)</td><td class="text-right mono fw-700 text-primary">9 / 15 (60%)</td><td>The real new-customer read</td></tr>
-            </tbody>
-        </table>
-        </div>
-        <p class="body" style="margin-top:14px;margin-bottom:0;">The split is the point. OCBC wins when a customer names OCBC or a product. It loses the open "which bank is best for X" questions, which is exactly where a customer who has not chosen a bank yet is looking.</p>
-    </div>
-
-    <div class="card">
-        <div class="card-header"><div class="card-title">Message gap: what AI is missing from OCBC</div><div class="badge-group"><span class="card-badge badge-cat">Strategic</span><span class="card-badge badge-danger">High Impact</span></div></div>
-        <p class="body">For the 8 questions where OCBC was not cited, we read what AI actually said and which banks it recommended instead. In 6 of 8 cases OCBC already has the product. It loses because it has never published the message in the framing the question implies, so AI recommends whoever did.</p>
-        <div class="table-wrap">
-        <table class="data-table">
-            <thead><tr><th>Customer question</th><th>Who AI recommended</th><th class="text-center">OCBC has it</th><th>Message OCBC has not distributed</th></tr></thead>
-            <tbody>
-                <tr><td>Bunga deposito terbaik?</td><td>SeaBank, Neo, Krom, cermati</td><td class="text-center text-success">Yes</td><td>A clear, comparable deposito rate on the page</td></tr>
-                <tr><td>Tabungan terbaik sehari-hari?</td><td>Blu by BCA, Jago</td><td class="text-center text-success">Yes (Nyala)</td><td>"Tabungan tanpa biaya admin" and "fitur pemisahan dana"</td></tr>
-                <tr><td>Investasi reksa dana dan obligasi?</td><td>Mandiri, BCA, Bibit</td><td class="text-center text-success">Yes</td><td>"OCBC is an APERD agent, invest in the app"</td></tr>
-                <tr><td>Wealth management paling lengkap?</td><td>DBS, CIMB</td><td class="text-center text-success">Yes (Premier)</td><td>The complete wealth management narrative</td></tr>
-                <tr><td>Bank digital untuk anak muda dan freelancer?</td><td>Jenius, Blu, Jago</td><td class="text-center text-warning">Partial</td><td>Concrete freelancer features (terima pembayaran luar negeri, kantong dana)</td></tr>
-                <tr><td>Promo kartu kredit terbaik?</td><td>Mandiri, BCA, UOB</td><td class="text-center text-success">Yes</td><td>A dedicated, regularly updated, crawlable promo page</td></tr>
-                <tr><td>KPR terbaik? (mentioned, not cited)</td><td>BTN, CIMB, Mandiri</td><td class="text-center text-success">Yes</td><td>A citable KPR page with rate and tenor as text, not PDF</td></tr>
-                <tr><td>KTA terbaik? (mentioned, not cited)</td><td>aggregators, BCA, DBS</td><td class="text-center text-success">Yes</td><td>A citable KTA page with plafon, bunga, and syarat as a table</td></tr>
-            </tbody>
-        </table>
-        </div>
-        <div class="callout" style="margin-bottom:0;">
-            <div class="callout-title">The headline</div>
-            <p>The gap is message distribution, not product. AI recommends the bank that published the message that matches the question. OCBC published the product but not the message. Closing these gaps is how OCBC enters the answers where new customers are won.</p>
-        </div>
-    </div>
 </section>
 
 <!-- TECHNICAL -->
 <section id="technical" class="section scroll-animate">
     <div class="section-header">
-        <div class="section-number">// 03 · Technical Findings</div>
+        <div class="section-number">// 04 · Technical Findings</div>
         <h2 class="section-title">How the site speaks to search engines and AI</h2>
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">3.1 &nbsp;Structured data not maximised on homepage and product pages</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <div class="card-header"><div class="card-title">4.1 &nbsp;Structured data not maximised on homepage and product pages</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-danger">High Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Structured data coverage is minimal. Our crawl confirmed that the homepage and product pages carry only a Breadcrumb markup, with no Organization, no Website, and no product or service markup.</p></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Structured data is how a site explains itself to machines. Beyond the few types Google shows visually, there is a wider library of universal schema.org types that AI platforms use to understand entities, products, and providers. Right now OCBC gives AI platforms very little to work with, which weakens how OCBC appears in AI generated answers.</p></div>
         <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Build a full structured data layer. Add Organization and Website markup sitewide, and product or financial service markup to each product page. Use the broader schema.org vocabulary, not only the types Google renders.</p></div>
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">3.2 &nbsp;No FAQ structured data</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
+        <div class="card-header"><div class="card-title">4.2 &nbsp;No FAQ structured data</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Pages that already display an FAQ do not include FAQ structured data.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tanda360-komunitas</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Structured data is a machine readable label that tells Google and AI "this is a question and this is its answer." When present, Google can show questions directly in search results and AI tools can quote the answers confidently. The FAQ content is already written. It is simply not labelled, so the value is left on the table.</p></div>
@@ -558,21 +569,21 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">3.3 &nbsp;Calculator links point to empty pages</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
+        <div class="card-header"><div class="card-title">4.3 &nbsp;Calculator links point to empty pages</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Calculator entries inside the navigation bar point to null or non existent pages.</p></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Customers deciding on a tabungan berjangka or a deposito want to estimate returns before committing. A broken calculator link is a dead end at exactly the moment a customer is most interested, and it wastes the search opportunity around simulation keywords.</p></div>
         <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Build dedicated, working calculator pages (see Future Development).</p></div>
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">3.4 &nbsp;No llms.txt file</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-info">AI Readiness</span></div></div>
+        <div class="card-header"><div class="card-title">4.4 &nbsp;No llms.txt file</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-info">AI Readiness</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>The site has no llms.txt file.</p></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>llms.txt is an emerging standard that gives AI platforms a clean map of a site's structure and key products, similar to how a sitemap helps search engines. Without it, AI tools piece together OCBC's product structure on their own, which they often do imperfectly.</p></div>
         <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Publish an llms.txt that describes the main path structure and the core product lines so AI platforms get accurate context about OCBC.</p></div>
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">3.5 &nbsp;No x-default hreflang tag</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-success">Quick Win</span></div></div>
+        <div class="card-header"><div class="card-title">4.5 &nbsp;No x-default hreflang tag</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-success">Quick Win</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>The site does not declare an x-default version in its hreflang setup.</p></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>hreflang tells search engines which language version to show to which user. The x-default is the fallback for users whose language is not explicitly covered. Without it, Google has to guess which version to serve, which can lead to the wrong page appearing in results.</p></div>
         <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add an x-default hreflang tag pointing to the Indonesian (id) version as the default.</p></div>
@@ -582,12 +593,12 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
 <!-- CONTENT -->
 <section id="content" class="section scroll-animate">
     <div class="section-header">
-        <div class="section-number">// 04 · Content Findings</div>
+        <div class="section-number">// 05 · Content Findings</div>
         <h2 class="section-title">How clearly each page explains its product</h2>
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">4.1 &nbsp;No descriptive content for similar products</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <div class="card-header"><div class="card-title">5.1 &nbsp;No descriptive content for similar products</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-danger">High Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Similar products lack clear on page descriptions, and key information is locked inside PDF files.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tabunganku</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan/tanda360-komunitas</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When product details sit in a PDF, search engines and AI treat that as a separate file outside the page, so the page itself looks thin and uninformative. Customers also have to download a document just to understand a product. Thin pages do not rank and do not get cited.</p></div>
@@ -595,7 +606,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">4.2 &nbsp;No Heading 1 on core business pages</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <div class="card-header"><div class="card-title">5.2 &nbsp;No Heading 1 on core business pages</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-danger">High Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Core product pages have no Heading 1.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan-berjangka</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>The Heading 1 is the single most important on page signal of what a page is about. A page with no Heading 1 is like a document with no title. Our crawl confirmed this pattern across the core pages.</p></div>
@@ -603,7 +614,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">4.3 &nbsp;Page titles of core pages need rewriting</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
+        <div class="card-header"><div class="card-title">5.3 &nbsp;Page titles of core pages need rewriting</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>The browser titles of several core pages are not built around clear target keywords.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/pinjaman/kredit-pemilikan-rumah</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/pinjaman/kredit-pembelian-mobil/kpm-ocbc</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>The title tag is what shows as the clickable line in search results. A vague title earns fewer clicks and ranks for fewer relevant searches. A clear, benefit led title does both.</p></div>
@@ -615,7 +626,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">4.4 &nbsp;Duplicate page titles across products</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
+        <div class="card-header"><div class="card-title">5.4 &nbsp;Duplicate page titles across products</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Different products share the same visible title (currently set as Heading 2).</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/tabungan-berjangka</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/simpanan/deposito</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When two different products use the same title, search engines and AI cannot tell them apart, and they may compete against each other for the same searches.</p></div>
@@ -626,12 +637,12 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
 <!-- DEVELOPMENT -->
 <section id="development" class="section scroll-animate">
     <div class="section-header">
-        <div class="section-number">// 05 · Future Development</div>
+        <div class="section-number">// 06 · Future Development</div>
         <h2 class="section-title">New capabilities to build</h2>
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">5.1 &nbsp;Build calculator and simulation pages</div><div class="badge-group"><span class="card-badge badge-cat">Development</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <div class="card-header"><div class="card-title">6.1 &nbsp;Build calculator and simulation pages</div><div class="badge-group"><span class="card-badge badge-cat">Development</span><span class="card-badge badge-danger">High Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>There are no working calculator pages for KPR, deposito, kredit mobil, and similar products.</p></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Indonesians actively search "simulasi" and "kalkulator" terms before choosing a bank. These are high intent searches from people close to a decision. Without these pages, OCBC is invisible for that demand, and competitors who built simulators capture it.</p></div>
         <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Create dedicated calculator pages for deposito, KPR, and kredit mobil. They serve customers at the decision moment and open a valuable set of simulation keywords for both Search and AI platforms.</p></div>
@@ -654,7 +665,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">5.2 &nbsp;Add an SEO content section to category and parent pages</div><div class="badge-group"><span class="card-badge badge-cat">Development</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
+        <div class="card-header"><div class="card-title">6.2 &nbsp;Add an SEO content section to category and parent pages</div><div class="badge-group"><span class="card-badge badge-cat">Development</span><span class="card-badge badge-warning">Medium Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Category and parent pages have no space for descriptive content.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/syariah/pembiayaan</span></li><li><span class="url-ref">https://www.ocbc.id/id/syariah/pembiayaan/kpr</span></li><li><span class="url-ref">https://www.ocbc.id/id/individu/pinjaman/kredit-pemilikan-rumah</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Parent and category pages are often the ones that rank for broad, high value searches. With no room for content, the SEO team cannot give these pages the context they need to compete, so they underperform.</p></div>
@@ -662,7 +673,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">5.3 &nbsp;Add breadcrumb navigation</div><div class="badge-group"><span class="card-badge badge-cat">Development</span><span class="card-badge badge-success">Quick Win</span></div></div>
+        <div class="card-header"><div class="card-title">6.3 &nbsp;Add breadcrumb navigation</div><div class="badge-group"><span class="card-badge badge-cat">Development</span><span class="card-badge badge-success">Quick Win</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>Some pages lack breadcrumb navigation.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.ocbc.id/id/sme/kelola-dana-bisnis/simpanan/tanda360-plus</span></li></ul></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Breadcrumbs show users and crawlers where a page sits in the site. They help visitors navigate, help search engines understand the structure, and can appear directly in search results.</p></div>
@@ -670,7 +681,7 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
     </div>
 
     <div class="card">
-        <div class="card-header"><div class="card-title">5.4 &nbsp;Restructure blog content so search engines and AI can understand and cite it</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <div class="card-header"><div class="card-title">6.4 &nbsp;Restructure blog content so search engines and AI can understand and cite it</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-danger">High Impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>The blog is OCBC's biggest traffic asset, but most articles are written as long prose. Search engines and AI platforms extract and cite content far more easily when it is structured into clear, answerable blocks. The current structure makes it harder for AI to pull a clean answer from an OCBC article and attribute it to OCBC.</p></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>AI answers and Google featured snippets lift short, self contained answers, definitions, lists, and question and answer blocks. A wall of text is harder to extract and less likely to be cited. Better structure increases the chance that OCBC's blog, and the product content inside it, gets quoted in AI answers and rich results. It is also how OCBC turns its existing blog audience into product visibility.</p></div>
         <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Adopt one content structure on every article going forward:</p>
@@ -689,16 +700,16 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
 <!-- PRIORITIES -->
 <section id="priorities" class="section scroll-animate">
     <div class="section-header">
-        <div class="section-number">// 06 · What to Prioritise</div>
+        <div class="section-number">// 07 · What to Prioritise</div>
         <h2 class="section-title">Sequencing the work by commercial impact</h2>
         <p class="section-subtitle">The data and the findings point to one clear theme: the product pages are the weak link. We recommend tackling the highest impact work first.</p>
     </div>
     <ol class="priority-list">
-        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Fix the product pages so they can rank and be understood.</strong> Add a unique Heading 1, rewrite the titles, and bring product details out of PDFs onto the page (4.1, 4.2, 4.3, 4.4). This directly addresses the 69 visitors per page problem.</div></li>
-        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Add the structured data layer.</strong> Organization and Website sitewide, product or financial service markup on product pages, and FAQ markup wherever an FAQ exists (3.1, 3.2). This is largely labelling work on content that already exists.</div></li>
-        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Build the calculator and simulation pages</strong> to capture high intent decision searches (5.1). Modelled at about +2,600 extra organic clicks per month within a year, growing to about +8,900 at maturity. Start with deposito.</div></li>
-        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Strengthen technical foundations for AI:</strong> llms.txt, x-default hreflang, and breadcrumbs (3.4, 3.5, 5.3).</div></li>
-        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Open up category and parent pages</strong> with a content section so the SEO team can compete for broad searches (5.2).</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Fix the product pages so they can rank and be understood.</strong> Add a unique Heading 1, rewrite the titles, and bring product details out of PDFs onto the page (5.1, 5.2, 5.3, 5.4). This directly addresses the 69 visitors per page problem.</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Add the structured data layer.</strong> Organization and Website sitewide, product or financial service markup on product pages, and FAQ markup wherever an FAQ exists (4.1, 4.2). This is largely labelling work on content that already exists.</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Build the calculator and simulation pages</strong> to capture high intent decision searches (6.1). Modelled at about +2,600 extra organic clicks per month within a year, growing to about +8,900 at maturity. Start with deposito.</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Strengthen technical foundations for AI:</strong> llms.txt, x-default hreflang, and breadcrumbs (4.4, 4.5, 6.3).</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Open up category and parent pages</strong> with a content section so the SEO team can compete for broad searches (6.2).</div></li>
     </ol>
 </section>
 
