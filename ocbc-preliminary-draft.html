@@ -220,6 +220,20 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
             <p>The ceiling is led by the blog, because that is where competitors hold demand OCBC does not yet cover. OCBC already earns about 1,190,000 blog visits a month, so plus 39,000 in year 1 is roughly a 3 percent lift from financial topics it currently misses, growing toward about 10 percent (plus 117,000 a month) as the content matures beyond year 1. The biggest strategic win is to make that blog traffic feed the two priority products, by prioritising topics like "tabungan tanpa biaya admin", "kartu kredit cicilan 0%", and "cara buka rekening online" rather than chasing high volume but low value trivia. This is a directional estimate because OCBC Search Console is not yet connected, so the ranges tighten once it is.</p>
         </div>
     </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">How these numbers are calculated</div><div class="badge-group"><span class="card-badge badge-cat">Methodology</span></div></div>
+        <p class="body"><strong style="color:#fff;">Step 1: Addressable non branded demand.</strong> From Ahrefs we take every keyword competitors rank for but OCBC does not, then strip out branded terms (bri, mandiri, bca, cimb and other bank names), noise (kurs, calendars, horoscopes, phone credit), and non financial topics. The remaining keywords, summed by monthly search volume, are the demand OCBC could realistically chase: about 2,400,000 financial searches a month.</p>
+        <p class="body"><strong style="color:#fff;">Step 2: From searches to visits, through two simple filters.</strong> Search volume is total demand, but not every search becomes a visit. Two things shrink it:</p>
+        <ul class="url-list" style="list-style:disc;padding-left:18px;margin:6px 0 14px;">
+        <li style="color:var(--ns-text);font-size:14px;margin-bottom:6px;"><span style="color:var(--ns-primary);font-weight:600;">Clickable factor (40 percent)</span> is how many searches still produce a click. Many searches never reach any website, because the answer already sits on the results page: paid ads (SEM) at the top, plus AI Overview, Knowledge Panel, and featured snippets. We assume only about 40 of every 100 searches still lead to an organic click. So 2,400,000 searches become about 975,000 clickable visits.</li>
+        <li style="color:var(--ns-text);font-size:14px;"><span style="color:var(--ns-primary);font-weight:600;">Capture rate (about 4 percent in year 1)</span> is OCBC's share of those clicks. The clicks are split across every site that ranks, not just OCBC. Competing with established players but backed by its own blog authority (about 1,190,000 visits a month), OCBC can realistically win about 4 of every 100 clickable visits in year 1. So 975,000 becomes about 39,000 visits a month.</li>
+        </ul>
+        <div class="callout" style="margin-bottom:0;">
+            <div class="callout-title">The flow in one line</div>
+            <p>2,400,000 searches, minus ads, AI Overview and Knowledge Panel (40 percent clickable), equals about 975,000 clickable visits, times OCBC's winnable share (about 4 percent), equals about plus 39,000 visits a month. Savings and Credit Card use a different basis (the gap has almost no non branded product keywords), so they are benchmarked against what competitors already earn on those product pages. Directional estimate; the 40 percent and 4 percent are conservative and tighten once OCBC Search Console is connected.</p>
+        </div>
+    </div>
     <p class="body">This analysis groups the findings into three areas: Technical, Content, and Future Development. Each finding explains what we found, why it matters for a non technical reader, and what we recommend.</p>
 </section>
 
@@ -312,6 +326,40 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
         <div class="callout" style="margin-top:12px;margin-bottom:0;">
             <div class="callout-title">What this means for the focus</div>
             <p>OCBC earns only 2,068 credit card visits, about 29 times less than Bank Mandiri's dedicated card site (61,000) and 20 times less than BRI (42,163). On both priority products the issue is the same: too few well built pages carrying too little extractable content. The fixes in this report apply first and hardest to Savings and Credit Card.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Branded vs non branded: the product pages only capture existing customers</div><div class="badge-group"><span class="card-badge badge-cat">Discovery Gap</span><span class="card-badge badge-danger">High Impact</span></div></div>
+        <p class="body">A branded visit comes from someone who already typed "OCBC". A non branded visit comes from someone searching a need ("kartu kredit cicilan 0 persen") without naming a bank, which is how a new customer is discovered. At the whole domain level OCBC looks healthy, 95.9 percent of its traffic is non branded, but that is the blog. On the product pages the picture flips: they are found almost only by people who already know OCBC.</p>
+        <div class="card-header" style="margin-top:6px;"><div class="card-title" style="font-size:14px;">Savings, branded vs non branded</div></div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Bank</th><th class="text-right">Total</th><th class="text-right">Branded</th><th class="text-right">Non branded</th><th class="text-right">Non branded share</th></tr></thead>
+            <tbody>
+                <tr class="highlight"><td class="fw-700 text-primary">OCBC</td><td class="text-right mono">759</td><td class="text-right mono">524</td><td class="text-right mono fw-700">235</td><td class="text-right mono">31%</td></tr>
+                <tr><td>CIMB Niaga</td><td class="text-right mono">7,995</td><td class="text-right mono">5,193</td><td class="text-right mono">2,802</td><td class="text-right mono">35%</td></tr>
+                <tr><td>BRI</td><td class="text-right mono">35,086</td><td class="text-right mono">32,871</td><td class="text-right mono">2,215</td><td class="text-right mono">6%</td></tr>
+                <tr><td>Bank Mandiri</td><td class="text-right mono">4,780</td><td class="text-right mono">4,285</td><td class="text-right mono">495</td><td class="text-right mono">10%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="card-header" style="margin-top:10px;"><div class="card-title" style="font-size:14px;">Credit Card, branded vs non branded</div></div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Bank</th><th class="text-right">Total</th><th class="text-right">Branded</th><th class="text-right">Non branded</th><th class="text-right">Non branded share</th></tr></thead>
+            <tbody>
+                <tr class="highlight"><td class="fw-700 text-primary">OCBC</td><td class="text-right mono">2,068</td><td class="text-right mono">2,024</td><td class="text-right mono fw-700 text-danger">44</td><td class="text-right mono fw-700 text-danger">2%</td></tr>
+                <tr><td>Bank Mandiri</td><td class="text-right mono">61,000</td><td class="text-right mono">43,990</td><td class="text-right mono">17,010</td><td class="text-right mono">28%</td></tr>
+                <tr><td>BRI</td><td class="text-right mono">42,163</td><td class="text-right mono">35,966</td><td class="text-right mono">6,197</td><td class="text-right mono">15%</td></tr>
+                <tr><td>CIMB Niaga</td><td class="text-right mono">8,569</td><td class="text-right mono">6,021</td><td class="text-right mono">2,548</td><td class="text-right mono">30%</td></tr>
+                <tr><td>Jenius</td><td class="text-right mono">2,255</td><td class="text-right mono">1,123</td><td class="text-right mono">1,132</td><td class="text-right mono">50%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="callout" style="margin-top:14px;margin-bottom:0;">
+            <div class="callout-title">The headline</div>
+            <p>OCBC's credit card product pages are 98 percent branded. Only 44 visits a month come from new customers who did not search the word OCBC. Savings is 69 percent branded, just 235 non branded visits a month. OCBC's product pages capture almost no discovery traffic. On non branded credit card discovery, the place new customers are won, OCBC's 44 visits trail Bank Mandiri's 17,010 by roughly 386 times. This is the same story as the AI visibility findings, now measured on Google: OCBC wins when its brand is named and loses the open, non branded discovery that brings new customers. Every recommendation in this report, citable product pages, calculator pages, non branded category content, and blog links into product pages, is built to close exactly this gap.</p>
         </div>
     </div>
 
