@@ -81,7 +81,18 @@
     .rec-item:last-child { border-bottom: none; } .rec-number { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: #01aac1; min-width: 28px; }
     .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; } .table-scroll::-webkit-scrollbar { height: 4px; } .table-scroll::-webkit-scrollbar-thumb { background: #017d8e; border-radius: 2px; }
     .footnote { font-size: 11px; color: #888; line-height: 1.6; } .footnote sup { color: #01aac1; }
-    @media (max-width: 640px) { .stat-grid { grid-template-columns: 1fr; } }
+    .evidence-fig { margin: 16px 0; }
+    .evidence-fig img { width: 100%; height: auto; border-radius: 10px; display: block; }
+    .section-light .evidence-fig img { border: 1px solid #e5e5e5; }
+    .section-dark .evidence-fig img { border: 1px solid rgba(255,255,255,0.1); background:#fff; }
+    .evidence-cap { font-size: 12px; color: #888; margin-top: 8px; }
+    .evidence-cap a { color: #01aac1; }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 16px 0 8px; }
+    .compare-col .compare-tag { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+    .compare-col img { width: 100%; height: 360px; object-fit: cover; object-position: top; border-radius: 10px; display: block; }
+    .section-light .compare-col img { border: 1px solid #e5e5e5; }
+    .section-dark .compare-col img { border: 1px solid rgba(255,255,255,0.12); }
+    @media (max-width: 640px) { .stat-grid { grid-template-columns: 1fr; } .compare-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body class="bg-ns-dark text-white font-body antialiased">
@@ -188,6 +199,45 @@
       <tr style="background: rgba(1,170,193,0.06);"><td><strong class="text-primary">OCBC</strong></td><td class="text-right mono">17,362</td><td class="text-right mono">251</td><td class="text-right mono text-danger">69</td></tr>
     </tbody></table></div>
     <p class="text-sm text-gray-400 leading-relaxed mb-6">OCBC earns only 69 visitors per product page. Bank Mandiri earns 1,457 — 21&times; more per page. About 95% of OCBC's organic traffic lands on the blog; the pages that sell capture a sliver. The educational engine is strong; the bridge from that audience to the products is not.</p>
+
+    <h3 class="font-display text-xl font-bold text-white mb-4 mt-8">The same pattern on the two priority products</h3>
+    <div class="grid md:grid-cols-2 gap-6 mb-4">
+      <div>
+        <p class="text-sm text-gray-400 mb-2 font-semibold">Savings (tabungan), traffic per page</p>
+        <div class="table-scroll rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Bank</th><th class="text-right">Traffic</th><th class="text-right">Pages</th><th class="text-right">/Page</th></tr></thead><tbody>
+          <tr><td><strong>BRI</strong></td><td class="text-right mono">35,086</td><td class="text-right mono">33</td><td class="text-right mono text-success">1,063</td></tr>
+          <tr><td><strong>Bank Mandiri</strong></td><td class="text-right mono">4,780</td><td class="text-right mono">1</td><td class="text-right mono text-success">4,780</td></tr>
+          <tr><td><strong>CIMB Niaga</strong></td><td class="text-right mono">7,995</td><td class="text-right mono">74</td><td class="text-right mono">108</td></tr>
+          <tr style="background: rgba(1,170,193,0.06);"><td><strong class="text-primary">OCBC</strong></td><td class="text-right mono">759</td><td class="text-right mono">22</td><td class="text-right mono text-danger">34</td></tr>
+        </tbody></table></div>
+      </div>
+      <div>
+        <p class="text-sm text-gray-400 mb-2 font-semibold">Credit card (kartu kredit), traffic per page</p>
+        <div class="table-scroll rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Bank</th><th class="text-right">Traffic</th><th class="text-right">Pages</th><th class="text-right">/Page</th></tr></thead><tbody>
+          <tr><td><strong>Mandiri (kartu site)</strong></td><td class="text-right mono">61,000</td><td class="text-right mono">549</td><td class="text-right mono">111</td></tr>
+          <tr><td><strong>BRI</strong></td><td class="text-right mono">42,163</td><td class="text-right mono">125</td><td class="text-right mono text-success">337</td></tr>
+          <tr><td><strong>CIMB Niaga</strong></td><td class="text-right mono">8,569</td><td class="text-right mono">126</td><td class="text-right mono">68</td></tr>
+          <tr style="background: rgba(1,170,193,0.06);"><td><strong class="text-primary">OCBC</strong></td><td class="text-right mono">2,068</td><td class="text-right mono">9</td><td class="text-right mono">230</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+    <p class="footnote mb-8">Savings: OCBC's 22 pages earn 34 visits each — the lowest in the set; BRI earns 35,086 from 33 pages. Credit card: OCBC covers cards with just 9 pages. Source: Ahrefs, Indonesia.</p>
+
+    <h3 class="font-display text-xl font-bold text-white mb-3 mt-8">What "good" looks like: Bank Mandiri's page vs OCBC's, same product</h3>
+    <p class="text-gray-400 text-base mb-4 max-w-4xl">Both banks run a "TabunganKu" savings product. Bank Mandiri's single savings page earns about <strong class="text-white">4,780 visits a month</strong>; OCBC's whole savings set averages <strong class="text-white">34</strong>. The difference is on the page, not the product — Mandiri's page is built to be read by buyers, Google and AI; OCBC's is not.</p>
+    <div class="compare-grid">
+      <div class="compare-col"><div class="compare-tag" style="color:#22c55e;">&#9656; Bank Mandiri — TabunganKu</div><a href="https://www.bankmandiri.co.id/tabunganku" target="_blank" rel="noopener"><img src="assets/cap-mandiri-tabunganku.png" alt="Bank Mandiri TabunganKu product page with H1, benefit sections, terms and an interest-rate simulation table"></a></div>
+      <div class="compare-col"><div class="compare-tag" style="color:#ef4444;">&#9656; OCBC — TabunganKu</div><a href="https://www.ocbc.id/id/individu/simpanan/tabungan/tabunganku" target="_blank" rel="noopener"><img src="assets/cap-ocbc-tabunganku.png" alt="OCBC TabunganKu product page with thinner on-page content and product detail in a PDF"></a></div>
+    </div>
+    <div class="table-scroll mb-2 rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Page element</th><th class="text-center">Bank Mandiri</th><th class="text-center">OCBC</th></tr></thead><tbody>
+      <tr><td>Heading 1 (H1)</td><td class="text-center text-success">Product name as H1</td><td class="text-center text-danger">H1 is "Informasi Lebih Lanjut" (generic)</td></tr>
+      <tr><td>On-page product detail</td><td class="text-center text-success">Benefits, terms, full text</td><td class="text-center text-warning">Partial; rates in a PDF (RIPLAY)</td></tr>
+      <tr><td>Interest / simulation table</td><td class="text-center text-success">On page</td><td class="text-center text-danger">Absent</td></tr>
+      <tr><td>Structured data</td><td class="text-center text-warning">Breadcrumb</td><td class="text-center text-warning">Breadcrumb + non-standard type (no schema.org Product)</td></tr>
+      <tr><td>Monthly organic visits</td><td class="text-center text-success mono">~4,780 (1 page)</td><td class="text-center text-danger mono">~34 / page</td></tr>
+    </tbody></table></div>
+    <p class="footnote mb-8">Verified live, June 2026, via page crawl. Mandiri: <a href="https://www.bankmandiri.co.id/tabunganku" style="color:#01aac1;">bankmandiri.co.id/tabunganku</a> &middot; OCBC: <a href="https://www.ocbc.id/id/individu/simpanan/tabungan/tabunganku" style="color:#01aac1;">ocbc.id/.../tabungan/tabunganku</a></p>
+
     <div class="readiness-insight"><strong>So what:</strong> OCBC already owns the hard inputs — reach and authority. What's missing is conversion of those inputs into commercial outcomes. That is a higher-certainty growth lever than building new demand. For context, chasing additional blog volume would add only ~3% on top of today's traffic — that is not the prize. The prize is relevance and conversion.</div>
   </div>
 </section>
@@ -209,13 +259,14 @@
           <tr><td>Others (dreams, horoscopes, trivia)</td><td class="text-right mono text-danger">561,743</td><td class="text-right mono">48.7%</td><td class="text-right mono">1,357</td></tr>
           <tr><td><strong>Total</strong></td><td class="text-right mono">1,153,737</td><td class="text-right mono">100%</td><td class="text-right mono">2,500</td></tr>
         </tbody></table></div>
+        <div class="evidence-fig"><img src="assets/ocbc-blog-intent-scatter.png" alt="Scatter chart of OCBC blog pages by topic relevance and ranking position — the largest, best-ranked clusters are Low-intent and Others, not the relevant high-intent topics"><div class="evidence-cap">Every OCBC blog page plotted by topic relevance &times; ranking strength. The biggest, best-ranked clusters are Low-intent and Others — not the buyer-relevant topics.</div></div>
       </div>
     </div>
 
     <div class="issue-detail issue-border-danger" style="border-left:4px solid #ef4444;">
       <div class="flex items-start justify-between gap-4 mb-3"><h3 class="issue-title">Gap 2 — The money pages are under-optimized</h3><span class="badge-info">Lowest-hanging fruit</span></div>
       <div class="issue-body">
-        <p>The pages that sell — tabungan, kartu kredit, KPR — are technically and editorially thin: <strong>no H1</strong> on core product pages; <strong>duplicate title tags</strong> across different products (keyword cannibalization — Google can't tell them apart); product detail <strong>trapped in PDFs</strong>, leaving the page itself thin; structured data limited to Breadcrumb only. These are on-page fixes on assets that already exist — the lowest-hanging fruit in the program. Full detail in Section 05.</p>
+        <p>The pages that sell — tabungan, kartu kredit, KPR — are technically and editorially thin. Verified live (June 2026): core product pages have <strong>no H1 at all</strong> (tabungan-berjangka, deposito), or an H1 that says "Informasi Lebih Lanjut" instead of the product (tabunganku); product detail is <strong>pushed into PDFs</strong> (TabunganKu's rates sit in a RIPLAY PDF); and <strong>structured data is limited to Breadcrumb</strong> — no schema.org <em>Product</em>. These are on-page fixes on assets that already exist — the lowest-hanging fruit in the program. Page-by-page evidence in Section 05.</p>
       </div>
     </div>
   </div>
@@ -226,7 +277,16 @@
   <div class="max-w-5xl mx-auto">
     <span class="font-mono text-xs text-ns-teal tracking-[0.2em] uppercase block mb-4">// 04 AI VISIBILITY &amp; THE BUYER'S MOMENT</span>
     <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">#2 for Brand Awareness in AI — #4 at the Buyer's Moment</h2>
-    <p class="text-gray-400 text-base md:text-lg mb-8 max-w-4xl">OCBC's AI presence looks strong on the surface: it is <strong class="text-white">#2 for brand awareness in AI</strong> — how often AI mentions OCBC across broad banking topics (31.4% share of voice, ahead of Mandiri and BRI). But brand awareness is not the same as being cited at the buyer's moment.</p>
+    <p class="text-gray-400 text-base md:text-lg mb-6 max-w-4xl">OCBC's AI presence looks strong on the surface: it is <strong class="text-white">#2 for brand awareness in AI</strong> — how often AI mentions OCBC across broad banking topics (31.4% share of voice, ahead of Mandiri and BRI). But brand awareness is not the same as being cited at the buyer's moment.</p>
+
+    <div class="table-scroll mb-6 rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Brand</th><th class="text-right">AI mentions</th><th class="text-right">Share of voice</th></tr></thead><tbody>
+      <tr><td><strong>CIMB Niaga</strong></td><td class="text-right mono">23,478</td><td class="text-right mono">44.6%</td></tr>
+      <tr style="background: rgba(1,170,193,0.06);"><td><strong class="text-primary">OCBC</strong></td><td class="text-right mono">16,549</td><td class="text-right mono text-warning">31.4%</td></tr>
+      <tr><td><strong>Bank Mandiri</strong></td><td class="text-right mono">6,205</td><td class="text-right mono">11.8%</td></tr>
+      <tr><td><strong>BRI</strong></td><td class="text-right mono">5,762</td><td class="text-right mono">10.9%</td></tr>
+      <tr><td><strong>Jenius</strong></td><td class="text-right mono">648</td><td class="text-right mono">1.2%</td></tr>
+    </tbody></table></div>
+    <p class="footnote mb-6">AI brand awareness — mentions across core banking topics (deposito, KPR, kartu kredit, reksa dana, "bank terbaik Indonesia," and others), Indonesia. This is the comfortable number; the buyer-moment number below is the real one.</p>
 
     <div class="readiness-insight"><strong>The buyer's moment</strong> is when someone is choosing a product and asks a specific question in their own words — the commercial- and transactional-intent end of the funnel (MOFU + BOFU), not general browsing.</div>
 
@@ -242,6 +302,30 @@
     </tbody></table></div>
     <p class="text-sm text-gray-400 leading-relaxed mb-6">Three problems compound. <strong class="text-white">Position</strong> — #4 of 5 at the moment buyers decide. <strong class="text-white">Quality</strong> — even where OCBC is cited, 77% of its citations are blog articles, not product pages (the inverse of BCA at 95% product, Mandiri at 89%). AI sends the buyer to an OCBC explainer, then on to a competitor's product page. <strong class="text-white">Discovery</strong> — OCBC is cited in only 60% of non-branded questions, and just 3 of 8 open "best bank for X" questions, exactly where undecided buyers look.</p>
 
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <p class="text-sm text-gray-400 mb-2 font-semibold">Where OCBC wins and loses (30 live buyer prompts)</p>
+        <div class="table-scroll rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Question type</th><th class="text-center">OCBC cited</th></tr></thead><tbody>
+          <tr><td>Branded (names OCBC)</td><td class="text-center mono text-success">5 / 5</td></tr>
+          <tr><td>Decision stage (rates, syarat, apply)</td><td class="text-center mono text-success">6 / 6</td></tr>
+          <tr><td>Feature-based (no brand named)</td><td class="text-center mono">6 / 7</td></tr>
+          <tr><td>Category discovery ("best bank for X")</td><td class="text-center mono text-danger">3 / 8</td></tr>
+          <tr><td><strong>Non-branded discovery (honest test)</strong></td><td class="text-center mono text-warning">9 / 15 (60%)</td></tr>
+        </tbody></table></div>
+      </div>
+      <div>
+        <p class="text-sm text-gray-400 mb-2 font-semibold">Cited via blog vs product page (60 questions)</p>
+        <div class="table-scroll rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Bank</th><th class="text-center">Blog</th><th class="text-center">Product</th><th class="text-center">Product %</th></tr></thead><tbody>
+          <tr><td><strong>BCA</strong></td><td class="text-center mono">3</td><td class="text-center mono">52</td><td class="text-center mono text-success">95%</td></tr>
+          <tr><td><strong>Bank Mandiri</strong></td><td class="text-center mono">5</td><td class="text-center mono">41</td><td class="text-center mono text-success">89%</td></tr>
+          <tr><td><strong>CIMB Niaga</strong></td><td class="text-center mono">16</td><td class="text-center mono">17</td><td class="text-center mono">52%</td></tr>
+          <tr><td><strong>BRI</strong></td><td class="text-center mono">0</td><td class="text-center mono">10</td><td class="text-center mono text-success">100%</td></tr>
+          <tr style="background: rgba(1,170,193,0.06);"><td><strong class="text-primary">OCBC</strong></td><td class="text-center mono">24</td><td class="text-center mono">7</td><td class="text-center mono text-danger">23%</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+    <p class="footnote mb-8">OCBC is the only bank in the set that AI cites mostly through blog articles. Every competitor is cited mostly through the product pages that open the account or the card. 60 live questions across Google AI Overview, ChatGPT and Gemini.</p>
+
     <h3 class="font-display text-xl font-bold text-white mb-4 mt-8">Credit cards: visibility is upside-down relative to the funnel</h3>
     <p class="text-sm text-gray-400 leading-relaxed mb-4">We classified the 30 credit-card questions by funnel stage and overlaid OCBC's citation result:</p>
     <div class="table-scroll mb-4 rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Funnel stage</th><th>What the buyer is doing</th><th class="text-center">Questions</th><th class="text-center">OCBC cited</th><th class="text-center">Via product page</th></tr></thead><tbody>
@@ -249,7 +333,43 @@
       <tr><td class="mono">MOFU</td><td>Choosing between cards</td><td class="text-center mono">20</td><td class="text-center mono text-warning">8</td><td class="text-center mono text-danger">2</td></tr>
       <tr><td class="mono">BOFU</td><td>Ready to apply</td><td class="text-center mono">2</td><td class="text-center mono">2</td><td class="text-center mono text-danger">0</td></tr>
     </tbody></table></div>
-    <p class="text-sm text-gray-400 leading-relaxed mb-6">OCBC appears in informational questions (all via blog), thins out in the <strong class="text-white">comparison stage where cards are actually chosen</strong> (8 of 20, only 2 via a product page), and even at the apply moment AI cites an OCBC article, not an application page. Across all 30 credit-card questions, <strong class="text-white">only 2 citations land on a product page</strong> — the "cited for content, not cards" pattern, stage by stage. <em>(Full 30-question classification in the Appendix.)</em></p>
+    <p class="text-sm text-gray-400 leading-relaxed mb-6">OCBC appears in informational questions (all via blog), thins out in the <strong class="text-white">comparison stage where cards are actually chosen</strong> (8 of 20, only 2 via a product page), and even at the apply moment AI cites an OCBC article, not an application page. Across all 30 credit-card questions, <strong class="text-white">only 2 citations land on a product page</strong> — the "cited for content, not cards" pattern, stage by stage. <a href="#appendix" style="color:#01d7f4; font-weight:600;">See all 30 questions, by funnel stage, with OCBC's result &rarr;</a></p>
+
+    <h3 class="font-display text-xl font-bold text-white mb-4 mt-8">The message gap: OCBC has the product, just not the message</h3>
+    <p class="text-sm text-gray-400 leading-relaxed mb-4">For the questions OCBC lost, we read what AI actually said and who it recommended instead. In 6 of 8 cases OCBC already offers the product — it lost because it never published the message in the framing the question implies.</p>
+    <div class="table-scroll mb-4 rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Buyer question</th><th>Who AI recommended</th><th class="text-center">OCBC has it</th><th>The message OCBC hasn't published</th></tr></thead><tbody>
+      <tr><td>Bunga deposito terbaik?</td><td>SeaBank, Neo, Krom</td><td class="text-center text-success">Yes</td><td>A clear, comparable deposito rate on the page</td></tr>
+      <tr><td>Tabungan terbaik sehari-hari?</td><td>Blu by BCA, Jago</td><td class="text-center text-success">Yes (Nyala)</td><td>"Tabungan tanpa biaya admin" in buyer language</td></tr>
+      <tr><td>Investasi reksa dana &amp; obligasi?</td><td>Mandiri, BCA, Bibit</td><td class="text-center text-success">Yes</td><td>"OCBC is an APERD agent &amp; bond distributor"</td></tr>
+      <tr><td>Promo kartu kredit terbaik?</td><td>Mandiri, BCA, UOB</td><td class="text-center text-success">Yes</td><td>A dedicated, crawlable, updated promo page</td></tr>
+      <tr><td>KPR terbaik?</td><td>BTN, CIMB, Mandiri</td><td class="text-center text-success">Yes</td><td>A citable KPR page with rate &amp; tenor as text, not PDF</td></tr>
+      <tr><td>KTA terbaik?</td><td>aggregators, BCA, DBS</td><td class="text-center text-success">Yes</td><td>A citable KTA page with plafon, bunga, syarat as a table</td></tr>
+    </tbody></table></div>
+    <p class="footnote mb-8">The gap is message distribution, not product. AI recommends the bank that published the message matching the question.</p>
+
+    <h3 class="font-display text-xl font-bold text-white mb-4 mt-8">Branded vs non-branded: the product pages capture only existing customers</h3>
+    <p class="text-sm text-gray-400 leading-relaxed mb-4">A non-branded visit (someone searching a need without naming a bank) is how a <em>new</em> customer is found. OCBC's product pages are reached almost only by people who already typed "OCBC".</p>
+    <div class="grid md:grid-cols-2 gap-6 mb-4">
+      <div>
+        <p class="text-sm text-gray-400 mb-2 font-semibold">Savings — non-branded share</p>
+        <div class="table-scroll rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Bank</th><th class="text-right">Total</th><th class="text-right">Non-branded</th><th class="text-right">Share</th></tr></thead><tbody>
+          <tr><td><strong>CIMB Niaga</strong></td><td class="text-right mono">7,995</td><td class="text-right mono">2,802</td><td class="text-right mono">35%</td></tr>
+          <tr style="background: rgba(1,170,193,0.06);"><td><strong class="text-primary">OCBC</strong></td><td class="text-right mono">759</td><td class="text-right mono">235</td><td class="text-right mono text-warning">31%</td></tr>
+          <tr><td><strong>Bank Mandiri</strong></td><td class="text-right mono">4,780</td><td class="text-right mono">495</td><td class="text-right mono">10%</td></tr>
+          <tr><td><strong>BRI</strong></td><td class="text-right mono">35,086</td><td class="text-right mono">2,215</td><td class="text-right mono">6%</td></tr>
+        </tbody></table></div>
+      </div>
+      <div>
+        <p class="text-sm text-gray-400 mb-2 font-semibold">Credit card — non-branded share</p>
+        <div class="table-scroll rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Bank</th><th class="text-right">Total</th><th class="text-right">Non-branded</th><th class="text-right">Share</th></tr></thead><tbody>
+          <tr><td><strong>Jenius</strong></td><td class="text-right mono">2,255</td><td class="text-right mono">1,132</td><td class="text-right mono">50%</td></tr>
+          <tr><td><strong>CIMB Niaga</strong></td><td class="text-right mono">8,569</td><td class="text-right mono">2,548</td><td class="text-right mono">30%</td></tr>
+          <tr><td><strong>Bank Mandiri</strong></td><td class="text-right mono">61,000</td><td class="text-right mono">17,010</td><td class="text-right mono">28%</td></tr>
+          <tr style="background: rgba(1,170,193,0.06);"><td><strong class="text-primary">OCBC</strong></td><td class="text-right mono">2,068</td><td class="text-right mono text-danger">44</td><td class="text-right mono text-danger">2%</td></tr>
+        </tbody></table></div>
+      </div>
+    </div>
+    <p class="footnote mb-8">On non-branded credit-card discovery — where new customers are won — OCBC's 44 visits a month trail Bank Mandiri's 17,010 by roughly 386&times;.</p>
 
     <div class="readiness-insight"><strong>The encouraging part:</strong> in 6 of 8 questions OCBC loses, it already has the product. It loses only because it never published the message in the buyer's framing — so AI recommends whoever did. That is a distribution gap, not a product gap, and it is fixable.</div>
     <p class="footnote">Note: "brand awareness in AI" (#2) and "buyer-question visibility in AI" (#4) are two different measurements — an aggregate brand-mentions dataset vs. live testing of real questions. They are two views of AI visibility, not one ranking; the consistent signal is broad presence high, decision-moment presence low.</p>
@@ -261,11 +381,18 @@
   <div class="max-w-5xl mx-auto">
     <span class="font-mono text-xs text-ns-teal tracking-[0.2em] uppercase block mb-4">// 05 TECHNICAL &amp; CONTENT FINDINGS</span>
     <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ns-dark mb-3">What's Holding the Money Pages Back</h2>
-    <p class="text-gray-600 text-base md:text-lg mb-10 max-w-4xl">The implementation detail behind Gap 2 — what we found, why it matters, and the fix. Most of this is labelling and on-page work on pages that already exist.</p>
+    <p class="text-gray-600 text-base md:text-lg mb-8 max-w-4xl">The implementation detail behind Gap 2 — what we found, why it matters, and the fix. Most of this is labelling and on-page work on pages that already exist.</p>
+
+    <div class="table-scroll mb-3 rounded-xl border border-gray-200"><table class="data-table"><thead><tr><th>Core OCBC page</th><th class="text-center">H1</th><th class="text-center">Schema</th><th class="text-center">Detail in PDF</th></tr></thead><tbody>
+      <tr><td class="mono" style="font-size:12px;">/simpanan/tabungan-berjangka</td><td class="text-center text-danger">None</td><td class="text-center text-warning">Breadcrumb only</td><td class="text-center">—</td></tr>
+      <tr><td class="mono" style="font-size:12px;">/simpanan/deposito</td><td class="text-center text-danger">None</td><td class="text-center text-warning">Breadcrumb only</td><td class="text-center">—</td></tr>
+      <tr><td class="mono" style="font-size:12px;">/simpanan/tabungan/tabunganku</td><td class="text-center text-warning">"Informasi Lebih Lanjut" (generic)</td><td class="text-center text-warning">Breadcrumb + non-standard (no <em>Product</em>)</td><td class="text-center text-danger">Yes (RIPLAY)</td></tr>
+    </tbody></table></div>
+    <p class="footnote mb-10">Verified live via page crawl, June 2026. The H1 either does not exist or does not name the product; structured data never reaches schema.org <em>Product</em>.</p>
 
     <h3 class="font-display text-xl font-bold text-ns-dark mb-4">Content findings</h3>
     <div class="issue-detail"><h4 class="issue-title mb-2">No Heading 1 on core product pages</h4><div class="issue-body"><p>The H1 is the strongest signal of what a page is about, for both search engines and AI. Core product pages (e.g. tabungan berjangka) have none. <strong>Fix:</strong> give every product page a single, clear, intent-matched H1 stating the product and its main benefit.</p></div></div>
-    <div class="issue-detail"><h4 class="issue-title mb-2">Duplicate page titles across products (keyword cannibalization)</h4><div class="issue-body"><p>Different products share the same visible title — e.g. tabungan berjangka and deposito — so search engines and AI can't tell them apart and they compete for the same searches. <strong>Fix:</strong> a unique title (and H1) for every product.</p></div></div>
+    <div class="issue-detail"><h4 class="issue-title mb-2">Where an H1 exists, it labels the section, not the product</h4><div class="issue-body"><p>On TabunganKu the only H1 is "Informasi Lebih Lanjut" ("More Information") — a section label, not the product or its benefit, so the strongest on-page signal is wasted. (Note: the browser title tags on these pages are now distinct, so this is no longer a cannibalization issue — the gap is the missing/weak H1.) <strong>Fix:</strong> make the H1 the product name + main benefit on every product page.</p></div></div>
     <div class="issue-detail"><h4 class="issue-title mb-2">Titles not built around target keywords</h4><div class="issue-body"><p>Core page titles (KPR, KPM) are not built around the terms buyers search. <strong>Fix:</strong> rewrite around the product + benefit, e.g. "Kredit Pemilikan Rumah (KPR): Angsuran Rendah hingga 25 Tahun."</p></div></div>
     <div class="issue-detail"><h4 class="issue-title mb-2">Thin product pages — detail trapped in PDFs</h4><div class="issue-body"><p>Key product information sits inside PDF files, so the page itself looks thin and uninformative to crawlers and AI, and customers must download a document to understand a product. <strong>Fix:</strong> bring the key information onto the page as readable text; strengthen the on-page FAQ.</p></div></div>
 
@@ -274,6 +401,7 @@
     <div class="issue-detail"><h4 class="issue-title mb-2">No FAQ structured data on pages that already have FAQs</h4><div class="issue-body"><p>FAQ content is written on the page but not labelled, so Google and AI can't lift it confidently. <strong>Fix:</strong> add FAQPage structured data to every page with an FAQ.</p></div></div>
     <div class="issue-detail"><h4 class="issue-title mb-2">No llms.txt file</h4><div class="issue-body"><p>llms.txt gives AI platforms a clean map of the site's structure and core products. Without it, AI pieces OCBC's product structure together imperfectly. <strong>Fix:</strong> publish an llms.txt describing the main path structure and core product lines.</p></div></div>
     <div class="issue-detail"><h4 class="issue-title mb-2">No x-default hreflang &middot; broken calculator links &middot; missing breadcrumbs</h4><div class="issue-body"><p>No x-default hreflang (Google must guess which version to serve unmatched visitors); calculator links in the navigation point to empty pages (a dead end at peak interest); some pages lack breadcrumb navigation. <strong>Fix:</strong> add x-default hreflang to the Indonesian version; build working calculator pages (Section 06); add breadcrumbs sitewide.</p></div></div>
+    <div class="evidence-fig"><img src="assets/ocbc-example-breadcrumb-mandiri.png" alt="Bank Mandiri savings page showing breadcrumb navigation (Home > Simpanan > ...)"><div class="evidence-cap">What good looks like — breadcrumb navigation on a Bank Mandiri savings page, helping both users and crawlers understand site structure.</div></div>
   </div>
 </section>
 
@@ -311,6 +439,15 @@
       </div>
     </div>
     <div class="readiness-insight"><strong>The rebalance, not "more":</strong> prune or consolidate the off-topic informational content and reinvest that budget into commercial-intent topics and money-page depth. It is not about producing more content — it's about rebalancing what gets written, and how it's written.</div>
+
+    <h3 class="font-display text-xl font-bold text-white mb-2 mt-10">What "good" looks like — patterns competitors already run</h3>
+    <p class="text-gray-400 text-base mb-6 max-w-4xl">Each recommendation below is something a competitor in OCBC's own market already does, and gets cited or ranked for.</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="evidence-fig" style="margin:0;"><img src="assets/ocbc-example-promo-bca-ecommerce.png" alt="BCA promo hub with category pages such as e-commerce, dining and travel"><div class="evidence-cap">Promo hub with crawlable category pages (BCA) — each category captures a specific high-intent query, vs OCBC's single /promo page.</div></div>
+      <div class="evidence-fig" style="margin:0;"><img src="assets/ocbc-example-kpr-calculator.png" alt="Bank Mandiri KPR mortgage simulation calculator page"><div class="evidence-cap">A working KPR / mortgage simulator (Bank Mandiri) — captures high-intent "simulasi KPR" searches OCBC is invisible for.</div></div>
+      <div class="evidence-fig" style="margin:0;"><img src="assets/ocbc-example-product-content-mandiri.png" alt="Bank Mandiri savings category page with descriptive product-comparison content"><div class="evidence-cap">SEO content on a category page (Bank Mandiri) — helps buyers choose and gives Search/AI context to rank the page.</div></div>
+      <div class="evidence-fig" style="margin:0;"><img src="assets/ocbc-example-blog-structure.png" alt="Example blog article structure with a key-takeaways box at the top"><div class="evidence-cap">A citable blog structure — key-takeaways box, clear headings, FAQ — so AI can lift and attribute an OCBC answer.</div></div>
+    </div>
   </div>
 </section>
 
