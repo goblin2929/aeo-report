@@ -92,6 +92,12 @@
     .compare-col img { width: 100%; height: 360px; object-fit: cover; object-position: top; border-radius: 10px; display: block; }
     .section-light .compare-col img { border: 1px solid #e5e5e5; }
     .section-dark .compare-col img { border: 1px solid rgba(255,255,255,0.12); }
+    details.qa { border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; margin: 4px 0 28px; background: rgba(255,255,255,0.02); }
+    details.qa > summary { cursor: pointer; padding: 14px 18px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; color: #01d7f4; list-style: none; }
+    details.qa > summary::-webkit-details-marker { display: none; }
+    details.qa > summary::after { content: '  ▸'; }
+    details.qa[open] > summary::after { content: '  ▾'; }
+    details.qa .qa-body { padding: 4px 14px 16px; }
     @media (max-width: 640px) { .stat-grid { grid-template-columns: 1fr; } .compare-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -261,9 +267,7 @@
   <div class="max-w-5xl mx-auto">
     <span class="font-mono text-xs text-ns-teal tracking-[0.2em] uppercase block mb-4">// 03 WHERE THE UPSIDE IS</span>
     <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ns-dark mb-3">Two Gaps Separate OCBC's Reach From Its Revenue Pages</h2>
-    <p class="text-gray-600 text-base md:text-lg mb-10 max-w-4xl">The reach is real; it simply isn't pointed at buyers. Two gaps explain the low yield — and each is closable with known SEO methods. (The third gap, AI visibility, is its own section below.)</p>
-
-    <div class="issue-detail issue-border-warning" style="border-left:4px solid #eab308;">
+    <div class="issue-detail issue-border-warning" style="border-left:4px solid #eab308; margin-top:8px;">
       <div class="flex items-start justify-between gap-4 mb-3"><h3 class="issue-title">Gap 1 — The content mix is informational-heavy</h3><span class="badge-warning">Intent rebalance</span></div>
       <div class="issue-body">
         <p>Only <strong>18.6% of blog traffic carries commercial intent</strong>. Nearly half is off-topic, and a third is low-intent study material. OCBC ranks well — largely for readers who will never open an account. The lever is rebalancing the intent mix, not producing more content.</p>
@@ -280,7 +284,7 @@
     <div class="issue-detail issue-border-danger" style="border-left:4px solid #ef4444;">
       <div class="flex items-start justify-between gap-4 mb-3"><h3 class="issue-title">Gap 2 — The money pages are under-optimized</h3><span class="badge-info">Lowest-hanging fruit</span></div>
       <div class="issue-body">
-        <p>The pages that sell — tabungan, kartu kredit, KPR — are technically and editorially thin. Verified live (June 2026): core product pages have <strong>no H1 at all</strong> (tabungan-berjangka, deposito), or an H1 that says "Informasi Lebih Lanjut" instead of the product (tabunganku); product detail is <strong>pushed into PDFs</strong> (TabunganKu's rates sit in a RIPLAY PDF); and <strong>structured data is limited to Breadcrumb</strong> — no schema.org <em>Product</em>. These are on-page fixes on assets that already exist — the lowest-hanging fruit in the program. Page-by-page evidence in Section 05.</p>
+        <p>The pages that sell — <a href="https://www.ocbc.id/id/individu/simpanan/tabungan-berjangka" target="_blank" rel="noopener" style="color:#017d8e;">tabungan</a>, <a href="https://www.ocbc.id/id/individu/kartu-transaksi/kartu-kredit" target="_blank" rel="noopener" style="color:#017d8e;">kartu kredit</a>, <a href="https://www.ocbc.id/id/individu/pinjaman/kredit-pemilikan-rumah" target="_blank" rel="noopener" style="color:#017d8e;">KPR</a> — are technically and editorially thin. Verified live (June 2026): the core product pages return <strong>no H1 at all</strong> (tabungan-berjangka, deposito, KPR and kartu kredit all have zero), or an H1 that says "Informasi Lebih Lanjut" instead of the product (tabunganku); product detail is <strong>pushed into PDFs</strong> (TabunganKu's rates sit in a RIPLAY PDF); and <strong>structured data is limited to Breadcrumb</strong> — no schema.org <em>Product</em>. These are on-page fixes on assets that already exist — the lowest-hanging fruit. Page-by-page evidence with URLs in Section 05.</p>
       </div>
     </div>
   </div>
@@ -290,8 +294,8 @@
 <section id="ai-visibility" class="section-dark scroll-animate bg-ns-dark text-white py-16 md:py-24 px-4">
   <div class="max-w-5xl mx-auto">
     <span class="font-mono text-xs text-ns-teal tracking-[0.2em] uppercase block mb-4">// 04 AI VISIBILITY &amp; THE BUYER'S MOMENT</span>
-    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">#2 for Brand Awareness in AI — #4 at the Buyer's Moment</h2>
-    <p class="text-gray-400 text-base md:text-lg mb-6 max-w-4xl">OCBC's AI presence looks strong on the surface: it is <strong class="text-white">#2 for brand awareness in AI</strong> — how often AI mentions OCBC across broad banking topics (31.4% share of voice, ahead of Mandiri and BRI). But brand awareness is not the same as being cited at the buyer's moment.</p>
+    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">#2 for Overall Brand Mentions in AI, but #4 for Buyer-Moment Queries</h2>
+    <p class="text-gray-400 text-base md:text-lg mb-6 max-w-4xl"><strong class="text-white">How we measured it:</strong> we counted how often each bank is mentioned in AI answers across 8 core banking topics (deposito, KPR, kredit tanpa agunan, kartu kredit, reksa dana, bunga deposito, tabungan berjangka, and "bank terbaik Indonesia"). On that basis OCBC's AI presence looks strong — it is <strong class="text-white">#2 for overall brand mentions (31.4% share of voice)</strong>, ahead of much larger banks like Mandiri and BRI. But mentions across broad topics are not the same as being cited at the buyer's moment.</p>
 
     <div class="table-scroll mb-6 rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Brand</th><th class="text-right">AI mentions</th><th class="text-right">Share of voice</th></tr></thead><tbody>
       <tr><td><strong>CIMB Niaga</strong></td><td class="text-right mono">23,478</td><td class="text-right mono">44.6%</td></tr>
@@ -338,7 +342,80 @@
         </tbody></table></div>
       </div>
     </div>
-    <p class="footnote mb-8">OCBC is the only bank in the set that AI cites mostly through blog articles. Every competitor is cited mostly through the product pages that open the account or the card. 60 live questions across Google AI Overview, ChatGPT and Gemini.</p>
+    <p class="footnote mb-3">OCBC is the only bank in the set that AI cites mostly through blog articles. Every competitor is cited mostly through the product pages that open the account or the card. 60 live questions across Google AI Overview, ChatGPT and Gemini. <em>(The broad "30 live buyer prompts" above are summarised by type; the 60 priority-product questions below are itemised.)</em></p>
+
+    <details class="qa">
+      <summary>See every savings &amp; credit-card question OCBC won and lost (60 prompts)</summary>
+      <div class="qa-body">
+        <p class="text-sm text-gray-400 mb-2 font-semibold mt-2">Savings — 30 questions (14 cited: 4 product page, 10 blog)</p>
+        <div class="table-scroll mb-6 rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Question (buyer's words)</th><th>OCBC result</th></tr></thead><tbody>
+          <tr><td>Buka rekening tabungan online tanpa ke cabang?</td><td><span class="badge-success">Product page</span></td></tr>
+          <tr><td>Tabungan tanpa biaya admin &amp; tanpa saldo minimum?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan dengan bunga paling tinggi (jangka panjang)?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan dengan fitur kantong/atur uang untuk budgeting?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan terbaik untuk anak muda / gaji pertama?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan untuk anak / pelajar yang aman?</td><td><span class="badge-success">Product page</span></td></tr>
+          <tr><td>Tabungan berjangka untuk mencapai target keuangan?</td><td><span class="badge-success">Product page</span></td></tr>
+          <tr><td>Tabungan rencana untuk DP rumah / menikah?</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Cara buka rekening tabungan hanya dengan KTP?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan gratis biaya transfer ke bank lain?</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Tabungan haji &amp; umrah terbaik?</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Nabung emas di bank, aman &amp; menguntungkan?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan mata uang asing (dollar)?</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Apakah tabungan dijamin LPS?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan dengan fitur autodebet?</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Bank digital, bunga tabungan tinggi tanpa biaya?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan dengan cashback/promo nasabah baru?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Berapa setoran awal buka rekening tabungan?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan untuk dana darurat?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan vs deposito, simpan uang di mana?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan bisnis/giro untuk UMKM?</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Cara menabung otomatis setiap gajian?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan dengan kartu debit untuk belanja online?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan yang bunganya dihitung harian?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Rekening bersama / joint account untuk pasangan?</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Tabungan untuk ibu rumah tangga atur belanja?</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Aplikasi tabungan dengan mobile banking lengkap?</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Tabungan untuk persiapan pensiun?</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tabungan yang memberi poin reward?</td><td><span class="badge-success">Product page</span></td></tr>
+          <tr><td>Tabungan syariah tanpa bunga?</td><td><span class="badge-warning">Blog</span></td></tr>
+        </tbody></table></div>
+
+        <p class="text-sm text-gray-400 mb-2 font-semibold">Credit card — 30 questions (14 cited: 2 product page, 12 blog; 2 mentioned only)</p>
+        <div class="table-scroll rounded-xl border border-white/10"><table class="data-table"><thead><tr><th>Question (buyer's words)</th><th class="text-center">Stage</th><th>OCBC result</th></tr></thead><tbody>
+          <tr><td>Cicilan 0% di banyak merchant?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Banyak promo &amp; cashback?</td><td class="text-center mono">MOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Apply online dengan mudah?</td><td class="text-center mono">BOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Tanpa iuran tahunan?</td><td class="text-center mono">MOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Untuk pemula, limit mudah disetujui?</td><td class="text-center mono">MOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Gaji minimal untuk apply?</td><td class="text-center mono">TOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Terbaik untuk belanja online?</td><td class="text-center mono">MOFU</td><td><span class="badge-muted">Mentioned only</span></td></tr>
+          <tr><td>Benefit airport lounge gratis?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Reward miles untuk traveling?</td><td class="text-center mono">MOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Promo dining / diskon restoran?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Belanja sehari-hari di supermarket?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Cashback bensin di SPBU?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Cicilan elektronik / gadget?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Syarat &amp; dokumen apply pertama?</td><td class="text-center mono">TOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Cara menaikkan limit?</td><td class="text-center mono">TOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Bayar tagihan supaya tidak kena bunga?</td><td class="text-center mono">TOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Bunga &amp; denda telat bayar?</td><td class="text-center mono">TOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Cara kerja kartu kredit untuk pemula?</td><td class="text-center mono">TOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Tanpa slip gaji, bisa diajukan?</td><td class="text-center mono">MOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Untuk mahasiswa / first jobber?</td><td class="text-center mono">MOFU</td><td><span class="badge-success">Product page</span></td></tr>
+          <tr><td>Terbaik transaksi luar negeri tanpa biaya?</td><td class="text-center mono">MOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Cara tukar poin reward jadi hadiah?</td><td class="text-center mono">TOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Co-branding maskapai / e-commerce?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Contactless / tap to pay?</td><td class="text-center mono">MOFU</td><td><span class="badge-success">Product page</span></td></tr>
+          <tr><td>Supplementary untuk anggota keluarga?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Apply online proses cepat?</td><td class="text-center mono">BOFU</td><td><span class="badge-warning">Blog</span></td></tr>
+          <tr><td>Limit besar untuk pengeluaran tinggi?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Promo cicilan tetap, bunga ringan?</td><td class="text-center mono">MOFU</td><td><span class="badge-muted">Mentioned only</span></td></tr>
+          <tr><td>Cara aktivasi kartu baru?</td><td class="text-center mono">TOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+          <tr><td>Virtual untuk transaksi online lebih aman?</td><td class="text-center mono">MOFU</td><td><span class="badge-danger">Not cited</span></td></tr>
+        </tbody></table></div>
+      </div>
+    </details>
 
     <h3 class="font-display text-xl font-bold text-white mb-4 mt-8">Credit cards: visibility is upside-down relative to the funnel</h3>
     <p class="text-sm text-gray-400 leading-relaxed mb-4">We classified the 30 credit-card questions by funnel stage and overlaid OCBC's citation result:</p>
@@ -398,9 +475,11 @@
     <p class="text-gray-600 text-base md:text-lg mb-8 max-w-4xl">The implementation detail behind Gap 2 — what we found, why it matters, and the fix. Most of this is labelling and on-page work on pages that already exist.</p>
 
     <div class="table-scroll mb-3 rounded-xl border border-gray-200"><table class="data-table"><thead><tr><th>Core OCBC page</th><th class="text-center">H1</th><th class="text-center">Schema</th><th class="text-center">Detail in PDF</th></tr></thead><tbody>
-      <tr><td class="mono" style="font-size:12px;">/simpanan/tabungan-berjangka</td><td class="text-center text-danger">None</td><td class="text-center text-warning">Breadcrumb only</td><td class="text-center">—</td></tr>
-      <tr><td class="mono" style="font-size:12px;">/simpanan/deposito</td><td class="text-center text-danger">None</td><td class="text-center text-warning">Breadcrumb only</td><td class="text-center">—</td></tr>
-      <tr><td class="mono" style="font-size:12px;">/simpanan/tabungan/tabunganku</td><td class="text-center text-warning">"Informasi Lebih Lanjut" (generic)</td><td class="text-center text-warning">Breadcrumb + non-standard (no <em>Product</em>)</td><td class="text-center text-danger">Yes (RIPLAY)</td></tr>
+      <tr><td><a class="mono" style="font-size:12px;color:#017d8e;" href="https://www.ocbc.id/id/individu/simpanan/tabungan-berjangka" target="_blank" rel="noopener">/simpanan/tabungan-berjangka</a></td><td class="text-center text-danger">None</td><td class="text-center text-warning">Breadcrumb only</td><td class="text-center">—</td></tr>
+      <tr><td><a class="mono" style="font-size:12px;color:#017d8e;" href="https://www.ocbc.id/id/individu/simpanan/deposito" target="_blank" rel="noopener">/simpanan/deposito</a></td><td class="text-center text-danger">None</td><td class="text-center text-warning">Breadcrumb only</td><td class="text-center">—</td></tr>
+      <tr><td><a class="mono" style="font-size:12px;color:#017d8e;" href="https://www.ocbc.id/id/individu/pinjaman/kredit-pemilikan-rumah" target="_blank" rel="noopener">/pinjaman/kredit-pemilikan-rumah</a></td><td class="text-center text-danger">None</td><td class="text-center text-warning">Breadcrumb only</td><td class="text-center">—</td></tr>
+      <tr><td><a class="mono" style="font-size:12px;color:#017d8e;" href="https://www.ocbc.id/id/individu/kartu-transaksi/kartu-kredit" target="_blank" rel="noopener">/kartu-transaksi/kartu-kredit</a></td><td class="text-center text-danger">None</td><td class="text-center text-warning">Breadcrumb only</td><td class="text-center">—</td></tr>
+      <tr><td><a class="mono" style="font-size:12px;color:#017d8e;" href="https://www.ocbc.id/id/individu/simpanan/tabungan/tabunganku" target="_blank" rel="noopener">/simpanan/tabungan/tabunganku</a></td><td class="text-center text-warning">"Informasi Lebih Lanjut" (generic)</td><td class="text-center text-warning">Breadcrumb + non-standard (no <em>Product</em>)</td><td class="text-center text-danger">Yes (RIPLAY)</td></tr>
     </tbody></table></div>
     <p class="footnote mb-10">Verified live via page crawl, June 2026. The H1 either does not exist or does not name the product; structured data never reaches schema.org <em>Product</em>.</p>
 
