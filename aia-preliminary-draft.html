@@ -380,16 +380,10 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
         <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/our-products/accident-protection</span></li></ul></div>
         <div class="finding-block"><div class="finding-label" style="color:var(--ns-primary);">Visual evidence</div>
         <p style="margin-bottom:10px;">The same Health category page, seen two ways. On the left is what a person sees in the browser: rich product cards for AIA Protect 3, AIA Enhanced Cancer Protect, AIA HealthShield Gold Max and more. On the right is what a search or AI crawler sees in the raw page before the browser builds it: the product list never loads and shows the words "Not initialised." in its place. The products a buyer can see simply are not there for a crawler to find.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-            <figure style="margin:0;">
-                <img src="how-user-see-aia-category-pages.png" alt="How a user sees the AIA Health category page: product cards for AIA Protect 3, AIA Enhanced Cancer Protect, AIA Platinum International Health and AIA HealthShield Gold Max." style="width:100%;height:auto;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:#fff;">
-                <figcaption style="font-size:12px;color:var(--ns-text-muted);margin-top:6px;font-style:italic;">What a user sees: the products render as cards.</figcaption>
-            </figure>
-            <figure style="margin:0;">
-                <img src="how-crawlers-see-aia-category-pages.png" alt="How a crawler sees the AIA Health category page: the product list is missing and shows the text Not initialised." style="width:100%;height:auto;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:#fff;">
-                <figcaption style="font-size:12px;color:var(--ns-text-muted);margin-top:6px;font-style:italic;">What a crawler sees: the products are gone, replaced by "Not initialised."</figcaption>
-            </figure>
-        </div></div>
+        <figure style="margin:0;">
+            <img src="aia-hub-links-not-crawlable.png" alt="Side by side comparison: how a user sees the AIA Health category page with product cards for AIA Protect 3, AIA Enhanced Cancer Protect and AIA HealthShield Gold Max, versus how a crawler sees the same page with the product list missing and showing the text Not initialised." style="width:100%;height:auto;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:#fff;">
+            <figcaption style="font-size:12px;color:var(--ns-text-muted);margin-top:6px;font-style:italic;">Left, what a user sees: the products render as cards. Right, what a crawler sees: the product list is replaced by "Not initialised."</figcaption>
+        </figure></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When a crawler cannot discover a link, the product page behind it receives far less SEO value, and in some cases is not found at all. This single issue helps explain why only 15 AIA product pages win non branded traffic while Great Eastern has 195. The products exist, but search engines struggle to reach them.</p></div>
         <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Make sure every product in a hub is discoverable through a server rendered link that does not require JavaScript to appear.</p></div>
     </div>
@@ -467,6 +461,12 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
         <div class="card-header"><div class="card-title">4.1 &middot; Product pages do not say who the product is for</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-warning">AEO</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>The critical illness page describes the plan, but it never frames the audience or the life situation the plan suits. Competitors do this well. Great Eastern and Manulife both spell out who their products are for on the page itself.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/our-products/health/critical-illness/aia-protect-3</span></li><li><span class="url-ref">https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/great-supremehealth-main.html</span></li><li><span class="url-ref">https://www.manulife.com.sg/en/solutions/health/critical-illness/manulife-early-completecare.html</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label" style="color:var(--ns-primary);">Visual evidence</div>
+        <p style="margin-bottom:10px;">How competitors do it. Great Eastern frames the same product around life stages, "for those starting a career", "for parents with young children", and "for foreigners residing in Singapore". Manulife adds a plain "Who is it for" section that names the audience directly. Both make it obvious to a reader, and to an AI, exactly which person each plan suits.</p>
+        <figure style="margin:0;">
+            <img src="aia-product-pages-no-audience.png" alt="Competitor examples: Great Eastern frames its product by life stage (starting a career, parents with young children, foreigners in Singapore), and Manulife includes a Who is it for section naming the target audience." style="width:100%;height:auto;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:#fff;">
+            <figcaption style="font-size:12px;color:var(--ns-text-muted);margin-top:6px;font-style:italic;">How Great Eastern and Manulife spell out the target audience on the product page itself. AIA's pages do not.</figcaption>
+        </figure></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When someone asks an AI assistant "I just graduated and started my first job, what insurance should I get," the assistant looks for pages that clearly connect a product to a person and a moment. Without that context, AIA loses the discovery opportunity even when its product is the right one.</p></div>
         <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add clear audience and life situation context to every product detail page, so both search engines and AI can match the page to real questions.</p></div>
     </div>
