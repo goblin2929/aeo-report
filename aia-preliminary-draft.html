@@ -313,6 +313,18 @@ main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-
         <div class="card-header"><div class="card-title">3.1 &middot; Product links inside hub pages cannot be crawled</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-danger">High impact</span></div></div>
         <div class="finding-block"><div class="finding-label found">What we found</div><p>On hub pages such as the accident protection hub, the links to individual product detail pages are not delivered in a way crawlers can follow, because they depend on the browser to build them after the page loads.</p>
         <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/our-products/accident-protection</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label" style="color:var(--ns-primary);">Visual evidence</div>
+        <p style="margin-bottom:10px;">The same Health category page, seen two ways. On the left is what a person sees in the browser: rich product cards for AIA Protect 3, AIA Enhanced Cancer Protect, AIA HealthShield Gold Max and more. On the right is what a search or AI crawler sees in the raw page before the browser builds it: the product list never loads and shows the words "Not initialised." in its place. The products a buyer can see simply are not there for a crawler to find.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <figure style="margin:0;">
+                <img src="how-user-see-aia-category-pages.png" alt="How a user sees the AIA Health category page: product cards for AIA Protect 3, AIA Enhanced Cancer Protect, AIA Platinum International Health and AIA HealthShield Gold Max." style="width:100%;height:auto;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:#fff;">
+                <figcaption style="font-size:12px;color:var(--ns-text-muted);margin-top:6px;font-style:italic;">What a user sees: the products render as cards.</figcaption>
+            </figure>
+            <figure style="margin:0;">
+                <img src="how-crawlers-see-aia-category-pages.png" alt="How a crawler sees the AIA Health category page: the product list is missing and shows the text Not initialised." style="width:100%;height:auto;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:#fff;">
+                <figcaption style="font-size:12px;color:var(--ns-text-muted);margin-top:6px;font-style:italic;">What a crawler sees: the products are gone, replaced by "Not initialised."</figcaption>
+            </figure>
+        </div></div>
         <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When a crawler cannot discover a link, the product page behind it receives far less SEO value, and in some cases is not found at all. This single issue helps explain why only 15 AIA product pages win non branded traffic while Great Eastern has 195. The products exist, but search engines struggle to reach them.</p></div>
         <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Make sure every product in a hub is discoverable through a server rendered link that does not require JavaScript to appear.</p></div>
     </div>
