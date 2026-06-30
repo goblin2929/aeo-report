@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIA Singapore &middot; Preliminary SEO &amp; AEO Analysis</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --ns-primary: #01aac1;
+    --ns-accent: #01d7f4;
+    --ns-teal: #017d8e;
+    --ns-teal-glow: rgba(1, 170, 193, 0.15);
+    --ns-dark: #111111;
+    --ns-darker: #0a0a0a;
+    --ns-medium: #2a2a2a;
+    --ns-light: #f5f5f5;
+    --ns-text: #e0e0e0;
+    --ns-text-muted: #888888;
+    --ns-success: #22c55e;
+    --ns-warning: #eab308;
+    --ns-danger: #ef4444;
+    --ns-orange: #f97316;
+    --sidebar-width: 260px;
+    --header-height: 64px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--ns-primary) var(--ns-dark); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ns-dark); }
+::-webkit-scrollbar-thumb { background: var(--ns-teal); border-radius: 3px; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--ns-darker); color: var(--ns-text); line-height: 1.6; font-size: 15px; overflow-x: hidden; }
+
+header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); background: rgba(17,17,17,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--ns-primary), var(--ns-accent)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; color: #fff; font-family: 'Space Grotesk', sans-serif; }
+.logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: #fff; letter-spacing: -0.02em; }
+.logo-text span { color: var(--ns-primary); }
+.header-nav { display: flex; align-items: center; gap: 24px; }
+.header-nav a { color: var(--ns-text-muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.header-nav a:hover { color: var(--ns-primary); }
+.btn-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, var(--ns-primary), var(--ns-teal)); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 13px; border: none; cursor: pointer; transition: all 0.3s; box-shadow: 0 2px 12px rgba(1,170,193,0.3); }
+.btn-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(1,170,193,0.45); }
+
+.side-nav { position: fixed; top: var(--header-height); left: 0; width: var(--sidebar-width); height: calc(100vh - var(--header-height)); background: var(--ns-dark); border-right: 1px solid rgba(255,255,255,0.06); padding: 24px 0; overflow-y: auto; z-index: 900; }
+.side-nav-section { padding: 0 16px; margin-bottom: 8px; }
+.side-nav-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ns-text-muted); padding: 8px 12px; }
+.side-nav-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; color: var(--ns-text-muted); text-decoration: none; font-size: 13px; font-weight: 500; border-radius: 6px; border-left: 3px solid transparent; transition: all 0.2s; margin-bottom: 2px; }
+.side-nav-link:hover { background: rgba(255,255,255,0.04); color: var(--ns-text); }
+.side-nav-link.active { background: var(--ns-teal-glow); color: var(--ns-primary); border-left-color: var(--ns-primary); }
+.side-nav-link .nav-icon { font-size: 14px; width: 20px; text-align: center; font-family: 'JetBrains Mono', monospace; }
+
+main { margin-left: var(--sidebar-width); margin-top: var(--header-height); min-height: calc(100vh - var(--header-height)); }
+.cover-section { padding: 64px 48px; text-align: center; position: relative; overflow: hidden; background: linear-gradient(180deg, var(--ns-dark) 0%, var(--ns-darker) 100%); }
+.cover-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 30%, rgba(1,170,193,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(1,215,244,0.05) 0%, transparent 50%); }
+.cover-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(1,170,193,0.1); border: 1px solid rgba(1,170,193,0.2); border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--ns-primary); margin-bottom: 24px; position: relative; }
+.cover-domain { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ns-text-muted); margin-bottom: 16px; position: relative; }
+.cover-title { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: #fff; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; position: relative; }
+.cover-subtitle { font-size: 16px; color: var(--ns-text-muted); margin-bottom: 40px; position: relative; max-width: 680px; margin-left:auto; margin-right:auto; }
+.cover-meta { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; position: relative; }
+.cover-meta-item { font-size: 13px; color: var(--ns-text-muted); }
+.cover-meta-item strong { color: var(--ns-text); }
+
+.section { padding: 48px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.section-header { margin-bottom: 32px; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ns-primary); font-weight: 500; margin-bottom: 8px; }
+.section-title { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1.2; }
+.section-subtitle { font-size: 14px; color: var(--ns-text-muted); margin-top: 8px; max-width: 760px; }
+.section p.body { font-size: 15px; color: var(--ns-text); margin-bottom: 16px; max-width: 820px; }
+.section p.body.lead { font-size: 16px; }
+
+.card { background: var(--ns-medium); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+.card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 12px; flex-wrap: wrap; }
+.card-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #fff; }
+.card-badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+.badge-danger { background: rgba(239,68,68,0.15); color: var(--ns-danger); }
+.badge-warning { background: rgba(234,179,8,0.15); color: var(--ns-warning); }
+.badge-success { background: rgba(34,197,94,0.15); color: var(--ns-success); }
+.badge-info { background: rgba(1,170,193,0.15); color: var(--ns-primary); }
+.badge-orange { background: rgba(249,115,22,0.15); color: var(--ns-orange); }
+.badge-cat { background: rgba(136,136,136,0.14); color: var(--ns-text-muted); border: 1px solid rgba(255,255,255,0.08); }
+.badge-group { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+
+.finding-block { margin: 14px 0; }
+.finding-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.finding-label.found { color: var(--ns-text-muted); }
+.finding-label.why { color: var(--ns-warning); }
+.finding-label.fix { color: var(--ns-success); }
+.finding-block p { font-size: 14px; color: var(--ns-text); }
+.url-ref { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ns-primary); word-break: break-all; }
+.url-list { list-style: none; margin: 6px 0; }
+.url-list li { margin-bottom: 3px; }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.data-table th { text-align: left; padding: 11px 12px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ns-text-muted); border-bottom: 1px solid rgba(255,255,255,0.08); white-space: nowrap; }
+.data-table td { padding: 11px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--ns-text); vertical-align: middle; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: rgba(255,255,255,0.02); }
+.data-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+.data-table .text-right { text-align: right; }
+.data-table tr.highlight td { background: rgba(1,170,193,0.07); }
+.data-table tr.highlight:hover td { background: rgba(1,170,193,0.1); }
+.text-danger { color: var(--ns-danger) !important; }
+.text-warning { color: var(--ns-warning) !important; }
+.text-success { color: var(--ns-success) !important; }
+.text-primary { color: var(--ns-primary) !important; }
+.text-muted { color: var(--ns-text-muted) !important; }
+.fw-700 { font-weight: 700; }
+.table-wrap { overflow-x: auto; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.stat-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px; }
+.stat-card .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ns-text-muted); margin-bottom: 6px; }
+.stat-card .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: #fff; line-height: 1.1; }
+.stat-card .stat-context { font-size: 12px; color: var(--ns-text-muted); margin-top: 6px; }
+
+.callout { background: linear-gradient(135deg, rgba(1,170,193,0.07) 0%, rgba(1,215,244,0.03) 100%); border: 1px solid rgba(1,170,193,0.2); border-left: 4px solid var(--ns-primary); border-radius: 10px; padding: 20px 24px; margin: 20px 0; }
+.callout .callout-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: #fff; margin-bottom: 6px; font-size: 15px; }
+.callout p { font-size: 14px; color: var(--ns-text); }
+
+.priority-list { counter-reset: pr; list-style: none; }
+.priority-item { display: flex; gap: 16px; align-items: flex-start; background: var(--ns-medium); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; }
+.priority-num { counter-increment: pr; flex-shrink: 0; width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, var(--ns-primary), var(--ns-teal)); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #fff; }
+.priority-num::before { content: counter(pr); }
+.priority-item .ptext { font-size: 14px; }
+.priority-item .ptext strong { color: #fff; }
+
+.report-footer { padding: 40px 48px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.report-footer p { font-size: 13px; color: var(--ns-text-muted); }
+.report-footer a { color: var(--ns-primary); text-decoration: none; }
+.draft-banner { background: rgba(234,179,8,0.1); border-bottom: 1px solid rgba(234,179,8,0.25); color: var(--ns-warning); text-align: center; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 16px; text-transform: uppercase; }
+
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px 0; transition: all 0.3s; }
+.scroll-animate { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-animate.animate-in { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1024px) { .side-nav { display: none; } .side-nav.show { display: block; } main { margin-left: 0; } .cover-title { font-size: 32px; } .hamburger { display: block; } .header-nav { display: none; } }
+@media (max-width: 768px) { .section { padding: 32px 20px; } .cover-section { padding: 48px 20px; } .cover-title { font-size: 28px; } .stat-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .section, .cover-section { padding: 24px 18px; } .cover-title { font-size: 24px; } .stat-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="draft-banner">Preliminary Draft &middot; For Stakeholder Review</div>
+<header>
+    <a href="https://www.novastacks-ai.com" class="logo">
+        <div class="logo-icon">N</div>
+        <div class="logo-text">nova<span>stacks</span></div>
+    </a>
+    <div class="header-nav">
+        <a href="#overview">Overview</a>
+        <a href="#data">Competitive &amp; AI</a>
+        <a href="#technical">Technical</a>
+        <a href="#content">Content</a>
+        <a href="https://www.novastacks-ai.com/contact" class="btn-cta">Talk to Our Team</a>
+    </div>
+    <button class="hamburger" onclick="document.querySelector('.side-nav').classList.toggle('show')"><span></span><span></span><span></span></button>
+</header>
+<nav class="side-nav">
+<div class="side-nav-section">
+<div class="side-nav-label">Preliminary Analysis</div>
+<a href="#overview" class="side-nav-link active" data-section="overview"><span class="nav-icon">01</span> Executive Summary</a>
+<a href="#data" class="side-nav-link" data-section="data"><span class="nav-icon">02</span> Competitive &amp; AI Standing</a>
+<a href="#technical" class="side-nav-link" data-section="technical"><span class="nav-icon">03</span> Technical Findings</a>
+<a href="#content" class="side-nav-link" data-section="content"><span class="nav-icon">04</span> Content Findings</a>
+<a href="#scale" class="side-nav-link" data-section="scale"><span class="nav-icon">05</span> Scale &amp; Roadmap</a>
+<a href="#priorities" class="side-nav-link" data-section="priorities"><span class="nav-icon">06</span> What to Prioritise</a>
+</div>
+</nav>
+<main>
+
+<section id="overview" class="cover-section">
+    <div class="cover-badge">Preliminary SEO &amp; AEO Analysis</div>
+    <div class="cover-domain">www.aia.com.sg/en/index</div>
+    <h1 class="cover-title">AIA Singapore</h1>
+    <p class="cover-subtitle">AIA has the brand strength and the website authority to win far more non branded search traffic than it does today. The gap is not authority. It is how the site is built for crawlers, how product pages speak to buyers, and how little educational content AIA publishes against the opportunity.</p>
+    <div class="cover-meta">
+        <div class="cover-meta-item"><strong>Market:</strong> Singapore</div>
+        <div class="cover-meta-item"><strong>Prepared by:</strong> NovaStacks AI</div>
+        <div class="cover-meta-item"><strong>Date:</strong> June 2026</div>
+    </div>
+</section>
+
+<!-- EXECUTIVE SUMMARY -->
+<section class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 01 &middot; Executive Summary</div>
+        <h2 class="section-title">Strong brand, under used authority</h2>
+    </div>
+    <p class="body lead">AIA Singapore is the second most visible insurer in organic search in this group, with around 82,346 organic visits a month across 554 ranking pages. It is a brand that people actively search for, and AI assistants already rate it highly.</p>
+    <p class="body">The problem sits underneath that strength. About 71 percent of AIA traffic comes from people searching the brand name. Non branded discovery, where new customers find an insurer without naming one, is where AIA falls behind. Great Eastern earns roughly double AIA's non branded traffic and more than six times its non branded product traffic, despite having website authority that is only a few points higher. AIA is sitting on the authority to compete and is not yet using it, because the product pages are hard for crawlers to reach and understand, and because AIA publishes very little educational content where most new buyers begin.</p>
+    <div class="stat-grid">
+        <div class="stat-card"><div class="stat-label">Branded share of AIA traffic</div><div class="stat-value text-warning">71%</div><div class="stat-context">Most traffic depends on the brand name, not discovery</div></div>
+        <div class="stat-card"><div class="stat-label">AIA non branded product pages</div><div class="stat-value text-danger">15</div><div class="stat-context">Pages that win non branded product searches</div></div>
+        <div class="stat-card"><div class="stat-label">Great Eastern non branded product pages</div><div class="stat-value text-success">195</div><div class="stat-context">13x more, and 6x the non branded product traffic</div></div>
+        <div class="stat-card" style="border-color:rgba(1,170,193,0.3);"><div class="stat-label">AIA Domain Rating</div><div class="stat-value text-primary">64</div><div class="stat-context">On par with Great Eastern (68) and Prudential (66)</div></div>
+    </div>
+    <div class="callout">
+        <div class="callout-title">The one line that matters</div>
+        <p>AIA's authority is essentially level with Great Eastern, yet Great Eastern converts it into six times the non branded product traffic. The gap is a content and coverage gap, not an authority gap, which means it is fixable with the work laid out in this report.</p>
+    </div>
+    <p class="body">This analysis groups the findings into Technical, Content, and Scale. Each finding explains what we found, why it matters for a non technical reader, and what we recommend.</p>
+</section>
+
+<!-- COMPETITIVE DATA -->
+<section id="data" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 02 &middot; Competitive and AI Standing</div>
+        <h2 class="section-title">Where AIA stands today</h2>
+        <p class="section-subtitle">Ahrefs organic data for the Singapore market, plus a live test of how AIA appears in AI answers. AIA is compared against Prudential, Great Eastern, and Manulife.</p>
+    </div>
+
+    <div class="stat-grid" style="margin-bottom:24px;">
+        <div class="stat-card" style="border-color:rgba(239,68,68,0.3);"><div class="stat-label">Axis 1 &middot; Site Readiness</div><div class="stat-value text-danger">52<span style="font-size:16px;color:var(--ns-text-muted);">/100</span></div><div class="stat-context">How well the site is built to be cited by AI. Partially ready.</div></div>
+        <div class="stat-card" style="border-color:rgba(34,197,94,0.3);"><div class="stat-label">Axis 2 &middot; LLM Visibility</div><div class="stat-value text-success">73<span style="font-size:16px;color:var(--ns-text-muted);">/100</span></div><div class="stat-context">How present AIA already is in AI answers. Strong.</div></div>
+        <div class="stat-card" style="border-color:rgba(1,170,193,0.35);"><div class="stat-label">Combined AEO Score</div><div class="stat-value text-primary">62<span style="font-size:16px;color:var(--ns-text-muted);">/100</span></div><div class="stat-context">Partially AI-Ready. The 21 point gap between the two axes is the opportunity.</div></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Overall organic traffic</div><span class="card-badge badge-info">2nd in traffic</span></div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Insurer</th><th class="text-right">Organic Traffic</th><th class="text-right">Ranking Pages</th></tr></thead>
+            <tbody>
+                <tr><td>Prudential</td><td class="text-right mono">151,556</td><td class="text-right mono">650</td></tr>
+                <tr class="highlight"><td class="fw-700 text-primary">AIA</td><td class="text-right mono fw-700">82,346</td><td class="text-right mono fw-700">554</td></tr>
+                <tr><td>Great Eastern</td><td class="text-right mono">71,431</td><td class="text-right mono">480</td></tr>
+                <tr><td>Manulife</td><td class="text-right mono">16,604</td><td class="text-right mono">320</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="body" style="margin-top:14px;margin-bottom:0;">AIA sits in a healthy second place overall. The picture changes once we separate branded from non branded traffic.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Branded versus non branded traffic</div><span class="card-badge badge-danger">Headline finding</span></div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Insurer</th><th class="text-right">Branded</th><th class="text-right">Non Branded</th><th class="text-right">Branded Share</th></tr></thead>
+            <tbody>
+                <tr><td>Prudential</td><td class="text-right mono">141,147</td><td class="text-right mono">10,409</td><td class="text-right mono">93.1%</td></tr>
+                <tr class="highlight"><td class="fw-700 text-primary">AIA</td><td class="text-right mono fw-700">58,683</td><td class="text-right mono fw-700">23,663</td><td class="text-right mono text-warning fw-700">71.3%</td></tr>
+                <tr><td>Great Eastern</td><td class="text-right mono">24,484</td><td class="text-right mono text-success fw-700">46,947</td><td class="text-right mono text-success">34.3%</td></tr>
+                <tr><td>Manulife</td><td class="text-right mono">11,899</td><td class="text-right mono">4,705</td><td class="text-right mono">71.7%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="callout" style="margin-bottom:0;">
+            <div class="callout-title">What this means</div>
+            <p>AIA depends on its brand for about 71 percent of its traffic. Great Eastern is the opposite, with only 34 percent branded, which means two of every three Great Eastern visits come from people who never searched for the brand. Great Eastern earns 46,947 non branded visits a month, roughly double AIA's 23,663, and it is doing a far better job of being found by people who do not yet know which insurer they want.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Non branded product pages &middot; the real gap</div><span class="card-badge badge-danger">13x coverage gap</span></div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Insurer</th><th class="text-right">Non Branded Product Traffic</th><th class="text-right">Non Branded Product Pages</th></tr></thead>
+            <tbody>
+                <tr><td>Great Eastern</td><td class="text-right mono text-success fw-700">41,800</td><td class="text-right mono text-success fw-700">195</td></tr>
+                <tr><td>Prudential</td><td class="text-right mono">7,491</td><td class="text-right mono">23</td></tr>
+                <tr class="highlight"><td class="fw-700 text-primary">AIA</td><td class="text-right mono fw-700">6,573</td><td class="text-right mono text-danger fw-700">15</td></tr>
+                <tr><td>Manulife</td><td class="text-right mono">1,691</td><td class="text-right mono">22</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="callout" style="margin-bottom:0;">
+            <div class="callout-title">What this means</div>
+            <p>Great Eastern earns 41,800 non branded visits to its product pages every month from 195 pages that rank. AIA earns 6,573 from just 15 pages. Great Eastern has built roughly 13 times more product pages that win non branded searches, and it is rewarded with more than six times the traffic. AIA's products exist, but search engines struggle to reach and understand them. The technical findings below explain why.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">Website authority is not the problem</div><span class="card-badge badge-info">Diagnosis</span></div>
+        <div class="table-wrap">
+        <table class="data-table">
+            <thead><tr><th>Insurer</th><th class="text-right">Domain Rating</th></tr></thead>
+            <tbody>
+                <tr><td>Great Eastern</td><td class="text-right mono">68</td></tr>
+                <tr><td>Prudential</td><td class="text-right mono">66</td></tr>
+                <tr class="highlight"><td class="fw-700 text-primary">AIA</td><td class="text-right mono fw-700">64</td></tr>
+                <tr><td>Manulife</td><td class="text-right mono">53</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="body" style="margin-top:14px;margin-bottom:0;">Domain Rating is Ahrefs' 0 to 100 measure of backlink strength. AIA at 64 sits right alongside Great Eastern at 68 and Prudential at 66. The three leaders are separated by only a few points. Great Eastern does not out traffic AIA because it has stronger links. It wins because it has built more pages and written them better, and it turns roughly the same authority into six times the non branded product traffic.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">AI knows AIA well, but cites the blog, not the products</div><div class="badge-group"><span class="card-badge badge-info">AI Answers</span><span class="card-badge badge-success">Strength</span></div></div>
+        <p class="body">We tested how AIA appears in live AI answers across Google AI Overviews, ChatGPT, and Perplexity. The visibility is genuinely strong. Perplexity called AIA "the best overall life insurance company in Singapore," and ChatGPT listed AIA first among Singapore insurers. AI already knows AIA and rates it highly.</p>
+        <p class="body" style="margin-bottom:6px;">The catch is what gets cited as the source. Across every non branded question we tested, when AI pointed to an AIA owned page, it pointed to the same single educational guide:</p>
+        <ul class="url-list"><li><span class="url-ref">/en/health-wellness/healthy-living-with-aia/5-types-of-insurance-you-should-get-in-singapore</span></li></ul>
+        <div class="callout" style="margin-bottom:0;">
+            <div class="callout-title">The one line that matters</div>
+            <p>The more valuable category and comparison citations went to third party portals like MoneySmart, SingSaver, and PlannerBee instead of to AIA. AI talks about AIA using other people's pages. Fixing the technical foundation and building category content turns AIA from a brand that AI mentions into a brand that AI cites.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TECHNICAL -->
+<section id="technical" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 03 &middot; Technical Findings</div>
+        <h2 class="section-title">Why the pages AIA already has are hard to find and trust</h2>
+        <p class="section-subtitle">Based on a Screaming Frog crawl of 713 URLs run on 29 June 2026, a homepage Lighthouse test, and live page checks. Each finding lists what we found, why it matters, and the fix.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.1 &middot; Product links inside hub pages cannot be crawled</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-danger">High impact</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>On hub pages such as the accident protection hub, the links to individual product detail pages are not delivered in a way crawlers can follow, because they depend on the browser to build them after the page loads.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/our-products/accident-protection</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When a crawler cannot discover a link, the product page behind it receives far less SEO value, and in some cases is not found at all. This single issue helps explain why only 15 AIA product pages win non branded traffic while Great Eastern has 195. The products exist, but search engines struggle to reach them.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Make sure every product in a hub is discoverable through a server rendered link that does not require JavaScript to appear.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.2 &middot; No canonical tags on about half the site</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Widespread</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Of the 701 live pages we crawled, 375 (about 53 percent) carry no canonical tag, including 73 of 158 product pages.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>A canonical tag is a simple instruction that tells search engines and AI platforms which version of a URL is the official one. Without it, the site is exposed to duplicate content confusion as it grows, and crawlers are left to guess.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add a self referencing canonical tag to every page, pointing each URL to itself.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.3 &middot; Unnecessary hreflang on product pages wastes crawl budget</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Crawl budget</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>The travel product page below carries an hreflang tag pointing at an internal content path on a different host, rather than a real alternate language version.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/our-products/travel-and-lifestyle/travel/aia-around-the-world-plus-ii</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Crawl budget is the limited attention a search engine gives a site on each visit. Pointing it at internal duplicate paths means important pages get crawled less often.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Remove the hreflang tags from the product pages.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.4 &middot; No Open Graph or Twitter tags</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-info">AEO</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Pages do not carry Open Graph or Twitter tags.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>These are the small pieces of code that tell platforms, and increasingly AI systems, what a page is about before they read the whole thing. They give both social platforms and AI crawlers a cleaner, faster understanding of each page.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Implement Open Graph and Twitter tags across the site.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.5 &middot; Multiple Heading 1 tags, and missing Heading 1 on many pages</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Structure</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Several product pages and news release pages use more than one Heading 1. Our crawl also found 93 pages with no detectable Heading 1 at all, which points back to the rendering issue in 3.1.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/our-products/health/critical-illness/aia-protect-3</span></li><li><span class="url-ref">https://www.aia.com.sg/en/about-aia/media-centre/press-releases/2026/aia-partners-insead</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>A page should have one clear Heading 1 so crawlers know the single main topic. Multiple Heading 1 tags dilute that signal, and a missing one removes it entirely.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Review heading structure and standardize to one clear Heading 1 per page.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.6 &middot; Missing structured data on content and product pages</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-info">AEO</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>Blog and press release pages carry no Article or NewsArticle structured data. Beyond articles, the site is also missing FAQ, Service, and Breadcrumb structured data on the pages where each would apply. The homepage organization markup is in good shape, so this is about extending structured data to the page types that do not have it yet.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/about-aia/sustainability/health-and-wellness/hyrox</span></li><li><span class="url-ref">https://www.aia.com.sg/en/about-aia/media-centre/press-releases/2026/aia-partners-insead</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Structured data is the markup that helps AI systems understand what a page is, when it was published, and how it should be read. It is one of the most direct ways to make a page citable by AI.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add Article and NewsArticle structured data to content and press releases, and add FAQ, Service, and Breadcrumb markup to the relevant pages.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.7 &middot; Press releases appear to be set to no index</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Confirm with team</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>The INSEAD partnership release appears to be marked so that search engines are told not to index it.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/about-aia/media-centre/press-releases/2026/aia-partners-insead</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>No index means the page is hidden from search and from AI systems. If that is intentional, no action is needed. If it is not, AIA is hiding its own newsworthy moments from the platforms that would otherwise pick them up.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Confirm with the team whether this is intended. If not, set the press release pages to index.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.8 &middot; Redirects to a test environment and to error pages</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Crawl hygiene</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>One careers page redirects to a UAT testing environment on a wwwuat host rather than to a live page. Two URLs, the 2026 press releases landing path and the events path, redirect straight to a 404 error page. A couple of other pages use temporary redirects where a permanent one would be correct.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Redirects to a test environment should never happen on a live site, and redirects to a 404 waste crawl budget and frustrate anyone who lands on them. Together they signal a redirect setup that needs cleaning up.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Repair the redirect targets so they point to live, relevant pages, and switch permanent moves to permanent redirects.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">3.9 &middot; Slow mobile page speed and a missing favicon</div><div class="badge-group"><span class="card-badge badge-cat">Technical</span><span class="card-badge badge-warning">Performance</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>A Lighthouse test of the homepage on mobile returned a performance score of 31 out of 100, with the largest content element taking far longer than the recommended two and a half seconds to appear and the main thread blocked for well over a second. The server itself responds quickly, so the problem is the weight of the page rather than slow hosting. The favicon, the small site icon browsers and search results show, was also not detected.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>Slow, heavy pages get crawled less often and rank less well. The favicon is a small but visible trust and brand signal in search results and browser tabs.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Reduce the weight of the homepage and key templates, and add a favicon. Confirm the field data once Search Console is connected.</p></div>
+    </div>
+</section>
+
+<!-- CONTENT -->
+<section id="content" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 04 &middot; Content Findings</div>
+        <h2 class="section-title">Pages that do not yet speak to buyers or to AI</h2>
+        <p class="section-subtitle">The product pages describe plans well, but they rarely frame who the plan is for, and AIA publishes very little educational content where most new buyers start.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">4.1 &middot; Product pages do not say who the product is for</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-warning">AEO</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>The critical illness page describes the plan, but it never frames the audience or the life situation the plan suits. Competitors do this well. Great Eastern and Manulife both spell out who their products are for on the page itself.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/our-products/health/critical-illness/aia-protect-3</span></li><li><span class="url-ref">https://www.greateasternlife.com/sg/en/personal-insurance/our-products/health-insurance/great-supremehealth-main.html</span></li><li><span class="url-ref">https://www.manulife.com.sg/en/solutions/health/critical-illness/manulife-early-completecare.html</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>When someone asks an AI assistant "I just graduated and started my first job, what insurance should I get," the assistant looks for pages that clearly connect a product to a person and a moment. Without that context, AIA loses the discovery opportunity even when its product is the right one.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Add clear audience and life situation context to every product detail page, so both search engines and AI can match the page to real questions.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">4.2 &middot; Titles and meta descriptions do not match buyer intent</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-warning">On page</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>The title on the enhanced cancer protection page reads "AIA Enhanced Cancer Protect | Critical Illness Insurance | AIA Singapore," which leads with the internal product name rather than the benefit a buyer searches for. A title closer to "Critical Illness Insurance for Cancer Protection: 100% Coverage | AIA Singapore" would speak to intent. This compounds with a wider gap: 292 pages, about 42 percent of the site, have no meta description at all, including 56 product pages.</p>
+        <ul class="url-list"><li><span class="url-ref">https://www.aia.com.sg/en/our-products/health/critical-illness/aia-enhanced-cancer-protect</span></li></ul></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>The right title and description help search engines and AI understand the product and make it easier to discover. A missing description leaves the platform to guess what to show.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Revisit titles, meta descriptions, and headings on the product pages together, in consultation with the internal team, since product naming often involves compliance.</p></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><div class="card-title">4.3 &middot; Almost no educational content for buyers</div><div class="badge-group"><span class="card-badge badge-cat">Content</span><span class="card-badge badge-success">Biggest opportunity</span></div></div>
+        <div class="finding-block"><div class="finding-label found">What we found</div><p>AIA publishes very little content that teaches a buyer how to choose insurance. Its single best non branded asset is one educational guide, the "5 types of insurance you should get in Singapore" article, which ranks on the first page for "life insurance," a term searched around 112,000 times a month, and is the most cited AIA page in AI answers today.</p></div>
+        <div class="finding-block"><div class="finding-label why">Why it matters</div><p>In the article space, roughly 90 percent of readers are new visitors who do not yet know which brand they want. That makes articles one of the most effective ways to bring in high intent, relevant audiences and turn them into leads. One good article is already doing the work of dozens of product pages.</p></div>
+        <div class="finding-block"><div class="finding-label fix">Recommendation</div><p>Build an educational article engine that targets high volume non branded questions, modeled on the success of the existing guide.</p></div>
+    </div>
+</section>
+
+<!-- SCALE -->
+<section id="scale" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 05 &middot; Scale and One Year Roadmap</div>
+        <h2 class="section-title">Closing the coverage gap with Great Eastern</h2>
+        <p class="section-subtitle">The work falls into four themes, sequenced so the foundation comes first and the scaling that actually closes the traffic gap follows once crawlers can reach and trust the pages.</p>
+    </div>
+    <div class="table-wrap">
+    <table class="data-table">
+        <thead><tr><th>Quarter</th><th>Theme</th><th>Key Actions</th></tr></thead>
+        <tbody>
+            <tr><td class="mono">Q1</td><td class="fw-700 text-primary">Technical foundation</td><td>Make hub product links server rendered and crawlable. Add self referencing canonical tags. Remove unnecessary product hreflang. Fix the UAT and 404 redirects. Add Open Graph and Twitter tags. Standardize to one Heading 1 per page. Add the favicon. Confirm the press release no index question.</td></tr>
+            <tr><td class="mono">Q1 to Q2</td><td class="fw-700 text-primary">Product page optimization</td><td>Add audience and life situation context to product pages. Rewrite titles, meta descriptions, and headings around buyer intent. Add Service, FAQ, and Breadcrumb structured data. Begin homepage and product page speed improvements.</td></tr>
+            <tr><td class="mono">Q2 to Q4</td><td class="fw-700 text-primary">Scale product and article coverage</td><td>Build specific, crawlable product pages to close the gap with Great Eastern's 195 non branded product pages. Launch an educational article engine. Add Article and NewsArticle structured data to all content and press releases.</td></tr>
+            <tr><td class="mono">Ongoing</td><td class="fw-700 text-primary">AI visibility</td><td>Track how often AIA is cited across AI Overviews, ChatGPT, Gemini, and Perplexity. For every question where a portal is cited instead of AIA, publish the equivalent AIA owned page. Build the FAQ and comparison content AI prefers to quote.</td></tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="callout" style="margin-bottom:0;">
+        <div class="callout-title">Why the sequence matters</div>
+        <p>The technical fixes in the first quarter are the foundation, because there is little point building new pages if crawlers cannot reach them or trust them. Once the foundation is solid, the product and content scaling in the middle of the year is what actually closes the traffic gap. The AI visibility work runs alongside everything, because each fix and each new page is also a step toward being the cited source rather than the mentioned brand.</p>
+    </div>
+</section>
+
+<!-- PRIORITIES -->
+<section id="priorities" class="section scroll-animate">
+    <div class="section-header">
+        <div class="section-number">// 06 &middot; What to Prioritise</div>
+        <h2 class="section-title">Sequencing the work by commercial impact</h2>
+        <p class="section-subtitle">The data and the findings point to one clear theme. AIA has the authority but not the crawlable, well written pages to use it. We recommend tackling the highest impact work first.</p>
+    </div>
+    <ol class="priority-list">
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Make product pages discoverable.</strong> Fix the hub page links so every product is reachable through a server rendered link (3.1). This is the root cause of the 15 versus 195 product page gap.</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Repair the technical foundation.</strong> Add self referencing canonicals, remove the product hreflang, fix the UAT and 404 redirects, and standardize Heading 1 (3.2, 3.3, 3.5, 3.8). Largely labelling and cleanup work on pages that already exist.</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Rewrite product pages for buyers and AI.</strong> Add audience context, fix titles and the 292 missing meta descriptions, and add Service, FAQ, and Breadcrumb structured data (4.1, 4.2, 3.6).</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Build the educational article engine.</strong> Scale up content modelled on the existing guide that already ranks for "life insurance," to win non branded demand and feed authority to the product pages (4.3).</div></li>
+        <li class="priority-item"><div class="priority-num"></div><div class="ptext"><strong>Turn AI mentions into AI citations.</strong> For every question where a portal is cited instead of AIA, publish the equivalent AIA owned page, and improve homepage and template speed (Section 2, 3.9).</div></li>
+    </ol>
+</section>
+
+<div class="report-footer">
+    <p>Prepared by <a href="https://www.novastacks-ai.com">NovaStacks AI</a>. This is a preliminary analysis intended to align stakeholders on priorities. A detailed implementation plan follows once the direction is approved.</p>
+</div>
+</main>
+
+<script>
+// Scroll spy + reveal
+const links = document.querySelectorAll('.side-nav-link');
+const sections = document.querySelectorAll('main section[id]');
+const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            const a = document.querySelector('.side-nav-link[data-section="'+e.target.id+'"]');
+            if (a) a.classList.add('active');
+        }
+    });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => spy.observe(s));
+
+const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-in'); reveal.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.scroll-animate').forEach(el => reveal.observe(el));
+
+links.forEach(l => l.addEventListener('click', () => document.querySelector('.side-nav').classList.remove('show')));
+</script>
+</body>
+</html>
