@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rently · Preliminary SEO &amp; AEO Analysis (Singapore &amp; UAE)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ns-primary:#01aac1; --ns-accent:#01d7f4; --ns-teal:#017d8e; --ns-teal-glow:rgba(1,170,193,0.15);
+  --ns-dark:#111111; --ns-darker:#0a0a0a; --ns-medium:#2a2a2a; --ns-light:#f5f5f5;
+  --ns-text:#e0e0e0; --ns-text-muted:#888888; --ns-success:#22c55e; --ns-warning:#eab308;
+  --ns-danger:#ef4444; --ns-orange:#f97316; --sidebar-width:260px; --header-height:64px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--ns-primary) var(--ns-dark);}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--ns-dark);}
+::-webkit-scrollbar-thumb{background:var(--ns-teal);border-radius:3px;}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--ns-darker);color:var(--ns-text);line-height:1.6;font-size:15px;overflow-x:hidden;}
+header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:rgba(17,17,17,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 32px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--ns-primary),var(--ns-accent));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;font-family:'Space Grotesk',sans-serif;}
+.logo-text{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;color:#fff;letter-spacing:-0.02em;}
+.logo-text span{color:var(--ns-primary);}
+.header-meta{font-size:12px;color:var(--ns-text-muted);font-family:'JetBrains Mono',monospace;}
+.side-nav{position:fixed;top:var(--header-height);left:0;width:var(--sidebar-width);height:calc(100vh - var(--header-height));background:var(--ns-dark);border-right:1px solid rgba(255,255,255,0.06);padding:24px 0;overflow-y:auto;z-index:900;}
+.side-nav-section{padding:0 16px;margin-bottom:8px;}
+.side-nav-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--ns-text-muted);padding:8px 12px;}
+.side-nav-link{display:flex;align-items:center;gap:10px;padding:9px 12px;color:var(--ns-text-muted);text-decoration:none;font-size:13px;font-weight:500;border-radius:6px;border-left:3px solid transparent;transition:all 0.2s;margin-bottom:2px;}
+.side-nav-link:hover{background:rgba(255,255,255,0.04);color:var(--ns-text);}
+.side-nav-link.active{background:var(--ns-teal-glow);color:var(--ns-primary);border-left-color:var(--ns-primary);}
+.side-nav-link .nav-icon{font-size:14px;width:20px;text-align:center;font-family:'JetBrains Mono',monospace;}
+main{margin-left:var(--sidebar-width);margin-top:var(--header-height);min-height:calc(100vh - var(--header-height));}
+.cover-section{padding:64px 48px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--ns-dark) 0%,var(--ns-darker) 100%);}
+.cover-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(1,170,193,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(1,215,244,0.05) 0%,transparent 50%);}
+.cover-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(1,170,193,0.1);border:1px solid rgba(1,170,193,0.2);border-radius:100px;font-size:12px;font-weight:500;color:var(--ns-primary);margin-bottom:24px;position:relative;}
+.cover-domain{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--ns-text-muted);margin-bottom:16px;position:relative;}
+.cover-title{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1.15;margin-bottom:12px;position:relative;}
+.cover-subtitle{font-size:16px;color:var(--ns-text-muted);margin-bottom:40px;position:relative;max-width:720px;margin-left:auto;margin-right:auto;}
+.cover-meta{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;position:relative;}
+.cover-meta-item{font-size:13px;color:var(--ns-text-muted);}
+.cover-meta-item strong{color:var(--ns-text);}
+.section{padding:48px;border-bottom:1px solid rgba(255,255,255,0.04);}
+.section-header{margin-bottom:28px;}
+.section-number{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ns-primary);font-weight:500;margin-bottom:8px;}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#fff;letter-spacing:-0.02em;line-height:1.2;}
+.section-intro{color:var(--ns-text-muted);font-size:15px;margin-top:10px;max-width:900px;}
+h3.block-title{font-family:'Space Grotesk',sans-serif;font-size:19px;color:#fff;margin:30px 0 14px;font-weight:600;}
+h4.sub-title{font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ns-primary);margin:22px 0 10px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;}
+p{margin-bottom:14px;}
+a{color:var(--ns-primary);}
+.market-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 10px;border-radius:5px;margin-left:10px;vertical-align:middle;}
+.tag-sg{background:rgba(1,170,193,0.14);color:var(--ns-accent);border:1px solid rgba(1,170,193,0.3);}
+.tag-uae{background:rgba(249,115,22,0.14);color:var(--ns-orange);border:1px solid rgba(249,115,22,0.3);}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.card{background:var(--ns-dark);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:22px;}
+.card-accent{border-left:3px solid var(--ns-primary);}
+.score-card{text-align:center;background:var(--ns-dark);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:24px 18px;}
+.score-num{font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;line-height:1;}
+.score-label{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ns-text-muted);margin-top:8px;}
+.score-sub{font-size:12px;margin-top:6px;}
+.s-green{color:var(--ns-success);}.s-yellow{color:var(--ns-warning);}.s-orange{color:var(--ns-orange);}.s-red{color:var(--ns-danger);}.s-teal{color:var(--ns-primary);}
+table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:13.5px;}
+th{background:var(--ns-dark);color:var(--ns-primary);text-align:left;padding:11px 12px;font-weight:600;border-bottom:2px solid var(--ns-teal);font-size:12px;text-transform:uppercase;letter-spacing:0.03em;}
+td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,0.06);vertical-align:top;}
+tr:hover td{background:rgba(255,255,255,0.02);}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;white-space:nowrap;}
+.pill-confirm{background:rgba(34,197,94,0.14);color:var(--ns-success);}
+.pill-correct{background:rgba(249,115,22,0.16);color:var(--ns-orange);}
+.pill-new{background:rgba(1,170,193,0.16);color:var(--ns-accent);}
+.pill-tech{background:rgba(234,179,8,0.14);color:var(--ns-warning);}
+.pill-content{background:rgba(1,215,244,0.12);color:var(--ns-accent);}
+.callout{background:linear-gradient(135deg,rgba(1,170,193,0.08),rgba(1,215,244,0.04));border:1px solid rgba(1,170,193,0.2);border-radius:12px;padding:20px 24px;margin:20px 0;}
+.callout-title{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ns-primary);margin-bottom:8px;font-size:15px;}
+.warn{background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.22);border-radius:12px;padding:18px 22px;margin:18px 0;}
+.warn .callout-title{color:var(--ns-orange);}
+ul.clean{list-style:none;padding-left:0;}
+ul.clean li{padding:7px 0 7px 26px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);}
+ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-primary);}
+.bar-wrap{background:var(--ns-medium);border-radius:6px;height:10px;overflow:hidden;margin:6px 0;}
+.bar{height:100%;border-radius:6px;}
+.metric-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;}
+.foot{padding:30px 48px;text-align:center;color:var(--ns-text-muted);font-size:12px;}
+@media(max-width:900px){.side-nav{display:none;}main{margin-left:0;}.grid-2,.grid-3{grid-template-columns:1fr;}.section{padding:32px 20px;}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#top">
+    <div class="logo-icon">N</div>
+    <div class="logo-text">Nova<span>stacks</span></div>
+  </a>
+  <div class="header-meta">Rently · Preliminary Analysis · Jul 2026</div>
+</header>
+
+<nav class="side-nav">
+  <div class="side-nav-section">
+    <div class="side-nav-label">Overview</div>
+    <a class="side-nav-link" href="#top"><span class="nav-icon">◆</span> Executive Summary</a>
+    <a class="side-nav-link" href="#method"><span class="nav-icon">✓</span> How We Validated</a>
+  </div>
+  <div class="side-nav-section">
+    <div class="side-nav-label">Singapore · rently.sg</div>
+    <a class="side-nav-link" href="#sg-findings"><span class="nav-icon">1</span> Findings (Validated)</a>
+    <a class="side-nav-link" href="#sg-aeo"><span class="nav-icon">2</span> AEO Scorecard</a>
+    <a class="side-nav-link" href="#sg-ai"><span class="nav-icon">3</span> AI Visibility</a>
+  </div>
+  <div class="side-nav-section">
+    <div class="side-nav-label">UAE · rently-uae.com</div>
+    <a class="side-nav-link" href="#uae-findings"><span class="nav-icon">1</span> Findings (Validated)</a>
+    <a class="side-nav-link" href="#uae-aeo"><span class="nav-icon">2</span> AEO Scorecard</a>
+    <a class="side-nav-link" href="#uae-ai"><span class="nav-icon">3</span> AI Visibility</a>
+  </div>
+  <div class="side-nav-section">
+    <div class="side-nav-label">Action</div>
+    <a class="side-nav-link" href="#priorities"><span class="nav-icon">→</span> Priorities</a>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="cover-section">
+    <div class="cover-badge">● Preliminary SEO &amp; AEO Analysis</div>
+    <div class="cover-domain">rently.sg &nbsp;·&nbsp; rently-uae.com</div>
+    <h1 class="cover-title">AI already recommends Rently.<br>The site isn't built to hold that lead yet.</h1>
+    <p class="cover-subtitle">Across two markets, Rently is cited in roughly 100% of the buyer questions we tested in AI answers, almost entirely off its blog. Underneath, the technical foundation, schema, headings, breadcrumbs, sitemap coverage and page speed, is incomplete. This document validates every finding against the live sites and measures the AI visibility, market by market.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Markets:</strong> Singapore · United Arab Emirates</div>
+      <div class="cover-meta-item"><strong>Prepared by:</strong> Novastacks</div>
+      <div class="cover-meta-item"><strong>Date:</strong> 2 July 2026</div>
+    </div>
+  </section>
+
+  <!-- EXEC SUMMARY -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-number">00 — OVERVIEW</div>
+      <div class="section-title">Executive Summary</div>
+      <p class="section-intro">Rently runs one brand across separate domains for each market: <strong>rently.sg</strong> (Singapore) frames the product around paying, deferring and <em>earning rewards</em> on rent; <strong>rently-uae.com</strong> (UAE) frames it as <em>Rent Now, Pay Later</em>, converting annual rent into monthly instalments. The two markets have different search behaviour and must be treated separately, which is why this analysis reports each domain in its own section.</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">The one thing to take away</div>
+      <p style="margin-bottom:0">In both markets Rently is <strong>already winning the AI-answer layer</strong>: it is mentioned and cited in ~100% of the renter questions we tested across Google AI Overview, Gemini and ChatGPT. In the UAE it is cited more often than Keyper in AI answers <em>despite Keyper having roughly ten times the organic traffic</em>. That visibility is carried almost entirely by blog content. The risk is that the <strong>foundation underneath is thin</strong>, so the money pages (homepage and product pages) barely get cited, the lead is fragile, and competitors can catch up. Fixing the foundation is how Rently converts AI visibility into durable rankings, sign-ups, and a defensible position.</p>
+    </div>
+
+    <h3 class="block-title">AEO scorecards at a glance</h3>
+    <p>AEO (Answer Engine Optimisation) is scored on two axes: <strong>Site Readiness</strong> (how well the site is built to be cited by AI) and <strong>LLM Visibility</strong> (how visible the brand actually is in AI answers). The gap between the two axes is the story.</p>
+
+    <div class="grid-2">
+      <div class="card card-accent">
+        <h4 class="sub-title" style="margin-top:0">Singapore · rently.sg</h4>
+        <div class="grid-3">
+          <div class="score-card"><div class="score-num s-yellow">52</div><div class="score-label">Site Readiness</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
+          <div class="score-card"><div class="score-num s-green">90</div><div class="score-label">LLM Visibility</div><div class="score-sub s-green">AI Authority</div></div>
+          <div class="score-card"><div class="score-num s-teal">71</div><div class="score-label">Combined</div><div class="score-sub s-teal">AI-optimised</div></div>
+        </div>
+        <p style="font-size:13px;margin:14px 0 0;color:var(--ns-text-muted)">AI knows Rently SG well. The build (schema gaps, hidden headings, 22s mobile load) is what holds it back.</p>
+      </div>
+      <div class="card card-accent">
+        <h4 class="sub-title" style="margin-top:0">UAE · rently-uae.com</h4>
+        <div class="grid-3">
+          <div class="score-card"><div class="score-num s-orange">41</div><div class="score-label">Site Readiness</div><div class="score-sub s-orange">Low AI-readiness</div></div>
+          <div class="score-card"><div class="score-num s-green">87</div><div class="score-label">LLM Visibility</div><div class="score-sub s-green">AI Authority</div></div>
+          <div class="score-card"><div class="score-num s-teal">64</div><div class="score-label">Combined</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
+        </div>
+        <p style="font-size:13px;margin:14px 0 0;color:var(--ns-text-muted)">Even stronger AI-vs-foundation gap: no JSON-LD schema at all, blog missing from the sitemap, yet it out-cites Keyper.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="section" id="method">
+    <div class="section-header">
+      <div class="section-number">00 — METHOD</div>
+      <div class="section-title">How we validated every finding</div>
+      <p class="section-intro">Nothing here is assumed. Each finding was checked against the live sites before it was written up. Where the raw evidence contradicted an initial read, we corrected it, two items were reframed after inspection.</p>
+    </div>
+    <ul class="clean">
+      <li><strong>Live server HTML</strong> was fetched for both homepages, product pages and sample blog pages, and inspected for titles, headings, schema and breadcrumbs.</li>
+      <li><strong>Structured data</strong> was extracted directly from the page source (JSON-LD and inline microdata), not estimated.</li>
+      <li><strong>Sitemaps</strong> were downloaded and URL counts measured (total vs blog).</li>
+      <li><strong>Core Web Vitals</strong> were measured on mobile via Lighthouse.</li>
+      <li><strong>AI visibility</strong> was measured by running 15 real renter questions per market through Google AI Overview, Gemini and ChatGPT, and recording whether Rently was mentioned and cited, and which pages were cited.</li>
+    </ul>
+    <div class="callout">
+      <div class="callout-title">Two of the initial findings were corrected after inspection</div>
+      <p style="margin-bottom:6px"><span class="pill pill-correct">REFRAMED</span> &nbsp;<strong>SG "old-design cache" &rarr;</strong> the server HTML is actually current. The real cause is that the H1 and most section headings are marked <code>class="sr-only"</code> (deliberately hidden from sighted users), so the heading Google and AI read differs from the visible hero. It is a heading-visibility issue, not a caching bug.</p>
+      <p style="margin-bottom:0"><span class="pill pill-correct">REFRAMED</span> &nbsp;<strong>"No structured data" &rarr;</strong> SG does have some schema (WebSite + WebPage + FinancialServices); UAE has FAQ Question/Answer microdata. Both are <em>incomplete</em> rather than absent. The recommendation still stands, it just needs to be framed as "complete the schema", not "add schema from zero".</p>
+    </div>
+  </section>
+
+  <!-- ================= SINGAPORE ================= -->
+  <section class="section" id="sg-findings">
+    <div class="section-header">
+      <div class="section-number">01 — SINGAPORE</div>
+      <div class="section-title">rently.sg &mdash; Findings, validated <span class="market-tag tag-sg">SG</span></div>
+      <p class="section-intro">Every finding below was checked against the live site. "Confirmed" means the evidence matched; "Reframed" means inspection changed the root cause; "New" means Novastacks surfaced it during validation.</p>
+    </div>
+    <table>
+      <thead><tr><th style="width:16%">Area</th><th style="width:40%">Finding</th><th style="width:12%">Status</th><th style="width:32%">What the live site shows</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>Server HTML looks different from what users see (initially read as an old-design cache).</td><td><span class="pill pill-correct">Reframed</span></td><td>Server HTML is current. The H1 <em>"The Flexible Way to Pay Rent in Singapore."</em> and most section headings are <code>sr-only</code> (visually hidden). The heading Google/AI read is not the visible hero. Fix: make the primary heading visible and keyword-aligned.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No structured data.</td><td><span class="pill pill-correct">Reframed</span></td><td>Schema exists but is partial: WebSite + WebPage + FinancialServices. <strong>Missing:</strong> FAQPage, BreadcrumbList, Article/BlogPosting (blog), Product/Service.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No breadcrumb (navigational) on blog pages.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Blog pages have zero BreadcrumbList schema and no breadcrumb navigation. Verified on a live blog URL.</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>Brand name "Rently" used multiple times in the same &lt;title&gt;.</td><td><span class="pill pill-confirm">Confirmed +</span></td><td>Worse than reported: the template prepends "Rently | " <em>and</em> pages end with "| Rently", so the brand appears twice on the homepage, every product page and every blog page (e.g. "Rently | Delay Your Rent… | Rently").</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>Homepage &lt;title&gt; not utilised for the focus keyword; a blog page ranks for "pay rent online in Singapore" instead of the homepage.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Live title carries product descriptors but not the transactional phrase "pay rent online". Our AI test confirms it: for that query, AI cites the blog guide, not the homepage.</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>~31 blog pages visible in Google vs ~150 in the sitemap.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Sitemap contains 170 URLs, 150 of them /blog/. Ahrefs shows ~31 blog pages with organic traffic, so ~80% of blog content earns no search visibility.</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Semantic HTML landmarks missing.</td><td><span class="pill pill-new">New</span></td><td>No <code>&lt;main&gt;</code>, no <code>&lt;article&gt;</code>, no <code>&lt;header&gt;</code>. The page leans on hidden headings and div containers, which makes clean content extraction harder for AI crawlers.</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Mobile page speed is poor.</td><td><span class="pill pill-new">New</span></td><td>Lighthouse mobile: performance 0.43, LCP <strong>22.5s</strong>, Time-to-Interactive 24.8s, server response 1.6s (CLS is good at 0.001). Slow pages get crawled less and hurt conversion.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="sg-aeo">
+    <div class="section-header">
+      <div class="section-number">01 — SINGAPORE</div>
+      <div class="section-title">rently.sg &mdash; AEO Scorecard <span class="market-tag tag-sg">SG</span></div>
+    </div>
+    <div class="grid-3" style="margin-bottom:24px">
+      <div class="score-card"><div class="score-num s-yellow">52</div><div class="score-label">Site Readiness</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
+      <div class="score-card"><div class="score-num s-green">90</div><div class="score-label">LLM Visibility</div><div class="score-sub s-green">AI Authority</div></div>
+      <div class="score-card"><div class="score-num s-teal">71</div><div class="score-label">Combined AEO</div><div class="score-sub s-teal">AI-optimised</div></div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h4 class="sub-title" style="margin-top:0">Where Site Readiness loses points</h4>
+        <div class="metric-row"><span>Structured data (partial)</span><span class="s-yellow">8 / 18</span></div><div class="bar-wrap"><div class="bar" style="width:44%;background:var(--ns-warning)"></div></div>
+        <div class="metric-row"><span>Semantic HTML</span><span class="s-orange">4 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:40%;background:var(--ns-orange)"></div></div>
+        <div class="metric-row"><span>Web performance (CWV)</span><span class="s-red">2 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:20%;background:var(--ns-danger)"></div></div>
+        <div class="metric-row"><span>FAQ / help content</span><span class="s-yellow">6 / 12</span></div><div class="bar-wrap"><div class="bar" style="width:50%;background:var(--ns-warning)"></div></div>
+      </div>
+      <div class="card">
+        <h4 class="sub-title" style="margin-top:0">Where LLM Visibility wins</h4>
+        <div class="metric-row"><span>Branded queries cited</span><span class="s-green">2 / 2</span></div><div class="bar-wrap"><div class="bar" style="width:96%;background:var(--ns-success)"></div></div>
+        <div class="metric-row"><span>Category / comparison cited</span><span class="s-green">10 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:92%;background:var(--ns-success)"></div></div>
+        <div class="metric-row"><span>Citation ownership</span><span class="s-green">high</span></div><div class="bar-wrap"><div class="bar" style="width:90%;background:var(--ns-success)"></div></div>
+        <p style="font-size:12.5px;margin:12px 0 0;color:var(--ns-text-muted)">The classic gap: <strong>AI already knows you (90), your site isn't built to capitalise on it (52).</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sg-ai">
+    <div class="section-header">
+      <div class="section-number">01 — SINGAPORE</div>
+      <div class="section-title">rently.sg &mdash; AI Visibility (measured) <span class="market-tag tag-sg">SG</span></div>
+      <p class="section-intro">We ran 15 real Singapore-renter questions through Google AI Overview, Gemini and ChatGPT, spanning branded, informational, comparison and transactional intent (e.g. "How can I pay my rent online in Singapore?", "Which rent payment service gives the best miles?", "Rently vs CardUp vs ipaymy").</p>
+    </div>
+    <div class="grid-3" style="margin-bottom:20px">
+      <div class="score-card"><div class="score-num s-green">100%</div><div class="score-label">Prompts cited</div><div class="score-sub">15 of 15</div></div>
+      <div class="score-card"><div class="score-num s-green">15/15</div><div class="score-label">Google AI Overview</div><div class="score-sub">+ Gemini 15/15</div></div>
+      <div class="score-card"><div class="score-num s-yellow">7/15</div><div class="score-label">ChatGPT cited</div><div class="score-sub s-yellow">weakest surface</div></div>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>Question (intent)</th><th>Cited?</th><th>Where it was cited</th></tr></thead>
+      <tbody>
+        <tr><td>3</td><td>How can I pay my rent online in Singapore? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini — via blog guide</td></tr>
+        <tr><td>4</td><td>Can I pay my rent with a credit card in Singapore? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini — via blog guide</td></tr>
+        <tr><td>8</td><td>Best platforms to pay rent by credit card in Singapore? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
+        <tr><td>9</td><td>Which rent service gives the best miles/rewards? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
+        <tr><td>10</td><td>Rently vs CardUp vs ipaymy? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
+        <tr><td>13</td><td>What app lets me defer my rent in Singapore? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
+        <tr><td>15</td><td>Earn KrisFlyer miles by paying rent in Singapore <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px;color:var(--ns-text-muted)">Table shows a representative sample; all 15 prompts were cited. Full per-prompt table is in the detailed document.</p>
+    <div class="warn">
+      <div class="callout-title">The catch: the blog is doing all the work</div>
+      <p style="margin-bottom:0">Of the 35 distinct Rently URLs cited across the run, <strong>28 were blog pages</strong> and only 7 were the homepage or product pages. AI is recommending Rently through articles, not through the pages that actually convert a renter into a sign-up. Strengthening the homepage and product-page titles, schema and headings is how those citations start pointing at the money pages.</p>
+    </div>
+  </section>
+
+  <!-- ================= UAE ================= -->
+  <section class="section" id="uae-findings">
+    <div class="section-header">
+      <div class="section-number">02 — UNITED ARAB EMIRATES</div>
+      <div class="section-title">rently-uae.com &mdash; Findings, validated <span class="market-tag tag-uae">UAE</span></div>
+      <p class="section-intro">The UAE product is Rent Now, Pay Later (annual rent split into monthly instalments). The rental pain here is the annual lump-sum / cheque culture, so the search behaviour differs from Singapore and the findings are reported separately.</p>
+    </div>
+    <table>
+      <thead><tr><th style="width:16%">Area</th><th style="width:40%">Finding</th><th style="width:12%">Status</th><th style="width:32%">What the live site shows</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No blog posts inside the XML sitemap.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Sitemap has 90 URLs; only 1 contains "blog" (the index). The ~22 published blog posts are absent, so Google has to find them indirectly, slowing or preventing indexing.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No structured data implementation.</td><td><span class="pill pill-correct">Reframed</span></td><td>Zero JSON-LD. The homepage does carry FAQ Question/Answer microdata, but it is not wrapped as FAQPage, and there is no Organization, WebSite or Product schema. Blog pages have no schema at all.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No breadcrumb (navigational) on blog pages.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Blog pages have zero breadcrumb schema and no breadcrumb navigation.</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>Homepage &lt;title&gt; not maximised, currently only "The better way to rent".</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Live title is "Rently | The better way to rent", a slogan with no search keyword. (The H1 "Rent now, pay later." is good and should inform the title.)</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>Blog not maintained; needs reactivating with high-intent keywords.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Only ~24 organic visits across ~22 blog pages, and (per above) they aren't even in the sitemap. The channel is effectively dormant.</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Semantic HTML landmarks missing.</td><td><span class="pill pill-new">New</span></td><td>No <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code> or <code>&lt;footer&gt;</code>; div-heavy markup. It does have a real, visible H1 (better than SG here).</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Mobile page speed is poor.</td><td><span class="pill pill-new">New</span></td><td>Lighthouse mobile: performance 0.55, LCP 7.5s, Time-to-Interactive 17.5s (CLS good at 0). Better than SG but still in the "poor" band.</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Canonical inconsistency.</td><td><span class="pill pill-new">New</span></td><td>Homepage canonical is <code>rently-uae.com</code> (no trailing slash) while the sitemap lists <code>rently-uae.com/</code> (trailing slash). Minor, but worth normalising.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="uae-aeo">
+    <div class="section-header">
+      <div class="section-number">02 — UNITED ARAB EMIRATES</div>
+      <div class="section-title">rently-uae.com &mdash; AEO Scorecard <span class="market-tag tag-uae">UAE</span></div>
+    </div>
+    <div class="grid-3" style="margin-bottom:24px">
+      <div class="score-card"><div class="score-num s-orange">41</div><div class="score-label">Site Readiness</div><div class="score-sub s-orange">Low AI-readiness</div></div>
+      <div class="score-card"><div class="score-num s-green">87</div><div class="score-label">LLM Visibility</div><div class="score-sub s-green">AI Authority</div></div>
+      <div class="score-card"><div class="score-num s-teal">64</div><div class="score-label">Combined AEO</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h4 class="sub-title" style="margin-top:0">Where Site Readiness loses points</h4>
+        <div class="metric-row"><span>Structured data (no JSON-LD)</span><span class="s-red">3 / 18</span></div><div class="bar-wrap"><div class="bar" style="width:17%;background:var(--ns-danger)"></div></div>
+        <div class="metric-row"><span>Entity clarity (no Org schema)</span><span class="s-orange">4 / 13</span></div><div class="bar-wrap"><div class="bar" style="width:31%;background:var(--ns-orange)"></div></div>
+        <div class="metric-row"><span>Semantic HTML</span><span class="s-orange">4 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:40%;background:var(--ns-orange)"></div></div>
+        <div class="metric-row"><span>Web performance (CWV)</span><span class="s-orange">3 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:30%;background:var(--ns-orange)"></div></div>
+      </div>
+      <div class="card">
+        <h4 class="sub-title" style="margin-top:0">Where LLM Visibility wins</h4>
+        <div class="metric-row"><span>Prompts cited</span><span class="s-green">15 / 15</span></div><div class="bar-wrap"><div class="bar" style="width:95%;background:var(--ns-success)"></div></div>
+        <div class="metric-row"><span>Rently citations vs Keyper</span><span class="s-green">70 vs 21</span></div><div class="bar-wrap"><div class="bar" style="width:88%;background:var(--ns-success)"></div></div>
+        <div class="metric-row"><span>Citation ownership</span><span class="s-green">leads market</span></div><div class="bar-wrap"><div class="bar" style="width:86%;background:var(--ns-success)"></div></div>
+        <p style="font-size:12.5px;margin:12px 0 0;color:var(--ns-text-muted)">Rently leads AI answers even though Keyper has ~10x its organic traffic.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="uae-ai">
+    <div class="section-header">
+      <div class="section-number">02 — UNITED ARAB EMIRATES</div>
+      <div class="section-title">rently-uae.com &mdash; AI Visibility (measured) <span class="market-tag tag-uae">UAE</span></div>
+      <p class="section-intro">We ran 15 real UAE-renter questions through Google AI Overview, Gemini and ChatGPT (e.g. "How can I pay my rent monthly instead of cheques in Dubai?", "Best rent now pay later companies in the UAE?", "Rently vs Keyper").</p>
+    </div>
+    <div class="grid-3" style="margin-bottom:20px">
+      <div class="score-card"><div class="score-num s-green">100%</div><div class="score-label">Prompts cited</div><div class="score-sub">15 of 15</div></div>
+      <div class="score-card"><div class="score-num s-green">70</div><div class="score-label">Rently citations</div><div class="score-sub s-green">vs Keyper 21</div></div>
+      <div class="score-card"><div class="score-num s-yellow">7/15</div><div class="score-label">ChatGPT cited</div><div class="score-sub s-yellow">weakest surface</div></div>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>Question (intent)</th><th>Cited?</th><th>Where it was cited</th></tr></thead>
+      <tbody>
+        <tr><td>3</td><td>Pay rent monthly instead of cheques in Dubai? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini — via blog</td></tr>
+        <tr><td>5</td><td>What is rent now pay later in Dubai and how does it work? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
+        <tr><td>8</td><td>Best rent now pay later companies in the UAE? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
+        <tr><td>10</td><td>Rently vs Keyper? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
+        <tr><td>13</td><td>App to pay Dubai rent in monthly instalments? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
+        <tr><td>15</td><td>Move into a Dubai apartment without full rent upfront? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px;color:var(--ns-text-muted)">Representative sample; all 15 prompts were cited. Full per-prompt table is in the detailed document.</p>
+    <div class="warn">
+      <div class="callout-title">Same pattern, bigger opportunity</div>
+      <p style="margin-bottom:0">Rently UAE is cited <strong>70 times vs Keyper's 21</strong> in these AI answers, again almost entirely through blog pages. Yet in traditional organic search Keyper is far ahead (~4,000 monthly visits vs Rently's ~435). Rently is <em>already ahead where search is going</em> (AI answers) and behind where it is today (blue links). Fixing the sitemap, schema and blog maintenance protects the AI lead and starts closing the organic gap.</p>
+    </div>
+  </section>
+
+  <!-- PRIORITIES -->
+  <section class="section" id="priorities">
+    <div class="section-header">
+      <div class="section-number">03 — ACTION</div>
+      <div class="section-title">What to fix first</div>
+      <p class="section-intro">Ordered by impact-to-effort. Foundation fixes protect the AI lead and route citations toward the pages that convert.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card card-accent">
+        <h4 class="sub-title" style="margin-top:0">Singapore · rently.sg</h4>
+        <ul class="clean">
+          <li>Make the homepage H1 visible and keyword-aligned (stop relying on the hidden <code>sr-only</code> heading).</li>
+          <li>Fix duplicate-brand titles sitewide; give the homepage a transactional focus keyword ("pay rent online / by card").</li>
+          <li>Complete the schema: add FAQPage, BreadcrumbList and Article/BlogPosting.</li>
+          <li>Add breadcrumbs to blog pages (Home &gt; Blog &gt; Category &gt; Article).</li>
+          <li>Audit the ~120 non-performing blog pages (intent / cannibalisation) and consolidate.</li>
+          <li>Fix mobile speed (22.5s LCP) on the homepage.</li>
+        </ul>
+      </div>
+      <div class="card card-accent">
+        <h4 class="sub-title" style="margin-top:0">UAE · rently-uae.com</h4>
+        <ul class="clean">
+          <li>Add blog posts to the XML sitemap and submit in Search Console (fastest win).</li>
+          <li>Implement JSON-LD from the ground up: Organization, WebSite, Product/Service, FAQPage, BreadcrumbList.</li>
+          <li>Rewrite the homepage title around the real product ("Rent Now, Pay Later / pay rent monthly in the UAE").</li>
+          <li>Reactivate the blog against high-intent clusters (RERA rent calculator, pay rent by card, split annual rent).</li>
+          <li>Add breadcrumbs to blog pages; normalise the canonical vs sitemap trailing slash.</li>
+          <li>Improve mobile speed (7.5s LCP).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Why this matters now</div>
+      <p style="margin-bottom:0">Rently's AI-answer lead in both markets is real but fragile because it rests on blog content over a thin foundation. Competitors (CardUp in Singapore, Keyper in the UAE) are one content-and-schema push away from contesting it. The foundation work in this document is what turns a fragile lead into a durable, defensible one, and points AI citations at the pages that actually convert renters into sign-ups.</p>
+    </div>
+  </section>
+
+  <div class="foot">
+    Novastacks · Preliminary SEO &amp; AEO Analysis for Rently (Singapore &amp; UAE) · Prepared 2 July 2026 · Confidential<br>
+    All findings validated against the live sites. AI visibility measured across Google AI Overview, Gemini and ChatGPT (15 prompts per market).
+  </div>
+</main>
+
+<script>
+const links=[...document.querySelectorAll('.side-nav-link')];
+const secs=links.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const id='#'+e.target.id;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));}});},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
