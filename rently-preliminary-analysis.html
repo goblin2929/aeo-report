@@ -52,6 +52,7 @@ h3.block-title{font-family:'Space Grotesk',sans-serif;font-size:19px;color:#fff;
 h4.sub-title{font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ns-primary);margin:22px 0 10px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;}
 p{margin-bottom:14px;}
 a{color:var(--ns-primary);}
+code{font-family:'JetBrains Mono',monospace;font-size:12px;background:rgba(255,255,255,0.06);padding:1px 6px;border-radius:4px;color:var(--ns-accent);}
 .market-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 10px;border-radius:5px;margin-left:10px;vertical-align:middle;}
 .tag-sg{background:rgba(1,170,193,0.14);color:var(--ns-accent);border:1px solid rgba(1,170,193,0.3);}
 .tag-uae{background:rgba(249,115,22,0.14);color:var(--ns-orange);border:1px solid rgba(249,115,22,0.3);}
@@ -68,12 +69,12 @@ table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:13.5px;}
 th{background:var(--ns-dark);color:var(--ns-primary);text-align:left;padding:11px 12px;font-weight:600;border-bottom:2px solid var(--ns-teal);font-size:12px;text-transform:uppercase;letter-spacing:0.03em;}
 td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,0.06);vertical-align:top;}
 tr:hover td{background:rgba(255,255,255,0.02);}
+.mono{font-family:'JetBrains Mono',monospace;font-size:12.5px;}
 .pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;white-space:nowrap;}
 .pill-confirm{background:rgba(34,197,94,0.14);color:var(--ns-success);}
-.pill-correct{background:rgba(249,115,22,0.16);color:var(--ns-orange);}
-.pill-new{background:rgba(1,170,193,0.16);color:var(--ns-accent);}
 .pill-tech{background:rgba(234,179,8,0.14);color:var(--ns-warning);}
 .pill-content{background:rgba(1,215,244,0.12);color:var(--ns-accent);}
+.pill-new{background:rgba(1,170,193,0.16);color:var(--ns-accent);}
 .callout{background:linear-gradient(135deg,rgba(1,170,193,0.08),rgba(1,215,244,0.04));border:1px solid rgba(1,170,193,0.2);border-radius:12px;padding:20px 24px;margin:20px 0;}
 .callout-title{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--ns-primary);margin-bottom:8px;font-size:15px;}
 .warn{background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.22);border-radius:12px;padding:18px 22px;margin:18px 0;}
@@ -81,19 +82,15 @@ tr:hover td{background:rgba(255,255,255,0.02);}
 ul.clean{list-style:none;padding-left:0;}
 ul.clean li{padding:7px 0 7px 26px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);}
 ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-primary);}
-.bar-wrap{background:var(--ns-medium);border-radius:6px;height:10px;overflow:hidden;margin:6px 0;}
-.bar{height:100%;border-radius:6px;}
-.metric-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;}
+.mini-bar{display:inline-block;width:90px;height:8px;background:var(--ns-medium);border-radius:5px;overflow:hidden;vertical-align:middle;margin-right:8px;}
+.mini-bar i{display:block;height:100%;border-radius:5px;}
 .foot{padding:30px 48px;text-align:center;color:var(--ns-text-muted);font-size:12px;}
 @media(max-width:900px){.side-nav{display:none;}main{margin-left:0;}.grid-2,.grid-3{grid-template-columns:1fr;}.section{padding:32px 20px;}}
 </style>
 </head>
 <body>
 <header>
-  <a class="logo" href="#top">
-    <div class="logo-icon">N</div>
-    <div class="logo-text">Nova<span>stacks</span></div>
-  </a>
+  <a class="logo" href="#top"><div class="logo-icon">N</div><div class="logo-text">Nova<span>stacks</span></div></a>
   <div class="header-meta">Rently · Preliminary Analysis · Jul 2026</div>
 </header>
 
@@ -102,6 +99,7 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <div class="side-nav-label">Overview</div>
     <a class="side-nav-link" href="#top"><span class="nav-icon">◆</span> Executive Summary</a>
     <a class="side-nav-link" href="#method"><span class="nav-icon">✓</span> How We Validated</a>
+    <a class="side-nav-link" href="#scoring"><span class="nav-icon">▤</span> How AEO Is Scored</a>
   </div>
   <div class="side-nav-section">
     <div class="side-nav-label">Singapore · rently.sg</div>
@@ -126,7 +124,7 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <div class="cover-badge">● Preliminary SEO &amp; AEO Analysis</div>
     <div class="cover-domain">rently.sg &nbsp;·&nbsp; rently-uae.com</div>
     <h1 class="cover-title">AI already recommends Rently.<br>The site isn't built to hold that lead yet.</h1>
-    <p class="cover-subtitle">Across two markets, Rently is cited in roughly 100% of the buyer questions we tested in AI answers, almost entirely off its blog. Underneath, the technical foundation, schema, headings, breadcrumbs, sitemap coverage and page speed, is incomplete. This document validates every finding against the live sites and measures the AI visibility, market by market.</p>
+    <p class="cover-subtitle">Across two markets, Rently is cited in roughly 100% of the buyer questions we tested in AI answers, almost entirely off its blog. Underneath, the technical foundation, schema, headings, breadcrumbs, sitemap coverage and page speed, is incomplete and inconsistent. This document validates every finding against the live sites and measures the AI visibility, market by market.</p>
     <div class="cover-meta">
       <div class="cover-meta-item"><strong>Markets:</strong> Singapore · United Arab Emirates</div>
       <div class="cover-meta-item"><strong>Prepared by:</strong> Novastacks</div>
@@ -139,35 +137,34 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <div class="section-header">
       <div class="section-number">00 — OVERVIEW</div>
       <div class="section-title">Executive Summary</div>
-      <p class="section-intro">Rently runs one brand across separate domains for each market: <strong>rently.sg</strong> (Singapore) frames the product around paying, deferring and <em>earning rewards</em> on rent; <strong>rently-uae.com</strong> (UAE) frames it as <em>Rent Now, Pay Later</em>, converting annual rent into monthly instalments. The two markets have different search behaviour and must be treated separately, which is why this analysis reports each domain in its own section.</p>
+      <p class="section-intro">Rently runs one brand across separate domains for each market: <strong>rently.sg</strong> (Singapore) frames the product around paying, deferring and <em>earning rewards</em> on rent; <strong>rently-uae.com</strong> (UAE) frames it as <em>Rent Now, Pay Later</em>, converting annual rent into monthly instalments. The two markets have different search behaviour and are reported in their own sections.</p>
     </div>
 
     <div class="callout">
       <div class="callout-title">The one thing to take away</div>
-      <p style="margin-bottom:0">In both markets Rently is <strong>already winning the AI-answer layer</strong>: it is mentioned and cited in ~100% of the renter questions we tested across Google AI Overview, Gemini and ChatGPT. In the UAE it is cited more often than Keyper in AI answers <em>despite Keyper having roughly ten times the organic traffic</em>. That visibility is carried almost entirely by blog content. The risk is that the <strong>foundation underneath is thin</strong>, so the money pages (homepage and product pages) barely get cited, the lead is fragile, and competitors can catch up. Fixing the foundation is how Rently converts AI visibility into durable rankings, sign-ups, and a defensible position.</p>
+      <p style="margin-bottom:0">In both markets Rently is <strong>already winning the AI-answer layer</strong>: it is mentioned and cited in ~100% of the renter questions we tested across Google AI Overview, Gemini and ChatGPT. In the UAE it is cited more often than Keyper in AI answers <em>despite Keyper having roughly ten times the organic traffic</em>. That visibility is carried almost entirely by blog content. The risk is that the <strong>foundation underneath is thin and inconsistent</strong>, so the money pages (homepage and product pages) barely get cited, the lead is fragile, and competitors can catch up. Fixing the foundation is how Rently converts AI visibility into durable rankings, sign-ups, and a defensible position.</p>
     </div>
 
     <h3 class="block-title">AEO scorecards at a glance</h3>
-    <p>AEO (Answer Engine Optimisation) is scored on two axes: <strong>Site Readiness</strong> (how well the site is built to be cited by AI) and <strong>LLM Visibility</strong> (how visible the brand actually is in AI answers). The gap between the two axes is the story.</p>
-
+    <p>AEO (Answer Engine Optimisation) is scored on two axes: <strong>Site Readiness</strong> (how well the site is built to be cited by AI) and <strong>LLM Visibility</strong> (how visible the brand actually is in AI answers). The gap between the two is the story.</p>
     <div class="grid-2">
       <div class="card card-accent">
         <h4 class="sub-title" style="margin-top:0">Singapore · rently.sg</h4>
         <div class="grid-3">
-          <div class="score-card"><div class="score-num s-yellow">52</div><div class="score-label">Site Readiness</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
+          <div class="score-card"><div class="score-num s-yellow">50</div><div class="score-label">Site Readiness</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
           <div class="score-card"><div class="score-num s-green">90</div><div class="score-label">LLM Visibility</div><div class="score-sub s-green">AI Authority</div></div>
-          <div class="score-card"><div class="score-num s-teal">71</div><div class="score-label">Combined</div><div class="score-sub s-teal">AI-optimised</div></div>
+          <div class="score-card"><div class="score-num s-teal">70</div><div class="score-label">Combined</div><div class="score-sub s-teal">AI-optimised</div></div>
         </div>
-        <p style="font-size:13px;margin:14px 0 0;color:var(--ns-text-muted)">AI knows Rently SG well. The build (schema gaps, hidden headings, 22s mobile load) is what holds it back.</p>
+        <p style="font-size:13px;margin:14px 0 0;color:var(--ns-text-muted)">AI knows Rently SG well. The build (JSON-LD limited to entity markup, hidden headings, 22s mobile load) is what holds it back.</p>
       </div>
       <div class="card card-accent">
         <h4 class="sub-title" style="margin-top:0">UAE · rently-uae.com</h4>
         <div class="grid-3">
-          <div class="score-card"><div class="score-num s-orange">41</div><div class="score-label">Site Readiness</div><div class="score-sub s-orange">Low AI-readiness</div></div>
+          <div class="score-card"><div class="score-num s-orange">47</div><div class="score-label">Site Readiness</div><div class="score-sub s-orange">Low AI-readiness</div></div>
           <div class="score-card"><div class="score-num s-green">87</div><div class="score-label">LLM Visibility</div><div class="score-sub s-green">AI Authority</div></div>
-          <div class="score-card"><div class="score-num s-teal">64</div><div class="score-label">Combined</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
+          <div class="score-card"><div class="score-num s-teal">67</div><div class="score-label">Combined</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
         </div>
-        <p style="font-size:13px;margin:14px 0 0;color:var(--ns-text-muted)">Even stronger AI-vs-foundation gap: no JSON-LD schema at all, blog missing from the sitemap, yet it out-cites Keyper.</p>
+        <p style="font-size:13px;margin:14px 0 0;color:var(--ns-text-muted)">Inconsistent foundation: product pages carry rich JSON-LD, but the homepage has none and the blog's JSON-LD is broken and missing from the sitemap.</p>
       </div>
     </div>
   </section>
@@ -177,19 +174,54 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <div class="section-header">
       <div class="section-number">00 — METHOD</div>
       <div class="section-title">How we validated every finding</div>
-      <p class="section-intro">Nothing here is assumed. Each finding was checked against the live sites before it was written up. Where the raw evidence contradicted an initial read, we corrected it, two items were reframed after inspection.</p>
+      <p class="section-intro">Nothing here is assumed. Each finding was checked against the live sites before it was written up. Where the raw evidence contradicted an initial read, we corrected it.</p>
     </div>
     <ul class="clean">
-      <li><strong>Live server HTML</strong> was fetched for both homepages, product pages and sample blog pages, and inspected for titles, headings, schema and breadcrumbs.</li>
-      <li><strong>Structured data</strong> was extracted directly from the page source (JSON-LD and inline microdata), not estimated.</li>
-      <li><strong>Sitemaps</strong> were downloaded and URL counts measured (total vs blog).</li>
-      <li><strong>Core Web Vitals</strong> were measured on mobile via Lighthouse.</li>
-      <li><strong>AI visibility</strong> was measured by running 15 real renter questions per market through Google AI Overview, Gemini and ChatGPT, and recording whether Rently was mentioned and cited, and which pages were cited.</li>
+      <li><strong>Live server HTML</strong> fetched for both homepages, product pages and sample blog pages; inspected for titles, headings, schema and breadcrumbs.</li>
+      <li><strong>Structured data</strong> extracted and parsed directly from page source. We checked <strong>JSON-LD specifically</strong> (the format Google and AI engines read) and separately noted inline microdata, per page type.</li>
+      <li><strong>Sitemaps</strong> downloaded and URL counts measured (total vs blog).</li>
+      <li><strong>Core Web Vitals</strong> measured on mobile via Lighthouse.</li>
+      <li><strong>AI visibility</strong> measured by running 15 real renter questions per market through Google AI Overview, Gemini and ChatGPT, recording whether Rently was mentioned and cited, and which pages were cited.</li>
     </ul>
     <div class="callout">
-      <div class="callout-title">Two of the initial findings were corrected after inspection</div>
-      <p style="margin-bottom:6px"><span class="pill pill-correct">REFRAMED</span> &nbsp;<strong>SG "old-design cache" &rarr;</strong> the server HTML is actually current. The real cause is that the H1 and most section headings are marked <code>class="sr-only"</code> (deliberately hidden from sighted users), so the heading Google and AI read differs from the visible hero. It is a heading-visibility issue, not a caching bug.</p>
-      <p style="margin-bottom:0"><span class="pill pill-correct">REFRAMED</span> &nbsp;<strong>"No structured data" &rarr;</strong> SG does have some schema (WebSite + WebPage + FinancialServices); UAE has FAQ Question/Answer microdata. Both are <em>incomplete</em> rather than absent. The recommendation still stands, it just needs to be framed as "complete the schema", not "add schema from zero".</p>
+      <div class="callout-title">Findings corrected after inspection (why validation matters)</div>
+      <p style="margin-bottom:6px"><strong>SG "old-design cache":</strong> the server HTML is actually current. The real cause is that the H1 and most section headings are marked <code>class="sr-only"</code> (deliberately hidden from sighted users), so the heading Google and AI read differs from the visible hero. It is a heading-visibility issue, not a caching bug.</p>
+      <p style="margin-bottom:6px"><strong>Structured data (validated in Rich Results Test):</strong> confirmed against your check. rently.sg returns no rich results in RRT. The JSON-LD in source is only <code>WebSite</code> + <code>WebPage</code> + <code>FinancialServices</code>, none of which RRT renders, so the tool correctly shows nothing. SG's FAQ exists only as <em>microdata</em>, not JSON-LD. SG's structured-data score was lowered accordingly (Site Readiness 50, Combined 70).</p>
+      <p style="margin-bottom:0"><strong>UAE structured data is inconsistent, not simply absent:</strong> the homepage returns no rich results (zero JSON-LD) and the blog's JSON-LD is <em>broken/invalid</em>, but the product pages <em>pass RRT</em> with valid rich results (BreadcrumbList, FAQPage, HowTo). This raised UAE Site Readiness from an earlier read of 41 to 47.</p>
+    </div>
+  </section>
+
+  <!-- SCORING EXPLAINER -->
+  <section class="section" id="scoring">
+    <div class="section-header">
+      <div class="section-number">00 — SCORING</div>
+      <div class="section-title">How the AEO score is built (standardised)</div>
+      <p class="section-intro">Both markets are scored on the same components so the two scorecards are directly comparable. Site Readiness is built from 8 weighted components (100 points); LLM Visibility from 5 (100 points). Combined AEO is the average of the two axes.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h4 class="sub-title" style="margin-top:0">Axis 1 · Site Readiness — components (max)</h4>
+        <table style="margin:0">
+          <tr><td>Structured Data Coverage</td><td class="mono">18</td></tr>
+          <tr><td>Content Structure</td><td class="mono">15</td></tr>
+          <tr><td>Entity Clarity</td><td class="mono">13</td></tr>
+          <tr><td>Task-Completion Content</td><td class="mono">12</td></tr>
+          <tr><td>FAQ / Help Content</td><td class="mono">12</td></tr>
+          <tr><td>Semantic HTML Quality</td><td class="mono">10</td></tr>
+          <tr><td>Web Performance (CWV)</td><td class="mono">10</td></tr>
+          <tr><td>Technical AI Readiness</td><td class="mono">10</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h4 class="sub-title" style="margin-top:0">Axis 2 · LLM Visibility — components (max)</h4>
+        <table style="margin:0">
+          <tr><td>Branded Query Visibility</td><td class="mono">25</td></tr>
+          <tr><td>Core Keyword Visibility</td><td class="mono">20</td></tr>
+          <tr><td>Comparison Query Visibility</td><td class="mono">20</td></tr>
+          <tr><td>Cited Source Ownership</td><td class="mono">20</td></tr>
+          <tr><td>Third-Party Review Presence</td><td class="mono">15</td></tr>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -198,19 +230,19 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <div class="section-header">
       <div class="section-number">01 — SINGAPORE</div>
       <div class="section-title">rently.sg &mdash; Findings, validated <span class="market-tag tag-sg">SG</span></div>
-      <p class="section-intro">Every finding below was checked against the live site. "Confirmed" means the evidence matched; "Reframed" means inspection changed the root cause; "New" means Novastacks surfaced it during validation.</p>
+      <p class="section-intro">Every finding below was checked against the live site. The "Validated observation" column states what the raw page actually shows.</p>
     </div>
     <table>
-      <thead><tr><th style="width:16%">Area</th><th style="width:40%">Finding</th><th style="width:12%">Status</th><th style="width:32%">What the live site shows</th></tr></thead>
+      <thead><tr><th style="width:15%">Area</th><th style="width:38%">Finding</th><th style="width:47%">Validated observation &amp; why it matters</th></tr></thead>
       <tbody>
-        <tr><td><span class="pill pill-tech">Technical</span></td><td>Server HTML looks different from what users see (initially read as an old-design cache).</td><td><span class="pill pill-correct">Reframed</span></td><td>Server HTML is current. The H1 <em>"The Flexible Way to Pay Rent in Singapore."</em> and most section headings are <code>sr-only</code> (visually hidden). The heading Google/AI read is not the visible hero. Fix: make the primary heading visible and keyword-aligned.</td></tr>
-        <tr><td><span class="pill pill-tech">Technical</span></td><td>No structured data.</td><td><span class="pill pill-correct">Reframed</span></td><td>Schema exists but is partial: WebSite + WebPage + FinancialServices. <strong>Missing:</strong> FAQPage, BreadcrumbList, Article/BlogPosting (blog), Product/Service.</td></tr>
-        <tr><td><span class="pill pill-tech">Technical</span></td><td>No breadcrumb (navigational) on blog pages.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Blog pages have zero BreadcrumbList schema and no breadcrumb navigation. Verified on a live blog URL.</td></tr>
-        <tr><td><span class="pill pill-content">Content</span></td><td>Brand name "Rently" used multiple times in the same &lt;title&gt;.</td><td><span class="pill pill-confirm">Confirmed +</span></td><td>Worse than reported: the template prepends "Rently | " <em>and</em> pages end with "| Rently", so the brand appears twice on the homepage, every product page and every blog page (e.g. "Rently | Delay Your Rent… | Rently").</td></tr>
-        <tr><td><span class="pill pill-content">Content</span></td><td>Homepage &lt;title&gt; not utilised for the focus keyword; a blog page ranks for "pay rent online in Singapore" instead of the homepage.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Live title carries product descriptors but not the transactional phrase "pay rent online". Our AI test confirms it: for that query, AI cites the blog guide, not the homepage.</td></tr>
-        <tr><td><span class="pill pill-content">Content</span></td><td>~31 blog pages visible in Google vs ~150 in the sitemap.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Sitemap contains 170 URLs, 150 of them /blog/. Ahrefs shows ~31 blog pages with organic traffic, so ~80% of blog content earns no search visibility.</td></tr>
-        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Semantic HTML landmarks missing.</td><td><span class="pill pill-new">New</span></td><td>No <code>&lt;main&gt;</code>, no <code>&lt;article&gt;</code>, no <code>&lt;header&gt;</code>. The page leans on hidden headings and div containers, which makes clean content extraction harder for AI crawlers.</td></tr>
-        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Mobile page speed is poor.</td><td><span class="pill pill-new">New</span></td><td>Lighthouse mobile: performance 0.43, LCP <strong>22.5s</strong>, Time-to-Interactive 24.8s, server response 1.6s (CLS is good at 0.001). Slow pages get crawled less and hurt conversion.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>Server HTML looks different from what users see (initially read as an old-design cache).</td><td>Server HTML is current, not stale. The H1 <em>"The Flexible Way to Pay Rent in Singapore."</em> and most section headings are <code>sr-only</code> (visually hidden), so the heading Google/AI read is not the visible hero. A hidden, mismatched primary heading weakens the keyword signal on the most important page.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No structured data.</td><td>Validated in Google Rich Results Test: rently.sg returns <strong>no rich results</strong> (matches your check). The source does contain JSON-LD, but only non-rendering entity types (<code>WebSite</code>, <code>WebPage</code>, <code>FinancialServices</code>) that RRT does not surface. <strong>Missing entirely:</strong> FAQPage, BreadcrumbList, Article/BlogPosting, Product (SG's FAQ is microdata only). One blog JSON-LD block is invalid.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No breadcrumb (navigational) on blog pages.</td><td>Verified on a live blog URL: zero BreadcrumbList schema and no breadcrumb navigation. Blog pages look orphaned, which weakens internal link equity and SERP presentation.</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>Brand name "Rently" used multiple times in the same &lt;title&gt;.</td><td>Worse than reported: the template prepends "Rently | " <em>and</em> pages end with "| Rently", so the brand appears twice on the homepage, every product page and every blog page (e.g. "Rently | Delay Your Rent… | Rently"). That wastes limited title space that should carry the focus keyword.</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>Homepage &lt;title&gt; not utilised for the focus keyword; a blog page ranks for "pay rent online in Singapore" instead of the homepage.</td><td>Live title carries product descriptors but not the transactional phrase "pay rent online". Our AI test confirms it: for that query, AI cites the blog guide, not the homepage, so the money query lands on an article, not the converting page.</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>~31 blog pages visible in Google vs ~150 in the sitemap.</td><td>Sitemap contains 170 URLs, 150 of them /blog/. Ahrefs shows ~31 blog pages with organic traffic, so ~80% of blog content earns no visibility, usually wrong keywords, cannibalisation or intent mismatch.</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Semantic HTML landmarks missing.</td><td>No <code>&lt;main&gt;</code>, no <code>&lt;article&gt;</code>, no <code>&lt;header&gt;</code>. The page leans on hidden headings and div containers, which makes clean content extraction harder for AI crawlers.</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Mobile page speed is poor.</td><td>Lighthouse mobile: performance 0.43, LCP <strong>22.5s</strong>, Time-to-Interactive 24.8s, server response 1.6s (CLS good at 0.001). Slow pages get crawled less and hurt conversion.</td></tr>
       </tbody>
     </table>
   </section>
@@ -221,33 +253,45 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
       <div class="section-title">rently.sg &mdash; AEO Scorecard <span class="market-tag tag-sg">SG</span></div>
     </div>
     <div class="grid-3" style="margin-bottom:24px">
-      <div class="score-card"><div class="score-num s-yellow">52</div><div class="score-label">Site Readiness</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
+      <div class="score-card"><div class="score-num s-yellow">50</div><div class="score-label">Site Readiness</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
       <div class="score-card"><div class="score-num s-green">90</div><div class="score-label">LLM Visibility</div><div class="score-sub s-green">AI Authority</div></div>
-      <div class="score-card"><div class="score-num s-teal">71</div><div class="score-label">Combined AEO</div><div class="score-sub s-teal">AI-optimised</div></div>
+      <div class="score-card"><div class="score-num s-teal">70</div><div class="score-label">Combined AEO</div><div class="score-sub s-teal">AI-optimised</div></div>
     </div>
-    <div class="grid-2">
-      <div class="card">
-        <h4 class="sub-title" style="margin-top:0">Where Site Readiness loses points</h4>
-        <div class="metric-row"><span>Structured data (partial)</span><span class="s-yellow">8 / 18</span></div><div class="bar-wrap"><div class="bar" style="width:44%;background:var(--ns-warning)"></div></div>
-        <div class="metric-row"><span>Semantic HTML</span><span class="s-orange">4 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:40%;background:var(--ns-orange)"></div></div>
-        <div class="metric-row"><span>Web performance (CWV)</span><span class="s-red">2 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:20%;background:var(--ns-danger)"></div></div>
-        <div class="metric-row"><span>FAQ / help content</span><span class="s-yellow">6 / 12</span></div><div class="bar-wrap"><div class="bar" style="width:50%;background:var(--ns-warning)"></div></div>
-      </div>
-      <div class="card">
-        <h4 class="sub-title" style="margin-top:0">Where LLM Visibility wins</h4>
-        <div class="metric-row"><span>Branded queries cited</span><span class="s-green">2 / 2</span></div><div class="bar-wrap"><div class="bar" style="width:96%;background:var(--ns-success)"></div></div>
-        <div class="metric-row"><span>Category / comparison cited</span><span class="s-green">10 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:92%;background:var(--ns-success)"></div></div>
-        <div class="metric-row"><span>Citation ownership</span><span class="s-green">high</span></div><div class="bar-wrap"><div class="bar" style="width:90%;background:var(--ns-success)"></div></div>
-        <p style="font-size:12.5px;margin:12px 0 0;color:var(--ns-text-muted)">The classic gap: <strong>AI already knows you (90), your site isn't built to capitalise on it (52).</strong></p>
-      </div>
-    </div>
+
+    <h4 class="sub-title">Axis 1 · Site Readiness — full breakdown (50 / 100)</h4>
+    <table>
+      <thead><tr><th style="width:26%">Component</th><th style="width:10%">Score</th><th style="width:22%"></th><th style="width:42%">What the live site shows</th></tr></thead>
+      <tbody>
+        <tr><td>Structured Data Coverage</td><td class="mono">4 / 18</td><td><span class="mini-bar"><i style="width:22%;background:var(--ns-danger)"></i></span></td><td>Rich Results Test returns no rich results. JSON-LD is only non-rendering entity types (WebSite/WebPage/FinancialServices); no FAQ, Breadcrumb, Article or Product.</td></tr>
+        <tr><td>Content Structure</td><td class="mono">9 / 15</td><td><span class="mini-bar"><i style="width:60%;background:var(--ns-warning)"></i></span></td><td>Strong long-form blog with Q&amp;A patterns, but the primary headings are hidden (sr-only).</td></tr>
+        <tr><td>Entity Clarity</td><td class="mono">8 / 13</td><td><span class="mini-bar"><i style="width:62%;background:var(--ns-warning)"></i></span></td><td>FinancialServices entity with name, phone, price range, address and publisher identity; no sameAs links.</td></tr>
+        <tr><td>Task-Completion Content</td><td class="mono">9 / 12</td><td><span class="mini-bar"><i style="width:75%;background:var(--ns-success)"></i></span></td><td>Large how-to blog library covering paying, deferring and earning on rent.</td></tr>
+        <tr><td>FAQ / Help Content</td><td class="mono">7 / 12</td><td><span class="mini-bar"><i style="width:58%;background:var(--ns-warning)"></i></span></td><td>FAQ present but only as microdata, not JSON-LD; no dedicated help centre.</td></tr>
+        <tr><td>Semantic HTML Quality</td><td class="mono">4 / 10</td><td><span class="mini-bar"><i style="width:40%;background:var(--ns-orange)"></i></span></td><td>No main/article/header landmarks; hidden headings; div-heavy markup.</td></tr>
+        <tr><td>Web Performance (CWV)</td><td class="mono">2 / 10</td><td><span class="mini-bar"><i style="width:20%;background:var(--ns-danger)"></i></span></td><td>Mobile LCP 22.5s, performance 0.43 (CLS good at 0.001).</td></tr>
+        <tr><td>Technical AI Readiness</td><td class="mono">7 / 10</td><td><span class="mini-bar"><i style="width:70%;background:var(--ns-success)"></i></span></td><td>Server-rendered (Nuxt), clean indexable HTML, canonical and robots present; held back by slow hydration.</td></tr>
+      </tbody>
+    </table>
+
+    <h4 class="sub-title">Axis 2 · LLM Visibility — full breakdown (90 / 100)</h4>
+    <table>
+      <thead><tr><th style="width:30%">Component</th><th style="width:12%">Score</th><th style="width:22%"></th><th style="width:36%">Basis (measured)</th></tr></thead>
+      <tbody>
+        <tr><td>Branded Query Visibility</td><td class="mono">24 / 25</td><td><span class="mini-bar"><i style="width:96%;background:var(--ns-success)"></i></span></td><td>Cited in 2/2 branded questions.</td></tr>
+        <tr><td>Core Keyword Visibility</td><td class="mono">19 / 20</td><td><span class="mini-bar"><i style="width:95%;background:var(--ns-success)"></i></span></td><td>Cited across informational / category questions.</td></tr>
+        <tr><td>Comparison Query Visibility</td><td class="mono">18 / 20</td><td><span class="mini-bar"><i style="width:90%;background:var(--ns-success)"></i></span></td><td>Cited on "Rently vs CardUp vs ipaymy" and best-platform queries.</td></tr>
+        <tr><td>Cited Source Ownership</td><td class="mono">17 / 20</td><td><span class="mini-bar"><i style="width:85%;background:var(--ns-success)"></i></span></td><td>35 distinct Rently URLs cited, but 28 are blog (only 7 homepage/product).</td></tr>
+        <tr><td>Third-Party Review Presence</td><td class="mono">12 / 15</td><td><span class="mini-bar"><i style="width:80%;background:var(--ns-success)"></i></span></td><td>Third parties (e.g. EdgeProp) cite Rently in AI answers.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px;color:var(--ns-text-muted)">The gap (90 vs 52) is the classic AEO story: AI already knows you; the site is not yet built to capitalise on it.</p>
   </section>
 
   <section class="section" id="sg-ai">
     <div class="section-header">
       <div class="section-number">01 — SINGAPORE</div>
       <div class="section-title">rently.sg &mdash; AI Visibility (measured) <span class="market-tag tag-sg">SG</span></div>
-      <p class="section-intro">We ran 15 real Singapore-renter questions through Google AI Overview, Gemini and ChatGPT, spanning branded, informational, comparison and transactional intent (e.g. "How can I pay my rent online in Singapore?", "Which rent payment service gives the best miles?", "Rently vs CardUp vs ipaymy").</p>
+      <p class="section-intro">15 real Singapore-renter questions run through Google AI Overview, Gemini and ChatGPT, across branded, informational, comparison and transactional intent.</p>
     </div>
     <div class="grid-3" style="margin-bottom:20px">
       <div class="score-card"><div class="score-num s-green">100%</div><div class="score-label">Prompts cited</div><div class="score-sub">15 of 15</div></div>
@@ -266,10 +310,10 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
         <tr><td>15</td><td>Earn KrisFlyer miles by paying rent in Singapore <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
       </tbody>
     </table>
-    <p style="font-size:12.5px;color:var(--ns-text-muted)">Table shows a representative sample; all 15 prompts were cited. Full per-prompt table is in the detailed document.</p>
+    <p style="font-size:12.5px;color:var(--ns-text-muted)">Representative sample; all 15 prompts were cited. Full per-prompt table is in the detailed document.</p>
     <div class="warn">
       <div class="callout-title">The catch: the blog is doing all the work</div>
-      <p style="margin-bottom:0">Of the 35 distinct Rently URLs cited across the run, <strong>28 were blog pages</strong> and only 7 were the homepage or product pages. AI is recommending Rently through articles, not through the pages that actually convert a renter into a sign-up. Strengthening the homepage and product-page titles, schema and headings is how those citations start pointing at the money pages.</p>
+      <p style="margin-bottom:0">Of the 35 distinct Rently URLs cited across the run, <strong>28 were blog pages</strong> and only 7 were the homepage or product pages. AI recommends Rently through articles, not through the pages that convert a renter into a sign-up. Strengthening the homepage and product-page titles, schema and headings is how those citations start pointing at the money pages.</p>
     </div>
   </section>
 
@@ -278,19 +322,19 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <div class="section-header">
       <div class="section-number">02 — UNITED ARAB EMIRATES</div>
       <div class="section-title">rently-uae.com &mdash; Findings, validated <span class="market-tag tag-uae">UAE</span></div>
-      <p class="section-intro">The UAE product is Rent Now, Pay Later (annual rent split into monthly instalments). The rental pain here is the annual lump-sum / cheque culture, so the search behaviour differs from Singapore and the findings are reported separately.</p>
+      <p class="section-intro">The UAE product is Rent Now, Pay Later (annual rent split into monthly instalments). The rental pain here is the annual lump-sum / cheque culture, so search behaviour differs from Singapore and the findings are reported separately.</p>
     </div>
     <table>
-      <thead><tr><th style="width:16%">Area</th><th style="width:40%">Finding</th><th style="width:12%">Status</th><th style="width:32%">What the live site shows</th></tr></thead>
+      <thead><tr><th style="width:15%">Area</th><th style="width:38%">Finding</th><th style="width:47%">Validated observation &amp; why it matters</th></tr></thead>
       <tbody>
-        <tr><td><span class="pill pill-tech">Technical</span></td><td>No blog posts inside the XML sitemap.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Sitemap has 90 URLs; only 1 contains "blog" (the index). The ~22 published blog posts are absent, so Google has to find them indirectly, slowing or preventing indexing.</td></tr>
-        <tr><td><span class="pill pill-tech">Technical</span></td><td>No structured data implementation.</td><td><span class="pill pill-correct">Reframed</span></td><td>Zero JSON-LD. The homepage does carry FAQ Question/Answer microdata, but it is not wrapped as FAQPage, and there is no Organization, WebSite or Product schema. Blog pages have no schema at all.</td></tr>
-        <tr><td><span class="pill pill-tech">Technical</span></td><td>No breadcrumb (navigational) on blog pages.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Blog pages have zero breadcrumb schema and no breadcrumb navigation.</td></tr>
-        <tr><td><span class="pill pill-content">Content</span></td><td>Homepage &lt;title&gt; not maximised, currently only "The better way to rent".</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Live title is "Rently | The better way to rent", a slogan with no search keyword. (The H1 "Rent now, pay later." is good and should inform the title.)</td></tr>
-        <tr><td><span class="pill pill-content">Content</span></td><td>Blog not maintained; needs reactivating with high-intent keywords.</td><td><span class="pill pill-confirm">Confirmed</span></td><td>Only ~24 organic visits across ~22 blog pages, and (per above) they aren't even in the sitemap. The channel is effectively dormant.</td></tr>
-        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Semantic HTML landmarks missing.</td><td><span class="pill pill-new">New</span></td><td>No <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code> or <code>&lt;footer&gt;</code>; div-heavy markup. It does have a real, visible H1 (better than SG here).</td></tr>
-        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Mobile page speed is poor.</td><td><span class="pill pill-new">New</span></td><td>Lighthouse mobile: performance 0.55, LCP 7.5s, Time-to-Interactive 17.5s (CLS good at 0). Better than SG but still in the "poor" band.</td></tr>
-        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Canonical inconsistency.</td><td><span class="pill pill-new">New</span></td><td>Homepage canonical is <code>rently-uae.com</code> (no trailing slash) while the sitemap lists <code>rently-uae.com/</code> (trailing slash). Minor, but worth normalising.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No blog posts inside the XML sitemap.</td><td>Sitemap has 90 URLs; only 1 contains "blog" (the index). The ~22 published blog posts are absent, so Google has to find them indirectly, slowing or preventing indexing.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No structured data implementation.</td><td>Validated in Rich Results Test: inconsistent, not simply absent. Homepage returns <strong>no rich results</strong> (0 valid JSON-LD, only Q&amp;A microdata) and the blog JSON-LD is <strong>broken/invalid</strong>, but product pages <strong>pass RRT</strong> with valid rich results, BreadcrumbList, FAQPage, HowTo (plus Service, Organization). The valid markup needs standardising across all templates.</td></tr>
+        <tr><td><span class="pill pill-tech">Technical</span></td><td>No breadcrumb (navigational) on blog pages.</td><td>Blog pages have zero breadcrumb schema and no breadcrumb navigation. (Product pages do carry BreadcrumbList, so the pattern exists, it just isn't applied to the blog.)</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>Homepage &lt;title&gt; not maximised, currently only "The better way to rent".</td><td>Live title is "Rently | The better way to rent", a slogan with no search keyword. The H1 "Rent now, pay later." is good and should inform the title.</td></tr>
+        <tr><td><span class="pill pill-content">Content</span></td><td>Blog not maintained; needs reactivating with high-intent keywords.</td><td>Only ~24 organic visits across ~22 blog pages, and (per above) they aren't even in the sitemap. The channel is effectively dormant.</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Semantic HTML landmarks missing.</td><td>No <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code> or <code>&lt;footer&gt;</code>; div-heavy markup. It does have a real, visible H1 (better than SG here).</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Mobile page speed is poor.</td><td>Lighthouse mobile: performance 0.55, LCP 7.5s, Time-to-Interactive 17.5s (CLS good at 0). Better than SG but still in the "poor" band.</td></tr>
+        <tr><td><span class="pill pill-new">New (AEO)</span></td><td>Canonical inconsistency.</td><td>Homepage canonical is <code>rently-uae.com</code> (no trailing slash) while the sitemap lists <code>rently-uae.com/</code> (trailing slash). Minor, but worth normalising.</td></tr>
       </tbody>
     </table>
   </section>
@@ -301,33 +345,45 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
       <div class="section-title">rently-uae.com &mdash; AEO Scorecard <span class="market-tag tag-uae">UAE</span></div>
     </div>
     <div class="grid-3" style="margin-bottom:24px">
-      <div class="score-card"><div class="score-num s-orange">41</div><div class="score-label">Site Readiness</div><div class="score-sub s-orange">Low AI-readiness</div></div>
+      <div class="score-card"><div class="score-num s-orange">47</div><div class="score-label">Site Readiness</div><div class="score-sub s-orange">Low AI-readiness</div></div>
       <div class="score-card"><div class="score-num s-green">87</div><div class="score-label">LLM Visibility</div><div class="score-sub s-green">AI Authority</div></div>
-      <div class="score-card"><div class="score-num s-teal">64</div><div class="score-label">Combined AEO</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
+      <div class="score-card"><div class="score-num s-teal">67</div><div class="score-label">Combined AEO</div><div class="score-sub s-yellow">Partially AI-ready</div></div>
     </div>
-    <div class="grid-2">
-      <div class="card">
-        <h4 class="sub-title" style="margin-top:0">Where Site Readiness loses points</h4>
-        <div class="metric-row"><span>Structured data (no JSON-LD)</span><span class="s-red">3 / 18</span></div><div class="bar-wrap"><div class="bar" style="width:17%;background:var(--ns-danger)"></div></div>
-        <div class="metric-row"><span>Entity clarity (no Org schema)</span><span class="s-orange">4 / 13</span></div><div class="bar-wrap"><div class="bar" style="width:31%;background:var(--ns-orange)"></div></div>
-        <div class="metric-row"><span>Semantic HTML</span><span class="s-orange">4 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:40%;background:var(--ns-orange)"></div></div>
-        <div class="metric-row"><span>Web performance (CWV)</span><span class="s-orange">3 / 10</span></div><div class="bar-wrap"><div class="bar" style="width:30%;background:var(--ns-orange)"></div></div>
-      </div>
-      <div class="card">
-        <h4 class="sub-title" style="margin-top:0">Where LLM Visibility wins</h4>
-        <div class="metric-row"><span>Prompts cited</span><span class="s-green">15 / 15</span></div><div class="bar-wrap"><div class="bar" style="width:95%;background:var(--ns-success)"></div></div>
-        <div class="metric-row"><span>Rently citations vs Keyper</span><span class="s-green">70 vs 21</span></div><div class="bar-wrap"><div class="bar" style="width:88%;background:var(--ns-success)"></div></div>
-        <div class="metric-row"><span>Citation ownership</span><span class="s-green">leads market</span></div><div class="bar-wrap"><div class="bar" style="width:86%;background:var(--ns-success)"></div></div>
-        <p style="font-size:12.5px;margin:12px 0 0;color:var(--ns-text-muted)">Rently leads AI answers even though Keyper has ~10x its organic traffic.</p>
-      </div>
-    </div>
+
+    <h4 class="sub-title">Axis 1 · Site Readiness — full breakdown (47 / 100)</h4>
+    <table>
+      <thead><tr><th style="width:26%">Component</th><th style="width:10%">Score</th><th style="width:22%"></th><th style="width:42%">What the live site shows</th></tr></thead>
+      <tbody>
+        <tr><td>Structured Data Coverage</td><td class="mono">6 / 18</td><td><span class="mini-bar"><i style="width:33%;background:var(--ns-danger)"></i></span></td><td>Rich valid JSON-LD on product pages, but 0 on the homepage and broken on the blog. Inconsistent coverage.</td></tr>
+        <tr><td>Content Structure</td><td class="mono">9 / 15</td><td><span class="mini-bar"><i style="width:60%;background:var(--ns-warning)"></i></span></td><td>Visible H1, clear sections, FAQ and a "how it works" step flow.</td></tr>
+        <tr><td>Entity Clarity</td><td class="mono">6 / 13</td><td><span class="mini-bar"><i style="width:46%;background:var(--ns-orange)"></i></span></td><td>Organization + Service JSON-LD on product pages, but not sitewide; no sameAs links.</td></tr>
+        <tr><td>Task-Completion Content</td><td class="mono">7 / 12</td><td><span class="mini-bar"><i style="width:58%;background:var(--ns-warning)"></i></span></td><td>HowTo schema and step content on product pages; blog dormant.</td></tr>
+        <tr><td>FAQ / Help Content</td><td class="mono">7 / 12</td><td><span class="mini-bar"><i style="width:58%;background:var(--ns-warning)"></i></span></td><td>FAQPage JSON-LD on product pages plus Q&amp;A microdata on the homepage.</td></tr>
+        <tr><td>Semantic HTML Quality</td><td class="mono">4 / 10</td><td><span class="mini-bar"><i style="width:40%;background:var(--ns-orange)"></i></span></td><td>No main/nav/header/footer landmarks; div-heavy, though a real H1 is present.</td></tr>
+        <tr><td>Web Performance (CWV)</td><td class="mono">3 / 10</td><td><span class="mini-bar"><i style="width:30%;background:var(--ns-orange)"></i></span></td><td>Mobile LCP 7.5s, performance 0.55 (CLS good at 0).</td></tr>
+        <tr><td>Technical AI Readiness</td><td class="mono">5 / 10</td><td><span class="mini-bar"><i style="width:50%;background:var(--ns-warning)"></i></span></td><td>JS-heavy render, H1 present, canonical vs sitemap trailing-slash mismatch, no robots meta, blog missing from sitemap.</td></tr>
+      </tbody>
+    </table>
+
+    <h4 class="sub-title">Axis 2 · LLM Visibility — full breakdown (87 / 100)</h4>
+    <table>
+      <thead><tr><th style="width:30%">Component</th><th style="width:12%">Score</th><th style="width:22%"></th><th style="width:36%">Basis (measured)</th></tr></thead>
+      <tbody>
+        <tr><td>Branded Query Visibility</td><td class="mono">23 / 25</td><td><span class="mini-bar"><i style="width:92%;background:var(--ns-success)"></i></span></td><td>Cited in 2/2 branded questions.</td></tr>
+        <tr><td>Core Keyword Visibility</td><td class="mono">18 / 20</td><td><span class="mini-bar"><i style="width:90%;background:var(--ns-success)"></i></span></td><td>Cited across RNPL / pay-rent-monthly questions.</td></tr>
+        <tr><td>Comparison Query Visibility</td><td class="mono">17 / 20</td><td><span class="mini-bar"><i style="width:85%;background:var(--ns-success)"></i></span></td><td>Cited on "Rently vs Keyper" and best-RNPL queries.</td></tr>
+        <tr><td>Cited Source Ownership</td><td class="mono">18 / 20</td><td><span class="mini-bar"><i style="width:90%;background:var(--ns-success)"></i></span></td><td>Rently cited 70 times vs Keyper 21 across the run, mostly blog pages.</td></tr>
+        <tr><td>Third-Party Review Presence</td><td class="mono">11 / 15</td><td><span class="mini-bar"><i style="width:73%;background:var(--ns-success)"></i></span></td><td>Third parties (e.g. PropertyFinder, Reddit) cite Rently in AI answers.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px;color:var(--ns-text-muted)">Rently leads AI answers even though Keyper has roughly ten times its organic traffic.</p>
   </section>
 
   <section class="section" id="uae-ai">
     <div class="section-header">
       <div class="section-number">02 — UNITED ARAB EMIRATES</div>
       <div class="section-title">rently-uae.com &mdash; AI Visibility (measured) <span class="market-tag tag-uae">UAE</span></div>
-      <p class="section-intro">We ran 15 real UAE-renter questions through Google AI Overview, Gemini and ChatGPT (e.g. "How can I pay my rent monthly instead of cheques in Dubai?", "Best rent now pay later companies in the UAE?", "Rently vs Keyper").</p>
+      <p class="section-intro">15 real UAE-renter questions run through Google AI Overview, Gemini and ChatGPT.</p>
     </div>
     <div class="grid-3" style="margin-bottom:20px">
       <div class="score-card"><div class="score-num s-green">100%</div><div class="score-label">Prompts cited</div><div class="score-sub">15 of 15</div></div>
@@ -365,7 +421,7 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
         <ul class="clean">
           <li>Make the homepage H1 visible and keyword-aligned (stop relying on the hidden <code>sr-only</code> heading).</li>
           <li>Fix duplicate-brand titles sitewide; give the homepage a transactional focus keyword ("pay rent online / by card").</li>
-          <li>Complete the schema: add FAQPage, BreadcrumbList and Article/BlogPosting.</li>
+          <li>Add real JSON-LD for the rich types: FAQPage (convert the existing microdata), BreadcrumbList and Article/BlogPosting; fix the invalid blog block.</li>
           <li>Add breadcrumbs to blog pages (Home &gt; Blog &gt; Category &gt; Article).</li>
           <li>Audit the ~120 non-performing blog pages (intent / cannibalisation) and consolidate.</li>
           <li>Fix mobile speed (22.5s LCP) on the homepage.</li>
@@ -375,7 +431,7 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
         <h4 class="sub-title" style="margin-top:0">UAE · rently-uae.com</h4>
         <ul class="clean">
           <li>Add blog posts to the XML sitemap and submit in Search Console (fastest win).</li>
-          <li>Implement JSON-LD from the ground up: Organization, WebSite, Product/Service, FAQPage, BreadcrumbList.</li>
+          <li>Standardise the product-page JSON-LD across all templates: add Organization + WebSite sitewide, and fix the homepage (0 schema) and the broken blog JSON-LD.</li>
           <li>Rewrite the homepage title around the real product ("Rent Now, Pay Later / pay rent monthly in the UAE").</li>
           <li>Reactivate the blog against high-intent clusters (RERA rent calculator, pay rent by card, split annual rent).</li>
           <li>Add breadcrumbs to blog pages; normalise the canonical vs sitemap trailing slash.</li>
@@ -385,13 +441,13 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     </div>
     <div class="callout">
       <div class="callout-title">Why this matters now</div>
-      <p style="margin-bottom:0">Rently's AI-answer lead in both markets is real but fragile because it rests on blog content over a thin foundation. Competitors (CardUp in Singapore, Keyper in the UAE) are one content-and-schema push away from contesting it. The foundation work in this document is what turns a fragile lead into a durable, defensible one, and points AI citations at the pages that actually convert renters into sign-ups.</p>
+      <p style="margin-bottom:0">Rently's AI-answer lead in both markets is real but fragile because it rests on blog content over a thin, inconsistent foundation. Competitors (CardUp in Singapore, Keyper in the UAE) are one content-and-schema push away from contesting it. The foundation work in this document is what turns a fragile lead into a durable one, and points AI citations at the pages that actually convert renters into sign-ups.</p>
     </div>
   </section>
 
   <div class="foot">
     Novastacks · Preliminary SEO &amp; AEO Analysis for Rently (Singapore &amp; UAE) · Prepared 2 July 2026 · Confidential<br>
-    All findings validated against the live sites. AI visibility measured across Google AI Overview, Gemini and ChatGPT (15 prompts per market).
+    All findings validated against the live sites. Structured data checked in JSON-LD. AI visibility measured across Google AI Overview, Gemini and ChatGPT (15 prompts per market).
   </div>
 </main>
 
