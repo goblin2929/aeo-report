@@ -103,13 +103,15 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <div class="side-nav-label">Singapore · rently.sg</div>
     <a class="side-nav-link" href="#sg-findings"><span class="nav-icon">1</span> Findings (Validated)</a>
     <a class="side-nav-link" href="#sg-aeo"><span class="nav-icon">2</span> AEO Scorecard</a>
-    <a class="side-nav-link" href="#sg-ai"><span class="nav-icon">3</span> AI Visibility</a>
+    <a class="side-nav-link" href="#sg-competitors"><span class="nav-icon">3</span> Competitor Landscape</a>
+    <a class="side-nav-link" href="#sg-ai"><span class="nav-icon">4</span> AI Visibility</a>
   </div>
   <div class="side-nav-section">
     <div class="side-nav-label">UAE · rently-uae.com</div>
     <a class="side-nav-link" href="#uae-findings"><span class="nav-icon">1</span> Findings (Validated)</a>
     <a class="side-nav-link" href="#uae-aeo"><span class="nav-icon">2</span> AEO Scorecard</a>
-    <a class="side-nav-link" href="#uae-ai"><span class="nav-icon">3</span> AI Visibility</a>
+    <a class="side-nav-link" href="#uae-competitors"><span class="nav-icon">3</span> Competitor Landscape</a>
+    <a class="side-nav-link" href="#uae-ai"><span class="nav-icon">4</span> AI Visibility</a>
   </div>
   <div class="side-nav-section">
     <div class="side-nav-label">Action</div>
@@ -230,6 +232,27 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <p style="font-size:12.5px;color:var(--ns-text-muted)">The gap (90 vs 52) is the classic AEO story: AI already knows you; the site is not yet built to capitalise on it.</p>
   </section>
 
+  <section class="section" id="sg-competitors">
+    <div class="section-header">
+      <div class="section-number">01 — SINGAPORE</div>
+      <div class="section-title">rently.sg &mdash; Competitor Landscape (Ahrefs) <span class="market-tag tag-sg">SG</span></div>
+      <p class="section-intro">Organic traffic and page counts from Ahrefs, split by branded vs non-branded and by page type. Values are monthly organic traffic, with indexed pages in brackets.</p>
+    </div>
+    <table>
+      <thead><tr><th>Domain</th><th>Total organic</th><th>Branded</th><th>Non-branded</th><th>Product pages</th><th>Blog / articles</th></tr></thead>
+      <tbody>
+        <tr><td><strong>rently.sg</strong></td><td class="mono">2,949 (38)</td><td class="mono">1,859 (9)</td><td class="mono">1,090 (29)</td><td class="mono">61 (2)</td><td class="mono">402 (31)</td></tr>
+        <tr><td>cardup.co</td><td class="mono">11,549 (46)</td><td class="mono">10,333 (24)</td><td class="mono">1,216 (22)</td><td class="mono">215 (2)</td><td class="mono">228 (24)</td></tr>
+        <tr><td>ipaymy.com</td><td class="mono">1,002 (6)</td><td class="mono">1,002 (6)</td><td class="mono">0 (0)</td><td class="mono">22 (2)</td><td class="mono">0 (0)</td></tr>
+        <tr><td>renthero.com.sg</td><td class="mono">88 (6)</td><td class="mono">86 (6)</td><td class="mono">2 (0)</td><td class="mono">2 (1)</td><td class="mono">0 (0)</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <div class="callout-title">How to read it</div>
+      <p style="margin-bottom:0">CardUp leads total organic (11,549), but roughly 90% of that is <strong>branded</strong> (10,333), people already searching "CardUp". That is brand awareness, not discovery. On <strong>non-branded</strong> traffic, which is how new renters actually find a solution, rently.sg (1,090) is <strong>level with CardUp (1,216)</strong> and far ahead of ipaymy (0) and RentHero (2). Rently's blog also already out-pulls CardUp's on article traffic (402 vs 228). The gap to close in Singapore is brand awareness, not content discovery, Rently is already competitive where it matters for acquisition.</p>
+    </div>
+  </section>
+
   <section class="section" id="sg-ai">
     <div class="section-header">
       <div class="section-number">01 — SINGAPORE</div>
@@ -244,16 +267,24 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <table>
       <thead><tr><th>#</th><th>Question (intent)</th><th>Cited?</th><th>Where it was cited</th></tr></thead>
       <tbody>
-        <tr><td>3</td><td>How can I pay my rent online in Singapore? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini — via blog guide</td></tr>
-        <tr><td>4</td><td>Can I pay my rent with a credit card in Singapore? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini — via blog guide</td></tr>
-        <tr><td>8</td><td>Best platforms to pay rent by credit card in Singapore? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
-        <tr><td>9</td><td>Which rent service gives the best miles/rewards? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
-        <tr><td>10</td><td>Rently vs CardUp vs ipaymy? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
-        <tr><td>13</td><td>What app lets me defer my rent in Singapore? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
-        <tr><td>15</td><td>Earn KrisFlyer miles by paying rent in Singapore <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>1</td><td>What is Rently and how does it work in Singapore? <em>(branded)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>2</td><td>Is Rently Singapore legit and safe to use for paying rent? <em>(branded)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>3</td><td>How can I pay my rent online in Singapore? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>4</td><td>Can I pay my rent with a credit card in Singapore? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>5</td><td>How do I earn miles or rewards when paying my rent in Singapore? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>6</td><td>Can I split or defer my rental deposit in Singapore? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>7</td><td>How can I lower my move-in costs when renting in Singapore? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>8</td><td>What are the best platforms to pay rent by credit card in Singapore? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>9</td><td>Which rent payment service gives the best miles or rewards in Singapore? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>10</td><td>Rently vs CardUp vs ipaymy: which is best for paying rent in Singapore? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>11</td><td>What is the cheapest way to pay rent with a credit card in Singapore? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>12</td><td>Is it worth paying rent with a credit card to earn rewards in Singapore? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>13</td><td>What app lets me defer my rent payment in Singapore? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>14</td><td>How can I move in without paying a large rental deposit in Singapore? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>15</td><td>Best way to earn KrisFlyer miles by paying rent in Singapore <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
       </tbody>
     </table>
-    <p style="font-size:12.5px;color:var(--ns-text-muted)">Representative sample; all 15 prompts were cited. Full per-prompt table is in the detailed document.</p>
+    <p style="font-size:12.5px;color:var(--ns-text-muted)">All 15 tested prompts, with the AI surfaces that cited Rently for each. Every prompt cited Rently.</p>
     <div class="warn">
       <div class="callout-title">The catch: the blog is doing all the work</div>
       <p style="margin-bottom:0">Of the 35 distinct Rently URLs cited across the run, <strong>28 were blog pages</strong> and only 7 were the homepage or product pages. AI recommends Rently through articles, not through the pages that convert a renter into a sign-up. Strengthening the homepage and product-page titles, schema and headings is how those citations start pointing at the money pages.</p>
@@ -322,6 +353,27 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <p style="font-size:12.5px;color:var(--ns-text-muted)">Rently leads AI answers even though Keyper has roughly ten times its organic traffic.</p>
   </section>
 
+  <section class="section" id="uae-competitors">
+    <div class="section-header">
+      <div class="section-number">02 — UNITED ARAB EMIRATES</div>
+      <div class="section-title">rently-uae.com &mdash; Competitor Landscape (Ahrefs) <span class="market-tag tag-uae">UAE</span></div>
+      <p class="section-intro">Organic traffic and page counts from Ahrefs, split by branded vs non-branded and by page type. Values are monthly organic traffic, with indexed pages in brackets.</p>
+    </div>
+    <table>
+      <thead><tr><th>Domain</th><th>Total organic</th><th>Branded</th><th>Non-branded</th><th>Product pages</th><th>Blog / articles</th></tr></thead>
+      <tbody>
+        <tr><td><strong>rently-uae.com</strong></td><td class="mono">435 (25)</td><td class="mono">312 (5)</td><td class="mono">123 (20)</td><td class="mono">412 (3)</td><td class="mono">24 (22)</td></tr>
+        <tr><td>realkeyper.com (Keyper)</td><td class="mono">4,071 (93)</td><td class="mono">2,772 (7)</td><td class="mono">1,299 (86)</td><td class="mono">0 (0)</td><td class="mono">1,018 (79)</td></tr>
+        <tr><td>rewa.rent</td><td class="mono">25 (2)</td><td class="mono">25 (2)</td><td class="mono">0 (0)</td><td class="mono">0 (0)</td><td class="mono">0 (0)</td></tr>
+        <tr><td>ternrewards.com</td><td class="mono">0 (0)</td><td class="mono">0 (0)</td><td class="mono">0 (0)</td><td class="mono">0 (0)</td><td class="mono">0 (0)</td></tr>
+      </tbody>
+    </table>
+    <div class="warn">
+      <div class="callout-title">How to read it</div>
+      <p style="margin-bottom:0">Keyper dominates every organic segment: total 4,071, non-branded 1,299, and a blog pulling 1,018 visits across 79 pages, versus Rently's 435 / 123 / 24 (24 visits across 22 blog pages). In <strong>traditional organic search, Rently is well behind Keyper</strong>, and its dormant, un-indexed blog is the single biggest reason. Yet in the AI-answer layer (next section) Rently is cited <strong>70 times vs Keyper's 21</strong>. Rently is behind where search is today and ahead of Keyper where search is going, protecting and extending that AI lead while reactivating the blog is the UAE opportunity.</p>
+    </div>
+  </section>
+
   <section class="section" id="uae-ai">
     <div class="section-header">
       <div class="section-number">02 — UNITED ARAB EMIRATES</div>
@@ -336,15 +388,24 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
     <table>
       <thead><tr><th>#</th><th>Question (intent)</th><th>Cited?</th><th>Where it was cited</th></tr></thead>
       <tbody>
-        <tr><td>3</td><td>Pay rent monthly instead of cheques in Dubai? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini — via blog</td></tr>
-        <tr><td>5</td><td>What is rent now pay later in Dubai and how does it work? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
-        <tr><td>8</td><td>Best rent now pay later companies in the UAE? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
-        <tr><td>10</td><td>Rently vs Keyper? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
-        <tr><td>13</td><td>App to pay Dubai rent in monthly instalments? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini, ChatGPT</td></tr>
-        <tr><td>15</td><td>Move into a Dubai apartment without full rent upfront? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview</td></tr>
+        <tr><td>1</td><td>What is Rently and how does it work in the UAE? <em>(branded)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>2</td><td>Is Rently UAE legit and safe for paying rent in installments? <em>(branded)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>3</td><td>How can I pay my rent monthly instead of cheques in Dubai? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview</td></tr>
+        <tr><td>4</td><td>Can I pay my rent with a credit card in the UAE? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>5</td><td>What is rent now pay later in Dubai and how does it work? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>Gemini</td></tr>
+        <tr><td>6</td><td>How can I rent an apartment in Dubai without paying a year upfront? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>Gemini</td></tr>
+        <tr><td>7</td><td>Can I get help covering my rent deposit in the UAE? <em>(informational)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>8</td><td>What are the best rent now pay later companies in the UAE? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>9</td><td>Which service lets me split my annual rent into monthly payments in Dubai? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>ChatGPT, Gemini</td></tr>
+        <tr><td>10</td><td>Rently vs Keyper: which is better for paying rent monthly in the UAE? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>11</td><td>What is the best way to pay rent with a credit card in the UAE? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>12</td><td>How much does rent now pay later cost in the UAE and is it worth it? <em>(comparison)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>13</td><td>What app lets me pay my Dubai rent in monthly installments? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, ChatGPT, Gemini</td></tr>
+        <tr><td>14</td><td>Can I get rent installments if I have a work visa in the UAE? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview, Gemini</td></tr>
+        <tr><td>15</td><td>How can I move into a Dubai apartment immediately without full rent upfront? <em>(transactional)</em></td><td><span class="pill pill-confirm">Yes</span></td><td>AI Overview</td></tr>
       </tbody>
     </table>
-    <p style="font-size:12.5px;color:var(--ns-text-muted)">Representative sample; all 15 prompts were cited. Full per-prompt table is in the detailed document.</p>
+    <p style="font-size:12.5px;color:var(--ns-text-muted)">All 15 tested prompts, with the AI surfaces that cited Rently for each. Every prompt cited Rently.</p>
     <div class="warn">
       <div class="callout-title">Same pattern, bigger opportunity</div>
       <p style="margin-bottom:0">Rently UAE is cited <strong>70 times vs Keyper's 21</strong> in these AI answers, again almost entirely through blog pages. Yet in traditional organic search Keyper is far ahead (~4,000 monthly visits vs Rently's ~435). Rently is <em>already ahead where search is going</em> (AI answers) and behind where it is today (blue links). Fixing the sitemap, schema and blog maintenance protects the AI lead and starts closing the organic gap.</p>
