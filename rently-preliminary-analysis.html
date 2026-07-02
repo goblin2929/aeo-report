@@ -98,7 +98,6 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
   <div class="side-nav-section">
     <div class="side-nav-label">Overview</div>
     <a class="side-nav-link" href="#top"><span class="nav-icon">◆</span> Executive Summary</a>
-    <a class="side-nav-link" href="#method"><span class="nav-icon">✓</span> How We Validated</a>
     <a class="side-nav-link" href="#scoring"><span class="nav-icon">▤</span> How AEO Is Scored</a>
   </div>
   <div class="side-nav-section">
@@ -170,27 +169,6 @@ ul.clean li::before{content:'▸';position:absolute;left:6px;color:var(--ns-prim
   </section>
 
   <!-- METHOD -->
-  <section class="section" id="method">
-    <div class="section-header">
-      <div class="section-number">00 — METHOD</div>
-      <div class="section-title">How we validated every finding</div>
-      <p class="section-intro">Nothing here is assumed. Each finding was checked against the live sites before it was written up. Where the raw evidence contradicted an initial read, we corrected it.</p>
-    </div>
-    <ul class="clean">
-      <li><strong>Live server HTML</strong> fetched for both homepages, product pages and sample blog pages; inspected for titles, headings, schema and breadcrumbs.</li>
-      <li><strong>Structured data</strong> extracted and parsed directly from page source. We checked <strong>JSON-LD specifically</strong> (the format Google and AI engines read) and separately noted inline microdata, per page type.</li>
-      <li><strong>Sitemaps</strong> downloaded and URL counts measured (total vs blog).</li>
-      <li><strong>Core Web Vitals</strong> measured on mobile via Lighthouse.</li>
-      <li><strong>AI visibility</strong> measured by running 15 real renter questions per market through Google AI Overview, Gemini and ChatGPT, recording whether Rently was mentioned and cited, and which pages were cited.</li>
-    </ul>
-    <div class="callout">
-      <div class="callout-title">Findings corrected after inspection (why validation matters)</div>
-      <p style="margin-bottom:6px"><strong>SG "old-design cache":</strong> the server HTML is actually current. The real cause is that the H1 and most section headings are marked <code>class="sr-only"</code> (deliberately hidden from sighted users), so the heading Google and AI read differs from the visible hero. It is a heading-visibility issue, not a caching bug.</p>
-      <p style="margin-bottom:6px"><strong>Structured data (validated in Rich Results Test):</strong> confirmed against your check. rently.sg returns no rich results in RRT. The JSON-LD in source is only <code>WebSite</code> + <code>WebPage</code> + <code>FinancialServices</code>, none of which RRT renders, so the tool correctly shows nothing. SG's FAQ exists only as <em>microdata</em>, not JSON-LD. SG's structured-data score was lowered accordingly (Site Readiness 50, Combined 70).</p>
-      <p style="margin-bottom:0"><strong>UAE structured data is inconsistent, not simply absent:</strong> the homepage returns no rich results (zero JSON-LD) and the blog's JSON-LD is <em>broken/invalid</em>, but the product pages <em>pass RRT</em> with valid rich results (BreadcrumbList, FAQPage, HowTo). This raised UAE Site Readiness from an earlier read of 41 to 47.</p>
-    </div>
-  </section>
-
   <!-- SCORING EXPLAINER -->
   <section class="section" id="scoring">
     <div class="section-header">
