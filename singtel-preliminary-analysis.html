@@ -103,97 +103,97 @@ td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
     <tbody><tr>
       <td class="num">1</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>No structured data on the homepage, and invalid product schema</strong><div class="ev">singtel.com (homepage), /personal/products-services/shop/fibre</div></td>
+      <td><strong>No structured data on the homepage, and invalid product schema</strong><div class="ev">https://www.singtel.com/, https://www.singtel.com/personal/products-services/shop/fibre</div></td>
       <td class="why">The homepage source contains zero JSON-LD (no Organization or WebSite entity markup). On the fibre shop page the Product and Offer objects are present but every Offer omits availability, url and priceValidUntil, and the Products omit review or aggregateRating, so Rich Results Test reports the Product markup as invalid. Without a clean entity block on the homepage, Google and AI engines cannot reliably resolve Singtel as an entity (logo, sameAs, sitelinks search box), and the invalid product markup forfeits Product rich results on the flagship commercial page.</td>
       <td class="sug">Add valid Organization and WebSite JSON-LD to the homepage. Fix the Offer objects on product pages by adding availability, url and priceValidUntil, and add review or aggregateRating where genuine.</td></tr>
 <tr>
       <td class="num">2</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>No structured data on the blog article</strong><div class="ev">/personal/singtel-blog/right-mobile-plan</div></td>
+      <td><strong>No structured data on the blog article</strong><div class="ev">https://www.singtel.com/personal/singtel-blog/right-mobile-plan</div></td>
       <td class="why">The article source contains only BreadcrumbList and ListItem JSON-LD. There is no Article or BlogPosting and no FAQPage. Article and FAQPage schema make a post eligible for rich results and give LLMs machine readable context (author, publish date, topic, question and answer). This is a high intent commercial topic (choosing a mobile plan), so the lost visibility maps to lost plan sign ups.</td>
       <td class="sug">Add Article (or BlogPosting) and, where the content answers questions, FAQPage JSON-LD to blog templates.</td></tr>
 <tr>
       <td class="num">3</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>Favicon missing on product pages</strong><div class="ev">/personal/products-services/shop/fibre</div></td>
+      <td><strong>Favicon missing on product pages</strong><div class="ev">https://www.singtel.com/personal/products-services/shop/fibre</div></td>
       <td class="why">The fibre shop page source has no favicon link at all, while other templates reference an SVG favicon (the homepage and wifi6 use an absolute URL, the blog uses a relative path). The favicon shows next to the URL on mobile results, in AI assistant panels and in browser tabs, so a missing favicon on the highest commercial intent pages reduces brand recognition at the click and signals technical inconsistency.</td>
       <td class="sug">Add a consistent favicon link to every template, using an absolute URL so it resolves on all paths.</td></tr>
 <tr>
       <td class="num">4</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>Product links are not crawlable (client side rendering)</strong><div class="ev">/personal/products-services/shop/fibre, /personal/products-services/broadband/wifi6</div></td>
+      <td><strong>Product links are not crawlable (client side rendering)</strong><div class="ev">https://www.singtel.com/personal/products-services/shop/fibre, https://www.singtel.com/personal/products-services/broadband/wifi6</div></td>
       <td class="why">The fibre page is a Next.js client rendered app; its server HTML exposes only asset file links and no product links, so the wifi6 URL cannot be discovered from it. The homepage similarly exposes only 9 anchor links in server HTML. A page reachable only through JavaScript receives almost no internal link equity, may never be indexed and is invisible to LLMs. Ahrefs confirms the cost: Singtel earns non branded product traffic on only 3 pages (5,304 visits) versus M1 on 108 pages (15,432 visits).</td>
       <td class="sug">Render primary navigation and product links as real anchor elements in server HTML (server side rendering or static links), not JavaScript only click handlers.</td></tr>
 <tr>
       <td class="num">5</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>Product sub pages have no canonical</strong><div class="ev">/personal/products-services/broadband/wifi6</div></td>
+      <td><strong>Product sub pages have no canonical</strong><div class="ev">https://www.singtel.com/personal/products-services/broadband/wifi6</div></td>
       <td class="why">The wifi6 page has no canonical tag in source. Without a self referencing canonical, Google picks its own, which lets parameter or duplicate versions compete and can index the wrong URL, splitting ranking signals.</td>
       <td class="sug">Add a self referencing canonical to every product sub page.</td></tr>
 <tr>
       <td class="num">6</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>Blog articles have no canonical</strong><div class="ev">/personal/singtel-blog/right-mobile-plan</div></td>
+      <td><strong>Blog articles have no canonical</strong><div class="ev">https://www.singtel.com/personal/singtel-blog/right-mobile-plan</div></td>
       <td class="why">The article has no canonical tag in source. Blog URLs frequently collect UTM and campaign parameters when shared, so a missing canonical lets those variants dilute the article&#x27;s ranking signals and can index the wrong URL.</td>
       <td class="sug">Add a self referencing canonical to every blog article template.</td></tr>
 <tr>
       <td class="num">7</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>External domain (gomo.sg) inside the Singtel sitemap (to confirm)</strong><div class="ev">/sitemap-explore.xml</div></td>
+      <td><strong>External domain (gomo.sg) inside the Singtel sitemap (to confirm)</strong><div class="ev">https://www.singtel.com/sitemap-explore.xml</div></td>
       <td class="why">The sitemap at singtel.com/sitemap-explore.xml contains 88 URLs pointing to www.gomo.sg. A sitemap is a crawl instruction scoped to the host it is submitted for; a different domain inside it is treated as a cross submission that Google ignores, and it can trigger sitemap warnings in Search Console while muddying crawl signals for the real Singtel URLs. If GOMO must be promoted, it should be handled through its own sitemap.</td>
       <td class="sug">Confirm whether the GOMO inclusion is intentional. Best practice is to remove the external domain and keep Singtel&#x27;s sitemap to singtel.com URLs only.</td></tr>
 <tr>
       <td class="num">8</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>No clear path from the homepage to the blog</strong><div class="ev">singtel.com (homepage)</div></td>
-      <td class="why">The homepage source contains zero links to /personal/singtel-blog/. If the content hub has no link from the homepage or main navigation, crawlers reach it slowly and pass little authority to it, and users and AI assistants struggle to find it. This caps how much non branded awareness and consideration traffic the blog can capture.</td>
+      <td><strong>No clear path from the homepage to the blog</strong><div class="ev">https://www.singtel.com/</div></td>
+      <td class="why">The homepage source contains zero links to https://www.singtel.com/personal/singtel-blog/ If the content hub has no link from the homepage or main navigation, crawlers reach it slowly and pass little authority to it, and users and AI assistants struggle to find it. This caps how much non branded awareness and consideration traffic the blog can capture.</td>
       <td class="sug">Add a clear, crawlable link from the homepage and main navigation to the blog hub and its key articles.</td></tr>
 <tr>
       <td class="num">9</td>
       <td><span class="area" style="background:#7b61ff22;color:#7b61ff;border-color:#7b61ff55">Content</span></td>
-      <td><strong>The blog targets the wrong audience for the core business</strong><div class="ev">/personal/singtel-blog/ (ranks for washing machine, vacuum cleaner, headphones, tablet)</div></td>
+      <td><strong>The blog targets the wrong audience for the core business</strong><div class="ev">https://www.singtel.com/personal/singtel-blog/ (ranks for washing machine, vacuum cleaner, headphones, tablet)</div></td>
       <td class="why">Singtel&#x27;s blog ranks almost entirely for consumer appliance buying guides (washing machine #6, vacuum cleaner #22, headphones #26, tablet #10, earbuds, robot vacuums) rather than telco topics. That traffic is real but it does not support the mobile, broadband or roaming business and does not feed product conversion. The blog is working hard for the wrong audience, which is why its article traffic does not translate into product demand.</td>
       <td class="sug">Refocus the editorial calendar on telco intent (mobile, broadband, WiFi, roaming, eSIM, 5G) so blog traffic supports the core products. Keep appliance guides only where they link to a Singtel product or plan.</td></tr>
 <tr>
       <td class="num">10</td>
       <td><span class="area" style="background:#7b61ff22;color:#7b61ff;border-color:#7b61ff55">Content</span></td>
-      <td><strong>Telco how-to and educational content is missing</strong><div class="ev">/personal/singtel-blog/ (no coverage of WiFi troubleshooting, roaming, eSIM, 5G how-to)</div></td>
+      <td><strong>Telco how-to and educational content is missing</strong><div class="ev">https://www.singtel.com/personal/singtel-blog/ (no coverage of WiFi troubleshooting, roaming, eSIM, 5G how-to)</div></td>
       <td class="why">The educational and troubleshooting topics that search and AI reward (WiFi troubleshooting, roaming guides, eSIM setup, broadband speed, 5G explainers) are absent from the blog. Competitors (M1&#x27;s blog), aggregators (MoneySmart, DollarsAndSense) and global players (Airalo, Holafly) own them. This is why AI cites third party editorial content in 762 of about 1,050 citations and rarely cites Singtel at the awareness stage (TOFU 33%). For example the query behind singtel wifi down carries about 13,000 traffic potential and Singtel has no article for it.</td>
       <td class="sug">Build a telco how-to content track covering the ten uncovered topics in Opportunities and Next Actions. Prioritise WiFi troubleshooting and eSIM travel guides first.</td></tr>
 <tr>
       <td class="num">11</td>
       <td><span class="area" style="background:#7b61ff22;color:#7b61ff;border-color:#7b61ff55">Content</span></td>
-      <td><strong>The blog is not actively updated</strong><div class="ev">/personal/singtel-blog/</div></td>
+      <td><strong>The blog is not actively updated</strong><div class="ev">https://www.singtel.com/personal/singtel-blog/</div></td>
       <td class="why">Telecom demand shifts constantly (plans, roaming, 5G, eSIM, seasonal deals). In our AI visibility run, AI overwhelmingly cites editorial and comparison content: 762 Article or Blog citations, 122 Comparison or Review, 56 Forum, out of about 1,050. Singtel&#x27;s blog is cited in only a few awareness prompts while aggregators and Circles.Life win discovery. Stale content loses freshness signals and is rarely cited by AI.</td>
       <td class="sug">Run an always on content cadence targeting current non branded problems (best SIM only, roaming vs travel eSIM, fibre comparisons, coverage) and refresh top articles on a schedule.</td></tr>
 <tr>
       <td class="num">12</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>Homepage has no H1</strong><div class="ev">singtel.com (homepage)</div></td>
+      <td><strong>Homepage has no H1</strong><div class="ev">https://www.singtel.com/</div></td>
       <td class="why">The homepage source contains zero H1 elements (it has 10 H2s). The most important page therefore has no primary heading, weakening the top level topical signal and the heading hierarchy that both search and AI use to build a page outline.</td>
       <td class="sug">Add a single descriptive H1 to the homepage that states who Singtel is and the core services.</td></tr>
 <tr>
       <td class="num">13</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>Root homepage canonical points to /personal (to confirm)</strong><div class="ev">singtel.com (homepage)</div></td>
-      <td class="why">The page at singtel.com/ declares its canonical as https://www.singtel.com/personal. This tells Google the canonical version of the root is /personal. If /personal is deliberately the primary landing page this may be intended, but if the root should rank as the homepage it is ceding that signal.</td>
+      <td><strong>Root homepage canonical points to /personal (to confirm)</strong><div class="ev">https://www.singtel.com/</div></td>
+      <td class="why">The page at singtel.com/ declares its canonical as https://www.singtel.com/personal. This tells Google the canonical version of the root is https://www.singtel.com/personal If https://www.singtel.com/personal is deliberately the primary landing page this may be intended, but if the root should rank as the homepage it is ceding that signal.</td>
       <td class="sug">Confirm the intended canonical for the root. If the root is the homepage, self reference it.</td></tr>
 <tr>
       <td class="num">14</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>Weak semantic HTML across templates</strong><div class="ev">singtel.com, /personal/products-services/broadband/wifi6, /personal/singtel-blog/right-mobile-plan</div></td>
+      <td><strong>Weak semantic HTML across templates</strong><div class="ev">https://www.singtel.com/, https://www.singtel.com/personal/products-services/broadband/wifi6, https://www.singtel.com/personal/singtel-blog/right-mobile-plan</div></td>
       <td class="why">The homepage uses no main, article, section, header, footer or aside landmarks; the product and blog templates expose only a nav element. Semantic landmarks help AI separate primary content from navigation and boilerplate, so div heavy markup lowers extraction quality and citability.</td>
       <td class="sug">Introduce semantic landmarks (main, article, section, header, footer) and one clean H1 to H3 hierarchy per template.</td></tr>
 <tr>
       <td class="num">15</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>Product sub pages carry no Product schema</strong><div class="ev">/personal/products-services/broadband/wifi6</div></td>
+      <td><strong>Product sub pages carry no Product schema</strong><div class="ev">https://www.singtel.com/personal/products-services/broadband/wifi6</div></td>
       <td class="why">The wifi6 product page carries only BreadcrumbList; it has no Product, Offer or FAQ schema. The rich Product markup exists on the main shop page but not on the broader product template set, so eligible product rich results are absent across many product pages.</td>
       <td class="sug">Extend the Product and FAQ schema pattern from the shop page to the full product page template, with valid Offer fields.</td></tr>
 <tr>
       <td class="num">16</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>Critical mobile performance on the homepage</strong><div class="ev">singtel.com (homepage)</div></td>
+      <td><strong>Critical mobile performance on the homepage</strong><div class="ev">https://www.singtel.com/</div></td>
       <td class="why">DataForSEO Lighthouse mobile scored the homepage at performance 0.01 with LCP 53.7s, CLS 1.0 and TBT 3.83s, well below M1 (0.26) and GOMO (0.38). This is a single lab run on an emulated mobile device, so it should be confirmed against field data, but it aligns with the heavy client side rendering seen above. Slow pages are crawled less often and rank worse.</td>
       <td class="sug">Reduce main thread work and payload on the homepage (defer non critical JavaScript, stabilise layout to fix CLS, prioritise the hero for LCP). Confirm with CrUX field data.</td></tr></tbody>
   </table></div>
@@ -244,38 +244,38 @@ td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
   <p>Singtel&#x27;s non-branded footprint is real but sits mid page on the terms that matter most. It ranks #1 on exact-match and niche terms (esim singapore, sim only plan, prepaid sim card, apac roaming, telco singapore), but slips to lower on page one, or beyond, on the high-volume commercial terms where competitors and aggregators win: broadband singapore at #4, cheapest broadband at #9, best broadband at #10, sim at #16, and the eSIM head term at #30. The pattern matches the technical findings: where the page is clean, crawlable and well titled it ranks #1; where it is client-side rendered or thin (broadband, device and eSIM head terms) it ranks lower. This is why Singtel is 79 percent dependent on branded search while M1 and MyRepublic convert a larger share of non-branded demand.</p>
   <div class="panel" style="padding:0;overflow-x:auto">
   <table><thead><tr><th>Non branded keyword</th><th>Volume / mo</th><th>Singtel position</th><th>Ranking page</th></tr></thead>
-  <tbody><tr><td>esim singapore</td><td class="num">4,300</td><td class="num">#1</td><td class="note">/mobile/prepaid-plans/hi-tourist</td></tr>
-<tr><td>sim only plan</td><td class="num">2,600</td><td class="num">#1</td><td class="note">/mobile/plans/sim-only</td></tr>
-<tr><td>wifi 7 router</td><td class="num">1,700</td><td class="num">#1</td><td class="note">/personal/singtel-blog/wifi-7-singapore</td></tr>
-<tr><td>prepaid sim card</td><td class="num">1,400</td><td class="num">#1</td><td class="note">/mobile/prepaid-plans/hi-sim-cards</td></tr>
-<tr><td>apac roaming</td><td class="num">1,200</td><td class="num">#1</td><td class="note">/mobile/roaming/comparisonguide</td></tr>
-<tr><td>prepaid sim card singapore</td><td class="num">1,100</td><td class="num">#1</td><td class="note">/mobile/prepaid-plans/collection-location-ota</td></tr>
-<tr><td>singapore esim</td><td class="num">1,000</td><td class="num">#1</td><td class="note">/mobile/prepaid-plans/hi-tourist</td></tr>
-<tr><td>telco singapore</td><td class="num">900</td><td class="num">#1</td><td class="note">/personal/products-services/mobile/hi</td></tr>
-<tr><td>smart tv</td><td class="num">900</td><td class="num">#1</td><td class="note">/personal/blog/buying-tv-singapore</td></tr>
-<tr><td>data roaming</td><td class="num">700</td><td class="num">#1</td><td class="note">/about-us/media-centre/readyroam</td></tr>
-<tr><td>cheapest sim only plan</td><td class="num">1,400</td><td class="num">#2</td><td class="note">/mobile/plans/sim-only</td></tr>
-<tr><td>sim only plan singapore</td><td class="num">1,300</td><td class="num">#2</td><td class="note">/mobile/plans/sim-only</td></tr>
-<tr><td>best sim only plan singapore</td><td class="num">1,700</td><td class="num">#3</td><td class="note">/mobile/plans/sim-only</td></tr>
-<tr><td>fibre broadband singapore</td><td class="num">800</td><td class="num">#3</td><td class="note">/products-services/shop/fibre</td></tr>
-<tr><td>broadband singapore</td><td class="num">2,800</td><td class="num">#4</td><td class="note">/products-services/shop/fibre</td></tr>
-<tr><td>tv box</td><td class="num">900</td><td class="num">#4</td><td class="note">/products-services/tv</td></tr>
-<tr><td>roaming</td><td class="num">800</td><td class="num">#4</td><td class="note">/products-services/mobile/roaming/all-plans</td></tr>
-<tr><td>mesh</td><td class="num">1,600</td><td class="num">#5</td><td class="note">/singtel-blog/how-does-wifi-mesh-work</td></tr>
-<tr><td>sim card</td><td class="num">1,300</td><td class="num">#5</td><td class="note">/mobile/prepaid-plans/hi-sim-cards</td></tr>
-<tr><td>home broadband</td><td class="num">1,000</td><td class="num">#5</td><td class="note">/singtel-blog/singtel-broadband-plans</td></tr>
-<tr><td>home broadband singapore</td><td class="num">900</td><td class="num">#6</td><td class="note">/products-services/shop/fibre</td></tr>
-<tr><td>broadband</td><td class="num">2,600</td><td class="num">#7</td><td class="note">/products-services/broadband</td></tr>
-<tr><td>broadband promotion</td><td class="num">800</td><td class="num">#7</td><td class="note">/products-services/shop/fibre</td></tr>
-<tr><td>wifi extender</td><td class="num">1,300</td><td class="num">#9</td><td class="note">/singtel-blog/mesh-networks-or-wifi-extenders</td></tr>
-<tr><td>cheapest broadband singapore</td><td class="num">1,200</td><td class="num">#9</td><td class="note">/products-services/shop/fibre</td></tr>
-<tr><td>best broadband singapore</td><td class="num">1,300</td><td class="num">#10</td><td class="note">/singtel-blog/best-network-singtel-fibre-broadband</td></tr>
-<tr><td>tv guide singapore</td><td class="num">2,600</td><td class="num">#11</td><td class="note">/products-services/tv/singtel-tv-channels</td></tr>
-<tr><td>tv guide</td><td class="num">11,000</td><td class="num">#14</td><td class="note">/products-services/tv/singtel-tv-channels</td></tr>
-<tr><td>mobile phone</td><td class="num">1,100</td><td class="num">#15</td><td class="note">shop.singtel.com/</td></tr>
-<tr><td>sim</td><td class="num">7,000</td><td class="num">#16</td><td class="note">/mobile/prepaid-plans/hi-tourist</td></tr>
-<tr><td>esim</td><td class="num">8,200</td><td class="num">#30</td><td class="note">/mobile/services/postpaid-esim</td></tr>
-<tr><td>what is 5g</td><td class="num">2,500</td><td class="num">#35</td><td class="note">/mobile/info/switch-5g-plus</td></tr></tbody></table></div>
+  <tbody><tr><td>esim singapore</td><td class="num">4,300</td><td class="num">#1</td><td class="note">https://www.singtel.com/personal/products-services/mobile/prepaid-plans/hi-tourist</td></tr>
+<tr><td>sim only plan</td><td class="num">2,600</td><td class="num">#1</td><td class="note">https://www.singtel.com/personal/mobile/plans/sim-only</td></tr>
+<tr><td>wifi 7 router</td><td class="num">1,700</td><td class="num">#1</td><td class="note">https://www.singtel.com/personal/singtel-blog/wifi-7-singapore</td></tr>
+<tr><td>prepaid sim card</td><td class="num">1,400</td><td class="num">#1</td><td class="note">https://www.singtel.com/personal/products-services/mobile/prepaid-plans/hi-sim-cards</td></tr>
+<tr><td>apac roaming</td><td class="num">1,200</td><td class="num">#1</td><td class="note">https://www.singtel.com/personal/products-services/mobile/roaming/comparisonguide</td></tr>
+<tr><td>prepaid sim card singapore</td><td class="num">1,100</td><td class="num">#1</td><td class="note">https://www.singtel.com/personal/products-services/mobile/prepaid-plans/collection-location-ota</td></tr>
+<tr><td>singapore esim</td><td class="num">1,000</td><td class="num">#1</td><td class="note">https://www.singtel.com/personal/products-services/mobile/prepaid-plans/hi-tourist</td></tr>
+<tr><td>telco singapore</td><td class="num">900</td><td class="num">#1</td><td class="note">https://www.singtel.com/personal/products-services/mobile/hi</td></tr>
+<tr><td>smart tv</td><td class="num">900</td><td class="num">#1</td><td class="note">https://www.singtel.com/personal/blog/buying-tv-singapore</td></tr>
+<tr><td>data roaming</td><td class="num">700</td><td class="num">#1</td><td class="note">https://www.singtel.com/about-us/media-centre/news-releases/singtel-expands-readyroam-service-to-26-destinations</td></tr>
+<tr><td>cheapest sim only plan</td><td class="num">1,400</td><td class="num">#2</td><td class="note">https://www.singtel.com/personal/mobile/plans/sim-only</td></tr>
+<tr><td>sim only plan singapore</td><td class="num">1,300</td><td class="num">#2</td><td class="note">https://www.singtel.com/personal/mobile/plans/sim-only</td></tr>
+<tr><td>best sim only plan singapore</td><td class="num">1,700</td><td class="num">#3</td><td class="note">https://www.singtel.com/personal/mobile/plans/sim-only</td></tr>
+<tr><td>fibre broadband singapore</td><td class="num">800</td><td class="num">#3</td><td class="note">https://www.singtel.com/personal/products-services/shop/fibre</td></tr>
+<tr><td>broadband singapore</td><td class="num">2,800</td><td class="num">#4</td><td class="note">https://www.singtel.com/personal/products-services/shop/fibre</td></tr>
+<tr><td>tv box</td><td class="num">900</td><td class="num">#4</td><td class="note">https://www.singtel.com/personal/products-services/tv</td></tr>
+<tr><td>roaming</td><td class="num">800</td><td class="num">#4</td><td class="note">https://www.singtel.com/personal/products-services/mobile/roaming/all-plans</td></tr>
+<tr><td>mesh</td><td class="num">1,600</td><td class="num">#5</td><td class="note">https://www.singtel.com/personal/singtel-blog/how-does-wifi-mesh-work</td></tr>
+<tr><td>sim card</td><td class="num">1,300</td><td class="num">#5</td><td class="note">https://www.singtel.com/personal/products-services/mobile/prepaid-plans/hi-sim-cards</td></tr>
+<tr><td>home broadband</td><td class="num">1,000</td><td class="num">#5</td><td class="note">https://www.singtel.com/personal/singtel-blog/singtel-broadband-plans</td></tr>
+<tr><td>home broadband singapore</td><td class="num">900</td><td class="num">#6</td><td class="note">https://www.singtel.com/personal/products-services/shop/fibre/</td></tr>
+<tr><td>broadband</td><td class="num">2,600</td><td class="num">#7</td><td class="note">https://www.singtel.com/personal/products-services/broadband</td></tr>
+<tr><td>broadband promotion</td><td class="num">800</td><td class="num">#7</td><td class="note">https://www.singtel.com/personal/products-services/shop/fibre/</td></tr>
+<tr><td>wifi extender</td><td class="num">1,300</td><td class="num">#9</td><td class="note">https://www.singtel.com/personal/singtel-blog/mesh-networks-or-wifi-extenders</td></tr>
+<tr><td>cheapest broadband singapore</td><td class="num">1,200</td><td class="num">#9</td><td class="note">https://www.singtel.com/personal/products-services/shop/fibre/</td></tr>
+<tr><td>best broadband singapore</td><td class="num">1,300</td><td class="num">#10</td><td class="note">https://www.singtel.com/personal/singtel-blog/best-network-singtel-fibre-broadband</td></tr>
+<tr><td>tv guide singapore</td><td class="num">2,600</td><td class="num">#11</td><td class="note">https://www.singtel.com/personal/products-services/tv/singtel-tv-channels</td></tr>
+<tr><td>tv guide</td><td class="num">11,000</td><td class="num">#14</td><td class="note">https://www.singtel.com/personal/products-services/tv/singtel-tv-channels</td></tr>
+<tr><td>mobile phone</td><td class="num">1,100</td><td class="num">#15</td><td class="note">https://shop.singtel.com/</td></tr>
+<tr><td>sim</td><td class="num">7,000</td><td class="num">#16</td><td class="note">https://www.singtel.com/personal/products-services/mobile/prepaid-plans/hi-tourist</td></tr>
+<tr><td>esim</td><td class="num">8,200</td><td class="num">#30</td><td class="note">https://www.singtel.com/personal/mobile/services/postpaid-esim</td></tr>
+<tr><td>what is 5g</td><td class="num">2,500</td><td class="num">#35</td><td class="note">https://www.singtel.com/personal/products-services/mobile/info/switch-5g-plus</td></tr></tbody></table></div>
 </section>
 
 <section id="visibility">
