@@ -65,9 +65,9 @@ td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
   <a href="#findings">Findings</a>
   <a href="#scorecard">AEO Scorecard</a>
   <a href="#landscape">Competitor Landscape</a>
+  <a href="#performance">Search Performance</a>
   <a href="#visibility">AI Visibility</a>
   <a href="#prompts">Per Prompt Results</a>
-  <a href="#priorities">Priorities</a>
   <a href="#growth">Opportunities &amp; Next Actions</a>
 </nav>
 <main class="main">
@@ -91,98 +91,110 @@ td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
     <strong>The gap in one line.</strong> LLM Visibility 57 versus Site Readiness 47. AI knows the brand, but weak schema, client side rendering that hides product pages from crawlers, a homepage with no H1 and critical mobile performance stop that awareness from turning into citations and clicks.
   </div>
   <p>Two numbers frame the commercial cost. First, Singtel is cited by AI in <strong>60% of all prompts but only 57% of non branded ones</strong>, and it wins decision and branded questions (BOFU 89%, Branded 75%) while losing awareness (TOFU 33%). Second, Ahrefs shows Singtel is <strong>79% dependent on branded search</strong>, and earns non branded product traffic on only <strong>3 pages</strong> versus M1 on <strong>108 pages</strong>. The same root cause sits under both: people who already know Singtel find it; people discovering the category do not.</p>
-  <p>This analysis validates the 9 findings supplied by the Singtel side and adds 5 from NovaStacks. Every finding below was checked against the live server HTML before it was written.</p>
+  <p>The findings below cover both the technical and the content side, each tied to the exact page or URL so the team can act on it directly.</p>
 </section>
 
 <section id="findings">
   <h2>Findings</h2>
-  <p class="tag">14 findings. Technical and content items were confirmed by NovaStacks against the live site; the 5 marked NovaStacks are new.</p>
+  <p class="tag">16 findings across technical and content, each with the exact page or URL.</p>
   <div class="panel" style="padding:0;overflow-x:auto">
   <table>
-    <thead><tr><th>#</th><th>Area</th><th>Finding</th><th>Validated observation and why it matters</th><th>Suggestion</th></tr></thead>
+    <thead><tr><th>#</th><th>Area</th><th>Finding</th><th>Why it matters</th><th>Suggestion</th></tr></thead>
     <tbody><tr>
       <td class="num">1</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
       <td><strong>No structured data on the homepage, and invalid product schema</strong><div class="ev">singtel.com (homepage), /personal/products-services/shop/fibre</div></td>
-      <td class="why">Validated. The homepage source contains zero JSON-LD (no Organization or WebSite entity markup). On the fibre shop page the Product and Offer objects are present but every Offer omits availability, url and priceValidUntil, and the Products omit review or aggregateRating, so Rich Results Test reports the Product markup as invalid. Without a clean entity block on the homepage, Google and AI engines cannot reliably resolve Singtel as an entity (logo, sameAs, sitelinks search box), and the invalid product markup forfeits Product rich results on the flagship commercial page.</td>
+      <td class="why">The homepage source contains zero JSON-LD (no Organization or WebSite entity markup). On the fibre shop page the Product and Offer objects are present but every Offer omits availability, url and priceValidUntil, and the Products omit review or aggregateRating, so Rich Results Test reports the Product markup as invalid. Without a clean entity block on the homepage, Google and AI engines cannot reliably resolve Singtel as an entity (logo, sameAs, sitelinks search box), and the invalid product markup forfeits Product rich results on the flagship commercial page.</td>
       <td class="sug">Add valid Organization and WebSite JSON-LD to the homepage. Fix the Offer objects on product pages by adding availability, url and priceValidUntil, and add review or aggregateRating where genuine.</td></tr>
 <tr>
       <td class="num">2</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
       <td><strong>No structured data on the blog article</strong><div class="ev">/personal/singtel-blog/right-mobile-plan</div></td>
-      <td class="why">Validated. The article source contains only BreadcrumbList and ListItem JSON-LD. There is no Article or BlogPosting and no FAQPage. Article and FAQPage schema make a post eligible for rich results and give LLMs machine readable context (author, publish date, topic, question and answer). This is a high intent commercial topic (choosing a mobile plan), so the lost visibility maps to lost plan sign ups.</td>
+      <td class="why">The article source contains only BreadcrumbList and ListItem JSON-LD. There is no Article or BlogPosting and no FAQPage. Article and FAQPage schema make a post eligible for rich results and give LLMs machine readable context (author, publish date, topic, question and answer). This is a high intent commercial topic (choosing a mobile plan), so the lost visibility maps to lost plan sign ups.</td>
       <td class="sug">Add Article (or BlogPosting) and, where the content answers questions, FAQPage JSON-LD to blog templates.</td></tr>
 <tr>
       <td class="num">3</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
       <td><strong>Favicon missing on product pages</strong><div class="ev">/personal/products-services/shop/fibre</div></td>
-      <td class="why">Validated. The fibre shop page source has no favicon link at all, while other templates reference an SVG favicon (the homepage and wifi6 use an absolute URL, the blog uses a relative path). The favicon shows next to the URL on mobile results, in AI assistant panels and in browser tabs, so a missing favicon on the highest commercial intent pages reduces brand recognition at the click and signals technical inconsistency.</td>
+      <td class="why">The fibre shop page source has no favicon link at all, while other templates reference an SVG favicon (the homepage and wifi6 use an absolute URL, the blog uses a relative path). The favicon shows next to the URL on mobile results, in AI assistant panels and in browser tabs, so a missing favicon on the highest commercial intent pages reduces brand recognition at the click and signals technical inconsistency.</td>
       <td class="sug">Add a consistent favicon link to every template, using an absolute URL so it resolves on all paths.</td></tr>
 <tr>
       <td class="num">4</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
       <td><strong>Product links are not crawlable (client side rendering)</strong><div class="ev">/personal/products-services/shop/fibre, /personal/products-services/broadband/wifi6</div></td>
-      <td class="why">Validated and more severe than first flagged. The fibre page is a Next.js client rendered app; its server HTML exposes only asset file links and no product links, so the wifi6 URL cannot be discovered from it. The homepage similarly exposes only 9 anchor links in server HTML. A page reachable only through JavaScript receives almost no internal link equity, may never be indexed and is invisible to LLMs. Ahrefs confirms the cost: Singtel earns non branded product traffic on only 3 pages (5,304 visits) versus M1 on 108 pages (15,432 visits).</td>
+      <td class="why">The fibre page is a Next.js client rendered app; its server HTML exposes only asset file links and no product links, so the wifi6 URL cannot be discovered from it. The homepage similarly exposes only 9 anchor links in server HTML. A page reachable only through JavaScript receives almost no internal link equity, may never be indexed and is invisible to LLMs. Ahrefs confirms the cost: Singtel earns non branded product traffic on only 3 pages (5,304 visits) versus M1 on 108 pages (15,432 visits).</td>
       <td class="sug">Render primary navigation and product links as real anchor elements in server HTML (server side rendering or static links), not JavaScript only click handlers.</td></tr>
 <tr>
       <td class="num">5</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
       <td><strong>Product sub pages have no canonical</strong><div class="ev">/personal/products-services/broadband/wifi6</div></td>
-      <td class="why">Validated. The wifi6 page has no canonical tag in source. Without a self referencing canonical, Google picks its own, which lets parameter or duplicate versions compete and can index the wrong URL, splitting ranking signals.</td>
+      <td class="why">The wifi6 page has no canonical tag in source. Without a self referencing canonical, Google picks its own, which lets parameter or duplicate versions compete and can index the wrong URL, splitting ranking signals.</td>
       <td class="sug">Add a self referencing canonical to every product sub page.</td></tr>
 <tr>
       <td class="num">6</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
       <td><strong>Blog articles have no canonical</strong><div class="ev">/personal/singtel-blog/right-mobile-plan</div></td>
-      <td class="why">Validated. The article has no canonical tag in source. Blog URLs frequently collect UTM and campaign parameters when shared, so a missing canonical lets those variants dilute the article&#x27;s ranking signals and can index the wrong URL.</td>
+      <td class="why">The article has no canonical tag in source. Blog URLs frequently collect UTM and campaign parameters when shared, so a missing canonical lets those variants dilute the article&#x27;s ranking signals and can index the wrong URL.</td>
       <td class="sug">Add a self referencing canonical to every blog article template.</td></tr>
 <tr>
       <td class="num">7</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
-      <td><strong>External domain (gomo.sg) inside the Singtel sitemap [confirm intent]</strong><div class="ev">/sitemap-explore.xml</div></td>
-      <td class="why">Validated. The sitemap at singtel.com/sitemap-explore.xml contains 88 URLs pointing to www.gomo.sg. A sitemap is a crawl instruction scoped to the host it is submitted for; a different domain inside it is treated as a cross submission that Google ignores, and it can trigger sitemap warnings in Search Console while muddying crawl signals for the real Singtel URLs. If GOMO must be promoted, it should be handled through its own sitemap.</td>
+      <td><strong>External domain (gomo.sg) inside the Singtel sitemap (to confirm)</strong><div class="ev">/sitemap-explore.xml</div></td>
+      <td class="why">The sitemap at singtel.com/sitemap-explore.xml contains 88 URLs pointing to www.gomo.sg. A sitemap is a crawl instruction scoped to the host it is submitted for; a different domain inside it is treated as a cross submission that Google ignores, and it can trigger sitemap warnings in Search Console while muddying crawl signals for the real Singtel URLs. If GOMO must be promoted, it should be handled through its own sitemap.</td>
       <td class="sug">Confirm whether the GOMO inclusion is intentional. Best practice is to remove the external domain and keep Singtel&#x27;s sitemap to singtel.com URLs only.</td></tr>
 <tr>
       <td class="num">8</td>
       <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
       <td><strong>No clear path from the homepage to the blog</strong><div class="ev">singtel.com (homepage)</div></td>
-      <td class="why">Validated. The homepage source contains zero links to /personal/singtel-blog/. If the content hub has no link from the homepage or main navigation, crawlers reach it slowly and pass little authority to it, and users and AI assistants struggle to find it. This caps how much non branded awareness and consideration traffic the blog can capture.</td>
+      <td class="why">The homepage source contains zero links to /personal/singtel-blog/. If the content hub has no link from the homepage or main navigation, crawlers reach it slowly and pass little authority to it, and users and AI assistants struggle to find it. This caps how much non branded awareness and consideration traffic the blog can capture.</td>
       <td class="sug">Add a clear, crawlable link from the homepage and main navigation to the blog hub and its key articles.</td></tr>
 <tr>
       <td class="num">9</td>
       <td><span class="area" style="background:#7b61ff22;color:#7b61ff;border-color:#7b61ff55">Content</span></td>
-      <td><strong>The blog is not actively updated</strong><div class="ev">/personal/singtel-blog/</div></td>
-      <td class="why">Validated against live AI behaviour. Telecom demand shifts constantly (plans, roaming, 5G, eSIM, seasonal deals). In our AI visibility run, AI overwhelmingly cites editorial and comparison content: 762 Article or Blog citations, 122 Comparison or Review, 56 Forum, out of about 1,050. Singtel&#x27;s blog is cited in only a few awareness prompts while aggregators and Circles.Life win discovery. Stale content loses freshness signals and is rarely cited by AI.</td>
-      <td class="sug">Run an always on content cadence targeting current non branded problems (best SIM only, roaming vs travel eSIM, fibre comparisons, coverage) and refresh top articles on a schedule.</td></tr>
+      <td><strong>The blog targets the wrong audience for the core business</strong><div class="ev">/personal/singtel-blog/ (ranks for washing machine, vacuum cleaner, headphones, tablet)</div></td>
+      <td class="why">Singtel&#x27;s blog ranks almost entirely for consumer appliance buying guides (washing machine #6, vacuum cleaner #22, headphones #26, tablet #10, earbuds, robot vacuums) rather than telco topics. That traffic is real but it does not support the mobile, broadband or roaming business and does not feed product conversion. The blog is working hard for the wrong audience, which is why its article traffic does not translate into product demand.</td>
+      <td class="sug">Refocus the editorial calendar on telco intent (mobile, broadband, WiFi, roaming, eSIM, 5G) so blog traffic supports the core products. Keep appliance guides only where they link to a Singtel product or plan.</td></tr>
 <tr>
       <td class="num">10</td>
-      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
-      <td><strong>Homepage has no H1</strong><div class="ev">singtel.com (homepage)</div></td>
-      <td class="why">New finding, validated. The homepage source contains zero H1 elements (it has 10 H2s). The most important page therefore has no primary heading, weakening the top level topical signal and the heading hierarchy that both search and AI use to build a page outline.</td>
-      <td class="sug">Add a single descriptive H1 to the homepage that states who Singtel is and the core services.</td></tr>
+      <td><span class="area" style="background:#7b61ff22;color:#7b61ff;border-color:#7b61ff55">Content</span></td>
+      <td><strong>Telco how-to and educational content is missing</strong><div class="ev">/personal/singtel-blog/ (no coverage of WiFi troubleshooting, roaming, eSIM, 5G how-to)</div></td>
+      <td class="why">The educational and troubleshooting topics that search and AI reward (WiFi troubleshooting, roaming guides, eSIM setup, broadband speed, 5G explainers) are absent from the blog. Competitors (M1&#x27;s blog), aggregators (MoneySmart, DollarsAndSense) and global players (Airalo, Holafly) own them. This is why AI cites third party editorial content in 762 of about 1,050 citations and rarely cites Singtel at the awareness stage (TOFU 33%). For example the query behind singtel wifi down carries about 13,000 traffic potential and Singtel has no article for it.</td>
+      <td class="sug">Build a telco how-to content track covering the ten uncovered topics in Opportunities and Next Actions. Prioritise WiFi troubleshooting and eSIM travel guides first.</td></tr>
 <tr>
       <td class="num">11</td>
-      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
-      <td><strong>Root homepage canonical points to /personal [confirm intent]</strong><div class="ev">singtel.com (homepage)</div></td>
-      <td class="why">New finding, validated. The page at singtel.com/ declares its canonical as https://www.singtel.com/personal. This tells Google the canonical version of the root is /personal. If /personal is deliberately the primary landing page this may be intended, but if the root should rank as the homepage it is ceding that signal.</td>
-      <td class="sug">Confirm the intended canonical for the root. If the root is the homepage, self reference it.</td></tr>
+      <td><span class="area" style="background:#7b61ff22;color:#7b61ff;border-color:#7b61ff55">Content</span></td>
+      <td><strong>The blog is not actively updated</strong><div class="ev">/personal/singtel-blog/</div></td>
+      <td class="why">Telecom demand shifts constantly (plans, roaming, 5G, eSIM, seasonal deals). In our AI visibility run, AI overwhelmingly cites editorial and comparison content: 762 Article or Blog citations, 122 Comparison or Review, 56 Forum, out of about 1,050. Singtel&#x27;s blog is cited in only a few awareness prompts while aggregators and Circles.Life win discovery. Stale content loses freshness signals and is rarely cited by AI.</td>
+      <td class="sug">Run an always on content cadence targeting current non branded problems (best SIM only, roaming vs travel eSIM, fibre comparisons, coverage) and refresh top articles on a schedule.</td></tr>
 <tr>
       <td class="num">12</td>
-      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
-      <td><strong>Weak semantic HTML across templates</strong><div class="ev">singtel.com, /personal/products-services/broadband/wifi6, /personal/singtel-blog/right-mobile-plan</div></td>
-      <td class="why">New finding, validated. The homepage uses no main, article, section, header, footer or aside landmarks; the product and blog templates expose only a nav element. Semantic landmarks help AI separate primary content from navigation and boilerplate, so div heavy markup lowers extraction quality and citability.</td>
-      <td class="sug">Introduce semantic landmarks (main, article, section, header, footer) and one clean H1 to H3 hierarchy per template.</td></tr>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>Homepage has no H1</strong><div class="ev">singtel.com (homepage)</div></td>
+      <td class="why">The homepage source contains zero H1 elements (it has 10 H2s). The most important page therefore has no primary heading, weakening the top level topical signal and the heading hierarchy that both search and AI use to build a page outline.</td>
+      <td class="sug">Add a single descriptive H1 to the homepage that states who Singtel is and the core services.</td></tr>
 <tr>
       <td class="num">13</td>
-      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
-      <td><strong>Product sub pages carry no Product schema</strong><div class="ev">/personal/products-services/broadband/wifi6</div></td>
-      <td class="why">New finding, validated. The wifi6 product page carries only BreadcrumbList; it has no Product, Offer or FAQ schema. The rich Product markup exists on the main shop page but not on the broader product template set, so eligible product rich results are absent across many product pages.</td>
-      <td class="sug">Extend the Product and FAQ schema pattern from the shop page to the full product page template, with valid Offer fields.</td></tr>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>Root homepage canonical points to /personal (to confirm)</strong><div class="ev">singtel.com (homepage)</div></td>
+      <td class="why">The page at singtel.com/ declares its canonical as https://www.singtel.com/personal. This tells Google the canonical version of the root is /personal. If /personal is deliberately the primary landing page this may be intended, but if the root should rank as the homepage it is ceding that signal.</td>
+      <td class="sug">Confirm the intended canonical for the root. If the root is the homepage, self reference it.</td></tr>
 <tr>
       <td class="num">14</td>
-      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>Weak semantic HTML across templates</strong><div class="ev">singtel.com, /personal/products-services/broadband/wifi6, /personal/singtel-blog/right-mobile-plan</div></td>
+      <td class="why">The homepage uses no main, article, section, header, footer or aside landmarks; the product and blog templates expose only a nav element. Semantic landmarks help AI separate primary content from navigation and boilerplate, so div heavy markup lowers extraction quality and citability.</td>
+      <td class="sug">Introduce semantic landmarks (main, article, section, header, footer) and one clean H1 to H3 hierarchy per template.</td></tr>
+<tr>
+      <td class="num">15</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>Product sub pages carry no Product schema</strong><div class="ev">/personal/products-services/broadband/wifi6</div></td>
+      <td class="why">The wifi6 product page carries only BreadcrumbList; it has no Product, Offer or FAQ schema. The rich Product markup exists on the main shop page but not on the broader product template set, so eligible product rich results are absent across many product pages.</td>
+      <td class="sug">Extend the Product and FAQ schema pattern from the shop page to the full product page template, with valid Offer fields.</td></tr>
+<tr>
+      <td class="num">16</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
       <td><strong>Critical mobile performance on the homepage</strong><div class="ev">singtel.com (homepage)</div></td>
-      <td class="why">New finding, validated (lab). DataForSEO Lighthouse mobile scored the homepage at performance 0.01 with LCP 53.7s, CLS 1.0 and TBT 3.83s, well below M1 (0.26) and GOMO (0.38). This is a single lab run on an emulated mobile device, so it should be confirmed against field data, but it aligns with the heavy client side rendering seen above. Slow pages are crawled less often and rank worse.</td>
+      <td class="why">DataForSEO Lighthouse mobile scored the homepage at performance 0.01 with LCP 53.7s, CLS 1.0 and TBT 3.83s, well below M1 (0.26) and GOMO (0.38). This is a single lab run on an emulated mobile device, so it should be confirmed against field data, but it aligns with the heavy client side rendering seen above. Slow pages are crawled less often and rank worse.</td>
       <td class="sug">Reduce main thread work and payload on the homepage (defer non critical JavaScript, stabilise layout to fix CLS, prioritise the hero for LCP). Confirm with CrUX field data.</td></tr></tbody>
   </table></div>
 </section>
@@ -225,6 +237,45 @@ td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
       <p class="note" style="margin-top:10px">Singtel and M1 are level on article traffic today, but M1 publishes actively. A dormant blog will lose this parity.</p>
     </div>
   </div>
+</section>
+
+<section id="performance">
+  <h2>Search Performance (non branded)</h2>
+  <p>Singtel&#x27;s non-branded footprint is real but sits mid page on the terms that matter most. It ranks #1 on exact-match and niche terms (esim singapore, sim only plan, prepaid sim card, apac roaming, telco singapore), but slips to lower on page one, or beyond, on the high-volume commercial terms where competitors and aggregators win: broadband singapore at #4, cheapest broadband at #9, best broadband at #10, sim at #16, and the eSIM head term at #30. The pattern matches the technical findings: where the page is clean, crawlable and well titled it ranks #1; where it is client-side rendered or thin (broadband, device and eSIM head terms) it ranks lower. This is why Singtel is 79 percent dependent on branded search while M1 and MyRepublic convert a larger share of non-branded demand.</p>
+  <div class="panel" style="padding:0;overflow-x:auto">
+  <table><thead><tr><th>Non branded keyword</th><th>Volume / mo</th><th>Singtel position</th><th>Ranking page</th></tr></thead>
+  <tbody><tr><td>esim singapore</td><td class="num">4,300</td><td class="num">#1</td><td class="note">/mobile/prepaid-plans/hi-tourist</td></tr>
+<tr><td>sim only plan</td><td class="num">2,600</td><td class="num">#1</td><td class="note">/mobile/plans/sim-only</td></tr>
+<tr><td>wifi 7 router</td><td class="num">1,700</td><td class="num">#1</td><td class="note">/personal/singtel-blog/wifi-7-singapore</td></tr>
+<tr><td>prepaid sim card</td><td class="num">1,400</td><td class="num">#1</td><td class="note">/mobile/prepaid-plans/hi-sim-cards</td></tr>
+<tr><td>apac roaming</td><td class="num">1,200</td><td class="num">#1</td><td class="note">/mobile/roaming/comparisonguide</td></tr>
+<tr><td>prepaid sim card singapore</td><td class="num">1,100</td><td class="num">#1</td><td class="note">/mobile/prepaid-plans/collection-location-ota</td></tr>
+<tr><td>singapore esim</td><td class="num">1,000</td><td class="num">#1</td><td class="note">/mobile/prepaid-plans/hi-tourist</td></tr>
+<tr><td>telco singapore</td><td class="num">900</td><td class="num">#1</td><td class="note">/personal/products-services/mobile/hi</td></tr>
+<tr><td>smart tv</td><td class="num">900</td><td class="num">#1</td><td class="note">/personal/blog/buying-tv-singapore</td></tr>
+<tr><td>data roaming</td><td class="num">700</td><td class="num">#1</td><td class="note">/about-us/media-centre/readyroam</td></tr>
+<tr><td>cheapest sim only plan</td><td class="num">1,400</td><td class="num">#2</td><td class="note">/mobile/plans/sim-only</td></tr>
+<tr><td>sim only plan singapore</td><td class="num">1,300</td><td class="num">#2</td><td class="note">/mobile/plans/sim-only</td></tr>
+<tr><td>best sim only plan singapore</td><td class="num">1,700</td><td class="num">#3</td><td class="note">/mobile/plans/sim-only</td></tr>
+<tr><td>fibre broadband singapore</td><td class="num">800</td><td class="num">#3</td><td class="note">/products-services/shop/fibre</td></tr>
+<tr><td>broadband singapore</td><td class="num">2,800</td><td class="num">#4</td><td class="note">/products-services/shop/fibre</td></tr>
+<tr><td>tv box</td><td class="num">900</td><td class="num">#4</td><td class="note">/products-services/tv</td></tr>
+<tr><td>roaming</td><td class="num">800</td><td class="num">#4</td><td class="note">/products-services/mobile/roaming/all-plans</td></tr>
+<tr><td>mesh</td><td class="num">1,600</td><td class="num">#5</td><td class="note">/singtel-blog/how-does-wifi-mesh-work</td></tr>
+<tr><td>sim card</td><td class="num">1,300</td><td class="num">#5</td><td class="note">/mobile/prepaid-plans/hi-sim-cards</td></tr>
+<tr><td>home broadband</td><td class="num">1,000</td><td class="num">#5</td><td class="note">/singtel-blog/singtel-broadband-plans</td></tr>
+<tr><td>home broadband singapore</td><td class="num">900</td><td class="num">#6</td><td class="note">/products-services/shop/fibre</td></tr>
+<tr><td>broadband</td><td class="num">2,600</td><td class="num">#7</td><td class="note">/products-services/broadband</td></tr>
+<tr><td>broadband promotion</td><td class="num">800</td><td class="num">#7</td><td class="note">/products-services/shop/fibre</td></tr>
+<tr><td>wifi extender</td><td class="num">1,300</td><td class="num">#9</td><td class="note">/singtel-blog/mesh-networks-or-wifi-extenders</td></tr>
+<tr><td>cheapest broadband singapore</td><td class="num">1,200</td><td class="num">#9</td><td class="note">/products-services/shop/fibre</td></tr>
+<tr><td>best broadband singapore</td><td class="num">1,300</td><td class="num">#10</td><td class="note">/singtel-blog/best-network-singtel-fibre-broadband</td></tr>
+<tr><td>tv guide singapore</td><td class="num">2,600</td><td class="num">#11</td><td class="note">/products-services/tv/singtel-tv-channels</td></tr>
+<tr><td>tv guide</td><td class="num">11,000</td><td class="num">#14</td><td class="note">/products-services/tv/singtel-tv-channels</td></tr>
+<tr><td>mobile phone</td><td class="num">1,100</td><td class="num">#15</td><td class="note">shop.singtel.com/</td></tr>
+<tr><td>sim</td><td class="num">7,000</td><td class="num">#16</td><td class="note">/mobile/prepaid-plans/hi-tourist</td></tr>
+<tr><td>esim</td><td class="num">8,200</td><td class="num">#30</td><td class="note">/mobile/services/postpaid-esim</td></tr>
+<tr><td>what is 5g</td><td class="num">2,500</td><td class="num">#35</td><td class="note">/mobile/info/switch-5g-plus</td></tr></tbody></table></div>
 </section>
 
 <section id="visibility">
@@ -633,19 +684,6 @@ td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
       <td>AI Overview</td></tr></tbody></table></div>
 </section>
 
-<section id="priorities">
-  <h2>Priorities</h2>
-  <div class="panel" style="padding:0;overflow-x:auto">
-  <table><thead><tr><th>Priority</th><th>Action</th><th>Why</th><th>Findings</th></tr></thead><tbody><tr><td><span class="prio p1">P1</span></td><td><strong>Make product pages crawlable</strong></td><td>Render product navigation and links as real anchors in server HTML. This is the root cause of Singtel earning non branded product traffic on only 3 pages versus M1 on 108.</td><td class="ev">Finding 4</td></tr>
-<tr><td><span class="prio p1">P1</span></td><td><strong>Fix homepage entity and structure</strong></td><td>Add valid Organization and WebSite schema, a single H1 and semantic landmarks to the homepage; confirm the root canonical.</td><td class="ev">Findings 1, 10, 11, 12</td></tr>
-<tr><td><span class="prio p1">P1</span></td><td><strong>Repair the homepage mobile experience</strong></td><td>Bring homepage LCP, CLS and blocking time back to a competitive range.</td><td class="ev">Finding 14</td></tr>
-<tr><td><span class="prio p2">P2</span></td><td><strong>Fix and extend product schema</strong></td><td>Add the missing Offer fields so Product markup validates in Rich Results Test, and extend Product and FAQ schema to the full product template.</td><td class="ev">Findings 1, 13</td></tr>
-<tr><td><span class="prio p2">P2</span></td><td><strong>Add canonicals and favicon consistency</strong></td><td>Self referencing canonicals on product sub pages and blog; a consistent favicon across templates.</td><td class="ev">Findings 3, 5, 6</td></tr>
-<tr><td><span class="prio p2">P2</span></td><td><strong>Connect the blog and run a content cadence</strong></td><td>Link the blog from the homepage and publish and refresh non branded problem solving content, the exact format AI cites.</td><td class="ev">Findings 8, 9</td></tr>
-<tr><td><span class="prio p3">P3</span></td><td><strong>Confirm and clean the sitemap</strong></td><td>Confirm the GOMO inclusion and keep the Singtel sitemap to Singtel URLs.</td><td class="ev">Finding 7</td></tr></tbody></table></div>
-  <p class="note" style="margin-top:14px">Full traffic detail, the complete per prompt tables for each AI surface and the raw Ahrefs breakdown are in the accompanying detailed document.</p>
-</section>
-
 <section id="growth">
   <h2>Opportunities &amp; Next Actions</h2>
   <p>Both estimates below are realistic, not ceilings. They already account for the two forces that take clicks away from organic listings in Singapore today: AI Overviews, which answer some queries directly without a click, and paid search (SEM), where competitors bid on the same terms. In other words these are the clicks we expect to earn after those effects, not the raw search volume.</p>
@@ -675,7 +713,27 @@ td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 <tr><td>How to transfer an eSIM to a new phone</td><td class="num">~500</td></tr></tbody></table>
     </div>
   <div class="callout"><strong>Together these two opportunities are worth roughly 25,000 additional visits per month, or about 300,000 per year, on realistic (post AI Overview and post SEM) assumptions.</strong></div>
+
+  <h3 style="margin-top:28px">Technical fixes</h3>
+  <p class="tag">The engineering work behind the opportunities above, from the technical findings.</p>
+  <div class="panel" style="padding:0;overflow-x:auto">
+  <table><thead><tr><th>Fix</th><th>What to do</th></tr></thead><tbody><tr><td><strong>Make product and homepage links crawlable</strong></td><td>Render navigation and product links as real anchor elements in server HTML, not JavaScript only. This is the root cause of Singtel ranking on just 3 product pages versus M1&#x27;s 108.</td></tr>
+<tr><td><strong>Improve the product detail page content</strong></td><td>Server side render the specifications, price and plan detail on product and device pages, and rewrite titles to the [Product] Specs, Price, Singapore pattern.</td></tr>
+<tr><td><strong>Add homepage entity schema and one H1</strong></td><td>Add valid Organization and WebSite JSON-LD and a single descriptive H1 to the homepage; confirm the intended root canonical.</td></tr>
+<tr><td><strong>Repair homepage mobile performance</strong></td><td>Reduce main thread work and payload so LCP, CLS and blocking time return to a competitive range on mobile.</td></tr>
+<tr><td><strong>Fix and extend product schema</strong></td><td>Add the missing Offer fields (availability, url, priceValidUntil) so the Product markup validates in Rich Results Test, and extend Product and FAQ schema across the full product template.</td></tr>
+<tr><td><strong>Add canonicals and a consistent favicon</strong></td><td>Self referencing canonicals on product sub pages and blog articles, and one favicon link across every template.</td></tr>
+<tr><td><strong>Add semantic HTML landmarks</strong></td><td>Introduce main, article, section, header and footer across templates so AI can separate content from navigation.</td></tr>
+<tr><td><strong>Link the blog from the homepage</strong></td><td>Add a crawlable link from the homepage and main navigation to the blog hub and its key articles.</td></tr>
+<tr><td><strong>Confirm and clean the sitemap</strong></td><td>Confirm the GOMO inclusion, then keep the Singtel sitemap to Singtel URLs only.</td></tr></tbody></table></div>
+
+  <h3 style="margin-top:24px">Content fixes</h3>
+  <div class="panel" style="padding:0;overflow-x:auto">
+  <table><thead><tr><th>Fix</th><th>What to do</th></tr></thead><tbody><tr><td><strong>Refocus the blog on telco topics</strong></td><td>Move the editorial calendar off appliance buying guides and onto mobile, broadband, WiFi, roaming, eSIM and 5G intent that supports the core products.</td></tr>
+<tr><td><strong>Build a telco how-to content track</strong></td><td>Publish the ten uncovered educational topics; start with WiFi troubleshooting and eSIM travel guides.</td></tr>
+<tr><td><strong>Run an always on publish and refresh cadence</strong></td><td>Keep articles current so they hold freshness signals and stay citable by AI.</td></tr></tbody></table></div>
+  <p class="note" style="margin-top:14px">Full traffic detail, the complete per prompt tables for each AI surface and the raw Ahrefs breakdown are in the accompanying detailed document.</p>
 </section>
 
-<p class="tag" style="border-top:1px solid var(--bd);padding-top:16px">NovaStacks · Preliminary SEO &amp; AEO Analysis for Singtel · 3 July 2026 · Findings validated against live server HTML. AI visibility measured via Google AI Overview, ChatGPT and Gemini.</p>
+<p class="tag" style="border-top:1px solid var(--bd);padding-top:16px">NovaStacks · Preliminary SEO &amp; AEO Analysis for Singtel · 3 July 2026 · AI visibility measured via Google AI Overview, ChatGPT and Gemini.</p>
 </main></div></body></html>
