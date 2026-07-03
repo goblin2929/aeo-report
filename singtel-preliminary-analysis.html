@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Singtel: Preliminary SEO &amp; AEO Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--tl:#01aac1;--bg:#0b0f14;--pnl:#121820;--pnl2:#0f151c;--tx:#e7edf3;--mut:#93a1b0;--bd:#1e2833;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.6}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;margin:0 0 .4em}
+a{color:var(--tl)}
+.wrap{display:flex;max-width:1500px;margin:0 auto}
+.side{width:230px;flex:0 0 230px;position:sticky;top:0;height:100vh;padding:26px 16px;border-right:1px solid var(--bd);background:var(--pnl2)}
+.side .logo{font-family:'Space Grotesk';font-weight:700;font-size:20px;color:var(--tl);margin-bottom:6px}
+.side .sub{color:var(--mut);font-size:12px;margin-bottom:22px}
+.side a{display:block;color:var(--mut);text-decoration:none;padding:7px 10px;border-radius:8px;font-size:13.5px;margin-bottom:2px}
+.side a:hover{background:#182029;color:var(--tx)}
+.main{flex:1;padding:34px 40px;min-width:0}
+section{margin-bottom:46px;scroll-margin-top:20px}
+.eyebrow{color:var(--tl);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+.cover h1{font-size:40px;line-height:1.1;margin-top:8px}
+.cover .meta{color:var(--mut);margin-top:14px}
+.cards{display:flex;gap:16px;flex-wrap:wrap;margin:22px 0}
+.card{flex:1;min-width:210px;background:var(--pnl);border:1px solid var(--bd);border-radius:14px;padding:20px}
+.card .lab{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em}
+.card .big{font-family:'Space Grotesk';font-size:44px;font-weight:700;line-height:1}
+.card .big small{font-size:18px;color:var(--mut)}
+.card .bnd{display:inline-block;margin-top:8px;font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid}
+.panel{background:var(--pnl);border:1px solid var(--bd);border-radius:14px;padding:22px 24px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--bd);vertical-align:top}
+th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.note{color:var(--mut);font-size:12.5px}
+.ev{color:var(--mut);font-size:12px;margin-top:3px}
+.why{font-size:13px}
+.sug{font-size:13px;color:#cfe9ee}
+.area,.pill,.prio{display:inline-block;padding:2px 9px;border-radius:20px;border:1px solid;font-size:11.5px;font-weight:600;white-space:nowrap}
+.bar{height:7px;background:#1a232d;border-radius:6px;overflow:hidden;min-width:70px}
+.bar-fill{height:100%;border-radius:6px}
+.barcell{width:90px}
+.axis{margin-bottom:26px}
+.axis-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.axis-head h4{font-size:17px;margin:0}
+.axis-score{font-family:'Space Grotesk';font-weight:700;font-size:22px}
+.axis-score small{color:var(--mut);font-size:13px}
+.cited{color:#7bd88f;font-weight:600}
+.notcited{color:#f5a623;font-weight:600}
+.prio.p1{background:#e5484d22;color:#e5484d;border-color:#e5484d55}
+.prio.p2{background:#f5a62322;color:#f5a623;border-color:#f5a62355}
+.prio.p3{background:#01aac122;color:#01aac1;border-color:#01aac155}
+.callout{background:#0e2a30;border:1px solid #01aac155;border-left:4px solid var(--tl);border-radius:10px;padding:16px 20px;margin:16px 0}
+.lead{font-size:16px}
+.tag{color:var(--mut);font-size:12px}
+@media(max-width:900px){.side{display:none}.main{padding:22px}}
+</style></head>
+<body><div class="wrap">
+<nav class="side">
+  <div class="logo">NovaStacks</div>
+  <div class="sub">Preliminary SEO &amp; AEO Analysis</div>
+  <a href="#cover">Overview</a>
+  <a href="#summary">Executive Summary</a>
+  <a href="#findings">Findings</a>
+  <a href="#scorecard">AEO Scorecard</a>
+  <a href="#landscape">Competitor Landscape</a>
+  <a href="#visibility">AI Visibility</a>
+  <a href="#prompts">Per Prompt Results</a>
+  <a href="#priorities">Priorities</a>
+  <a href="#growth">Opportunities &amp; Next Actions</a>
+</nav>
+<main class="main">
+
+<section id="cover" class="cover">
+  <div class="eyebrow">Preliminary SEO &amp; AEO Analysis</div>
+  <h1>Singtel</h1>
+  <div class="meta">singtel.com &nbsp;·&nbsp; Singapore market &nbsp;·&nbsp; 3 July 2026 &nbsp;·&nbsp; Prepared by NovaStacks</div>
+  <div class="cards">
+    <div class="card"><div class="lab">Combined AEO</div><div class="big" style="color:#f2d600">52<small>/100</small></div><span class="bnd" style="color:#f2d600;border-color:#f2d600">Partially AI Ready</span></div>
+    <div class="card"><div class="lab">Site Readiness</div><div class="big" style="color:#f5a623">47<small>/100</small></div><span class="bnd" style="color:#f5a623;border-color:#f5a623">Low AI Visibility</span></div>
+    <div class="card"><div class="lab">LLM Visibility</div><div class="big" style="color:#f2d600">57<small>/100</small></div><span class="bnd" style="color:#f2d600;border-color:#f2d600">Partially AI Ready</span></div>
+    <div class="card"><div class="lab">AI cites Singtel (non branded)</div><div class="big">57.1<small>%</small></div><span class="tag">24 of 42 non branded prompts</span></div>
+  </div>
+</section>
+
+<section id="summary">
+  <h2>Executive Summary</h2>
+  <p class="lead">AI already knows Singtel. Across 50 buyer questions run through Google AI Overview, ChatGPT and Gemini, the brand was named in 82% of answers. The problem is the other side of the funnel: the site is not built to capitalise on that awareness, and at the discovery stage AI cites Circles.Life, comparison sites and global eSIM players instead of Singtel.</p>
+  <div class="callout">
+    <strong>The gap in one line.</strong> LLM Visibility 57 versus Site Readiness 47. AI knows the brand, but weak schema, client side rendering that hides product pages from crawlers, a homepage with no H1 and critical mobile performance stop that awareness from turning into citations and clicks.
+  </div>
+  <p>Two numbers frame the commercial cost. First, Singtel is cited by AI in <strong>60% of all prompts but only 57% of non branded ones</strong>, and it wins decision and branded questions (BOFU 89%, Branded 75%) while losing awareness (TOFU 33%). Second, Ahrefs shows Singtel is <strong>79% dependent on branded search</strong>, and earns non branded product traffic on only <strong>3 pages</strong> versus M1 on <strong>108 pages</strong>. The same root cause sits under both: people who already know Singtel find it; people discovering the category do not.</p>
+  <p>This analysis validates the 9 findings supplied by the Singtel side and adds 5 from NovaStacks. Every finding below was checked against the live server HTML before it was written.</p>
+</section>
+
+<section id="findings">
+  <h2>Findings</h2>
+  <p class="tag">14 findings. Technical and content items were confirmed by NovaStacks against the live site; the 5 marked NovaStacks are new.</p>
+  <div class="panel" style="padding:0;overflow-x:auto">
+  <table>
+    <thead><tr><th>#</th><th>Area</th><th>Finding</th><th>Validated observation and why it matters</th><th>Suggestion</th></tr></thead>
+    <tbody><tr>
+      <td class="num">1</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>No structured data on the homepage, and invalid product schema</strong><div class="ev">singtel.com (homepage), /personal/products-services/shop/fibre</div></td>
+      <td class="why">Validated. The homepage source contains zero JSON-LD (no Organization or WebSite entity markup). On the fibre shop page the Product and Offer objects are present but every Offer omits availability, url and priceValidUntil, and the Products omit review or aggregateRating, so Rich Results Test reports the Product markup as invalid. Without a clean entity block on the homepage, Google and AI engines cannot reliably resolve Singtel as an entity (logo, sameAs, sitelinks search box), and the invalid product markup forfeits Product rich results on the flagship commercial page.</td>
+      <td class="sug">Add valid Organization and WebSite JSON-LD to the homepage. Fix the Offer objects on product pages by adding availability, url and priceValidUntil, and add review or aggregateRating where genuine.</td></tr>
+<tr>
+      <td class="num">2</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>No structured data on the blog article</strong><div class="ev">/personal/singtel-blog/right-mobile-plan</div></td>
+      <td class="why">Validated. The article source contains only BreadcrumbList and ListItem JSON-LD. There is no Article or BlogPosting and no FAQPage. Article and FAQPage schema make a post eligible for rich results and give LLMs machine readable context (author, publish date, topic, question and answer). This is a high intent commercial topic (choosing a mobile plan), so the lost visibility maps to lost plan sign ups.</td>
+      <td class="sug">Add Article (or BlogPosting) and, where the content answers questions, FAQPage JSON-LD to blog templates.</td></tr>
+<tr>
+      <td class="num">3</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>Favicon missing on product pages</strong><div class="ev">/personal/products-services/shop/fibre</div></td>
+      <td class="why">Validated. The fibre shop page source has no favicon link at all, while other templates reference an SVG favicon (the homepage and wifi6 use an absolute URL, the blog uses a relative path). The favicon shows next to the URL on mobile results, in AI assistant panels and in browser tabs, so a missing favicon on the highest commercial intent pages reduces brand recognition at the click and signals technical inconsistency.</td>
+      <td class="sug">Add a consistent favicon link to every template, using an absolute URL so it resolves on all paths.</td></tr>
+<tr>
+      <td class="num">4</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>Product links are not crawlable (client side rendering)</strong><div class="ev">/personal/products-services/shop/fibre, /personal/products-services/broadband/wifi6</div></td>
+      <td class="why">Validated and more severe than first flagged. The fibre page is a Next.js client rendered app; its server HTML exposes only asset file links and no product links, so the wifi6 URL cannot be discovered from it. The homepage similarly exposes only 9 anchor links in server HTML. A page reachable only through JavaScript receives almost no internal link equity, may never be indexed and is invisible to LLMs. Ahrefs confirms the cost: Singtel earns non branded product traffic on only 3 pages (5,304 visits) versus M1 on 108 pages (15,432 visits).</td>
+      <td class="sug">Render primary navigation and product links as real anchor elements in server HTML (server side rendering or static links), not JavaScript only click handlers.</td></tr>
+<tr>
+      <td class="num">5</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>Product sub pages have no canonical</strong><div class="ev">/personal/products-services/broadband/wifi6</div></td>
+      <td class="why">Validated. The wifi6 page has no canonical tag in source. Without a self referencing canonical, Google picks its own, which lets parameter or duplicate versions compete and can index the wrong URL, splitting ranking signals.</td>
+      <td class="sug">Add a self referencing canonical to every product sub page.</td></tr>
+<tr>
+      <td class="num">6</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>Blog articles have no canonical</strong><div class="ev">/personal/singtel-blog/right-mobile-plan</div></td>
+      <td class="why">Validated. The article has no canonical tag in source. Blog URLs frequently collect UTM and campaign parameters when shared, so a missing canonical lets those variants dilute the article&#x27;s ranking signals and can index the wrong URL.</td>
+      <td class="sug">Add a self referencing canonical to every blog article template.</td></tr>
+<tr>
+      <td class="num">7</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>External domain (gomo.sg) inside the Singtel sitemap [confirm intent]</strong><div class="ev">/sitemap-explore.xml</div></td>
+      <td class="why">Validated. The sitemap at singtel.com/sitemap-explore.xml contains 88 URLs pointing to www.gomo.sg. A sitemap is a crawl instruction scoped to the host it is submitted for; a different domain inside it is treated as a cross submission that Google ignores, and it can trigger sitemap warnings in Search Console while muddying crawl signals for the real Singtel URLs. If GOMO must be promoted, it should be handled through its own sitemap.</td>
+      <td class="sug">Confirm whether the GOMO inclusion is intentional. Best practice is to remove the external domain and keep Singtel&#x27;s sitemap to singtel.com URLs only.</td></tr>
+<tr>
+      <td class="num">8</td>
+      <td><span class="area" style="background:#01aac122;color:#01aac1;border-color:#01aac155">Technical</span></td>
+      <td><strong>No clear path from the homepage to the blog</strong><div class="ev">singtel.com (homepage)</div></td>
+      <td class="why">Validated. The homepage source contains zero links to /personal/singtel-blog/. If the content hub has no link from the homepage or main navigation, crawlers reach it slowly and pass little authority to it, and users and AI assistants struggle to find it. This caps how much non branded awareness and consideration traffic the blog can capture.</td>
+      <td class="sug">Add a clear, crawlable link from the homepage and main navigation to the blog hub and its key articles.</td></tr>
+<tr>
+      <td class="num">9</td>
+      <td><span class="area" style="background:#7b61ff22;color:#7b61ff;border-color:#7b61ff55">Content</span></td>
+      <td><strong>The blog is not actively updated</strong><div class="ev">/personal/singtel-blog/</div></td>
+      <td class="why">Validated against live AI behaviour. Telecom demand shifts constantly (plans, roaming, 5G, eSIM, seasonal deals). In our AI visibility run, AI overwhelmingly cites editorial and comparison content: 762 Article or Blog citations, 122 Comparison or Review, 56 Forum, out of about 1,050. Singtel&#x27;s blog is cited in only a few awareness prompts while aggregators and Circles.Life win discovery. Stale content loses freshness signals and is rarely cited by AI.</td>
+      <td class="sug">Run an always on content cadence targeting current non branded problems (best SIM only, roaming vs travel eSIM, fibre comparisons, coverage) and refresh top articles on a schedule.</td></tr>
+<tr>
+      <td class="num">10</td>
+      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
+      <td><strong>Homepage has no H1</strong><div class="ev">singtel.com (homepage)</div></td>
+      <td class="why">New finding, validated. The homepage source contains zero H1 elements (it has 10 H2s). The most important page therefore has no primary heading, weakening the top level topical signal and the heading hierarchy that both search and AI use to build a page outline.</td>
+      <td class="sug">Add a single descriptive H1 to the homepage that states who Singtel is and the core services.</td></tr>
+<tr>
+      <td class="num">11</td>
+      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
+      <td><strong>Root homepage canonical points to /personal [confirm intent]</strong><div class="ev">singtel.com (homepage)</div></td>
+      <td class="why">New finding, validated. The page at singtel.com/ declares its canonical as https://www.singtel.com/personal. This tells Google the canonical version of the root is /personal. If /personal is deliberately the primary landing page this may be intended, but if the root should rank as the homepage it is ceding that signal.</td>
+      <td class="sug">Confirm the intended canonical for the root. If the root is the homepage, self reference it.</td></tr>
+<tr>
+      <td class="num">12</td>
+      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
+      <td><strong>Weak semantic HTML across templates</strong><div class="ev">singtel.com, /personal/products-services/broadband/wifi6, /personal/singtel-blog/right-mobile-plan</div></td>
+      <td class="why">New finding, validated. The homepage uses no main, article, section, header, footer or aside landmarks; the product and blog templates expose only a nav element. Semantic landmarks help AI separate primary content from navigation and boilerplate, so div heavy markup lowers extraction quality and citability.</td>
+      <td class="sug">Introduce semantic landmarks (main, article, section, header, footer) and one clean H1 to H3 hierarchy per template.</td></tr>
+<tr>
+      <td class="num">13</td>
+      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
+      <td><strong>Product sub pages carry no Product schema</strong><div class="ev">/personal/products-services/broadband/wifi6</div></td>
+      <td class="why">New finding, validated. The wifi6 product page carries only BreadcrumbList; it has no Product, Offer or FAQ schema. The rich Product markup exists on the main shop page but not on the broader product template set, so eligible product rich results are absent across many product pages.</td>
+      <td class="sug">Extend the Product and FAQ schema pattern from the shop page to the full product page template, with valid Offer fields.</td></tr>
+<tr>
+      <td class="num">14</td>
+      <td><span class="area" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">NovaStacks</span></td>
+      <td><strong>Critical mobile performance on the homepage</strong><div class="ev">singtel.com (homepage)</div></td>
+      <td class="why">New finding, validated (lab). DataForSEO Lighthouse mobile scored the homepage at performance 0.01 with LCP 53.7s, CLS 1.0 and TBT 3.83s, well below M1 (0.26) and GOMO (0.38). This is a single lab run on an emulated mobile device, so it should be confirmed against field data, but it aligns with the heavy client side rendering seen above. Slow pages are crawled less often and rank worse.</td>
+      <td class="sug">Reduce main thread work and payload on the homepage (defer non critical JavaScript, stabilise layout to fix CLS, prioritise the hero for LCP). Confirm with CrUX field data.</td></tr></tbody>
+  </table></div>
+</section>
+
+<section id="scorecard">
+  <h2>AEO Scorecard</h2>
+  <p class="tag">Two axes, scored on the NovaStacks standard. Combined AEO is the average of both.</p>
+  <div class="panel">
+    <div class="axis"><div class="axis-head"><h4>Axis 1 · Site Readiness</h4><span class="axis-score" style="color:#f5a623">47<small>/100</small></span><span class="pill" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">Low AI Visibility</span></div><table class="score-tbl"><thead><tr><th>Component</th><th>Score</th><th></th><th>Note</th></tr></thead><tbody><tr><td>Structured Data Coverage</td><td class="num">7/18</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:39%;background:#f5a623"></div></div></td><td class="note">Homepage carries zero JSON-LD. The fibre shop page has valid FAQPage and BreadcrumbList, but its Product and Offer markup omits availability, priceValidUntil and review, so Rich Results Test reports the Product markup as invalid. Blog and product sub pages carry only BreadcrumbList.</td></tr><tr><td>Content Structure</td><td class="num">9/15</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:60%;background:#f5a623"></div></div></td><td class="note">Good Q and A blocks on the shop page (22 FAQ items) and clean H2 outlines on articles, but the homepage has no H1 at all.</td></tr><tr><td>Entity Clarity</td><td class="num">7/13</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:54%;background:#f5a623"></div></div></td><td class="note">Singtel has a strong Knowledge Panel as a household brand, but the site sends weak entity signals: no Organization schema, no sameAs, and the root canonical points to /personal.</td></tr><tr><td>Task Completion Content</td><td class="num">8/12</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:67%;background:#f5a623"></div></div></td><td class="note">Solid support and how to library (activate eSIM, change WiFi name, roaming guides) plus practical blog guides.</td></tr><tr><td>FAQ / Help Content</td><td class="num">8/12</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:67%;background:#f5a623"></div></div></td><td class="note">Dedicated help centre and FAQ schema on the shop page; help.singtel.com is cited by AI for support queries.</td></tr><tr><td>Semantic HTML Quality</td><td class="num">3/10</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:30%;background:#f5a623"></div></div></td><td class="note">Div heavy templates. Homepage has no main, article, section, header or footer landmarks; product and blog pages expose only a nav element. This lowers AI content boundary parsing.</td></tr><tr><td>Web Performance (CWV)</td><td class="num">2/10</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:20%;background:#f5a623"></div></div></td><td class="note">Mobile lab (DataForSEO Lighthouse): homepage performance 0.01 with LCP 53.7s, CLS 1.0, TBT 3.83s, far worse than M1 (0.26) and GOMO (0.38). Product and blog pages sit at 0.34 and 0.42.</td></tr><tr><td>Technical AI Readiness</td><td class="num">3/10</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:30%;background:#f5a623"></div></div></td><td class="note">Heavy client side rendering. The homepage server HTML exposes only 9 anchor links; the fibre page is a Next.js app whose server HTML has no crawlable product links. Missing canonicals on sub pages and blog.</td></tr></tbody></table></div>
+    <div class="axis"><div class="axis-head"><h4>Axis 2 · LLM Visibility</h4><span class="axis-score" style="color:#f2d600">57<small>/100</small></span><span class="pill" style="background:#f2d60022;color:#f2d600;border-color:#f2d60055">Partially AI Ready</span></div><table class="score-tbl"><thead><tr><th>Component</th><th>Score</th><th></th><th>Note</th></tr></thead><tbody><tr><td>Branded Query Visibility</td><td class="num">19/25</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:76%;background:#f2d600"></div></div></td><td class="note">Brand named in 82% of prompts; branded bucket cited in 75%. AI clearly knows Singtel.</td></tr><tr><td>Core Keyword Visibility</td><td class="num">10/20</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:50%;background:#f2d600"></div></div></td><td class="note">Category queries are mixed: MOFU cited 56%, TOFU only 33%. Circles.Life and aggregators outrank Singtel on discovery queries.</td></tr><tr><td>Comparison Query Visibility</td><td class="num">8/20</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:40%;background:#f2d600"></div></div></td><td class="note">The head to head query &#x27;Singtel vs StarHub vs M1&#x27; does not cite Singtel; YouTube, DollarsAndSense and WhistleOut win it.</td></tr><tr><td>Cited Source Ownership</td><td class="num">12/20</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:60%;background:#f2d600"></div></div></td><td class="note">Singtel is cited in 60% of prompts, but by raw citation volume its own domains are only 89 of about 1,050 citations. Third party sources hold 865.</td></tr><tr><td>Third Party Review Presence</td><td class="num">8/15</td><td class="barcell"><div class="bar"><div class="bar-fill" style="width:53%;background:#f2d600"></div></div></td><td class="note">The category is dominated by third party aggregators, forums and review sites (WhistleOut, MoneySmart, DollarsAndSense, Reddit, HardwareZone). Singtel appears in some but does not own the narrative.</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section id="landscape">
+  <h2>Competitor Landscape</h2>
+  <p>Total organic traffic over credits the brand leader. The honest read is the non branded split, which shows how much traffic comes from people who did not search the brand name. Singtel leads on total traffic but is the most brand dependent of the group.</p>
+  <div class="panel">
+    <h4>Organic traffic: branded versus non branded</h4>
+    <table><thead><tr><th>Site</th><th>Total</th><th>Branded</th><th>Non branded</th><th>Non branded share</th></tr></thead><tbody><tr><td>Singtel</td><td class="num">283,944</td><td class="num">223,602</td><td class="num">60,342</td><td class="num">21%</td></tr>
+<tr><td>M1</td><td class="num">164,680</td><td class="num">109,524</td><td class="num">55,156</td><td class="num">33%</td></tr>
+<tr><td>GOMO</td><td class="num">56,020</td><td class="num">54,810</td><td class="num">1,210</td><td class="num">2%</td></tr>
+<tr><td>MyRepublic</td><td class="num">30,919</td><td class="num">19,738</td><td class="num">11,181</td><td class="num">36%</td></tr></tbody></table>
+    <p class="note" style="margin-top:14px">Singtel's non branded share (21%) is the lowest in the set. M1 (33%) and MyRepublic (36%) convert a larger share of discovery search.</p>
+  </div>
+  <div class="cards">
+    <div class="card" style="flex:1">
+      <h4>Non branded product traffic</h4>
+      <table><thead><tr><th>Site</th><th>Traffic</th><th>Pages</th></tr></thead><tbody><tr><td>Singtel</td><td class="num">5,304</td><td class="num">3</td></tr>
+<tr><td>M1</td><td class="num">15,432</td><td class="num">108</td></tr>
+<tr><td>MyRepublic</td><td class="num">847</td><td class="num">5</td></tr>
+<tr><td>GOMO</td><td class="num">250</td><td class="num">9</td></tr></tbody></table>
+      <p class="note" style="margin-top:10px">The clearest signal in the whole dataset. Singtel earns non branded product traffic on just 3 pages; M1 does it on 108. This is what the client side rendering finding costs in practice.</p>
+    </div>
+    <div class="card" style="flex:1">
+      <h4>Article traffic</h4>
+      <table><thead><tr><th>Site</th><th>Traffic</th><th>Pages</th></tr></thead><tbody><tr><td>Singtel</td><td class="num">17,235</td><td class="num">79</td></tr>
+<tr><td>M1</td><td class="num">17,167</td><td class="num">77</td></tr>
+<tr><td>MyRepublic</td><td class="num">1,926</td><td class="num">109</td></tr>
+<tr><td>GOMO</td><td class="num">0</td><td class="num">0</td></tr></tbody></table>
+      <p class="note" style="margin-top:10px">Singtel and M1 are level on article traffic today, but M1 publishes actively. A dormant blog will lose this parity.</p>
+    </div>
+  </div>
+</section>
+
+<section id="visibility">
+  <h2>AI Visibility (measured)</h2>
+  <p>50 buyer prompts across Branded, TOFU, MOFU, BOFU and Blind Spots, each run through Google AI Overview, ChatGPT and Gemini. Headline: cited in 30 of 50 prompts (60.0%). The honest measure is the non branded 57.1% (24 of 42), because that is how new customers search.</p>
+  <div class="cards">
+    <div class="card"><h4>Visibility matrix</h4><table><tbody><tr><td>Mentioned and Cited</td><td class="num">30</td><td class="num">60.0%</td></tr>
+<tr><td>Mentioned but not Cited</td><td class="num">11</td><td class="num">22.0%</td></tr>
+<tr><td>Not Mentioned and not Cited</td><td class="num">9</td><td class="num">18.0%</td></tr></tbody></table></div>
+    <div class="card"><h4>By AI surface</h4><table><thead><tr><th>Surface</th><th>Cited</th><th>Mentioned</th><th>Vis.</th></tr></thead><tbody><tr><td>Google AI Overview</td><td class="num">26/50</td><td class="num">38/50</td><td class="num">52.0%</td></tr>
+<tr><td>ChatGPT</td><td class="num">9/50</td><td class="num">24/50</td><td class="num">18.0%</td></tr>
+<tr><td>Gemini</td><td class="num">13/50</td><td class="num">22/50</td><td class="num">26.0%</td></tr></tbody></table></div>
+  </div>
+  <div class="cards">
+    <div class="card"><h4>By funnel stage</h4><table><thead><tr><th>Stage</th><th>Total</th><th>Cited</th><th>Vis.</th></tr></thead><tbody><tr><td>BOFU (Decision)</td><td class="num">9</td><td class="num">8</td><td class="num">88.9%</td></tr>
+<tr><td>Branded</td><td class="num">8</td><td class="num">6</td><td class="num">75.0%</td></tr>
+<tr><td>Blind Spots</td><td class="num">5</td><td class="num">3</td><td class="num">60.0%</td></tr>
+<tr><td>MOFU (Consideration)</td><td class="num">16</td><td class="num">9</td><td class="num">56.2%</td></tr>
+<tr><td>TOFU (Awareness)</td><td class="num">12</td><td class="num">4</td><td class="num">33.3%</td></tr></tbody></table>
+      <p class="note" style="margin-top:8px">Strong at decision and branded, weak at awareness. AI cites Singtel when the buyer already knows the brand.</p></div>
+    <div class="card"><h4>Who owns the citations</h4><table><thead><tr><th>Owner</th><th>Citations</th><th>Share</th></tr></thead><tbody><tr><td>Third party (aggregators, forums, reviews)</td><td class="num">865</td><td class="num">82%</td></tr>
+<tr><td>Competitors</td><td class="num">100</td><td class="num">9%</td></tr>
+<tr><td>Singtel (own domains)</td><td class="num">89</td><td class="num">9%</td></tr></tbody></table>
+      <p class="note" style="margin-top:8px">Third party sources hold 82% of all citations. Singtel's own domains hold 9%, just below competitors.</p></div>
+  </div>
+  <div class="cards">
+    <div class="card"><h4>Content types AI cites</h4><table><thead><tr><th>Type</th><th>Citations</th></tr></thead><tbody><tr><td>Article / Blog Post</td><td class="num">762</td></tr>
+<tr><td>Comparison / Review</td><td class="num">122</td></tr>
+<tr><td>Forum / Discussion</td><td class="num">56</td></tr>
+<tr><td>Social Media</td><td class="num">32</td></tr>
+<tr><td>Video</td><td class="num">24</td></tr>
+<tr><td>Homepage</td><td class="num">16</td></tr>
+<tr><td>How-to / Guide</td><td class="num">16</td></tr>
+<tr><td>Knowledge Base / FAQ</td><td class="num">11</td></tr></tbody></table>
+      <p class="note" style="margin-top:8px">AI cites editorial, comparison and forum content above all. This is the format the dormant blog cannot compete on today.</p></div>
+    <div class="card"><h4>Most cited domains</h4><table><thead><tr><th>Domain</th><th>Citations</th><th>Owner</th></tr></thead><tbody><tr><td>www.singtel.com + singtel.com</td><td class="num">85</td><td>Client</td></tr>
+<tr><td>www.reddit.com + reddit.com</td><td class="num">66</td><td>Third party</td></tr>
+<tr><td>www.whistleout.com.sg + whistleout.com.sg</td><td class="num">42</td><td>Third party</td></tr>
+<tr><td>www.circles.life + circles.life</td><td class="num">37</td><td>Competitor</td></tr>
+<tr><td>www.facebook.com</td><td class="num">25</td><td>Third party</td></tr>
+<tr><td>www.youtube.com</td><td class="num">24</td><td>Third party</td></tr>
+<tr><td>www.singsaver.com.sg + singsaver.com.sg</td><td class="num">32</td><td>Third party</td></tr>
+<tr><td>www.starhub.com</td><td class="num">17</td><td>Competitor</td></tr>
+<tr><td>www.m1.com.sg</td><td class="num">16</td><td>Competitor</td></tr>
+<tr><td>blog.moneysmart.sg</td><td class="num">14</td><td>Third party</td></tr>
+<tr><td>myrepublic.net</td><td class="num">14</td><td>Competitor</td></tr>
+<tr><td>dollarsandsense.sg</td><td class="num">13</td><td>Third party</td></tr></tbody></table></div>
+  </div>
+  <div class="callout">Circles.Life is the standout competitor in AI answers (37 citations), winning the discovery and comparison questions where Singtel is absent. Aggregators (WhistleOut, MoneySmart, DollarsAndSense) and forums (Reddit, HardwareZone) own the rest.</div>
+</section>
+
+<section id="prompts">
+  <h2>Per Prompt Results</h2>
+  <p class="tag">All 50 prompts. Where Singtel is not cited, the column shows who is.</p>
+  <div class="panel" style="padding:0;overflow-x:auto">
+  <table><thead><tr><th>#</th><th>Prompt</th><th>Stage</th><th>Brand named</th><th>Cited</th><th>Cited in / who is cited</th></tr></thead>
+  <tbody><tr>
+      <td class="num">P01</td>
+      <td>Is Singtel worth it compared to other telcos in Singapore?</td>
+      <td>BRANDED</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview</td></tr>
+<tr>
+      <td class="num">P02</td>
+      <td>What do people say about Singtel&#x27;s mobile network coverage and reliability?</td>
+      <td>BRANDED</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>ChatGPT</td></tr>
+<tr>
+      <td class="num">P03</td>
+      <td>Is Singtel broadband good, or are cheaper providers just as fast?</td>
+      <td>BRANDED</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview</td></tr>
+<tr>
+      <td class="num">P04</td>
+      <td>Singtel vs StarHub vs M1, which one gives the best value plans?</td>
+      <td>BRANDED</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.reddit.com, blog.moneysmart.sg, www.youtube.com</td></tr>
+<tr>
+      <td class="num">P05</td>
+      <td>Is Singtel&#x27;s customer service actually reliable when something goes wrong?</td>
+      <td>BRANDED</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview</td></tr>
+<tr>
+      <td class="num">P06</td>
+      <td>Are Singtel&#x27;s phone bundle deals really cheaper than buying the phone outright?</td>
+      <td>BRANDED</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview</td></tr>
+<tr>
+      <td class="num">P07</td>
+      <td>What are the best alternatives to Singtel for a mobile plan in Singapore?</td>
+      <td>BRANDED</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.singsaver.com.sg, www.greatdeals.com.sg, www.misslobang.com</td></tr>
+<tr>
+      <td class="num">P08</td>
+      <td>Is Singtel&#x27;s 5G plan worth paying more for over a normal plan?</td>
+      <td>BRANDED</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview</td></tr>
+<tr>
+      <td class="num">P09</td>
+      <td>What should I look for when choosing a mobile plan in Singapore?</td>
+      <td>TOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview</td></tr>
+<tr>
+      <td class="num">P10</td>
+      <td>What&#x27;s the difference between a SIM-only plan and a plan that comes with a phone?</td>
+      <td>TOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P11</td>
+      <td>How is 5G actually different from 4G for everyday phone use?</td>
+      <td>TOFU</td>
+      <td>No</td>
+      <td class="notcited">No</td>
+      <td>www.ericsson.com, verizon.com, astound.com</td></tr>
+<tr>
+      <td class="num">P12</td>
+      <td>What is an eSIM and how does it work?</td>
+      <td>TOFU</td>
+      <td>No</td>
+      <td class="notcited">No</td>
+      <td>www.airalo.com, www.youtube.com, www.starhub.com</td></tr>
+<tr>
+      <td class="num">P13</td>
+      <td>What&#x27;s the difference between fibre broadband and regular broadband?</td>
+      <td>TOFU</td>
+      <td>No</td>
+      <td class="notcited">No</td>
+      <td>www.reddit.com, www.moneysmart.sg, www.linkedin.com</td></tr>
+<tr>
+      <td class="num">P14</td>
+      <td>Is gigabit home broadband worth it for a normal household?</td>
+      <td>TOFU</td>
+      <td>No</td>
+      <td class="notcited">No</td>
+      <td>www.allocommunications.com, www.broadbandfreedom.co.uk, www.theardor.com.au</td></tr>
+<tr>
+      <td class="num">P15</td>
+      <td>Why does my home WiFi slow down in some rooms, and how do I fix it?</td>
+      <td>TOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P16</td>
+      <td>How does data roaming work when I travel overseas?</td>
+      <td>TOFU</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.m1.com.sg, www.betterroaming.com, dollarsandsense.sg</td></tr>
+<tr>
+      <td class="num">P17</td>
+      <td>Will a mesh WiFi system actually improve my home internet?</td>
+      <td>TOFU</td>
+      <td>No</td>
+      <td class="notcited">No</td>
+      <td>www.mercusys.com, www.netgear.com, www.astound.com</td></tr>
+<tr>
+      <td class="num">P18</td>
+      <td>Is it cheaper to use a travel eSIM or pay for roaming when going abroad?</td>
+      <td>TOFU</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.instagram.com, www.airalo.com, www.esimpass.com</td></tr>
+<tr>
+      <td class="num">P19</td>
+      <td>Who are the main mobile network providers in Singapore?</td>
+      <td>TOFU</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>en.wikipedia.org, insights.opensignal.com, singesim.com</td></tr>
+<tr>
+      <td class="num">P20</td>
+      <td>How do I avoid a huge phone bill when using data overseas?</td>
+      <td>TOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P21</td>
+      <td>Which telco has the best mobile coverage in Singapore?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.reddit.com, insights.opensignal.com, www.whistleout.com.sg</td></tr>
+<tr>
+      <td class="num">P22</td>
+      <td>What is the cheapest SIM-only plan in Singapore right now?</td>
+      <td>MOFU</td>
+      <td>No</td>
+      <td class="notcited">No</td>
+      <td>blog.moneysmart.sg, www.singsaver.com.sg, thesmartlocal.com</td></tr>
+<tr>
+      <td class="num">P23</td>
+      <td>Which SIM-only plan gives the most data for the price in Singapore?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.reddit.com, www.singsaver.com.sg, thesmartlocal.com</td></tr>
+<tr>
+      <td class="num">P24</td>
+      <td>Is it worth paying more for an unlimited data mobile plan in Singapore?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.reddit.com, www.singsaver.com.sg, seedly.sg</td></tr>
+<tr>
+      <td class="num">P25</td>
+      <td>Which broadband provider has the fastest and most reliable fibre in Singapore?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview, ChatGPT</td></tr>
+<tr>
+      <td class="num">P26</td>
+      <td>What&#x27;s the cheapest home broadband plan in Singapore?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>ChatGPT</td></tr>
+<tr>
+      <td class="num">P27</td>
+      <td>Which prepaid SIM card is best for tourists visiting Singapore?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P28</td>
+      <td>How do I choose a travel eSIM for a trip around Asia?</td>
+      <td>MOFU</td>
+      <td>No</td>
+      <td class="notcited">No</td>
+      <td>www.reddit.com, www.directiveadventure.com, www.easysim.global</td></tr>
+<tr>
+      <td class="num">P29</td>
+      <td>Which telco has the best roaming plan for overseas travel?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.m1.com.sg, www.singsaver.com.sg, dollarsandsense.sg</td></tr>
+<tr>
+      <td class="num">P30</td>
+      <td>What should I compare when choosing a home fibre broadband plan?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P31</td>
+      <td>What&#x27;s the best way to fix weak WiFi in a big flat, a stronger router or a mesh system?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P32</td>
+      <td>What do I need to watch live sports and movies at home in Singapore?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini</td></tr>
+<tr>
+      <td class="num">P33</td>
+      <td>Which mobile plan is best for heavy data users in Singapore?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>ChatGPT</td></tr>
+<tr>
+      <td class="num">P34</td>
+      <td>Is a data-only SIM worth it for a tablet or a second device?</td>
+      <td>MOFU</td>
+      <td>No</td>
+      <td class="notcited">No</td>
+      <td>www.giga.com.sg, medium.com, www.circles.life</td></tr>
+<tr>
+      <td class="num">P35</td>
+      <td>What&#x27;s the best family or multi-line mobile plan in Singapore?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview, ChatGPT</td></tr>
+<tr>
+      <td class="num">P36</td>
+      <td>Are broadband plans that come with a free router bundle actually better value?</td>
+      <td>MOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P37</td>
+      <td>Are Singtel&#x27;s mobile plan deals this month worth it compared to other telcos?</td>
+      <td>BOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview, ChatGPT</td></tr>
+<tr>
+      <td class="num">P38</td>
+      <td>How much does home fibre broadband cost per month in Singapore?</td>
+      <td>BOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview, ChatGPT</td></tr>
+<tr>
+      <td class="num">P39</td>
+      <td>Are there any broadband promotions with free installation right now?</td>
+      <td>BOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P40</td>
+      <td>What&#x27;s the best phone deal when signing up for a new mobile plan?</td>
+      <td>BOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P41</td>
+      <td>Can I get a new iPhone on a monthly instalment plan with no upfront cost?</td>
+      <td>BOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P42</td>
+      <td>How do I switch telco in Singapore while keeping my number?</td>
+      <td>BOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P43</td>
+      <td>How much does it cost to add a roaming pass before travelling overseas?</td>
+      <td>BOFU</td>
+      <td>No</td>
+      <td class="notcited">No</td>
+      <td>community.ee.co.uk, www.m1.com.sg, roamix.app</td></tr>
+<tr>
+      <td class="num">P44</td>
+      <td>Is there a contract lock-in on broadband plans, and what are the exit fees?</td>
+      <td>BOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P45</td>
+      <td>How quickly can I get a new SIM or eSIM activated in Singapore?</td>
+      <td>BOFU</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview, ChatGPT</td></tr>
+<tr>
+      <td class="num">P46</td>
+      <td>Which telco do Singaporeans trust most for reliable network coverage?</td>
+      <td>BLIND_SPOTS</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.giga.com.sg, insights.opensignal.com, www.circles.life</td></tr>
+<tr>
+      <td class="num">P47</td>
+      <td>What are the most common complaints about broadband providers in Singapore?</td>
+      <td>BLIND_SPOTS</td>
+      <td>Yes</td>
+      <td class="notcited">No</td>
+      <td>www.reddit.com, insights.opensignal.com, myrepublic.net</td></tr>
+<tr>
+      <td class="num">P48</td>
+      <td>Do budget telcos like Simba or GOMO offer the same coverage as the major networks?</td>
+      <td>BLIND_SPOTS</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr>
+<tr>
+      <td class="num">P49</td>
+      <td>Which telco is best for enterprise connectivity and cybersecurity in Singapore?</td>
+      <td>BLIND_SPOTS</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>Gemini, AI Overview, ChatGPT</td></tr>
+<tr>
+      <td class="num">P50</td>
+      <td>Which company runs the most secure and reliable data centres in Singapore?</td>
+      <td>BLIND_SPOTS</td>
+      <td>Yes</td>
+      <td class="cited">Yes</td>
+      <td>AI Overview</td></tr></tbody></table></div>
+</section>
+
+<section id="priorities">
+  <h2>Priorities</h2>
+  <div class="panel" style="padding:0;overflow-x:auto">
+  <table><thead><tr><th>Priority</th><th>Action</th><th>Why</th><th>Findings</th></tr></thead><tbody><tr><td><span class="prio p1">P1</span></td><td><strong>Make product pages crawlable</strong></td><td>Render product navigation and links as real anchors in server HTML. This is the root cause of Singtel earning non branded product traffic on only 3 pages versus M1 on 108.</td><td class="ev">Finding 4</td></tr>
+<tr><td><span class="prio p1">P1</span></td><td><strong>Fix homepage entity and structure</strong></td><td>Add valid Organization and WebSite schema, a single H1 and semantic landmarks to the homepage; confirm the root canonical.</td><td class="ev">Findings 1, 10, 11, 12</td></tr>
+<tr><td><span class="prio p1">P1</span></td><td><strong>Repair the homepage mobile experience</strong></td><td>Bring homepage LCP, CLS and blocking time back to a competitive range.</td><td class="ev">Finding 14</td></tr>
+<tr><td><span class="prio p2">P2</span></td><td><strong>Fix and extend product schema</strong></td><td>Add the missing Offer fields so Product markup validates in Rich Results Test, and extend Product and FAQ schema to the full product template.</td><td class="ev">Findings 1, 13</td></tr>
+<tr><td><span class="prio p2">P2</span></td><td><strong>Add canonicals and favicon consistency</strong></td><td>Self referencing canonicals on product sub pages and blog; a consistent favicon across templates.</td><td class="ev">Findings 3, 5, 6</td></tr>
+<tr><td><span class="prio p2">P2</span></td><td><strong>Connect the blog and run a content cadence</strong></td><td>Link the blog from the homepage and publish and refresh non branded problem solving content, the exact format AI cites.</td><td class="ev">Findings 8, 9</td></tr>
+<tr><td><span class="prio p3">P3</span></td><td><strong>Confirm and clean the sitemap</strong></td><td>Confirm the GOMO inclusion and keep the Singtel sitemap to Singtel URLs.</td><td class="ev">Finding 7</td></tr></tbody></table></div>
+  <p class="note" style="margin-top:14px">Full traffic detail, the complete per prompt tables for each AI surface and the raw Ahrefs breakdown are in the accompanying detailed document.</p>
+</section>
+
+<section id="growth">
+  <h2>Opportunities &amp; Next Actions</h2>
+  <p>Both estimates below are realistic, not ceilings. They already account for the two forces that take clicks away from organic listings in Singapore today: AI Overviews, which answer some queries directly without a click, and paid search (SEM), where competitors bid on the same terms. In other words these are the clicks we expect to earn after those effects, not the raw search volume.</p>
+  <div class="panel" style="margin-bottom:18px">
+      <h3 style="margin-bottom:6px">Opportunity 1 · Recover non-branded product traffic</h3>
+      <div class="callout" style="margin:6px 0 14px"><strong>Realistic estimate: about 10,000 visits per month (roughly 120,000 per year).</strong> This estimate is the observed gap to M1, who already competes in the same search results with AI Overviews and paid ads present. Because it is measured from real captured traffic, it is already net of those effects.</div>
+      <p><strong>Insight.</strong> Singtel earns non-branded product traffic on only 3 pages; M1 does it on 108, which is 15,432 versus 5,304 visits per month. The cause is not missing pages, it is how they are built. Singtel&#x27;s product and device pages are client-side rendered, so a crawler sees a near-empty shell. We confirmed this live: the Oppo A6 Pro page on shop.singtel.com serves a $0 placeholder and no specifications in the server HTML, while M1&#x27;s page for the same phone serves 17 real prices and full specs. That one difference is why the same phone ranks #11 for Singtel and #1 for M1, and why the Samsung S25 FE page exists but does not rank at all.</p>
+      <p style="margin-bottom:4px"><strong>Next actions.</strong></p>
+      <ul style="margin-top:0"><li>Improve the content inside the product pages (PDPs): server-side render the specifications, price and plan detail on product and device pages, and rewrite titles to the &quot;[Product] Specs, Price, Singapore&quot; pattern that M1 uses.</li><li>Create dedicated eSIM and roaming landing pages. These are missing today, and the eSIM head term (8,200 per month) sits at position #30.</li><li>Add pages for genuinely missing device models (for example the Vivo V60 page currently returns a 404).</li></ul>
+      
+    </div>
+<div class="panel" style="margin-bottom:18px">
+      <h3 style="margin-bottom:6px">Opportunity 2 · Expand the blog to fill the content topic gap</h3>
+      <div class="callout" style="margin:6px 0 14px"><strong>Realistic estimate: about 15,000 visits per month (roughly 180,000 per year).</strong> The ceiling for these ten topics is about 50,000 visits per month if Singtel ranked first on every one. The realistic figure is roughly 30 percent of that, because Singtel will not rank first everywhere, and AI Overviews and paid ads absorb part of the clicks.</div>
+      <p><strong>Insight.</strong> Singtel&#x27;s blog is mostly appliance buying guides (washing machines, vacuums, headphones, tablets). The telco educational topics that search and AI actually reward, such as WiFi troubleshooting, roaming, eSIM and broadband speed, are owned by MoneySmart, M1&#x27;s own blog and global players like Airalo. This matters for AI visibility too: in our run, AI cited editorial and how-to content in 762 of about 1,050 citations, the exact format the current blog does not produce.</p>
+      <p style="margin-bottom:4px"><strong>Next actions.</strong></p>
+      <ul style="margin-top:0"><li>Publish and maintain a telco how-to content track covering the topics below, then refresh them on a schedule.</li><li>Prioritise the two fastest, lowest-competition wins first: WiFi troubleshooting (Singtel should own &quot;singtel wifi down&quot;) and the eSIM travel guides (low difficulty, currently handed to Airalo and Holafly).</li></ul>
+      <table style="margin-top:12px"><thead><tr><th>Topic to create</th><th>Ceiling / mo</th></tr></thead><tbody><tr><td>Fix WiFi that keeps dropping or a weak signal</td><td class="num">~13,000</td></tr>
+<tr><td>Roaming guide: avoid bill shock, roaming by country</td><td class="num">~10,000</td></tr>
+<tr><td>Prepaid or tourist SIM guide for Singapore</td><td class="num">~8,900</td></tr>
+<tr><td>eSIM travel guides by destination (Malaysia, Japan, China)</td><td class="num">~8,000</td></tr>
+<tr><td>How much speed do you need, and what is fibre broadband</td><td class="num">~4,800</td></tr>
+<tr><td>How to secure your home WiFi</td><td class="num">~2,000</td></tr>
+<tr><td>How eSIM works and how to set one up</td><td class="num">~1,300</td></tr>
+<tr><td>Data saving tips: cut your mobile data usage</td><td class="num">~800</td></tr>
+<tr><td>What is 5G, and is it worth it (5G vs 4G)</td><td class="num">~700</td></tr>
+<tr><td>How to transfer an eSIM to a new phone</td><td class="num">~500</td></tr></tbody></table>
+    </div>
+  <div class="callout"><strong>Together these two opportunities are worth roughly 25,000 additional visits per month, or about 300,000 per year, on realistic (post AI Overview and post SEM) assumptions.</strong></div>
+</section>
+
+<p class="tag" style="border-top:1px solid var(--bd);padding-top:16px">NovaStacks · Preliminary SEO &amp; AEO Analysis for Singtel · 3 July 2026 · Findings validated against live server HTML. AI visibility measured via Google AI Overview, ChatGPT and Gemini.</p>
+</main></div></body></html>
