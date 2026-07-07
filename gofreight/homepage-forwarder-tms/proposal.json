@@ -1,0 +1,193 @@
+{
+  "page": "https://gofreight.com/",
+  "benchmark": "https://www.descartes.com/solutions/broker-and-forwarder-enterprise-systems/forwarder-tms",
+  "objective": "Make the GoFreight homepage also target the Forwarder TMS keyword cluster while keeping Freight Forwarding Software as the lead identity and AI powered as the differentiator. Rebalanced 2026-07-08 per client direction: no full keyword shift; hero and brand headings stay untouched.",
+  "date": "2026-07-08",
+  "keyword_data_source": "Ahrefs Keywords Explorer, US, pulled 2026-07-08",
+  "keywords": [
+    {"keyword": "freight forwarder tms", "volume_us": 100, "volume_global": 100, "kd": 7, "cpc_usd": 15.00},
+    {"keyword": "forwarder tms", "volume_us": 30, "volume_global": 50, "kd": null, "cpc_usd": null},
+    {"keyword": "tms for freight forwarders", "volume_us": 30, "volume_global": 70, "kd": null, "cpc_usd": null},
+    {"keyword": "freight forwarding tms", "volume_us": 10, "volume_global": 100, "kd": null, "cpc_usd": 25.00},
+    {"keyword": "freight forwarding software", "volume_us": 586, "volume_global": 2000, "kd": 2, "cpc_usd": 7.00},
+    {"keyword": "freight forwarder software", "volume_us": 288, "volume_global": 900, "kd": 24, "cpc_usd": 6.00},
+    {"keyword": "best freight forwarding software", "volume_us": 133, "volume_global": 450, "kd": 0, "cpc_usd": 17.00}
+  ],
+  "gap_summary": {
+    "gofreight_forwarder_tms_mentions_body": 0,
+    "descartes_forwarder_tms_mentions_body": 14,
+    "descartes_transportation_management_mentions": 15,
+    "descartes_components_missing_on_gofreight": [
+      "Exact keyword in H1 area (Descartes H1 = Freight Forwarder TMS; GoFreight hero eyebrow says FREIGHT FORWARDING SOFTWARE)",
+      "Definition section (What is Descartes Freight Forwarder TMS?) with 6 capability tiles",
+      "Buyer's Guide lead magnet (What to Look for in a Best-In-Class Forwarder TMS)",
+      "G2 social proof section with review quotes",
+      "Differentiator section (What Sets the Descartes Forwarder TMS Apart)",
+      "Customer success story links with keyword bearing copy"
+    ],
+    "gofreight_strengths_to_keep": [
+      "Strong AI narrative and named product modules (Action Center, GoNexus) that Descartes has no equivalent for",
+      "Real customer testimonials with names and companies in the hero",
+      "10 question FAQ (Descartes has none)",
+      "Organization, WebSite and SoftwareApplication JSON-LD already live"
+    ],
+    "technical_findings_verified_live": [
+      "Body text contains zero occurrences of forwarder TMS, freight forwarder TMS or TMS for freight forwarders (curl of live HTML, 2026-07-08)",
+      "Title tag contains All-in-one TMS but not the Forwarder TMS phrase",
+      "FAQ section of 10 questions has NO FAQPage JSON-LD (only VideoObject x4 and the Organization/WebSite/SoftwareApplication graph)",
+      "SoftwareApplication schema description says freight management software, not freight forwarder TMS",
+      "Canonical https://gofreight.com and lang=en are clean; no blockers found"
+    ]
+  },
+  "components": [
+    {
+      "n": 1,
+      "component": "Title tag",
+      "screenshot": null,
+      "before": "AI-Powered Freight Forwarding Software & All-in-one TMS | GoFreight",
+      "after": "AI-Powered Freight Forwarding Software & Forwarder TMS | GoFreight",
+      "rationale": "One swap only: All-in-one TMS becomes Forwarder TMS. The title keeps its current AI-Powered Freight Forwarding Software lead (586/mo US cluster) and gains the exact phrase Forwarder TMS (the cluster runs 10 to 100/mo US with CPCs of $15.00 to $25.00). All-in-one TMS matches no queried phrase, so nothing is lost."
+    },
+    {
+      "n": 2,
+      "component": "Meta description",
+      "screenshot": null,
+      "before": "AI-powered Freight Forwarding Software that helps forwarders automate workflows, cut costs, and scale faster with GoFreight.",
+      "after": "GoFreight is AI powered freight forwarding software and forwarder TMS in one platform. Automate documents, email intake, quoting, and operations so you scale without adding headcount.",
+      "rationale": "Leads with the existing freight forwarding software identity, adds forwarder TMS once for SERP snippet bolding, and mirrors the proof point already used in the FAQ (scale without hiring). 185 characters is within Google's rendered range for desktop."
+    },
+    {
+      "n": 3,
+      "component": "Hero eyebrow label (above H1)",
+      "screenshot": "comp/01-hero-h1.png",
+      "before": "FREIGHT FORWARDING SOFTWARE",
+      "after": "NO CHANGE. Keep FREIGHT FORWARDING SOFTWARE.",
+      "rationale": "Rebalanced per client direction: the hero keeps the freight forwarding software identity untouched. The Forwarder TMS phrase enters through the title tag and the new definition section instead, so the primary keyword is never displaced from the first screenful."
+    },
+    {
+      "n": 4,
+      "component": "Hero subheadline",
+      "screenshot": "comp/01-hero-h1.png",
+      "before": "Imagine freight forwarding where documents file themselves, tasks line up in order, and the right rate finds you first. That's what happens when you put GoFreight AI to work.",
+      "after": "NO CHANGE. Keep the current subheadline.",
+      "rationale": "Rebalanced per client direction: the hero stays 100% as published. The AI story is the hero's job; the category keywords are carried by the title, the definition section, and the FAQ."
+    },
+    {
+      "n": 5,
+      "component": "NEW SECTION: What is GoFreight? (insert between pain points and One AI section)",
+      "screenshot": "comp/02-pain-points.png",
+      "before": "(does not exist; page jumps from the four pain points straight into the AI feature modules)",
+      "after": "H2: What Is GoFreight? AI Powered Freight Forwarding Software and Forwarder TMS. One definition paragraph (GoFreight is AI powered freight forwarding software built specifically for forwarders. It works as your complete forwarder TMS...) followed by 6 capability tiles that reuse the existing capability nav: Rate & Quoting, Operations & Execution, Customer Experience, Workflow & Automation, Billing & Accounting, Reporting & Analytics, each linking to its capability page.",
+      "rationale": "Direct mirror of Descartes' What is Descartes Freight Forwarder TMS? section with 6 capability tiles, their main on page answer block. Gives Google and AI assistants a quotable definition tying GoFreight to the forwarder TMS and transportation management system entities, and adds internal links to the 7 capability pages that currently only live in the nav dropdown."
+    },
+    {
+      "n": 6,
+      "component": "Pain points intro copy",
+      "screenshot": "comp/02-pain-points.png",
+      "before": "Even with modern platforms in place, freight forwarders still face four daily gaps that slow decisions and impact performance across the business.",
+      "after": "Even with a traditional forwarder TMS in place, freight forwarders still face four daily gaps that slow decisions and impact performance across the business.",
+      "rationale": "One word class swap (modern platforms to traditional forwarder TMS) positions GoFreight against legacy forwarder TMS incumbents (Descartes, CargoWise) and adds a contextual keyword occurrence inside existing copy."
+    },
+    {
+      "n": 7,
+      "component": "H2: One AI to Power Every Step",
+      "screenshot": "comp/03-one-ai.png",
+      "before": "One AI to Power Every Step",
+      "after": "NO CHANGE. Keep One AI to Power Every Step.",
+      "rationale": "Rebalanced per client direction: this is a brand heading and the AI uniqueness carrier; forcing a category term into it reads as keyword stuffing. The new definition section directly above it now does the category work."
+    },
+    {
+      "n": 8,
+      "component": "H2: Action Center",
+      "screenshot": "comp/04-action-center.png",
+      "before": "Action Center",
+      "after": "Action Center: Every Shipment and Task in One Workspace",
+      "rationale": "Same finding as the Decube product page analysis: branded only H2s carry zero query terms. A descriptor after the product name preserves the brand while telling search engines what the module is."
+    },
+    {
+      "n": 9,
+      "component": "H2: GoNexus Email Intake",
+      "screenshot": "comp/05-gonexus-email.png",
+      "before": "GoNexus Email Intake",
+      "after": "GoNexus Email Intake: From Inbox to Shipment Automatically",
+      "rationale": "Descriptor makes the branded module self explanatory in headings only contexts (AI answer extraction, screen readers, SERP jump links). No keyword stuffing; the descriptor states the function."
+    },
+    {
+      "n": 10,
+      "component": "H2: GoNexus Hub",
+      "screenshot": "comp/06-gonexus-hub.png",
+      "before": "GoNexus Hub",
+      "after": "GoNexus Hub: AI Document Processing for Freight Files",
+      "rationale": "Same pattern: function descriptor after the product name."
+    },
+    {
+      "n": 11,
+      "component": "H2: Rate Management",
+      "screenshot": "comp/07-rate-management.png",
+      "before": "Rate Management",
+      "after": "Rate Management: Spot and Contract Rates in One View",
+      "rationale": "Rate Management is the one module heading that already matches a Descartes capability tile by name. The descriptor differentiates the GoFreight version (unified spot plus contract view) instead of leaving a generic two word heading."
+    },
+    {
+      "n": 12,
+      "component": "NEW SECTION: What sets GoFreight apart (insert after Rate Management, before FAQ)",
+      "screenshot": "comp/07-rate-management.png",
+      "before": "(does not exist)",
+      "after": "H2: What Makes GoFreight Different: AI Powered From the Ground Up. Intro line: Most freight forwarding software and forwarder TMS platforms were built before AI. GoFreight was rebuilt around it. Three tiles: AI Native, Not AI Added; 100% Cloud Based; Partnership, Not Just Software (echoing the Caitlin Murphy testimonial).",
+      "rationale": "Mirror of Descartes' What Sets the Forwarder TMS Apart section, but the heading leads with the AI uniqueness (client direction) while the intro line name-drops both category terms once each. Gives the comparison shopper explicit reasons on the homepage instead of only in the CargoWise alternatives whitepaper."
+    },
+    {
+      "n": 13,
+      "component": "NEW SECTION: G2 review proof strip (insert with the differentiator section)",
+      "screenshot": "comp/07-rate-management.png",
+      "before": "(does not exist; testimonials live only inside the hero carousel)",
+      "after": "Short strip: Freight forwarders rate GoFreight on G2, with 2 or 3 existing review quotes and a link to the GoFreight G2 profile. Reuse quotes already on the page (Headwin Global Logistics, Global Gateway Logistics) so no new claims are introduced.",
+      "rationale": "Descartes dedicates a full section to G2 quotes on the benchmark page. Third party review signals are among the most cited sources in AI shopping answers for software categories; the homepage currently exposes none outside the hero carousel."
+    },
+    {
+      "n": 14,
+      "component": "NEW RESOURCE BLOCK: Forwarder TMS Buyer's Guide (insert above FAQ or in the resources area)",
+      "screenshot": "comp/08-faq.png",
+      "before": "(does not exist; nav promotes The Complete Guide to CargoWise Alternatives in 2026)",
+      "after": "One card: Choosing a Freight Forwarding Software or Forwarder TMS? with a Get the Buyer's Guide CTA, linking to a gated or ungated guide. Fastest path: retitle or lightly extend the existing CargoWise alternatives whitepaper chapter on evaluation criteria.",
+      "rationale": "Descartes' primary conversion asset on the benchmark page is a Forwarder TMS buyer's guide. It captures evaluators who are not ready for a demo and creates a second page on the domain eligible to rank for forwarder TMS queries."
+    },
+    {
+      "n": 15,
+      "component": "Structured data: SoftwareApplication",
+      "screenshot": null,
+      "before": "name: GoFreight Freight Forwarding Management Software; description: AI-powered freight management software for freight forwarders to automate workflows and scale operations.",
+      "after": "name unchanged; description: AI powered freight forwarding software and forwarder TMS (transportation management system) that automates workflows and scales operations. Add applicationSubCategory: Freight Forwarder TMS.",
+      "rationale": "The schema description is machine readable positioning; it currently says freight management software, a shipper oriented category. Aligning it with forwarder TMS costs nothing and keeps the graph complete."
+    },
+    {
+      "n": 16,
+      "component": "Structured data: FAQPage (MISSING)",
+      "screenshot": "comp/08-faq.png",
+      "before": "(no FAQPage JSON-LD on the page despite a 10 question FAQ; verified in live HTML 2026-07-08)",
+      "after": "Add a FAQPage block covering all FAQ questions, matching the on page Q&A text exactly, appended to the existing @graph.",
+      "rationale": "The FAQ is the page's densest answer content and is invisible as structured data today. FAQPage markup must mirror the body text word for word per Google guidelines."
+    }
+  ],
+  "faq": [
+    {"n": 1, "current": "What is GoFreight?", "action": "REVISE", "proposed": "Answer revised to: GoFreight is AI powered, cloud based freight forwarding software built specifically for forwarders, and it works as a complete forwarder TMS. It brings shipment operations, quoting, invoicing, CRM, tracking, and business analytics into one platform, accessible from anywhere in the world with an internet connection.", "rationale": "Keeps freight forwarding software as the lead identity and adds forwarder TMS as the secondary descriptor; also removes an em dash per house style. This answer is the most likely text AI assistants quote for What is GoFreight."},
+    {"n": 2, "current": "Is GoFreight available in my country?", "action": "KEEP", "proposed": "(unchanged)", "rationale": "Strong geo coverage answer; no keyword work needed."},
+    {"n": 3, "current": "Can my back-office team in one country work with my operations team in another country using GoFreight?", "action": "KEEP", "proposed": "(unchanged)", "rationale": "Differentiated multi country answer; leave as is."},
+    {"n": 4, "current": "What types of freight does GoFreight support?", "action": "KEEP", "proposed": "(unchanged)", "rationale": "Covers ocean and air import and export cleanly."},
+    {"n": 5, "current": "How does GoFreight help freight forwarders grow without hiring more staff?", "action": "KEEP", "proposed": "(unchanged)", "rationale": "Carries the 30% more shipments and 2x productivity proof points."},
+    {"n": 6, "current": "Why is cloud-based software better than traditional freight forwarding software?", "action": "KEEP", "proposed": "(unchanged)", "rationale": "Already contrasts with legacy systems; adding TMS here would over optimize."},
+    {"n": 7, "current": "Does GoFreight support freight forwarding operations in Southeast Asia?", "action": "KEEP", "proposed": "(unchanged)", "rationale": "Regional answer, fine as is."},
+    {"n": 8, "current": "Does GoFreight work for freight forwarders in Greater China and Taiwan?", "action": "KEEP", "proposed": "(unchanged)", "rationale": "Regional answer, fine as is."},
+    {"n": 9, "current": "How does GoFreight improve customer service for freight forwarders?", "action": "KEEP", "proposed": "(unchanged)", "rationale": "Carries the 40% fewer inquiries proof point."},
+    {"n": 10, "current": "How do I get started with GoFreight?", "action": "KEEP", "proposed": "(unchanged)", "rationale": "Conversion answer, fine as is."},
+    {"n": 11, "current": "(none)", "action": "ADD", "proposed": "Q: What is a freight forwarder TMS? A: A freight forwarder TMS (transportation management system) is software built around how forwarders actually work: multimodal shipment execution, quoting and rate management, documentation, compliance filing, billing, and customer visibility in one system. GoFreight is AI powered freight forwarding software that covers this entire forwarder TMS workflow, from email intake to document processing to quoting.", "rationale": "The definitional query behind the whole cluster. Descartes answers it in a dedicated H2; GoFreight can answer it in the FAQ without redesigning the page."},
+    {"n": 12, "current": "(none)", "action": "ADD", "proposed": "Q: How is a forwarder TMS different from a general TMS? A: A general TMS is built for shippers and carriers to plan loads and manage fleets. A forwarder TMS is built for freight forwarders who sell and execute international shipments, so it centers on quoting, ocean and air documentation, compliance filings, partner settlement, and customer facing tracking. GoFreight covers this full forwarder workflow in one platform.", "rationale": "Disambiguation question that AI assistants ask and answer constantly; owning it positions GoFreight in the forwarder TMS category rather than the crowded general TMS category. Matches the TMS vs FMS anchor discipline: never blur distinct categories."}
+  ],
+  "priorities": [
+    "P1 (copy only, no design work): rows 1, 2, 6, 15 plus FAQ 1, 11, 12 and the FAQPage schema (row 16)",
+    "P2 (one new module each): row 5 definition section, row 12 differentiators, row 13 G2 strip",
+    "P3 (needs a content asset): row 14 buyer's guide",
+    "Module heading descriptors (rows 8 to 11) ship together as a single template edit",
+    "Rows 3, 4, 7 are deliberate NO CHANGE rows: hero and brand headings stay as published (client direction, 2026-07-08)"
+  ]
+}
