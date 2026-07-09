@@ -27,7 +27,7 @@
             line-height: 1.6;
         }
 
-        .container { max-width: 1240px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 20px; }
 
         .header {
             background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
@@ -73,15 +73,17 @@
         .table-scroll { overflow-x: auto; margin-bottom: 20px; }
         .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         .table-scroll .data-table { margin-bottom: 0; }
-        .data-table th { background: var(--medium-gray); color: white; padding: 12px 12px; text-align: left; font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap; }
+        .data-table th { background: var(--medium-gray); color: white; padding: 11px 11px; text-align: left; font-weight: 600; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
         .data-table th.num { text-align: right; }
-        .data-table td { padding: 11px 12px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .data-table td { padding: 10px 11px; border-bottom: 1px solid #eee; font-size: 0.88rem; }
         .data-table td.num { text-align: right; font-family: 'SF Mono', Monaco, monospace; white-space: nowrap; }
         .data-table tr:hover { background: #f9fafb; }
         .data-table tr.subtotal { background: #D9EBD9; font-weight: bold; }
+        .data-table tr.na-row td { color: #999; font-style: italic; }
         .data-table a { color: var(--primary-blue); text-decoration: none; }
         .data-table a:hover { text-decoration: underline; }
         .data-table.opp-table th { background: var(--teal); }
+        .data-table.pos-group th.posgrp, .data-table td.posgrp { background: rgba(1,170,193,0.05); }
         .badge { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 20px; background: var(--primary-blue); color: white; letter-spacing: 0.3px; }
 
         .segment-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 20px; }
@@ -161,7 +163,7 @@
             </div>
         </div>
 
-        <p style="font-size: 0.85rem; color: #666; margin: -10px 0 20px;"><em>Note: Flip GSC data is exported, not yet connected to a live API, so this report uses period-comparison exports. Branded and Non-Branded totals come from the query dimension; Globe and Blog figures come from the page dimension, so the two views differ and do not sum to the same total (Google anonymizes some low-volume queries, and the currency-converter pages sit outside both the Blog and Globe groups). Non-Branded means queries that do not contain the "flip" brand name (for example currency-converter and money-transfer terms such as "dolar ke rupiah", "kirim uang ke malaysia").</em></p>
+        <p style="font-size: 0.85rem; color: #666; margin: -10px 0 20px;"><em>Note: Flip GSC data is exported, not yet connected to a live API, so this report uses period-comparison exports. Branded and Non-Branded totals come from the query dimension; Globe, Calculator and Blog figures come from the page dimension, so the two views differ and do not sum to the same total (Google anonymizes some low-volume queries). Non-Branded means queries that do not contain the "flip" brand name (for example currency-converter and money-transfer terms such as "dolar ke rupiah", "kirim uang ke malaysia"). Position columns: lower is better; Pos &Delta; is previous minus current, so a positive green value means the ranking improved.</em></p>
 
         <div class="chart-grid">
             <div class="chart-container">
@@ -215,7 +217,7 @@
                 <tr>
                     <td><strong>3. Reporting</strong></td>
                     <td style="font-size:0.9rem;">
-                        &bull; Period over period GSC comparison across whole site, Globe and Blog<br>
+                        &bull; Period over period GSC comparison, segmented by Branded, Non-Branded, Blog, Calculator and Globe<br>
                         &bull; Target keyword performance tracking established (converter and Globe)
                     </td>
                     <td><span style="color: var(--success-green);">Done</span></td>
@@ -273,7 +275,7 @@
         </div>
 
         <div class="table-scroll">
-        <table class="data-table">
+        <table class="data-table pos-group">
             <thead>
                 <tr>
                     <th>Segment</th>
@@ -284,230 +286,169 @@
                     <th class="num">Impr (Prev)</th>
                     <th class="num">Impr &Delta;%</th>
                     <th class="num">CTR (Cur)</th>
-                    <th class="num">Pos (Cur)</th>
-                    <th class="num">Pos (Prev)</th>
+                    <th class="num posgrp">Pos (Cur)</th>
+                    <th class="num posgrp">Pos (Prev)</th>
+                    <th class="num posgrp">Pos &Delta;</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Branded</td>
-                    <td class="num">4,068</td>
-                    <td class="num">3,562</td>
-                    <td class="num trend-up">+14.21%</td>
-                    <td class="num">19,479</td>
-                    <td class="num">20,172</td>
-                    <td class="num trend-down">-3.44%</td>
+                    <td class="num">4,068</td><td class="num">3,562</td><td class="num trend-up">+14.21%</td>
+                    <td class="num">19,479</td><td class="num">20,172</td><td class="num trend-down">-3.44%</td>
                     <td class="num">20.88%</td>
-                    <td class="num">2.4</td>
-                    <td class="num">2.2</td>
+                    <td class="num posgrp">2.4</td><td class="num posgrp">2.2</td><td class="num posgrp trend-down">-0.2</td>
                 </tr>
                 <tr>
                     <td>Non-Branded</td>
-                    <td class="num">73,061</td>
-                    <td class="num">80,094</td>
-                    <td class="num trend-down">-8.78%</td>
-                    <td class="num">22,945,665</td>
-                    <td class="num">25,932,312</td>
-                    <td class="num trend-down">-11.52%</td>
+                    <td class="num">73,061</td><td class="num">80,094</td><td class="num trend-down">-8.78%</td>
+                    <td class="num">22,945,665</td><td class="num">25,932,312</td><td class="num trend-down">-11.52%</td>
                     <td class="num">0.32%</td>
-                    <td class="num trend-up">6.6</td>
-                    <td class="num">7.1</td>
+                    <td class="num posgrp">6.6</td><td class="num posgrp">7.1</td><td class="num posgrp trend-up">+0.5</td>
                 </tr>
                 <tr>
                     <td>Blog Pages</td>
-                    <td class="num">59,272</td>
-                    <td class="num">62,913</td>
-                    <td class="num trend-down">-5.79%</td>
-                    <td class="num">8,744,856</td>
-                    <td class="num">8,853,297</td>
-                    <td class="num trend-down">-1.22%</td>
+                    <td class="num">59,272</td><td class="num">62,913</td><td class="num trend-down">-5.79%</td>
+                    <td class="num">8,744,856</td><td class="num">8,853,297</td><td class="num trend-down">-1.22%</td>
                     <td class="num">0.68%</td>
-                    <td class="num">7.3</td>
-                    <td class="num">7.4</td>
+                    <td class="num posgrp">7.3</td><td class="num posgrp">7.4</td><td class="num posgrp trend-up">+0.1</td>
                 </tr>
                 <tr>
                     <td>Globe Pages</td>
-                    <td class="num">330</td>
-                    <td class="num">366</td>
-                    <td class="num trend-down">-9.84%</td>
-                    <td class="num">20,209</td>
-                    <td class="num">22,246</td>
-                    <td class="num trend-down">-9.16%</td>
+                    <td class="num">330</td><td class="num">366</td><td class="num trend-down">-9.84%</td>
+                    <td class="num">20,209</td><td class="num">22,246</td><td class="num trend-down">-9.16%</td>
                     <td class="num">1.63%</td>
-                    <td class="num trend-down">9.9</td>
-                    <td class="num">9.1</td>
+                    <td class="num posgrp">9.9</td><td class="num posgrp">9.1</td><td class="num posgrp trend-down">-0.8</td>
                 </tr>
                 <tr class="subtotal">
                     <td>ALL</td>
-                    <td class="num">77,129</td>
-                    <td class="num">83,656</td>
-                    <td class="num">-7.80%</td>
-                    <td class="num">22,965,144</td>
-                    <td class="num">25,952,484</td>
-                    <td class="num">-11.51%</td>
+                    <td class="num">77,129</td><td class="num">83,656</td><td class="num">-7.80%</td>
+                    <td class="num">22,965,144</td><td class="num">25,952,484</td><td class="num">-11.51%</td>
                     <td class="num">0.34%</td>
-                    <td class="num">6.8</td>
-                    <td class="num">7.0</td>
+                    <td class="num posgrp">6.8</td><td class="num posgrp">7.0</td><td class="num posgrp">+0.2</td>
                 </tr>
             </tbody>
         </table>
         </div>
-        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: Branded and Non-Branded are the query-dimension split (they sum to the site total). Blog and Globe are the page-dimension view and do not sum to the total, because the largest impression group, the currency-converter (kalkulator-mata-uang) pages, sits outside both. Non-Branded impressions of 22.9 million versus Blog 8.7 million shows roughly 14 million impressions come from the converter and core product pages.</em></p>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: Branded and Non-Branded are the query-dimension split (they sum to the site total). Blog and Globe are the page-dimension view and do not sum to the total, because the largest impression group, the currency-converter (kalkulator-mata-uang) pages, sits outside both. Non-Branded impressions of 22.9 million versus Blog 8.7 million shows roughly 14 million impressions come from the converter and core product pages. Notice that every segment improved or held position except Globe (9.1 to 9.9), which is the one true ranking signal to act on.</em></p>
 
-        <!-- Overall Top Pages -->
-        <h2 class="section-header">Top Pages (Whole Site)</h2>
+        <!-- ============ TOP PAGES BY SEGMENT ============ -->
+        <h2 class="section-header">Top Pages by Segment</h2>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Blog Pages (/blog/)</h3>
         <div class="table-scroll">
-        <table class="data-table">
+        <table class="data-table pos-group">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Page</th>
-                    <th class="num">Clicks (Cur)</th>
-                    <th class="num">Clicks (Prev)</th>
-                    <th class="num">Clicks &Delta;%</th>
-                    <th class="num">Impr (Cur)</th>
-                    <th class="num">Impr (Prev)</th>
-                    <th class="num">Impr &Delta;%</th>
-                    <th class="num">Pos</th>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>1</td><td><a href="https://flip.id/id/blog/cara-mengubah-pulsa-menjadi-saldo-dana" target="_blank">/id/blog/cara-mengubah-pulsa-menjadi-saldo-dana</a></td><td class="num">4,581</td><td class="num">7,053</td><td class="num trend-down">-35.05%</td><td class="num">130,364</td><td class="num">177,675</td><td class="num trend-down">-26.63%</td><td class="num">5.14</td></tr>
-                <tr><td>2</td><td><a href="https://flip.id/id/blog/cara-cek-imei-bea-cukai" target="_blank">/id/blog/cara-cek-imei-bea-cukai</a></td><td class="num">4,187</td><td class="num">5,005</td><td class="num trend-down">-16.34%</td><td class="num">139,582</td><td class="num">137,917</td><td class="num trend-up">+1.21%</td><td class="num">5.77</td></tr>
-                <tr style="background:#f0fdf4;"><td>3</td><td><a href="https://flip.id/" target="_blank">flip.id/ (Homepage)</a></td><td class="num">2,938</td><td class="num">2,628</td><td class="num trend-up">+11.80%</td><td class="num">47,643</td><td class="num">51,913</td><td class="num trend-down">-8.23%</td><td class="num">3.90</td></tr>
-                <tr><td>4</td><td><a href="https://flip.id/id/blog/cara-cek-kuota-im3" target="_blank">/id/blog/cara-cek-kuota-im3</a></td><td class="num">1,930</td><td class="num">2,058</td><td class="num trend-down">-6.22%</td><td class="num">127,365</td><td class="num">138,785</td><td class="num trend-down">-8.23%</td><td class="num">3.32</td></tr>
-                <tr><td>5</td><td><a href="https://flip.id/id/blog/cara-mengaktifkan-nomor-tri-yang-sudah-mati" target="_blank">/id/blog/cara-mengaktifkan-nomor-tri-yang-sudah-mati</a></td><td class="num">1,766</td><td class="num">1,919</td><td class="num trend-down">-7.97%</td><td class="num">38,845</td><td class="num">35,287</td><td class="num trend-up">+10.08%</td><td class="num">3.69</td></tr>
-                <tr><td>6</td><td><a href="https://flip.id/id/blog/cek-nomor-pelanggan-pdam" target="_blank">/id/blog/cek-nomor-pelanggan-pdam</a></td><td class="num">1,596</td><td class="num">1,457</td><td class="num trend-up">+9.54%</td><td class="num">20,879</td><td class="num">20,856</td><td class="num trend-up">+0.11%</td><td class="num">2.84</td></tr>
-                <tr><td>7</td><td><a href="https://flip.id/id/blog/cara-pengaduan-telepon-rumah" target="_blank">/id/blog/cara-pengaduan-telepon-rumah</a></td><td class="num">1,230</td><td class="num">1,234</td><td class="num trend-down">-0.32%</td><td class="num">30,519</td><td class="num">33,222</td><td class="num trend-down">-8.14%</td><td class="num">3.82</td></tr>
-                <tr><td>8</td><td><a href="https://flip.id/id/blog/cara-cek-subsidi-listrik" target="_blank">/id/blog/cara-cek-subsidi-listrik</a></td><td class="num">1,004</td><td class="num">1,068</td><td class="num trend-down">-5.99%</td><td class="num">26,893</td><td class="num">26,445</td><td class="num trend-up">+1.69%</td><td class="num">4.37</td></tr>
-                <tr><td>9</td><td><a href="https://flip.id/id/blog/ini-dia-10-jenis-tabungan-bca-yang-wajib-kamu-tahu" target="_blank">/id/blog/...10-jenis-tabungan-bca</a></td><td class="num">979</td><td class="num">793</td><td class="num trend-up">+23.46%</td><td class="num">87,314</td><td class="num">79,322</td><td class="num trend-up">+10.08%</td><td class="num">6.43</td></tr>
-                <tr><td>10</td><td><a href="https://flip.id/id/blog/langkah-langkah-cara-memasukkan-voucher-xl" target="_blank">/id/blog/...cara-memasukkan-voucher-xl</a></td><td class="num">962</td><td class="num">707</td><td class="num trend-up">+36.07%</td><td class="num">40,773</td><td class="num">41,248</td><td class="num trend-down">-1.15%</td><td class="num">3.87</td></tr>
-                <tr><td>11</td><td><a href="https://flip.id/id/kalkulator-mata-uang/idr-mys-myr" target="_blank">/id/kalkulator-mata-uang/idr-mys-myr <span class="badge" style="background:var(--teal);">Converter</span></a></td><td class="num">631</td><td class="num">973</td><td class="num trend-down">-35.15%</td><td class="num">334,979</td><td class="num">597,477</td><td class="num trend-down">-43.93%</td><td class="num">7.07</td></tr>
-                <tr><td>12</td><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/id/kalkulator-mata-uang/myr-mys-idr <span class="badge" style="background:var(--teal);">Converter</span></a></td><td class="num">574</td><td class="num">843</td><td class="num trend-down">-31.91%</td><td class="num">915,951</td><td class="num">1,362,064</td><td class="num trend-down">-32.75%</td><td class="num">6.95</td></tr>
-                <tr><td>13</td><td><a href="https://flip.id/id/blog/aplikasi-transfer-uang-gratis-ke-semua-bank" target="_blank">/id/blog/aplikasi-transfer-uang-gratis-ke-semua-bank</a></td><td class="num">585</td><td class="num">411</td><td class="num trend-up">+42.34%</td><td class="num">21,123</td><td class="num">16,845</td><td class="num trend-up">+25.40%</td><td class="num">4.16</td></tr>
-                <tr><td>14</td><td><a href="https://flip.id/id/kalkulator-mata-uang/sar-sau-idr" target="_blank">/id/kalkulator-mata-uang/sar-sau-idr <span class="badge" style="background:var(--teal);">Converter</span></a></td><td class="num">425</td><td class="num">541</td><td class="num trend-down">-21.44%</td><td class="num">486,683</td><td class="num">577,342</td><td class="num trend-down">-15.70%</td><td class="num">6.16</td></tr>
-                <tr><td>15</td><td><a href="https://flip.id/id/tentang-flip" target="_blank">/id/tentang-flip</a></td><td class="num">481</td><td class="num">450</td><td class="num trend-up">+6.89%</td><td class="num">20,632</td><td class="num">20,110</td><td class="num trend-up">+2.60%</td><td class="num">2.66</td></tr>
+                <tr><td>1</td><td><a href="https://flip.id/id/blog/cara-mengubah-pulsa-menjadi-saldo-dana" target="_blank">/id/blog/cara-mengubah-pulsa-menjadi-saldo-dana</a></td><td class="num">4,581</td><td class="num">7,053</td><td class="num trend-down">-35.05%</td><td class="num">130,364</td><td class="num">177,675</td><td class="num trend-down">-26.63%</td><td class="num posgrp">5.14</td><td class="num posgrp">5.32</td><td class="num posgrp trend-up">+0.18</td></tr>
+                <tr><td>2</td><td><a href="https://flip.id/id/blog/cara-cek-imei-bea-cukai" target="_blank">/id/blog/cara-cek-imei-bea-cukai</a></td><td class="num">4,187</td><td class="num">5,005</td><td class="num trend-down">-16.34%</td><td class="num">139,582</td><td class="num">137,917</td><td class="num trend-up">+1.21%</td><td class="num posgrp">5.77</td><td class="num posgrp">5.60</td><td class="num posgrp trend-down">-0.17</td></tr>
+                <tr><td>3</td><td><a href="https://flip.id/id/blog/cara-cek-kuota-im3" target="_blank">/id/blog/cara-cek-kuota-im3</a></td><td class="num">1,930</td><td class="num">2,058</td><td class="num trend-down">-6.22%</td><td class="num">127,365</td><td class="num">138,785</td><td class="num trend-down">-8.23%</td><td class="num posgrp">3.32</td><td class="num posgrp">3.37</td><td class="num posgrp trend-up">+0.05</td></tr>
+                <tr><td>4</td><td><a href="https://flip.id/id/blog/cara-mengaktifkan-nomor-tri-yang-sudah-mati" target="_blank">/id/blog/cara-mengaktifkan-nomor-tri-yang-sudah-mati</a></td><td class="num">1,766</td><td class="num">1,919</td><td class="num trend-down">-7.97%</td><td class="num">38,845</td><td class="num">35,287</td><td class="num trend-up">+10.08%</td><td class="num posgrp">3.69</td><td class="num posgrp">3.90</td><td class="num posgrp trend-up">+0.21</td></tr>
+                <tr><td>5</td><td><a href="https://flip.id/id/blog/cek-nomor-pelanggan-pdam" target="_blank">/id/blog/cek-nomor-pelanggan-pdam</a></td><td class="num">1,596</td><td class="num">1,457</td><td class="num trend-up">+9.54%</td><td class="num">20,879</td><td class="num">20,856</td><td class="num trend-up">+0.11%</td><td class="num posgrp">2.84</td><td class="num posgrp">2.94</td><td class="num posgrp trend-up">+0.10</td></tr>
+                <tr><td>6</td><td><a href="https://flip.id/id/blog/cara-pengaduan-telepon-rumah" target="_blank">/id/blog/cara-pengaduan-telepon-rumah</a></td><td class="num">1,230</td><td class="num">1,234</td><td class="num trend-down">-0.32%</td><td class="num">30,519</td><td class="num">33,222</td><td class="num trend-down">-8.14%</td><td class="num posgrp">3.82</td><td class="num posgrp">3.91</td><td class="num posgrp trend-up">+0.09</td></tr>
+                <tr><td>7</td><td><a href="https://flip.id/id/blog/cara-cek-subsidi-listrik" target="_blank">/id/blog/cara-cek-subsidi-listrik</a></td><td class="num">1,004</td><td class="num">1,068</td><td class="num trend-down">-5.99%</td><td class="num">26,893</td><td class="num">26,445</td><td class="num trend-up">+1.69%</td><td class="num posgrp">4.37</td><td class="num posgrp">4.46</td><td class="num posgrp trend-up">+0.09</td></tr>
+                <tr><td>8</td><td><a href="https://flip.id/id/blog/ini-dia-10-jenis-tabungan-bca-yang-wajib-kamu-tahu" target="_blank">/id/blog/...10-jenis-tabungan-bca</a></td><td class="num">979</td><td class="num">793</td><td class="num trend-up">+23.46%</td><td class="num">87,314</td><td class="num">79,322</td><td class="num trend-up">+10.08%</td><td class="num posgrp">6.43</td><td class="num posgrp">6.62</td><td class="num posgrp trend-up">+0.19</td></tr>
+                <tr><td>9</td><td><a href="https://flip.id/id/blog/langkah-langkah-cara-memasukkan-voucher-xl" target="_blank">/id/blog/...cara-memasukkan-voucher-xl</a></td><td class="num">962</td><td class="num">707</td><td class="num trend-up">+36.07%</td><td class="num">40,773</td><td class="num">41,248</td><td class="num trend-down">-1.15%</td><td class="num posgrp">3.87</td><td class="num posgrp">4.44</td><td class="num posgrp trend-up">+0.57</td></tr>
+                <tr><td>10</td><td><a href="https://flip.id/id/blog/aplikasi-transfer-uang-gratis-ke-semua-bank" target="_blank">/id/blog/aplikasi-transfer-uang-gratis-ke-semua-bank</a></td><td class="num">585</td><td class="num">411</td><td class="num trend-up">+42.34%</td><td class="num">21,123</td><td class="num">16,845</td><td class="num trend-up">+25.40%</td><td class="num posgrp">4.16</td><td class="num posgrp">4.35</td><td class="num posgrp trend-up">+0.19</td></tr>
             </tbody>
         </table>
         </div>
-        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Story: the top of the site is utility blog content (pulsa, IMEI, kuota, listrik, PDAM) and it is broadly stable. The homepage recovered (+11.80% clicks, position 5.03 to 3.90). The visible declines are concentrated in the currency-converter pages (rows 11, 12, 14), where impressions fell 16% to 44% while positions barely moved (7.07, 6.95, 6.16), confirming the drop is search demand, not lost rankings.</em></p>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Read: the blog base is stable to positive on position (9 of 10 held or improved). The two big utility guides (pulsa to DANA, IMEI) softened on demand, while several guides grew double digits (tabungan BCA +23%, voucher XL +36%, transfer gratis +42%). This is a healthy, low-risk segment.</em></p>
 
-        <!-- Overall Top Queries -->
-        <h2 class="section-header">Top Queries (Whole Site)</h2>
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Currency Converter Pages (/kalkulator-mata-uang/)</h3>
         <div class="table-scroll">
-        <table class="data-table">
+        <table class="data-table pos-group">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Query</th>
-                    <th class="num">Clicks (Cur)</th>
-                    <th class="num">Clicks (Prev)</th>
-                    <th class="num">Clicks &Delta;%</th>
-                    <th class="num">Impr (Cur)</th>
-                    <th class="num">Impr (Prev)</th>
-                    <th class="num">Impr &Delta;%</th>
-                    <th class="num">Pos</th>
-                    <th>Type</th>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>1</td><td>flip</td><td class="num">2,091</td><td class="num">1,787</td><td class="num trend-up">+17.01%</td><td class="num">8,932</td><td class="num">8,985</td><td class="num trend-down">-0.59%</td><td class="num">1.25</td><td>Brand</td></tr>
-                <tr><td>2</td><td>cek imei bea cukai</td><td class="num">1,304</td><td class="num">1,482</td><td class="num trend-down">-12.01%</td><td class="num">15,737</td><td class="num">18,808</td><td class="num trend-down">-16.33%</td><td class="num">2.08</td><td>Non-Brand</td></tr>
-                <tr><td>3</td><td>cek imei</td><td class="num">336</td><td class="num">266</td><td class="num trend-up">+26.32%</td><td class="num">47,498</td><td class="num">44,804</td><td class="num trend-up">+6.01%</td><td class="num">8.17</td><td>Non-Brand</td></tr>
-                <tr><td>4</td><td>cara cek kuota indosat</td><td class="num">175</td><td class="num">121</td><td class="num trend-up">+44.63%</td><td class="num">10,818</td><td class="num">12,087</td><td class="num trend-down">-10.50%</td><td class="num">2.44</td><td>Non-Brand</td></tr>
-                <tr><td>5</td><td>cek kuota indosat</td><td class="num">158</td><td class="num">184</td><td class="num trend-down">-14.13%</td><td class="num">19,287</td><td class="num">21,123</td><td class="num trend-down">-8.69%</td><td class="num">3.53</td><td>Non-Brand</td></tr>
-                <tr style="background:#fefce8;"><td>6</td><td>1 ringgit berapa rupiah</td><td class="num">127</td><td class="num">154</td><td class="num trend-down">-17.53%</td><td class="num">288,457</td><td class="num">334,347</td><td class="num trend-down">-13.73%</td><td class="num">4.81</td><td>Non-Brand</td></tr>
-                <tr><td>7</td><td>convert pulsa ke dana</td><td class="num">127</td><td class="num">239</td><td class="num trend-down">-46.86%</td><td class="num">4,185</td><td class="num">4,600</td><td class="num trend-down">-9.02%</td><td class="num">5.91</td><td>Non-Brand</td></tr>
-                <tr><td>8</td><td>flip id</td><td class="num">114</td><td class="num">111</td><td class="num trend-up">+2.70%</td><td class="num">316</td><td class="num">327</td><td class="num trend-down">-3.36%</td><td class="num">1.13</td><td>Brand</td></tr>
-                <tr><td>9</td><td>flip payment gateway</td><td class="num">105</td><td class="num">50</td><td class="num trend-up">+110.00%</td><td class="num">178</td><td class="num">87</td><td class="num trend-up">+104.60%</td><td class="num">1.47</td><td>Brand</td></tr>
-                <tr style="background:#fefce8;"><td>10</td><td>1 yen berapa rupiah</td><td class="num">91</td><td class="num">136</td><td class="num trend-down">-33.09%</td><td class="num">98,441</td><td class="num">132,836</td><td class="num trend-down">-25.89%</td><td class="num">4.28</td><td>Non-Brand</td></tr>
-                <tr style="background:#fefce8;"><td>11</td><td>1 riyal berapa rupiah 2026</td><td class="num">69</td><td class="num">34</td><td class="num trend-up">+102.94%</td><td class="num">40,149</td><td class="num">37,705</td><td class="num trend-up">+6.48%</td><td class="num">4.81</td><td>Non-Brand</td></tr>
-                <tr><td>12</td><td>rmb mata uang apa</td><td class="num">73</td><td class="num">129</td><td class="num trend-down">-43.41%</td><td class="num">3,286</td><td class="num">3,941</td><td class="num trend-down">-16.62%</td><td class="num">2.18</td><td>Non-Brand</td></tr>
-                <tr><td>13</td><td>flip career</td><td class="num">110</td><td class="num">110</td><td class="num trend-flat">0.00%</td><td class="num">168</td><td class="num">164</td><td class="num trend-up">+2.44%</td><td class="num">1.73</td><td>Brand</td></tr>
-                <tr style="background:#fefce8;"><td>14</td><td>ringgit ke rupiah</td><td class="num">38</td><td class="num">54</td><td class="num trend-down">-29.63%</td><td class="num">99,007</td><td class="num">165,917</td><td class="num trend-down">-40.33%</td><td class="num">6.90</td><td>Non-Brand</td></tr>
-                <tr style="background:#fefce8;"><td>15</td><td>dolar ke rupiah</td><td class="num">18</td><td class="num">23</td><td class="num trend-down">-21.74%</td><td class="num">88,277</td><td class="num">210,461</td><td class="num trend-down">-58.06%</td><td class="num">9.82</td><td>Non-Brand</td></tr>
+                <tr><td>1</td><td><a href="https://flip.id/id/kalkulator-mata-uang/idr-mys-myr" target="_blank">/idr-mys-myr</a></td><td class="num">631</td><td class="num">973</td><td class="num trend-down">-35.15%</td><td class="num">334,979</td><td class="num">597,477</td><td class="num trend-down">-43.93%</td><td class="num posgrp">7.07</td><td class="num posgrp">7.14</td><td class="num posgrp trend-up">+0.07</td></tr>
+                <tr><td>2</td><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/myr-mys-idr</a></td><td class="num">574</td><td class="num">843</td><td class="num trend-down">-31.91%</td><td class="num">915,951</td><td class="num">1,362,064</td><td class="num trend-down">-32.75%</td><td class="num posgrp">6.95</td><td class="num posgrp">6.80</td><td class="num posgrp trend-down">-0.15</td></tr>
+                <tr><td>3</td><td><a href="https://flip.id/id/kalkulator-mata-uang/sar-sau-idr" target="_blank">/sar-sau-idr</a></td><td class="num">425</td><td class="num">541</td><td class="num trend-down">-21.44%</td><td class="num">486,683</td><td class="num">577,342</td><td class="num trend-down">-15.70%</td><td class="num posgrp">6.16</td><td class="num posgrp">5.94</td><td class="num posgrp trend-down">-0.22</td></tr>
+                <tr><td>4</td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr" target="_blank">/jpy-jpn-idr (amount=1)</a></td><td class="num">333</td><td class="num">222</td><td class="num trend-up">+50.00%</td><td class="num">529,262</td><td class="num">458,540</td><td class="num trend-up">+15.42%</td><td class="num posgrp">6.59</td><td class="num posgrp">7.06</td><td class="num posgrp trend-up">+0.47</td></tr>
+                <tr><td>5</td><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr?amount=1" target="_blank">/myr-mys-idr (amount=1)</a></td><td class="num">282</td><td class="num">280</td><td class="num trend-up">+0.71%</td><td class="num">570,577</td><td class="num">441,929</td><td class="num trend-up">+29.11%</td><td class="num posgrp">5.46</td><td class="num posgrp">5.76</td><td class="num posgrp trend-up">+0.30</td></tr>
+                <tr><td>6</td><td><a href="https://flip.id/id/kalkulator-mata-uang" target="_blank">/kalkulator-mata-uang (hub)</a></td><td class="num">253</td><td class="num">321</td><td class="num trend-down">-21.18%</td><td class="num">294,324</td><td class="num">376,259</td><td class="num trend-down">-21.78%</td><td class="num posgrp">7.27</td><td class="num posgrp">7.61</td><td class="num posgrp trend-up">+0.34</td></tr>
+                <tr><td>7</td><td><a href="https://flip.id/id/kalkulator-mata-uang/idr-usa-usd" target="_blank">/idr-usa-usd</a></td><td class="num">218</td><td class="num">856</td><td class="num trend-down">-74.53%</td><td class="num">296,850</td><td class="num">794,390</td><td class="num trend-down">-62.63%</td><td class="num posgrp">7.78</td><td class="num posgrp">7.58</td><td class="num posgrp trend-down">-0.20</td></tr>
+                <tr><td>8</td><td><a href="https://flip.id/id/kalkulator-mata-uang/hkd-hkg-idr" target="_blank">/hkd-hkg-idr</a></td><td class="num">212</td><td class="num">224</td><td class="num trend-down">-5.36%</td><td class="num">81,146</td><td class="num">99,748</td><td class="num trend-down">-18.65%</td><td class="num posgrp">7.04</td><td class="num posgrp">7.27</td><td class="num posgrp trend-up">+0.23</td></tr>
+                <tr><td>9</td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/usd-usa-idr</a></td><td class="num">206</td><td class="num">300</td><td class="num trend-down">-31.33%</td><td class="num">684,488</td><td class="num">871,347</td><td class="num trend-down">-21.45%</td><td class="num posgrp">8.41</td><td class="num posgrp">8.63</td><td class="num posgrp trend-up">+0.22</td></tr>
+                <tr><td>10</td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr" target="_blank">/jpy-jpn-idr</a></td><td class="num">203</td><td class="num">368</td><td class="num trend-down">-44.84%</td><td class="num">316,226</td><td class="num">538,853</td><td class="num trend-down">-41.32%</td><td class="num posgrp">6.25</td><td class="num posgrp">6.36</td><td class="num posgrp trend-up">+0.11</td></tr>
             </tbody>
         </table>
         </div>
-        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Rows highlighted in yellow are currency-converter queries. Note how their impressions fell 14% to 58% while positions held (4.28, 4.81, 6.90, 9.82). "flip" and "flip payment gateway" (branded) both grew. This is the clearest evidence that the site-wide decline is demand and CTR, not ranking.</em></p>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Read: this is where the site-wide drop lives, and it is demand, not ranking. Positions held or improved on 8 of the 10 converter pages even as impressions fell 15% to 63%. The one real concern is idr-usa-usd (row 7), which lost 74% of clicks and slipped slightly (7.58 to 7.78); worth checking whether a competitor or an answer-box change took the top spot. Every one of these pages sits at position 6 to 8, one push away from the click zone.</em></p>
 
-        <!-- Overall Opportunities -->
-        <h2 class="section-header">Non-Branded Opportunities: High Impressions, Low Clicks (Currency Converter)</h2>
-        <div class="callout callout-yellow">
-            <h3>The single biggest lever on the site</h3>
-            <p>The currency-converter (kalkulator-mata-uang) pages hold the largest impression pools on flip.id but convert at 0.03% to 0.07% CTR because they sit at positions 6 to 8, below the answer box and the top results. These are the 2026 target pages. Moving them into the top 5 would convert enormous existing visibility into clicks. The exact target keywords are tracked in the Target Keyword Performance section.</p>
-        </div>
+        <!-- ============ TOP QUERIES BY SEGMENT ============ -->
+        <h2 class="section-header">Top Queries by Segment</h2>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Branded Queries (contain "flip")</h3>
         <div class="table-scroll">
-        <table class="data-table opp-table">
+        <table class="data-table pos-group">
             <thead>
                 <tr>
-                    <th>Converter Page</th>
-                    <th class="num">Impr (Cur)</th>
-                    <th class="num">Impr (Prev)</th>
-                    <th class="num">Clicks (Cur)</th>
-                    <th class="num">CTR</th>
-                    <th class="num">Pos</th>
-                    <th>Why it is an opportunity</th>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/id/kalkulator-mata-uang/myr-mys-idr</a></td>
-                    <td class="num">915,951</td>
-                    <td class="num">1,362,064</td>
-                    <td class="num">574</td>
-                    <td class="num">0.06%</td>
-                    <td class="num">6.95</td>
-                    <td>Largest single pool on the site (ringgit to rupiah). Position stable at 6.95 while impressions fell, so the pool is intact and only the ranking gap to top 5 is holding back clicks.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/id/kalkulator-mata-uang/usd-usa-idr</a></td>
-                    <td class="num">684,488</td>
-                    <td class="num">871,347</td>
-                    <td class="num">206</td>
-                    <td class="num">0.03%</td>
-                    <td class="num">8.41</td>
-                    <td>USD to IDR, the highest global demand of all (English "usd to idr" alone is 1.83 million monthly searches). Ranks only 8.41, so the ceiling here is the largest on the site.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr" target="_blank">/id/kalkulator-mata-uang/jpy-jpn-idr</a></td>
-                    <td class="num">529,262</td>
-                    <td class="num">458,540</td>
-                    <td class="num">333</td>
-                    <td class="num">0.06%</td>
-                    <td class="num">6.59</td>
-                    <td>Yen to rupiah. One of the few converter pages whose impressions grew (+15%). Position 6.59, a realistic top-5 push.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://flip.id/id/kalkulator-mata-uang/sar-sau-idr" target="_blank">/id/kalkulator-mata-uang/sar-sau-idr</a></td>
-                    <td class="num">486,683</td>
-                    <td class="num">577,342</td>
-                    <td class="num">425</td>
-                    <td class="num">0.09%</td>
-                    <td class="num">6.16</td>
-                    <td>Riyal to rupiah, tied to the Saudi remittance corridor. Best CTR and position of the group (6.16), closest to breaking into the top 5.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://flip.id/id/kalkulator-mata-uang/cny-chn-idr" target="_blank">/id/kalkulator-mata-uang/cny-chn-idr</a></td>
-                    <td class="num">418,516</td>
-                    <td class="num">473,189</td>
-                    <td class="num">184</td>
-                    <td class="num">0.04%</td>
-                    <td class="num">7.25</td>
-                    <td>Yuan to rupiah. Large pool at position 7.25 with only 0.04% CTR, a clear title and top-of-page content opportunity.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://flip.id/id/kalkulator-mata-uang/sgd-sgp-idr" target="_blank">/id/kalkulator-mata-uang/sgd-sgp-idr</a></td>
-                    <td class="num">325,057</td>
-                    <td class="num">562,313</td>
-                    <td class="num">90</td>
-                    <td class="num">0.03%</td>
-                    <td class="num">8.19</td>
-                    <td>SGD to IDR. Impressions almost halved but position held (8.19), and English "sgd to idr" is 246,000 monthly. Ranking gap, not a demand problem for the brand.</td>
-                </tr>
+                <tr><td>1</td><td>flip</td><td class="num">2,091</td><td class="num">1,787</td><td class="num trend-up">+17.01%</td><td class="num">8,932</td><td class="num">8,985</td><td class="num trend-down">-0.59%</td><td class="num posgrp">1.25</td><td class="num posgrp">1.60</td><td class="num posgrp trend-up">+0.35</td></tr>
+                <tr><td>2</td><td>flip id</td><td class="num">114</td><td class="num">111</td><td class="num trend-up">+2.70%</td><td class="num">316</td><td class="num">327</td><td class="num trend-down">-3.36%</td><td class="num posgrp">1.13</td><td class="num posgrp">1.00</td><td class="num posgrp trend-down">-0.13</td></tr>
+                <tr><td>3</td><td>flip career</td><td class="num">110</td><td class="num">110</td><td class="num trend-flat">0.00%</td><td class="num">168</td><td class="num">164</td><td class="num trend-up">+2.44%</td><td class="num posgrp">1.73</td><td class="num posgrp">1.38</td><td class="num posgrp trend-down">-0.35</td></tr>
+                <tr><td>4</td><td>flip payment gateway</td><td class="num">105</td><td class="num">50</td><td class="num trend-up">+110.00%</td><td class="num">178</td><td class="num">87</td><td class="num trend-up">+104.60%</td><td class="num posgrp">1.47</td><td class="num posgrp">1.05</td><td class="num posgrp trend-down">-0.42</td></tr>
+                <tr><td>5</td><td>fliptech</td><td class="num">71</td><td class="num">73</td><td class="num trend-down">-2.74%</td><td class="num">484</td><td class="num">452</td><td class="num trend-up">+7.08%</td><td class="num posgrp">1.59</td><td class="num posgrp">1.87</td><td class="num posgrp trend-up">+0.28</td></tr>
+                <tr><td>6</td><td>flip indonesia</td><td class="num">64</td><td class="num">56</td><td class="num trend-up">+14.29%</td><td class="num">168</td><td class="num">168</td><td class="num trend-flat">0.00%</td><td class="num posgrp">1.09</td><td class="num posgrp">1.23</td><td class="num posgrp trend-up">+0.14</td></tr>
+                <tr><td>7</td><td>flip globe</td><td class="num">54</td><td class="num">49</td><td class="num trend-up">+10.20%</td><td class="num">203</td><td class="num">189</td><td class="num trend-up">+7.41%</td><td class="num posgrp">1.25</td><td class="num posgrp">1.25</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr><td>8</td><td>flip login</td><td class="num">49</td><td class="num">25</td><td class="num trend-up">+96.00%</td><td class="num">173</td><td class="num">125</td><td class="num trend-up">+38.40%</td><td class="num posgrp">3.68</td><td class="num posgrp">7.29</td><td class="num posgrp trend-up">+3.61</td></tr>
+                <tr><td>9</td><td>flip for business</td><td class="num">48</td><td class="num">19</td><td class="num trend-up">+152.63%</td><td class="num">253</td><td class="num">136</td><td class="num trend-up">+86.03%</td><td class="num posgrp">1.34</td><td class="num posgrp">1.32</td><td class="num posgrp trend-down">-0.02</td></tr>
+                <tr><td>10</td><td>fliptech lentera inspirasi pertiwi</td><td class="num">41</td><td class="num">31</td><td class="num trend-up">+32.26%</td><td class="num">451</td><td class="num">318</td><td class="num trend-up">+41.82%</td><td class="num posgrp">1.95</td><td class="num posgrp">1.24</td><td class="num posgrp trend-down">-0.71</td></tr>
+                <tr><td>11</td><td>flip transfer</td><td class="num">38</td><td class="num">39</td><td class="num trend-down">-2.56%</td><td class="num">199</td><td class="num">166</td><td class="num trend-up">+19.88%</td><td class="num posgrp">2.55</td><td class="num posgrp">1.78</td><td class="num posgrp trend-down">-0.77</td></tr>
+                <tr><td>12</td><td>flip.id</td><td class="num">36</td><td class="num">24</td><td class="num trend-up">+50.00%</td><td class="num">116</td><td class="num">73</td><td class="num trend-up">+58.90%</td><td class="num posgrp">1.04</td><td class="num posgrp">1.00</td><td class="num posgrp trend-down">-0.04</td></tr>
             </tbody>
         </table>
         </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Read: brand demand is strong and broadening. "flip" grew +17% and improved to position 1.25, and the commercial brand terms surged: "flip payment gateway" +110%, "flip for business" +153%, "flip login" recovered from position 7.29 to 3.68. This is a healthy brand footprint, no action needed beyond maintaining it.</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Non-Branded Queries</h3>
+        <div class="table-scroll">
+        <table class="data-table pos-group">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>cek imei bea cukai</td><td class="num">1,304</td><td class="num">1,482</td><td class="num trend-down">-12.01%</td><td class="num">15,737</td><td class="num">18,808</td><td class="num trend-down">-16.33%</td><td class="num posgrp">2.08</td><td class="num posgrp">2.08</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr><td>2</td><td>cek imei</td><td class="num">336</td><td class="num">266</td><td class="num trend-up">+26.32%</td><td class="num">47,498</td><td class="num">44,804</td><td class="num trend-up">+6.01%</td><td class="num posgrp">8.17</td><td class="num posgrp">8.65</td><td class="num posgrp trend-up">+0.48</td></tr>
+                <tr><td>3</td><td>beacukai imei</td><td class="num">200</td><td class="num">243</td><td class="num trend-down">-17.70%</td><td class="num">4,495</td><td class="num">4,786</td><td class="num trend-down">-6.08%</td><td class="num posgrp">2.81</td><td class="num posgrp">2.72</td><td class="num posgrp trend-down">-0.09</td></tr>
+                <tr><td>4</td><td>bea cukai imei</td><td class="num">189</td><td class="num">241</td><td class="num trend-down">-21.58%</td><td class="num">3,081</td><td class="num">3,638</td><td class="num trend-down">-15.31%</td><td class="num posgrp">2.79</td><td class="num posgrp">2.75</td><td class="num posgrp trend-down">-0.04</td></tr>
+                <tr><td>5</td><td>cara cek kuota indosat</td><td class="num">175</td><td class="num">121</td><td class="num trend-up">+44.63%</td><td class="num">10,818</td><td class="num">12,087</td><td class="num trend-down">-10.50%</td><td class="num posgrp">2.44</td><td class="num posgrp">2.79</td><td class="num posgrp trend-up">+0.35</td></tr>
+                <tr><td>6</td><td>cek kuota indosat</td><td class="num">158</td><td class="num">184</td><td class="num trend-down">-14.13%</td><td class="num">19,287</td><td class="num">21,123</td><td class="num trend-down">-8.69%</td><td class="num posgrp">3.53</td><td class="num posgrp">3.41</td><td class="num posgrp trend-down">-0.12</td></tr>
+                <tr><td>7</td><td>cek imei beacukai</td><td class="num">147</td><td class="num">198</td><td class="num trend-down">-25.76%</td><td class="num">2,736</td><td class="num">3,041</td><td class="num trend-down">-10.03%</td><td class="num posgrp">2.09</td><td class="num posgrp">2.58</td><td class="num posgrp trend-up">+0.49</td></tr>
+                <tr style="background:#fefce8;"><td>8</td><td>1 ringgit berapa rupiah <span class="badge" style="background:var(--warning-yellow);color:#111;">Converter</span></td><td class="num">127</td><td class="num">154</td><td class="num trend-down">-17.53%</td><td class="num">288,457</td><td class="num">334,347</td><td class="num trend-down">-13.73%</td><td class="num posgrp">4.81</td><td class="num posgrp">5.53</td><td class="num posgrp trend-up">+0.72</td></tr>
+                <tr><td>9</td><td>convert pulsa ke dana</td><td class="num">127</td><td class="num">239</td><td class="num trend-down">-46.86%</td><td class="num">4,185</td><td class="num">4,600</td><td class="num trend-down">-9.02%</td><td class="num posgrp">5.91</td><td class="num posgrp">4.22</td><td class="num posgrp trend-down">-1.69</td></tr>
+                <tr><td>10</td><td>cek imei iphone bea cukai</td><td class="num">112</td><td class="num">116</td><td class="num trend-down">-3.45%</td><td class="num">1,167</td><td class="num">1,365</td><td class="num trend-down">-14.51%</td><td class="num posgrp">2.40</td><td class="num posgrp">2.56</td><td class="num posgrp trend-up">+0.16</td></tr>
+                <tr><td>11</td><td>call center telkom dari hp</td><td class="num">98</td><td class="num">123</td><td class="num trend-down">-20.33%</td><td class="num">657</td><td class="num">731</td><td class="num trend-down">-10.12%</td><td class="num posgrp">1.19</td><td class="num posgrp">1.23</td><td class="num posgrp trend-up">+0.04</td></tr>
+                <tr style="background:#fefce8;"><td>12</td><td>1 yen berapa rupiah <span class="badge" style="background:var(--warning-yellow);color:#111;">Converter</span></td><td class="num">91</td><td class="num">136</td><td class="num trend-down">-33.09%</td><td class="num">98,441</td><td class="num">132,836</td><td class="num trend-down">-25.89%</td><td class="num posgrp">4.28</td><td class="num posgrp">4.31</td><td class="num posgrp trend-up">+0.03</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Read: non-branded is led by two evergreen clusters, IMEI/bea-cukai and pulsa/kuota checks, both broadly holding position. The converter queries (highlighted) fell on impressions (13% to 26%) but their positions improved (1 ringgit berapa rupiah 5.53 to 4.81), confirming again that the decline is demand, not ranking. The one to watch is "convert pulsa ke dana" (row 9): clicks down 47% and position slipped 4.22 to 5.91, a genuine ranking dip to investigate.</em></p>
 
         <!-- ============ FLIP GLOBE DEEP DIVE ============ -->
         <div class="market-header">
@@ -551,71 +492,62 @@
 
         <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Globe Pages (priority countries flagged)</h3>
         <div class="table-scroll">
-        <table class="data-table">
+        <table class="data-table pos-group">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Globe Page</th>
-                    <th class="num">Clicks (Cur)</th>
-                    <th class="num">Clicks (Prev)</th>
-                    <th class="num">Clicks &Delta;%</th>
-                    <th class="num">Impr (Cur)</th>
-                    <th class="num">Impr (Prev)</th>
-                    <th class="num">Impr &Delta;%</th>
-                    <th class="num">Pos</th>
+                    <th>#</th><th>Globe Page</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
                 </tr>
             </thead>
             <tbody>
-                <tr style="background:#f0fdf4;"><td>1</td><td><a href="https://flip.id/id/globe/malaysia" target="_blank">/id/globe/malaysia</a> <span class="badge">Priority</span></td><td class="num">52</td><td class="num">49</td><td class="num trend-up">+6.12%</td><td class="num">3,901</td><td class="num">3,340</td><td class="num trend-up">+16.80%</td><td class="num">4.91</td></tr>
-                <tr style="background:#f0fdf4;"><td>2</td><td><a href="https://flip.id/en/globe/malaysia" target="_blank">/en/globe/malaysia</a> <span class="badge">Priority</span></td><td class="num">24</td><td class="num">28</td><td class="num trend-down">-14.29%</td><td class="num">830</td><td class="num">1,017</td><td class="num trend-down">-18.39%</td><td class="num">13.13</td></tr>
-                <tr style="background:#f0fdf4;"><td>3</td><td><a href="https://flip.id/id/globe/china" target="_blank">/id/globe/china</a> <span class="badge">Priority</span></td><td class="num">16</td><td class="num">7</td><td class="num trend-up">+128.57%</td><td class="num">792</td><td class="num">619</td><td class="num trend-up">+27.95%</td><td class="num">9.64</td></tr>
-                <tr><td>4</td><td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td><td class="num">15</td><td class="num">25</td><td class="num trend-down">-40.00%</td><td class="num">995</td><td class="num">1,019</td><td class="num trend-down">-2.36%</td><td class="num">5.62</td></tr>
-                <tr style="background:#f0fdf4;"><td>5</td><td><a href="https://flip.id/id/globe/philippines" target="_blank">/id/globe/philippines</a> <span class="badge">Priority</span></td><td class="num">14</td><td class="num">32</td><td class="num trend-down">-56.25%</td><td class="num">909</td><td class="num">1,232</td><td class="num trend-down">-26.22%</td><td class="num">4.48</td></tr>
-                <tr><td>6</td><td><a href="https://flip.id/id/globe/thailand" target="_blank">/id/globe/thailand</a></td><td class="num">13</td><td class="num">15</td><td class="num trend-down">-13.33%</td><td class="num">494</td><td class="num">471</td><td class="num trend-up">+4.88%</td><td class="num">4.87</td></tr>
-                <tr><td>7</td><td><a href="https://flip.id/id/globe/turkey" target="_blank">/id/globe/turkey</a></td><td class="num">12</td><td class="num">16</td><td class="num trend-down">-25.00%</td><td class="num">670</td><td class="num">1,185</td><td class="num trend-down">-43.46%</td><td class="num">6.46</td></tr>
-                <tr><td>8</td><td><a href="https://flip.id/id/globe/saudi-arabia" target="_blank">/id/globe/saudi-arabia</a></td><td class="num">10</td><td class="num">16</td><td class="num trend-down">-37.50%</td><td class="num">606</td><td class="num">882</td><td class="num trend-down">-31.29%</td><td class="num">5.42</td></tr>
-                <tr><td>9</td><td><a href="https://flip.id/id/globe/south-korea" target="_blank">/id/globe/south-korea</a></td><td class="num">10</td><td class="num">13</td><td class="num trend-down">-23.08%</td><td class="num">535</td><td class="num">598</td><td class="num trend-down">-10.54%</td><td class="num">4.79</td></tr>
-                <tr><td>10</td><td><a href="https://flip.id/id/globe/pakistan" target="_blank">/id/globe/pakistan</a></td><td class="num">10</td><td class="num">6</td><td class="num trend-up">+66.67%</td><td class="num">485</td><td class="num">506</td><td class="num trend-down">-4.15%</td><td class="num">7.47</td></tr>
-                <tr><td>11</td><td><a href="https://flip.id/id/globe/vietnam" target="_blank">/id/globe/vietnam</a></td><td class="num">10</td><td class="num">14</td><td class="num trend-down">-28.57%</td><td class="num">368</td><td class="num">297</td><td class="num trend-up">+23.91%</td><td class="num">4.45</td></tr>
-                <tr><td>12</td><td><a href="https://flip.id/id/globe/usa" target="_blank">/id/globe/usa</a></td><td class="num">10</td><td class="num">4</td><td class="num trend-up">+150.00%</td><td class="num">335</td><td class="num">285</td><td class="num trend-up">+17.54%</td><td class="num">8.79</td></tr>
-                <tr><td>13</td><td><a href="https://flip.id/id/globe/india" target="_blank">/id/globe/india</a></td><td class="num">9</td><td class="num">13</td><td class="num trend-down">-30.77%</td><td class="num">575</td><td class="num">541</td><td class="num trend-up">+6.28%</td><td class="num">5.98</td></tr>
-                <tr style="background:#f0fdf4;"><td>14</td><td><a href="https://flip.id/id/globe/singapore" target="_blank">/id/globe/singapore</a> <span class="badge">Priority</span></td><td class="num">8</td><td class="num">13</td><td class="num trend-down">-38.46%</td><td class="num">628</td><td class="num">738</td><td class="num trend-down">-14.91%</td><td class="num">6.43</td></tr>
-                <tr style="background:#f0fdf4;"><td>15</td><td><a href="https://flip.id/id/globe/australia" target="_blank">/id/globe/australia</a> <span class="badge">Priority</span></td><td class="num">8</td><td class="num">3</td><td class="num trend-up">+166.67%</td><td class="num">468</td><td class="num">386</td><td class="num trend-up">+21.24%</td><td class="num">4.90</td></tr>
+                <tr style="background:#f0fdf4;"><td>1</td><td><a href="https://flip.id/id/globe/malaysia" target="_blank">/id/globe/malaysia</a> <span class="badge">Priority</span></td><td class="num">52</td><td class="num">49</td><td class="num trend-up">+6.12%</td><td class="num">3,901</td><td class="num">3,340</td><td class="num trend-up">+16.80%</td><td class="num posgrp">4.91</td><td class="num posgrp">6.38</td><td class="num posgrp trend-up">+1.47</td></tr>
+                <tr style="background:#f0fdf4;"><td>2</td><td><a href="https://flip.id/en/globe/malaysia" target="_blank">/en/globe/malaysia</a> <span class="badge">Priority</span></td><td class="num">24</td><td class="num">28</td><td class="num trend-down">-14.29%</td><td class="num">830</td><td class="num">1,017</td><td class="num trend-down">-18.39%</td><td class="num posgrp">13.13</td><td class="num posgrp">9.30</td><td class="num posgrp trend-down">-3.83</td></tr>
+                <tr style="background:#f0fdf4;"><td>3</td><td><a href="https://flip.id/id/globe/china" target="_blank">/id/globe/china</a> <span class="badge">Priority</span></td><td class="num">16</td><td class="num">7</td><td class="num trend-up">+128.57%</td><td class="num">792</td><td class="num">619</td><td class="num trend-up">+27.95%</td><td class="num posgrp">9.64</td><td class="num posgrp">13.40</td><td class="num posgrp trend-up">+3.76</td></tr>
+                <tr><td>4</td><td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td><td class="num">15</td><td class="num">25</td><td class="num trend-down">-40.00%</td><td class="num">995</td><td class="num">1,019</td><td class="num trend-down">-2.36%</td><td class="num posgrp">5.62</td><td class="num posgrp">5.64</td><td class="num posgrp trend-up">+0.02</td></tr>
+                <tr style="background:#f0fdf4;"><td>5</td><td><a href="https://flip.id/id/globe/philippines" target="_blank">/id/globe/philippines</a> <span class="badge">Priority</span></td><td class="num">14</td><td class="num">32</td><td class="num trend-down">-56.25%</td><td class="num">909</td><td class="num">1,232</td><td class="num trend-down">-26.22%</td><td class="num posgrp">4.48</td><td class="num posgrp">5.10</td><td class="num posgrp trend-up">+0.62</td></tr>
+                <tr><td>6</td><td><a href="https://flip.id/id/globe/thailand" target="_blank">/id/globe/thailand</a></td><td class="num">13</td><td class="num">15</td><td class="num trend-down">-13.33%</td><td class="num">494</td><td class="num">471</td><td class="num trend-up">+4.88%</td><td class="num posgrp">4.87</td><td class="num posgrp">4.83</td><td class="num posgrp trend-down">-0.04</td></tr>
+                <tr><td>7</td><td><a href="https://flip.id/id/globe/turkey" target="_blank">/id/globe/turkey</a></td><td class="num">12</td><td class="num">16</td><td class="num trend-down">-25.00%</td><td class="num">670</td><td class="num">1,185</td><td class="num trend-down">-43.46%</td><td class="num posgrp">6.46</td><td class="num posgrp">6.41</td><td class="num posgrp trend-down">-0.05</td></tr>
+                <tr><td>8</td><td><a href="https://flip.id/id/globe/saudi-arabia" target="_blank">/id/globe/saudi-arabia</a></td><td class="num">10</td><td class="num">16</td><td class="num trend-down">-37.50%</td><td class="num">606</td><td class="num">882</td><td class="num trend-down">-31.29%</td><td class="num posgrp">5.42</td><td class="num posgrp">6.47</td><td class="num posgrp trend-up">+1.05</td></tr>
+                <tr><td>9</td><td><a href="https://flip.id/id/globe/south-korea" target="_blank">/id/globe/south-korea</a></td><td class="num">10</td><td class="num">13</td><td class="num trend-down">-23.08%</td><td class="num">535</td><td class="num">598</td><td class="num trend-down">-10.54%</td><td class="num posgrp">4.79</td><td class="num posgrp">4.74</td><td class="num posgrp trend-down">-0.05</td></tr>
+                <tr><td>10</td><td><a href="https://flip.id/id/globe/pakistan" target="_blank">/id/globe/pakistan</a></td><td class="num">10</td><td class="num">6</td><td class="num trend-up">+66.67%</td><td class="num">485</td><td class="num">506</td><td class="num trend-down">-4.15%</td><td class="num posgrp">7.47</td><td class="num posgrp">7.47</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr><td>11</td><td><a href="https://flip.id/id/globe/vietnam" target="_blank">/id/globe/vietnam</a></td><td class="num">10</td><td class="num">14</td><td class="num trend-down">-28.57%</td><td class="num">368</td><td class="num">297</td><td class="num trend-up">+23.91%</td><td class="num posgrp">4.45</td><td class="num posgrp">4.65</td><td class="num posgrp trend-up">+0.20</td></tr>
+                <tr><td>12</td><td><a href="https://flip.id/id/globe/usa" target="_blank">/id/globe/usa</a></td><td class="num">10</td><td class="num">4</td><td class="num trend-up">+150.00%</td><td class="num">335</td><td class="num">285</td><td class="num trend-up">+17.54%</td><td class="num posgrp">8.79</td><td class="num posgrp">9.28</td><td class="num posgrp trend-up">+0.49</td></tr>
+                <tr><td>13</td><td><a href="https://flip.id/id/globe/india" target="_blank">/id/globe/india</a></td><td class="num">9</td><td class="num">13</td><td class="num trend-down">-30.77%</td><td class="num">575</td><td class="num">541</td><td class="num trend-up">+6.28%</td><td class="num posgrp">5.98</td><td class="num posgrp">7.48</td><td class="num posgrp trend-up">+1.50</td></tr>
+                <tr style="background:#f0fdf4;"><td>14</td><td><a href="https://flip.id/id/globe/singapore" target="_blank">/id/globe/singapore</a> <span class="badge">Priority</span></td><td class="num">8</td><td class="num">13</td><td class="num trend-down">-38.46%</td><td class="num">628</td><td class="num">738</td><td class="num trend-down">-14.91%</td><td class="num posgrp">6.43</td><td class="num posgrp">6.25</td><td class="num posgrp trend-down">-0.18</td></tr>
+                <tr style="background:#f0fdf4;"><td>15</td><td><a href="https://flip.id/id/globe/australia" target="_blank">/id/globe/australia</a> <span class="badge">Priority</span></td><td class="num">8</td><td class="num">3</td><td class="num trend-up">+166.67%</td><td class="num">468</td><td class="num">386</td><td class="num trend-up">+21.24%</td><td class="num posgrp">4.90</td><td class="num posgrp">6.29</td><td class="num posgrp trend-up">+1.39</td></tr>
             </tbody>
         </table>
         </div>
 
         <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Globe Queries</h3>
         <div class="table-scroll">
-        <table class="data-table">
+        <table class="data-table pos-group">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Query</th>
-                    <th class="num">Clicks (Cur)</th>
-                    <th class="num">Clicks (Prev)</th>
-                    <th class="num">Impr (Cur)</th>
-                    <th class="num">Impr (Prev)</th>
-                    <th class="num">Pos (Cur)</th>
-                    <th class="num">Pos (Prev)</th>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
                     <th>Type</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>1</td><td>flip globe</td><td class="num">9</td><td class="num">7</td><td class="num">122</td><td class="num">24</td><td class="num">2.07</td><td class="num">1.62</td><td>Brand</td></tr>
-                <tr><td>2</td><td>flip transfer</td><td class="num">6</td><td class="num">2</td><td class="num">52</td><td class="num">6</td><td class="num">1.85</td><td class="num">1.83</td><td>Brand</td></tr>
-                <tr><td>3</td><td>cara kirim uang dari indonesia ke jepang</td><td class="num">3</td><td class="num">2</td><td class="num">14</td><td class="num">19</td><td class="num">3.07</td><td class="num">4.26</td><td>Non-Brand</td></tr>
-                <tr><td>4</td><td>flip global</td><td class="num">2</td><td class="num">2</td><td class="num">29</td><td class="num">3</td><td class="num">1.00</td><td class="num">1.67</td><td>Brand</td></tr>
-                <tr><td>5</td><td>kirim uang ke vietnam</td><td class="num">2</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">1.00</td><td class="num">0</td><td>Non-Brand</td></tr>
-                <tr><td>6</td><td>kirim uang dari indonesia ke malaysia</td><td class="num">1</td><td class="num">0</td><td class="num">42</td><td class="num">0</td><td class="num">4.52</td><td class="num">0</td><td>Non-Brand</td></tr>
-                <tr><td>7</td><td>cara kirim uang dari pakistan ke indonesia</td><td class="num">1</td><td class="num">0</td><td class="num">41</td><td class="num">28</td><td class="num">9.63</td><td class="num">8.93</td><td>Non-Brand</td></tr>
-                <tr><td>8</td><td>how to send money from indonesia to philippines</td><td class="num">1</td><td class="num">1</td><td class="num">16</td><td class="num">2</td><td class="num">4.44</td><td class="num">5.00</td><td>Non-Brand</td></tr>
-                <tr><td>9</td><td>transfer uang ke malaysia</td><td class="num">1</td><td class="num">0</td><td class="num">9</td><td class="num">17</td><td class="num">11.22</td><td class="num">11.06</td><td>Non-Brand</td></tr>
-                <tr><td>10</td><td>mata uang slovakia</td><td class="num">0</td><td class="num">0</td><td class="num">52</td><td class="num">0</td><td class="num">11.94</td><td class="num">0</td><td>Non-Brand</td></tr>
+                <tr><td>1</td><td>flip globe</td><td class="num">9</td><td class="num">7</td><td class="num">122</td><td class="num">24</td><td class="num posgrp">2.07</td><td class="num posgrp">1.62</td><td class="num posgrp trend-down">-0.45</td><td>Brand</td></tr>
+                <tr><td>2</td><td>flip transfer</td><td class="num">6</td><td class="num">2</td><td class="num">52</td><td class="num">6</td><td class="num posgrp">1.85</td><td class="num posgrp">1.83</td><td class="num posgrp trend-down">-0.02</td><td>Brand</td></tr>
+                <tr><td>3</td><td>cara kirim uang dari indonesia ke jepang</td><td class="num">3</td><td class="num">2</td><td class="num">14</td><td class="num">19</td><td class="num posgrp">3.07</td><td class="num posgrp">4.26</td><td class="num posgrp trend-up">+1.19</td><td>Non-Brand</td></tr>
+                <tr><td>4</td><td>flip global</td><td class="num">2</td><td class="num">2</td><td class="num">29</td><td class="num">3</td><td class="num posgrp">1.00</td><td class="num posgrp">1.67</td><td class="num posgrp trend-up">+0.67</td><td>Brand</td></tr>
+                <tr><td>5</td><td>kirim uang ke vietnam</td><td class="num">2</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num posgrp">1.00</td><td class="num posgrp">0</td><td class="num posgrp trend-up">New</td><td>Non-Brand</td></tr>
+                <tr><td>6</td><td>kirim uang dari indonesia ke malaysia</td><td class="num">1</td><td class="num">0</td><td class="num">42</td><td class="num">0</td><td class="num posgrp">4.52</td><td class="num posgrp">0</td><td class="num posgrp trend-up">New</td><td>Non-Brand</td></tr>
+                <tr><td>7</td><td>cara kirim uang dari pakistan ke indonesia</td><td class="num">1</td><td class="num">0</td><td class="num">41</td><td class="num">28</td><td class="num posgrp">9.63</td><td class="num posgrp">8.93</td><td class="num posgrp trend-down">-0.70</td><td>Non-Brand</td></tr>
+                <tr><td>8</td><td>how to send money from indonesia to philippines</td><td class="num">1</td><td class="num">1</td><td class="num">16</td><td class="num">2</td><td class="num posgrp">4.44</td><td class="num posgrp">5.00</td><td class="num posgrp trend-up">+0.56</td><td>Non-Brand</td></tr>
+                <tr><td>9</td><td>transfer uang ke malaysia</td><td class="num">1</td><td class="num">0</td><td class="num">9</td><td class="num">17</td><td class="num posgrp">11.22</td><td class="num posgrp">11.06</td><td class="num posgrp trend-down">-0.16</td><td>Non-Brand</td></tr>
+                <tr><td>10</td><td>mata uang slovakia</td><td class="num">0</td><td class="num">0</td><td class="num">52</td><td class="num">0</td><td class="num posgrp">11.94</td><td class="num posgrp">0</td><td class="num posgrp trend-up">New</td><td>Non-Brand</td></tr>
             </tbody>
         </table>
         </div>
-        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Story: Globe query demand is small and fragmented (mostly 1 to 9 clicks per query) and it is dominated by branded terms ("flip globe", "flip transfer", "flip global"). The non-branded transfer queries that do appear rank well (positions 1 to 4.5) but carry tiny impressions. The bottleneck is not ranking for these exact phrases; it is that per-country pages are not yet capturing the larger head-term demand (see Target Keyword Performance).</em></p>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Read: Globe query demand is small and fragmented (mostly 1 to 9 clicks per query) and dominated by branded terms. The non-branded transfer queries that do appear rank well (positions 1 to 4.5) but carry tiny impressions. The bottleneck is not ranking these exact phrases; it is that per-country pages are not yet capturing the larger head-term demand (see Target Keyword Performance).</em></p>
 
         <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Opportunity Pages Outside the Priority Countries (Top 5)</h3>
         <div class="callout callout-green">
@@ -623,171 +555,147 @@
             <p>The current priority list is Malaysia, China, Singapore, Australia and the Philippines. Looking at the data, the next best opportunities are remittance corridors with real Indonesian worker populations abroad, where Flip already holds a decent position and a meaningful impression pool. These are the pages to add to the dynamic-content roadmap next.</p>
         </div>
         <div class="table-scroll">
-        <table class="data-table opp-table">
+        <table class="data-table opp-table pos-group">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Globe Page (non-priority)</th>
-                    <th class="num">Impr (Cur)</th>
-                    <th class="num">Clicks (Cur)</th>
-                    <th class="num">CTR</th>
-                    <th class="num">Pos</th>
+                    <th>#</th><th>Globe Page (non-priority)</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Clk (Cur)</th><th class="num">CTR</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
                     <th>Why it is an opportunity</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td>
-                    <td class="num">995</td>
-                    <td class="num">15</td>
-                    <td class="num">1.51%</td>
-                    <td class="num">5.62</td>
-                    <td>Largest non-priority pool and a strong position (5.62). Clicks fell 40% while impressions held (-2.36%), so it lost a few specific queries and can be recovered with content and internal links. Growing Indonesian community and student population in Japan.</td>
+                    <td>1</td><td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td>
+                    <td class="num">995</td><td class="num">15</td><td class="num">1.51%</td>
+                    <td class="num posgrp">5.62</td><td class="num posgrp">5.64</td><td class="num posgrp trend-up">+0.02</td>
+                    <td>Largest non-priority pool and a strong, stable position. Clicks fell 40% while impressions held, so it lost a few specific queries and can be recovered with content and internal links. Growing Indonesian student and worker population in Japan.</td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td><a href="https://flip.id/id/globe/saudi-arabia" target="_blank">/id/globe/saudi-arabia</a></td>
-                    <td class="num">606</td>
-                    <td class="num">10</td>
-                    <td class="num">1.65%</td>
-                    <td class="num">5.42</td>
-                    <td>Major remittance corridor (Indonesian workers in Saudi Arabia) and it pairs with the strong sar-sau-idr converter page. Position 5.42 is a realistic top-3 push.</td>
+                    <td>2</td><td><a href="https://flip.id/id/globe/saudi-arabia" target="_blank">/id/globe/saudi-arabia</a></td>
+                    <td class="num">606</td><td class="num">10</td><td class="num">1.65%</td>
+                    <td class="num posgrp">5.42</td><td class="num posgrp">6.47</td><td class="num posgrp trend-up">+1.05</td>
+                    <td>Major remittance corridor (Indonesian workers in Saudi Arabia), position improving, and it pairs with the strong sar-sau-idr converter page. A realistic top-3 push.</td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td><a href="https://flip.id/id/globe/india" target="_blank">/id/globe/india</a></td>
-                    <td class="num">575</td>
-                    <td class="num">9</td>
-                    <td class="num">1.57%</td>
-                    <td class="num">5.98</td>
-                    <td>Impressions grew +6.28% while clicks dipped, a CTR and content opportunity at position 5.98. India is a large, rising transfer corridor.</td>
+                    <td>3</td><td><a href="https://flip.id/id/globe/india" target="_blank">/id/globe/india</a></td>
+                    <td class="num">575</td><td class="num">9</td><td class="num">1.57%</td>
+                    <td class="num posgrp">5.98</td><td class="num posgrp">7.48</td><td class="num posgrp trend-up">+1.50</td>
+                    <td>Position improved sharply (7.48 to 5.98) and impressions grew +6.28%. A rising corridor with clear momentum, worth content investment now.</td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td><a href="https://flip.id/id/globe/south-korea" target="_blank">/id/globe/south-korea</a></td>
-                    <td class="num">535</td>
-                    <td class="num">10</td>
-                    <td class="num">1.87%</td>
-                    <td class="num">4.79</td>
-                    <td>Best position of the group (4.79), closest to the top 3. Strong Indonesian worker and student corridor. A small position gain converts the existing pool directly.</td>
+                    <td>4</td><td><a href="https://flip.id/id/globe/south-korea" target="_blank">/id/globe/south-korea</a></td>
+                    <td class="num">535</td><td class="num">10</td><td class="num">1.87%</td>
+                    <td class="num posgrp">4.79</td><td class="num posgrp">4.74</td><td class="num posgrp trend-down">-0.05</td>
+                    <td>Best position of the group (4.79), closest to the top 3. Strong Indonesian worker and student corridor. A small position gain converts the pool directly.</td>
                 </tr>
                 <tr>
-                    <td>5</td>
-                    <td><a href="https://flip.id/id/globe/turkey" target="_blank">/id/globe/turkey</a></td>
-                    <td class="num">670</td>
-                    <td class="num">12</td>
-                    <td class="num">1.79%</td>
-                    <td class="num">6.46</td>
+                    <td>5</td><td><a href="https://flip.id/id/globe/turkey" target="_blank">/id/globe/turkey</a></td>
+                    <td class="num">670</td><td class="num">12</td><td class="num">1.79%</td>
+                    <td class="num posgrp">6.46</td><td class="num posgrp">6.41</td><td class="num posgrp trend-down">-0.05</td>
                     <td>Second largest non-priority pool. Impressions fell 43% (a demand swing) but the page holds position 6.46, so recovery plus a top-5 push is achievable.</td>
                 </tr>
             </tbody>
         </table>
         </div>
-        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Honorable mentions: Vietnam (position 4.45, impressions +23.91%), Pakistan (clicks +66.67%, genuine "cara kirim uang dari pakistan ke indonesia" demand) and USA (clicks +150%). All three are rising and worth watching for the next roadmap wave.</em></p>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Honorable mentions: Vietnam (position 4.45, impressions +23.91%), Pakistan (clicks +66.67%, genuine "cara kirim uang dari pakistan ke indonesia" demand) and USA (clicks +150%, position improved to 8.79). All three are rising and worth watching for the next roadmap wave.</em></p>
 
         <!-- ============ TARGET KEYWORD PERFORMANCE ============ -->
         <h2 class="section-header">Target Keyword Performance (2026 Targets vs GSC)</h2>
         <div class="callout callout-blue">
             <h3>How to read this</h3>
-            <p>These are the 2026 target keywords for Flip's converter and Globe products. For each, we cross-checked the actual Google Search Console signal for this period (clicks, impressions and average position). Where a target keyword has no GSC data this period, it is marked N/A. Positions are the true GSC average position, which can differ from third-party rank trackers because GSC blends devices, locations and the exact query.</p>
+            <p>These are the 2026 target keywords for Flip's converter and Globe products. For each, we show the intended <strong>target landing page</strong> and cross-check the actual Google Search Console signal for this period (clicks, impressions and position, current and previous). Keywords with no GSC data this period are marked N/A and sorted to the bottom of each table. GSC positions can differ from third-party rank trackers because GSC blends devices, locations and the exact query.</p>
         </div>
 
-        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Currency Converter Targets (highest demand)</h3>
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Currency Converter Targets, Indonesian</h3>
         <div class="table-scroll">
-        <table class="data-table">
+        <table class="data-table pos-group">
             <thead>
                 <tr>
-                    <th>Target Keyword</th>
-                    <th class="num">MSV</th>
-                    <th>Target</th>
-                    <th class="num">GSC Clicks (Cur/Prev)</th>
-                    <th class="num">GSC Impr (Cur/Prev)</th>
-                    <th class="num">GSC Pos</th>
-                    <th>Read</th>
+                    <th>Target Keyword</th><th class="num">MSV</th><th>Target</th><th>Target Landing Page</th>
+                    <th class="num">GSC Clk (Cur/Prev)</th><th class="num">GSC Impr (Cur/Prev)</th>
+                    <th class="num posgrp">GSC Pos (Cur/Prev)</th><th>Read</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>dolar ke rupiah</td><td class="num">450,000</td><td>Top 5</td><td class="num">18 / 23</td><td class="num">88,277 / 210,461</td><td class="num">9.82</td><td>Impr down, position stable. Trending. Needs a push to top 5.</td></tr>
-                <tr><td>ringgit ke rupiah</td><td class="num">135,000</td><td>Top 3</td><td class="num">38 / 54</td><td class="num">99,007 / 165,917</td><td class="num">6.90</td><td>Same pattern. Position 6.90, realistic top-3 target.</td></tr>
-                <tr style="background:#f0fdf4;"><td>yen ke rupiah</td><td class="num">90,500</td><td>Top 5</td><td class="num">61 / 34</td><td class="num">44,141 / 54,237</td><td class="num">5.65</td><td>Clicks up +79%, position improved 6.71 to 5.65. On track.</td></tr>
-                <tr><td>dollar ke rupiah</td><td class="num">60,500</td><td>Top 5</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td><td>No exact GSC match this period (demand consolidating on "dolar ke rupiah").</td></tr>
-                <tr style="background:#f0fdf4;"><td>euro ke rupiah</td><td class="num">49,500</td><td>Top 5</td><td class="num">13 / 5</td><td class="num">11,082 / 10,413</td><td class="num">7.25</td><td>Clicks up, position improved 8.10 to 7.25.</td></tr>
-                <tr><td>usd ke rupiah</td><td class="num">49,500</td><td>Top 5</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td><td>No exact GSC match this period.</td></tr>
-                <tr><td>won ke rupiah</td><td class="num">49,500</td><td>Top 5</td><td class="num">13 / 16</td><td class="num">18,522 / 23,558</td><td class="num">5.78</td><td>Position stable at 5.78. Close to top 5.</td></tr>
-                <tr><td>kurs ringgit ke rupiah</td><td class="num">33,100</td><td>Top 5</td><td class="num">13 / 13</td><td class="num">17,531 / 25,242</td><td class="num">7.78</td><td>Clicks held; impressions softened. Position 7.78.</td></tr>
-                <tr><td>rm ke rupiah</td><td class="num">27,100</td><td>Top 3</td><td class="num">19 / 22</td><td class="num">6,470 / 7,850</td><td class="num">5.39</td><td>Position 5.39, within reach of top 3.</td></tr>
-                <tr><td>yuan ke rupiah</td><td class="num">27,100</td><td>Top 5</td><td class="num">8 / 5</td><td class="num">24,161 / 29,093</td><td class="num">6.34</td><td>Clicks up, position 6.34.</td></tr>
+                <tr><td>dolar ke rupiah</td><td class="num">450,000</td><td>Top 5</td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/kalkulator-mata-uang/usd-usa-idr</a></td><td class="num">18 / 23</td><td class="num">88,277 / 210,461</td><td class="num posgrp">9.82 / 10.13</td><td>Impr down, position stable. Trending. Needs a push to top 5.</td></tr>
+                <tr><td>ringgit ke rupiah</td><td class="num">135,000</td><td>Top 3</td><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/kalkulator-mata-uang/myr-mys-idr</a></td><td class="num">38 / 54</td><td class="num">99,007 / 165,917</td><td class="num posgrp">6.90 / 6.66</td><td>Same pattern. Position 6.90, realistic top-3 target.</td></tr>
+                <tr style="background:#f0fdf4;"><td>yen ke rupiah</td><td class="num">90,500</td><td>Top 5</td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr" target="_blank">/kalkulator-mata-uang/jpy-jpn-idr</a></td><td class="num">61 / 34</td><td class="num">44,141 / 54,237</td><td class="num posgrp">5.65 / 6.71</td><td>Clicks up +79%, position improved. On track.</td></tr>
+                <tr style="background:#f0fdf4;"><td>euro ke rupiah</td><td class="num">49,500</td><td>Top 5</td><td><a href="https://flip.id/id/kalkulator-mata-uang/eur-deu-idr" target="_blank">/kalkulator-mata-uang/eur-deu-idr</a></td><td class="num">13 / 5</td><td class="num">11,082 / 10,413</td><td class="num posgrp">7.25 / 8.10</td><td>Clicks up, position improved 8.10 to 7.25.</td></tr>
+                <tr><td>won ke rupiah</td><td class="num">49,500</td><td>Top 5</td><td><a href="https://flip.id/id/kalkulator-mata-uang/krw-kor-idr" target="_blank">/kalkulator-mata-uang/krw-kor-idr</a></td><td class="num">13 / 16</td><td class="num">18,522 / 23,558</td><td class="num posgrp">5.78 / 5.65</td><td>Position stable at 5.78. Close to top 5.</td></tr>
+                <tr><td>kurs ringgit ke rupiah</td><td class="num">33,100</td><td>Top 5</td><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/kalkulator-mata-uang/myr-mys-idr</a></td><td class="num">13 / 13</td><td class="num">17,531 / 25,242</td><td class="num posgrp">7.78 / 7.67</td><td>Clicks held; impressions softened. Position 7.78.</td></tr>
+                <tr><td>rm ke rupiah</td><td class="num">27,100</td><td>Top 3</td><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/kalkulator-mata-uang/myr-mys-idr</a></td><td class="num">19 / 22</td><td class="num">6,470 / 7,850</td><td class="num posgrp">5.39 / 4.96</td><td>Position 5.39, within reach of top 3.</td></tr>
+                <tr><td>yuan ke rupiah</td><td class="num">27,100</td><td>Top 5</td><td><a href="https://flip.id/id/kalkulator-mata-uang/cny-chn-idr" target="_blank">/kalkulator-mata-uang/cny-chn-idr</a></td><td class="num">8 / 5</td><td class="num">24,161 / 29,093</td><td class="num posgrp">6.34 / 7.21</td><td>Clicks up, position improved to 6.34.</td></tr>
+                <tr class="na-row"><td>dollar ke rupiah</td><td class="num">60,500</td><td>Top 5</td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/kalkulator-mata-uang/usd-usa-idr</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td><td>No exact GSC match this period (demand consolidating on "dolar ke rupiah").</td></tr>
+                <tr class="na-row"><td>usd ke rupiah</td><td class="num">49,500</td><td>Top 5</td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/kalkulator-mata-uang/usd-usa-idr</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td><td>No exact GSC match this period.</td></tr>
             </tbody>
         </table>
         </div>
 
-        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">English Converter Targets (the biggest untapped gap)</h3>
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Currency Converter Targets, English (the biggest untapped gap)</h3>
         <div class="table-scroll">
-        <table class="data-table">
+        <table class="data-table pos-group">
             <thead>
                 <tr>
-                    <th>Target Keyword</th>
-                    <th class="num">MSV</th>
-                    <th>Target</th>
-                    <th class="num">GSC Clicks (Cur/Prev)</th>
-                    <th class="num">GSC Impr (Cur/Prev)</th>
-                    <th class="num">GSC Pos</th>
-                    <th>Read</th>
+                    <th>Target Keyword</th><th class="num">MSV</th><th>Target</th><th>Target Landing Page</th>
+                    <th class="num">GSC Clk (Cur/Prev)</th><th class="num">GSC Impr (Cur/Prev)</th>
+                    <th class="num posgrp">GSC Pos (Cur/Prev)</th><th>Read</th>
                 </tr>
             </thead>
             <tbody>
-                <tr style="background:#fef2f2;"><td>usd to idr</td><td class="num">1,830,000</td><td>Top 5</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td><td>The single largest target on the site, and Flip captures no measurable clicks for the exact English term. Biggest gap to close.</td></tr>
-                <tr style="background:#fef2f2;"><td>sgd to idr</td><td class="num">246,000</td><td>Top 5</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td><td>No GSC clicks this period. The sgd-sgp-idr page ranks 8.19, below the click zone.</td></tr>
-                <tr style="background:#fef2f2;"><td>yen to idr</td><td class="num">246,000</td><td>Top 5</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td><td>No exact GSC match. Large untapped English pool.</td></tr>
-                <tr><td>euro to idr</td><td class="num">201,000</td><td>Top 5</td><td class="num">8 / 3</td><td class="num">10,818 / 8,783</td><td class="num">8.68</td><td>Now appearing (clicks up from 3), but position 8.68 needs work.</td></tr>
-                <tr style="background:#fef2f2;"><td>aud to idr</td><td class="num">165,000</td><td>Top 5</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td><td>No GSC clicks. Pairs with the Australia Globe priority page.</td></tr>
-                <tr style="background:#fef2f2;"><td>jpy to idr</td><td class="num">110,000</td><td>Top 5</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td><td>No exact match despite the strong Indonesian yen page. English variant is the gap.</td></tr>
-                <tr style="background:#f0fdf4;"><td>myr to idr</td><td class="num">90,500</td><td>Top 3</td><td class="num">15 / 6</td><td class="num">52,662 / 78,013</td><td class="num">8.54</td><td>Clicks more than doubled. Position 8.54, so top-3 is a real content and ranking push.</td></tr>
-                <tr><td>rm to idr</td><td class="num">74,000</td><td>Top 5</td><td class="num">13 / 30</td><td class="num">44,313 / 55,491</td><td class="num">6.55</td><td>Position 6.55. Impressions softened, ranking intact.</td></tr>
-                <tr><td>won to idr</td><td class="num">74,000</td><td>Top 5</td><td class="num">14 / 22</td><td class="num">33,558 / 41,142</td><td class="num">5.56</td><td>Position 5.56, close to top 5.</td></tr>
-                <tr><td>ringgit to idr</td><td class="num">40,500</td><td>Top 5</td><td class="num">13 / 44</td><td class="num">51,673 / 86,408</td><td class="num">6.38</td><td>Clicks fell from 44; position 6.38. Recover and push.</td></tr>
-                <tr><td>hkd to idr</td><td class="num">40,500</td><td>Top 5</td><td class="num">21 / 15</td><td class="num">13,371 / 16,219</td><td class="num">8.00</td><td>Clicks up +40%. Position 8.00.</td></tr>
-                <tr><td>peso to idr</td><td class="num">22,200</td><td>Top 5</td><td class="num">8 / 7</td><td class="num">8,169 / 9,719</td><td class="num">5.07</td><td>Position 5.07, essentially at target. Ties to the Philippines corridor.</td></tr>
+                <tr><td>euro to idr</td><td class="num">201,000</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/eur-deu-idr" target="_blank">/en/currency-converter/eur-deu-idr</a></td><td class="num">8 / 3</td><td class="num">10,818 / 8,783</td><td class="num posgrp">8.68 / 10.31</td><td>Now appearing (clicks up from 3), but position 8.68 needs work.</td></tr>
+                <tr style="background:#f0fdf4;"><td>myr to idr</td><td class="num">90,500</td><td>Top 3</td><td><a href="https://flip.id/en/currency-converter/myr-mys-idr" target="_blank">/en/currency-converter/myr-mys-idr</a></td><td class="num">15 / 6</td><td class="num">52,662 / 78,013</td><td class="num posgrp">8.54 / 8.54</td><td>Clicks more than doubled. Position 8.54, top-3 is a real push.</td></tr>
+                <tr><td>rm to idr</td><td class="num">74,000</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/myr-mys-idr" target="_blank">/en/currency-converter/myr-mys-idr</a></td><td class="num">13 / 30</td><td class="num">44,313 / 55,491</td><td class="num posgrp">6.55 / 5.83</td><td>Position 6.55. Impressions softened, ranking intact.</td></tr>
+                <tr><td>won to idr</td><td class="num">74,000</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/krw-kor-idr" target="_blank">/en/currency-converter/krw-kor-idr</a></td><td class="num">14 / 22</td><td class="num">33,558 / 41,142</td><td class="num posgrp">5.56 / 5.17</td><td>Position 5.56, close to top 5.</td></tr>
+                <tr><td>ringgit to idr</td><td class="num">40,500</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/myr-mys-idr" target="_blank">/en/currency-converter/myr-mys-idr</a></td><td class="num">13 / 44</td><td class="num">51,673 / 86,408</td><td class="num posgrp">6.38 / 5.43</td><td>Clicks fell from 44; position 6.38. Recover and push.</td></tr>
+                <tr><td>hkd to idr</td><td class="num">40,500</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/hkd-hkg-idr" target="_blank">/en/currency-converter/hkd-hkg-idr</a></td><td class="num">21 / 15</td><td class="num">13,371 / 16,219</td><td class="num posgrp">8.00 / 8.22</td><td>Clicks up +40%. Position 8.00.</td></tr>
+                <tr><td>peso to idr</td><td class="num">22,200</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/php-phl-idr" target="_blank">/en/currency-converter/php-phl-idr</a></td><td class="num">8 / 7</td><td class="num">8,169 / 9,719</td><td class="num posgrp">5.07 / 5.23</td><td>Position 5.07, essentially at target. Ties to the Philippines corridor.</td></tr>
+                <tr class="na-row" style="background:#fef2f2;"><td>usd to idr</td><td class="num">1,830,000</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/usd-usa-idr" target="_blank">/en/currency-converter/usd-usa-idr</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td><td>The single largest target on the site, and Flip captures no measurable clicks for the exact English term. Biggest gap to close.</td></tr>
+                <tr class="na-row" style="background:#fef2f2;"><td>sgd to idr</td><td class="num">246,000</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/sgd-sgp-idr" target="_blank">/en/currency-converter/sgd-sgp-idr</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td><td>No GSC clicks. The sgd page ranks around 8, below the click zone.</td></tr>
+                <tr class="na-row" style="background:#fef2f2;"><td>yen to idr</td><td class="num">246,000</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/jpy-jpn-idr" target="_blank">/en/currency-converter/jpy-jpn-idr</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td><td>No exact GSC match. Large untapped English pool.</td></tr>
+                <tr class="na-row" style="background:#fef2f2;"><td>aud to idr</td><td class="num">165,000</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/aud-aus-idr" target="_blank">/en/currency-converter/aud-aus-idr</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td><td>No GSC clicks. Pairs with the Australia Globe priority page.</td></tr>
+                <tr class="na-row" style="background:#fef2f2;"><td>jpy to idr</td><td class="num">110,000</td><td>Top 5</td><td><a href="https://flip.id/en/currency-converter/jpy-jpn-idr" target="_blank">/en/currency-converter/jpy-jpn-idr</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td><td>No exact match despite the strong Indonesian yen page. English variant is the gap.</td></tr>
             </tbody>
         </table>
         </div>
-        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Key insight: the Indonesian converter terms are ranking and improving (yen, euro, rm, won all moving up). The largest gap is the English terms, led by "usd to idr" at 1.83 million monthly searches with no measurable Flip clicks. The English converter pages rank at positions 8 to 9, below the click zone. This is the highest-ceiling opportunity of the whole engagement.</em></p>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Key insight: the Indonesian converter terms are ranking and improving (yen, euro, rm, yuan all moving up). The largest gap is the English terms sorted at the bottom, led by "usd to idr" at 1.83 million monthly searches with no measurable Flip clicks. The English converter pages (/en/currency-converter/) rank at positions 8 to 9, below the click zone. This is the highest-ceiling opportunity of the whole engagement.</em></p>
 
         <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Flip Globe Targets</h3>
+        <p style="font-size: 0.85rem; color: #666; margin: -6px 0 12px;"><em>Note: the June Ahrefs rank column was removed for now (Ahrefs unit quota not confirmed this cycle). Positions shown are live GSC. Live Ahrefs rank tracking can be added later via the ranking-checker skill once quota is confirmed.</em></p>
         <div class="table-scroll">
-        <table class="data-table">
+        <table class="data-table pos-group">
             <thead>
                 <tr>
-                    <th>Target Keyword</th>
-                    <th class="num">MSV</th>
-                    <th>Target</th>
-                    <th class="num">Rank (June, Ahrefs)</th>
-                    <th class="num">GSC Clicks (Cur)</th>
-                    <th class="num">GSC Impr (Cur)</th>
-                    <th class="num">GSC Pos</th>
+                    <th>Target Keyword</th><th class="num">MSV</th><th>Target</th><th>Target Landing Page</th>
+                    <th class="num">GSC Clk (Cur)</th><th class="num">GSC Impr (Cur)</th>
+                    <th class="num posgrp">GSC Pos (Cur/Prev)</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td>kirim uang ke luar negeri</td><td class="num">590</td><td>Top 3</td><td class="num">10</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td></tr>
-                <tr><td>transfer uang ke luar negeri</td><td class="num">390</td><td>Top 3</td><td class="num">10</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td></tr>
-                <tr style="background:#f0fdf4;"><td>kirim uang ke malaysia</td><td class="num">110</td><td>Top 3</td><td class="num">6</td><td class="num">0</td><td class="num">37</td><td class="num">2.92</td></tr>
-                <tr style="background:#f0fdf4;"><td>transfer uang ke malaysia</td><td class="num">90</td><td>Top 3</td><td class="num">8</td><td class="num">1</td><td class="num">9</td><td class="num">11.22</td></tr>
-                <tr><td>kirim uang ke india</td><td class="num">40</td><td>Top 3</td><td class="num">100</td><td class="num">0</td><td class="num">3</td><td class="num">3.00</td></tr>
-                <tr><td>transfer uang ke australia</td><td class="num">40</td><td>Top 3</td><td class="num">100</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td></tr>
-                <tr><td>transfer uang ke thailand</td><td class="num">20</td><td>Top 3</td><td class="num">100</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td></tr>
-                <tr style="background:#f0fdf4;"><td>kirim uang ke thailand</td><td class="num">20</td><td>Top 3</td><td class="num">100</td><td class="num">0</td><td class="num">12</td><td class="num">2.33</td></tr>
-                <tr><td>transfer uang ke korea</td><td class="num">20</td><td>Top 3</td><td class="num">100</td><td class="num">0</td><td class="num">7</td><td class="num">2.71</td></tr>
-                <tr style="background:#f0fdf4;"><td>kirim uang ke china</td><td class="num">20</td><td>Top 3</td><td class="num">100</td><td class="num">0</td><td class="num">17</td><td class="num">6.47</td></tr>
-                <tr style="background:#f0fdf4;"><td>transfer uang ke china</td><td class="num">10</td><td>Top 3</td><td class="num">9</td><td class="num">1</td><td class="num">4</td><td class="num">1.75</td></tr>
-                <tr style="background:#f0fdf4;"><td>kirim uang ke singapore</td><td class="num">10</td><td>Top 3</td><td class="num">100</td><td class="num">1</td><td class="num">2</td><td class="num">2.00</td></tr>
-                <tr style="background:#f0fdf4;"><td>transfer uang ke jepang</td><td class="num">10</td><td>Top 3</td><td class="num">100</td><td class="num">1</td><td class="num">1</td><td class="num">1.00</td></tr>
-                <tr><td>kirim uang ke jepang</td><td class="num">10</td><td>Top 3</td><td class="num">100</td><td class="num">0</td><td class="num">3</td><td class="num">1.00</td></tr>
-                <tr><td>transfer uang ke amerika</td><td class="num">10</td><td>Top 3</td><td class="num">100</td><td class="num">N/A</td><td class="num">N/A</td><td class="num">N/A</td></tr>
+                <tr style="background:#f0fdf4;"><td>kirim uang ke malaysia</td><td class="num">110</td><td>Top 3</td><td><a href="https://flip.id/id/blog/cara-transfer-uang-ke-malaysia" target="_blank">/id/blog/cara-transfer-uang-ke-malaysia</a></td><td class="num">0</td><td class="num">37</td><td class="num posgrp">2.92 / 1.00</td></tr>
+                <tr style="background:#f0fdf4;"><td>transfer uang ke malaysia</td><td class="num">90</td><td>Top 3</td><td><a href="https://flip.id/id/blog/cara-transfer-uang-ke-malaysia" target="_blank">/id/blog/cara-transfer-uang-ke-malaysia</a></td><td class="num">1</td><td class="num">9</td><td class="num posgrp">11.22 / 11.06</td></tr>
+                <tr style="background:#f0fdf4;"><td>kirim uang ke china</td><td class="num">20</td><td>Top 3</td><td><a href="https://flip.id/id/globe/china" target="_blank">/id/globe/china</a></td><td class="num">0</td><td class="num">17</td><td class="num posgrp">6.47 / 10.50</td></tr>
+                <tr style="background:#f0fdf4;"><td>kirim uang ke thailand</td><td class="num">20</td><td>Top 3</td><td><a href="https://flip.id/id/globe/thailand" target="_blank">/id/globe/thailand</a></td><td class="num">0</td><td class="num">12</td><td class="num posgrp">2.33 / 11.40</td></tr>
+                <tr style="background:#f0fdf4;"><td>transfer uang ke korea</td><td class="num">20</td><td>Top 3</td><td><a href="https://flip.id/id/globe/south-korea" target="_blank">/id/globe/south-korea</a></td><td class="num">0</td><td class="num">7</td><td class="num posgrp">2.71 / 0</td></tr>
+                <tr style="background:#f0fdf4;"><td>transfer uang ke china</td><td class="num">10</td><td>Top 3</td><td><a href="https://flip.id/id/globe/china" target="_blank">/id/globe/china</a></td><td class="num">1</td><td class="num">4</td><td class="num posgrp">1.75 / 0</td></tr>
+                <tr style="background:#f0fdf4;"><td>kirim uang ke india</td><td class="num">40</td><td>Top 3</td><td><a href="https://flip.id/id/globe/india" target="_blank">/id/globe/india</a></td><td class="num">0</td><td class="num">3</td><td class="num posgrp">3.00 / 0</td></tr>
+                <tr style="background:#f0fdf4;"><td>kirim uang ke singapore</td><td class="num">10</td><td>Top 3</td><td><a href="https://flip.id/id/globe/singapore" target="_blank">/id/globe/singapore</a></td><td class="num">1</td><td class="num">2</td><td class="num posgrp">2.00 / 1.00</td></tr>
+                <tr style="background:#f0fdf4;"><td>transfer uang ke jepang</td><td class="num">10</td><td>Top 3</td><td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td><td class="num">1</td><td class="num">1</td><td class="num posgrp">1.00 / 0</td></tr>
+                <tr style="background:#f0fdf4;"><td>kirim uang ke jepang</td><td class="num">10</td><td>Top 3</td><td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td><td class="num">0</td><td class="num">3</td><td class="num posgrp">1.00 / 3.75</td></tr>
+                <tr class="na-row"><td>kirim uang ke luar negeri</td><td class="num">590</td><td>Top 3</td><td><a href="https://flip.id/id/globe" target="_blank">/id/globe</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
+                <tr class="na-row"><td>transfer uang ke luar negeri</td><td class="num">390</td><td>Top 3</td><td><a href="https://flip.id/id/globe" target="_blank">/id/globe</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
+                <tr class="na-row"><td>transfer uang ke australia</td><td class="num">40</td><td>Top 3</td><td><a href="https://flip.id/id/globe/australia" target="_blank">/id/globe/australia</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
+                <tr class="na-row"><td>kirim uang ke jepang dari indonesia</td><td class="num">20</td><td>Top 3</td><td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
+                <tr class="na-row"><td>transfer uang ke thailand</td><td class="num">20</td><td>Top 3</td><td><a href="https://flip.id/id/globe/thailand" target="_blank">/id/globe/thailand</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
+                <tr class="na-row"><td>kirim uang ke australia</td><td class="num">10</td><td>Top 3</td><td><a href="https://flip.id/id/globe/australia" target="_blank">/id/globe/australia</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
+                <tr class="na-row"><td>transfer uang ke singapore</td><td class="num">10</td><td>Top 3</td><td><a href="https://flip.id/id/globe/singapore" target="_blank">/id/globe/singapore</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
+                <tr class="na-row"><td>kirim uang ke korea</td><td class="num">10</td><td>Top 3</td><td><a href="https://flip.id/id/globe/south-korea" target="_blank">/id/globe/south-korea</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
+                <tr class="na-row"><td>transfer uang ke amerika</td><td class="num">10</td><td>Top 3</td><td><a href="https://flip.id/id/globe/usa" target="_blank">/id/globe/usa</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
+                <tr class="na-row"><td>kirim uang ke amerika</td><td class="num">10</td><td>Top 3</td><td><a href="https://flip.id/id/globe/usa" target="_blank">/id/globe/usa</a></td><td class="num">N/A</td><td class="num">N/A</td><td class="num posgrp">N/A</td></tr>
             </tbody>
         </table>
         </div>
-        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Key insight: where a Globe target appears in GSC at all, Flip already ranks well (transfer uang ke china 1.75, transfer uang ke jepang 1.00, kirim uang ke singapore 2.00, kirim uang ke thailand 2.33). The problem is impressions in the single digits, meaning very little of the stated search volume is reaching these pages yet. The two head terms that carry real volume, "kirim uang ke luar negeri" (590) and "transfer uang ke luar negeri" (390), are stuck at rank 10 and are the priority to break into the top 3. Rows highlighted green have live GSC data.</em></p>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Key insight and the "expected page" check: where a Globe target appears in GSC, Flip already ranks well (transfer uang ke china 1.75, transfer uang ke jepang 1.00, kirim uang ke singapore 2.00, kirim uang ke thailand 2.33), and each is served by the correct /id/globe/{country} page as expected. The exceptions to flag: both Malaysia terms are being served by a blog (/id/blog/cara-transfer-uang-ke-malaysia) rather than /id/globe/malaysia, so the Globe page is not yet the ranking page there. The two head terms with real volume, "kirim uang ke luar negeri" (590) and "transfer uang ke luar negeri" (390), have no GSC clicks yet on /id/globe; breaking them into the top 3 is the priority.</em></p>
 
         <!-- ============ TECHNICAL & DEVELOPMENT ============ -->
         <h2 class="section-header">Technical and Development Notes</h2>
@@ -816,6 +724,12 @@
                 </tr>
                 <tr>
                     <td>3</td>
+                    <td><strong>Malaysia Globe page not ranking (blog ranks instead)</strong></td>
+                    <td>The "kirim/transfer uang ke malaysia" queries are served by /id/blog/cara-transfer-uang-ke-malaysia, not /id/globe/malaysia. Align internal links and content so the intended Globe page becomes the ranking page.</td>
+                    <td><span style="color: var(--warning-yellow);">Recommended</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
                     <td><strong>Converter pages: title and top-content for top-5 push</strong></td>
                     <td>The converter pages hold the largest impression pools at positions 6 to 8. Optimising titles, the on-page answer block and internal links is the fastest route to converting existing visibility, especially the English terms (usd to idr, sgd to idr, aud to idr).</td>
                     <td><span style="color: var(--warning-yellow);">Recommended</span></td>
@@ -880,8 +794,8 @@
                 <li><strong>Push the converter pages from position 6 to 8 into the top 5:</strong> start with the largest pools (myr-mys-idr, usd-usa-idr, jpy-jpn-idr, sar-sau-idr) to convert existing visibility into clicks.</li>
                 <li><strong>Attack the English converter gap:</strong> usd to idr, sgd to idr, yen to idr, aud to idr and jpy to idr are enormous and currently earn no measurable clicks.</li>
                 <li><strong>Break the two Globe head terms into the top 3:</strong> "kirim uang ke luar negeri" and "transfer uang ke luar negeri" are stuck at rank 10.</li>
-                <li><strong>Finish the 39 articles and land the 11 refreshes:</strong> then confirm the July quota scope.</li>
-                <li><strong>Protect the blog base:</strong> it holds 77% of clicks with stable rankings; refresh titles and meta on the top decliners to recover the mild CTR softening.</li>
+                <li><strong>Make /id/globe/malaysia the ranking page:</strong> today a blog captures the Malaysia transfer queries; realign so the Globe page earns them.</li>
+                <li><strong>Finish the 39 articles and land the 11 refreshes:</strong> then confirm the July quota scope. Protect the stable blog base with title and meta refreshes on the top decliners.</li>
             </ul>
         </div>
 
