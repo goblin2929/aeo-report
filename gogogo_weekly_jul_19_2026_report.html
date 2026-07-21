@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gogogo Weekly Performance Report - 19 July 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-blue: #01aac1;
+            --accent-blue: #01d7f4;
+            --teal: #017d8e;
+            --dark-gray: #111111;
+            --medium-gray: #333333;
+            --light-gray: #f5f5f5;
+            --success-green: #22c55e;
+            --warning-yellow: #eab308;
+            --danger-red: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 20px; }
+
+        .header {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
+            color: white; padding: 40px; border-radius: 12px; margin-bottom: 30px;
+        }
+        .header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+        .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 15px; }
+        .header .meta { font-size: 0.9rem; opacity: 0.7; }
+
+        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+        .kpi-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .kpi-card .label { font-size: 0.85rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .kpi-card .value { font-size: 2rem; font-weight: 700; color: var(--dark-gray); margin-bottom: 8px; }
+        .kpi-card .change { font-size: 0.9rem; font-weight: 600; }
+
+        .trend-up { color: var(--success-green); }
+        .trend-down { color: var(--danger-red); }
+        .trend-flat { color: #666; }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--teal));
+            color: white; padding: 16px 24px; border-radius: 8px; margin: 30px 0 20px 0; font-size: 1.2rem; font-weight: 600;
+        }
+
+        .market-header {
+            display: flex; align-items: center; gap: 12px;
+            margin: 34px 0 18px 0; padding: 14px 22px; border-radius: 8px;
+            background: linear-gradient(135deg, var(--dark-gray), var(--medium-gray)); color: white;
+        }
+        .market-header .flag { font-size: 1.6rem; }
+        .market-header h2 { font-size: 1.35rem; }
+        .market-header .dom { font-size: 0.85rem; opacity: 0.7; margin-left: auto; font-family: 'SF Mono', Monaco, monospace; }
+
+        .callout { padding: 20px 24px; border-radius: 8px; margin-bottom: 20px; }
+        .callout-blue { background: linear-gradient(135deg, rgba(1, 170, 193, 0.1), rgba(1, 215, 244, 0.05)); border-left: 4px solid var(--primary-blue); }
+        .callout-green { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid var(--success-green); }
+        .callout-yellow { background: linear-gradient(135deg, #fefce8, #fef3c7); border-left: 4px solid var(--warning-yellow); }
+        .callout-red { background: linear-gradient(135deg, #fef2f2, #fee2e2); border-left: 4px solid var(--danger-red); }
+        .callout h3 { margin-bottom: 12px; font-size: 1.1rem; }
+        .callout ul { margin-left: 20px; }
+        .callout li { margin-bottom: 6px; }
+
+        .table-scroll { overflow-x: auto; margin-bottom: 20px; }
+        .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .table-scroll .data-table { margin-bottom: 0; }
+        .data-table th { background: var(--medium-gray); color: white; padding: 11px 11px; text-align: left; font-weight: 600; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
+        .data-table th.num { text-align: right; }
+        .data-table td { padding: 10px 11px; border-bottom: 1px solid #eee; font-size: 0.88rem; }
+        .data-table td.num { text-align: right; font-family: 'SF Mono', Monaco, monospace; white-space: nowrap; }
+        .data-table tr:hover { background: #f9fafb; }
+        .data-table tr.subtotal { background: #D9EBD9; font-weight: bold; }
+        .data-table tr.na-row td { color: #999; font-style: italic; }
+        .data-table a { color: var(--primary-blue); text-decoration: none; }
+        .data-table a:hover { text-decoration: underline; }
+        .data-table.opp-table th { background: var(--teal); }
+        .data-table td.posgrp { background: rgba(1,170,193,0.06); }
+        .badge { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 20px; background: var(--primary-blue); color: white; letter-spacing: 0.3px; }
+
+        .chart-container { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        .chart-container h3 { margin-bottom: 20px; font-size: 1.1rem; color: var(--dark-gray); }
+        .chart-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+        .status-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px; }
+        .status-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 4px solid var(--success-green); }
+        .status-card.warning { border-left-color: var(--warning-yellow); }
+        .status-card.danger { border-left-color: var(--danger-red); }
+        .status-card h4 { font-size: 0.9rem; color: #666; margin-bottom: 8px; }
+        .status-card .value { font-size: 1.4rem; font-weight: 700; }
+
+        .deliverable-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+        .deliverable-item { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-radius: 8px; padding: 16px; border-left: 4px solid var(--success-green); }
+        .deliverable-item.pending { background: linear-gradient(135deg, #fefce8, #fef3c7); border-left-color: var(--warning-yellow); }
+        .deliverable-item h4 { font-size: 0.85rem; color: #666; margin-bottom: 6px; }
+        .deliverable-item p { font-size: 0.95rem; font-weight: 600; }
+
+        .priorities-section {
+            background: linear-gradient(135deg, var(--dark-gray), var(--medium-gray));
+            color: white; padding: 30px; border-radius: 12px; margin: 30px 0;
+        }
+        .priorities-section h3 { margin-bottom: 20px; font-size: 1.3rem; }
+        .priorities-section ul { margin-left: 20px; }
+        .priorities-section li { margin-bottom: 12px; }
+
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .kpi-grid { grid-template-columns: 1fr 1fr; }
+            .chart-grid, .status-grid { grid-template-columns: 1fr; }
+            .deliverable-grid { grid-template-columns: 1fr; }
+        }
+        @media print { body { background: white; } .container { max-width: 100%; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Gogogo Weekly Performance Report</h1>
+            <p class="subtitle">SEO and Search Visibility Analysis across Indonesia, Philippines and Malaysia</p>
+            <p class="meta">Reporting Period: 13 July to 19 July 2026 vs 6 July to 12 July 2026 | Prepared by Novastacks | Client: Gogogo (Flip Group)</p>
+        </div>
+
+        <!-- Combined KPIs -->
+        <h2 class="section-header">Combined Snapshot (All Three Markets)</h2>
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="label">Total Clicks</div>
+                <div class="value">72,550</div>
+                <div class="change trend-down">-52,470 (-41.97%) vs prev</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Total Impressions</div>
+                <div class="value">1,138,114</div>
+                <div class="change trend-down">-257,929 (-18.48%) vs prev</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Markets Reported</div>
+                <div class="value">3</div>
+                <div class="change trend-flat">ID, PH, MY</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Main Driver</div>
+                <div class="value">ID</div>
+                <div class="change trend-flat">Seabank / DANA promo unwinding; core PDPs +12% above pre-promo baseline</div>
+            </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #666; margin: -10px 0 20px;"><em>Note: Gogogo GSC data is now pulled automatically from Google Search Console (aeo-novastacks profile), reproducing the previous manual export to the click. Each market is a separate property (gogogo.id, gogogo.game/en-ph, gogogo.com/en-my). Branded and Non-Branded totals come from the query dimension; PDP and Blog come from the page dimension, so the two views differ and do not sum to the same total (Google anonymizes some low-volume queries). Non-Branded means queries without the "gogogo" or "gogo" brand name (the game and voucher top up terms). The overall aggregate does not include a per-segment average position, so the segment table below shows clicks, impressions and CTR; average position (current, previous and delta) is shown in every detailed page and query table.</em></p>
+
+        <div class="chart-grid">
+            <div class="chart-container">
+                <h3>Clicks by Market: Current vs Previous</h3>
+                <canvas id="clicksByMarket"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Impressions by Market: Current vs Previous</h3>
+                <canvas id="imprByMarket"></canvas>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <h2 class="section-header">Executive Summary</h2>
+        <div class="callout callout-blue">
+            <h3>Period in Review: the promo unwinds, the core holds</h3>
+            <p>Headline clicks fell to <strong>72,550</strong> (-41.97%), driven entirely by <strong>Indonesia</strong> (-50.78%). This is the expected give-back: last week (6 to 12 July) was inflated by the Seabank 5th anniversary and DANA e-wallet campaign, and that branded and e-wallet demand has now normalised. The right way to read the week is against a <strong>normal, pre-promo week</strong> (29 June to 5 July), not against the promo peak.</p>
+            <ul>
+                <li><strong>The promo has fully unwound.</strong> ID branded fell -72.12% ("gogogo" 39,323 to 11,528, "gogogo id" 15,920 to 1,700), the promo pages collapsed (/topup 2,424 to 145 clicks, /p/e-wallet/dana 942 to 0, /e-wallet 845 to 86), and the homepage handed back its promo lift (63,618 to 21,722, position 2.96 to 4.13). None of this is a ranking loss; it is campaign demand ending.</li>
+                <li><strong>The core PDPs are ABOVE the pre-promo baseline.</strong> Against a normal week the product pages are up, not down: the PDP segment is +12.41% vs baseline, Free Fire +16.57%, Mobile Legends +3.93%. The week-over-week "-25%" only exists because it is measured against the promo peak. The underlying SEO trend on the flagship products is healthy and rising.</li>
+                <li><strong>Philippines held flat and improved in quality.</strong> Clicks were essentially unchanged (-0.01%) while the homepage improved from position 2.71 to 2.09 and site CTR rose to 51.05%. A stable, healthy week.</li>
+                <li><strong>Malaysia flat overall, non-branded recovering.</strong> Clicks -0.76% but non-branded +9.42% and the Free Fire PDP improved to position 5.01. On a very small base.</li>
+                <li><strong>The one genuine concern is an ID blog page.</strong> /blog/games/spasi-kosong-nama-free-fire has now declined three weeks running (2,631 to 2,072 to 956 clicks, position 5.15 to 5.62 to 6.09). This is a real, sustained slip, independent of the promo, and is the priority content fix.</li>
+            </ul>
+        </div>
+
+        <div class="callout callout-green">
+            <h3>Reading the week correctly: this week vs the pre-promo baseline (Indonesia)</h3>
+            <p>Comparing to last week's promo peak makes everything look down. Comparing to a normal week (29 June to 5 July) shows the products holding above baseline, with the blog as the exception:</p>
+            <div class="table-scroll" style="margin-top: 12px;">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Indonesia segment</th>
+                        <th class="num">This week (13 to 19 Jul)</th>
+                        <th class="num">Pre-promo baseline (29 Jun to 5 Jul)</th>
+                        <th class="num">vs Baseline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Product pages (PDP), all</td><td class="num">19,667</td><td class="num">17,496</td><td class="num trend-up">+12.41%</td></tr>
+                    <tr><td>Free Fire top up PDP</td><td class="num">8,773</td><td class="num">7,526</td><td class="num trend-up">+16.57%</td></tr>
+                    <tr><td>Mobile Legends top up PDP</td><td class="num">7,059</td><td class="num">6,792</td><td class="num trend-up">+3.93%</td></tr>
+                    <tr><td>Non-Branded, all</td><td class="num">33,387</td><td class="num">35,546</td><td class="num trend-down">-6.07%</td></tr>
+                    <tr><td>Blog, all</td><td class="num">9,449</td><td class="num">13,567</td><td class="num trend-down">-30.35%</td></tr>
+                    <tr class="subtotal"><td>All clicks</td><td class="num">50,847</td><td class="num">54,566</td><td class="num trend-down">-6.82%</td></tr>
+                </tbody>
+            </table>
+            </div>
+            <p style="margin-top: 10px;">The takeaway: strip out the promo and Indonesia is roughly at baseline overall (-6.82%), with the flagship products ahead of baseline and the blog the one area that is genuinely soft.</p>
+        </div>
+
+        <div class="callout callout-blue">
+            <h3>Weekly pattern verified: the Friday effect (13 weeks of data)</h3>
+            <p>We checked whether the mid-week traffic peak is a recurring pattern by measuring day-of-week clicks over the last 13 complete weeks (20 April to 19 July). Friday is a systematic peak day in all three markets; Saturday is elevated in ID and MY but a normal day in PH. The index below is each day's clicks divided by that week's daily average (1.00 = an average day), so it is normalised for the overall trend and is not skewed by the promo week.</p>
+            <div class="table-scroll" style="margin-top: 12px;">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Day</th><th class="num">ID index</th><th class="num">PH index</th><th class="num">MY index</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Monday</td><td class="num">1.06</td><td class="num">0.94</td><td class="num">0.88</td></tr>
+                    <tr><td>Tuesday</td><td class="num">0.95</td><td class="num">0.86</td><td class="num">0.82</td></tr>
+                    <tr><td>Wednesday</td><td class="num">0.85</td><td class="num">0.80</td><td class="num">0.90</td></tr>
+                    <tr><td>Thursday</td><td class="num">0.93</td><td class="num">0.81</td><td class="num">0.97</td></tr>
+                    <tr style="background:#f0fdf4;"><td><strong>Friday</strong></td><td class="num trend-up">1.15</td><td class="num trend-up">1.65</td><td class="num trend-up">1.44</td></tr>
+                    <tr style="background:#f0fdf4;"><td><strong>Saturday</strong></td><td class="num trend-up">1.11</td><td class="num">0.99</td><td class="num trend-up">1.10</td></tr>
+                    <tr><td>Sunday</td><td class="num">0.95</td><td class="num">0.96</td><td class="num">0.89</td></tr>
+                </tbody>
+            </table>
+            </div>
+            <p style="margin-top: 10px;">This is consistent with weekend gaming top up behaviour: players load game credit heading into the weekend, most strongly in the Philippines (Friday +65% above the weekly average). Practical implication for this report: because every Monday to Sunday period contains exactly one Friday, the Friday effect cancels out in week-over-week numbers, so it does not distort the comparison. It matters only if partial weeks are ever compared. This week followed the normal Friday to Saturday rhythm, with no abnormal week-over-week spike.</p>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">This Period Focus Areas</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr><th>Category</th><th>What Was Done</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Low-Hanging-Fruit PDP Optimization (ID)</strong></td>
+                    <td style="font-size:0.9rem;">&bull; Title, in-game currency, how-to and FAQ proposals prepared for the high-impression PDPs<br>&bull; SEO team to learn the Gogogo CMS from the Gogogo team so the fixes can be applied directly</td>
+                    <td><span style="color: var(--warning-yellow);">In progress</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2. Content Review (June Quota)</strong></td>
+                    <td style="font-size:0.9rem;">&bull; Draft articles under review<br>&bull; 31 proposal topics reviewed toward the 75-article June quota, ahead of the July quota proposal</td>
+                    <td><span style="color: var(--warning-yellow);">In progress</span></td>
+                </tr>
+                <tr>
+                    <td><strong>3. Reporting and Analysis</strong></td>
+                    <td style="font-size:0.9rem;">&bull; Period over period GSC comparison across ID, PH and MY, now via automated pull<br>&bull; Friday to Saturday demand pattern verified over 13 weeks<br>&bull; Promo normalisation separated from baseline SEO trend</td>
+                    <td><span style="color: var(--success-green);">Done</span></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="status-grid">
+            <div class="status-card"><h4>Indonesia PDP vs Pre-Promo Baseline</h4><div class="value trend-up">+12.41%</div></div>
+            <div class="status-card"><h4>Philippines Clicks (week over week)</h4><div class="value trend-flat">-0.01% (flat)</div></div>
+            <div class="status-card"><h4>Malaysia Non-Branded Clicks</h4><div class="value trend-up">+9.42%</div></div>
+            <div class="status-card danger"><h4>ID Blog: spasi-kosong-nama-free-fire (3-week slide)</h4><div class="value trend-down">2,631 to 2,072 to 956</div></div>
+        </div>
+
+        <!-- ============ INDONESIA ============ -->
+        <div class="market-header">
+            <span class="flag">&#127470;&#127465;</span>
+            <h2>Indonesia Market</h2>
+            <span class="dom">gogogo.id</span>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Clicks</div><div class="value">50,847</div><div class="change trend-down">-52,457 (-50.78%)</div></div>
+            <div class="kpi-card"><div class="label">Impressions</div><div class="value">1,092,935</div><div class="change trend-down">-248,259 (-18.51%)</div></div>
+            <div class="kpi-card"><div class="label">CTR</div><div class="value">4.65%</div><div class="change trend-down">-3.05pp (-39.61%)</div></div>
+            <div class="kpi-card"><div class="label">Homepage Clicks</div><div class="value">21,722</div><div class="change trend-down">-41,896 (-65.86%), pos 2.96 to 4.13</div></div>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Segment Breakdown</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Segment</th>
+                    <th class="num">Clicks (Cur)</th><th class="num">Clicks (Prev)</th><th class="num">Clicks &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num">CTR (Cur)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Branded</td><td class="num">17,460</td><td class="num">62,613</td><td class="num trend-down">-72.12%</td><td class="num">82,169</td><td class="num">156,714</td><td class="num trend-down">-47.57%</td><td class="num">21.25%</td></tr>
+                <tr><td>Non-Branded</td><td class="num">33,387</td><td class="num">40,691</td><td class="num trend-down">-17.95%</td><td class="num">1,010,766</td><td class="num">1,184,480</td><td class="num trend-down">-14.67%</td><td class="num">3.30%</td></tr>
+                <tr><td>Product pages (PDP)</td><td class="num">19,667</td><td class="num">26,273</td><td class="num trend-down">-25.14%</td><td class="num">751,044</td><td class="num">1,081,647</td><td class="num trend-down">-30.57%</td><td class="num">2.62%</td></tr>
+                <tr><td>Blog</td><td class="num">9,449</td><td class="num">12,625</td><td class="num trend-down">-25.16%</td><td class="num">425,555</td><td class="num">557,099</td><td class="num trend-down">-23.61%</td><td class="num">2.22%</td></tr>
+                <tr class="subtotal"><td>ALL</td><td class="num">50,847</td><td class="num">103,304</td><td class="num">-50.78%</td><td class="num">1,092,935</td><td class="num">1,341,194</td><td class="num">-18.51%</td><td class="num">4.65%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Reminder: the week-over-week declines here are measured against last week's promo peak. Against the pre-promo baseline (29 June to 5 July), PDP is +12.41%, Non-Branded is -6.07%, Blog is -30.35% and All clicks are -6.82% (see the baseline table in the Executive Summary).</em></p>
+
+        <div class="callout callout-yellow">
+            <h3>What Moved in Indonesia</h3>
+            <ul>
+                <li><strong>Branded normalised (-72.12%) as the promo ended.</strong> "gogogo" fell 39,323 to 11,528 and "gogogo id" 15,920 to 1,700, both still at position 1. The promo-only terms (gogogo seabank, gogogo dana) dropped out of the top set. This is campaign demand ending, not a ranking change.</li>
+                <li><strong>The flagship PDPs are above baseline.</strong> Free Fire 8,773 clicks (vs 7,526 baseline, +16.57%) and Mobile Legends 7,059 (vs 6,792 baseline, +3.93%). Week over week their positions eased from the promo-week highs (FF 4.27 to 4.83, ML 3.74 to 4.88), which is normalisation back toward the baseline range, not a slip below it.</li>
+                <li><strong>Genuine non-branded gainers.</strong> "top up roblox" +19.85% clicks and improved from position 5.98 to 4.23; "top up robux" +27.89% (7.19 to 6.05); "codashop" +46.65%; the UC PUBGM PDP +104.02% clicks (position 9.64 to 8.45). These grew through the promo and after it.</li>
+                <li><strong>Blog is the soft spot.</strong> The segment is -25.16% week over week and -30.35% vs baseline. The standout is /blog/games/spasi-kosong-nama-free-fire, down a third consecutive week (956 clicks, position 6.09). This needs a content and title refresh.</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top PDP Pages (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td class="num">8,773</td><td class="num">10,453</td><td class="num trend-down">-16.07%</td><td class="num">258,597</td><td class="num">365,818</td><td class="num trend-down">-29.31%</td><td class="num posgrp">4.83</td><td class="num posgrp">4.27</td><td class="num posgrp trend-down">-0.56</td></tr>
+                <tr><td>2</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td class="num">7,059</td><td class="num">10,157</td><td class="num trend-down">-30.50%</td><td class="num">301,845</td><td class="num">388,638</td><td class="num trend-down">-22.33%</td><td class="num posgrp">4.88</td><td class="num posgrp">3.74</td><td class="num posgrp trend-down">-1.14</td></tr>
+                <tr><td>3</td><td><a href="https://gogogo.id/p/voucher/voucher-roblox-robux-games" target="_blank">/p/voucher/voucher-roblox-robux-games</a></td><td class="num">1,335</td><td class="num">1,686</td><td class="num trend-down">-20.82%</td><td class="num">59,682</td><td class="num">105,863</td><td class="num trend-down">-43.62%</td><td class="num posgrp">2.32</td><td class="num posgrp">1.87</td><td class="num posgrp trend-down">-0.45</td></tr>
+                <tr style="background:#f0fdf4;"><td>4</td><td><a href="https://gogogo.id/p/entertainment/poppo-live-coins" target="_blank">/p/entertainment/poppo-live-coins</a></td><td class="num">536</td><td class="num">422</td><td class="num trend-up">+27.01%</td><td class="num">27,540</td><td class="num">26,885</td><td class="num trend-up">+2.44%</td><td class="num posgrp">3.98</td><td class="num posgrp">3.70</td><td class="num posgrp trend-down">-0.28</td></tr>
+                <tr><td>5</td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td><td class="num">520</td><td class="num">776</td><td class="num trend-down">-32.99%</td><td class="num">61,820</td><td class="num">130,759</td><td class="num trend-down">-52.72%</td><td class="num posgrp">1.60</td><td class="num posgrp">1.32</td><td class="num posgrp trend-down">-0.28</td></tr>
+                <tr style="background:#f0fdf4;"><td>6</td><td><a href="https://gogogo.id/p/topup/uc-pubgm-indonesia-games" target="_blank">/p/topup/uc-pubgm-indonesia-games</a></td><td class="num">355</td><td class="num">174</td><td class="num trend-up">+104.02%</td><td class="num">5,329</td><td class="num">2,132</td><td class="num trend-up">+149.95%</td><td class="num posgrp">8.45</td><td class="num posgrp">9.64</td><td class="num posgrp trend-up">+1.19</td></tr>
+                <tr><td>7</td><td><a href="https://gogogo.id/p/topup/mobile-legend-malaysia" target="_blank">/p/topup/mobile-legend-malaysia</a></td><td class="num">296</td><td class="num">288</td><td class="num trend-up">+2.78%</td><td class="num">8,221</td><td class="num">8,780</td><td class="num trend-down">-6.37%</td><td class="num posgrp">7.25</td><td class="num posgrp">6.87</td><td class="num posgrp trend-down">-0.38</td></tr>
+                <tr><td>8</td><td><a href="https://gogogo.id/p/topup/magic-chess-go-go" target="_blank">/p/topup/magic-chess-go-go</a></td><td class="num">280</td><td class="num">374</td><td class="num trend-down">-25.13%</td><td class="num">13,269</td><td class="num">16,741</td><td class="num trend-down">-20.74%</td><td class="num posgrp">5.63</td><td class="num posgrp">4.97</td><td class="num posgrp trend-down">-0.66</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: The e-wallet PDPs that surged on the promo have returned to baseline (/p/e-wallet/dana 942 to 0 clicks, /p/e-wallet/gopay 253 to 0). The legacy hub /topup fell from 2,424 to 145 clicks but still holds 62,519 impressions at position 1.36 (see Technical Notes for the redirect).</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Blog Pages (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background:#fef2f2;"><td>1</td><td><a href="https://gogogo.id/blog/games/spasi-kosong-nama-free-fire" target="_blank">/blog/games/spasi-kosong-nama-free-fire</a></td><td class="num">956</td><td class="num">2,072</td><td class="num trend-down">-53.86%</td><td class="num">42,747</td><td class="num">65,106</td><td class="num trend-down">-34.34%</td><td class="num posgrp">6.09</td><td class="num posgrp">5.62</td><td class="num posgrp trend-down">-0.47</td></tr>
+                <tr><td>2</td><td><a href="https://gogogo.id/blog/games/profil-nick-ff-cewek" target="_blank">/blog/games/profil-nick-ff-cewek</a></td><td class="num">682</td><td class="num">680</td><td class="num trend-up">+0.29%</td><td class="num">13,278</td><td class="num">15,594</td><td class="num trend-down">-14.85%</td><td class="num posgrp">4.67</td><td class="num posgrp">4.77</td><td class="num posgrp trend-up">+0.10</td></tr>
+                <tr><td>3</td><td><a href="https://gogogo.id/blog/games/free-fire/panel-free-fire" target="_blank">/blog/games/free-fire/panel-free-fire</a></td><td class="num">581</td><td class="num">869</td><td class="num trend-down">-33.14%</td><td class="num">12,169</td><td class="num">15,801</td><td class="num trend-down">-22.99%</td><td class="num posgrp">6.31</td><td class="num posgrp">5.44</td><td class="num posgrp trend-down">-0.87</td></tr>
+                <tr><td>4</td><td><a href="https://gogogo.id/blog/games/cheat-ff-mod-menu" target="_blank">/blog/games/cheat-ff-mod-menu</a></td><td class="num">544</td><td class="num">790</td><td class="num trend-down">-31.14%</td><td class="num">6,206</td><td class="num">8,571</td><td class="num trend-down">-27.59%</td><td class="num posgrp">5.84</td><td class="num posgrp">5.28</td><td class="num posgrp trend-down">-0.56</td></tr>
+                <tr><td>5</td><td><a href="https://gogogo.id/blog/games/kode-warna-free-fire" target="_blank">/blog/games/kode-warna-free-fire</a></td><td class="num">523</td><td class="num">493</td><td class="num trend-up">+6.09%</td><td class="num">5,415</td><td class="num">5,507</td><td class="num trend-down">-1.67%</td><td class="num posgrp">3.70</td><td class="num posgrp">3.81</td><td class="num posgrp trend-up">+0.11</td></tr>
+                <tr><td>6</td><td><a href="https://gogogo.id/blog/games/rekomendasi-nama-mobile-legends-aesthetic-perempuan" target="_blank">/blog/.../nama-ml-aesthetic-perempuan</a></td><td class="num">304</td><td class="num">521</td><td class="num trend-down">-41.65%</td><td class="num">11,192</td><td class="num">19,913</td><td class="num trend-down">-43.79%</td><td class="num posgrp">7.46</td><td class="num posgrp">7.11</td><td class="num posgrp trend-down">-0.35</td></tr>
+                <tr><td>7</td><td><a href="https://gogogo.id/blog/games/nama-roblox-perempuan" target="_blank">/blog/games/nama-roblox-perempuan</a></td><td class="num">289</td><td class="num">432</td><td class="num trend-down">-33.10%</td><td class="num">9,002</td><td class="num">11,986</td><td class="num trend-down">-24.90%</td><td class="num posgrp">4.45</td><td class="num posgrp">4.28</td><td class="num posgrp trend-down">-0.17</td></tr>
+                <tr><td>8</td><td><a href="https://gogogo.id/blog/games/config-free-fire" target="_blank">/blog/games/config-free-fire</a></td><td class="num">220</td><td class="num">260</td><td class="num trend-down">-15.38%</td><td class="num">6,962</td><td class="num">10,065</td><td class="num trend-down">-30.83%</td><td class="num posgrp">5.39</td><td class="num posgrp">5.52</td><td class="num posgrp trend-up">+0.13</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Blog softened broadly this week (post-promo plus seasonal), with most positions roughly holding. The exception worth acting on is the top row: spasi-kosong-nama-free-fire has lost rank and clicks for three consecutive weeks.</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Branded Queries (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>gogogo</td><td class="num">11,528</td><td class="num">39,323</td><td class="num trend-down">-70.68%</td><td class="num">43,480</td><td class="num">83,792</td><td class="num trend-down">-48.11%</td><td class="num posgrp">1.15</td><td class="num posgrp">1.03</td><td class="num posgrp trend-down">-0.12</td></tr>
+                <tr><td>2</td><td>gogogo id</td><td class="num">1,700</td><td class="num">15,920</td><td class="num trend-down">-89.32%</td><td class="num">7,407</td><td class="num">28,750</td><td class="num trend-down">-74.24%</td><td class="num posgrp">1.01</td><td class="num posgrp">1.00</td><td class="num posgrp trend-down">-0.01</td></tr>
+                <tr><td>3</td><td>gogo</td><td class="num">1,025</td><td class="num">1,552</td><td class="num trend-down">-33.96%</td><td class="num">6,280</td><td class="num">8,265</td><td class="num trend-down">-24.02%</td><td class="num posgrp">1.19</td><td class="num posgrp">1.14</td><td class="num posgrp trend-down">-0.05</td></tr>
+                <tr><td>4</td><td>gogogo ff</td><td class="num">340</td><td class="num">410</td><td class="num trend-down">-17.07%</td><td class="num">738</td><td class="num">866</td><td class="num trend-down">-14.78%</td><td class="num posgrp">1.01</td><td class="num posgrp">1.07</td><td class="num posgrp trend-up">+0.06</td></tr>
+                <tr style="background:#f0fdf4;"><td>5</td><td>gogogo top up ff</td><td class="num">216</td><td class="num">144</td><td class="num trend-up">+50.00%</td><td class="num">840</td><td class="num">363</td><td class="num trend-up">+131.40%</td><td class="num posgrp">1.03</td><td class="num posgrp">1.05</td><td class="num posgrp trend-up">+0.02</td></tr>
+                <tr><td>6</td><td>gogogo top up</td><td class="num">211</td><td class="num">469</td><td class="num trend-down">-55.01%</td><td class="num">961</td><td class="num">2,330</td><td class="num trend-down">-58.76%</td><td class="num posgrp">2.78</td><td class="num posgrp">1.98</td><td class="num posgrp trend-down">-0.80</td></tr>
+                <tr><td>7</td><td>go go go</td><td class="num">170</td><td class="num">280</td><td class="num trend-down">-39.29%</td><td class="num">662</td><td class="num">972</td><td class="num trend-down">-31.89%</td><td class="num posgrp">1.10</td><td class="num posgrp">1.11</td><td class="num posgrp trend-up">+0.01</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Branded is back to its normal, pre-promo level. Last week's promo-only terms (gogogo seabank, gogogo dana) have dropped out, as expected.</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Non-Branded Queries (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>top up ff</td><td class="num">3,738</td><td class="num">4,145</td><td class="num trend-down">-9.82%</td><td class="num">89,537</td><td class="num">104,996</td><td class="num trend-down">-14.72%</td><td class="num posgrp">5.46</td><td class="num posgrp">5.53</td><td class="num posgrp trend-up">+0.07</td></tr>
+                <tr><td>2</td><td>top up ml</td><td class="num">2,373</td><td class="num">3,587</td><td class="num trend-down">-33.85%</td><td class="num">69,703</td><td class="num">77,066</td><td class="num trend-down">-9.55%</td><td class="num posgrp">6.41</td><td class="num posgrp">4.54</td><td class="num posgrp trend-down">-1.87</td></tr>
+                <tr style="background:#f0fdf4;"><td>3</td><td>top up roblox</td><td class="num">1,733</td><td class="num">1,446</td><td class="num trend-up">+19.85%</td><td class="num">17,956</td><td class="num">16,883</td><td class="num trend-up">+6.36%</td><td class="num posgrp">4.23</td><td class="num posgrp">5.98</td><td class="num posgrp trend-up">+1.75</td></tr>
+                <tr><td>4</td><td>top up ff termurah</td><td class="num">1,397</td><td class="num">1,766</td><td class="num trend-down">-20.89%</td><td class="num">18,361</td><td class="num">22,224</td><td class="num trend-down">-17.38%</td><td class="num posgrp">4.66</td><td class="num posgrp">4.21</td><td class="num posgrp trend-down">-0.45</td></tr>
+                <tr><td>5</td><td>codashop ml</td><td class="num">1,171</td><td class="num">1,559</td><td class="num trend-down">-24.89%</td><td class="num">62,688</td><td class="num">73,817</td><td class="num trend-down">-15.08%</td><td class="num posgrp">3.93</td><td class="num posgrp">3.94</td><td class="num posgrp trend-up">+0.01</td></tr>
+                <tr><td>6</td><td>top up ml murah</td><td class="num">604</td><td class="num">857</td><td class="num trend-down">-29.52%</td><td class="num">9,379</td><td class="num">11,962</td><td class="num trend-down">-21.59%</td><td class="num posgrp">5.62</td><td class="num posgrp">4.20</td><td class="num posgrp trend-down">-1.42</td></tr>
+                <tr style="background:#f0fdf4;"><td>7</td><td>top up robux</td><td class="num">587</td><td class="num">459</td><td class="num trend-up">+27.89%</td><td class="num">7,288</td><td class="num">5,445</td><td class="num trend-up">+33.85%</td><td class="num posgrp">6.05</td><td class="num posgrp">7.19</td><td class="num posgrp trend-up">+1.14</td></tr>
+                <tr style="background:#f0fdf4;"><td>8</td><td>codashop</td><td class="num">459</td><td class="num">313</td><td class="num trend-up">+46.65%</td><td class="num">42,873</td><td class="num">26,019</td><td class="num trend-up">+64.77%</td><td class="num posgrp">6.02</td><td class="num posgrp">6.30</td><td class="num posgrp trend-up">+0.28</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Storytelling note: "top up ml" reads as a -33.85% drop with position 4.54 to 6.41, but the pre-promo baseline was 6.16, so it has simply returned to its normal range after the promo boost, not slipped below it. The real momentum is in Roblox (top up roblox and top up robux both up on improving positions) and the competitor term "codashop" (+46.65%).</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Non-Branded Opportunities, Pages: High Impressions, Low Clicks (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table opp-table">
+            <thead>
+                <tr>
+                    <th>Page (Non-Branded)</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Clk (Cur)</th><th class="num">CTR</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                    <th>Why it is an opportunity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td>
+                    <td class="num">301,845</td><td class="num">7,059</td><td class="num">2.34%</td>
+                    <td class="num posgrp">4.88</td><td class="num posgrp">3.74</td><td class="num posgrp trend-down">-1.14</td>
+                    <td>Largest pool on the site. Position eased back from the promo-week high; recover it toward the top 3 to convert a large share of the 302k impressions.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td>
+                    <td class="num">258,597</td><td class="num">8,773</td><td class="num">3.39%</td>
+                    <td class="num posgrp">4.83</td><td class="num posgrp">4.27</td><td class="num posgrp trend-down">-0.56</td>
+                    <td>Second largest pool and above baseline on clicks. A top-3 push on the flagship Free Fire page compounds the momentum.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td>
+                    <td class="num">61,820</td><td class="num">520</td><td class="num">0.84%</td>
+                    <td class="num posgrp">1.60</td><td class="num posgrp">1.32</td><td class="num posgrp trend-down">-0.28</td>
+                    <td>Ranks at position ~1.6 yet only 0.84% CTR. A title and currency mismatch (add "Diamond"), not a ranking problem. Highest CTR ceiling on the site.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.id/p/voucher/voucher-roblox-robux-games" target="_blank">/p/voucher/voucher-roblox-robux-games</a></td>
+                    <td class="num">59,682</td><td class="num">1,335</td><td class="num">2.24%</td>
+                    <td class="num posgrp">2.32</td><td class="num posgrp">1.87</td><td class="num posgrp trend-down">-0.45</td>
+                    <td>Ranks near position 2 with 2.24% CTR. Add "Robux" to the title and optimise the snippet to capture the growing Roblox demand.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.id/topup" target="_blank">/topup</a> (legacy hub)</td>
+                    <td class="num">62,519</td><td class="num">145</td><td class="num">0.23%</td>
+                    <td class="num posgrp">1.36</td><td class="num posgrp">1.17</td><td class="num posgrp trend-down">-0.19</td>
+                    <td>Ranks position ~1.4 on a large pool at 0.23% CTR, and duplicates /p/topup. Redirect it (see Technical Notes) rather than optimise it in place.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Non-Branded Opportunities, Queries: High Impressions, Low Clicks (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table opp-table">
+            <thead>
+                <tr>
+                    <th>Query (Non-Branded)</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Clk (Cur)</th><th class="num">CTR</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                    <th>Why it is an opportunity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>top up ff</td>
+                    <td class="num">89,537</td><td class="num">3,738</td><td class="num">4.17%</td>
+                    <td class="num posgrp">5.46</td><td class="num posgrp">5.53</td><td class="num posgrp trend-up">+0.07</td>
+                    <td>High-intent transactional head term at position ~5.5. Position gains flow directly to the Free Fire PDP.</td>
+                </tr>
+                <tr>
+                    <td>top up ml</td>
+                    <td class="num">69,703</td><td class="num">2,373</td><td class="num">3.40%</td>
+                    <td class="num posgrp">6.41</td><td class="num posgrp">4.54</td><td class="num posgrp trend-down">-1.87</td>
+                    <td>Back to its baseline range (~6.2) after the promo boost. A large pool at position ~6; a top-3 push on the ML PDP converts thousands more.</td>
+                </tr>
+                <tr>
+                    <td>codashop ml</td>
+                    <td class="num">62,688</td><td class="num">1,171</td><td class="num">1.87%</td>
+                    <td class="num posgrp">3.93</td><td class="num posgrp">3.94</td><td class="num posgrp trend-flat">+0.01</td>
+                    <td>Competitor brand demand ("codashop") with a large pool, and Gogogo is already at position ~4. A comparison or price angle can convert this.</td>
+                </tr>
+                <tr>
+                    <td>codashop</td>
+                    <td class="num">42,873</td><td class="num">459</td><td class="num">1.07%</td>
+                    <td class="num posgrp">6.02</td><td class="num posgrp">6.30</td><td class="num posgrp trend-up">+0.28</td>
+                    <td>Broad competitor brand term at position ~6, growing fast (+46.65% clicks). Worth a dedicated capture angle.</td>
+                </tr>
+                <tr>
+                    <td>codashop ff</td>
+                    <td class="num">25,478</td><td class="num">197</td><td class="num">0.77%</td>
+                    <td class="num posgrp">5.52</td><td class="num posgrp">6.01</td><td class="num posgrp trend-up">+0.49</td>
+                    <td>Competitor Free Fire term, improving in rank but only 0.77% CTR. A snippet and price angle would lift a large impression pool.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ PHILIPPINES ============ -->
+        <div class="market-header">
+            <span class="flag">&#127477;&#127469;</span>
+            <h2>Philippines Market</h2>
+            <span class="dom">gogogo.game/en-ph</span>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Clicks</div><div class="value">20,269</div><div class="change trend-flat">-2 (-0.01%)</div></div>
+            <div class="kpi-card"><div class="label">Impressions</div><div class="value">39,706</div><div class="change trend-down">-8,824 (-18.18%)</div></div>
+            <div class="kpi-card"><div class="label">CTR</div><div class="value">51.05%</div><div class="change trend-up">+9.28pp (+22.21%)</div></div>
+            <div class="kpi-card"><div class="label">Homepage Clicks</div><div class="value">18,414</div><div class="change trend-up">+207 (+1.14%), pos 2.71 to 2.09</div></div>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Segment Breakdown</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Segment</th>
+                    <th class="num">Clicks (Cur)</th><th class="num">Clicks (Prev)</th><th class="num">Clicks &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num">CTR (Cur)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Branded</td><td class="num">17,986</td><td class="num">17,863</td><td class="num trend-up">+0.69%</td><td class="num">29,536</td><td class="num">35,469</td><td class="num trend-down">-16.73%</td><td class="num">60.90%</td></tr>
+                <tr><td>Non-Branded</td><td class="num">2,283</td><td class="num">2,408</td><td class="num trend-down">-5.19%</td><td class="num">10,170</td><td class="num">13,061</td><td class="num trend-down">-22.13%</td><td class="num">22.45%</td></tr>
+                <tr><td>Product pages (PDP)</td><td class="num">1,989</td><td class="num">2,193</td><td class="num trend-down">-9.30%</td><td class="num">116,766</td><td class="num">119,977</td><td class="num trend-down">-2.68%</td><td class="num">1.70%</td></tr>
+                <tr class="subtotal"><td>ALL</td><td class="num">20,269</td><td class="num">20,271</td><td class="num">-0.01%</td><td class="num">39,706</td><td class="num">48,530</td><td class="num">-18.18%</td><td class="num">51.05%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: No blog on the Philippines property yet. Clicks held flat while impressions fell and CTR rose sharply (41.77% to 51.05%): the same demand converted more efficiently as the homepage improved to position 2.09. The market remains about 89% branded.</em></p>
+
+        <div class="callout callout-green">
+            <h3>What Moved in the Philippines</h3>
+            <ul>
+                <li><strong>Flat clicks, better quality.</strong> Clicks unchanged (-0.01%) but the homepage improved from position 2.71 to 2.09 and overall position from 4.48 to 3.74. Branded held (+0.69%), led by "gogogo ml" +63.30%.</li>
+                <li><strong>Mobile Legends PDP recovered rank.</strong> +7.71% clicks and position improved 2.69 to 2.34, reversing last week's slip. Blood Strike also jumped (position 11.82 to 6.02).</li>
+                <li><strong>Non-branded softened.</strong> The Poppo Live theme pulled back this week: "poppo recharge" 98 to 66 clicks (position 6.58 to 7.62) and "poppo coins" 64 to 42. Worth watching, still the best discovery lever.</li>
+                <li><strong>The zero-CTR giants persist.</strong> Wesing (21,984 impressions, 0.00% CTR, position 1.03) and Honor of Kings (20,675 impressions, 0.04%, position 1.04) still rank at the top and convert almost nothing: the standing title opportunity.</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top PDP Pages (Philippines)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/p/entertainment/poppo-live</a></td><td class="num">1,052</td><td class="num">1,299</td><td class="num trend-down">-19.01%</td><td class="num">25,694</td><td class="num">28,211</td><td class="num trend-down">-8.92%</td><td class="num posgrp">2.59</td><td class="num posgrp">3.11</td><td class="num posgrp trend-up">+0.52</td></tr>
+                <tr><td>2</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/p/topup/mobile-legends-games-ph</a></td><td class="num">768</td><td class="num">713</td><td class="num trend-up">+7.71%</td><td class="num">22,989</td><td class="num">25,875</td><td class="num trend-down">-11.15%</td><td class="num posgrp">2.34</td><td class="num posgrp">2.69</td><td class="num posgrp trend-up">+0.35</td></tr>
+                <tr><td>3</td><td><a href="https://gogogo.game/en-ph/p/populer/blood-strike-by-netease" target="_blank">/p/populer/blood-strike-by-netease</a></td><td class="num">33</td><td class="num">21</td><td class="num trend-up">+57.14%</td><td class="num">167</td><td class="num">159</td><td class="num trend-up">+5.03%</td><td class="num posgrp">6.02</td><td class="num posgrp">11.82</td><td class="num posgrp trend-up">+5.80</td></tr>
+                <tr><td>4</td><td><a href="https://gogogo.game/en-ph/p/populer/honor-of-kings-games" target="_blank">/p/populer/honor-of-kings-games</a></td><td class="num">9</td><td class="num">10</td><td class="num trend-down">-10.00%</td><td class="num">20,675</td><td class="num">20,823</td><td class="num trend-down">-0.71%</td><td class="num posgrp">1.04</td><td class="num posgrp">1.05</td><td class="num posgrp trend-up">+0.01</td></tr>
+                <tr><td>5</td><td><a href="https://gogogo.game/en-ph/p/populer/call-of-duty-mobile-voucher" target="_blank">/p/populer/call-of-duty-mobile-voucher</a></td><td class="num">11</td><td class="num">5</td><td class="num trend-up">+120.00%</td><td class="num">193</td><td class="num">267</td><td class="num trend-down">-27.72%</td><td class="num posgrp">3.38</td><td class="num posgrp">4.44</td><td class="num posgrp trend-up">+1.06</td></tr>
+                <tr><td>6</td><td><a href="https://gogogo.game/en-ph/p/entertainment/wesing" target="_blank">/p/entertainment/wesing</a></td><td class="num">1</td><td class="num">6</td><td class="num trend-down">-83.33%</td><td class="num">21,984</td><td class="num">22,497</td><td class="num trend-down">-2.28%</td><td class="num posgrp">1.03</td><td class="num posgrp">1.06</td><td class="num posgrp trend-up">+0.03</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Branded Queries (Philippines)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>gogogo ph</td><td class="num">10,606</td><td class="num">10,196</td><td class="num trend-up">+4.02%</td><td class="num">14,630</td><td class="num">14,470</td><td class="num trend-up">+1.11%</td><td class="num posgrp">1.01</td><td class="num posgrp">1.00</td><td class="num posgrp trend-down">-0.01</td></tr>
+                <tr><td>2</td><td>gogogo</td><td class="num">3,346</td><td class="num">3,176</td><td class="num trend-up">+5.35%</td><td class="num">4,776</td><td class="num">4,789</td><td class="num trend-down">-0.27%</td><td class="num posgrp">1.24</td><td class="num posgrp">1.40</td><td class="num posgrp trend-up">+0.16</td></tr>
+                <tr><td>3</td><td>gogogoph</td><td class="num">656</td><td class="num">688</td><td class="num trend-down">-4.65%</td><td class="num">851</td><td class="num">928</td><td class="num trend-down">-8.30%</td><td class="num posgrp">1.00</td><td class="num posgrp">1.00</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr style="background:#f0fdf4;"><td>4</td><td>gogogo ml</td><td class="num">614</td><td class="num">376</td><td class="num trend-up">+63.30%</td><td class="num">791</td><td class="num">487</td><td class="num trend-up">+62.42%</td><td class="num posgrp">1.12</td><td class="num posgrp">1.14</td><td class="num posgrp trend-up">+0.02</td></tr>
+                <tr><td>5</td><td>gogogo top up</td><td class="num">370</td><td class="num">567</td><td class="num trend-down">-34.74%</td><td class="num">437</td><td class="num">655</td><td class="num trend-down">-33.28%</td><td class="num posgrp">1.00</td><td class="num posgrp">1.06</td><td class="num posgrp trend-up">+0.06</td></tr>
+                <tr><td>6</td><td>gogoph</td><td class="num">315</td><td class="num">498</td><td class="num trend-down">-36.75%</td><td class="num">1,110</td><td class="num">1,402</td><td class="num trend-down">-20.83%</td><td class="num posgrp">1.93</td><td class="num posgrp">1.67</td><td class="num posgrp trend-down">-0.26</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Non-Branded Queries (Philippines)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>poppo recharge</td><td class="num">66</td><td class="num">98</td><td class="num trend-down">-32.65%</td><td class="num">999</td><td class="num">960</td><td class="num trend-up">+4.06%</td><td class="num posgrp">7.62</td><td class="num posgrp">6.58</td><td class="num posgrp trend-down">-1.04</td></tr>
+                <tr><td>2</td><td>poppo coins</td><td class="num">42</td><td class="num">64</td><td class="num trend-down">-34.38%</td><td class="num">1,049</td><td class="num">1,050</td><td class="num trend-down">-0.10%</td><td class="num posgrp">5.98</td><td class="num posgrp">5.37</td><td class="num posgrp trend-down">-0.61</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: Most PH query volume is branded ("go go go" spelling variants included). The genuine non-branded demand is the Poppo Live cluster above, which softened this week on both clicks and position: a signal to prioritise the Poppo Live page in the next optimisation pass.</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Non-Branded Opportunities, Pages: High Impressions, Low Clicks (Philippines)</h3>
+        <div class="table-scroll">
+        <table class="data-table opp-table">
+            <thead>
+                <tr>
+                    <th>Page (Non-Branded)</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Clk (Cur)</th><th class="num">CTR</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                    <th>Why it is an opportunity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/p/entertainment/wesing" target="_blank">/p/entertainment/wesing</a></td>
+                    <td class="num">21,984</td><td class="num">1</td><td class="num">0.00%</td>
+                    <td class="num posgrp">1.03</td><td class="num posgrp">1.06</td><td class="num posgrp trend-up">+0.03</td>
+                    <td>Ranks at position 1 with effectively zero clicks. A pure title and intent mismatch. The single biggest untapped page in PH.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/p/populer/honor-of-kings-games" target="_blank">/p/populer/honor-of-kings-games</a></td>
+                    <td class="num">20,675</td><td class="num">9</td><td class="num">0.04%</td>
+                    <td class="num posgrp">1.04</td><td class="num posgrp">1.05</td><td class="num posgrp trend-up">+0.01</td>
+                    <td>Same pattern as Wesing: position 1, 0.04% CTR. A large pool waiting on a clearer, benefit-led snippet (currency: Tokens).</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/promotion" target="_blank">/promotion</a></td>
+                    <td class="num">20,872</td><td class="num">22</td><td class="num">0.11%</td>
+                    <td class="num posgrp">1.11</td><td class="num posgrp">1.15</td><td class="num posgrp trend-up">+0.04</td>
+                    <td>Ranks position 1 on a large pool at 0.11% CTR. A promo-listing page; a clearer title and offer-led snippet could capture more of the demand.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/p/entertainment/poppo-live</a></td>
+                    <td class="num">25,694</td><td class="num">1,052</td><td class="num">4.09%</td>
+                    <td class="num posgrp">2.59</td><td class="num posgrp">3.11</td><td class="num posgrp trend-up">+0.52</td>
+                    <td>The anchor non-branded product and largest converting pool. Improved to position ~2.6; keep pushing to top 2, and recover the poppo query softness.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/p/topup/mobile-legends-games-ph</a></td>
+                    <td class="num">22,989</td><td class="num">768</td><td class="num">3.34%</td>
+                    <td class="num posgrp">2.34</td><td class="num posgrp">2.69</td><td class="num posgrp trend-up">+0.35</td>
+                    <td>Recovered its rank this week (2.69 to 2.34). Continue the push into the top 2 to grow this large pool.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ MALAYSIA ============ -->
+        <div class="market-header">
+            <span class="flag">&#127474;&#127486;</span>
+            <h2>Malaysia Market</h2>
+            <span class="dom">gogogo.com/en-my</span>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Clicks</div><div class="value">1,434</div><div class="change trend-flat">-11 (-0.76%)</div></div>
+            <div class="kpi-card"><div class="label">Impressions</div><div class="value">5,473</div><div class="change trend-down">-846 (-13.39%)</div></div>
+            <div class="kpi-card"><div class="label">CTR</div><div class="value">26.20%</div><div class="change trend-up">+3.33pp (+14.55%)</div></div>
+            <div class="kpi-card"><div class="label">Homepage Clicks</div><div class="value">1,217</div><div class="change trend-flat">-13 (-1.06%), pos 5.75 to 5.39</div></div>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Segment Breakdown</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Segment</th>
+                    <th class="num">Clicks (Cur)</th><th class="num">Clicks (Prev)</th><th class="num">Clicks &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num">CTR (Cur)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Branded</td><td class="num">1,225</td><td class="num">1,254</td><td class="num trend-down">-2.31%</td><td class="num">3,872</td><td class="num">3,908</td><td class="num trend-down">-0.92%</td><td class="num">31.64%</td></tr>
+                <tr><td>Non-Branded</td><td class="num">209</td><td class="num">191</td><td class="num trend-up">+9.42%</td><td class="num">1,601</td><td class="num">2,411</td><td class="num trend-down">-33.60%</td><td class="num">13.05%</td></tr>
+                <tr><td>Product pages (PDP)</td><td class="num">226</td><td class="num">220</td><td class="num trend-up">+2.73%</td><td class="num">4,331</td><td class="num">4,527</td><td class="num trend-down">-4.33%</td><td class="num">5.22%</td></tr>
+                <tr class="subtotal"><td>ALL</td><td class="num">1,434</td><td class="num">1,445</td><td class="num">-0.76%</td><td class="num">5,473</td><td class="num">6,319</td><td class="num">-13.39%</td><td class="num">26.20%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: No blog on the Malaysia property yet. A quietly positive week on a small base: non-branded clicks +9.42% and PDP +2.73%, with the homepage position improving 5.75 to 5.39. Impressions fell as some low-intent non-branded impressions dropped, but CTR rose.</em></p>
+
+        <div class="callout callout-green">
+            <h3>What Moved in Malaysia</h3>
+            <ul>
+                <li><strong>Non-branded recovered.</strong> After last period's cool-down, non-branded clicks grew +9.42%, led by "gogogo ml" (+116.67%), "gogogo top up ff" (+88.89%) and "gogogo top up ml" (+77.78%).</li>
+                <li><strong>Free Fire PDP improved in rank.</strong> +14.95% clicks and position improved 5.82 to 5.01, the strongest MY non-branded pool.</li>
+                <li><strong>Homepage steadier.</strong> Clicks roughly flat but position improved 5.75 to 5.39, reversing last week's slip.</li>
+                <li><strong>Small base, high sensitivity.</strong> With volumes this low, single ranking swings move the whole non-branded picture. The direction this week is positive.</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top PDP Pages (Malaysia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://gogogo.com/en-my/p/topup/free-fire" target="_blank">/p/topup/free-fire</a></td><td class="num">123</td><td class="num">107</td><td class="num trend-up">+14.95%</td><td class="num">1,726</td><td class="num">1,964</td><td class="num trend-down">-12.12%</td><td class="num posgrp">5.01</td><td class="num posgrp">5.82</td><td class="num posgrp trend-up">+0.81</td></tr>
+                <tr><td>2</td><td><a href="https://gogogo.com/en-my/p/topup/mobile-legends-games-my" target="_blank">/p/topup/mobile-legends-games-my</a></td><td class="num">72</td><td class="num">84</td><td class="num trend-down">-14.29%</td><td class="num">1,554</td><td class="num">1,728</td><td class="num trend-down">-10.07%</td><td class="num posgrp">3.43</td><td class="num posgrp">3.90</td><td class="num posgrp trend-up">+0.47</td></tr>
+                <tr><td>3</td><td><a href="https://gogogo.com/en-my/p/entertainment/poppo-live-coins" target="_blank">/p/entertainment/poppo-live-coins</a></td><td class="num">23</td><td class="num">22</td><td class="num trend-up">+4.55%</td><td class="num">126</td><td class="num">119</td><td class="num trend-up">+5.88%</td><td class="num posgrp">11.94</td><td class="num posgrp">12.58</td><td class="num posgrp trend-up">+0.64</td></tr>
+                <tr><td>4</td><td><a href="https://gogogo.com/en-my/p/topup/free-fire-max" target="_blank">/p/topup/free-fire-max</a></td><td class="num">4</td><td class="num">1</td><td class="num trend-up">+300.00%</td><td class="num">232</td><td class="num">8</td><td class="num trend-up">+2,800.0%</td><td class="num posgrp">2.36</td><td class="num posgrp">1.75</td><td class="num posgrp trend-down">-0.61</td></tr>
+                <tr><td>5</td><td><a href="https://gogogo.com/en-my/p/topup/roblox-instan" target="_blank">/p/topup/roblox-instan</a></td><td class="num">3</td><td class="num">4</td><td class="num trend-down">-25.00%</td><td class="num">622</td><td class="num">605</td><td class="num trend-up">+2.81%</td><td class="num posgrp">1.49</td><td class="num posgrp">2.11</td><td class="num posgrp trend-up">+0.62</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Branded Queries (Malaysia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Cur)</th><th class="num">Clk (Prev)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Impr (Prev)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>gogogo</td><td class="num">615</td><td class="num">625</td><td class="num trend-down">-1.60%</td><td class="num">990</td><td class="num">1,124</td><td class="num trend-down">-11.92%</td><td class="num posgrp">2.30</td><td class="num posgrp">2.37</td><td class="num posgrp trend-up">+0.07</td></tr>
+                <tr><td>2</td><td>gogogo my</td><td class="num">247</td><td class="num">246</td><td class="num trend-up">+0.41%</td><td class="num">289</td><td class="num">269</td><td class="num trend-up">+7.43%</td><td class="num posgrp">1.01</td><td class="num posgrp">1.01</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr><td>3</td><td>gogogo malaysia</td><td class="num">88</td><td class="num">89</td><td class="num trend-down">-1.12%</td><td class="num">110</td><td class="num">115</td><td class="num trend-down">-4.35%</td><td class="num posgrp">1.11</td><td class="num posgrp">1.11</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr><td>4</td><td>gogogo top up malaysia</td><td class="num">61</td><td class="num">88</td><td class="num trend-down">-30.68%</td><td class="num">68</td><td class="num">100</td><td class="num trend-down">-32.00%</td><td class="num posgrp">1.01</td><td class="num posgrp">1.00</td><td class="num posgrp trend-down">-0.01</td></tr>
+                <tr style="background:#f0fdf4;"><td>5</td><td>gogogo ml</td><td class="num">26</td><td class="num">12</td><td class="num trend-up">+116.67%</td><td class="num">241</td><td class="num">113</td><td class="num trend-up">+113.27%</td><td class="num posgrp">5.70</td><td class="num posgrp">5.64</td><td class="num posgrp trend-down">-0.06</td></tr>
+                <tr style="background:#f0fdf4;"><td>6</td><td>gogogo top up ff</td><td class="num">17</td><td class="num">9</td><td class="num trend-up">+88.89%</td><td class="num">373</td><td class="num">21</td><td class="num trend-up">+1,676.2%</td><td class="num posgrp">5.01</td><td class="num posgrp">1.29</td><td class="num posgrp trend-down">-3.72</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Non-Branded Opportunities, Pages: High Impressions, Low Clicks (Malaysia)</h3>
+        <div class="table-scroll">
+        <table class="data-table opp-table">
+            <thead>
+                <tr>
+                    <th>Page (Non-Branded)</th>
+                    <th class="num">Impr (Cur)</th><th class="num">Clk (Cur)</th><th class="num">CTR</th>
+                    <th class="num posgrp">Pos (Cur)</th><th class="num posgrp">Pos (Prev)</th><th class="num posgrp">Pos &Delta;</th>
+                    <th>Why it is an opportunity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://gogogo.com/en-my/p/topup/free-fire" target="_blank">/p/topup/free-fire</a></td>
+                    <td class="num">1,726</td><td class="num">123</td><td class="num">7.13%</td>
+                    <td class="num posgrp">5.01</td><td class="num posgrp">5.82</td><td class="num posgrp trend-up">+0.81</td>
+                    <td>Largest non-branded pool and improving in rank. A top-3 push would keep growing the recovery that started this week.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.com/en-my/p/topup/mobile-legends-games-my" target="_blank">/p/topup/mobile-legends-games-my</a></td>
+                    <td class="num">1,554</td><td class="num">72</td><td class="num">4.63%</td>
+                    <td class="num posgrp">3.43</td><td class="num posgrp">3.90</td><td class="num posgrp trend-up">+0.47</td>
+                    <td>Improved to position ~3.4. Push into the top 3 to convert more of the 1.5k impressions.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.com/en-my/p/topup/roblox-instan" target="_blank">/p/topup/roblox-instan</a></td>
+                    <td class="num">622</td><td class="num">3</td><td class="num">0.48%</td>
+                    <td class="num posgrp">1.49</td><td class="num posgrp">2.11</td><td class="num posgrp trend-up">+0.62</td>
+                    <td>Ranks position ~1.5 with 0.48% CTR: a title and currency mismatch (add "Robux"). Small pool but a clear, cheap win.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ TECHNICAL & DEVELOPMENT ============ -->
+        <h2 class="section-header">Technical and Development Notes</h2>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr><th>#</th><th>Item</th><th>Detail</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>Redirect gogogo.id/topup to gogogo.id/p/topup</strong></td>
+                    <td>The legacy hub <a href="https://gogogo.id/topup" target="_blank">gogogo.id/topup</a> normalised to 145 clicks after the promo but still holds 62,519 impressions at position 1.36 (0.23% CTR). It overlaps the canonical /p/topup hierarchy, so the 301 redirect still consolidates a real pool.</td>
+                    <td><span style="color: var(--warning-yellow);">Recommended</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>PDP title with in-game currency (ID)</strong></td>
+                    <td>High-impression, low-CTR PDPs need the currency in the SEO title. Free Fire Max ranks position 1.6 with only 0.84% CTR (add "Diamond"); Roblox voucher position 2.3 at 2.24% (add "Robux"). Part of the low-hanging-fruit PDP optimization plan below.</td>
+                    <td><span style="color: var(--warning-yellow);">In progress</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>PH: Wesing and Honor of Kings title rewrites</strong></td>
+                    <td>Both rank at position 1 with 0.00% to 0.04% CTR on 20k+ impressions each. Title and meta rewrites (with currency: Coins, Tokens) are the fastest wins in PH.</td>
+                    <td><span style="color: var(--warning-yellow);">Recommended</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>Carry-forward technical items</strong></td>
+                    <td>SSR on the gogogo.id homepage and PDPs (crawlable "Cara Top Up" content); PDP sitemap XML for gogogo.com (MY); BreadcrumbList JSON-LD on PDPs. Unchanged from prior report.</td>
+                    <td><span style="color: var(--warning-yellow);">Recommended</span></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ OPTIMIZATION PLAN ============ -->
+        <h2 class="section-header">Optimization Plan</h2>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr><th>#</th><th>Initiative</th><th>Description</th><th>Reference</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>Low-Hanging-Fruit PDP Optimization</strong></td>
+                    <td>Optimise the high-impression, low-CTR PDPs, prioritised from Google Search Console data, on three levers at once:<br>
+                        &bull; <strong>Title tag:</strong> add the in-game currency (Diamond for Free Fire and Mobile Legends, Robux for Roblox, Coins for Poppo Live, Tokens for Honor of Kings, and so on) so the result matches how users search.<br>
+                        &bull; <strong>How-to-top-up content:</strong> improve the on page how-to section so it is clear, complete and crawlable.<br>
+                        &bull; <strong>FAQ usage:</strong> add an FAQ block built from the actual GSC queries the page already receives, to capture long-tail intent and enable rich results.<br>
+                        The SEO team will learn the Gogogo CMS from the Gogogo team so these fixes can be applied directly.</td>
+                    <td><a href="https://docs.google.com/document/d/18HylIgNKszOMN0RFdiKVdX4PZZ_nAdg9U3wUH8kMx_g/edit?tab=t.0#heading=h.9ymkcrk27npz" target="_blank">LHF PDP Optimization (Google Doc)</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Review Draft Articles (June Quota)</strong></td>
+                    <td>Review the drafted articles for the June content quota, so approved drafts can move into production and the July quota proposal can begin.</td>
+                    <td><a href="https://docs.google.com/spreadsheets/d/1kZeBx3Gz-xdRnRzFsQ5RGPzq9KyDH49yxYmdF0WxxcE/edit?gid=1890231322#gid=1890231322" target="_blank">Content plan (Google Sheet)</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>Review 31 Proposal Topics (June Quota, toward 75 articles)</strong></td>
+                    <td>Review the 31 proposed topics for the June quota (bringing the June batch to 75 articles in total). Reviewing the draft articles and proposal topics together clears the path to the July quota proposal.</td>
+                    <td><a href="https://docs.google.com/spreadsheets/d/1kZeBx3Gz-xdRnRzFsQ5RGPzq9KyDH49yxYmdF0WxxcE/edit?gid=1890231322#gid=1890231322" target="_blank">Content plan (Google Sheet)</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>Rule case for available PDPs across locales</strong></td>
+                    <td>Define the rule for which PDPs should be active in which locale (ID, PH, MY), so the catalog is aligned and the thin non-branded footprints (especially MY) are addressed deliberately.</td>
+                    <td><span style="color:#999;">Link to be added</span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><strong>Heading structure for category pages</strong></td>
+                    <td>Standardise the heading structure (H1 to H3 hierarchy) for category pages as part of the category-page migration.</td>
+                    <td><span style="color:#999;">Link to be added</span></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ MIGRATION PROCESS ============ -->
+        <h2 class="section-header">Migration Process</h2>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr><th>#</th><th>Workstream</th><th>Document</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>PDP mapping proposal</strong></td>
+                    <td><a href="https://docs.google.com/spreadsheets/d/14iMnPnzvTspGN8Dx4jFMA33BHdgaczsK-QO5qAGM-0U/edit?gid=1269058026#gid=1269058026" target="_blank">Mapping proposal PDP (Google Sheet)</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Category page migration</strong></td>
+                    <td><a href="https://docs.google.com/document/d/1C33aBjfpLShh13t_-5XV6i_SpoWDy4NaH-V0r5CbYm0/edit?tab=t.0#heading=h.suuaur5hewv" target="_blank">Consolidation of migration process for category pages (Google Doc)</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ PRIORITIES ============ -->
+        <div class="priorities-section">
+            <h3>Next Period Priorities</h3>
+            <ul>
+                <li><strong>Ship the low-hanging-fruit PDP title fixes:</strong> add the in-game currency to Free Fire Max (Diamond) and Roblox voucher (Robux) on gogogo.id, and enable the SEO team on the CMS so fixes can be applied directly.</li>
+                <li><strong>Fix the ID blog slide:</strong> refresh /blog/games/spasi-kosong-nama-free-fire (title, content, on page), the one page in genuine three-week decline.</li>
+                <li><strong>Bank the durable ID PDP gains:</strong> Free Fire and Mobile Legends are above the pre-promo baseline. Push both toward the top 3 so the traffic compounds now the promo has normalised.</li>
+                <li><strong>Fix the PH zero-CTR giants:</strong> Wesing and Honor of Kings rank position 1 and convert nothing. Title and snippet rewrites first, then recover the softened Poppo Live queries.</li>
+                <li><strong>Keep the MY recovery going:</strong> non-branded and the Free Fire PDP turned back up. Push /p/topup/free-fire from position ~5 toward the top 3.</li>
+                <li><strong>Close out the June content quota:</strong> review the draft articles and the 31 proposal topics (toward 75), then open the July quota proposal.</li>
+                <li><strong>Redirect gogogo.id/topup to /p/topup:</strong> still a 62k-impression pool to consolidate.</li>
+            </ul>
+        </div>
+
+        <!-- ============ OPEN QUESTIONS / REMINDERS ============ -->
+        <h2 class="section-header">Open Questions and Reminders (for the Weekly Meeting)</h2>
+        <div class="callout callout-yellow">
+            <h3>To discuss with the team</h3>
+            <ul>
+                <li><strong>PDP active status across locales.</strong> In the list-all-PDP sheet, some products are active in one locale but not in another. Is this expected, or should the catalog be aligned across ID, PH and MY? This feeds the "rule case for available PDPs across locales" in the Optimization Plan.</li>
+                <li><strong>Low active count in MY.</strong> The number of active PDPs in Malaysia is much lower than in Indonesia and Philippines. What is the reason, and does it explain the thin MY non-branded footprint?</li>
+                <li><strong>CMS access for the SEO team.</strong> Confirm the session with the Gogogo team to onboard the SEO team onto the CMS, so the PDP title, how-to and FAQ fixes can be applied directly.</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Prepared by Novastacks for Gogogo (Flip Group) | Data source: Google Search Console period comparison (13 July to 19 July 2026 vs 6 July to 12 July 2026), pulled via the aeo-novastacks profile | Report generated: 22 July 2026</p>
+        </div>
+    </div>
+
+    <script>
+        const brandColors = {
+            primary: '#01aac1', accent: '#01d7f4', teal: '#017d8e', gray: '#666666',
+            success: '#22c55e', warning: '#eab308', danger: '#ef4444'
+        };
+        const markets = ['Indonesia', 'Philippines', 'Malaysia'];
+
+        new Chart(document.getElementById('clicksByMarket'), {
+            type: 'bar',
+            data: {
+                labels: markets,
+                datasets: [
+                    { label: 'Previous Period', data: [103304, 20271, 1445], backgroundColor: brandColors.gray },
+                    { label: 'Current Period', data: [50847, 20269, 1434], backgroundColor: brandColors.primary }
+                ]
+            },
+            options: { responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, ticks: { callback: function(v){ return v.toLocaleString(); } } } } }
+        });
+
+        new Chart(document.getElementById('imprByMarket'), {
+            type: 'bar',
+            data: {
+                labels: markets,
+                datasets: [
+                    { label: 'Previous Period', data: [1341194, 48530, 6319], backgroundColor: brandColors.gray },
+                    { label: 'Current Period', data: [1092935, 39706, 5473], backgroundColor: brandColors.success }
+                ]
+            },
+            options: { responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, ticks: { callback: function(v){ return v.toLocaleString(); } } } } }
+        });
+    </script>
+</body>
+</html>
