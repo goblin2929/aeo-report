@@ -3,3 +3,5 @@ settings.local.json
 # deck verification screenshots
 **/_verify/
 .DS_Store
+ocbc-mcs-deck/_verify/
+ocbc-mcs-deck/_work/
