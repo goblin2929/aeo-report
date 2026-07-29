@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>OCBC Indonesia — SEO &amp; GEO Growth Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   M&C SAATCHI PERFORMANCE — brand tokens
+   Verified against mcsaatchiperformance.com, 29 Jul 2026.
+   Headline/body face MCSaatchi-Heavy / MCSaatchi-Book is
+   proprietary; Archivo (variable, width axis) is the substitute.
+   ============================================================ */
+:root{
+  --mcs-black:#000000;
+  --mcs-white:#FFFFFF;
+  --mcs-green:#00DC00;
+  --mcs-green-deep:#00A900;
+  --mcs-grey:#979797;
+  --mcs-grey-dim:#5E5E5E;
+  --mcs-rule:rgba(255,255,255,.16);
+  --mcs-panel:#0C0C0C;
+  --mcs-panel-2:#141414;
+
+  --font:'Archivo',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+
+  --mx:104px;   /* horizontal margin */
+  --my:76px;    /* vertical margin   */
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:#000;-webkit-font-smoothing:antialiased}
+deck-stage:not(:defined){visibility:hidden}
+
+/* ---------- slide shell ---------- */
+.s{
+  height:100%;width:100%;
+  background:var(--mcs-black);color:var(--mcs-white);
+  font-family:var(--font);
+  padding:var(--my) var(--mx);
+  display:flex;flex-direction:column;overflow:hidden;position:relative;
+}
+.s .logo{position:absolute;top:var(--my);right:var(--mx);height:52px;width:auto;z-index:5}
+
+/* ---------- type ---------- */
+.kicker{
+  font-size:17px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mcs-green);margin:0 0 26px;
+}
+.kicker .sep{color:var(--mcs-grey-dim);margin:0 12px}
+h1.t{
+  font-size:66px;font-weight:800;font-stretch:88%;
+  line-height:.96;letter-spacing:-.005em;text-transform:uppercase;
+  margin:0;max-width:1500px;
+}
+h1.t.sm{font-size:56px}
+h1.t em{font-style:normal;color:var(--mcs-green)}
+.sub{
+  font-size:25px;line-height:1.42;color:#D8D8D8;font-weight:400;
+  margin:24px 0 0;max-width:1360px;
+}
+.sub strong{color:var(--mcs-white);font-weight:700}
+.body{margin-top:auto;padding-top:34px}
+
+/* ---------- footer ---------- */
+.foot{
+  margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:48px;
+  padding-top:22px;border-top:1px solid var(--mcs-rule);
+}
+.foot p{margin:0;font-size:15px;letter-spacing:.06em;color:var(--mcs-grey);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.foot .num{color:var(--mcs-grey-dim);font-weight:700;letter-spacing:.14em;white-space:nowrap}
+
+/* ---------- stat row ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;
+  border-top:3px solid var(--mcs-white)}
+.stats.three{grid-template-columns:repeat(3,1fr)}
+.stat{padding:30px 34px 30px 0;border-right:1px solid var(--mcs-rule)}
+.stat:last-child{border-right:0}
+.stat:not(:first-child){padding-left:34px}
+.stat .v{font-size:76px;font-weight:800;font-stretch:88%;line-height:.9;letter-spacing:-.02em}
+.stat .v.g{color:var(--mcs-green)}
+.stat .l{font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mcs-white);margin-top:16px}
+.stat .c{font-size:17px;line-height:1.4;color:var(--mcs-grey);margin-top:8px}
+
+/* ---------- tables ---------- */
+table.d{width:100%;border-collapse:collapse;font-size:21px;margin-top:30px}
+table.d.tight{font-size:19px}
+table.d th{
+  text-align:left;padding:12px 18px 12px 0;font-size:14px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--mcs-grey);
+  border-bottom:2px solid var(--mcs-white);white-space:nowrap;
+}
+table.d td{padding:13px 18px 13px 0;border-bottom:1px solid var(--mcs-rule);color:#E6E6E6;
+  vertical-align:middle}
+table.d th.r,table.d td.r{text-align:right;padding-right:0}
+table.d tr.me td{background:rgba(0,220,0,.10);color:var(--mcs-white);font-weight:700}
+table.d tr.me td:first-child{box-shadow:inset 4px 0 0 var(--mcs-green)}
+table.d tr.me td:first-child{padding-left:16px}
+.g{color:var(--mcs-green)}
+.dim{color:var(--mcs-grey)}
+.num{font-variant-numeric:tabular-nums}
+/* `table.d td` (0,1,1) outranks a bare `.g` (0,1,0) — these restore the
+   emphasis classes inside tables. Green marks a benchmark to beat;
+   .bad marks a defect, so the accent never reads as "this is good". */
+table.d td.g{color:var(--mcs-green)}
+table.d td.dim{color:var(--mcs-grey)}
+table.d td.bad{color:var(--mcs-white);font-weight:700}
+
+/* ---------- two column ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:34px}
+.two.wide-l{grid-template-columns:1.25fr 1fr}
+.col h3{
+  font-size:15px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mcs-green);margin:0 0 14px;padding-bottom:12px;
+  border-bottom:1px solid var(--mcs-rule);
+}
+.col h3.w{color:var(--mcs-white)}
+
+/* ---------- panels / lists ---------- */
+.panel{background:var(--mcs-panel);border-left:4px solid var(--mcs-green);padding:26px 30px;margin-top:26px}
+.panel .pt{font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mcs-green);margin:0 0 10px}
+.panel p{margin:0;font-size:20px;line-height:1.5;color:#E6E6E6}
+.panel p strong{color:var(--mcs-white)}
+
+ul.pts{list-style:none;margin:0;padding:0}
+ul.pts li{position:relative;padding:0 0 16px 30px;font-size:20px;line-height:1.45;color:#E0E0E0}
+ul.pts li::before{content:'';position:absolute;left:0;top:11px;width:12px;height:2px;background:var(--mcs-green)}
+ul.pts li strong{color:var(--mcs-white);font-weight:700}
+ul.pts li:last-child{padding-bottom:0}
+
+/* ---------- engine cards ---------- */
+.engines{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:36px}
+.eng{background:var(--mcs-panel);padding:32px 34px;border-top:4px solid var(--mcs-green);
+  display:flex;flex-direction:column}
+.eng .en{font-size:15px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mcs-green)}
+.eng .eh{font-size:32px;font-weight:800;font-stretch:88%;text-transform:uppercase;line-height:1.02;
+  margin:12px 0 18px;letter-spacing:-.005em}
+.eng .why{margin-top:auto;padding-top:20px;border-top:1px solid var(--mcs-rule);
+  font-size:17px;line-height:1.45;color:var(--mcs-grey)}
+.eng .why strong{color:var(--mcs-white)}
+
+/* ---------- phases ---------- */
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:36px}
+.ph{background:var(--mcs-panel);padding:28px 26px;display:flex;flex-direction:column;
+  border-top:3px solid var(--mcs-grey-dim)}
+.ph.now{border-top-color:var(--mcs-green);background:var(--mcs-panel-2)}
+.ph .pw{font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mcs-green)}
+.ph .ph-h{font-size:26px;font-weight:800;font-stretch:88%;text-transform:uppercase;
+  line-height:1.04;margin:12px 0 14px}
+.ph p{margin:0;font-size:17px;line-height:1.45;color:var(--mcs-grey)}
+
+/* ---------- cover ---------- */
+.cover{padding:0;display:grid;grid-template-columns:1.35fr 1fr}
+.cover-l{padding:var(--my) var(--mx);display:flex;flex-direction:column;justify-content:space-between}
+.cover-l .logo-lg{height:96px;width:auto;align-self:flex-start}
+.cover-l h1{
+  font-size:96px;font-weight:800;font-stretch:88%;line-height:.94;letter-spacing:-.015em;
+  text-transform:uppercase;margin:0;
+}
+.cover-l h1 span{color:var(--mcs-green);display:block}
+.cover-l .cs{font-size:26px;color:#D8D8D8;margin:26px 0 0;max-width:820px;line-height:1.4}
+.cover-meta{display:flex;gap:56px;padding-top:24px;border-top:1px solid var(--mcs-rule)}
+.cover-meta div{font-size:16px;letter-spacing:.06em;color:var(--mcs-grey)}
+.cover-meta strong{display:block;color:var(--mcs-white);font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;font-size:14px;margin-bottom:7px}
+.cover-r{background:var(--mcs-green);display:flex;flex-direction:column;justify-content:flex-end;
+  padding:var(--my) 64px;position:relative}
+.cover-r .big{
+  font-size:150px;font-weight:800;font-stretch:88%;line-height:.84;letter-spacing:-.03em;
+  color:var(--mcs-black);margin:0;
+}
+.cover-r .cap{font-size:22px;line-height:1.35;color:var(--mcs-black);font-weight:700;
+  margin:22px 0 0;max-width:440px}
+.cover-r .cl{position:absolute;top:var(--my);left:64px;font-size:14px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--mcs-black);opacity:.72}
+
+/* ---------- section divider ---------- */
+.divider{justify-content:center;background:var(--mcs-green);color:var(--mcs-black)}
+/* margin-top:auto on the first child balances the auto margin on .foot,
+   so the block sits optically centred instead of hugging the top */
+.divider .dn{font-size:17px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--mcs-black);opacity:.7;margin:auto 0 22px}
+.divider h1{
+  font-size:112px;font-weight:800;font-stretch:88%;line-height:.9;letter-spacing:-.02em;
+  text-transform:uppercase;margin:0;color:var(--mcs-black);max-width:1520px;
+}
+.divider .ds{font-size:27px;line-height:1.4;color:var(--mcs-black);margin:30px 0 0;
+  max-width:1180px;font-weight:500}
+.divider .foot{border-top-color:rgba(0,0,0,.25)}
+.divider .foot p,.divider .foot .num{color:rgba(0,0,0,.62)}
+
+/* ---------- inverted (white) slide ---------- */
+.s.invert{background:var(--mcs-white);color:var(--mcs-black)}
+.s.invert .kicker{color:var(--mcs-black)}
+.s.invert .kicker .sep{color:#B4B4B4}
+.s.invert h1.t{color:var(--mcs-black)}
+.s.invert h1.t em{color:var(--mcs-green-deep)}
+.s.invert .sub{color:#3A3A3A}
+.s.invert .sub strong{color:var(--mcs-black)}
+.s.invert .foot{border-top-color:rgba(0,0,0,.18)}
+.s.invert .foot p{color:#6B6B6B}
+.s.invert .foot .num{color:#A5A5A5}
+.s.invert .col h3{color:var(--mcs-black);border-bottom-color:rgba(0,0,0,.18)}
+.s.invert ul.pts li{color:#3A3A3A}
+.s.invert ul.pts li strong{color:var(--mcs-black)}
+.s.invert ul.pts li::before{background:var(--mcs-black)}
+
+/* placeholder blocks — content to be written */
+.ph-box{
+  border:2px dashed rgba(0,0,0,.28);background:rgba(0,0,0,.03);
+  padding:26px 28px;display:flex;flex-direction:column;min-height:172px;
+}
+.ph-box.dark-side{background:var(--mcs-black);border-color:rgba(255,255,255,.28)}
+.ph-box .pb-l{font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mcs-green-deep);margin-bottom:14px}
+.ph-box.dark-side .pb-l{color:var(--mcs-green)}
+.ph-box .pb-h{font-size:30px;font-weight:800;font-stretch:88%;text-transform:uppercase;
+  line-height:1.04;margin:0 0 14px;color:var(--mcs-black)}
+.ph-box.dark-side .pb-h{color:var(--mcs-white)}
+.ph-box .pb-t{margin:0;font-size:19px;line-height:1.5;color:#7A7A7A;font-style:italic}
+.ph-box.dark-side .pb-t{color:var(--mcs-grey)}
+.ph-note{margin-top:26px;padding:16px 22px;background:rgba(0,0,0,.05);
+  border-left:4px solid var(--mcs-green-deep);font-size:18px;color:#4A4A4A}
+.ph-note strong{color:var(--mcs-black)}
+
+/* ---------- image compare ---------- */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:26px}
+.cmp figure{margin:0;display:flex;flex-direction:column}
+.cmp figcaption{font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:12px}
+.cmp figcaption.good{color:var(--mcs-green)}
+.cmp figcaption.bad{color:var(--mcs-white)}
+.cmp img{width:100%;height:290px;object-fit:cover;object-position:top;
+  border:1px solid var(--mcs-rule);display:block}
+.figfull{width:100%;height:390px;object-fit:contain;object-position:left top;margin-top:22px}
+
+/* print: one slide per page */
+@media print{ html,body{background:#000} }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080" no-rail>
+
+<!-- ============ 1 · COVER ============ -->
+<section class="s cover">
+  <div class="cover-l">
+    <img class="logo-lg" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+    <div>
+      <h1>OCBC Indonesia<span>SEO &amp; GEO growth strategy</span></h1>
+      <p class="cs">Converting the largest earned reach in Indonesian banking into product demand — in search, and in the AI answers where buyers now decide.</p>
+    </div>
+    <div class="cover-meta">
+      <div><strong>Market</strong>Indonesia</div>
+      <div><strong>Priority products</strong>Savings &amp; Credit Card</div>
+      <div><strong>Date</strong>July 2026</div>
+    </div>
+  </div>
+  <div class="cover-r">
+    <div class="cl">Visits per product page</div>
+    <p class="big">69</p>
+    <p class="cap">OCBC earns 69 visits per product page. Bank Mandiri earns 1,457 — 21× more from the same market.</p>
+  </div>
+</section>
+
+<!-- ============ 2 · EXECUTIVE SUMMARY ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">Executive summary</p>
+  <h1 class="t">The largest reach in Indonesian banking<br>— and the lowest commercial yield</h1>
+  <p class="sub">OCBC does not have a traffic problem. It has a <strong>traffic-relevance problem</strong> and an <strong>AI-visibility gap</strong>. The work is not more traffic; it is converting earned reach into product demand.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="v">1.25M</div>
+      <div class="l">Organic visits / month</div>
+      <div class="c">Largest content footprint in the set — 3,664 indexed pages</div>
+    </div>
+    <div class="stat">
+      <div class="v g">69</div>
+      <div class="l">Visits per product page</div>
+      <div class="c">Lowest in the competitive set; peers earn 347–1,457</div>
+    </div>
+    <div class="stat">
+      <div class="v">18.6%</div>
+      <div class="l">Blog traffic with commercial intent</div>
+      <div class="c">48.7% is off-topic — dreams, horoscopes, trivia</div>
+    </div>
+    <div class="stat">
+      <div class="v">23%</div>
+      <div class="l">AI citations via a product page</div>
+      <div class="c">77% land on a blog article; BCA is the inverse at 95%</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <p class="pt">The opportunity</p>
+    <p>Close the gap between <strong>reach and revenue pages</strong>. OCBC already owns the hard inputs — category-leading organic reach and the #2 AI share of voice. What is missing is the conversion of that authority into product visibility at the moment a buyer chooses.</p>
+  </div>
+
+  <div class="foot">
+    <p>Sources: Ahrefs (Indonesia), live crawl June 2026, 60 live buyer-question tests across Google AI Overview, ChatGPT and Gemini</p>
+    <p class="num">02 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 3 · WHERE OCBC STANDS ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">The starting position</p>
+  <h1 class="t">Most pages of anyone in the set.<br>Fourth in traffic.</h1>
+  <p class="sub">More pages are not producing more visitors. OCBC publishes the most and ranks fourth — the footprint is built, the yield is not.</p>
+
+  <div class="two wide-l">
+    <div class="col">
+      <h3 class="w">Competitive standing — organic</h3>
+      <table class="d">
+        <thead><tr><th>Bank</th><th class="r">Organic visits / mo</th><th class="r">Indexed pages</th></tr></thead>
+        <tbody>
+          <tr><td>CIMB Niaga</td><td class="r num">2,669,353</td><td class="r num">2,075</td></tr>
+          <tr><td>BRI</td><td class="r num">1,740,730</td><td class="r num">3,332</td></tr>
+          <tr><td>Bank Mandiri</td><td class="r num">1,363,101</td><td class="r num">2,603</td></tr>
+          <tr class="me"><td>OCBC</td><td class="r num">1,249,737</td><td class="r num">3,664</td></tr>
+          <tr><td>Jenius</td><td class="r num">65,679</td><td class="r num">568</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <h3>What it means</h3>
+      <ul class="pts">
+        <li><strong>#1 for pages, #4 for traffic.</strong> The largest library in the category is not translating into the largest audience.</li>
+        <li><strong>~95% of organic traffic lands on the blog.</strong> The pages that sell tabungan, deposito, KPR and KTA capture a sliver.</li>
+        <li><strong>#2 AI share of voice (31.4%)</strong> — ahead of Mandiri and BRI, both much larger banks. Earned through articles, not products.</li>
+        <li><strong>The asset is real.</strong> Reach and authority are the hardest things to build, and OCBC already has both.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Source: Ahrefs, Indonesia market, June 2026</p>
+    <p class="num">03 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 4 · THE PROBLEM ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">The problem</p>
+  <h1 class="t">The educational engine is strong.<br>The bridge to the products is not.</h1>
+  <p class="sub">OCBC earns <strong>69 visitors per product page</strong>. Bank Mandiri earns <strong>1,457</strong> — 21× more per page, from fewer pages.</p>
+
+  <table class="d">
+    <thead><tr><th>Bank</th><th class="r">Product traffic / mo</th><th class="r">Product pages</th><th class="r">Traffic per page</th></tr></thead>
+    <tbody>
+      <tr><td>Bank Mandiri</td><td class="r num">97,649</td><td class="r num">67</td><td class="r num g">1,457</td></tr>
+      <tr><td>BRI</td><td class="r num">187,438</td><td class="r num">202</td><td class="r num">928</td></tr>
+      <tr><td>Jenius</td><td class="r num">9,663</td><td class="r num">26</td><td class="r num">372</td></tr>
+      <tr><td>CIMB Niaga</td><td class="r num">221,634</td><td class="r num">639</td><td class="r num">347</td></tr>
+      <tr class="me"><td>OCBC</td><td class="r num">17,362</td><td class="r num">251</td><td class="r num">69</td></tr>
+    </tbody>
+  </table>
+
+  <div class="panel">
+    <p class="pt">So what</p>
+    <p>Chasing additional blog volume would add roughly <strong>3% on top of today's traffic</strong> — that is not the prize. The prize is relevance and conversion: routing an audience OCBC already owns into the pages that sell.</p>
+  </div>
+
+  <div class="foot">
+    <p>Source: Ahrefs product-page traffic, Indonesia, June 2026</p>
+    <p class="num">04 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 5 · THE TWO PRIORITY PRODUCTS ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">Savings <span class="sep">/</span> Credit card</p>
+  <h1 class="t">The same pattern on the two priority products</h1>
+  <p class="sub">On savings, OCBC runs 22 pages to earn 759 visits. Mandiri runs <strong>one page</strong> and earns 4,780.</p>
+
+  <div class="two">
+    <div class="col">
+      <h3>Savings — tabungan</h3>
+      <table class="d tight">
+        <thead><tr><th>Bank</th><th class="r">Traffic</th><th class="r">Pages</th><th class="r">Per page</th></tr></thead>
+        <tbody>
+          <tr><td>Bank Mandiri</td><td class="r num">4,780</td><td class="r num">1</td><td class="r num g">4,780</td></tr>
+          <tr><td>BRI</td><td class="r num">35,086</td><td class="r num">33</td><td class="r num">1,063</td></tr>
+          <tr><td>CIMB Niaga</td><td class="r num">7,995</td><td class="r num">74</td><td class="r num">108</td></tr>
+          <tr class="me"><td>OCBC</td><td class="r num">759</td><td class="r num">22</td><td class="r num">34</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <h3>Credit card — kartu kredit</h3>
+      <table class="d tight">
+        <thead><tr><th>Bank</th><th class="r">Traffic</th><th class="r">Pages</th><th class="r">Per page</th></tr></thead>
+        <tbody>
+          <tr><td>BRI</td><td class="r num">42,163</td><td class="r num">125</td><td class="r num g">337</td></tr>
+          <tr class="me"><td>OCBC</td><td class="r num">2,068</td><td class="r num">9</td><td class="r num">230</td></tr>
+          <tr><td>Mandiri (kartu site)</td><td class="r num">61,000</td><td class="r num">549</td><td class="r num">111</td></tr>
+          <tr><td>CIMB Niaga</td><td class="r num">8,569</td><td class="r num">126</td><td class="r num">68</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <p class="pt">The difference is on the page, not in the product</p>
+    <p>Both banks run a "TabunganKu". Mandiri's single page carries the product name as its H1, the benefits and terms as on-page text, and an interest table. OCBC's H1 reads <strong>"Informasi Lebih Lanjut"</strong> and the rates sit inside a RIPLAY PDF.</p>
+  </div>
+
+  <div class="foot">
+    <p>Sources: Ahrefs, Indonesia; live page crawl of bankmandiri.co.id/tabunganku and ocbc.id TabunganKu, June 2026</p>
+    <p class="num">05 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 6 · GAP 1 ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">Gap 1 <span class="sep">/</span> Content mix</p>
+  <h1 class="t">Only 18.6% of blog traffic<br>carries commercial intent</h1>
+  <p class="sub">Nearly half the audience arrives for dream meanings, horoscopes and trivia. The lever is <strong>rebalancing the mix</strong>, not producing more content.</p>
+
+  <div class="two wide-l">
+    <div class="col">
+      <h3 class="w">Blog traffic by intent</h3>
+      <table class="d">
+        <thead><tr><th>Content category</th><th class="r">Monthly traffic</th><th class="r">Share</th><th class="r">Pages</th></tr></thead>
+        <tbody>
+          <tr class="me"><td>Relevant — commercial intent</td><td class="r num">214,287</td><td class="r num">18.6%</td><td class="r num">792</td></tr>
+          <tr><td>Low-intent — study material</td><td class="r num">377,707</td><td class="r num">32.7%</td><td class="r num">351</td></tr>
+          <tr><td>Off-topic — dreams, horoscopes, trivia</td><td class="r num">561,743</td><td class="r num">48.7%</td><td class="r num">1,357</td></tr>
+          <tr><td class="dim">Total</td><td class="r num dim">1,153,737</td><td class="r num dim">100%</td><td class="r num dim">2,500</td></tr>
+        </tbody>
+      </table>
+      <div class="panel">
+        <p class="pt">The rebalance</p>
+        <p>Prune or consolidate off-topic content; reinvest in commercial-intent topics — <strong>"tabungan tanpa biaya admin"</strong>, <strong>"kartu kredit cicilan 0%"</strong>, <strong>"cara buka rekening online"</strong> — and link them into the product pages.</p>
+      </div>
+    </div>
+    <div class="col">
+      <h3>Where the strength sits</h3>
+      <img class="figfull" src="assets/ocbc-blog-intent-scatter.png" alt="Scatter chart of OCBC blog pages plotted by topic relevance against ranking strength; the largest, best-ranked clusters are low-intent and off-topic rather than buyer-relevant topics">
+      <ul class="pts" style="margin-top:18px">
+        <li>The biggest, best-ranked clusters are the <strong>low-intent and off-topic</strong> ones — not the topics buyers search before choosing a bank.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Source: OCBC blog page-level classification, 2,500 pages, Ahrefs traffic June 2026</p>
+    <p class="num">06 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 7 · GAP 2 ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">Gap 2 <span class="sep">/</span> The money pages</p>
+  <h1 class="t">The pages that sell are<br>invisible by construction</h1>
+  <p class="sub">Verified live, June 2026: core product pages return <strong>no H1 at all</strong>, product detail is pushed into PDFs, and structured data stops at Breadcrumb.</p>
+
+  <table class="d">
+    <thead><tr><th>Core OCBC page</th><th>Heading 1</th><th>Structured data</th><th>Detail trapped in PDF</th></tr></thead>
+    <tbody>
+      <tr><td>/simpanan/tabungan-berjangka</td><td class="bad">None</td><td>Breadcrumb only</td><td class="dim">—</td></tr>
+      <tr><td>/simpanan/deposito</td><td class="bad">None</td><td>Breadcrumb only</td><td class="dim">—</td></tr>
+      <tr><td>/pinjaman/kredit-pemilikan-rumah (KPR)</td><td class="bad">None</td><td>Breadcrumb only</td><td class="dim">—</td></tr>
+      <tr><td>/kartu-transaksi/kartu-kredit</td><td class="bad">None</td><td>Breadcrumb only</td><td class="dim">—</td></tr>
+      <tr><td>/simpanan/tabungan/tabunganku</td><td class="bad">"Informasi Lebih Lanjut"</td><td>Breadcrumb + non-standard (no Product)</td><td>Yes — RIPLAY</td></tr>
+    </tbody>
+  </table>
+
+  <div class="two" style="margin-top:30px">
+    <div class="col">
+      <h3>What is missing on the page</h3>
+      <ul class="pts">
+        <li><strong>No H1, or an H1 that labels a section</strong> rather than the product.</li>
+        <li><strong>Titles not built around the target term</strong> — KPR, KPM.</li>
+        <li><strong>Rates and terms inside PDFs</strong>, where neither Google nor an AI model will quote them.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>What is missing in the markup</h3>
+      <ul class="pts">
+        <li><strong>No Organization, Website or Product schema</strong> — only Breadcrumb.</li>
+        <li><strong>No FAQPage markup</strong> on pages that already display FAQs.</li>
+        <li><strong>No llms.txt, no x-default hreflang</strong>, broken calculator navigation, missing breadcrumbs sitewide.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Source: live crawl of ocbc.id core product pages, June 2026 — this is on-page work on assets that already exist</p>
+    <p class="num">07 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 8 · SECTION DIVIDER: GEO ============ -->
+<section class="s divider">
+  <p class="dn">Section 02</p>
+  <h1>The GEO opportunity</h1>
+  <p class="ds">Search is no longer only a list of links. Buyers ask a question in their own words and act on the answer they are given. OCBC is already in that answer — but as an article about dream meanings, not as a bank with a product to sell.</p>
+  <div class="foot">
+    <p>60 live buyer questions tested across Google AI Overview, ChatGPT and Gemini — savings and credit card, June 2026</p>
+    <p class="num">08 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 9 · WHY GEO ≠ SEO  ·· PLACEHOLDER — CONTENT TO BE WRITTEN ============ -->
+<section class="s invert">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> The distinction</p>
+  <h1 class="t">Why GEO and SEO<br>are different disciplines</h1>
+  <p class="sub">[Placeholder — one line on why winning a ranking and winning an answer are not the same job, and why the second one needs different work.]</p>
+
+  <div class="two" style="margin-top:34px">
+    <div class="ph-box">
+      <div class="pb-l">Column A</div>
+      <p class="pb-h">SEO — winning the list</p>
+      <p class="pb-t">[Placeholder: what SEO optimises for — a position in a list of links, a click, a ranking that can be measured per keyword. To be written.]</p>
+    </div>
+    <div class="ph-box dark-side">
+      <div class="pb-l">Column B</div>
+      <p class="pb-h">GEO — winning the answer</p>
+      <p class="pb-t">[Placeholder: what GEO optimises for — being the source a model quotes inside a single synthesised answer, where there is no list and often no click. To be written.]</p>
+    </div>
+  </div>
+
+  <div class="two" style="margin-top:26px">
+    <div class="col">
+      <h3>What stays the same</h3>
+      <ul class="pts">
+        <li>[Placeholder — the shared foundations: crawlability, clear on-page text, authority.]</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>What changes</h3>
+      <ul class="pts">
+        <li>[Placeholder — what GEO adds: retrievable structure, buyer-framed phrasing, quotable formatting, product pages that can be cited.]</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ph-note"><strong>Placeholder slide.</strong> Structure and layout are final; copy to be written. Tell me the angle you want and I will fill it in.</div>
+
+  <div class="foot">
+    <p>Source to be added</p>
+    <p class="num">09 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 10 · AI VISIBILITY ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Position</p>
+  <h1 class="t">#2 for brand mentions in AI.<br>#4 at the buyer's moment.</h1>
+  <p class="sub">Being mentioned across broad banking topics is not the same as being cited when someone is <strong>choosing a product</strong>. Those are two different measurements — and OCBC ranks very differently on each.</p>
+
+  <div class="two">
+    <div class="col">
+      <h3>Brand mentions across 8 banking topics</h3>
+      <table class="d tight">
+        <thead><tr><th>Brand</th><th class="r">AI mentions</th><th class="r">Share of voice</th></tr></thead>
+        <tbody>
+          <tr><td>CIMB Niaga</td><td class="r num">23,478</td><td class="r num">44.6%</td></tr>
+          <tr class="me"><td>OCBC</td><td class="r num">16,549</td><td class="r num">31.4%</td></tr>
+          <tr><td>Bank Mandiri</td><td class="r num">6,205</td><td class="r num">11.8%</td></tr>
+          <tr><td>BRI</td><td class="r num">5,762</td><td class="r num">10.9%</td></tr>
+          <tr><td>Jenius</td><td class="r num">648</td><td class="r num">1.2%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <h3>60 live buyer questions — who gets cited</h3>
+      <table class="d tight">
+        <thead><tr><th>Bank</th><th class="r">Citations</th><th>Mostly via</th></tr></thead>
+        <tbody>
+          <tr><td>BCA</td><td class="r num">55</td><td>Product pages (95%)</td></tr>
+          <tr><td>Bank Mandiri</td><td class="r num">46</td><td>Product pages (89%)</td></tr>
+          <tr><td>CIMB Niaga</td><td class="r num">33</td><td>Mixed (52% product)</td></tr>
+          <tr class="me"><td>OCBC</td><td class="r num">31</td><td>Blog (77%)</td></tr>
+          <tr><td>BRI</td><td class="r num">10</td><td>Product pages</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <p class="pt">Three problems compound</p>
+    <p><strong>Position</strong> — #4 of 5 at the point of decision. &nbsp;<strong>Quality</strong> — 77% of citations are blog, not product. &nbsp;<strong>Discovery</strong> — OCBC is cited in only <strong>60%</strong> of non-branded questions, and in just 3 of 8 "best bank for X".</p>
+  </div>
+
+  <div class="foot">
+    <p>Left: aggregate AI brand-mention dataset. Right: live testing of 60 real buyer questions — two views of AI visibility, not one ranking</p>
+    <p class="num">10 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 11 · QUALITY GAP ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Quality</p>
+  <h1 class="t">When AI cites OCBC, it cites an article<br>— competitors get cited as a product</h1>
+  <p class="sub">Every page AI actually quotes is educational. The bank is present in the answer; the <strong>product is not</strong>.</p>
+
+  <div class="two wide-l">
+    <div class="col">
+      <h3 class="w">Cited via blog vs product page — 60 questions</h3>
+      <table class="d">
+        <thead><tr><th>Bank</th><th class="r">Blog</th><th class="r">Product</th><th class="r">Product share</th></tr></thead>
+        <tbody>
+          <tr><td>BCA</td><td class="r num">3</td><td class="r num">52</td><td class="r num g">95%</td></tr>
+          <tr><td>Bank Mandiri</td><td class="r num">5</td><td class="r num">41</td><td class="r num">89%</td></tr>
+          <tr><td>BRI</td><td class="r num">0</td><td class="r num">10</td><td class="r num">100%</td></tr>
+          <tr><td>CIMB Niaga</td><td class="r num">16</td><td class="r num">17</td><td class="r num">52%</td></tr>
+          <tr class="me"><td>OCBC</td><td class="r num">24</td><td class="r num">7</td><td class="r num">23%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <h3>The pages AI quotes today</h3>
+      <ul class="pts">
+        <li><span class="dim">/article/…</span> <strong>arti-mimpi-dapat-uang-banyak</strong> — the meaning of dreaming about money</li>
+        <li><span class="dim">/article/…</span> <strong>cara-membuat-e-toll</strong> — how to make an e-toll card</li>
+        <li><span class="dim">/article/…</span> <strong>kegiatan-ekonomi-adalah</strong> — what economic activity is</li>
+        <li><span class="dim">/article/…</span> <strong>cara-mengetahui-bank-dari-nomor-rekening</strong></li>
+      </ul>
+      <div class="panel">
+        <p class="pt">Not one product page</p>
+        <p>No deposito, KPR, KTA or kartu kredit page appears among the pages AI cites. The authority is being earned by content that <strong>cannot sell anything</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Source: 60 live buyer-question tests, Google AI Overview / ChatGPT / Gemini, June 2026</p>
+    <p class="num">11 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 12 · FUNNEL UPSIDE DOWN ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> The funnel</p>
+  <h1 class="t">Visibility is upside-down<br>relative to the funnel</h1>
+  <p class="sub">OCBC shows up while buyers are learning, and thins out exactly where cards are chosen. Across all 30 credit-card questions, only <strong>2 citations</strong> land on a product page.</p>
+
+  <div class="two wide-l">
+    <div class="col">
+      <h3 class="w">Credit card — 30 live buyer questions</h3>
+      <table class="d">
+        <thead><tr><th>Stage</th><th>What the buyer is doing</th><th class="r">Questions</th><th class="r">OCBC cited</th><th class="r">Via product page</th></tr></thead>
+        <tbody>
+          <tr><td>TOFU</td><td>Learning how cards work</td><td class="r num">8</td><td class="r num">4</td><td class="r num bad">0</td></tr>
+          <tr class="me"><td>MOFU</td><td>Choosing between cards</td><td class="r num">20</td><td class="r num">8</td><td class="r num">2</td></tr>
+          <tr><td>BOFU</td><td>Ready to apply</td><td class="r num">2</td><td class="r num">2</td><td class="r num bad">0</td></tr>
+        </tbody>
+      </table>
+      <div class="panel">
+        <p class="pt">Even at the apply moment</p>
+        <p>When a buyer is ready to apply, AI cites an <strong>article</strong> — not an application page. The last click before conversion is being handed to a blog post.</p>
+      </div>
+    </div>
+    <div class="col">
+      <h3>Non-branded discovery — where new customers are won</h3>
+      <table class="d tight">
+        <thead><tr><th>Credit card</th><th class="r">Total</th><th class="r">Non-branded</th><th class="r">Share</th></tr></thead>
+        <tbody>
+          <tr><td>Jenius</td><td class="r num">2,255</td><td class="r num">1,132</td><td class="r num">50%</td></tr>
+          <tr><td>CIMB Niaga</td><td class="r num">8,569</td><td class="r num">2,548</td><td class="r num">30%</td></tr>
+          <tr><td>Bank Mandiri</td><td class="r num">61,000</td><td class="r num g">17,010</td><td class="r num">28%</td></tr>
+          <tr class="me"><td>OCBC</td><td class="r num">2,068</td><td class="r num">44</td><td class="r num">2%</td></tr>
+        </tbody>
+      </table>
+      <ul class="pts" style="margin-top:22px">
+        <li><strong>44 visits a month against Mandiri's 17,010.</strong> On the traffic that brings in customers OCBC does not already have, the gap is roughly 386×.</li>
+        <li>This is the single number the programme is built to move.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Sources: 30 credit-card buyer questions classified by funnel stage; Ahrefs non-branded split, Indonesia, June 2026</p>
+    <p class="num">12 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 13 · MESSAGE GAP ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> The cause</p>
+  <h1 class="t">OCBC has the product.<br>It has not published the message.</h1>
+  <p class="sub">In <strong>6 of 8</strong> questions OCBC loses, it already offers exactly what the buyer asked for. It lost because the answer was never written in the buyer's framing. That is a distribution gap, not a product gap — and it is fixable.</p>
+
+  <table class="d">
+    <thead><tr><th>Buyer question</th><th>Who AI recommended instead</th><th>OCBC has it</th><th>The message OCBC has not published</th></tr></thead>
+    <tbody>
+      <tr><td>Bunga deposito terbaik?</td><td class="dim">SeaBank, Neo, Krom</td><td class="g">Yes</td><td>A clear, comparable deposito rate on the page</td></tr>
+      <tr><td>Tabungan terbaik sehari-hari?</td><td class="dim">Blu by BCA, Jago</td><td class="g">Yes — Nyala</td><td>"Tabungan tanpa biaya admin", in buyer language</td></tr>
+      <tr><td>Investasi reksa dana &amp; obligasi?</td><td class="dim">Mandiri, BCA, Bibit</td><td class="g">Yes</td><td>"OCBC is an APERD agent &amp; bond distributor"</td></tr>
+      <tr><td>Promo kartu kredit terbaik?</td><td class="dim">Mandiri, BCA, UOB</td><td class="g">Yes</td><td>A dedicated, crawlable, maintained promo page</td></tr>
+      <tr><td>KPR terbaik?</td><td class="dim">BTN, CIMB, Mandiri</td><td class="g">Yes</td><td>A citable KPR page with rate and tenor as text, not PDF</td></tr>
+      <tr><td>KTA terbaik?</td><td class="dim">Aggregators, BCA, DBS</td><td class="g">Yes</td><td>A citable KTA page with plafon, bunga, syarat as a table</td></tr>
+    </tbody>
+  </table>
+
+  <div class="foot">
+    <p>Source: live buyer-question testing, June 2026 — each row is a question where AI named a competitor and OCBC offers the same product</p>
+    <p class="num">13 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 14 · THE PLAN ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">The plan</p>
+  <h1 class="t">Two engines convert earned reach<br>into qualified buyers</h1>
+  <p class="sub">Not "more" — a <strong>rebalance</strong>. Prune the off-topic content, reinvest in commercial-intent topics, and make the pages that sell retrievable.</p>
+
+  <div class="engines">
+    <div class="eng">
+      <div class="en">Engine 01</div>
+      <div class="eh">Technical &amp; on-page SEO on the money pages</div>
+      <ul class="pts">
+        <li>A unique, intent-matched <strong>H1 and title</strong> on every core product page.</li>
+        <li>Product detail <strong>out of PDFs</strong> and onto the page as crawlable text.</li>
+        <li><strong>Blog → product internal linking</strong> to route existing authority.</li>
+        <li>Full structured data: Organization, Website, Product / FinancialProduct, FAQPage, Breadcrumb.</li>
+      </ul>
+      <div class="why"><strong>Why first:</strong> highest certainty, fastest payback — the pages already exist and already carry authority.</div>
+    </div>
+    <div class="eng">
+      <div class="en">Engine 02</div>
+      <div class="eh">Relevance engineering for AI answers</div>
+      <ul class="pts">
+        <li>Make product pages <strong>retrievable and citable</strong> — reverse the 77 / 23 blog-to-product split.</li>
+        <li>Publish the <strong>missing message</strong> in the buyer's framing.</li>
+        <li>Commercial-intent assets: <strong>calculators, a structured promo hub, comparison pages</strong>.</li>
+        <li>llms.txt and snippet-extractable formatting — key takeaways, FAQ schema, tables.</li>
+      </ul>
+      <div class="why"><strong>Why it compounds:</strong> a page an AI model can quote keeps earning long after the campaign stops.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Both engines run on pages OCBC already owns — the programme adds structure and message, not volume</p>
+    <p class="num">14 / 15</p>
+  </div>
+</section>
+
+<!-- ============ 15 · WHAT TO EXPECT ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">What to expect <span class="sep">/</span> Where to start</p>
+  <h1 class="t">Same engine, better fuel</h1>
+  <p class="sub">Total organic traffic grows moderately — <strong>by design</strong>. What grows sharply is buyer-relevant traffic and product-level AI citations.</p>
+
+  <div class="stats three">
+    <div class="stat">
+      <div class="v g">44 → </div>
+      <div class="l">Non-branded credit-card discovery</div>
+      <div class="c">The number that matters. Mandiri earns 17,010 a month on the same demand.</div>
+    </div>
+    <div class="stat">
+      <div class="v">60% ↑</div>
+      <div class="l">Non-branded AI citation rate</div>
+      <div class="c">Lift toward category leadership, and shift citations from blog to product.</div>
+    </div>
+    <div class="stat">
+      <div class="v dim">~3%</div>
+      <div class="l">What we do not promise</div>
+      <div class="c">A large jump in total pageviews — the remaining blog volume is only ~3%.</div>
+    </div>
+  </div>
+
+  <div class="phases">
+    <div class="ph now">
+      <div class="pw">Now</div>
+      <div class="ph-h">Connect Search Console</div>
+      <p>The enabler. Directional estimates become measured, and the programme reports against real query data.</p>
+    </div>
+    <div class="ph">
+      <div class="pw">Weeks 1–4</div>
+      <div class="ph-h">Quick wins</div>
+      <p>H1s, intent-matched titles, detail out of PDFs, and structured data on the savings and credit-card pages.</p>
+    </div>
+    <div class="ph">
+      <div class="pw">Weeks 4–8</div>
+      <div class="ph-h">Route the authority</div>
+      <p>Blog → product internal linking; rebalance the intent mix — prune off-topic, brief commercial-intent topics.</p>
+    </div>
+    <div class="ph">
+      <div class="pw">Weeks 8–12+</div>
+      <div class="ph-h">Engineer the category</div>
+      <p>Calculators, a structured promo hub, comparison pages, llms.txt, and the message-gap content.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Estimates are directional until OCBC's Search Console is connected; from that point they are measured</p>
+    <p class="num">15 / 15</p>
+  </div>
+</section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+</body>
+</html>

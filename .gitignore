@@ -1,1 +1,5 @@
 settings.local.json
+
+# deck verification screenshots
+**/_verify/
+.DS_Store
