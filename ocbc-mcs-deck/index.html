@@ -230,6 +230,16 @@ ul.pts li:last-child{padding-bottom:0}
   border-left:4px solid var(--mcs-green-deep);font-size:18px;color:#4A4A4A}
 .ph-note strong{color:var(--mcs-black)}
 
+/* native legend — the tracker assigns colour by series position, and the
+   competitor set changes per stage, so every chart carries its own key */
+.lgd{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 10px}
+.lgd .lg{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:#C8C8C8;white-space:nowrap}
+.lgd .lg i{width:13px;height:13px;border-radius:2px;flex:none}
+.lgd .lg.me{color:var(--mcs-white);font-weight:700}
+.lgd.sm{gap:4px 11px;margin-bottom:7px}
+.lgd.sm .lg{font-size:10.5px}
+.lgd.sm .lg i{width:10px;height:10px}
+
 /* ---------- product visibility slides (master chart + funnel charts) ---------- */
 .vgrid{display:grid;grid-template-columns:1.42fr 1fr;gap:28px;margin-top:24px;flex:1;min-height:0}
 .vmain{display:flex;flex-direction:column;min-height:0}
@@ -244,12 +254,12 @@ ul.pts li:last-child{padding-bottom:0}
 .shot{background:#fff;padding:10px 12px;display:block;width:100%;height:auto}
 .vmain .shot{width:100%;height:auto;display:block}
 
-.vside{display:flex;flex-direction:column;gap:14px;min-height:0}
+.vside{display:flex;flex-direction:column;gap:12px;min-height:0}
 .vcard{display:flex;flex-direction:column;background:var(--mcs-panel);
-  border-left:3px solid var(--mcs-grey-dim);padding:12px 14px;flex:1;min-height:0}
+  border-left:3px solid var(--mcs-grey-dim);padding:9px 12px;flex:1;min-height:0}
 .vcard.peak{border-left-color:var(--mcs-green)}
 .vcard.trough{border-left-color:var(--mcs-white)}
-.vcard .vc-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px}
+.vcard .vc-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px}
 .vcard .vc-s{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mcs-white)}
 .vcard .vc-s small{display:block;font-size:11px;font-weight:400;letter-spacing:.04em;
   text-transform:none;color:var(--mcs-grey);margin-top:2px}
@@ -257,7 +267,7 @@ ul.pts li:last-child{padding-bottom:0}
   color:var(--mcs-grey);white-space:nowrap}
 .vcard.peak .vc-v{color:var(--mcs-green)}
 .vcard.trough .vc-v{color:var(--mcs-white)}
-.vcard .shot{flex:1;min-height:0;object-fit:cover;object-position:center}
+.vcard .shot{width:100%;height:94px;object-fit:cover;object-position:center}
 
 .vkpi{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:auto;
   border-top:1px solid var(--mcs-rule);padding-top:12px}
@@ -382,7 +392,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Sources: Ahrefs (Indonesia), live crawl June 2026, 60 live buyer-question tests across Google AI Overview, ChatGPT and Gemini</p>
-    <p class="num">02 / 20</p>
+    <p class="num">02 / 22</p>
   </div>
 </section>
 
@@ -420,7 +430,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: Ahrefs, Indonesia market, June 2026</p>
-    <p class="num">03 / 20</p>
+    <p class="num">03 / 22</p>
   </div>
 </section>
 
@@ -449,7 +459,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: Ahrefs product-page traffic, Indonesia, June 2026</p>
-    <p class="num">04 / 20</p>
+    <p class="num">04 / 22</p>
   </div>
 </section>
 
@@ -494,7 +504,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Sources: Ahrefs, Indonesia; live page crawl of bankmandiri.co.id/tabunganku and ocbc.id TabunganKu, June 2026</p>
-    <p class="num">05 / 20</p>
+    <p class="num">05 / 22</p>
   </div>
 </section>
 
@@ -533,7 +543,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: OCBC blog page-level classification, 2,500 pages, Ahrefs traffic June 2026</p>
-    <p class="num">06 / 20</p>
+    <p class="num">06 / 22</p>
   </div>
 </section>
 
@@ -576,7 +586,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: live crawl of ocbc.id core product pages, June 2026 — this is on-page work on assets that already exist</p>
-    <p class="num">07 / 20</p>
+    <p class="num">07 / 22</p>
   </div>
 </section>
 
@@ -587,7 +597,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   <p class="ds">Search is no longer only a list of links. Buyers ask a question in their own words and act on the answer they are given. OCBC is already in that answer — but as an article about dream meanings, not as a bank with a product to sell.</p>
   <div class="foot">
     <p>60 live buyer questions tested across Google AI Overview, ChatGPT and Gemini — savings and credit card, June 2026</p>
-    <p class="num">08 / 20</p>
+    <p class="num">08 / 22</p>
   </div>
 </section>
 
@@ -629,24 +639,75 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source to be added</p>
-    <p class="num">09 / 20</p>
+    <p class="num">09 / 22</p>
   </div>
 </section>
 
-<!-- ============ 10 · PRODUCT VISIBILITY — CREDIT CARD ============ -->
+<!-- ============ 10 · PRODUCT VISIBILITY ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Savings</p>
+  <h1 class="t sm">Strongest when they learn.<br>Absent when they compare.</h1>
+  <p class="sub">OCBC leads at <strong>46.0%</strong> while buyers research saving, then collapses to <strong>16.0%</strong> at the comparison stage &mdash; the moment the account is actually chosen.</p>
+  <div class="vgrid">
+    <div class="vmain">
+      <div class="vhead"><div class="vh-l">All savings prompts &middot; visibility score over time</div><div class="vh-v">30.9%</div></div>
+      <div class="lgd "><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>DBS</span><span class="lg"><i style="background:#F7B5B8"></i>CIMB Niaga</span></div>
+      <img class="shot" src="assets/sv-all.png" alt="AI search visibility over time for OCBC NISP against competitors, 23 to 29 July 2026">
+      <div class="vkpi">
+        <div><div class="k-v">43<span class="dim" style="font-size:15px">/139</span></div><div class="k-l">Brand mentions</div></div>
+        <div><div class="k-v">2.0</div><div class="k-l">Avg. position</div></div>
+        <div><div class="k-v g">30.9%</div><div class="k-l">Visibility</div></div>
+        <div><div class="k-v">21.1%</div><div class="k-l">Share of voice</div></div>
+        <div><div class="k-v">6.6%</div><div class="k-l">Owned citation share</div></div>
+      </div>
+    </div>
+
+    <div class="vside">
+      <div class="vcard peak">
+        <div class="vc-top">
+          <div class="vc-s">TOFU<small>Learning how to save</small></div>
+          <div class="vc-v">46.0%</div>
+        </div>
+        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>DBS</span><span class="lg"><i style="background:#F7B5B8"></i>CIMB Niaga</span></div>
+        <img class="shot" src="assets/sv-tofu.png" alt="Visibility score over time at the TOFU stage">
+      </div>
+      <div class="vcard trough">
+        <div class="vc-top">
+          <div class="vc-s">MOFU<small>Comparing accounts</small></div>
+          <div class="vc-v">16.0%</div>
+        </div>
+        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>Danamon</span></div>
+        <img class="shot" src="assets/sv-mofu.png" alt="Visibility score over time at the MOFU stage">
+      </div>
+      <div class="vcard ">
+        <div class="vc-top">
+          <div class="vc-s">BOFU<small>Ready to open</small></div>
+          <div class="vc-v">30.8%</div>
+        </div>
+        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>DBS</span><span class="lg"><i style="background:#E85896"></i>BCA</span><span class="lg"><i style="background:#F7B5B8"></i>Jenius</span></div>
+        <img class="shot" src="assets/sv-bofu.png" alt="Visibility score over time at the BOFU stage">
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>AI search visibility tracked daily 23&ndash;29 July 2026. Line colours follow the tracker &mdash; the competitor set differs per stage, so each chart carries its own key</p>
+    <p class="num">10 / 22</p>
+  </div>
+</section>
+
+<!-- ============ 11 · PRODUCT VISIBILITY ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">GEO opportunity <span class="sep">/</span> Credit card</p>
   <h1 class="t sm">Visible while they learn.<br>Invisible when they apply.</h1>
-  <p class="sub">OCBC holds a <strong>24–29%</strong> visibility score while buyers are researching, then falls to <strong>15.4%</strong> at the apply moment — where BCA and Mandiri run between 75% and 100%.</p>
-
+  <p class="sub">OCBC holds <strong>24&ndash;29%</strong> while buyers are researching, then falls to <strong>15.4%</strong> at the apply moment &mdash; where BCA and Mandiri run between 75% and 100%.</p>
   <div class="vgrid">
     <div class="vmain">
-      <div class="vhead">
-        <div class="vh-l">All credit-card prompts &middot; visibility score over time</div>
-        <div class="vh-v">23.2%</div>
-      </div>
-      <img class="shot" src="assets/cc-all.png" alt="AI search visibility over time for OCBC NISP against Mandiri, BCA, CIMB Niaga and Danamon across all credit-card prompts, 23 to 29 July 2026">
+      <div class="vhead"><div class="vh-l">All credit-card prompts &middot; visibility score over time</div><div class="vh-v">23.2%</div></div>
+      <div class="lgd "><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>Danamon</span></div>
+      <img class="shot" src="assets/cc-all.png" alt="AI search visibility over time for OCBC NISP against competitors, 23 to 29 July 2026">
       <div class="vkpi">
         <div><div class="k-v">32<span class="dim" style="font-size:15px">/138</span></div><div class="k-l">Brand mentions</div></div>
         <div><div class="k-v">2.3</div><div class="k-l">Avg. position</div></div>
@@ -657,33 +718,90 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
     </div>
 
     <div class="vside">
-      <div class="vcard">
+      <div class="vcard ">
         <div class="vc-top">
           <div class="vc-s">TOFU<small>Learning how cards work</small></div>
           <div class="vc-v">24.0%</div>
         </div>
-        <img class="shot" src="assets/cc-tofu.png" alt="Visibility score over time at the TOFU stage, OCBC NISP against competitors">
+        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>Danamon</span></div>
+        <img class="shot" src="assets/cc-tofu.png" alt="Visibility score over time at the TOFU stage">
       </div>
       <div class="vcard peak">
         <div class="vc-top">
           <div class="vc-s">MOFU<small>Choosing between cards</small></div>
           <div class="vc-v">28.6%</div>
         </div>
-        <img class="shot" src="assets/cc-mofu.png" alt="Visibility score over time at the MOFU stage, OCBC NISP against competitors">
+        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>UOB Indonesia</span></div>
+        <img class="shot" src="assets/cc-mofu.png" alt="Visibility score over time at the MOFU stage">
       </div>
       <div class="vcard trough">
         <div class="vc-top">
           <div class="vc-s">BOFU<small>Ready to apply</small></div>
           <div class="vc-v">15.4%</div>
         </div>
-        <img class="shot" src="assets/cc-bofu.png" alt="Visibility score over time at the BOFU stage, OCBC NISP trailing Mandiri, BCA, CIMB Niaga and Danamon">
+        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>Danamon</span></div>
+        <img class="shot" src="assets/cc-bofu.png" alt="Visibility score over time at the BOFU stage">
       </div>
     </div>
   </div>
 
   <div class="foot">
-    <p>AI search visibility tracked daily 23&ndash;29 July 2026 vs Mandiri, BCA, CIMB Niaga and Danamon &mdash; the deeper the funnel, the wider the gap</p>
-    <p class="num">10 / 20</p>
+    <p>AI search visibility tracked daily 23&ndash;29 July 2026. Line colours follow the tracker &mdash; the competitor set differs per stage, so each chart carries its own key</p>
+    <p class="num">11 / 22</p>
+  </div>
+</section>
+
+<!-- ============ 12 · PRODUCT VISIBILITY ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Digital banking</p>
+  <h1 class="t sm">Visibility halves at<br>every step of the funnel.</h1>
+  <p class="sub">OCBC&rsquo;s weakest AI position: <strong>14.2%</strong> overall, falling from 22.5% to 12.0% to <strong>6.7%</strong> at the point of opening an account &mdash; where Mandiri holds 63&ndash;84%.</p>
+  <div class="vgrid">
+    <div class="vmain">
+      <div class="vhead"><div class="vh-l">All digital-banking prompts &middot; visibility score over time</div><div class="vh-v">14.2%</div></div>
+      <div class="lgd "><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>Jenius</span><span class="lg"><i style="background:#F7B5B8"></i>DBS</span></div>
+      <img class="shot" src="assets/db-all.png" alt="AI search visibility over time for OCBC NISP against competitors, 23 to 29 July 2026">
+      <div class="vkpi">
+        <div><div class="k-v">17<span class="dim" style="font-size:15px">/120</span></div><div class="k-l">Brand mentions</div></div>
+        <div><div class="k-v">2.5</div><div class="k-l">Avg. position</div></div>
+        <div><div class="k-v g">14.2%</div><div class="k-l">Visibility</div></div>
+        <div><div class="k-v">7.4%</div><div class="k-l">Share of voice</div></div>
+        <div><div class="k-v">2.6%</div><div class="k-l">Owned citation share</div></div>
+      </div>
+    </div>
+
+    <div class="vside">
+      <div class="vcard peak">
+        <div class="vc-top">
+          <div class="vc-s">TOFU<small>Learning what digital banking is</small></div>
+          <div class="vc-v">22.5%</div>
+        </div>
+        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Jenius</span><span class="lg"><i style="background:#E85896"></i>Mandiri</span><span class="lg"><i style="background:#F7B5B8"></i>DBS</span></div>
+        <img class="shot" src="assets/db-tofu.png" alt="Visibility score over time at the TOFU stage">
+      </div>
+      <div class="vcard ">
+        <div class="vc-top">
+          <div class="vc-s">MOFU<small>Comparing digital banks</small></div>
+          <div class="vc-v">12.0%</div>
+        </div>
+        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>DBS</span><span class="lg"><i style="background:#F7B5B8"></i>Jenius</span></div>
+        <img class="shot" src="assets/db-mofu.png" alt="Visibility score over time at the MOFU stage">
+      </div>
+      <div class="vcard trough">
+        <div class="vc-top">
+          <div class="vc-s">BOFU<small>Ready to open</small></div>
+          <div class="vc-v">6.7%</div>
+        </div>
+        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>DBS</span><span class="lg"><i style="background:#F7B5B8"></i>Jenius</span></div>
+        <img class="shot" src="assets/db-bofu.png" alt="Visibility score over time at the BOFU stage">
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>AI search visibility tracked daily 23&ndash;29 July 2026. Line colours follow the tracker &mdash; the competitor set differs per stage, so each chart carries its own key</p>
+    <p class="num">12 / 22</p>
   </div>
 </section>
 
@@ -730,7 +848,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Left: aggregate AI brand-mention dataset. Right: live testing of 60 real buyer questions — two views of AI visibility, not one ranking</p>
-    <p class="num">11 / 20</p>
+    <p class="num">13 / 22</p>
   </div>
 </section>
 
@@ -772,7 +890,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: 60 live buyer-question tests, Google AI Overview / ChatGPT / Gemini, June 2026</p>
-    <p class="num">12 / 20</p>
+    <p class="num">14 / 22</p>
   </div>
 </section>
 
@@ -819,7 +937,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Sources: 30 credit-card buyer questions classified by funnel stage; Ahrefs non-branded split, Indonesia, June 2026</p>
-    <p class="num">13 / 20</p>
+    <p class="num">15 / 22</p>
   </div>
 </section>
 
@@ -844,7 +962,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: live buyer-question testing, June 2026 — each row is a question where AI named a competitor and OCBC offers the same product</p>
-    <p class="num">14 / 20</p>
+    <p class="num">16 / 22</p>
   </div>
 </section>
 
@@ -882,7 +1000,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Both engines run on pages OCBC already owns — the programme adds structure and message, not volume</p>
-    <p class="num">15 / 20</p>
+    <p class="num">17 / 22</p>
   </div>
 </section>
 
@@ -936,7 +1054,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Estimates are directional until OCBC's Search Console is connected; from that point they are measured</p>
-    <p class="num">16 / 20</p>
+    <p class="num">18 / 22</p>
   </div>
 </section>
 
@@ -968,7 +1086,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage for savings is our classification, applied on the same basis as the credit-card set</p>
-    <p class="num">17 / 20</p>
+    <p class="num">19 / 22</p>
   </div>
 </section>
 
@@ -1000,7 +1118,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage for savings is our classification, applied on the same basis as the credit-card set</p>
-    <p class="num">18 / 20</p>
+    <p class="num">20 / 22</p>
   </div>
 </section>
 
@@ -1032,7 +1150,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage as classified in the source analysis; four servicing queries sit outside the acquisition funnel</p>
-    <p class="num">19 / 20</p>
+    <p class="num">21 / 22</p>
   </div>
 </section>
 
@@ -1064,7 +1182,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage as classified in the source analysis; four servicing queries sit outside the acquisition funnel</p>
-    <p class="num">20 / 20</p>
+    <p class="num">22 / 22</p>
   </div>
 </section>
 
