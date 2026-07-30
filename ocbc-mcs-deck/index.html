@@ -93,6 +93,17 @@ h1.t em{font-style:normal;color:var(--mcs-green)}
 .stat .l{font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:var(--mcs-white);margin-top:16px}
 .stat .c{font-size:17px;line-height:1.4;color:var(--mcs-grey);margin-top:8px}
+/* vertical variant: few metrics, each given a full row — figure left, read right */
+.stats.vert{grid-template-columns:1fr;margin-top:38px}
+.stats.vert .stat{display:grid;grid-template-columns:440px 1fr;column-gap:52px;
+  align-items:center;padding:30px 0;border-right:0;border-bottom:1px solid var(--mcs-rule)}
+.stats.vert .stat:last-child{border-bottom:0}
+.stats.vert .stat:not(:first-child){padding-left:0}
+.stats.vert .stat .v{grid-column:1;grid-row:1 / span 2;align-self:center}
+.stats.vert .stat .l{grid-column:2;grid-row:1;align-self:end;margin-top:0}
+.stats.vert .stat .c{grid-column:2;grid-row:2;align-self:start;font-size:19px;max-width:1000px}
+/* a full row per figure gives the range room to grow back toward the single-figure size */
+.stats.vert .stat .v.rng{font-size:60px;line-height:1}
 
 /* ---------- tables ---------- */
 table.d{width:100%;border-collapse:collapse;font-size:21px;margin-top:30px}
@@ -1122,23 +1133,18 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">What to expect <span class="sep">/</span> Where to start</p>
-  <h1 class="t">Sharper growth in business pipelines<br>and new accounts</h1>
+  <h1 class="t">Buyer-relevant traffic and AI citations<br>compound from month three</h1>
 
-  <div class="stats three">
+  <div class="stats vert">
     <div class="stat">
       <div class="v g rng">23% &rarr; 28%</div>
       <div class="l">AI visibility, QoQ</div>
       <div class="c">Blended across savings, credit cards and digital banking, where OCBC sits at 23.2% today. Mandiri and BCA are both above 53% on the same prompts.</div>
     </div>
     <div class="stat">
-      <div class="v g rng">3&ndash;4% → 5.5&ndash;6%</div>
+      <div class="v g rng">3&ndash;4% &rarr; 5.5&ndash;6%</div>
       <div class="l">Non-branded AI citation rate, QoQ</div>
       <div class="c">Into the Tier 1 banking players &mdash; and citations shifting from blog to product.</div>
-    </div>
-    <div class="stat">
-      <div class="v dim mid">~3%</div>
-      <div class="l">What we do not promise</div>
-      <div class="c">A large jump in total pageviews — the remaining blog volume is only ~3%.</div>
     </div>
   </div>
 
