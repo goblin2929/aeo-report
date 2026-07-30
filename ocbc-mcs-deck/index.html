@@ -93,6 +93,13 @@ h1.t em{font-style:normal;color:var(--mcs-green)}
 /* ---------- tables ---------- */
 table.d{width:100%;border-collapse:collapse;font-size:21px;margin-top:30px}
 table.d.tight{font-size:19px}
+/* centres a content block in the space left between the sub and the foot,
+   so a light slide doesn't bottom out at 65% of the canvas */
+.mid-t{margin-top:auto}
+.mid-b{margin-bottom:auto}
+table.d.lg{font-size:27px}
+table.d.lg th{font-size:16px;padding-bottom:16px}
+table.d.lg td{padding:20px 24px 20px 0}
 table.d th{
   text-align:left;padding:12px 18px 12px 0;font-size:14px;font-weight:700;
   letter-spacing:.16em;text-transform:uppercase;color:var(--mcs-grey);
@@ -259,10 +266,13 @@ ul.pts li:last-child{padding-bottom:0}
   color:var(--mcs-grey)}
 .vhead .vh-v{font-size:46px;font-weight:800;font-stretch:88%;line-height:.86;
   letter-spacing:-.02em;color:var(--mcs-green)}
-/* screenshots are white-background exports — sit them on white cards rather than
-   inverting, so the source tool's chart stays faithful */
+/* charts are drawn natively, so they live on the slide's own black panel */
 .shot{background:#fff;padding:10px 12px;display:block;width:100%;height:auto}
 .vmain .shot{width:100%;height:auto;display:block}
+.chart{background:var(--mcs-panel);padding:12px 14px 8px;display:block;width:100%}
+.chart svg{display:block;width:100%;height:auto}
+.chart.sm{padding:7px 9px 4px;flex:1;min-height:0}
+.chart.sm svg{height:100%}
 
 .vside{display:flex;flex-direction:column;gap:12px;min-height:0}
 .vcard{display:flex;flex-direction:column;background:var(--mcs-panel);
@@ -508,7 +518,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   <p class="ds">Search is no longer only a list of links. Buyers ask a question in their own words and act on the answer they are given. OCBC is already in that answer — but as an article about dream meanings, not as a bank with a product to sell.</p>
   <div class="foot">
     <p>60 live buyer questions tested across Google AI Overview, ChatGPT and Gemini — savings and credit card, June 2026</p>
-    <p class="num">02 / 28</p>
+    <p class="num">02 / 30</p>
   </div>
 </section>
 
@@ -526,11 +536,42 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
     <h2>AI SEO / AEO / GEO: the AI answer mentions a few brands.</h2>
     <div class="shotwrap"><img src="assets/aeo-mention-sg.jpg" alt="Google AI Overview naming brands as recommended agencies"></div>
     <p class="cap">Google AI Overview, &ldquo;aeo agency singapore&rdquo; &mdash; the answer names Novastacks. Cited, not ranked.</p>
-    <div class="mf"><span>Live result &middot; Jun 2026</span><span class="num">03 / 28</span></div>
+    <div class="mf"><span>Live result &middot; Jun 2026</span><span class="num">03 / 30</span></div>
   </div>
 </section>
 
-<!-- ============ 4 · THE OUTCOME: WHY GEO ≠ SEO ============ -->
+<!-- ============ 4 · THE SHIFT ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> The shift</p>
+  <h1 class="t">Buying decisions moved<br>inside AI answers this year.</h1>
+  <p class="sub">AI now answers the question before anyone reaches a link. As SparkToro's Amanda Natividad puts it, <strong>&ldquo;the click is now optional.&rdquo;</strong></p>
+
+  <div class="stats three mid-t mid-b">
+    <div class="stat">
+      <div class="v g rng">13% &rarr; 25%</div>
+      <div class="l">Google searches showing an AI answer</div>
+      <div class="c">One in four Google searches now opens with an AI answer &mdash; nearly double a year ago. Conductor, 21.9M queries, Q1 2025 to Q1 2026.</div>
+    </div>
+    <div class="stat">
+      <div class="v g rng">60% &rarr; 68%</div>
+      <div class="l">US searches ending without a click</div>
+      <div class="c">Two-thirds of searches now end without any click at all. SparkToro clickstream, 2024 to 2026.</div>
+    </div>
+    <div class="stat">
+      <div class="v g">1.42&times;</div>
+      <div class="l">Conversion, AI-referred vs other traffic</div>
+      <div class="c">AI-referred visitors convert 42% more often. Adobe Analytics &mdash; <strong>US retail data</strong>, directional for banking.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Conductor 2026 (21.9M queries) &middot; SparkToro 2026 clickstream &middot; Adobe Analytics 2026, US retail</p>
+    <p class="num">04 / 30</p>
+  </div>
+</section>
+
+<!-- ============ 5 · THE OUTCOME: WHY GEO ≠ SEO ============ -->
 <section class="s invert">
   <p class="kicker">GEO opportunity <span class="sep">/</span> The distinction</p>
   <h1 class="t">Why GEO and SEO<br>are different disciplines</h1>
@@ -556,11 +597,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source to be added</p>
-    <p class="num">04 / 28</p>
+    <p class="num">05 / 30</p>
   </div>
 </section>
 
-<!-- ============ 5 · THE INPUT WORK ============ -->
+<!-- ============ 6 · THE INPUT WORK ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">GEO opportunity <span class="sep">/</span> Scope</p>
@@ -612,11 +653,42 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source to be added</p>
-    <p class="num">05 / 28</p>
+    <p class="num">06 / 30</p>
   </div>
 </section>
 
-<!-- ============ 6 · AI VISIBILITY ============ -->
+<!-- ============ 7 · THE DARK FUNNEL ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> What you cannot see</p>
+  <h1 class="t">AI answer impact is bigger<br>than you see</h1>
+  <p class="sub">Analytics dashboards report a small fraction of AI-driven demand, because AI assistants do not pass referrer data the way search engines do. The influence is already in the pipeline &mdash; it simply arrives unlabelled, as direct or unassigned traffic.</p>
+
+  <div class="stats three mid-t" style="grid-template-columns:repeat(2,1fr)">
+    <div class="stat">
+      <div class="v g rng">30&ndash;60%</div>
+      <div class="l">Of sales self-report AI discovery</div>
+      <div class="c">When buyers are asked directly &mdash; on enquiry forms, post-purchase surveys and sales discovery calls &mdash; this share name an AI assistant as where they found the brand.</div>
+    </div>
+    <div class="stat">
+      <div class="v g rng">100&ndash;200%</div>
+      <div class="l">Above what referrals show</div>
+      <div class="c">Siege Media's estimate of how far real AI influence runs ahead of tracked referral data. They call the difference the dark funnel.</div>
+    </div>
+  </div>
+
+  <div class="panel mid-b">
+    <p class="pt">Why this matters now</p>
+    <p><strong>OCBC already has AI-influenced revenue. It is simply not visible, so it is not being defended.</strong> The first fix is measurement, not spend: make &ldquo;ChatGPT / AI assistant&rdquo; a discrete option on OCBC enquiry forms &mdash; beside Google and social, never buried under &ldquo;Other&rdquo;.</p>
+  </div>
+
+  <div class="foot">
+    <p>Self-attribution and dark-funnel ranges: Siege Media, 2026 &mdash; GEO ROI attribution framework. Agency-published methodology, not independent research.</p>
+    <p class="num">07 / 30</p>
+  </div>
+</section>
+
+<!-- ============ 8 · AI VISIBILITY ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">GEO opportunity <span class="sep">/</span> Position</p>
@@ -659,11 +731,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Left: WorkDuo AI brand visibility, product prompts &mdash; top 5 of 10 tracked brands. Right: live testing of 60 real buyer questions</p>
-    <p class="num">06 / 28</p>
+    <p class="num">08 / 30</p>
   </div>
 </section>
 
-<!-- ============ 7 · QUALITY GAP ============ -->
+<!-- ============ 9 · QUALITY GAP ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">GEO opportunity <span class="sep">/</span> Quality</p>
@@ -701,220 +773,102 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: 60 live buyer-question tests, Google AI Overview / ChatGPT / Gemini, June 2026</p>
-    <p class="num">07 / 28</p>
+    <p class="num">09 / 30</p>
   </div>
 </section>
 
-<!-- ============ 8 · FUNNEL UPSIDE DOWN ============ -->
+<!-- ============ 10 · FUNNEL UPSIDE DOWN ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">GEO opportunity <span class="sep">/</span> The funnel</p>
   <h1 class="t">Visibility is upside-down<br>relative to the funnel</h1>
-  <p class="sub">OCBC shows up while buyers are learning, and thins out exactly where cards are chosen. Across all 30 credit-card questions, only <strong>2 citations</strong> land on a product page.</p>
+  <p class="sub">OCBC shows up while buyers are learning, and thins out exactly where cards are chosen. When a buyer is ready to apply, AI cites an <strong>article</strong> — not an application page. Across all 30 credit-card questions only <strong>2 citations</strong> land on a product page: the last click before conversion is being handed to a blog post.</p>
 
-  <div class="two wide-l">
-    <div class="col">
-      <h3 class="w">Credit card — 30 live buyer questions</h3>
-      <table class="d">
-        <thead><tr><th>Stage</th><th>What the buyer is doing</th><th class="r">Questions</th><th class="r">OCBC cited</th><th class="r">Via product page</th></tr></thead>
-        <tbody>
-          <tr><td>TOFU</td><td>Learning how cards work</td><td class="r num">8</td><td class="r num">4</td><td class="r num bad">0</td></tr>
-          <tr class="me"><td>MOFU</td><td>Choosing between cards</td><td class="r num">20</td><td class="r num">8</td><td class="r num">2</td></tr>
-          <tr><td>BOFU</td><td>Ready to apply</td><td class="r num">2</td><td class="r num">2</td><td class="r num bad">0</td></tr>
-        </tbody>
-      </table>
-      <div class="panel">
-        <p class="pt">Even at the apply moment</p>
-        <p>When a buyer is ready to apply, AI cites an <strong>article</strong> — not an application page. The last click before conversion is being handed to a blog post.</p>
-      </div>
-    </div>
-    <div class="col">
-      <h3>Non-branded discovery — where new customers are won</h3>
-      <table class="d tight">
-        <thead><tr><th>Credit card</th><th class="r">Total</th><th class="r">Non-branded</th><th class="r">Share</th></tr></thead>
-        <tbody>
-          <tr><td>Jenius</td><td class="r num">2,255</td><td class="r num">1,132</td><td class="r num">50%</td></tr>
-          <tr><td>CIMB Niaga</td><td class="r num">8,569</td><td class="r num">2,548</td><td class="r num">30%</td></tr>
-          <tr><td>Bank Mandiri</td><td class="r num">61,000</td><td class="r num g">17,010</td><td class="r num">28%</td></tr>
-          <tr class="me"><td>OCBC</td><td class="r num">2,068</td><td class="r num">44</td><td class="r num">2%</td></tr>
-        </tbody>
-      </table>
-      <ul class="pts" style="margin-top:22px">
-        <li><strong>44 visits a month against Mandiri's 17,010.</strong> On the traffic that brings in customers OCBC does not already have, the gap is roughly 386×.</li>
-        <li>This is the single number the programme is built to move.</li>
-      </ul>
-    </div>
+  <div class="col mid-t mid-b">
+    <h3 class="w">Credit card — 30 live buyer questions</h3>
+    <table class="d lg">
+      <thead><tr><th>Stage</th><th>What the buyer is doing</th><th class="r">Questions</th><th class="r">OCBC cited</th><th class="r">Via product page</th></tr></thead>
+      <tbody>
+        <tr><td>TOFU</td><td>Learning how cards work</td><td class="r num">8</td><td class="r num">4</td><td class="r num bad">0</td></tr>
+        <tr class="me"><td>MOFU</td><td>Choosing between cards</td><td class="r num">20</td><td class="r num">8</td><td class="r num">2</td></tr>
+        <tr><td>BOFU</td><td>Ready to apply</td><td class="r num">2</td><td class="r num">2</td><td class="r num bad">0</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="foot">
-    <p>Sources: 30 credit-card buyer questions classified by funnel stage; Ahrefs non-branded split, Indonesia, June 2026</p>
-    <p class="num">08 / 28</p>
-  </div>
-</section>
-
-<!-- ============ 9 · PRODUCT VISIBILITY ============ -->
-<section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
-  <p class="kicker">GEO opportunity <span class="sep">/</span> Savings</p>
-  <h1 class="t sm">Strongest when they learn.<br>Absent when they compare.</h1>
-  <p class="sub">OCBC leads at <strong>46.0%</strong> while buyers research saving, then collapses to <strong>16.0%</strong> at the comparison stage &mdash; the moment the account is actually chosen.</p>
-  <div class="vgrid">
-    <div class="vmain">
-      <div class="vhead"><div class="vh-l">All savings prompts &middot; visibility score over time</div><div class="vh-v">30.9%</div></div>
-      <div class="lgd "><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>DBS</span><span class="lg"><i style="background:#F7B5B8"></i>CIMB Niaga</span></div>
-      <img class="shot" src="assets/sv-all.png" alt="AI search visibility over time for OCBC NISP against competitors, 23 to 29 July 2026">
-      <div class="vkpi">
-        <div><div class="k-v">43<span class="dim" style="font-size:15px">/139</span></div><div class="k-l">Brand mentions</div></div>
-        <div><div class="k-v">2.0</div><div class="k-l">Avg. position</div></div>
-        <div><div class="k-v g">30.9%</div><div class="k-l">Visibility</div></div>
-        <div><div class="k-v">21.1%</div><div class="k-l">Share of voice</div></div>
-        <div><div class="k-v">6.6%</div><div class="k-l">Owned citation share</div></div>
-      </div>
-    </div>
-
-    <div class="vside">
-      <div class="vcard peak">
-        <div class="vc-top">
-          <div class="vc-s">TOFU<small>Learning how to save</small></div>
-          <div class="vc-v">46.0%</div>
-        </div>
-        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>DBS</span><span class="lg"><i style="background:#F7B5B8"></i>CIMB Niaga</span></div>
-        <img class="shot" src="assets/sv-tofu.png" alt="Visibility score over time at the TOFU stage">
-      </div>
-      <div class="vcard trough">
-        <div class="vc-top">
-          <div class="vc-s">MOFU<small>Comparing accounts</small></div>
-          <div class="vc-v">16.0%</div>
-        </div>
-        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>Danamon</span></div>
-        <img class="shot" src="assets/sv-mofu.png" alt="Visibility score over time at the MOFU stage">
-      </div>
-      <div class="vcard ">
-        <div class="vc-top">
-          <div class="vc-s">BOFU<small>Ready to open</small></div>
-          <div class="vc-v">30.8%</div>
-        </div>
-        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>DBS</span><span class="lg"><i style="background:#E85896"></i>BCA</span><span class="lg"><i style="background:#F7B5B8"></i>Jenius</span></div>
-        <img class="shot" src="assets/sv-bofu.png" alt="Visibility score over time at the BOFU stage">
-      </div>
-    </div>
-  </div>
-
-  <div class="foot">
-    <p>AI search visibility tracked daily 23&ndash;29 July 2026. Line colours follow the tracker &mdash; the competitor set differs per stage, so each chart carries its own key</p>
-    <p class="num">09 / 28</p>
-  </div>
-</section>
-
-<!-- ============ 10 · PRODUCT VISIBILITY ============ -->
-<section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
-  <p class="kicker">GEO opportunity <span class="sep">/</span> Credit card</p>
-  <h1 class="t sm">Visible while they learn.<br>Invisible when they apply.</h1>
-  <p class="sub">OCBC holds <strong>24&ndash;29%</strong> while buyers are researching, then falls to <strong>15.4%</strong> at the apply moment &mdash; where BCA and Mandiri run between 75% and 100%.</p>
-  <div class="vgrid">
-    <div class="vmain">
-      <div class="vhead"><div class="vh-l">All credit-card prompts &middot; visibility score over time</div><div class="vh-v">23.2%</div></div>
-      <div class="lgd "><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>Danamon</span></div>
-      <img class="shot" src="assets/cc-all.png" alt="AI search visibility over time for OCBC NISP against competitors, 23 to 29 July 2026">
-      <div class="vkpi">
-        <div><div class="k-v">32<span class="dim" style="font-size:15px">/138</span></div><div class="k-l">Brand mentions</div></div>
-        <div><div class="k-v">2.3</div><div class="k-l">Avg. position</div></div>
-        <div><div class="k-v g">23.2%</div><div class="k-l">Visibility</div></div>
-        <div><div class="k-v">9.7%</div><div class="k-l">Share of voice</div></div>
-        <div><div class="k-v">3.8%</div><div class="k-l">Owned citation share</div></div>
-      </div>
-    </div>
-
-    <div class="vside">
-      <div class="vcard ">
-        <div class="vc-top">
-          <div class="vc-s">TOFU<small>Learning how cards work</small></div>
-          <div class="vc-v">24.0%</div>
-        </div>
-        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>Danamon</span></div>
-        <img class="shot" src="assets/cc-tofu.png" alt="Visibility score over time at the TOFU stage">
-      </div>
-      <div class="vcard peak">
-        <div class="vc-top">
-          <div class="vc-s">MOFU<small>Choosing between cards</small></div>
-          <div class="vc-v">28.6%</div>
-        </div>
-        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>UOB Indonesia</span></div>
-        <img class="shot" src="assets/cc-mofu.png" alt="Visibility score over time at the MOFU stage">
-      </div>
-      <div class="vcard trough">
-        <div class="vc-top">
-          <div class="vc-s">BOFU<small>Ready to apply</small></div>
-          <div class="vc-v">15.4%</div>
-        </div>
-        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>Mandiri</span><span class="lg"><i style="background:#F9BF9D"></i>BCA</span><span class="lg"><i style="background:#E85896"></i>CIMB Niaga</span><span class="lg"><i style="background:#F7B5B8"></i>Danamon</span></div>
-        <img class="shot" src="assets/cc-bofu.png" alt="Visibility score over time at the BOFU stage">
-      </div>
-    </div>
-  </div>
-
-  <div class="foot">
-    <p>AI search visibility tracked daily 23&ndash;29 July 2026. Line colours follow the tracker &mdash; the competitor set differs per stage, so each chart carries its own key</p>
-    <p class="num">10 / 28</p>
+    <p>Source: 30 live credit-card buyer questions classified by funnel stage — Google AI Overview, ChatGPT and Gemini, Indonesia, June 2026</p>
+    <p class="num">10 / 30</p>
   </div>
 </section>
 
 <!-- ============ 11 · PRODUCT VISIBILITY ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
-  <p class="kicker">GEO opportunity <span class="sep">/</span> Digital banking</p>
-  <h1 class="t sm">Visibility halves at<br>every step of the funnel.</h1>
-  <p class="sub">OCBC&rsquo;s weakest AI position: <strong>14.2%</strong> overall, falling from 22.5% to 12.0% to <strong>6.7%</strong> at the point of opening an account &mdash; where Mandiri holds 63&ndash;84%.</p>
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Savings</p>
+  <h1 class="t sm">Strongest when they learn.<br>Absent when they compare.</h1>
+  <p class="sub">OCBC leads at <strong>46.0%</strong> while buyers research saving, then collapses to <strong>16.0%</strong> at the comparison stage &mdash; the moment the account is actually chosen.</p>
+  <div class="lgd"><span class="lg me"><i style="background:#A78BFA"></i>OCBC NISP</span><span class="lg"><i style="background:#22D3EE"></i>Mandiri</span><span class="lg"><i style="background:#FBA94C"></i>BCA</span><span class="lg"><i style="background:#FF5CA8"></i>CIMB Niaga</span><span class="lg"><i style="background:#94A3B8"></i>DBS</span><span class="lg"><i style="background:#C4787E"></i>Danamon</span></div>
   <div class="vgrid">
     <div class="vmain">
-      <div class="vhead"><div class="vh-l">All digital-banking prompts &middot; visibility score over time</div><div class="vh-v">14.2%</div></div>
-      <div class="lgd "><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>Jenius</span><span class="lg"><i style="background:#F7B5B8"></i>DBS</span></div>
-      <img class="shot" src="assets/db-all.png" alt="AI search visibility over time for OCBC NISP against competitors, 23 to 29 July 2026">
-      <div class="vkpi">
-        <div><div class="k-v">17<span class="dim" style="font-size:15px">/120</span></div><div class="k-l">Brand mentions</div></div>
-        <div><div class="k-v">2.5</div><div class="k-l">Avg. position</div></div>
-        <div><div class="k-v g">14.2%</div><div class="k-l">Visibility</div></div>
-        <div><div class="k-v">7.4%</div><div class="k-l">Share of voice</div></div>
-        <div><div class="k-v">2.6%</div><div class="k-l">Owned citation share</div></div>
-      </div>
+      <div class="vhead"><div class="vh-l">All savings prompts &middot; visibility score over time</div><div class="vh-v">30.9%</div></div>
+      <div class="chart"><svg viewBox="0 0 980 300" role="img" preserveAspectRatio="none"><line x1="46" y1="270.0" x2="966" y2="270.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="39" y="275.2" text-anchor="end" font-size="15" fill="#6E6E6E">0%</text><line x1="46" y1="206.0" x2="966" y2="206.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="211.2" text-anchor="end" font-size="15" fill="#6E6E6E">25%</text><line x1="46" y1="142.0" x2="966" y2="142.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="147.2" text-anchor="end" font-size="15" fill="#6E6E6E">50%</text><line x1="46" y1="78.0" x2="966" y2="78.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="83.2" text-anchor="end" font-size="15" fill="#6E6E6E">75%</text><line x1="46" y1="14.0" x2="966" y2="14.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="19.2" text-anchor="end" font-size="15" fill="#6E6E6E">100%</text><text x="46.0" y="288.0" text-anchor="start" font-size="15" fill="#6E6E6E">25 Jul</text><text x="276.0" y="288.0" text-anchor="middle" font-size="15" fill="#6E6E6E">26 Jul</text><text x="506.0" y="288.0" text-anchor="middle" font-size="15" fill="#6E6E6E">27 Jul</text><text x="736.0" y="288.0" text-anchor="middle" font-size="15" fill="#6E6E6E">28 Jul</text><text x="966.0" y="288.0" text-anchor="end" font-size="15" fill="#6E6E6E">29 Jul</text><polyline points="46.0,187.8 276.0,160.2 506.0,142.0 736.0,169.4 966.0,175.3" fill="none" stroke="#22D3EE" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="187.8" r="3.0" fill="#22D3EE"/><circle cx="276.0" cy="160.2" r="3.0" fill="#22D3EE"/><circle cx="506.0" cy="142.0" r="3.0" fill="#22D3EE"/><circle cx="736.0" cy="169.4" r="3.0" fill="#22D3EE"/><circle cx="966.0" cy="175.3" r="3.0" fill="#22D3EE"/><polyline points="46.0,206.0 276.0,187.8 506.0,178.6 736.0,206.0 966.0,194.2" fill="none" stroke="#FBA94C" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="206.0" r="3.0" fill="#FBA94C"/><circle cx="276.0" cy="187.8" r="3.0" fill="#FBA94C"/><circle cx="506.0" cy="178.6" r="3.0" fill="#FBA94C"/><circle cx="736.0" cy="206.0" r="3.0" fill="#FBA94C"/><circle cx="966.0" cy="194.2" r="3.0" fill="#FBA94C"/><polyline points="46.0,233.4 276.0,251.8 506.0,224.2 736.0,233.4 966.0,222.6" fill="none" stroke="#FF5CA8" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="233.4" r="3.0" fill="#FF5CA8"/><circle cx="276.0" cy="251.8" r="3.0" fill="#FF5CA8"/><circle cx="506.0" cy="224.2" r="3.0" fill="#FF5CA8"/><circle cx="736.0" cy="233.4" r="3.0" fill="#FF5CA8"/><circle cx="966.0" cy="222.6" r="3.0" fill="#FF5CA8"/><polyline points="46.0,224.2 276.0,206.0 506.0,233.4 736.0,224.2 966.0,213.2" fill="none" stroke="#94A3B8" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="224.2" r="3.0" fill="#94A3B8"/><circle cx="276.0" cy="206.0" r="3.0" fill="#94A3B8"/><circle cx="506.0" cy="233.4" r="3.0" fill="#94A3B8"/><circle cx="736.0" cy="224.2" r="3.0" fill="#94A3B8"/><circle cx="966.0" cy="213.2" r="3.0" fill="#94A3B8"/><polyline points="46.0,260.8 276.0,260.8 506.0,251.8 736.0,270.0 966.0,251.1" fill="none" stroke="#C4787E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="260.8" r="3.0" fill="#C4787E"/><circle cx="276.0" cy="260.8" r="3.0" fill="#C4787E"/><circle cx="506.0" cy="251.8" r="3.0" fill="#C4787E"/><circle cx="736.0" cy="270.0" r="3.0" fill="#C4787E"/><circle cx="966.0" cy="251.1" r="3.0" fill="#C4787E"/><polyline points="46.0,187.8 276.0,206.0 506.0,187.8 736.0,178.6 966.0,194.2" fill="none" stroke="#A78BFA" stroke-width="3.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="187.8" r="3.8" fill="#A78BFA"/><circle cx="276.0" cy="206.0" r="3.8" fill="#A78BFA"/><circle cx="506.0" cy="187.8" r="3.8" fill="#A78BFA"/><circle cx="736.0" cy="178.6" r="3.8" fill="#A78BFA"/><circle cx="966.0" cy="194.2" r="3.8" fill="#A78BFA"/></svg></div>
+      <div class="vkpi"><div><div class="k-v">43<span class='dim' style='font-size:15px'>/139</span></div><div class="k-l">Brand mentions</div></div><div><div class="k-v">2.0</div><div class="k-l">Avg. position</div></div><div><div class="k-v g">30.9%</div><div class="k-l">Visibility</div></div><div><div class="k-v">21.1%</div><div class="k-l">Share of voice</div></div><div><div class="k-v">6.6%</div><div class="k-l">Owned citation share</div></div></div>
     </div>
-
-    <div class="vside">
-      <div class="vcard peak">
-        <div class="vc-top">
-          <div class="vc-s">TOFU<small>Learning what digital banking is</small></div>
-          <div class="vc-v">22.5%</div>
-        </div>
-        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Jenius</span><span class="lg"><i style="background:#E85896"></i>Mandiri</span><span class="lg"><i style="background:#F7B5B8"></i>DBS</span></div>
-        <img class="shot" src="assets/db-tofu.png" alt="Visibility score over time at the TOFU stage">
-      </div>
-      <div class="vcard ">
-        <div class="vc-top">
-          <div class="vc-s">MOFU<small>Comparing digital banks</small></div>
-          <div class="vc-v">12.0%</div>
-        </div>
-        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>DBS</span><span class="lg"><i style="background:#F7B5B8"></i>Jenius</span></div>
-        <img class="shot" src="assets/db-mofu.png" alt="Visibility score over time at the MOFU stage">
-      </div>
-      <div class="vcard trough">
-        <div class="vc-top">
-          <div class="vc-s">BOFU<small>Ready to open</small></div>
-          <div class="vc-v">6.7%</div>
-        </div>
-        <div class="lgd sm"><span class="lg me"><i style="background:#9989EE"></i>OCBC NISP</span><span class="lg"><i style="background:#1EBEC8"></i>BCA</span><span class="lg"><i style="background:#F9BF9D"></i>Mandiri</span><span class="lg"><i style="background:#E85896"></i>DBS</span><span class="lg"><i style="background:#F7B5B8"></i>Jenius</span></div>
-        <img class="shot" src="assets/db-bofu.png" alt="Visibility score over time at the BOFU stage">
-      </div>
-    </div>
+    <div class="vside"><div class="vcard peak"><div class="vc-top"><div class="vc-s">TOFU<small>Learning how to save</small></div><div class="vc-v">46.0%</div></div><div class="chart sm"><svg viewBox="0 0 430 116" role="img" preserveAspectRatio="none"><line x1="32" y1="99.0" x2="422" y2="99.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="25" y="102.5" text-anchor="end" font-size="10" fill="#6E6E6E">0%</text><line x1="32" y1="76.2" x2="422" y2="76.2" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="79.8" text-anchor="end" font-size="10" fill="#6E6E6E">25%</text><line x1="32" y1="53.5" x2="422" y2="53.5" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="57.0" text-anchor="end" font-size="10" fill="#6E6E6E">50%</text><line x1="32" y1="30.8" x2="422" y2="30.8" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="34.2" text-anchor="end" font-size="10" fill="#6E6E6E">75%</text><line x1="32" y1="8.0" x2="422" y2="8.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="11.5" text-anchor="end" font-size="10" fill="#6E6E6E">100%</text><text x="32.0" y="112.0" text-anchor="start" font-size="10" fill="#6E6E6E">25 Jul</text><text x="422.0" y="112.0" text-anchor="end" font-size="10" fill="#6E6E6E">29 Jul</text><polyline points="32.0,53.5 129.5,35.3 227.0,26.2 324.5,35.3 422.0,35.3" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="53.5" r="1.9" fill="#22D3EE"/><circle cx="129.5" cy="35.3" r="1.9" fill="#22D3EE"/><circle cx="227.0" cy="26.2" r="1.9" fill="#22D3EE"/><circle cx="324.5" cy="35.3" r="1.9" fill="#22D3EE"/><circle cx="422.0" cy="35.3" r="1.9" fill="#22D3EE"/><polyline points="32.0,71.7 129.5,53.5 227.0,35.3 324.5,62.6 422.0,53.5" fill="none" stroke="#FBA94C" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="71.7" r="1.9" fill="#FBA94C"/><circle cx="129.5" cy="53.5" r="1.9" fill="#FBA94C"/><circle cx="227.0" cy="35.3" r="1.9" fill="#FBA94C"/><circle cx="324.5" cy="62.6" r="1.9" fill="#FBA94C"/><circle cx="422.0" cy="53.5" r="1.9" fill="#FBA94C"/><polyline points="32.0,80.8 129.5,89.9 227.0,71.7 324.5,71.7 422.0,80.8" fill="none" stroke="#FF5CA8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="80.8" r="1.9" fill="#FF5CA8"/><circle cx="129.5" cy="89.9" r="1.9" fill="#FF5CA8"/><circle cx="227.0" cy="71.7" r="1.9" fill="#FF5CA8"/><circle cx="324.5" cy="71.7" r="1.9" fill="#FF5CA8"/><circle cx="422.0" cy="80.8" r="1.9" fill="#FF5CA8"/><polyline points="32.0,71.7 129.5,53.5 227.0,80.8 324.5,71.7 422.0,62.6" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="71.7" r="1.9" fill="#94A3B8"/><circle cx="129.5" cy="53.5" r="1.9" fill="#94A3B8"/><circle cx="227.0" cy="80.8" r="1.9" fill="#94A3B8"/><circle cx="324.5" cy="71.7" r="1.9" fill="#94A3B8"/><circle cx="422.0" cy="62.6" r="1.9" fill="#94A3B8"/><polyline points="32.0,89.9 129.5,89.9 227.0,80.8 324.5,99.0 422.0,89.9" fill="none" stroke="#C4787E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="89.9" r="1.9" fill="#C4787E"/><circle cx="129.5" cy="89.9" r="1.9" fill="#C4787E"/><circle cx="227.0" cy="80.8" r="1.9" fill="#C4787E"/><circle cx="324.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="422.0" cy="89.9" r="1.9" fill="#C4787E"/><polyline points="32.0,62.6 129.5,62.6 227.0,44.4 324.5,53.5 422.0,62.6" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="62.6" r="2.4" fill="#A78BFA"/><circle cx="129.5" cy="62.6" r="2.4" fill="#A78BFA"/><circle cx="227.0" cy="44.4" r="2.4" fill="#A78BFA"/><circle cx="324.5" cy="53.5" r="2.4" fill="#A78BFA"/><circle cx="422.0" cy="62.6" r="2.4" fill="#A78BFA"/></svg></div></div><div class="vcard trough"><div class="vc-top"><div class="vc-s">MOFU<small>Comparing accounts</small></div><div class="vc-v">16.0%</div></div><div class="chart sm"><svg viewBox="0 0 430 116" role="img" preserveAspectRatio="none"><line x1="32" y1="99.0" x2="422" y2="99.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="25" y="102.5" text-anchor="end" font-size="10" fill="#6E6E6E">0%</text><line x1="32" y1="76.2" x2="422" y2="76.2" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="79.8" text-anchor="end" font-size="10" fill="#6E6E6E">25%</text><line x1="32" y1="53.5" x2="422" y2="53.5" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="57.0" text-anchor="end" font-size="10" fill="#6E6E6E">50%</text><line x1="32" y1="30.8" x2="422" y2="30.8" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="34.2" text-anchor="end" font-size="10" fill="#6E6E6E">75%</text><line x1="32" y1="8.0" x2="422" y2="8.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="11.5" text-anchor="end" font-size="10" fill="#6E6E6E">100%</text><text x="32.0" y="112.0" text-anchor="start" font-size="10" fill="#6E6E6E">25 Jul</text><text x="422.0" y="112.0" text-anchor="end" font-size="10" fill="#6E6E6E">29 Jul</text><polyline points="32.0,80.8 129.5,80.8 227.0,80.8 324.5,80.8 422.0,80.8" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="80.8" r="1.9" fill="#22D3EE"/><circle cx="129.5" cy="80.8" r="1.9" fill="#22D3EE"/><circle cx="227.0" cy="80.8" r="1.9" fill="#22D3EE"/><circle cx="324.5" cy="80.8" r="1.9" fill="#22D3EE"/><circle cx="422.0" cy="80.8" r="1.9" fill="#22D3EE"/><polyline points="32.0,80.8 129.5,89.9 227.0,80.8 324.5,80.8 422.0,80.8" fill="none" stroke="#FBA94C" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="80.8" r="1.9" fill="#FBA94C"/><circle cx="129.5" cy="89.9" r="1.9" fill="#FBA94C"/><circle cx="227.0" cy="80.8" r="1.9" fill="#FBA94C"/><circle cx="324.5" cy="80.8" r="1.9" fill="#FBA94C"/><circle cx="422.0" cy="80.8" r="1.9" fill="#FBA94C"/><polyline points="32.0,80.8 129.5,99.0 227.0,89.9 324.5,89.9 422.0,89.9" fill="none" stroke="#FF5CA8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="80.8" r="1.9" fill="#FF5CA8"/><circle cx="129.5" cy="99.0" r="1.9" fill="#FF5CA8"/><circle cx="227.0" cy="89.9" r="1.9" fill="#FF5CA8"/><circle cx="324.5" cy="89.9" r="1.9" fill="#FF5CA8"/><circle cx="422.0" cy="89.9" r="1.9" fill="#FF5CA8"/><polyline points="32.0,99.0 129.5,99.0 227.0,99.0 324.5,99.0 422.0,99.0" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#94A3B8"/><circle cx="129.5" cy="99.0" r="1.9" fill="#94A3B8"/><circle cx="227.0" cy="99.0" r="1.9" fill="#94A3B8"/><circle cx="324.5" cy="99.0" r="1.9" fill="#94A3B8"/><circle cx="422.0" cy="99.0" r="1.9" fill="#94A3B8"/><polyline points="32.0,99.0 129.5,99.0 227.0,99.0 324.5,99.0 422.0,89.9" fill="none" stroke="#C4787E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="129.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="227.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="324.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="422.0" cy="89.9" r="1.9" fill="#C4787E"/><polyline points="32.0,89.9 129.5,89.9 227.0,80.8 324.5,80.8 422.0,80.8" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="89.9" r="2.4" fill="#A78BFA"/><circle cx="129.5" cy="89.9" r="2.4" fill="#A78BFA"/><circle cx="227.0" cy="80.8" r="2.4" fill="#A78BFA"/><circle cx="324.5" cy="80.8" r="2.4" fill="#A78BFA"/><circle cx="422.0" cy="80.8" r="2.4" fill="#A78BFA"/></svg></div></div><div class="vcard "><div class="vc-top"><div class="vc-s">BOFU<small>Ready to open</small></div><div class="vc-v">30.8%</div></div><div class="chart sm"><svg viewBox="0 0 430 116" role="img" preserveAspectRatio="none"><line x1="32" y1="99.0" x2="422" y2="99.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="25" y="102.5" text-anchor="end" font-size="10" fill="#6E6E6E">0%</text><line x1="32" y1="76.2" x2="422" y2="76.2" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="79.8" text-anchor="end" font-size="10" fill="#6E6E6E">25%</text><line x1="32" y1="53.5" x2="422" y2="53.5" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="57.0" text-anchor="end" font-size="10" fill="#6E6E6E">50%</text><line x1="32" y1="30.8" x2="422" y2="30.8" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="34.2" text-anchor="end" font-size="10" fill="#6E6E6E">75%</text><line x1="32" y1="8.0" x2="422" y2="8.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="11.5" text-anchor="end" font-size="10" fill="#6E6E6E">100%</text><text x="32.0" y="112.0" text-anchor="start" font-size="10" fill="#6E6E6E">25 Jul</text><text x="422.0" y="112.0" text-anchor="end" font-size="10" fill="#6E6E6E">29 Jul</text><polyline points="32.0,76.2 129.5,64.9 227.0,53.5 324.5,76.2 422.0,86.0" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="76.2" r="1.9" fill="#22D3EE"/><circle cx="129.5" cy="64.9" r="1.9" fill="#22D3EE"/><circle cx="227.0" cy="53.5" r="1.9" fill="#22D3EE"/><circle cx="324.5" cy="76.2" r="1.9" fill="#22D3EE"/><circle cx="422.0" cy="86.0" r="1.9" fill="#22D3EE"/><polyline points="32.0,76.2 129.5,64.9 227.0,87.6 324.5,87.6 422.0,86.0" fill="none" stroke="#FBA94C" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="76.2" r="1.9" fill="#FBA94C"/><circle cx="129.5" cy="64.9" r="1.9" fill="#FBA94C"/><circle cx="227.0" cy="87.6" r="1.9" fill="#FBA94C"/><circle cx="324.5" cy="87.6" r="1.9" fill="#FBA94C"/><circle cx="422.0" cy="86.0" r="1.9" fill="#FBA94C"/><polyline points="32.0,99.0 129.5,87.6 227.0,87.6 324.5,99.0 422.0,73.0" fill="none" stroke="#FF5CA8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#FF5CA8"/><circle cx="129.5" cy="87.6" r="1.9" fill="#FF5CA8"/><circle cx="227.0" cy="87.6" r="1.9" fill="#FF5CA8"/><circle cx="324.5" cy="99.0" r="1.9" fill="#FF5CA8"/><circle cx="422.0" cy="73.0" r="1.9" fill="#FF5CA8"/><polyline points="32.0,76.2 129.5,76.2 227.0,76.2 324.5,76.2 422.0,73.0" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="76.2" r="1.9" fill="#94A3B8"/><circle cx="129.5" cy="76.2" r="1.9" fill="#94A3B8"/><circle cx="227.0" cy="76.2" r="1.9" fill="#94A3B8"/><circle cx="324.5" cy="76.2" r="1.9" fill="#94A3B8"/><circle cx="422.0" cy="73.0" r="1.9" fill="#94A3B8"/><polyline points="32.0,99.0 129.5,99.0 227.0,99.0 324.5,99.0 422.0,99.0" fill="none" stroke="#C4787E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="129.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="227.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="324.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="422.0" cy="99.0" r="1.9" fill="#C4787E"/><polyline points="32.0,53.5 129.5,76.2 227.0,87.6 324.5,64.9 422.0,73.0" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="53.5" r="2.4" fill="#A78BFA"/><circle cx="129.5" cy="76.2" r="2.4" fill="#A78BFA"/><circle cx="227.0" cy="87.6" r="2.4" fill="#A78BFA"/><circle cx="324.5" cy="64.9" r="2.4" fill="#A78BFA"/><circle cx="422.0" cy="73.0" r="2.4" fill="#A78BFA"/></svg></div></div></div>
   </div>
 
   <div class="foot">
-    <p>AI search visibility tracked daily 23&ndash;29 July 2026. Line colours follow the tracker &mdash; the competitor set differs per stage, so each chart carries its own key</p>
-    <p class="num">11 / 28</p>
+    <p>AI search visibility, tracked daily 25&ndash;29 July 2026 across ChatGPT, Perplexity and Google AI Overview. Same six brands and same 0&ndash;100 scale on every chart, so the four views are directly comparable</p>
+    <p class="num">11 / 30</p>
   </div>
 </section>
 
-<!-- ============ 12 · MESSAGE GAP ============ -->
+<!-- ============ 12 · PRODUCT VISIBILITY ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Credit card</p>
+  <h1 class="t sm">Visible while they learn.<br>Invisible when they apply.</h1>
+  <p class="sub">OCBC holds <strong>24&ndash;29%</strong> while buyers are researching, then falls to <strong>15.4%</strong> at the apply moment &mdash; where Mandiri averages 76.9% and BCA 64.1%.</p>
+  <div class="lgd"><span class="lg me"><i style="background:#A78BFA"></i>OCBC NISP</span><span class="lg"><i style="background:#22D3EE"></i>Mandiri</span><span class="lg"><i style="background:#FBA94C"></i>BCA</span><span class="lg"><i style="background:#FF5CA8"></i>CIMB Niaga</span><span class="lg"><i style="background:#94A3B8"></i>DBS</span><span class="lg"><i style="background:#C4787E"></i>Danamon</span></div>
+  <div class="vgrid">
+    <div class="vmain">
+      <div class="vhead"><div class="vh-l">All credit-card prompts &middot; visibility score over time</div><div class="vh-v">23.2%</div></div>
+      <div class="chart"><svg viewBox="0 0 980 300" role="img" preserveAspectRatio="none"><line x1="46" y1="270.0" x2="966" y2="270.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="39" y="275.2" text-anchor="end" font-size="15" fill="#6E6E6E">0%</text><line x1="46" y1="206.0" x2="966" y2="206.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="211.2" text-anchor="end" font-size="15" fill="#6E6E6E">25%</text><line x1="46" y1="142.0" x2="966" y2="142.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="147.2" text-anchor="end" font-size="15" fill="#6E6E6E">50%</text><line x1="46" y1="78.0" x2="966" y2="78.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="83.2" text-anchor="end" font-size="15" fill="#6E6E6E">75%</text><line x1="46" y1="14.0" x2="966" y2="14.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="19.2" text-anchor="end" font-size="15" fill="#6E6E6E">100%</text><text x="46.0" y="288.0" text-anchor="start" font-size="15" fill="#6E6E6E">25 Jul</text><text x="276.0" y="288.0" text-anchor="middle" font-size="15" fill="#6E6E6E">26 Jul</text><text x="506.0" y="288.0" text-anchor="middle" font-size="15" fill="#6E6E6E">27 Jul</text><text x="736.0" y="288.0" text-anchor="middle" font-size="15" fill="#6E6E6E">28 Jul</text><text x="966.0" y="288.0" text-anchor="end" font-size="15" fill="#6E6E6E">29 Jul</text><polyline points="46.0,87.2 276.0,105.4 506.0,87.2 736.0,82.9 966.0,96.2" fill="none" stroke="#22D3EE" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="87.2" r="3.0" fill="#22D3EE"/><circle cx="276.0" cy="105.4" r="3.0" fill="#22D3EE"/><circle cx="506.0" cy="87.2" r="3.0" fill="#22D3EE"/><circle cx="736.0" cy="82.9" r="3.0" fill="#22D3EE"/><circle cx="966.0" cy="96.2" r="3.0" fill="#22D3EE"/><polyline points="46.0,96.2 276.0,105.4 506.0,96.2 736.0,73.1 966.0,96.2" fill="none" stroke="#FBA94C" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="96.2" r="3.0" fill="#FBA94C"/><circle cx="276.0" cy="105.4" r="3.0" fill="#FBA94C"/><circle cx="506.0" cy="96.2" r="3.0" fill="#FBA94C"/><circle cx="736.0" cy="73.1" r="3.0" fill="#FBA94C"/><circle cx="966.0" cy="96.2" r="3.0" fill="#FBA94C"/><polyline points="46.0,206.0 276.0,178.6 506.0,196.8 736.0,181.4 966.0,169.4" fill="none" stroke="#FF5CA8" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="206.0" r="3.0" fill="#FF5CA8"/><circle cx="276.0" cy="178.6" r="3.0" fill="#FF5CA8"/><circle cx="506.0" cy="196.8" r="3.0" fill="#FF5CA8"/><circle cx="736.0" cy="181.4" r="3.0" fill="#FF5CA8"/><circle cx="966.0" cy="169.4" r="3.0" fill="#FF5CA8"/><polyline points="46.0,260.8 276.0,251.8 506.0,224.2 736.0,220.8 966.0,233.4" fill="none" stroke="#94A3B8" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="260.8" r="3.0" fill="#94A3B8"/><circle cx="276.0" cy="251.8" r="3.0" fill="#94A3B8"/><circle cx="506.0" cy="224.2" r="3.0" fill="#94A3B8"/><circle cx="736.0" cy="220.8" r="3.0" fill="#94A3B8"/><circle cx="966.0" cy="233.4" r="3.0" fill="#94A3B8"/><polyline points="46.0,224.2 276.0,233.4 506.0,206.0 736.0,210.9 966.0,242.6" fill="none" stroke="#C4787E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="224.2" r="3.0" fill="#C4787E"/><circle cx="276.0" cy="233.4" r="3.0" fill="#C4787E"/><circle cx="506.0" cy="206.0" r="3.0" fill="#C4787E"/><circle cx="736.0" cy="210.9" r="3.0" fill="#C4787E"/><circle cx="966.0" cy="242.6" r="3.0" fill="#C4787E"/><polyline points="46.0,215.2 276.0,196.8 506.0,215.2 736.0,210.9 966.0,215.2" fill="none" stroke="#A78BFA" stroke-width="3.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="215.2" r="3.8" fill="#A78BFA"/><circle cx="276.0" cy="196.8" r="3.8" fill="#A78BFA"/><circle cx="506.0" cy="215.2" r="3.8" fill="#A78BFA"/><circle cx="736.0" cy="210.9" r="3.8" fill="#A78BFA"/><circle cx="966.0" cy="215.2" r="3.8" fill="#A78BFA"/></svg></div>
+      <div class="vkpi"><div><div class="k-v">32<span class='dim' style='font-size:15px'>/138</span></div><div class="k-l">Brand mentions</div></div><div><div class="k-v">2.3</div><div class="k-l">Avg. position</div></div><div><div class="k-v g">23.2%</div><div class="k-l">Visibility</div></div><div><div class="k-v">9.7%</div><div class="k-l">Share of voice</div></div><div><div class="k-v">3.8%</div><div class="k-l">Owned citation share</div></div></div>
+    </div>
+    <div class="vside"><div class="vcard "><div class="vc-top"><div class="vc-s">TOFU<small>Researching cards</small></div><div class="vc-v">24.0%</div></div><div class="chart sm"><svg viewBox="0 0 430 116" role="img" preserveAspectRatio="none"><line x1="32" y1="99.0" x2="422" y2="99.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="25" y="102.5" text-anchor="end" font-size="10" fill="#6E6E6E">0%</text><line x1="32" y1="76.2" x2="422" y2="76.2" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="79.8" text-anchor="end" font-size="10" fill="#6E6E6E">25%</text><line x1="32" y1="53.5" x2="422" y2="53.5" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="57.0" text-anchor="end" font-size="10" fill="#6E6E6E">50%</text><line x1="32" y1="30.8" x2="422" y2="30.8" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="34.2" text-anchor="end" font-size="10" fill="#6E6E6E">75%</text><line x1="32" y1="8.0" x2="422" y2="8.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="11.5" text-anchor="end" font-size="10" fill="#6E6E6E">100%</text><text x="32.0" y="112.0" text-anchor="start" font-size="10" fill="#6E6E6E">25 Jul</text><text x="422.0" y="112.0" text-anchor="end" font-size="10" fill="#6E6E6E">29 Jul</text><polyline points="32.0,35.3 129.5,35.3 227.0,26.2 324.5,26.2 422.0,44.4" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="35.3" r="1.9" fill="#22D3EE"/><circle cx="129.5" cy="35.3" r="1.9" fill="#22D3EE"/><circle cx="227.0" cy="26.2" r="1.9" fill="#22D3EE"/><circle cx="324.5" cy="26.2" r="1.9" fill="#22D3EE"/><circle cx="422.0" cy="44.4" r="1.9" fill="#22D3EE"/><polyline points="32.0,17.1 129.5,35.3 227.0,35.3 324.5,44.4 422.0,26.2" fill="none" stroke="#FBA94C" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="17.1" r="1.9" fill="#FBA94C"/><circle cx="129.5" cy="35.3" r="1.9" fill="#FBA94C"/><circle cx="227.0" cy="35.3" r="1.9" fill="#FBA94C"/><circle cx="324.5" cy="44.4" r="1.9" fill="#FBA94C"/><circle cx="422.0" cy="26.2" r="1.9" fill="#FBA94C"/><polyline points="32.0,80.8 129.5,80.8 227.0,71.7 324.5,62.6 422.0,53.5" fill="none" stroke="#FF5CA8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="80.8" r="1.9" fill="#FF5CA8"/><circle cx="129.5" cy="80.8" r="1.9" fill="#FF5CA8"/><circle cx="227.0" cy="71.7" r="1.9" fill="#FF5CA8"/><circle cx="324.5" cy="62.6" r="1.9" fill="#FF5CA8"/><circle cx="422.0" cy="53.5" r="1.9" fill="#FF5CA8"/><polyline points="32.0,99.0 129.5,89.9 227.0,71.7 324.5,99.0 422.0,89.9" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#94A3B8"/><circle cx="129.5" cy="89.9" r="1.9" fill="#94A3B8"/><circle cx="227.0" cy="71.7" r="1.9" fill="#94A3B8"/><circle cx="324.5" cy="99.0" r="1.9" fill="#94A3B8"/><circle cx="422.0" cy="89.9" r="1.9" fill="#94A3B8"/><polyline points="32.0,89.9 129.5,89.9 227.0,62.6 324.5,62.6 422.0,89.9" fill="none" stroke="#C4787E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="89.9" r="1.9" fill="#C4787E"/><circle cx="129.5" cy="89.9" r="1.9" fill="#C4787E"/><circle cx="227.0" cy="62.6" r="1.9" fill="#C4787E"/><circle cx="324.5" cy="62.6" r="1.9" fill="#C4787E"/><circle cx="422.0" cy="89.9" r="1.9" fill="#C4787E"/><polyline points="32.0,80.8 129.5,62.6 227.0,89.9 324.5,71.7 422.0,80.8" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="80.8" r="2.4" fill="#A78BFA"/><circle cx="129.5" cy="62.6" r="2.4" fill="#A78BFA"/><circle cx="227.0" cy="89.9" r="2.4" fill="#A78BFA"/><circle cx="324.5" cy="71.7" r="2.4" fill="#A78BFA"/><circle cx="422.0" cy="80.8" r="2.4" fill="#A78BFA"/></svg></div></div><div class="vcard peak"><div class="vc-top"><div class="vc-s">MOFU<small>Comparing cards</small></div><div class="vc-v">28.6%</div></div><div class="chart sm"><svg viewBox="0 0 430 116" role="img" preserveAspectRatio="none"><line x1="32" y1="99.0" x2="422" y2="99.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="25" y="102.5" text-anchor="end" font-size="10" fill="#6E6E6E">0%</text><line x1="32" y1="76.2" x2="422" y2="76.2" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="79.8" text-anchor="end" font-size="10" fill="#6E6E6E">25%</text><line x1="32" y1="53.5" x2="422" y2="53.5" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="57.0" text-anchor="end" font-size="10" fill="#6E6E6E">50%</text><line x1="32" y1="30.8" x2="422" y2="30.8" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="34.2" text-anchor="end" font-size="10" fill="#6E6E6E">75%</text><line x1="32" y1="8.0" x2="422" y2="8.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="11.5" text-anchor="end" font-size="10" fill="#6E6E6E">100%</text><text x="32.0" y="112.0" text-anchor="start" font-size="10" fill="#6E6E6E">25 Jul</text><text x="422.0" y="112.0" text-anchor="end" font-size="10" fill="#6E6E6E">29 Jul</text><polyline points="32.0,44.4 129.5,44.4 227.0,44.4 324.5,48.4 422.0,35.3" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="44.4" r="1.9" fill="#22D3EE"/><circle cx="129.5" cy="44.4" r="1.9" fill="#22D3EE"/><circle cx="227.0" cy="44.4" r="1.9" fill="#22D3EE"/><circle cx="324.5" cy="48.4" r="1.9" fill="#22D3EE"/><circle cx="422.0" cy="35.3" r="1.9" fill="#22D3EE"/><polyline points="32.0,53.5 129.5,26.2 227.0,44.4 324.5,28.2 422.0,35.3" fill="none" stroke="#FBA94C" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="53.5" r="1.9" fill="#FBA94C"/><circle cx="129.5" cy="26.2" r="1.9" fill="#FBA94C"/><circle cx="227.0" cy="44.4" r="1.9" fill="#FBA94C"/><circle cx="324.5" cy="28.2" r="1.9" fill="#FBA94C"/><circle cx="422.0" cy="35.3" r="1.9" fill="#FBA94C"/><polyline points="32.0,80.8 129.5,53.5 227.0,80.8 324.5,88.9 422.0,71.7" fill="none" stroke="#FF5CA8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="80.8" r="1.9" fill="#FF5CA8"/><circle cx="129.5" cy="53.5" r="1.9" fill="#FF5CA8"/><circle cx="227.0" cy="80.8" r="1.9" fill="#FF5CA8"/><circle cx="324.5" cy="88.9" r="1.9" fill="#FF5CA8"/><circle cx="422.0" cy="71.7" r="1.9" fill="#FF5CA8"/><polyline points="32.0,99.0 129.5,99.0 227.0,89.9 324.5,88.9 422.0,80.8" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#94A3B8"/><circle cx="129.5" cy="99.0" r="1.9" fill="#94A3B8"/><circle cx="227.0" cy="89.9" r="1.9" fill="#94A3B8"/><circle cx="324.5" cy="88.9" r="1.9" fill="#94A3B8"/><circle cx="422.0" cy="80.8" r="1.9" fill="#94A3B8"/><polyline points="32.0,80.8 129.5,80.8 227.0,99.0 324.5,99.0 422.0,89.9" fill="none" stroke="#C4787E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="80.8" r="1.9" fill="#C4787E"/><circle cx="129.5" cy="80.8" r="1.9" fill="#C4787E"/><circle cx="227.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="324.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="422.0" cy="89.9" r="1.9" fill="#C4787E"/><polyline points="32.0,71.7 129.5,71.7 227.0,71.7 324.5,68.7 422.0,80.8" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="71.7" r="2.4" fill="#A78BFA"/><circle cx="129.5" cy="71.7" r="2.4" fill="#A78BFA"/><circle cx="227.0" cy="71.7" r="2.4" fill="#A78BFA"/><circle cx="324.5" cy="68.7" r="2.4" fill="#A78BFA"/><circle cx="422.0" cy="80.8" r="2.4" fill="#A78BFA"/></svg></div></div><div class="vcard trough"><div class="vc-top"><div class="vc-s">BOFU<small>Ready to apply</small></div><div class="vc-v">15.4%</div></div><div class="chart sm"><svg viewBox="0 0 430 116" role="img" preserveAspectRatio="none"><line x1="32" y1="99.0" x2="422" y2="99.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="25" y="102.5" text-anchor="end" font-size="10" fill="#6E6E6E">0%</text><line x1="32" y1="76.2" x2="422" y2="76.2" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="79.8" text-anchor="end" font-size="10" fill="#6E6E6E">25%</text><line x1="32" y1="53.5" x2="422" y2="53.5" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="57.0" text-anchor="end" font-size="10" fill="#6E6E6E">50%</text><line x1="32" y1="30.8" x2="422" y2="30.8" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="34.2" text-anchor="end" font-size="10" fill="#6E6E6E">75%</text><line x1="32" y1="8.0" x2="422" y2="8.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="11.5" text-anchor="end" font-size="10" fill="#6E6E6E">100%</text><text x="32.0" y="112.0" text-anchor="start" font-size="10" fill="#6E6E6E">25 Jul</text><text x="422.0" y="112.0" text-anchor="end" font-size="10" fill="#6E6E6E">29 Jul</text><polyline points="32.0,19.4 129.5,42.1 227.0,30.8 324.5,21.0 422.0,30.8" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="19.4" r="1.9" fill="#22D3EE"/><circle cx="129.5" cy="42.1" r="1.9" fill="#22D3EE"/><circle cx="227.0" cy="30.8" r="1.9" fill="#22D3EE"/><circle cx="324.5" cy="21.0" r="1.9" fill="#22D3EE"/><circle cx="422.0" cy="30.8" r="1.9" fill="#22D3EE"/><polyline points="32.0,42.1 129.5,64.9 227.0,30.8 324.5,8.0 422.0,53.5" fill="none" stroke="#FBA94C" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="42.1" r="1.9" fill="#FBA94C"/><circle cx="129.5" cy="64.9" r="1.9" fill="#FBA94C"/><circle cx="227.0" cy="30.8" r="1.9" fill="#FBA94C"/><circle cx="324.5" cy="8.0" r="1.9" fill="#FBA94C"/><circle cx="422.0" cy="53.5" r="1.9" fill="#FBA94C"/><polyline points="32.0,64.9 129.5,64.9 227.0,64.9 324.5,47.0 422.0,64.9" fill="none" stroke="#FF5CA8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="64.9" r="1.9" fill="#FF5CA8"/><circle cx="129.5" cy="64.9" r="1.9" fill="#FF5CA8"/><circle cx="227.0" cy="64.9" r="1.9" fill="#FF5CA8"/><circle cx="324.5" cy="47.0" r="1.9" fill="#FF5CA8"/><circle cx="422.0" cy="64.9" r="1.9" fill="#FF5CA8"/><polyline points="32.0,87.6 129.5,87.6 227.0,87.6 324.5,47.0 422.0,87.6" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="87.6" r="1.9" fill="#94A3B8"/><circle cx="129.5" cy="87.6" r="1.9" fill="#94A3B8"/><circle cx="227.0" cy="87.6" r="1.9" fill="#94A3B8"/><circle cx="324.5" cy="47.0" r="1.9" fill="#94A3B8"/><circle cx="422.0" cy="87.6" r="1.9" fill="#94A3B8"/><polyline points="32.0,76.2 129.5,87.6 227.0,64.9 324.5,73.0 422.0,87.6" fill="none" stroke="#C4787E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="76.2" r="1.9" fill="#C4787E"/><circle cx="129.5" cy="87.6" r="1.9" fill="#C4787E"/><circle cx="227.0" cy="64.9" r="1.9" fill="#C4787E"/><circle cx="324.5" cy="73.0" r="1.9" fill="#C4787E"/><circle cx="422.0" cy="87.6" r="1.9" fill="#C4787E"/><polyline points="32.0,87.6 129.5,87.6 227.0,76.2 324.5,99.0 422.0,76.2" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="87.6" r="2.4" fill="#A78BFA"/><circle cx="129.5" cy="87.6" r="2.4" fill="#A78BFA"/><circle cx="227.0" cy="76.2" r="2.4" fill="#A78BFA"/><circle cx="324.5" cy="99.0" r="2.4" fill="#A78BFA"/><circle cx="422.0" cy="76.2" r="2.4" fill="#A78BFA"/></svg></div></div></div>
+  </div>
+
+  <div class="foot">
+    <p>AI search visibility, tracked daily 25&ndash;29 July 2026 across ChatGPT, Perplexity and Google AI Overview. Same six brands and same 0&ndash;100 scale on every chart, so the four views are directly comparable</p>
+    <p class="num">12 / 30</p>
+  </div>
+</section>
+
+<!-- ============ 13 · PRODUCT VISIBILITY ============ -->
+<section class="s">
+  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Digital banking</p>
+  <h1 class="t sm">Visibility halves at<br>every step of the funnel.</h1>
+  <p class="sub">OCBC&rsquo;s weakest AI position: <strong>14.2%</strong> overall, falling from 22.5% to 12.0% to <strong>6.7%</strong> at the point of opening an account &mdash; where Mandiri holds 67&ndash;83%.</p>
+  <div class="lgd"><span class="lg me"><i style="background:#A78BFA"></i>OCBC NISP</span><span class="lg"><i style="background:#22D3EE"></i>Mandiri</span><span class="lg"><i style="background:#FBA94C"></i>BCA</span><span class="lg"><i style="background:#FF5CA8"></i>CIMB Niaga</span><span class="lg"><i style="background:#94A3B8"></i>DBS</span><span class="lg"><i style="background:#C4787E"></i>Danamon</span></div>
+  <div class="vgrid">
+    <div class="vmain">
+      <div class="vhead"><div class="vh-l">All digital-banking prompts &middot; visibility score over time</div><div class="vh-v">14.2%</div></div>
+      <div class="chart"><svg viewBox="0 0 980 300" role="img" preserveAspectRatio="none"><line x1="46" y1="270.0" x2="966" y2="270.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="39" y="275.2" text-anchor="end" font-size="15" fill="#6E6E6E">0%</text><line x1="46" y1="206.0" x2="966" y2="206.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="211.2" text-anchor="end" font-size="15" fill="#6E6E6E">25%</text><line x1="46" y1="142.0" x2="966" y2="142.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="147.2" text-anchor="end" font-size="15" fill="#6E6E6E">50%</text><line x1="46" y1="78.0" x2="966" y2="78.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="83.2" text-anchor="end" font-size="15" fill="#6E6E6E">75%</text><line x1="46" y1="14.0" x2="966" y2="14.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="39" y="19.2" text-anchor="end" font-size="15" fill="#6E6E6E">100%</text><text x="46.0" y="288.0" text-anchor="start" font-size="15" fill="#6E6E6E">25 Jul</text><text x="276.0" y="288.0" text-anchor="middle" font-size="15" fill="#6E6E6E">26 Jul</text><text x="506.0" y="288.0" text-anchor="middle" font-size="15" fill="#6E6E6E">27 Jul</text><text x="736.0" y="288.0" text-anchor="middle" font-size="15" fill="#6E6E6E">28 Jul</text><text x="966.0" y="288.0" text-anchor="end" font-size="15" fill="#6E6E6E">29 Jul</text><polyline points="46.0,142.0 276.0,152.8 506.0,142.0 736.0,110.0 966.0,131.2" fill="none" stroke="#22D3EE" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="142.0" r="3.0" fill="#22D3EE"/><circle cx="276.0" cy="152.8" r="3.0" fill="#22D3EE"/><circle cx="506.0" cy="142.0" r="3.0" fill="#22D3EE"/><circle cx="736.0" cy="110.0" r="3.0" fill="#22D3EE"/><circle cx="966.0" cy="131.2" r="3.0" fill="#22D3EE"/><polyline points="46.0,120.8 276.0,120.8 506.0,78.0 736.0,110.0 966.0,99.2" fill="none" stroke="#FBA94C" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="120.8" r="3.0" fill="#FBA94C"/><circle cx="276.0" cy="120.8" r="3.0" fill="#FBA94C"/><circle cx="506.0" cy="78.0" r="3.0" fill="#FBA94C"/><circle cx="736.0" cy="110.0" r="3.0" fill="#FBA94C"/><circle cx="966.0" cy="99.2" r="3.0" fill="#FBA94C"/><polyline points="46.0,238.0 276.0,248.8 506.0,238.0 736.0,238.0 966.0,259.2" fill="none" stroke="#FF5CA8" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="238.0" r="3.0" fill="#FF5CA8"/><circle cx="276.0" cy="248.8" r="3.0" fill="#FF5CA8"/><circle cx="506.0" cy="238.0" r="3.0" fill="#FF5CA8"/><circle cx="736.0" cy="238.0" r="3.0" fill="#FF5CA8"/><circle cx="966.0" cy="259.2" r="3.0" fill="#FF5CA8"/><polyline points="46.0,216.8 276.0,216.8 506.0,195.2 736.0,206.0 966.0,206.0" fill="none" stroke="#94A3B8" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="216.8" r="3.0" fill="#94A3B8"/><circle cx="276.0" cy="216.8" r="3.0" fill="#94A3B8"/><circle cx="506.0" cy="195.2" r="3.0" fill="#94A3B8"/><circle cx="736.0" cy="206.0" r="3.0" fill="#94A3B8"/><circle cx="966.0" cy="206.0" r="3.0" fill="#94A3B8"/><polyline points="46.0,270.0 276.0,270.0 506.0,270.0 736.0,270.0 966.0,270.0" fill="none" stroke="#C4787E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="270.0" r="3.0" fill="#C4787E"/><circle cx="276.0" cy="270.0" r="3.0" fill="#C4787E"/><circle cx="506.0" cy="270.0" r="3.0" fill="#C4787E"/><circle cx="736.0" cy="270.0" r="3.0" fill="#C4787E"/><circle cx="966.0" cy="270.0" r="3.0" fill="#C4787E"/><polyline points="46.0,238.0 276.0,259.2 506.0,206.0 736.0,227.2 966.0,238.0" fill="none" stroke="#A78BFA" stroke-width="3.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="46.0" cy="238.0" r="3.8" fill="#A78BFA"/><circle cx="276.0" cy="259.2" r="3.8" fill="#A78BFA"/><circle cx="506.0" cy="206.0" r="3.8" fill="#A78BFA"/><circle cx="736.0" cy="227.2" r="3.8" fill="#A78BFA"/><circle cx="966.0" cy="238.0" r="3.8" fill="#A78BFA"/></svg></div>
+      <div class="vkpi"><div><div class="k-v">17<span class='dim' style='font-size:15px'>/120</span></div><div class="k-l">Brand mentions</div></div><div><div class="k-v">2.5</div><div class="k-l">Avg. position</div></div><div><div class="k-v g">14.2%</div><div class="k-l">Visibility</div></div><div><div class="k-v">7.4%</div><div class="k-l">Share of voice</div></div><div><div class="k-v">2.6%</div><div class="k-l">Owned citation share</div></div></div>
+    </div>
+    <div class="vside"><div class="vcard peak"><div class="vc-top"><div class="vc-s">TOFU<small>Exploring digital banks</small></div><div class="vc-v">22.5%</div></div><div class="chart sm"><svg viewBox="0 0 430 116" role="img" preserveAspectRatio="none"><line x1="32" y1="99.0" x2="422" y2="99.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="25" y="102.5" text-anchor="end" font-size="10" fill="#6E6E6E">0%</text><line x1="32" y1="76.2" x2="422" y2="76.2" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="79.8" text-anchor="end" font-size="10" fill="#6E6E6E">25%</text><line x1="32" y1="53.5" x2="422" y2="53.5" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="57.0" text-anchor="end" font-size="10" fill="#6E6E6E">50%</text><line x1="32" y1="30.8" x2="422" y2="30.8" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="34.2" text-anchor="end" font-size="10" fill="#6E6E6E">75%</text><line x1="32" y1="8.0" x2="422" y2="8.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="11.5" text-anchor="end" font-size="10" fill="#6E6E6E">100%</text><text x="32.0" y="112.0" text-anchor="start" font-size="10" fill="#6E6E6E">25 Jul</text><text x="422.0" y="112.0" text-anchor="end" font-size="10" fill="#6E6E6E">29 Jul</text><polyline points="32.0,64.9 129.5,76.2 227.0,64.9 324.5,64.9 422.0,76.2" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="64.9" r="1.9" fill="#22D3EE"/><circle cx="129.5" cy="76.2" r="1.9" fill="#22D3EE"/><circle cx="227.0" cy="64.9" r="1.9" fill="#22D3EE"/><circle cx="324.5" cy="64.9" r="1.9" fill="#22D3EE"/><circle cx="422.0" cy="76.2" r="1.9" fill="#22D3EE"/><polyline points="32.0,30.8 129.5,42.1 227.0,30.8 324.5,42.1 422.0,42.1" fill="none" stroke="#FBA94C" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="30.8" r="1.9" fill="#FBA94C"/><circle cx="129.5" cy="42.1" r="1.9" fill="#FBA94C"/><circle cx="227.0" cy="30.8" r="1.9" fill="#FBA94C"/><circle cx="324.5" cy="42.1" r="1.9" fill="#FBA94C"/><circle cx="422.0" cy="42.1" r="1.9" fill="#FBA94C"/><polyline points="32.0,99.0 129.5,87.6 227.0,87.6 324.5,99.0 422.0,99.0" fill="none" stroke="#FF5CA8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#FF5CA8"/><circle cx="129.5" cy="87.6" r="1.9" fill="#FF5CA8"/><circle cx="227.0" cy="87.6" r="1.9" fill="#FF5CA8"/><circle cx="324.5" cy="99.0" r="1.9" fill="#FF5CA8"/><circle cx="422.0" cy="99.0" r="1.9" fill="#FF5CA8"/><polyline points="32.0,76.2 129.5,87.6 227.0,76.2 324.5,87.6 422.0,76.2" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="76.2" r="1.9" fill="#94A3B8"/><circle cx="129.5" cy="87.6" r="1.9" fill="#94A3B8"/><circle cx="227.0" cy="76.2" r="1.9" fill="#94A3B8"/><circle cx="324.5" cy="87.6" r="1.9" fill="#94A3B8"/><circle cx="422.0" cy="76.2" r="1.9" fill="#94A3B8"/><polyline points="32.0,99.0 129.5,99.0 227.0,99.0 324.5,99.0 422.0,99.0" fill="none" stroke="#C4787E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="129.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="227.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="324.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="422.0" cy="99.0" r="1.9" fill="#C4787E"/><polyline points="32.0,87.6 129.5,87.6 227.0,64.9 324.5,76.2 422.0,76.2" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="87.6" r="2.4" fill="#A78BFA"/><circle cx="129.5" cy="87.6" r="2.4" fill="#A78BFA"/><circle cx="227.0" cy="64.9" r="2.4" fill="#A78BFA"/><circle cx="324.5" cy="76.2" r="2.4" fill="#A78BFA"/><circle cx="422.0" cy="76.2" r="2.4" fill="#A78BFA"/></svg></div></div><div class="vcard "><div class="vc-top"><div class="vc-s">MOFU<small>Comparing providers</small></div><div class="vc-v">12.0%</div></div><div class="chart sm"><svg viewBox="0 0 430 116" role="img" preserveAspectRatio="none"><line x1="32" y1="99.0" x2="422" y2="99.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="25" y="102.5" text-anchor="end" font-size="10" fill="#6E6E6E">0%</text><line x1="32" y1="76.2" x2="422" y2="76.2" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="79.8" text-anchor="end" font-size="10" fill="#6E6E6E">25%</text><line x1="32" y1="53.5" x2="422" y2="53.5" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="57.0" text-anchor="end" font-size="10" fill="#6E6E6E">50%</text><line x1="32" y1="30.8" x2="422" y2="30.8" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="34.2" text-anchor="end" font-size="10" fill="#6E6E6E">75%</text><line x1="32" y1="8.0" x2="422" y2="8.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="11.5" text-anchor="end" font-size="10" fill="#6E6E6E">100%</text><text x="32.0" y="112.0" text-anchor="start" font-size="10" fill="#6E6E6E">25 Jul</text><text x="422.0" y="112.0" text-anchor="end" font-size="10" fill="#6E6E6E">29 Jul</text><polyline points="32.0,53.5 129.5,53.5 227.0,62.6 324.5,35.3 422.0,44.4" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="53.5" r="1.9" fill="#22D3EE"/><circle cx="129.5" cy="53.5" r="1.9" fill="#22D3EE"/><circle cx="227.0" cy="62.6" r="1.9" fill="#22D3EE"/><circle cx="324.5" cy="35.3" r="1.9" fill="#22D3EE"/><circle cx="422.0" cy="44.4" r="1.9" fill="#22D3EE"/><polyline points="32.0,62.6 129.5,53.5 227.0,35.3 324.5,53.5 422.0,44.4" fill="none" stroke="#FBA94C" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="62.6" r="1.9" fill="#FBA94C"/><circle cx="129.5" cy="53.5" r="1.9" fill="#FBA94C"/><circle cx="227.0" cy="35.3" r="1.9" fill="#FBA94C"/><circle cx="324.5" cy="53.5" r="1.9" fill="#FBA94C"/><circle cx="422.0" cy="44.4" r="1.9" fill="#FBA94C"/><polyline points="32.0,89.9 129.5,89.9 227.0,89.9 324.5,89.9 422.0,89.9" fill="none" stroke="#FF5CA8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="89.9" r="1.9" fill="#FF5CA8"/><circle cx="129.5" cy="89.9" r="1.9" fill="#FF5CA8"/><circle cx="227.0" cy="89.9" r="1.9" fill="#FF5CA8"/><circle cx="324.5" cy="89.9" r="1.9" fill="#FF5CA8"/><circle cx="422.0" cy="89.9" r="1.9" fill="#FF5CA8"/><polyline points="32.0,89.9 129.5,71.7 227.0,71.7 324.5,80.8 422.0,89.9" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="89.9" r="1.9" fill="#94A3B8"/><circle cx="129.5" cy="71.7" r="1.9" fill="#94A3B8"/><circle cx="227.0" cy="71.7" r="1.9" fill="#94A3B8"/><circle cx="324.5" cy="80.8" r="1.9" fill="#94A3B8"/><circle cx="422.0" cy="89.9" r="1.9" fill="#94A3B8"/><polyline points="32.0,99.0 129.5,99.0 227.0,99.0 324.5,99.0 422.0,99.0" fill="none" stroke="#C4787E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="129.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="227.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="324.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="422.0" cy="99.0" r="1.9" fill="#C4787E"/><polyline points="32.0,89.9 129.5,99.0 227.0,80.8 324.5,80.8 422.0,89.9" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="89.9" r="2.4" fill="#A78BFA"/><circle cx="129.5" cy="99.0" r="2.4" fill="#A78BFA"/><circle cx="227.0" cy="80.8" r="2.4" fill="#A78BFA"/><circle cx="324.5" cy="80.8" r="2.4" fill="#A78BFA"/><circle cx="422.0" cy="89.9" r="2.4" fill="#A78BFA"/></svg></div></div><div class="vcard trough"><div class="vc-top"><div class="vc-s">BOFU<small>Ready to open</small></div><div class="vc-v">6.7%</div></div><div class="chart sm"><svg viewBox="0 0 430 116" role="img" preserveAspectRatio="none"><line x1="32" y1="99.0" x2="422" y2="99.0" stroke="rgba(255,255,255,0.22)" stroke-width="1"/><text x="25" y="102.5" text-anchor="end" font-size="10" fill="#6E6E6E">0%</text><line x1="32" y1="76.2" x2="422" y2="76.2" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="79.8" text-anchor="end" font-size="10" fill="#6E6E6E">25%</text><line x1="32" y1="53.5" x2="422" y2="53.5" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="57.0" text-anchor="end" font-size="10" fill="#6E6E6E">50%</text><line x1="32" y1="30.8" x2="422" y2="30.8" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="34.2" text-anchor="end" font-size="10" fill="#6E6E6E">75%</text><line x1="32" y1="8.0" x2="422" y2="8.0" stroke="rgba(255,255,255,0.09)" stroke-width="1"/><text x="25" y="11.5" text-anchor="end" font-size="10" fill="#6E6E6E">100%</text><text x="32.0" y="112.0" text-anchor="start" font-size="10" fill="#6E6E6E">25 Jul</text><text x="422.0" y="112.0" text-anchor="end" font-size="10" fill="#6E6E6E">29 Jul</text><polyline points="32.0,38.3 129.5,38.3 227.0,23.2 324.5,23.2 422.0,23.2" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="38.3" r="1.9" fill="#22D3EE"/><circle cx="129.5" cy="38.3" r="1.9" fill="#22D3EE"/><circle cx="227.0" cy="23.2" r="1.9" fill="#22D3EE"/><circle cx="324.5" cy="23.2" r="1.9" fill="#22D3EE"/><circle cx="422.0" cy="23.2" r="1.9" fill="#22D3EE"/><polyline points="32.0,38.3 129.5,38.3 227.0,23.2 324.5,23.2 422.0,23.2" fill="none" stroke="#FBA94C" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="38.3" r="1.9" fill="#FBA94C"/><circle cx="129.5" cy="38.3" r="1.9" fill="#FBA94C"/><circle cx="227.0" cy="23.2" r="1.9" fill="#FBA94C"/><circle cx="324.5" cy="23.2" r="1.9" fill="#FBA94C"/><circle cx="422.0" cy="23.2" r="1.9" fill="#FBA94C"/><polyline points="32.0,68.7 129.5,99.0 227.0,83.8 324.5,68.7 422.0,99.0" fill="none" stroke="#FF5CA8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="68.7" r="1.9" fill="#FF5CA8"/><circle cx="129.5" cy="99.0" r="1.9" fill="#FF5CA8"/><circle cx="227.0" cy="83.8" r="1.9" fill="#FF5CA8"/><circle cx="324.5" cy="68.7" r="1.9" fill="#FF5CA8"/><circle cx="422.0" cy="99.0" r="1.9" fill="#FF5CA8"/><polyline points="32.0,68.7 129.5,83.8 227.0,68.7 324.5,53.5 422.0,53.5" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="68.7" r="1.9" fill="#94A3B8"/><circle cx="129.5" cy="83.8" r="1.9" fill="#94A3B8"/><circle cx="227.0" cy="68.7" r="1.9" fill="#94A3B8"/><circle cx="324.5" cy="53.5" r="1.9" fill="#94A3B8"/><circle cx="422.0" cy="53.5" r="1.9" fill="#94A3B8"/><polyline points="32.0,99.0 129.5,99.0 227.0,99.0 324.5,99.0 422.0,99.0" fill="none" stroke="#C4787E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="129.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="227.0" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="324.5" cy="99.0" r="1.9" fill="#C4787E"/><circle cx="422.0" cy="99.0" r="1.9" fill="#C4787E"/><polyline points="32.0,83.8 129.5,99.0 227.0,83.8 324.5,99.0 422.0,99.0" fill="none" stroke="#A78BFA" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="32.0" cy="83.8" r="2.4" fill="#A78BFA"/><circle cx="129.5" cy="99.0" r="2.4" fill="#A78BFA"/><circle cx="227.0" cy="83.8" r="2.4" fill="#A78BFA"/><circle cx="324.5" cy="99.0" r="2.4" fill="#A78BFA"/><circle cx="422.0" cy="99.0" r="2.4" fill="#A78BFA"/></svg></div></div></div>
+  </div>
+
+  <div class="foot">
+    <p>AI search visibility, tracked daily 25&ndash;29 July 2026 across ChatGPT, Perplexity and Google AI Overview. Same six brands and same 0&ndash;100 scale on every chart, so the four views are directly comparable</p>
+    <p class="num">13 / 30</p>
+  </div>
+</section>
+
+<!-- ============ 14 · MESSAGE GAP ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">GEO opportunity <span class="sep">/</span> The cause</p>
@@ -935,22 +889,22 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: live buyer-question testing, June 2026 — each row is a question where AI named a competitor and OCBC offers the same product</p>
-    <p class="num">12 / 28</p>
+    <p class="num">14 / 30</p>
   </div>
 </section>
 
-<!-- ============ 13 · SECTION DIVIDER: WHY US ============ -->
+<!-- ============ 15 · SECTION DIVIDER: WHY US ============ -->
 <section class="s divider">
   <p class="dn">Section 03</p>
   <h1>Why us</h1>
   <p class="ds">OCBC has the product and the reach. What is missing is the work that turns both into the answer AI gives. This is the team that does that work, the disciplines it takes, and the method we run.</p>
   <div class="foot">
     <p>The team is the differentiator</p>
-    <p class="num">13 / 28</p>
+    <p class="num">15 / 30</p>
   </div>
 </section>
 
-<!-- ============ 14 · THE TEAM ============ -->
+<!-- ============ 16 · THE TEAM ============ -->
 <section class="s invert">
   <p class="kicker">Why us <span class="sep">/</span> The team</p>
   <h1 class="t sm">Your strategy is set by senior operators,<br>not handed to junior staff.</h1>
@@ -983,11 +937,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>The team is the differentiator</p>
-    <p class="num">14 / 28</p>
+    <p class="num">16 / 30</p>
   </div>
 </section>
 
-<!-- ============ 15 · WHY WE'RE DIFFERENT ============ -->
+<!-- ============ 17 · WHY WE'RE DIFFERENT ============ -->
 <section class="s invert">
   <p class="kicker">Why us <span class="sep">/</span> Why we're different</p>
   <h1 class="t sm">Winning AI answers takes three disciplines.<br>Most have one. Some have two. We run all three.</h1>
@@ -1011,11 +965,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Positioning &middot; Outcome = being chosen by AI</p>
-    <p class="num">15 / 28</p>
+    <p class="num">17 / 30</p>
   </div>
 </section>
 
-<!-- ============ 16 · THE SOURCE & ECHO METHOD ============ -->
+<!-- ============ 18 · THE SOURCE & ECHO METHOD ============ -->
 <section class="s invert">
   <p class="kicker">Why us <span class="sep">/</span> The Source &amp; Echo Method</p>
   <h1 class="t sm">The Source &amp; Echo Method<br>is Novastacks' own AEO methodology.</h1>
@@ -1040,11 +994,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Method &middot; The Source &amp; Echo Method</p>
-    <p class="num">16 / 28</p>
+    <p class="num">18 / 30</p>
   </div>
 </section>
 
-<!-- ============ 17 · GAP 1 ============ -->
+<!-- ============ 19 · GAP 1 ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">Gap 1 <span class="sep">/</span> Content mix</p>
@@ -1079,11 +1033,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: OCBC blog page-level classification, 2,500 pages, Ahrefs traffic June 2026</p>
-    <p class="num">17 / 28</p>
+    <p class="num">19 / 30</p>
   </div>
 </section>
 
-<!-- ============ 18 · GAP 2 ============ -->
+<!-- ============ 20 · GAP 2 ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">Gap 2 <span class="sep">/</span> The money pages</p>
@@ -1122,11 +1076,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: live crawl of ocbc.id core product pages, June 2026 — this is on-page work on assets that already exist</p>
-    <p class="num">18 / 28</p>
+    <p class="num">20 / 30</p>
   </div>
 </section>
 
-<!-- ============ 19 · THE PLAN ============ -->
+<!-- ============ 21 · THE PLAN ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">The plan</p>
@@ -1160,11 +1114,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Both engines run on pages OCBC already owns — the programme adds structure and message, not volume</p>
-    <p class="num">19 / 28</p>
+    <p class="num">21 / 30</p>
   </div>
 </section>
 
-<!-- ============ 20 · WHAT TO EXPECT ============ -->
+<!-- ============ 22 · WHAT TO EXPECT ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">What to expect <span class="sep">/</span> Where to start</p>
@@ -1214,11 +1168,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Estimates are directional until OCBC's Search Console is connected; from that point they are measured</p>
-    <p class="num">20 / 28</p>
+    <p class="num">22 / 30</p>
   </div>
 </section>
 
-<!-- ============ 21 · EXECUTIVE SUMMARY ============ -->
+<!-- ============ 23 · EXECUTIVE SUMMARY ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">Executive summary</p>
@@ -1255,11 +1209,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Sources: Ahrefs (Indonesia), live crawl June 2026, 60 live buyer-question tests across Google AI Overview, ChatGPT and Gemini</p>
-    <p class="num">21 / 28</p>
+    <p class="num">23 / 30</p>
   </div>
 </section>
 
-<!-- ============ 22 · WHERE OCBC STANDS ============ -->
+<!-- ============ 24 · WHERE OCBC STANDS ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">The starting position</p>
@@ -1293,11 +1247,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: Ahrefs, Indonesia market, June 2026</p>
-    <p class="num">22 / 28</p>
+    <p class="num">24 / 30</p>
   </div>
 </section>
 
-<!-- ============ 23 · THE PROBLEM ============ -->
+<!-- ============ 25 · THE PROBLEM ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">The problem</p>
@@ -1322,11 +1276,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: Ahrefs product-page traffic, Indonesia, June 2026</p>
-    <p class="num">23 / 28</p>
+    <p class="num">25 / 30</p>
   </div>
 </section>
 
-<!-- ============ 24 · THE TWO PRIORITY PRODUCTS ============ -->
+<!-- ============ 26 · THE TWO PRIORITY PRODUCTS ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">Savings <span class="sep">/</span> Credit card</p>
@@ -1367,11 +1321,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Sources: Ahrefs, Indonesia; live page crawl of bankmandiri.co.id/tabunganku and ocbc.id TabunganKu, June 2026</p>
-    <p class="num">24 / 28</p>
+    <p class="num">26 / 30</p>
   </div>
 </section>
 
-<!-- ============ 25 · APPENDIX PROMPTS ============ -->
+<!-- ============ 27 · APPENDIX PROMPTS ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">Appendix <span class="sep">/</span> Method</p>
@@ -1399,11 +1353,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage for savings is our classification, applied on the same basis as the credit-card set</p>
-    <p class="num">25 / 28</p>
+    <p class="num">27 / 30</p>
   </div>
 </section>
 
-<!-- ============ 26 · APPENDIX PROMPTS ============ -->
+<!-- ============ 28 · APPENDIX PROMPTS ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">Appendix <span class="sep">/</span> Method</p>
@@ -1431,11 +1385,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage for savings is our classification, applied on the same basis as the credit-card set</p>
-    <p class="num">26 / 28</p>
+    <p class="num">28 / 30</p>
   </div>
 </section>
 
-<!-- ============ 27 · APPENDIX PROMPTS ============ -->
+<!-- ============ 29 · APPENDIX PROMPTS ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">Appendix <span class="sep">/</span> Method</p>
@@ -1463,11 +1417,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage as classified in the source analysis; four servicing queries sit outside the acquisition funnel</p>
-    <p class="num">27 / 28</p>
+    <p class="num">29 / 30</p>
   </div>
 </section>
 
-<!-- ============ 28 · APPENDIX PROMPTS ============ -->
+<!-- ============ 30 · APPENDIX PROMPTS ============ -->
 <section class="s">
   <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
   <p class="kicker">Appendix <span class="sep">/</span> Method</p>
@@ -1495,7 +1449,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage as classified in the source analysis; four servicing queries sit outside the acquisition funnel</p>
-    <p class="num">28 / 28</p>
+    <p class="num">30 / 30</p>
   </div>
 </section>
 
