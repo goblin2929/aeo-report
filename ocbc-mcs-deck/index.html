@@ -86,6 +86,9 @@ h1.t em{font-style:normal;color:var(--mcs-green)}
 .stat .v.g{color:var(--mcs-green)}
 /* a from→to range needs to fit the column; the single figures stay at 76px */
 .stat .v.rng{font-size:44px;letter-spacing:-.01em;line-height:1.02}
+/* a caveat must not out-shout the targets it qualifies — match their size and let
+   colour carry the hierarchy instead */
+.stat .v.mid{font-size:44px;letter-spacing:-.01em;line-height:1.02}
 .stat .l{font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:var(--mcs-white);margin-top:16px}
 .stat .c{font-size:17px;line-height:1.4;color:var(--mcs-grey);margin-top:8px}
@@ -1128,9 +1131,9 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="stats three">
     <div class="stat">
-      <div class="v g">44 → </div>
-      <div class="l">Non-branded credit-card discovery</div>
-      <div class="c">The number that matters. Mandiri earns 17,010 a month on the same demand.</div>
+      <div class="v g rng">20% &rarr; 25%</div>
+      <div class="l">AI visibility, QoQ</div>
+      <div class="c">Across the tracked buyer prompts. Mandiri and BCA run near 70% on the same credit-card questions.</div>
     </div>
     <div class="stat">
       <div class="v g rng">3&ndash;4% → 5.5&ndash;6%</div>
@@ -1138,7 +1141,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
       <div class="c">Into the Tier 1 banking players &mdash; and citations shifting from blog to product.</div>
     </div>
     <div class="stat">
-      <div class="v dim">~3%</div>
+      <div class="v dim mid">~3%</div>
       <div class="l">What we do not promise</div>
       <div class="c">A large jump in total pageviews — the remaining blog volume is only ~3%.</div>
     </div>
