@@ -45,6 +45,17 @@ deck-stage:not(:defined){visibility:hidden}
   display:flex;flex-direction:column;overflow:hidden;position:relative;
 }
 .s .logo{position:absolute;top:var(--my);right:var(--mx);height:52px;width:auto;z-index:5}
+/* co-brand lockup: client mark first, agency mark second, hairline between.
+   OCBC is a single-line wordmark so it sits shorter than M&C's stacked block */
+.s .logos{position:absolute;top:var(--my);right:var(--mx);display:flex;align-items:center;
+  gap:22px;z-index:5}
+.s .logos img{width:auto;display:block}
+.s .logos .mcs{height:52px}
+.s .logos .ocbc{height:32px}
+.s .logos .sep-r{width:1px;height:40px;background:rgba(255,255,255,.30)}
+.cover-logos{display:flex;align-items:center;gap:34px;align-self:flex-start}
+.cover-logos .ocbc-lg{height:58px;width:auto;display:block}
+.cover-logos .sep-r{width:1px;height:72px;background:rgba(255,255,255,.30)}
 
 /* ---------- type ---------- */
 .kicker{
@@ -225,6 +236,7 @@ ul.pts li:last-child{padding-bottom:0}
 }
 .divider .ds{font-size:27px;line-height:1.4;color:var(--mcs-black);margin:30px 0 0;
   max-width:1180px;font-weight:500}
+.divider.light{background:var(--mcs-white)}
 .divider .foot{border-top-color:rgba(0,0,0,.25)}
 .divider .foot p,.divider .foot .num{color:rgba(0,0,0,.62)}
 
@@ -511,7 +523,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 <!-- ============ 1 · COVER ============ -->
 <section class="s cover">
   <div class="cover-l">
-    <img class="logo-lg" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+    <div class="cover-logos"><img class="ocbc-lg" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="logo-lg" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
     <div>
       <h1>OCBC Indonesia<span>SEO &amp; GEO growth strategy</span></h1>
       <div class="rule"></div>
@@ -588,7 +600,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 5 · THE SHIFT ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">GEO opportunity <span class="sep">/</span> The shift</p>
   <h1 class="t">Buying decisions moved<br>inside AI answers this year.</h1>
   <p class="sub">AI now answers the question before anyone reaches a link. As SparkToro's Amanda Natividad puts it, <strong>&ldquo;the click is now optional.&rdquo;</strong></p>
@@ -619,7 +631,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 6 · THE DARK FUNNEL ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">GEO opportunity <span class="sep">/</span> What you cannot see</p>
   <h1 class="t">Actual AI Search Impact is bigger<br>than you see</h1>
   <p class="sub"><strong>OCBC already has AI-influenced revenue. It is simply not visible, so it is not being defended.</strong> The first fix is measurement, not spend: make &ldquo;ChatGPT / AI assistant&rdquo; a discrete option on OCBC enquiry forms &mdash; beside Google and social, never buried under &ldquo;Other&rdquo;.</p>
@@ -645,7 +657,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 7 · THE INPUT WORK ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">GEO opportunity <span class="sep">/</span> Scope</p>
   <h1 class="t sm">GEO has broader scope than classic SEO</h1>
   <p class="sub" style="font-size:21px;margin-top:14px">Most of the work is shared. Ten inputs are not &mdash; and the outcome you buy is different at the top.</p>
@@ -701,7 +713,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 8 · AI VISIBILITY ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">OCBC GEO opportunity <span class="sep">/</span> Position</p>
   <h1 class="t">#2 for brand mentions in AI.<br>#4 at the buyer's moment.</h1>
   <p class="sub">We analyzed 60 prompts across two LLM engines for OCBC.</p>
@@ -748,7 +760,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 9 · QUALITY GAP ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">GEO opportunity <span class="sep">/</span> Quality</p>
   <h1 class="t">When AI cites OCBC, it cites an article<br>— competitors get cited as a product</h1>
   <p class="sub">Every page AI actually quotes is educational. The bank is present in the answer; the <strong>product is not</strong>.</p>
@@ -790,7 +802,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 10 · FUNNEL UPSIDE DOWN ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">GEO opportunity <span class="sep">/</span> The funnel</p>
   <h1 class="t">Visibility is upside-down<br>relative to the funnel</h1>
   <p class="sub">OCBC shows up while buyers are learning, and thins out exactly where cards are chosen. When a buyer is ready to apply, AI cites an <strong>article</strong> — not an application page. Across all 30 credit-card questions only <strong>2 citations</strong> land on a product page: the last click before conversion is being handed to a blog post.</p>
@@ -815,7 +827,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 11 · PRODUCT VISIBILITY ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">GEO opportunity <span class="sep">/</span> Savings</p>
   <h1 class="t sm">Strongest when your buyers learn.<br>Absent when they compare.</h1>
   <p class="sub">OCBC leads at <strong>46.0%</strong> while buyers research saving, then collapses to <strong>16.0%</strong> at the comparison stage &mdash; the moment the account is actually chosen.</p>
@@ -837,7 +849,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 12 · PRODUCT VISIBILITY ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">GEO opportunity <span class="sep">/</span> Credit card</p>
   <h1 class="t sm">Visible while they learn.<br>Invisible when they apply.</h1>
   <p class="sub">OCBC holds <strong>24&ndash;29%</strong> while buyers are researching, then falls to <strong>15.4%</strong> at the apply moment &mdash; where Mandiri averages 76.9% and BCA 64.1%.</p>
@@ -859,7 +871,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 13 · PRODUCT VISIBILITY ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">GEO opportunity <span class="sep">/</span> Digital banking</p>
   <h1 class="t sm">Visibility halves at<br>every step of the funnel.</h1>
   <p class="sub">OCBC&rsquo;s weakest AI position: <strong>14.2%</strong> overall, falling from 22.5% to 12.0% to <strong>6.7%</strong> at the point of opening an account &mdash; where Mandiri holds 67&ndash;83%.</p>
@@ -881,7 +893,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 14 · MESSAGE GAP ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">GEO opportunity <span class="sep">/</span> The cause</p>
   <h1 class="t">OCBC has the product.<br>It has not published the message.</h1>
   <p class="sub">In <strong>6 of 8</strong> questions OCBC loses, it already offers exactly what the buyer asked for. It lost because the answer was never written in the buyer's framing. That is a distribution and narrative gap, not a product gap — and it's fixable.</p>
@@ -1011,7 +1023,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 19 · GAP 1 ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Gap 1 <span class="sep">/</span> Content mix</p>
   <h1 class="t">Only 18.6% of blog traffic<br>carries commercial intent</h1>
   <p class="sub">Nearly half the audience arrives for dream meanings, horoscopes and trivia. The lever is <strong>rebalancing the mix</strong>, not producing more content.</p>
@@ -1050,7 +1062,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 20 · GAP 2 ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Gap 2 <span class="sep">/</span> The money pages</p>
   <h1 class="t">The pages that sell are<br>invisible by construction</h1>
   <p class="sub">Verified live, June 2026: core product pages return <strong>no H1 at all</strong>, product detail is pushed into PDFs, and structured data stops at Breadcrumb.</p>
@@ -1093,7 +1105,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 21 · THE PLAN ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">The plan</p>
   <h1 class="t sm">The path to accelerate<br>buyer-relevant traffic and pipeline</h1>
   <p class="sub">Not "more" — a <strong>rebalance</strong>. Prune the off-topic content, reinvest in commercial-intent topics, and make the pages that sell retrievable.</p>
@@ -1131,7 +1143,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 22 · WHAT TO EXPECT ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">What to expect <span class="sep">/</span> Where to start</p>
   <h1 class="t">Buyer-relevant traffic and AI citations<br>compound from month three</h1>
 
@@ -1189,7 +1201,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 </section>
 
 <!-- ============ 24 · SECTION DIVIDER: APPENDIX ============ -->
-<section class="s divider">
+<section class="s divider light">
   <p class="dn">Section 04</p>
   <h1>Appendix</h1>
   <p class="ds">The evidence behind the argument &mdash; the starting position, the commercial-yield gap on the two priority products, and all 60 tested buyer prompts with who was cited on each.</p>
@@ -1201,7 +1213,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 25 · EXECUTIVE SUMMARY ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Executive summary</p>
   <h1 class="t">The largest reach in Indonesian banking<br>— and the lowest commercial yield</h1>
   <p class="sub">OCBC does not have a traffic problem. It has a <strong>traffic-relevance problem</strong> and an <strong>AI-visibility gap</strong>. The work is not more traffic; it is converting earned reach into product demand.</p>
@@ -1242,7 +1254,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 26 · WHERE OCBC STANDS ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">The starting position</p>
   <h1 class="t">Most pages of anyone in the set.<br>Fourth in traffic.</h1>
   <p class="sub">More pages are not producing more visitors. OCBC publishes the most and ranks fourth — the footprint is built, the yield is not.</p>
@@ -1280,7 +1292,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 27 · THE PROBLEM ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">The problem</p>
   <h1 class="t">The educational engine is strong.<br>The bridge to the products is not.</h1>
   <p class="sub">OCBC earns <strong>69 visitors per product page</strong>. Bank Mandiri earns <strong>1,457</strong> — 21× more per page, from fewer pages.</p>
@@ -1309,7 +1321,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 28 · THE TWO PRIORITY PRODUCTS ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Savings <span class="sep">/</span> Credit card</p>
   <h1 class="t">The same pattern on the two priority products</h1>
   <p class="sub">On savings, OCBC runs 22 pages to earn 759 visits. Mandiri runs <strong>one page</strong> and earns 4,780.</p>
@@ -1354,7 +1366,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 29 · APPENDIX PROMPTS ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Appendix <span class="sep">/</span> Method</p>
   <h1 class="t sm">Savings prompts 1&ndash;15</h1>
   <p class="sub">Reference only &mdash; the deck does not walk through these individually. <strong>TOFU</strong> learning &middot; <strong>MOFU</strong> choosing &middot; <strong>BOFU</strong> ready to act. <span class="dim">This half: 2 TOFU &middot; 12 MOFU &middot; 1 BOFU.</span></p>
@@ -1386,7 +1398,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 30 · APPENDIX PROMPTS ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Appendix <span class="sep">/</span> Method</p>
   <h1 class="t sm">Savings prompts 16&ndash;30</h1>
   <p class="sub">Reference only &mdash; the deck does not walk through these individually. <strong>TOFU</strong> learning &middot; <strong>MOFU</strong> choosing &middot; <strong>BOFU</strong> ready to act. <span class="dim">This half: 4 TOFU &middot; 11 MOFU &middot; 0 BOFU.</span></p>
@@ -1418,7 +1430,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 31 · APPENDIX PROMPTS ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Appendix <span class="sep">/</span> Method</p>
   <h1 class="t sm">Credit-card prompts 1&ndash;15</h1>
   <p class="sub">Reference only &mdash; the deck does not walk through these individually. <strong>TOFU</strong> learning &middot; <strong>MOFU</strong> choosing &middot; <strong>BOFU</strong> ready to act. <span class="dim">This half: 3 TOFU &middot; 11 MOFU &middot; 1 BOFU.</span></p>
@@ -1450,7 +1462,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 <!-- ============ 32 · APPENDIX PROMPTS ============ -->
 <section class="s">
-  <img class="logo" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Appendix <span class="sep">/</span> Method</p>
   <h1 class="t sm">Credit-card prompts 16&ndash;30</h1>
   <p class="sub">Reference only &mdash; the deck does not walk through these individually. <strong>TOFU</strong> learning &middot; <strong>MOFU</strong> choosing &middot; <strong>BOFU</strong> ready to act. <span class="dim">This half: 5 TOFU &middot; 9 MOFU &middot; 1 BOFU.</span></p>
