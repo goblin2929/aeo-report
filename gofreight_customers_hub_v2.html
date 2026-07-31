@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies &amp; Success Stories with GoFreight | GoFreight</title>
+<meta name="description" content="See how freight forwarders grow revenue, run leaner teams, and unlock profit with GoFreight. Real customer stories with real numbers across efficiency, growth, and enterprise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A24; --ink-soft:#38505E; --muted:#63767F;
+    --teal:#2A8C82; --teal-dark:#1E6E66; --teal-tint:#EAF5F3;
+    --line:#E4E9EC; --bg:#FFFFFF; --bg-alt:#F5F8F8;
+    /* category accents */
+    --c-growth:#1E6E66; --c-growth-bg:#E7F4F1;
+    --c-eff:#2563C9;    --c-eff-bg:#EAF1FD;
+    --c-ent:#6D45D9;    --c-ent-bg:#F1ECFD;
+    --c-solo:#B4700F;   --c-solo-bg:#FBF1E1;
+    --radius:18px; --shadow:0 1px 2px rgba(14,26,36,.05),0 10px 30px rgba(14,26,36,.06);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .mock-flag{background:#0E1A24;color:#fff;font-size:12px;letter-spacing:.04em;text-align:center;padding:7px 16px;font-weight:500}
+  .mock-flag b{color:#5FD0C2}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .logo .mark{width:30px;height:30px;border-radius:8px;background:var(--teal);display:grid;place-items:center;color:#fff;font-size:16px}
+  .nav-links{display:flex;gap:28px;font-size:15px;font-weight:500;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--teal)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;border-radius:999px;padding:11px 22px;font-size:15px;transition:.15s;cursor:pointer}
+  .btn-primary{background:var(--teal);color:#fff}
+  .btn-primary:hover{background:var(--teal-dark)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  @media(max-width:860px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:66px 0 40px;text-align:center;background:radial-gradient(1200px 400px at 50% -10%,var(--teal-tint),#fff 70%)}
+  .badges{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+  .badge{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:13px;font-weight:600;color:var(--ink-soft);box-shadow:var(--shadow)}
+  .badge .stars{color:#E8A13A;letter-spacing:1px}
+  .eyebrow{color:var(--teal);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+  h1{font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.03em;font-weight:800;max-width:14ch;margin:0 auto}
+  h1 em{font-style:normal;color:var(--teal)}
+  .hero p.sub{font-size:19px;color:var(--muted);max-width:56ch;margin:22px auto 0}
+  .hero-cta{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* AGGREGATE STAT STRIP */
+  .stat-strip{max-width:var(--maxw);margin:48px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .stat-strip .cell{background:#fff;padding:26px 20px;text-align:center}
+  .stat-strip .num{font-size:34px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+  .stat-strip .num span{color:var(--teal)}
+  .stat-strip .lab{font-size:13.5px;color:var(--muted);margin-top:4px;font-weight:500}
+  @media(max-width:760px){.stat-strip{grid-template-columns:repeat(2,1fr)}}
+
+  /* SECTION HEAD + FILTERS */
+  .browse{text-align:center;margin:64px 0 6px}
+  .browse .eyebrow{margin-bottom:8px}
+  .browse h2{font-size:clamp(26px,3.4vw,38px);letter-spacing:-.025em;font-weight:800}
+  .browse p{color:var(--muted);margin-top:10px;font-size:16px}
+  .filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0 34px}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;color:var(--ink-soft);cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:8px}
+  .chip .dot{width:9px;height:9px;border-radius:50%}
+  .chip[data-filter="revenue-growth"] .dot{background:var(--c-growth)}
+  .chip[data-filter="efficiency"] .dot{background:var(--c-eff)}
+  .chip[data-filter="enterprise"] .dot{background:var(--c-ent)}
+  .chip[data-filter="solo"] .dot{background:var(--c-solo)}
+  .chip.active,.chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* CARD GRID */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding-bottom:20px}
+  @media(max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.18s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(14,26,36,.12)}
+  .media{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,#12303a,#2A8C82);display:grid;place-items:center;overflow:hidden}
+  .media .ph{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.72);font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  .play{position:relative;z-index:2;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .play::after{content:"";border-left:16px solid var(--teal);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+  .vlen{position:absolute;bottom:12px;right:12px;background:rgba(14,26,36,.72);color:#fff;font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;z-index:2}
+  .logo-chip{position:absolute;top:12px;left:12px;background:#fff;border-radius:9px;padding:6px 11px;font-weight:800;font-size:13px;color:var(--ink);z-index:2;box-shadow:0 4px 12px rgba(0,0,0,.14)}
+  .cat-pill{position:absolute;top:12px;right:12px;z-index:2;font-size:11px;font-weight:800;letter-spacing:.01em;padding:5px 11px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+  .cat-revenue-growth{background:var(--c-growth-bg);color:var(--c-growth)}
+  .cat-efficiency{background:var(--c-eff-bg);color:var(--c-eff)}
+  .cat-enterprise{background:var(--c-ent-bg);color:var(--c-ent)}
+  .cat-solo{background:var(--c-solo-bg);color:var(--c-solo)}
+  .card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+  .co-name{font-weight:800;font-size:17px;letter-spacing:-.01em}
+  .co-meta{font-size:13px;color:var(--muted);margin-top:2px}
+  .metrics{display:flex;gap:8px;margin:16px 0 14px}
+  .metric{flex:1;background:var(--bg-alt);border-radius:12px;padding:11px 8px;text-align:center}
+  .metric .m-num{font-weight:800;font-size:18px;color:var(--teal);letter-spacing:-.02em;line-height:1.1}
+  .metric .m-lab{font-size:10.5px;color:var(--muted);margin-top:3px;font-weight:600;line-height:1.25}
+  .headline{font-size:15px;font-weight:600;color:var(--ink-soft);line-height:1.4;margin-bottom:16px}
+  .read{margin-top:auto;font-weight:700;font-size:14px;color:var(--teal);display:inline-flex;align-items:center;gap:6px}
+  .read:hover{gap:10px}
+  .card.quote-card{background:linear-gradient(160deg,#14343d,#1E6E66);color:#fff;border:none}
+  .card.quote-card .q{font-size:19px;font-weight:600;line-height:1.4;letter-spacing:-.01em;padding:28px 24px 0}
+  .card.quote-card .who{padding:20px 24px 26px;font-size:14px;opacity:.85;margin-top:auto}
+  .card.quote-card .who b{display:block;opacity:1}
+
+  /* CTA BAND */
+  .cta{margin:66px 0;background:linear-gradient(120deg,#0E1A24,#1E6E66);border-radius:26px;padding:56px 40px;text-align:center;color:#fff}
+  .cta h2{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;font-weight:800;max-width:20ch;margin:0 auto}
+  .cta p{opacity:.82;margin:16px auto 0;max-width:52ch;font-size:17px}
+  .cta .btn-primary{background:#fff;color:var(--teal);margin-top:28px}
+  .cta .btn-primary:hover{background:var(--teal-tint)}
+
+  footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:14px}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+</style>
+</head>
+<body>
+<div class="mock-flag">MOCKUP — GoFreight Customer Stories redesign · <b>existing customers</b> · images &amp; video are placeholders · numbers shown as growth and percentages only (actual customer figures masked)</div>
+
+<header class="nav"><div class="wrap nav-inner">
+  <a class="logo"><span class="mark">G</span> GoFreight</a>
+  <nav class="nav-links">
+    <a>Product</a><a>Solutions</a><a>Pricing</a><a style="color:var(--teal);font-weight:700">Customers</a><a>Resources</a>
+  </nav>
+  <div class="nav-cta"><a class="btn btn-ghost">Sign In</a><a class="btn btn-primary">Get Demo</a></div>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="badges">
+    <span class="badge"><span class="stars">★★★★★</span> 4.8 / 5 on G2</span>
+    <span class="badge">🏆 Leader · Freight Forwarding Software</span>
+    <span class="badge">1,000+ forwarders run on GoFreight</span>
+  </div>
+  <div class="eyebrow">Customer Stories</div>
+  <h1>Real forwarders. <em>Real ROI.</em></h1>
+  <p class="sub">See how freight forwarders move more shipments, run leaner teams, and unlock profit after switching to GoFreight.</p>
+  <div class="hero-cta"><a class="btn btn-primary">Get a free demo</a><a class="btn btn-ghost">See how it works</a></div>
+
+  <div class="stat-strip">
+    <div class="cell"><div class="num"><span>~50%</span></div><div class="lab">lower ops cost ratio for top performers</div></div>
+    <div class="cell"><div class="num">+40%</div><div class="lab">avg more shipments per operator</div></div>
+    <div class="cell"><div class="num">2.6x</div><div class="lab">revenue growth for top performers</div></div>
+    <div class="cell"><div class="num">Since 2015</div><div class="lab">forwarders who never switched back</div></div>
+  </div>
+</div></section>
+
+<div class="wrap">
+  <div class="browse">
+    <div class="eyebrow">Browse by outcome</div>
+    <h2>Find a story that looks like your business</h2>
+    <p>Filter by the result that matters most to you right now.</p>
+  </div>
+  <div class="filters">
+    <span class="chip active" data-filter="all">All stories</span>
+    <span class="chip" data-filter="revenue-growth"><span class="dot"></span>Revenue growth</span>
+    <span class="chip" data-filter="efficiency"><span class="dot"></span>Efficiency</span>
+    <span class="chip" data-filter="enterprise"><span class="dot"></span>Enterprise</span>
+    <span class="chip" data-filter="solo"><span class="dot"></span>Solo &amp; small team</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- ALLROUND — revenue growth -->
+    <a class="card" data-cat="revenue-growth" href="gofreight_customers_allround_v2.html">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">Allround</div>
+        <div class="cat-pill cat-revenue-growth">Revenue growth</div>
+        <div class="play"></div><span class="vlen">2:14</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">Allround Forwarding</div>
+        <div class="co-meta">Freight forwarding · Midwest USA · customer since 2021</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">2.6x</div><div class="m-lab">revenue in 2 yrs</div></div>
+          <div class="metric"><div class="m-num">-50%</div><div class="m-lab">ops cost ratio</div></div>
+          <div class="metric"><div class="m-num">7 → 1</div><div class="m-lab">systems replaced</div></div>
+        </div>
+        <div class="headline">Why Allround chose GoFreight after trying 7 other systems.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- SEAMAX — revenue growth -->
+    <a class="card" data-cat="revenue-growth" href="#">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">Seamax</div>
+        <div class="cat-pill cat-revenue-growth">Revenue growth</div>
+        <div class="play"></div><span class="vlen">3:02</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">Seamax Freight International</div>
+        <div class="co-meta">Freight forwarding · USA · customer since 2019</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">+64%</div><div class="m-lab">shipments</div></div>
+          <div class="metric"><div class="m-num">3</div><div class="m-lab">ops added only</div></div>
+          <div class="metric"><div class="m-num">+35%</div><div class="m-lab">revenue / yr</div></div>
+        </div>
+        <div class="headline">Shipments up 64% with just 3 more operators.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- UNITED CARGO — efficiency -->
+    <a class="card" data-cat="efficiency" href="gofreight_customers_united-cargo_v2.html">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">UCM</div>
+        <div class="cat-pill cat-efficiency">Efficiency</div>
+        <div class="play"></div><span class="vlen">1:48</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">United Cargo Management</div>
+        <div class="co-meta">Freight forwarding · USA · customer since 2021</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">0%</div><div class="m-lab">change in volume</div></div>
+          <div class="metric"><div class="m-num">3</div><div class="m-lab">fewer operators</div></div>
+          <div class="metric"><div class="m-num">+8.6%</div><div class="m-lab">throughput</div></div>
+        </div>
+        <div class="headline">Same shipment volume, now run by 3 fewer people.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- WHALE — efficiency -->
+    <a class="card" data-cat="efficiency" href="#">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">Whale</div>
+        <div class="cat-pill cat-efficiency">Efficiency</div>
+        <div class="play"></div><span class="vlen">2:31</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">Whale Logistics USA</div>
+        <div class="co-meta">Freight forwarding · USA · customer since 2023</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">-40%</div><div class="m-lab">ops needed</div></div>
+          <div class="metric"><div class="m-num">+65%</div><div class="m-lab">shipments per op</div></div>
+          <div class="metric"><div class="m-num">-5pts</div><div class="m-lab">cost ratio</div></div>
+        </div>
+        <div class="headline">Same volume handled with 40% fewer operators.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- CSL — revenue growth -->
+    <a class="card" data-cat="revenue-growth" href="#">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">CSL</div>
+        <div class="cat-pill cat-revenue-growth">Revenue growth</div>
+        <div class="play"></div><span class="vlen">2:05</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">CSL Express Line</div>
+        <div class="co-meta">Freight forwarding · USA · customer since 2020</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">+50%</div><div class="m-lab">revenue</div></div>
+          <div class="metric"><div class="m-num">-47%</div><div class="m-lab">ops cost ratio</div></div>
+          <div class="metric"><div class="m-num">+5.6pts</div><div class="m-lab">profit margin</div></div>
+        </div>
+        <div class="headline">Revenue up 50% while ops cost was nearly halved.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- SFI — enterprise -->
+    <a class="card" data-cat="enterprise" href="#">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">SFI</div>
+        <div class="cat-pill cat-enterprise">Enterprise</div>
+        <div class="play"></div><span class="vlen">3:40</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">Straight Forwarding</div>
+        <div class="co-meta">Enterprise forwarder · USA · customer since 2015</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">+18%/yr</div><div class="m-lab">revenue growth</div></div>
+          <div class="metric"><div class="m-num">5</div><div class="m-lab">fewer ops</div></div>
+          <div class="metric"><div class="m-num">-3pts</div><div class="m-lab">cost ratio</div></div>
+        </div>
+        <div class="headline">An enterprise forwarder that runs leaner every year.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- TG CARGO — solo -->
+    <a class="card" data-cat="solo" href="#">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">TG</div>
+        <div class="cat-pill cat-solo">Solo &amp; small team</div>
+        <div class="play"></div><span class="vlen">1:37</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">TG Cargo</div>
+        <div class="co-meta">Solo operator · USA · customer since 2021</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">5.6x</div><div class="m-lab">shipments</div></div>
+          <div class="metric"><div class="m-num">0</div><div class="m-lab">staff added</div></div>
+          <div class="metric"><div class="m-num">200%</div><div class="m-lab">efficiency gain</div></div>
+        </div>
+        <div class="headline">One operator, 5.6x the shipments, zero new hires.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- TRANSMODAL — revenue growth -->
+    <a class="card" data-cat="revenue-growth" href="#">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">Transmodal</div>
+        <div class="cat-pill cat-revenue-growth">Revenue growth</div>
+        <div class="play"></div><span class="vlen">2:52</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">Transmodal Group</div>
+        <div class="co-meta">Freight forwarding · customer story</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">1 → 4</div><div class="m-lab">offices</div></div>
+          <div class="metric"><div class="m-num">+40%</div><div class="m-lab">shipments</div></div>
+          <div class="metric"><div class="m-num">15 min</div><div class="m-lab">saved per task</div></div>
+        </div>
+        <div class="headline">From 1 office to 4 without changing systems.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- GC LOGISTICS — efficiency -->
+    <a class="card" data-cat="efficiency" href="#">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">GC</div>
+        <div class="cat-pill cat-efficiency">Efficiency</div>
+        <div class="play"></div><span class="vlen">2:18</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">GC Logistics</div>
+        <div class="co-meta">Freight forwarding · customer story</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">-65%</div><div class="m-lab">quote time</div></div>
+          <div class="metric"><div class="m-num">+40%</div><div class="m-lab">shipments same team</div></div>
+          <div class="metric"><div class="m-num">+22%</div><div class="m-lab">repeat business</div></div>
+        </div>
+        <div class="headline">Quotes 65% faster and 40% more shipments, same headcount.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- HEADWIN — efficiency -->
+    <a class="card" data-cat="efficiency" href="#">
+      <div class="media">
+        <div class="ph">▦ image / video placeholder</div>
+        <div class="logo-chip">Headwin</div>
+        <div class="cat-pill cat-efficiency">Efficiency</div>
+        <div class="play"></div><span class="vlen">2:09</span>
+      </div>
+      <div class="card-body">
+        <div class="co-name">Headwin Global Logistics</div>
+        <div class="co-meta">Freight forwarding · customer story</div>
+        <div class="metrics">
+          <div class="metric"><div class="m-num">2x</div><div class="m-lab">capacity</div></div>
+          <div class="metric"><div class="m-num">0</div><div class="m-lab">staff added</div></div>
+          <div class="metric"><div class="m-num">Same</div><div class="m-lab">team size</div></div>
+        </div>
+        <div class="headline">Double the capacity with the same team.</div>
+        <span class="read">Read full story →</span>
+      </div>
+    </a>
+
+    <!-- GLOBAL GATEWAY (quote card) — revenue growth -->
+    <div class="card quote-card" data-cat="revenue-growth">
+      <div class="q">“GoFreight gave us one place to run the whole business. We stopped duct taping tools together and started scaling.”</div>
+      <div class="who"><b>Caitlin Murphy</b>Global Gateway Logistics · Revenue growth</div>
+    </div>
+
+    <!-- LOAD MORE / coming soon — always visible -->
+    <a class="card" data-cat="always" href="#" style="justify-content:center;align-items:center;text-align:center;min-height:280px;border-style:dashed">
+      <div class="card-body" style="align-items:center;justify-content:center">
+        <div class="co-name" style="color:var(--teal)">+ More stories</div>
+        <div class="co-meta">Quartz, Ardent Global, Atlantic Global<br>and new forwarders coming soon</div>
+        <span class="read" style="margin-top:16px">Load more →</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="cta">
+    <h2>See what GoFreight could unlock for your forwarding business</h2>
+    <p>Book a 20 minute demo and we will map the shipments, hours, and cost you could win back.</p>
+    <a class="btn btn-primary">Get a free demo</a>
+  </div>
+</div>
+
+<footer><div class="wrap foot-inner">
+  <div>© 2026 GoFreight · Customer Stories redesign mockup</div>
+  <div>Product · Solutions · Pricing · Customers · Resources</div>
+</div></footer>
+
+<script>
+  (function(){
+    var valid=['revenue-growth','efficiency','enterprise','solo'];
+    var chips=document.querySelectorAll('.chip');
+    function apply(f){
+      document.querySelectorAll('.grid > *').forEach(function(el){
+        var c=el.getAttribute('data-cat');
+        el.style.display=(f==='all'||c==='always'||c===f)?'':'none';
+      });
+      chips.forEach(function(ch){ch.classList.toggle('active',ch.getAttribute('data-filter')===f);});
+    }
+    chips.forEach(function(ch){ch.addEventListener('click',function(){
+      var f=ch.getAttribute('data-filter');
+      apply(f);
+      history.replaceState(null,'',f==='all'?location.pathname:'#'+f);
+    });});
+    var h=location.hash.replace('#','');
+    apply(valid.indexOf(h)>-1?h:'all');
+  })();
+</script>
+</body>
+</html>
