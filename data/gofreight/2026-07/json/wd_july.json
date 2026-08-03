@@ -1,0 +1,2450 @@
+{
+  "weekly_visibility": {
+    "2026-W23": {
+      "ChatGPT": 18.9,
+      "Perplexity": 18.3,
+      "Google AI": 39.1
+    },
+    "2026-W24": {
+      "ChatGPT": 12.8,
+      "Perplexity": 19.4,
+      "Google AI": 36.8
+    },
+    "2026-W25": {
+      "ChatGPT": 9.2,
+      "Perplexity": 17.3,
+      "Google AI": 36.4
+    },
+    "2026-W26": {
+      "ChatGPT": 14.8,
+      "Perplexity": 28.6,
+      "Google AI": 37.0
+    },
+    "2026-W27": {
+      "ChatGPT": 21.9,
+      "Perplexity": 28.6,
+      "Google AI": 38.5
+    },
+    "2026-W28": {
+      "ChatGPT": 20.4,
+      "Perplexity": 32.1,
+      "Google AI": 41.3
+    },
+    "2026-W29": {
+      "ChatGPT": 23.0,
+      "Perplexity": 32.1,
+      "Google AI": 39.8
+    },
+    "2026-W30": {
+      "ChatGPT": 17.9,
+      "Perplexity": 32.1,
+      "Google AI": 38.7
+    },
+    "2026-W31": {
+      "ChatGPT": 22.9,
+      "Perplexity": 23.6,
+      "Google AI": 22.6
+    }
+  },
+  "monthly_visibility_nonbrand": {
+    "2026-06": 23.4,
+    "2026-07": 29.3
+  },
+  "monthly_sov_nonbrand": {
+    "2026-06": 10.3,
+    "2026-07": 12.9
+  },
+  "monthly_brand_mentions": {
+    "2026-06": 1405,
+    "2026-07": 1757
+  },
+  "monthly_response_counts": {
+    "2026-06": 3146,
+    "2026-07": 3563
+  },
+  "pages": [
+    {
+      "url": "https://gofreight.com/blog/gofreight-platform-overview",
+      "subfolder": "Blog",
+      "jul": 743,
+      "jun": 615,
+      "jul_plat": {
+        "Google AI": 370,
+        "ChatGPT": 234,
+        "Perplexity": 139
+      },
+      "jun_plat": {
+        "Google AI": 320,
+        "ChatGPT": 193,
+        "Perplexity": 102
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/cargowise-vs-gofreight",
+      "subfolder": "Blog",
+      "jul": 626,
+      "jun": 517,
+      "jul_plat": {
+        "Google AI": 362,
+        "Perplexity": 148,
+        "ChatGPT": 116
+      },
+      "jun_plat": {
+        "Google AI": 247,
+        "ChatGPT": 178,
+        "Perplexity": 92
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/best-freight-management-software",
+      "subfolder": "Blog",
+      "jul": 587,
+      "jun": 429,
+      "jul_plat": {
+        "Google AI": 379,
+        "Perplexity": 155,
+        "ChatGPT": 53
+      },
+      "jun_plat": {
+        "Google AI": 335,
+        "ChatGPT": 40,
+        "Perplexity": 54
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/best-tms-software",
+      "subfolder": "Blog",
+      "jul": 551,
+      "jun": 388,
+      "jul_plat": {
+        "Perplexity": 175,
+        "ChatGPT": 86,
+        "Google AI": 290
+      },
+      "jun_plat": {
+        "Google AI": 281,
+        "ChatGPT": 63,
+        "Perplexity": 44
+      }
+    },
+    {
+      "url": "https://gofreight.com/product/integrations",
+      "subfolder": "Product",
+      "jul": 387,
+      "jun": 269,
+      "jul_plat": {
+        "Google AI": 208,
+        "ChatGPT": 108,
+        "Perplexity": 71
+      },
+      "jun_plat": {
+        "ChatGPT": 80,
+        "Google AI": 149,
+        "Perplexity": 40
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/cargowise-alternative",
+      "subfolder": "Blog",
+      "jul": 385,
+      "jun": 262,
+      "jul_plat": {
+        "Google AI": 192,
+        "Perplexity": 145,
+        "ChatGPT": 48
+      },
+      "jun_plat": {
+        "Google AI": 137,
+        "Perplexity": 109,
+        "ChatGPT": 16
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/gofreight-vs-magaya",
+      "subfolder": "Blog",
+      "jul": 369,
+      "jun": 340,
+      "jul_plat": {
+        "Google AI": 242,
+        "Perplexity": 73,
+        "ChatGPT": 54
+      },
+      "jun_plat": {
+        "ChatGPT": 45,
+        "Google AI": 202,
+        "Perplexity": 93
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/nvocc-software-top-solutions",
+      "subfolder": "Blog",
+      "jul": 317,
+      "jun": 211,
+      "jul_plat": {
+        "Google AI": 159,
+        "ChatGPT": 39,
+        "Perplexity": 119
+      },
+      "jun_plat": {
+        "Google AI": 117,
+        "Perplexity": 70,
+        "ChatGPT": 24
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/gofreight-reviews-testimonials",
+      "subfolder": "Blog",
+      "jul": 316,
+      "jun": 275,
+      "jul_plat": {
+        "Google AI": 198,
+        "Perplexity": 76,
+        "ChatGPT": 42
+      },
+      "jun_plat": {
+        "Google AI": 115,
+        "Perplexity": 15,
+        "ChatGPT": 145
+      }
+    },
+    {
+      "url": "https://gofreight.com/service-level-agreement",
+      "subfolder": "Other",
+      "jul": 202,
+      "jun": 189,
+      "jul_plat": {
+        "Google AI": 117,
+        "ChatGPT": 54,
+        "Perplexity": 31
+      },
+      "jun_plat": {
+        "Google AI": 94,
+        "ChatGPT": 65,
+        "Perplexity": 30
+      }
+    },
+    {
+      "url": "https://gofreight.com/product/workflow-automation",
+      "subfolder": "Product",
+      "jul": 192,
+      "jun": 30,
+      "jul_plat": {
+        "ChatGPT": 73,
+        "Google AI": 86,
+        "Perplexity": 33
+      },
+      "jun_plat": {
+        "Google AI": 17,
+        "ChatGPT": 7,
+        "Perplexity": 6
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-tracking-software-comparison",
+      "subfolder": "Blog",
+      "jul": 153,
+      "jun": 84,
+      "jul_plat": {
+        "Google AI": 73,
+        "Perplexity": 78,
+        "ChatGPT": 2
+      },
+      "jun_plat": {
+        "Google AI": 38,
+        "Perplexity": 46
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-does-it-work.html",
+      "subfolder": "Blog",
+      "jul": 143,
+      "jun": 104,
+      "jul_plat": {
+        "Google AI": 123,
+        "ChatGPT": 20
+      },
+      "jun_plat": {
+        "Google AI": 99,
+        "ChatGPT": 5
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/gofreight-vs-descartes",
+      "subfolder": "Blog",
+      "jul": 133,
+      "jun": 52,
+      "jul_plat": {
+        "Google AI": 71,
+        "ChatGPT": 26,
+        "Perplexity": 36
+      },
+      "jun_plat": {
+        "Google AI": 34,
+        "Perplexity": 9,
+        "ChatGPT": 9
+      }
+    },
+    {
+      "url": "https://gofreight.com/",
+      "subfolder": "Homepage",
+      "jul": 128,
+      "jun": 113,
+      "jul_plat": {
+        "Google AI": 47,
+        "ChatGPT": 29,
+        "Perplexity": 52
+      },
+      "jun_plat": {
+        "Google AI": 38,
+        "ChatGPT": 75
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/best-tms-small-business",
+      "subfolder": "Blog",
+      "jul": 114,
+      "jun": 83,
+      "jul_plat": {
+        "Google AI": 78,
+        "Perplexity": 34,
+        "ChatGPT": 2
+      },
+      "jun_plat": {
+        "Google AI": 75,
+        "ChatGPT": 4,
+        "Perplexity": 4
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/best-logistics-crm-software",
+      "subfolder": "Blog",
+      "jul": 112,
+      "jun": 69,
+      "jul_plat": {
+        "Google AI": 65,
+        "Perplexity": 31,
+        "ChatGPT": 16
+      },
+      "jun_plat": {
+        "Google AI": 48,
+        "Perplexity": 19,
+        "ChatGPT": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/magaya-alternatives",
+      "subfolder": "Blog",
+      "jul": 110,
+      "jun": 159,
+      "jul_plat": {
+        "Perplexity": 23,
+        "Google AI": 79,
+        "ChatGPT": 8
+      },
+      "jun_plat": {
+        "Google AI": 125,
+        "Perplexity": 26,
+        "ChatGPT": 8
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/tms-software-guide",
+      "subfolder": "Blog",
+      "jul": 104,
+      "jun": 28,
+      "jul_plat": {
+        "Perplexity": 91,
+        "ChatGPT": 9,
+        "Google AI": 4
+      },
+      "jun_plat": {
+        "ChatGPT": 21,
+        "Google AI": 6,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/product/freight-billing-accounting",
+      "subfolder": "Product",
+      "jul": 103,
+      "jun": 32,
+      "jul_plat": {
+        "Google AI": 62,
+        "ChatGPT": 25,
+        "Perplexity": 16
+      },
+      "jun_plat": {
+        "Google AI": 26,
+        "ChatGPT": 6
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/solution/blog-customer-portal.html",
+      "subfolder": "Blog",
+      "jul": 96,
+      "jun": 50,
+      "jul_plat": {
+        "Google AI": 19,
+        "ChatGPT": 28,
+        "Perplexity": 49
+      },
+      "jun_plat": {
+        "Perplexity": 29,
+        "Google AI": 20,
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/descartes-alternatives",
+      "subfolder": "Blog",
+      "jul": 95,
+      "jun": 113,
+      "jul_plat": {
+        "Google AI": 80,
+        "ChatGPT": 6,
+        "Perplexity": 9
+      },
+      "jun_plat": {
+        "Google AI": 85,
+        "ChatGPT": 5,
+        "Perplexity": 23
+      }
+    },
+    {
+      "url": "https://gofreight.com/product/customer-portal",
+      "subfolder": "Product",
+      "jul": 93,
+      "jun": 42,
+      "jul_plat": {
+        "Google AI": 43,
+        "ChatGPT": 23,
+        "Perplexity": 27
+      },
+      "jun_plat": {
+        "Google AI": 35,
+        "ChatGPT": 5,
+        "Perplexity": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/switch-from-cargowise",
+      "subfolder": "Blog",
+      "jul": 93,
+      "jun": 80,
+      "jul_plat": {
+        "Perplexity": 35,
+        "Google AI": 56,
+        "ChatGPT": 2
+      },
+      "jun_plat": {
+        "Google AI": 48,
+        "Perplexity": 30,
+        "ChatGPT": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/transmodal-group",
+      "subfolder": "Other",
+      "jul": 91,
+      "jun": 64,
+      "jul_plat": {
+        "Google AI": 44,
+        "ChatGPT": 31,
+        "Perplexity": 16
+      },
+      "jun_plat": {
+        "Google AI": 29,
+        "ChatGPT": 13,
+        "Perplexity": 22
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/cargowise-pricing-2025",
+      "subfolder": "Blog",
+      "jul": 81,
+      "jun": 48,
+      "jul_plat": {
+        "Google AI": 69,
+        "Perplexity": 12
+      },
+      "jun_plat": {
+        "Google AI": 32,
+        "ChatGPT": 15,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/general/blog-forwading-management-software-as-service.html",
+      "subfolder": "Blog",
+      "jul": 73,
+      "jun": 20,
+      "jul_plat": {
+        "Google AI": 40,
+        "Perplexity": 18,
+        "ChatGPT": 15
+      },
+      "jun_plat": {
+        "Google AI": 16,
+        "Perplexity": 1,
+        "ChatGPT": 3
+      }
+    },
+    {
+      "url": "https://api.gofreight.com",
+      "subfolder": "API",
+      "jul": 59,
+      "jun": 102,
+      "jul_plat": {
+        "Google AI": 15,
+        "ChatGPT": 31,
+        "Perplexity": 13
+      },
+      "jun_plat": {
+        "Google AI": 25,
+        "ChatGPT": 48,
+        "Perplexity": 29
+      }
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/api/more-examples",
+      "subfolder": "Other",
+      "jul": 56,
+      "jun": 5,
+      "jul_plat": {
+        "Google AI": 16,
+        "Perplexity": 28,
+        "ChatGPT": 12
+      },
+      "jun_plat": {
+        "Google AI": 3,
+        "ChatGPT": 1,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/knowledge/gofreight-quickbooks-accounting-integration-getting-started-user-guide",
+      "subfolder": "Other",
+      "jul": 55,
+      "jun": 23,
+      "jul_plat": {
+        "Perplexity": 7,
+        "Google AI": 42,
+        "ChatGPT": 6
+      },
+      "jun_plat": {
+        "Google AI": 19,
+        "ChatGPT": 4
+      }
+    },
+    {
+      "url": "https://gofreight.com/why-gofreight",
+      "subfolder": "Other",
+      "jul": 54,
+      "jun": 43,
+      "jul_plat": {
+        "Google AI": 43,
+        "ChatGPT": 4,
+        "Perplexity": 7
+      },
+      "jun_plat": {
+        "Google AI": 33,
+        "ChatGPT": 3,
+        "Perplexity": 7
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/transparent-freight-software-pricing",
+      "subfolder": "Blog",
+      "jul": 50,
+      "jun": 65,
+      "jul_plat": {
+        "Google AI": 47,
+        "Perplexity": 3
+      },
+      "jun_plat": {
+        "Google AI": 46,
+        "Perplexity": 17,
+        "ChatGPT": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/education/end-to-end-shipment-management",
+      "subfolder": "Blog",
+      "jul": 50,
+      "jun": 40,
+      "jul_plat": {
+        "Google AI": 50
+      },
+      "jun_plat": {
+        "Google AI": 40
+      }
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/api",
+      "subfolder": "Other",
+      "jul": 47,
+      "jun": 11,
+      "jul_plat": {
+        "ChatGPT": 19,
+        "Perplexity": 17,
+        "Google AI": 11
+      },
+      "jun_plat": {
+        "Google AI": 6,
+        "ChatGPT": 4,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/solutions/ocean-freight",
+      "subfolder": "Solutions",
+      "jul": 42,
+      "jun": 25,
+      "jul_plat": {
+        "Google AI": 9,
+        "Perplexity": 32,
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "Google AI": 6,
+        "Perplexity": 19
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/best-warehouse-management-systems-for-freight-operations",
+      "subfolder": "Blog",
+      "jul": 40,
+      "jun": 38,
+      "jul_plat": {
+        "Google AI": 31,
+        "Perplexity": 9
+      },
+      "jun_plat": {
+        "Google AI": 32,
+        "ChatGPT": 6
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-logistics-analytics-tools-kpis-and-best-practices",
+      "subfolder": "Blog",
+      "jul": 39,
+      "jun": 4,
+      "jul_plat": {
+        "Google AI": 27,
+        "ChatGPT": 11,
+        "Perplexity": 1
+      },
+      "jun_plat": {
+        "Google AI": 1,
+        "ChatGPT": 3
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/founders-insight/unlocking-success-in-freight-forwarding-essential-kpis-to-keep-you-ahead.html",
+      "subfolder": "Blog",
+      "jul": 38,
+      "jun": 48,
+      "jul_plat": {
+        "Perplexity": 31,
+        "Google AI": 7
+      },
+      "jun_plat": {
+        "Perplexity": 26,
+        "Google AI": 21,
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/api/use-cases/agent-shipment-submission",
+      "subfolder": "Other",
+      "jul": 37,
+      "jun": 32,
+      "jul_plat": {
+        "Perplexity": 29,
+        "Google AI": 8
+      },
+      "jun_plat": {
+        "Perplexity": 29,
+        "Google AI": 3
+      }
+    },
+    {
+      "url": "https://developers.gofreight.com",
+      "subfolder": "Other",
+      "jul": 36,
+      "jun": 27,
+      "jul_plat": {
+        "Google AI": 29,
+        "ChatGPT": 4,
+        "Perplexity": 3
+      },
+      "jun_plat": {
+        "Google AI": 12,
+        "Perplexity": 15
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/global-gateway",
+      "subfolder": "Other",
+      "jul": 36,
+      "jun": 25,
+      "jul_plat": {
+        "Google AI": 35,
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "Google AI": 20,
+        "ChatGPT": 4,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/industry-insights/reducing-detention-demurrage-fees.html",
+      "subfolder": "Blog",
+      "jul": 36,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 27,
+        "Perplexity": 9
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/10527832910223-gofreight-quickbooks-accounting-integration-getting-started-user-guide",
+      "subfolder": "Support",
+      "jul": 33,
+      "jun": 47,
+      "jul_plat": {
+        "ChatGPT": 33
+      },
+      "jun_plat": {
+        "ChatGPT": 42,
+        "Google AI": 5
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/what-is-nvocc",
+      "subfolder": "Blog",
+      "jul": 30,
+      "jun": 30,
+      "jul_plat": {
+        "Google AI": 22,
+        "Perplexity": 8
+      },
+      "jun_plat": {
+        "Google AI": 14,
+        "Perplexity": 16
+      }
+    },
+    {
+      "url": "https://gofreight.com/glossary/what-is-tms",
+      "subfolder": "Glossary",
+      "jul": 28,
+      "jun": 50,
+      "jul_plat": {
+        "ChatGPT": 28
+      },
+      "jun_plat": {
+        "ChatGPT": 50
+      }
+    },
+    {
+      "url": "https://gofreight.com/solutions/air-freight",
+      "subfolder": "Solutions",
+      "jul": 26,
+      "jun": 44,
+      "jul_plat": {
+        "Google AI": 16,
+        "Perplexity": 10
+      },
+      "jun_plat": {
+        "Google AI": 15,
+        "Perplexity": 25,
+        "ChatGPT": 4
+      }
+    },
+    {
+      "url": "https://gofreight.com/product/shipment-tracking-operations",
+      "subfolder": "Product",
+      "jul": 24,
+      "jun": 1,
+      "jul_plat": {
+        "Google AI": 4,
+        "ChatGPT": 16,
+        "Perplexity": 4
+      },
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/api/quickstart",
+      "subfolder": "Other",
+      "jul": 24,
+      "jun": 12,
+      "jul_plat": {
+        "ChatGPT": 21,
+        "Google AI": 3
+      },
+      "jun_plat": {
+        "ChatGPT": 3,
+        "Google AI": 8,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/magaya-migration-guide",
+      "subfolder": "Blog",
+      "jul": 21,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 16,
+        "Google AI": 4,
+        "Perplexity": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://document.gofreight.com",
+      "subfolder": "Other",
+      "jul": 20,
+      "jun": 16,
+      "jul_plat": {
+        "Perplexity": 1,
+        "Google AI": 9,
+        "ChatGPT": 10
+      },
+      "jun_plat": {
+        "Google AI": 5,
+        "ChatGPT": 10,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/education/what-are-the-best-ways-for-freight-forwarders-to-save-demurrage-and-detention-fees.html",
+      "subfolder": "Blog",
+      "jul": 20,
+      "jun": 14,
+      "jul_plat": {
+        "Google AI": 8,
+        "Perplexity": 12
+      },
+      "jun_plat": {
+        "Perplexity": 11,
+        "Google AI": 3
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers",
+      "subfolder": "Other",
+      "jul": 20,
+      "jun": 11,
+      "jul_plat": {
+        "Perplexity": 1,
+        "Google AI": 8,
+        "ChatGPT": 11
+      },
+      "jun_plat": {
+        "Google AI": 10,
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/industry-insights/freight-forwarding-technology-is-it-worth-the-cost-to-adopt-new-technologies.html",
+      "subfolder": "Blog",
+      "jul": 18,
+      "jun": 26,
+      "jul_plat": {
+        "Google AI": 17,
+        "Perplexity": 1
+      },
+      "jun_plat": {
+        "Perplexity": 18,
+        "Google AI": 8
+      }
+    },
+    {
+      "url": "https://gofreight.com/knowledge/gofreight-api-faq",
+      "subfolder": "Other",
+      "jul": 17,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 16,
+        "ChatGPT": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/api/tutorial",
+      "subfolder": "Other",
+      "jul": 16,
+      "jun": 5,
+      "jul_plat": {
+        "Perplexity": 3,
+        "Google AI": 13
+      },
+      "jun_plat": {
+        "Google AI": 3,
+        "ChatGPT": 1,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/shipment-tracking-software-features",
+      "subfolder": "Blog",
+      "jul": 16,
+      "jun": 44,
+      "jul_plat": {
+        "Perplexity": 15,
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "Perplexity": 23,
+        "Google AI": 19,
+        "ChatGPT": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/terms-of-service",
+      "subfolder": "Other",
+      "jul": 16,
+      "jun": 28,
+      "jul_plat": {
+        "Perplexity": 16
+      },
+      "jun_plat": {
+        "Perplexity": 27,
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/education/how-to-apply-for-nvocc-license.html",
+      "subfolder": "Blog",
+      "jul": 16,
+      "jun": 17,
+      "jul_plat": {
+        "Perplexity": 16
+      },
+      "jun_plat": {
+        "Perplexity": 17
+      }
+    },
+    {
+      "url": "https://gofreight.com/solutions/pain-points",
+      "subfolder": "Solutions",
+      "jul": 15,
+      "jun": 10,
+      "jul_plat": {
+        "Google AI": 10,
+        "Perplexity": 5
+      },
+      "jun_plat": {
+        "Google AI": 10
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/multi-modal-freight-software",
+      "subfolder": "Blog",
+      "jul": 15,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 3,
+        "ChatGPT": 7,
+        "Perplexity": 5
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-software-audit-trail",
+      "subfolder": "Blog",
+      "jul": 15,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 4,
+        "Google AI": 5,
+        "ChatGPT": 6
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-software-for-mac",
+      "subfolder": "Blog",
+      "jul": 14,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 12,
+        "ChatGPT": 2
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/solution/how-having-an-excellent-accounting-module-in-your-freight-forwarding-software-helps-your-business.html",
+      "subfolder": "Blog",
+      "jul": 13,
+      "jun": 16,
+      "jul_plat": {
+        "Google AI": 11,
+        "Perplexity": 2
+      },
+      "jun_plat": {
+        "ChatGPT": 1,
+        "Google AI": 10,
+        "Perplexity": 5
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/7-day-freight-software-implementation",
+      "subfolder": "Blog",
+      "jul": 13,
+      "jun": 24,
+      "jul_plat": {
+        "ChatGPT": 2,
+        "Perplexity": 11
+      },
+      "jun_plat": {
+        "Google AI": 11,
+        "Perplexity": 13
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-software-migration-guide",
+      "subfolder": "Blog",
+      "jul": 13,
+      "jun": 11,
+      "jul_plat": {
+        "ChatGPT": 3,
+        "Perplexity": 10
+      },
+      "jun_plat": {
+        "Perplexity": 11
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us",
+      "subfolder": "Support",
+      "jul": 13,
+      "jun": 11,
+      "jul_plat": {
+        "ChatGPT": 6,
+        "Perplexity": 5,
+        "Google AI": 2
+      },
+      "jun_plat": {
+        "Perplexity": 9,
+        "Google AI": 1,
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/webhooks/using_webhooks",
+      "subfolder": "Other",
+      "jul": 12,
+      "jun": 2,
+      "jul_plat": {
+        "Google AI": 10,
+        "Perplexity": 2
+      },
+      "jun_plat": {
+        "Google AI": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/education/why-does-your-freight-forwarding-business-need-workflow-automation.html",
+      "subfolder": "Blog",
+      "jul": 12,
+      "jun": 19,
+      "jul_plat": {
+        "Google AI": 12
+      },
+      "jun_plat": {
+        "Google AI": 5,
+        "Perplexity": 14
+      }
+    },
+    {
+      "url": "https://gofreight.com/freight-forwarding-software",
+      "subfolder": "Solutions",
+      "jul": 11,
+      "jun": 16,
+      "jul_plat": {
+        "Google AI": 5,
+        "ChatGPT": 5,
+        "Perplexity": 1
+      },
+      "jun_plat": {
+        "Google AI": 5,
+        "ChatGPT": 11
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/general/digital-freight-forwarder.html",
+      "subfolder": "Blog",
+      "jul": 11,
+      "jun": 20,
+      "jul_plat": {
+        "Google AI": 11
+      },
+      "jun_plat": {
+        "Google AI": 20
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/solution/how-can-freight-forwarders-and-nvoccs-lower-costs-and-increase-operational-efficiencies-with-gofreight.html",
+      "subfolder": "Blog",
+      "jul": 11,
+      "jun": 21,
+      "jul_plat": {
+        "Google AI": 1,
+        "Perplexity": 10
+      },
+      "jun_plat": {
+        "Google AI": 3,
+        "Perplexity": 18
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/case-study-multi-regional-forwarder",
+      "subfolder": "Blog",
+      "jul": 11,
+      "jun": 3,
+      "jul_plat": {
+        "ChatGPT": 7,
+        "Perplexity": 4
+      },
+      "jun_plat": {
+        "ChatGPT": 3
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-software-rail-intermodal-terminal-operators",
+      "subfolder": "Blog",
+      "jul": 11,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 7,
+        "ChatGPT": 3,
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/api/tutorial/retrieve-shipment-refs",
+      "subfolder": "Other",
+      "jul": 10,
+      "jun": 1,
+      "jul_plat": {
+        "Perplexity": 10
+      },
+      "jun_plat": {
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com",
+      "subfolder": "Homepage",
+      "jul": 10,
+      "jun": 40,
+      "jul_plat": {
+        "Perplexity": 10
+      },
+      "jun_plat": {
+        "Perplexity": 40
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/reduce-customs-penalties",
+      "subfolder": "Blog",
+      "jul": 10,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 5,
+        "Google AI": 5
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/founders-insight/how-gofreight-became-the-modern-technology-freight-forwarders-need-today.html",
+      "subfolder": "Blog",
+      "jul": 10,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 9,
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/api/tutorial/manage-trade-partners",
+      "subfolder": "Other",
+      "jul": 9,
+      "jun": 9,
+      "jul_plat": {
+        "Perplexity": 6,
+        "Google AI": 3
+      },
+      "jun_plat": {
+        "Google AI": 8,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/solution/how-a-powerful-invoicing-function-in-your-freight-forwarding-software-helps-your-business.html",
+      "subfolder": "Blog",
+      "jul": 9,
+      "jun": 2,
+      "jul_plat": {
+        "Google AI": 9
+      },
+      "jun_plat": {
+        "Google AI": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/gofreight-software-as-a-service-agreement-sh",
+      "subfolder": "Other",
+      "jul": 9,
+      "jun": 3,
+      "jul_plat": {
+        "Perplexity": 8,
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "Perplexity": 3
+      }
+    },
+    {
+      "url": "https://www.gofreight.com/resources/case-study/whale-us",
+      "subfolder": "Other",
+      "jul": 9,
+      "jun": 1,
+      "jul_plat": {
+        "ChatGPT": 9
+      },
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/whale-logistics-usa",
+      "subfolder": "Other",
+      "jul": 9,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 7,
+        "Google AI": 2
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://archive.gofreight.com/solutions/container-tracking",
+      "subfolder": "Archive",
+      "jul": 8,
+      "jun": 2,
+      "jul_plat": {
+        "Perplexity": 7,
+        "Google AI": 1
+      },
+      "jun_plat": {
+        "Google AI": 2
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/categories/6375773605263-gofreight-guides",
+      "subfolder": "Support",
+      "jul": 8,
+      "jun": 5,
+      "jul_plat": {
+        "Perplexity": 8
+      },
+      "jun_plat": {
+        "Google AI": 2,
+        "Perplexity": 3
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/cargowise-hidden-fees",
+      "subfolder": "Blog",
+      "jul": 8,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 8
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/what-is-tms-1",
+      "subfolder": "Blog",
+      "jul": 8,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 8
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://www.gofreight.com/resources/case-study/casestudy-ucm-ppc",
+      "subfolder": "Other",
+      "jul": 8,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 8
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://archive.gofreight.com",
+      "subfolder": "Archive",
+      "jul": 7,
+      "jun": 9,
+      "jul_plat": {
+        "Perplexity": 3,
+        "ChatGPT": 2,
+        "Google AI": 2
+      },
+      "jun_plat": {
+        "Perplexity": 7,
+        "Google AI": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/general/blog-freight-forwarding-best-practice.html",
+      "subfolder": "Blog",
+      "jul": 7,
+      "jun": 1,
+      "jul_plat": {
+        "Google AI": 7
+      },
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/gc-logistics",
+      "subfolder": "Other",
+      "jul": 7,
+      "jun": 2,
+      "jul_plat": {
+        "Google AI": 2,
+        "ChatGPT": 5
+      },
+      "jun_plat": {
+        "Google AI": 1,
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/solution/how-to-impress-your-customers-through-your-freight-logistics-software.html",
+      "subfolder": "Blog",
+      "jul": 7,
+      "jun": 2,
+      "jul_plat": {
+        "Perplexity": 7
+      },
+      "jun_plat": {
+        "Google AI": 1,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/headwin-logistics",
+      "subfolder": "Other",
+      "jul": 7,
+      "jun": 1,
+      "jul_plat": {
+        "Google AI": 4,
+        "ChatGPT": 3
+      },
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-workflow-management",
+      "subfolder": "Blog",
+      "jul": 7,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 7
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-forwarder-bi-kpis",
+      "subfolder": "Blog",
+      "jul": 7,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 4,
+        "Google AI": 3
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://www.gofreight.com/resources/case-study/casestudy-gclogistics",
+      "subfolder": "Other",
+      "jul": 7,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 7
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/education/build-vs-buy-freight-forwarding-software",
+      "subfolder": "Blog",
+      "jul": 7,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 2,
+        "Perplexity": 5
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/company",
+      "subfolder": "Other",
+      "jul": 6,
+      "jun": 2,
+      "jul_plat": {
+        "Perplexity": 2,
+        "Google AI": 1,
+        "ChatGPT": 3
+      },
+      "jun_plat": {
+        "ChatGPT": 1,
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/related/click",
+      "subfolder": "Support",
+      "jul": 6,
+      "jun": 4,
+      "jul_plat": {
+        "ChatGPT": 6
+      },
+      "jun_plat": {
+        "ChatGPT": 4
+      }
+    },
+    {
+      "url": "https://www.trustpilot.com/review/www.uscargofreight.com",
+      "subfolder": "Other",
+      "jul": 6,
+      "jun": 5,
+      "jul_plat": {
+        "Perplexity": 6
+      },
+      "jun_plat": {
+        "Perplexity": 5
+      }
+    },
+    {
+      "url": "https://gofreight.com/pricing",
+      "subfolder": "Pricing",
+      "jul": 6,
+      "jun": 1,
+      "jul_plat": {
+        "ChatGPT": 5,
+        "Perplexity": 1
+      },
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/11933197549455-getting-started-with-gofreight-tracking",
+      "subfolder": "Support",
+      "jul": 6,
+      "jun": 3,
+      "jul_plat": {
+        "Perplexity": 5,
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "ChatGPT": 2,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/6811503691279-welcome-to-the-gofreight-knowledge-center",
+      "subfolder": "Support",
+      "jul": 6,
+      "jun": 2,
+      "jul_plat": {
+        "ChatGPT": 6
+      },
+      "jun_plat": {
+        "Google AI": 1,
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/allround-forwarding",
+      "subfolder": "Other",
+      "jul": 6,
+      "jun": 4,
+      "jul_plat": {
+        "Google AI": 6
+      },
+      "jun_plat": {
+        "ChatGPT": 2,
+        "Google AI": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-software-quickbooks-integration",
+      "subfolder": "Blog",
+      "jul": 6,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 6
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/solution/unveiling-logistics-technology-trends-in-supply-chain-management.html",
+      "subfolder": "Blog",
+      "jul": 6,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 5,
+        "Perplexity": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/customers/tg-cargo-inc",
+      "subfolder": "Other",
+      "jul": 6,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 5,
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/api/use-cases/digitize-invoice-via-ocr",
+      "subfolder": "Other",
+      "jul": 5,
+      "jun": 1,
+      "jul_plat": {
+        "Google AI": 3,
+        "Perplexity": 2
+      },
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/csl-express-line",
+      "subfolder": "Other",
+      "jul": 5,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 4,
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://developers.gofreight.com/docs",
+      "subfolder": "Other",
+      "jul": 4,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 4
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/product/customs-management",
+      "subfolder": "Product",
+      "jul": 4,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 3,
+        "ChatGPT": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/best-tms-trucking-companies",
+      "subfolder": "Blog",
+      "jul": 3,
+      "jun": 1,
+      "jul_plat": {
+        "Google AI": 3
+      },
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/6695722979215-how-to-use-the-to-do-list-on-the-dashboard-in-gofreight",
+      "subfolder": "Support",
+      "jul": 3,
+      "jun": 1,
+      "jul_plat": {
+        "Perplexity": 3
+      },
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/solutions/ocean-import",
+      "subfolder": "Solutions",
+      "jul": 3,
+      "jun": 5,
+      "jul_plat": {
+        "Google AI": 2,
+        "Perplexity": 1
+      },
+      "jun_plat": {
+        "Perplexity": 5
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/united-cargo-management",
+      "subfolder": "Other",
+      "jul": 3,
+      "jun": 3,
+      "jul_plat": {
+        "Google AI": 2,
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "ChatGPT": 2,
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/solution/complete-guide-aes",
+      "subfolder": "Blog",
+      "jul": 3,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 3
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/custom_fields",
+      "subfolder": "Other",
+      "jul": 3,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 2,
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/product/freight-analytics",
+      "subfolder": "Product",
+      "jul": 3,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 1,
+        "Google AI": 2
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/11933072561167-how-to-effectively-manage-cargo-status-using-my-containers",
+      "subfolder": "Support",
+      "jul": 3,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 3
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://www.gofreight.com/who-we-serve/united-states",
+      "subfolder": "Other",
+      "jul": 3,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 3
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/customers/seamax-freight-international",
+      "subfolder": "Other",
+      "jul": 3,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 3
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/knowledge/quickbooks-online-integration-faq",
+      "subfolder": "Other",
+      "jul": 2,
+      "jun": 1,
+      "jul_plat": {
+        "ChatGPT": 2
+      },
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/knowledge/welcome-to-the-gofreight-knowledge-center",
+      "subfolder": "Other",
+      "jul": 2,
+      "jun": 7,
+      "jul_plat": {
+        "Google AI": 2
+      },
+      "jun_plat": {
+        "Google AI": 7
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/general/features-you-should-look-for-in-a-freight-logistics-software-system.html",
+      "subfolder": "Blog",
+      "jul": 2,
+      "jun": 2,
+      "jul_plat": {
+        "Google AI": 2
+      },
+      "jun_plat": {
+        "Google AI": 2
+      }
+    },
+    {
+      "url": "https://archive.gofreight.com/who-we-serve/accounting-manager",
+      "subfolder": "Archive",
+      "jul": 2,
+      "jun": 1,
+      "jul_plat": {
+        "ChatGPT": 2
+      },
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/freights-snap/global-top-freight-forwarders",
+      "subfolder": "Blog",
+      "jul": 2,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 2
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/general/customer-relationship-management-in-logistics.html",
+      "subfolder": "Blog",
+      "jul": 2,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 2
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/solutions/air-import",
+      "subfolder": "Solutions",
+      "jul": 2,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 2
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/education/freight-forwarding-software-warning-signs",
+      "subfolder": "Blog",
+      "jul": 2,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 2
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/education/how-to-do-custom-clearance-in-usa-for-goods.html",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 1,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://archive.gofreight.com/solutions/accounting-solutions",
+      "subfolder": "Archive",
+      "jul": 1,
+      "jun": 3,
+      "jul_plat": {
+        "Perplexity": 1
+      },
+      "jun_plat": {
+        "Perplexity": 3
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/9767374655119-lesson-15-1-how-to-set-up-qbo-adaptor-for-the-first-time",
+      "subfolder": "Support",
+      "jul": 1,
+      "jun": 7,
+      "jul_plat": {
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "Google AI": 7
+      }
+    },
+    {
+      "url": "https://archive.gofreight.com/testimonials",
+      "subfolder": "Archive",
+      "jul": 1,
+      "jun": 3,
+      "jul_plat": {
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "ChatGPT": 3
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/11214584576911-how-to-import-contracts-into-gofreight",
+      "subfolder": "Support",
+      "jul": 1,
+      "jun": 4,
+      "jul_plat": {
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "Google AI": 1,
+        "ChatGPT": 1,
+        "Perplexity": 2
+      }
+    },
+    {
+      "url": "https://archive.gofreight.com/tracking-portal",
+      "subfolder": "Archive",
+      "jul": 1,
+      "jun": 2,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {
+        "Google AI": 1,
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://www.gofreight.com/tracking-portal",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 1,
+      "jul_plat": {
+        "ChatGPT": 1
+      },
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/education/3-ways-technology-assist-with-freight-forwarding-risk-mitigation.html",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 1,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/whale-us",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 1,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://archive.gofreight.com/container-tracking-data-feed",
+      "subfolder": "Archive",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/knowledge/how-to-generate-a-freight-statement-in-gofreight",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/freights-snap/detention-and-demurrage-charges.html",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/cargo-management-software",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/founders-insight/why-a-modern-saas-is-necessary-for-any-freight-forwarder-to-grow.html",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/knowledge/how-to-import-contracts-into-gofreight",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/knowledge/how-to-ams-faq",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/12285794078607-how-to-generate-delivery-orders-and-other-air-import-documents-in-gofreight",
+      "subfolder": "Support",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/solution/supply-chain-optimization-what-is-it-best-practices.html",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/freight-software-evaluation-checklist",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Perplexity": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://developers.gofreight.com/docs/api/troubleshooting",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://www.gofreight.com/who-we-serve/accounting-manager",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://archive.gofreight.com/freight-forwarding-software",
+      "subfolder": "Archive",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/industry-insights/the-ultimate-guide-to-freight-forwarders.html",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/modern-freight-operations",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/customers/straight-forwarding-inc",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/blog/education/5-sales-strategies-for-freight-forwarding-company.html",
+      "subfolder": "Blog",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "Google AI": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/customers/tg-cargo-logistics",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://gofreight.com/knowledge/how-to-apply-isf-and-ams-in-gofreight",
+      "subfolder": "Other",
+      "jul": 1,
+      "jun": 0,
+      "jul_plat": {
+        "ChatGPT": 1
+      },
+      "jun_plat": {}
+    },
+    {
+      "url": "https://www.gofreight.com/switch-to-gofreight",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 2,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/solutions/air-export",
+      "subfolder": "Solutions",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/knowledge/how-to-manage-shipment-documents",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/3pl-vs-freight-forwarder",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/industry-insights/shipping-forecasting.html",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/knowledge/gofreight-guides",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/12908632196879-quickbooks-online-integration-faq",
+      "subfolder": "Support",
+      "jul": 0,
+      "jun": 2,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 2
+      }
+    },
+    {
+      "url": "https://archive.gofreight.com/faq/what-should-the-accounting-module-contain-in-an-excellent-freight-forwarding-software",
+      "subfolder": "Archive",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://archive.gofreight.com/solutions/integration",
+      "subfolder": "Archive",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/what-is-tms",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 10,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 10
+      }
+    },
+    {
+      "url": "https://archive.gofreight.com/pricing",
+      "subfolder": "Archive",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://ie.trustpilot.com/review/www.uscargofreight.com",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 2,
+      "jul_plat": {},
+      "jun_plat": {
+        "Perplexity": 2
+      }
+    },
+    {
+      "url": "https://www.gofreight.com/newsroom/gofreight-named-2023-winter-industry-leader-on-g2",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://www.scamadviser.com/check-website/gofreight.com",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/industry-insights/finding-the-right-freight-forwarding-software.html",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://archive.gofreight.com/solutions/customer-portal",
+      "subfolder": "Archive",
+      "jul": 0,
+      "jun": 24,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 11,
+        "Perplexity": 13
+      }
+    },
+    {
+      "url": "https://gofreight.com/knowledge/getting-started-with-gofreight-tracking",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 5,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 5
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/11626695155983-how-to-ams-faq",
+      "subfolder": "Support",
+      "jul": 0,
+      "jun": 2,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 1,
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/6841731636879-lesson-14-1-1-customer-portal-my-profile",
+      "subfolder": "Support",
+      "jul": 0,
+      "jun": 16,
+      "jul_plat": {},
+      "jun_plat": {
+        "Perplexity": 16
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/tms-evaluation-checklist",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 2,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/founders-insight/heres-what-forwarders-say-they-need-from-a-freight-management-software.html",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 2,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 1,
+        "Perplexity": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/general/earn-more-with-more-by-joining-the-best-freight-forwarder-networks.html",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/education/what-is-the-profit-margin-for-freight-forwarders.html",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/education/5-data-analytics-tools-for-logistics-and-transportation.html",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/blog/education/how-is-the-operating-efficiency-of-a-freight-forwarder-measured.html",
+      "subfolder": "Blog",
+      "jul": 0,
+      "jun": 2,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 2
+      }
+    },
+    {
+      "url": "https://gofreight.com/wcapartner",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 3,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 3
+      }
+    },
+    {
+      "url": "https://support.gofreight.com/hc/en-us/articles/14159996309903--internal-new-account-onboarding-process",
+      "subfolder": "Support",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/solutions/ocean-export",
+      "subfolder": "Solutions",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "Google AI": 1
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/transmodal",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 18,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 18
+      }
+    },
+    {
+      "url": "https://gofreight.com/customers/seamax",
+      "subfolder": "Other",
+      "jul": 0,
+      "jun": 1,
+      "jul_plat": {},
+      "jun_plat": {
+        "ChatGPT": 1
+      }
+    }
+  ],
+  "subfolder_rollup": {
+    "Homepage": {
+      "jul_pages": 2,
+      "jun_pages": 2,
+      "jul_cit": 138,
+      "jun_cit": 153
+    },
+    "Blog": {
+      "jul_pages": 71,
+      "jun_pages": 54,
+      "jul_cit": 5830,
+      "jun_cit": 4399
+    },
+    "Glossary": {
+      "jul_pages": 1,
+      "jun_pages": 1,
+      "jul_cit": 28,
+      "jun_cit": 50
+    },
+    "Solutions": {
+      "jul_pages": 6,
+      "jun_pages": 7,
+      "jul_cit": 99,
+      "jun_cit": 102
+    },
+    "Product": {
+      "jul_pages": 7,
+      "jun_pages": 5,
+      "jul_cit": 806,
+      "jun_cit": 374
+    },
+    "Pricing": {
+      "jul_pages": 1,
+      "jun_pages": 1,
+      "jul_cit": 6,
+      "jun_cit": 1
+    },
+    "Support": {
+      "jul_pages": 11,
+      "jun_pages": 13,
+      "jul_cit": 81,
+      "jun_cit": 105
+    },
+    "API": {
+      "jul_pages": 1,
+      "jun_pages": 1,
+      "jul_cit": 59,
+      "jun_cit": 102
+    },
+    "Archive": {
+      "jul_pages": 8,
+      "jun_pages": 10,
+      "jul_cit": 22,
+      "jun_cit": 47
+    },
+    "Other": {
+      "jul_pages": 48,
+      "jun_pages": 40,
+      "jul_cit": 878,
+      "jun_cit": 570
+    }
+  },
+  "totals": {
+    "jul_total_cit": 7947,
+    "jun_total_cit": 5903,
+    "jul_pages": 156,
+    "jun_pages": 134,
+    "jul_total_cit_primary": 7785,
+    "jun_total_cit_primary": 5649,
+    "jul_pages_primary": 136,
+    "jun_pages_primary": 110
+  }
+}
