@@ -88,9 +88,9 @@ def seg_rows():
     data=[('Exact "gofreight"',EX_J,EX_N,EXIM_J,EXIM_N),('Branded related',BR_J,BR_N,BRIM_J,BRIM_N),('Non-branded',NB_J,NB_N,NBIM_J,NBIM_N)]
     for name,cj,cn,ij,inn in data:
         dc=cj-cn; dp=dc/cn*100 if cn else 0; di=ij-inn
-        rows.append(f'<tr><td>{name}</td><td class="num">{f(cj)}</td><td class="num">{f(cn)}</td><td class="num {dcls(dc)}">{sgn(dc)}</td><td class="num {dcls(dc)}">{sgn(dp,1,"%")}</td><td class="num">{f(ij)}</td><td class="num">{f(inn)}</td><td class="num {dcls(di)}">{sgn(di)}</td></tr>')
+        rows.append(f'<tr><td>{name}</td><td class="num">{f(cn)}</td><td class="num">{f(cj)}</td><td class="num {dcls(dc)}">{sgn(dc)}</td><td class="num {dcls(dc)}">{sgn(dp,1,"%")}</td><td class="num">{f(inn)}</td><td class="num">{f(ij)}</td><td class="num {dcls(di)}">{sgn(di)}</td></tr>')
     dc=CL_JUL-CL_JUN; dp=dc/CL_JUN*100; di=IM_JUL-IM_JUN
-    rows.append(f'<tr class="subtotal"><td>TOTAL</td><td class="num">{f(CL_JUL)}</td><td class="num">{f(CL_JUN)}</td><td class="num {dcls(dc)}">{sgn(dc)}</td><td class="num {dcls(dc)}">{sgn(dp,1,"%")}</td><td class="num">{f(IM_JUL)}</td><td class="num">{f(IM_JUN)}</td><td class="num {dcls(di)}">{sgn(di)}</td></tr>')
+    rows.append(f'<tr class="subtotal"><td>TOTAL</td><td class="num">{f(CL_JUN)}</td><td class="num">{f(CL_JUL)}</td><td class="num {dcls(dc)}">{sgn(dc)}</td><td class="num {dcls(dc)}">{sgn(dp,1,"%")}</td><td class="num">{f(IM_JUN)}</td><td class="num">{f(IM_JUL)}</td><td class="num {dcls(di)}">{sgn(di)}</td></tr>')
     return '\n'.join(rows)
 
 SUB_LABEL={'Blog':'Blog','Homepage':'Homepage','Glossary':'Glossary','Solutions':'Solutions','Product':'Product','Pricing':'Pricing','Other':'Other (Company, Tools, etc.)'}
@@ -127,8 +127,8 @@ def top30_rows():
     for i,p in enumerate(top30,1):
         cj,cn=p['julClicks'],p['junClicks']; dc=cj-cn
         mn,jl=cit(p['url']); scj+=cj; scn+=cn; sdc+=dc; scan+=mn; scaj+=jl
-        rows.append(f'<tr><td class="num">{i}</td><td><a href="{p["url"]}" target="_blank">{shorten(p["url"])}</a></td><td>{recent_work(p["url"])}</td><td class="num">{f(cj)}</td><td class="num">{f(cn)}</td><td class="num {dcls(dc)}">{sgn(dc)}</td><td class="num">{f(p["julImpr"])}</td><td class="num aeo">{f(mn)}</td><td class="num aeo">{f(jl)}</td></tr>')
-    rows.append(f'<tr class="subtotal"><td colspan="3">SUBTOTAL (Top 30)</td><td class="num">{f(scj)}</td><td class="num">{f(scn)}</td><td class="num {dcls(sdc)}">{sgn(sdc)}</td><td class="num">—</td><td class="num aeo">{f(scan)}</td><td class="num aeo">{f(scaj)}</td></tr>')
+        rows.append(f'<tr><td class="num">{i}</td><td><a href="{p["url"]}" target="_blank">{shorten(p["url"])}</a></td><td>{recent_work(p["url"])}</td><td class="num">{f(cn)}</td><td class="num">{f(cj)}</td><td class="num {dcls(dc)}">{sgn(dc)}</td><td class="num">{f(p["julImpr"])}</td><td class="num aeo">{f(mn)}</td><td class="num aeo">{f(jl)}</td></tr>')
+    rows.append(f'<tr class="subtotal"><td colspan="3">SUBTOTAL (Top 30)</td><td class="num">{f(scn)}</td><td class="num">{f(scj)}</td><td class="num {dcls(sdc)}">{sgn(sdc)}</td><td class="num">—</td><td class="num aeo">{f(scan)}</td><td class="num aeo">{f(scaj)}</td></tr>')
     return '\n'.join(rows)
 
 def top15_rows():

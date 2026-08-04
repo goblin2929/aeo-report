@@ -159,7 +159,7 @@ HTML = f'''<!DOCTYPE html>
   <section>
     <h2>Query Segment Breakdown (July vs June)</h2>
     <table class="t"><thead>
-      <tr><th>Segment</th><th class="num">July Clicks</th><th class="num">June Clicks</th><th class="num">Click Δ</th><th class="num">Δ %</th><th class="num">July Impr</th><th class="num">June Impr</th><th class="num">Impr Δ</th></tr>
+      <tr><th>Segment</th><th class="num">June Clicks</th><th class="num">July Clicks</th><th class="num">Click Δ</th><th class="num">Δ %</th><th class="num">June Impr</th><th class="num">July Impr</th><th class="num">Impr Δ</th></tr>
     </thead><tbody>
       {fr['seg']}
     </tbody></table>
@@ -180,7 +180,7 @@ HTML = f'''<!DOCTYPE html>
   <section>
     <h2>Top 30 Pages by Clicks (July vs June) — with AI Citations per Page</h2>
     <table class="t"><thead>
-      <tr><th>#</th><th>Page</th><th>Recent Work</th><th class="num">July Clicks</th><th class="num">June Clicks</th><th class="num">Δ Clicks</th><th class="num">July Impr</th><th class="num aeo">AI Citations · June</th><th class="num aeo">AI Citations · July</th></tr>
+      <tr><th>#</th><th>Page</th><th>Recent Work</th><th class="num">June Clicks</th><th class="num">July Clicks</th><th class="num">Δ Clicks</th><th class="num">July Impr</th><th class="num aeo">AI Citations · June</th><th class="num aeo">AI Citations · July</th></tr>
     </thead><tbody>
       {fr['top30']}
     </tbody></table>
