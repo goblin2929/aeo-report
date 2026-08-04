@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gogogo Monthly Performance Report - July 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-blue: #01aac1; --accent-blue: #01d7f4; --teal: #017d8e;
+            --dark-gray: #111111; --medium-gray: #333333; --light-gray: #f5f5f5;
+            --success-green: #22c55e; --warning-yellow: #eab308; --danger-red: #ef4444;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: var(--light-gray); color: var(--dark-gray); line-height: 1.6; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%); color: white; padding: 40px; border-radius: 12px; margin-bottom: 30px; }
+        .header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+        .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 15px; }
+        .header .meta { font-size: 0.9rem; opacity: 0.7; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+        .kpi-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .kpi-card .label { font-size: 0.85rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .kpi-card .value { font-size: 2rem; font-weight: 700; color: var(--dark-gray); margin-bottom: 8px; }
+        .kpi-card .change { font-size: 0.9rem; font-weight: 600; }
+        .trend-up { color: var(--success-green); } .trend-down { color: var(--danger-red); } .trend-flat { color: #666; }
+        .section-header { background: linear-gradient(135deg, var(--primary-blue), var(--teal)); color: white; padding: 16px 24px; border-radius: 8px; margin: 30px 0 20px 0; font-size: 1.2rem; font-weight: 600; }
+        .market-header { display: flex; align-items: center; gap: 12px; margin: 34px 0 18px 0; padding: 14px 22px; border-radius: 8px; background: linear-gradient(135deg, var(--dark-gray), var(--medium-gray)); color: white; }
+        .market-header .flag { font-size: 1.6rem; }
+        .market-header h2 { font-size: 1.35rem; }
+        .market-header .dom { font-size: 0.85rem; opacity: 0.7; margin-left: auto; font-family: 'SF Mono', Monaco, monospace; }
+        .callout { padding: 20px 24px; border-radius: 8px; margin-bottom: 20px; }
+        .callout-blue { background: linear-gradient(135deg, rgba(1, 170, 193, 0.1), rgba(1, 215, 244, 0.05)); border-left: 4px solid var(--primary-blue); }
+        .callout-green { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid var(--success-green); }
+        .callout-yellow { background: linear-gradient(135deg, #fefce8, #fef3c7); border-left: 4px solid var(--warning-yellow); }
+        .callout-red { background: linear-gradient(135deg, #fef2f2, #fee2e2); border-left: 4px solid var(--danger-red); }
+        .callout h3 { margin-bottom: 12px; font-size: 1.1rem; }
+        .callout ul { margin-left: 20px; } .callout li { margin-bottom: 6px; }
+        .table-scroll { overflow-x: auto; margin-bottom: 20px; }
+        .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .table-scroll .data-table { margin-bottom: 0; }
+        .data-table th { background: var(--medium-gray); color: white; padding: 11px 11px; text-align: left; font-weight: 600; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
+        .data-table th.num { text-align: right; }
+        .data-table td { padding: 10px 11px; border-bottom: 1px solid #eee; font-size: 0.88rem; }
+        .data-table td.num { text-align: right; font-family: 'SF Mono', Monaco, monospace; white-space: nowrap; }
+        .data-table tr:hover { background: #f9fafb; }
+        .data-table tr.subtotal { background: #D9EBD9; font-weight: bold; }
+        .data-table tr.na-row td { color: #999; font-style: italic; }
+        .data-table a { color: var(--primary-blue); text-decoration: none; }
+        .data-table a:hover { text-decoration: underline; }
+        .data-table.opp-table th { background: var(--teal); }
+        .data-table td.posgrp { background: rgba(1,170,193,0.06); }
+        .badge { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 20px; background: var(--primary-blue); color: white; letter-spacing: 0.3px; }
+        .chart-container { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        .chart-container h3 { margin-bottom: 20px; font-size: 1.1rem; color: var(--dark-gray); }
+        .chart-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .status-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px; }
+        .status-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 4px solid var(--success-green); }
+        .status-card.warning { border-left-color: var(--warning-yellow); } .status-card.danger { border-left-color: var(--danger-red); }
+        .status-card h4 { font-size: 0.9rem; color: #666; margin-bottom: 8px; }
+        .status-card .value { font-size: 1.4rem; font-weight: 700; }
+        .priorities-section { background: linear-gradient(135deg, var(--dark-gray), var(--medium-gray)); color: white; padding: 30px; border-radius: 12px; margin: 30px 0; }
+        .priorities-section h3 { margin-bottom: 20px; font-size: 1.3rem; }
+        .priorities-section ul { margin-left: 20px; } .priorities-section li { margin-bottom: 12px; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 0.9rem; }
+        @media (max-width: 768px) { .kpi-grid { grid-template-columns: 1fr 1fr; } .chart-grid, .status-grid { grid-template-columns: 1fr; } }
+        @media print { body { background: white; } .container { max-width: 100%; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Gogogo Monthly Performance Report</h1>
+            <p class="subtitle">SEO and Search Visibility Analysis across Indonesia, Philippines and Malaysia</p>
+            <p class="meta">Reporting Period: July 2026 (1 to 31 July) vs June 2026 (1 to 30 June) | Prepared by Novastacks | Client: Gogogo (Flip Group)</p>
+        </div>
+
+        <!-- Combined KPIs -->
+        <h2 class="section-header">Combined Snapshot (All Three Markets)</h2>
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="label">Total Clicks</div>
+                <div class="value">393,187</div>
+                <div class="change trend-up">+42,663 (+12.17%) vs June</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Total Impressions</div>
+                <div class="value">6,105,068</div>
+                <div class="change trend-up">+136,379 (+2.29%) vs June</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Markets Reported</div>
+                <div class="value">3</div>
+                <div class="change trend-flat">ID, PH, MY</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Main Driver</div>
+                <div class="value">PH + ID PDP</div>
+                <div class="change trend-flat">Philippines +39.6%; ID product pages +11.1% led by Mobile Legends</div>
+            </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #666; margin: -10px 0 20px;"><em>Note: Gogogo GSC data is pulled automatically from Google Search Console (aeo-novastacks profile). Each market is a separate property (gogogo.id, gogogo.game/en-ph, gogogo.com/en-my). Branded and Non-Branded totals come from the query dimension; PDP and Blog come from the page dimension, so the two views differ and do not sum to the same total (Google anonymizes some low-volume queries). Non-Branded means queries without the "gogogo" or "gogo" brand name. One caveat for month over month: July has 31 days and June has 30, so July carries about 3.3% more days inherently; growth above that is genuine. Average position (current, previous, delta) is shown in every detailed table.</em></p>
+
+        <div class="chart-grid">
+            <div class="chart-container">
+                <h3>Clicks by Market: July vs June</h3>
+                <canvas id="clicksByMarket"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Impressions by Market: July vs June</h3>
+                <canvas id="imprByMarket"></canvas>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <h2 class="section-header">Executive Summary</h2>
+        <div class="callout callout-green">
+            <h3>A strong month: all three markets grew</h3>
+            <p>Combined clicks rose to <strong>393,187</strong> (+12.17% vs June, well above the 3.3% extra-day effect). Every market grew, with two clear engines:</p>
+            <ul>
+                <li><strong>Philippines was the standout, +39.61%.</strong> This was a genuine step up in both volume and quality: branded clicks +44.09%, the homepage position improved from 3.05 to 2.35, and the Mobile Legends PDP from 2.08 to 2.01. Non-branded also grew +13.21%.</li>
+                <li><strong>Indonesia +5.11%, led by Mobile Legends product pages.</strong> The ID PDP segment grew +11.14% on +18.91% impressions, driven by the Mobile Legends PDP (+58.07% clicks, +81.73% impressions to about 2.17 million). This includes the late-July Mobile Legends event, and it makes the ML PDP the single largest opportunity on the whole site (about 2.17M impressions at position 4.83). Free Fire cooled the other way (-23.03%).</li>
+                <li><strong>Malaysia +38.13%,</strong> broad growth on a small base: non-branded +62.71%, PDP +55.65%, and positions improving (PDP 4.72 to 4.38).</li>
+                <li><strong>Indonesia blog eased -25.33%,</strong> but its positions held roughly steady (segment 5.46 to 5.56, and the top page spasi-kosong-nama-free-fire even improved slightly, 5.95 to 5.81). Clicks and impressions down while position holds is a seasonal or trend decline in demand, not a content problem: we are noting it and monitoring, not treating it as an urgent fix.</li>
+                <li><strong>Branded strength everywhere:</strong> ID "gogogo id" +60.81%, PH "gogogo" +62.24%, MY "gogogo" +48.82%. The brand is compounding.</li>
+            </ul>
+        </div>
+
+        <div class="callout callout-blue">
+            <h3>The Mobile Legends story at month level</h3>
+            <p>Mobile Legends drove Indonesia's product growth this month, amplified by a late-July event (peak Tuesday 21 July). The pattern is captured demand, with the ranking roughly holding:</p>
+            <div class="table-scroll" style="margin-top:12px;">
+            <table class="data-table">
+                <thead><tr><th>Mobile Legends signal (Indonesia)</th><th class="num">July 2026</th><th class="num">June 2026</th><th class="num">&Delta;</th></tr></thead>
+                <tbody>
+                    <tr><td>Mobile Legends PDP clicks</td><td class="num">51,178</td><td class="num">32,376</td><td class="num trend-up">+58.07%</td></tr>
+                    <tr><td>Mobile Legends PDP impressions</td><td class="num">2,173,074</td><td class="num">1,195,749</td><td class="num trend-up">+81.73%</td></tr>
+                    <tr><td>Mobile Legends PDP position</td><td class="num">4.83</td><td class="num">4.24</td><td class="num trend-down">-0.59</td></tr>
+                    <tr><td>Query "top up ml" clicks</td><td class="num">16,658</td><td class="num">12,568</td><td class="num trend-up">+32.54%</td></tr>
+                    <tr><td>Query "codashop" clicks (competitor)</td><td class="num">4,791</td><td class="num">38</td><td class="num trend-up">+12,508%</td></tr>
+                </tbody>
+            </table>
+            </div>
+            <p style="margin-top:10px;">Impressions grew faster than clicks and the position eased slightly, so this is demand, not a ranking win. The takeaway is the opportunity: the ML PDP now holds a roughly 2.17 million impression pool at position 4.83, so a title, how-to and FAQ optimisation that pushes it toward the top 3 is the highest-value move on the site.</p>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">This Period Focus Areas</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr><th>Category</th><th>What Was Done</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Low-Hanging-Fruit PDP Optimization</strong></td>
+                    <td style="font-size:0.9rem;">&bull; Title, in-game currency, how-to and FAQ proposals ready for the high-impression PDPs (Mobile Legends now the priority)<br>&bull; Implementation will start but is waiting on the staging result before applying to live</td>
+                    <td><span style="color: var(--warning-yellow);">Waiting on staging</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2. Content Production</strong></td>
+                    <td style="font-size:0.9rem;">&bull; June 2026 quota publishing gradually<br>&bull; July 2026 and August 2026 proposals to be sent together in one batch</td>
+                    <td><span style="color: var(--success-green);">Publishing</span></td>
+                </tr>
+                <tr>
+                    <td><strong>3. Reporting and Analysis</strong></td>
+                    <td style="font-size:0.9rem;">&bull; Full-month GSC comparison across ID, PH and MY<br>&bull; Mobile Legends growth attributed; blog decline diagnosed as demand trend<br>&bull; Target keyword performance refreshed (GSC July, Ahrefs)</td>
+                    <td><span style="color: var(--success-green);">Done</span></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="status-grid">
+            <div class="status-card"><h4>Philippines Clicks (July vs June)</h4><div class="value trend-up">+39.61%</div></div>
+            <div class="status-card"><h4>Indonesia PDP Clicks</h4><div class="value trend-up">+11.14%</div></div>
+            <div class="status-card"><h4>Malaysia Clicks</h4><div class="value trend-up">+38.13%</div></div>
+            <div class="status-card warning"><h4>ID Blog (demand trend, position steady)</h4><div class="value trend-down">-25.33%</div></div>
+        </div>
+
+        <!-- ============ INDONESIA ============ -->
+        <div class="market-header">
+            <span class="flag">&#127470;&#127465;</span>
+            <h2>Indonesia Market</h2>
+            <span class="dom">gogogo.id</span>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Clicks</div><div class="value">292,782</div><div class="change trend-up">+14,228 (+5.11%)</div></div>
+            <div class="kpi-card"><div class="label">Impressions</div><div class="value">5,874,236</div><div class="change trend-up">+123,457 (+2.15%)</div></div>
+            <div class="kpi-card"><div class="label">CTR</div><div class="value">4.98%</div><div class="change trend-up">+0.14pp (+2.90%)</div></div>
+            <div class="kpi-card"><div class="label">Homepage Clicks</div><div class="value">140,800</div><div class="change trend-up">+17,988 (+14.65%), pos 3.73 to 4.00</div></div>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Segment Breakdown</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Segment</th>
+                    <th class="num">Clicks (Jul)</th><th class="num">Clicks (Jun)</th><th class="num">Clicks &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num">CTR (Jul)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Branded</td><td class="num">124,525</td><td class="num">117,492</td><td class="num trend-up">+5.99%</td><td class="num">444,812</td><td class="num">473,871</td><td class="num trend-down">-6.13%</td><td class="num">27.99%</td></tr>
+                <tr><td>Non-Branded</td><td class="num">168,257</td><td class="num">161,062</td><td class="num trend-up">+4.47%</td><td class="num">5,429,424</td><td class="num">5,276,908</td><td class="num trend-up">+2.89%</td><td class="num">3.10%</td></tr>
+                <tr><td>Product pages (PDP)</td><td class="num">104,418</td><td class="num">93,952</td><td class="num trend-up">+11.14%</td><td class="num">4,304,475</td><td class="num">3,620,007</td><td class="num trend-up">+18.91%</td><td class="num">2.43%</td></tr>
+                <tr><td>Blog</td><td class="num">46,679</td><td class="num">62,511</td><td class="num trend-down">-25.33%</td><td class="num">2,123,005</td><td class="num">2,846,218</td><td class="num trend-down">-25.41%</td><td class="num">2.20%</td></tr>
+                <tr class="subtotal"><td>ALL</td><td class="num">292,782</td><td class="num">278,554</td><td class="num">+5.11%</td><td class="num">5,874,236</td><td class="num">5,750,779</td><td class="num">+2.15%</td><td class="num">4.98%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Product pages carried Indonesia (+11.14% on +18.91% impressions, the Mobile Legends effect). The blog decline (-25.33%) came with positions roughly holding (segment 5.46 to 5.56), so it reads as a demand or seasonal trend, not a ranking loss.</em></p>
+
+        <div class="callout callout-green">
+            <h3>What Moved in Indonesia</h3>
+            <ul>
+                <li><strong>Mobile Legends led product growth.</strong> ML PDP +58.07% clicks (+81.73% impressions), and the query cluster surged: "top up ml" +32.54%, "top up ml murah" +31.90%, "codashop ml" +47.56%.</li>
+                <li><strong>Competitor brand demand spiked with it.</strong> "codashop" grew from 38 to 4,791 clicks on 524k impressions as the Mobile Legends event pulled in comparison searches, where Gogogo ranks position ~5.6.</li>
+                <li><strong>Roblox is genuinely up.</strong> "top up roblox" +106.79% clicks with position improving 6.69 to 5.01, and the Roblox voucher PDP +23.66%.</li>
+                <li><strong>Free Fire cooled</strong> (PDP -23.03%, "top up ff" -23.47%), a give-back as attention shifted to Mobile Legends; positions held or improved (FF PDP 4.86 to 4.54).</li>
+                <li><strong>Blog eased on demand.</strong> spasi-kosong-nama-free-fire fell -44.78% but its position improved slightly (5.95 to 5.81), the demand-trend pattern; most blog positions held.</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top PDP Pages (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background:#f0fdf4;"><td>1</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td class="num">51,178</td><td class="num">32,376</td><td class="num trend-up">+58.07%</td><td class="num">2,173,074</td><td class="num">1,195,749</td><td class="num trend-up">+81.73%</td><td class="num posgrp">4.83</td><td class="num posgrp">4.24</td><td class="num posgrp trend-down">-0.59</td></tr>
+                <tr><td>2</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td class="num">35,189</td><td class="num">45,718</td><td class="num trend-down">-23.03%</td><td class="num">1,159,256</td><td class="num">1,479,128</td><td class="num trend-down">-21.63%</td><td class="num posgrp">4.54</td><td class="num posgrp">4.86</td><td class="num posgrp trend-up">+0.32</td></tr>
+                <tr><td>3</td><td><a href="https://gogogo.id/p/voucher/voucher-roblox-robux-games" target="_blank">/p/voucher/voucher-roblox-robux-games</a></td><td class="num">5,661</td><td class="num">4,578</td><td class="num trend-up">+23.66%</td><td class="num">302,201</td><td class="num">311,356</td><td class="num trend-down">-2.94%</td><td class="num posgrp">2.10</td><td class="num posgrp">1.90</td><td class="num posgrp trend-down">-0.20</td></tr>
+                <tr><td>4</td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td><td class="num">2,427</td><td class="num">3,331</td><td class="num trend-down">-27.14%</td><td class="num">339,077</td><td class="num">344,725</td><td class="num trend-down">-1.64%</td><td class="num posgrp">1.43</td><td class="num posgrp">1.50</td><td class="num posgrp trend-up">+0.07</td></tr>
+                <tr style="background:#f0fdf4;"><td>5</td><td><a href="https://gogogo.id/p/entertainment/poppo-live-coins" target="_blank">/p/entertainment/poppo-live-coins</a></td><td class="num">2,129</td><td class="num">416</td><td class="num trend-up">+411.78%</td><td class="num">117,806</td><td class="num">52,656</td><td class="num trend-up">+123.73%</td><td class="num posgrp">3.86</td><td class="num posgrp">6.92</td><td class="num posgrp trend-up">+3.06</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: the legacy hub gogogo.id/topup grew to 2,845 clicks (from 446) on 348k impressions at position 1.29, which makes the 301 redirect to /p/topup more relevant, not less (see Technical Notes). Poppo Live coins improved its position sharply (6.92 to 3.86).</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Blog Pages (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://gogogo.id/blog/games/spasi-kosong-nama-free-fire" target="_blank">/blog/games/spasi-kosong-nama-free-fire</a></td><td class="num">5,554</td><td class="num">10,058</td><td class="num trend-down">-44.78%</td><td class="num">188,524</td><td class="num">341,641</td><td class="num trend-down">-44.82%</td><td class="num posgrp">5.81</td><td class="num posgrp">5.95</td><td class="num posgrp trend-up">+0.14</td></tr>
+                <tr><td>2</td><td><a href="https://gogogo.id/blog/games/free-fire/panel-free-fire" target="_blank">/blog/games/free-fire/panel-free-fire</a></td><td class="num">3,034</td><td class="num">3,965</td><td class="num trend-down">-23.48%</td><td class="num">60,461</td><td class="num">70,341</td><td class="num trend-down">-14.05%</td><td class="num posgrp">5.70</td><td class="num posgrp">5.34</td><td class="num posgrp trend-down">-0.36</td></tr>
+                <tr><td>3</td><td><a href="https://gogogo.id/blog/games/cheat-ff-mod-menu" target="_blank">/blog/games/cheat-ff-mod-menu</a></td><td class="num">2,712</td><td class="num">5,514</td><td class="num trend-down">-50.82%</td><td class="num">30,106</td><td class="num">52,002</td><td class="num trend-down">-42.11%</td><td class="num posgrp">5.56</td><td class="num posgrp">4.78</td><td class="num posgrp trend-down">-0.78</td></tr>
+                <tr><td>4</td><td><a href="https://gogogo.id/blog/games/profil-nick-ff-cewek" target="_blank">/blog/games/profil-nick-ff-cewek</a></td><td class="num">2,437</td><td class="num">3,073</td><td class="num trend-down">-20.70%</td><td class="num">51,687</td><td class="num">66,076</td><td class="num trend-down">-21.78%</td><td class="num posgrp">4.71</td><td class="num posgrp">4.58</td><td class="num posgrp trend-down">-0.13</td></tr>
+                <tr><td>5</td><td><a href="https://gogogo.id/blog/games/rekomendasi-nama-mobile-legends-aesthetic-perempuan" target="_blank">/blog/.../nama-ml-aesthetic-perempuan</a></td><td class="num">2,066</td><td class="num">4,381</td><td class="num trend-down">-52.84%</td><td class="num">74,175</td><td class="num">111,952</td><td class="num trend-down">-33.74%</td><td class="num posgrp">7.11</td><td class="num posgrp">6.33</td><td class="num posgrp trend-down">-0.78</td></tr>
+                <tr style="background:#f0fdf4;"><td>6</td><td><a href="https://gogogo.id/blog/games/kode-warna-free-fire" target="_blank">/blog/games/kode-warna-free-fire</a></td><td class="num">2,043</td><td class="num">1,675</td><td class="num trend-up">+21.97%</td><td class="num">22,255</td><td class="num">18,436</td><td class="num trend-up">+20.72%</td><td class="num posgrp">3.99</td><td class="num posgrp">3.81</td><td class="num posgrp trend-down">-0.18</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>The blog softened broadly month over month, but positions largely held (spasi-kosong even improved to 5.81). This reads as seasonal demand for these game-name and cheat terms, not a content or ranking problem. We are monitoring; content refreshes stay lower priority unless a position starts slipping.</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Branded Queries (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>gogogo</td><td class="num">80,248</td><td class="num">79,950</td><td class="num trend-up">+0.37%</td><td class="num">229,906</td><td class="num">225,021</td><td class="num trend-up">+2.17%</td><td class="num posgrp">1.09</td><td class="num posgrp">1.04</td><td class="num posgrp trend-down">-0.05</td></tr>
+                <tr><td>2</td><td>gogogo id</td><td class="num">21,974</td><td class="num">13,665</td><td class="num trend-up">+60.81%</td><td class="num">53,831</td><td class="num">47,913</td><td class="num trend-up">+12.35%</td><td class="num posgrp">1.00</td><td class="num posgrp">1.00</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr><td>3</td><td>gogo</td><td class="num">5,104</td><td class="num">6,221</td><td class="num trend-down">-17.95%</td><td class="num">29,734</td><td class="num">34,769</td><td class="num trend-down">-14.48%</td><td class="num posgrp">1.21</td><td class="num posgrp">1.24</td><td class="num posgrp trend-up">+0.03</td></tr>
+                <tr><td>4</td><td>gogogo ff</td><td class="num">1,514</td><td class="num">2,283</td><td class="num trend-down">-33.68%</td><td class="num">3,102</td><td class="num">5,329</td><td class="num trend-down">-41.79%</td><td class="num posgrp">1.03</td><td class="num posgrp">1.01</td><td class="num posgrp trend-down">-0.02</td></tr>
+                <tr><td>5</td><td>gogogo top up</td><td class="num">1,186</td><td class="num">1,152</td><td class="num trend-up">+2.95%</td><td class="num">5,376</td><td class="num">4,128</td><td class="num trend-up">+30.23%</td><td class="num posgrp">2.38</td><td class="num posgrp">2.37</td><td class="num posgrp trend-down">-0.01</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Non-Branded Queries (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background:#f0fdf4;"><td>1</td><td>top up ml</td><td class="num">16,658</td><td class="num">12,568</td><td class="num trend-up">+32.54%</td><td class="num">459,342</td><td class="num">295,094</td><td class="num trend-up">+55.66%</td><td class="num posgrp">5.78</td><td class="num posgrp">5.63</td><td class="num posgrp trend-down">-0.15</td></tr>
+                <tr><td>2</td><td>top up ff</td><td class="num">14,446</td><td class="num">18,875</td><td class="num trend-down">-23.47%</td><td class="num">369,870</td><td class="num">518,212</td><td class="num trend-down">-28.63%</td><td class="num posgrp">5.48</td><td class="num posgrp">5.89</td><td class="num posgrp trend-up">+0.41</td></tr>
+                <tr style="background:#f0fdf4;"><td>3</td><td>codashop ml</td><td class="num">9,112</td><td class="num">6,175</td><td class="num trend-up">+47.56%</td><td class="num">384,208</td><td class="num">262,652</td><td class="num trend-up">+46.28%</td><td class="num posgrp">3.81</td><td class="num posgrp">3.63</td><td class="num posgrp trend-down">-0.18</td></tr>
+                <tr style="background:#f0fdf4;"><td>4</td><td>top up roblox</td><td class="num">7,403</td><td class="num">3,580</td><td class="num trend-up">+106.79%</td><td class="num">82,660</td><td class="num">47,667</td><td class="num trend-up">+73.41%</td><td class="num posgrp">5.01</td><td class="num posgrp">6.69</td><td class="num posgrp trend-up">+1.68</td></tr>
+                <tr><td>5</td><td>top up ff termurah</td><td class="num">5,604</td><td class="num">7,629</td><td class="num trend-down">-26.54%</td><td class="num">75,055</td><td class="num">99,222</td><td class="num trend-down">-24.36%</td><td class="num posgrp">4.47</td><td class="num posgrp">4.23</td><td class="num posgrp trend-down">-0.24</td></tr>
+                <tr style="background:#f0fdf4;"><td>6</td><td>codashop</td><td class="num">4,791</td><td class="num">38</td><td class="num trend-up">+12,508%</td><td class="num">524,662</td><td class="num">1,412</td><td class="num trend-up">+37,043%</td><td class="num posgrp">5.60</td><td class="num posgrp">7.30</td><td class="num posgrp trend-up">+1.70</td></tr>
+                <tr style="background:#f0fdf4;"><td>7</td><td>top up ml murah</td><td class="num">4,073</td><td class="num">3,088</td><td class="num trend-up">+31.90%</td><td class="num">63,184</td><td class="num">44,377</td><td class="num trend-up">+42.38%</td><td class="num posgrp">5.25</td><td class="num posgrp">5.21</td><td class="num posgrp trend-down">-0.04</td></tr>
+                <tr style="background:#f0fdf4;"><td>8</td><td>top up robux</td><td class="num">2,434</td><td class="num">776</td><td class="num trend-up">+213.66%</td><td class="num">29,471</td><td class="num">10,632</td><td class="num trend-up">+177.19%</td><td class="num posgrp">6.45</td><td class="num posgrp">7.77</td><td class="num posgrp trend-up">+1.32</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Non-Branded Opportunities, Pages: High Impressions, Low Clicks (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table opp-table">
+            <thead>
+                <tr>
+                    <th>Page (Non-Branded)</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Clk (Jul)</th><th class="num">CTR</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                    <th>Why it is an opportunity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td>
+                    <td class="num">2,173,074</td><td class="num">51,178</td><td class="num">2.36%</td>
+                    <td class="num posgrp">4.83</td><td class="num posgrp">4.24</td><td class="num posgrp trend-down">-0.59</td>
+                    <td>The giant. About 2.17 million impressions at position ~5. A top-3 push on this single page is the highest-value move on the whole site.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td>
+                    <td class="num">1,159,256</td><td class="num">35,189</td><td class="num">3.04%</td>
+                    <td class="num posgrp">4.54</td><td class="num posgrp">4.86</td><td class="num posgrp trend-up">+0.32</td>
+                    <td>Second largest pool, position improving. Same lever: push the flagship Free Fire page into the top 3.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td>
+                    <td class="num">339,077</td><td class="num">2,427</td><td class="num">0.72%</td>
+                    <td class="num posgrp">1.43</td><td class="num posgrp">1.50</td><td class="num posgrp trend-up">+0.07</td>
+                    <td>Ranks position 1.4 yet only 0.72% CTR. A title and currency mismatch (add "Diamond"). Highest CTR ceiling on the site.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.id/p/voucher/voucher-roblox-robux-games" target="_blank">/p/voucher/voucher-roblox-robux-games</a></td>
+                    <td class="num">302,201</td><td class="num">5,661</td><td class="num">1.87%</td>
+                    <td class="num posgrp">2.10</td><td class="num posgrp">1.90</td><td class="num posgrp trend-down">-0.20</td>
+                    <td>Ranks near position 2 with 1.87% CTR. Add "Robux" to the title, and fix the Roblox page targeting (see Target Keyword Performance).</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.id/p/entertainment/poppo-live-coins" target="_blank">/p/entertainment/poppo-live-coins</a></td>
+                    <td class="num">117,806</td><td class="num">2,129</td><td class="num">1.81%</td>
+                    <td class="num posgrp">3.86</td><td class="num posgrp">6.92</td><td class="num posgrp trend-up">+3.06</td>
+                    <td>Improved sharply (6.92 to 3.86) and now a real pool. Add "Coins" to the title and push into the top 3.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Non-Branded Opportunities, Queries: High Impressions, Low Clicks (Indonesia)</h3>
+        <div class="table-scroll">
+        <table class="data-table opp-table">
+            <thead>
+                <tr>
+                    <th>Query (Non-Branded)</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Clk (Jul)</th><th class="num">CTR</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                    <th>Why it is an opportunity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>codashop</td>
+                    <td class="num">524,662</td><td class="num">4,791</td><td class="num">0.91%</td>
+                    <td class="num posgrp">5.60</td><td class="num posgrp">7.30</td><td class="num posgrp trend-up">+1.70</td>
+                    <td>Huge competitor brand pool that exploded with the Mobile Legends event, at position ~5.6 and 0.91% CTR. A comparison or price angle is the play.</td>
+                </tr>
+                <tr>
+                    <td>top up ml</td>
+                    <td class="num">459,342</td><td class="num">16,658</td><td class="num">3.63%</td>
+                    <td class="num posgrp">5.78</td><td class="num posgrp">5.63</td><td class="num posgrp trend-down">-0.15</td>
+                    <td>The biggest transactional pool, at position ~6. A top-3 push on the ML PDP converts a large share.</td>
+                </tr>
+                <tr>
+                    <td>codashop ml</td>
+                    <td class="num">384,208</td><td class="num">9,112</td><td class="num">2.37%</td>
+                    <td class="num posgrp">3.81</td><td class="num posgrp">3.63</td><td class="num posgrp trend-down">-0.18</td>
+                    <td>Competitor ML term at position ~4, large and growing. Gogogo already ranks well; a snippet and price angle converts more.</td>
+                </tr>
+                <tr>
+                    <td>top up ff</td>
+                    <td class="num">369,870</td><td class="num">14,446</td><td class="num">3.91%</td>
+                    <td class="num posgrp">5.48</td><td class="num posgrp">5.89</td><td class="num posgrp trend-up">+0.41</td>
+                    <td>High-intent Free Fire head term at position ~5.5, improving. Position gains flow to the Free Fire PDP.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ PHILIPPINES ============ -->
+        <div class="market-header">
+            <span class="flag">&#127477;&#127469;</span>
+            <h2>Philippines Market</h2>
+            <span class="dom">gogogo.game/en-ph</span>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Clicks</div><div class="value">93,888</div><div class="change trend-up">+26,636 (+39.61%)</div></div>
+            <div class="kpi-card"><div class="label">Impressions</div><div class="value">200,799</div><div class="change trend-up">+5,366 (+2.75%)</div></div>
+            <div class="kpi-card"><div class="label">CTR</div><div class="value">46.76%</div><div class="change trend-up">+12.35pp (+35.88%)</div></div>
+            <div class="kpi-card"><div class="label">Homepage Clicks</div><div class="value">85,504</div><div class="change trend-up">+26,066 (+43.85%), pos 3.05 to 2.35</div></div>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Segment Breakdown</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Segment</th>
+                    <th class="num">Clicks (Jul)</th><th class="num">Clicks (Jun)</th><th class="num">Clicks &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num">CTR (Jul)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Branded</td><td class="num">82,832</td><td class="num">57,486</td><td class="num trend-up">+44.09%</td><td class="num">147,226</td><td class="num">124,126</td><td class="num trend-up">+18.61%</td><td class="num">56.26%</td></tr>
+                <tr><td>Non-Branded</td><td class="num">11,056</td><td class="num">9,766</td><td class="num trend-up">+13.21%</td><td class="num">53,573</td><td class="num">71,307</td><td class="num trend-down">-24.87%</td><td class="num">20.64%</td></tr>
+                <tr><td>Product pages (PDP)</td><td class="num">8,965</td><td class="num">8,189</td><td class="num trend-up">+9.48%</td><td class="num">530,228</td><td class="num">473,200</td><td class="num trend-up">+12.05%</td><td class="num">1.69%</td></tr>
+                <tr class="subtotal"><td>ALL</td><td class="num">93,888</td><td class="num">67,252</td><td class="num">+39.61%</td><td class="num">200,799</td><td class="num">195,433</td><td class="num">+2.75%</td><td class="num">46.76%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: No blog on the Philippines property yet. A strong month on both volume and quality: clicks +39.61% while CTR rose to 46.76% and the homepage improved to position 2.35. The market remains heavily branded.</em></p>
+
+        <div class="callout callout-green">
+            <h3>What Moved in the Philippines</h3>
+            <ul>
+                <li><strong>A big branded month with ranking gains.</strong> "gogogo ph" +37.46% (47,822 clicks), "gogogo" +62.24%, "gogogoph" +72.52%, and the homepage improved from position 3.05 to 2.35.</li>
+                <li><strong>Mobile Legends PDP grew and held rank</strong> (+65.02% clicks, position 2.08 to 2.01). The ML event lifted PH too.</li>
+                <li><strong>Poppo Live improved in rank</strong> (position 3.57 to 2.86) though clicks eased slightly.</li>
+                <li><strong>The zero-CTR giants persist and are growing.</strong> Wesing (102,778 impressions, 0.02% CTR, position 1.03) and Honor of Kings (101,116 impressions, 0.05%, position 1.06) rank at the top and convert almost nothing. The single biggest PH title opportunity.</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top PDP Pages (Philippines)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/p/entertainment/poppo-live</a></td><td class="num">5,222</td><td class="num">5,772</td><td class="num trend-down">-9.53%</td><td class="num">127,765</td><td class="num">126,090</td><td class="num trend-up">+1.33%</td><td class="num posgrp">2.86</td><td class="num posgrp">3.57</td><td class="num posgrp trend-up">+0.71</td></tr>
+                <tr><td>2</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/p/topup/mobile-legends-games-ph</a></td><td class="num">3,005</td><td class="num">1,821</td><td class="num trend-up">+65.02%</td><td class="num">106,900</td><td class="num">79,180</td><td class="num trend-up">+35.01%</td><td class="num posgrp">2.01</td><td class="num posgrp">2.08</td><td class="num posgrp trend-up">+0.07</td></tr>
+                <tr><td>3</td><td><a href="https://gogogo.game/en-ph/p/populer/honor-of-kings-games" target="_blank">/p/populer/honor-of-kings-games</a></td><td class="num">51</td><td class="num">26</td><td class="num trend-up">+96.15%</td><td class="num">101,116</td><td class="num">76,948</td><td class="num trend-up">+31.41%</td><td class="num posgrp">1.06</td><td class="num posgrp">1.09</td><td class="num posgrp trend-up">+0.03</td></tr>
+                <tr><td>4</td><td><a href="https://gogogo.game/en-ph/p/entertainment/wesing" target="_blank">/p/entertainment/wesing</a></td><td class="num">19</td><td class="num">14</td><td class="num trend-up">+35.71%</td><td class="num">102,778</td><td class="num">85,320</td><td class="num trend-up">+20.46%</td><td class="num posgrp">1.03</td><td class="num posgrp">1.07</td><td class="num posgrp trend-up">+0.04</td></tr>
+                <tr><td>5</td><td><a href="https://gogogo.game/en-ph/p/populer/blood-strike-by-netease" target="_blank">/p/populer/blood-strike-by-netease</a></td><td class="num">146</td><td class="num">143</td><td class="num trend-up">+2.10%</td><td class="num">972</td><td class="num">6,294</td><td class="num trend-down">-84.56%</td><td class="num posgrp">6.23</td><td class="num posgrp">1.73</td><td class="num posgrp trend-down">-4.50</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Branded Queries (Philippines)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>gogogo ph</td><td class="num">47,822</td><td class="num">34,789</td><td class="num trend-up">+37.46%</td><td class="num">67,941</td><td class="num">52,784</td><td class="num trend-up">+28.72%</td><td class="num posgrp">1.00</td><td class="num posgrp">1.00</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr><td>2</td><td>gogogo</td><td class="num">15,380</td><td class="num">9,480</td><td class="num trend-up">+62.24%</td><td class="num">22,850</td><td class="num">15,924</td><td class="num trend-up">+43.49%</td><td class="num posgrp">1.28</td><td class="num posgrp">1.57</td><td class="num posgrp trend-up">+0.29</td></tr>
+                <tr><td>3</td><td>gogogoph</td><td class="num">3,283</td><td class="num">1,903</td><td class="num trend-up">+72.52%</td><td class="num">4,419</td><td class="num">2,647</td><td class="num trend-up">+66.94%</td><td class="num posgrp">1.00</td><td class="num posgrp">1.00</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr><td>4</td><td>gogogo ml</td><td class="num">1,927</td><td class="num">1,140</td><td class="num trend-up">+69.04%</td><td class="num">2,485</td><td class="num">1,397</td><td class="num trend-up">+77.88%</td><td class="num posgrp">1.13</td><td class="num posgrp">1.17</td><td class="num posgrp trend-up">+0.04</td></tr>
+                <tr><td>5</td><td>gogoph</td><td class="num">1,782</td><td class="num">832</td><td class="num trend-up">+114.18%</td><td class="num">5,410</td><td class="num">2,170</td><td class="num trend-up">+149.31%</td><td class="num posgrp">1.87</td><td class="num posgrp">1.87</td><td class="num posgrp trend-flat">0.00</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Non-Branded Opportunities, Pages: High Impressions, Low Clicks (Philippines)</h3>
+        <div class="table-scroll">
+        <table class="data-table opp-table">
+            <thead>
+                <tr>
+                    <th>Page (Non-Branded)</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Clk (Jul)</th><th class="num">CTR</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                    <th>Why it is an opportunity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/p/entertainment/wesing" target="_blank">/p/entertainment/wesing</a></td>
+                    <td class="num">102,778</td><td class="num">19</td><td class="num">0.02%</td>
+                    <td class="num posgrp">1.03</td><td class="num posgrp">1.07</td><td class="num posgrp trend-up">+0.04</td>
+                    <td>Position 1 with effectively zero clicks on a growing 102k pool. A title and intent rewrite (currency: Coins) is the biggest single PH win.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/p/populer/honor-of-kings-games" target="_blank">/p/populer/honor-of-kings-games</a></td>
+                    <td class="num">101,116</td><td class="num">51</td><td class="num">0.05%</td>
+                    <td class="num posgrp">1.06</td><td class="num posgrp">1.09</td><td class="num posgrp trend-up">+0.03</td>
+                    <td>Same pattern: position 1, 0.05% CTR on 101k impressions. Title and snippet rewrite (currency: Tokens).</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/promotion" target="_blank">/promotion</a></td>
+                    <td class="num">98,135</td><td class="num">99</td><td class="num">0.10%</td>
+                    <td class="num posgrp">1.12</td><td class="num posgrp">1.23</td><td class="num posgrp trend-up">+0.11</td>
+                    <td>Ranks position 1 on a large pool at 0.10% CTR. A clearer, offer-led title and snippet could capture more.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/p/entertainment/poppo-live</a></td>
+                    <td class="num">127,765</td><td class="num">5,222</td><td class="num">4.09%</td>
+                    <td class="num posgrp">2.86</td><td class="num posgrp">3.57</td><td class="num posgrp trend-up">+0.71</td>
+                    <td>The anchor non-branded product, improved to position ~2.9. Keep pushing to top 2, the largest converting PH pool.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/p/topup/mobile-legends-games-ph</a></td>
+                    <td class="num">106,900</td><td class="num">3,005</td><td class="num">2.81%</td>
+                    <td class="num posgrp">2.01</td><td class="num posgrp">2.08</td><td class="num posgrp trend-up">+0.07</td>
+                    <td>Holding position ~2. Protect the rank and lift CTR with a clearer title.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ MALAYSIA ============ -->
+        <div class="market-header">
+            <span class="flag">&#127474;&#127486;</span>
+            <h2>Malaysia Market</h2>
+            <span class="dom">gogogo.com/en-my</span>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Clicks</div><div class="value">6,517</div><div class="change trend-up">+1,799 (+38.13%)</div></div>
+            <div class="kpi-card"><div class="label">Impressions</div><div class="value">30,033</div><div class="change trend-up">+7,556 (+33.62%)</div></div>
+            <div class="kpi-card"><div class="label">CTR</div><div class="value">21.70%</div><div class="change trend-up">+0.71pp (+3.38%)</div></div>
+            <div class="kpi-card"><div class="label">Homepage Clicks</div><div class="value">5,486</div><div class="change trend-up">+1,471 (+36.64%), pos 4.49 to 5.28</div></div>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Segment Breakdown</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Segment</th>
+                    <th class="num">Clicks (Jul)</th><th class="num">Clicks (Jun)</th><th class="num">Clicks &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num">CTR (Jul)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Branded</td><td class="num">5,570</td><td class="num">4,136</td><td class="num trend-up">+34.67%</td><td class="num">19,934</td><td class="num">14,440</td><td class="num trend-up">+38.05%</td><td class="num">27.94%</td></tr>
+                <tr><td>Non-Branded</td><td class="num">947</td><td class="num">582</td><td class="num trend-up">+62.71%</td><td class="num">10,099</td><td class="num">8,037</td><td class="num trend-up">+25.66%</td><td class="num">9.38%</td></tr>
+                <tr><td>Product pages (PDP)</td><td class="num">1,060</td><td class="num">681</td><td class="num trend-up">+55.65%</td><td class="num">22,487</td><td class="num">17,149</td><td class="num trend-up">+31.13%</td><td class="num">4.71%</td></tr>
+                <tr class="subtotal"><td>ALL</td><td class="num">6,517</td><td class="num">4,718</td><td class="num">+38.13%</td><td class="num">30,033</td><td class="num">22,477</td><td class="num">+33.62%</td><td class="num">21.70%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>Note: No blog on the Malaysia property yet. A strong month on a small base: non-branded +62.71%, PDP +55.65%, and the PDP average position improving 4.72 to 4.38.</em></p>
+
+        <div class="callout callout-green">
+            <h3>What Moved in Malaysia</h3>
+            <ul>
+                <li><strong>Broad growth, positions improving.</strong> Non-branded +62.71% and PDP +55.65%; "gogogo" branded +48.82%.</li>
+                <li><strong>Both flagship PDPs grew:</strong> Free Fire +72.53% clicks and Mobile Legends +88.08% (position 4.51 to 3.54).</li>
+                <li><strong>Free Fire impressions surged</strong> (+153.83%) faster than clicks, so its position diluted (3.37 to 5.58); the visibility is there to convert with a position push.</li>
+                <li><strong>Small base, high sensitivity.</strong> MY still runs on a handful of pages; the PDP sitemap gap remains the structural fix (see Technical Notes).</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top PDP Pages (Malaysia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Page</th>
+                    <th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://gogogo.com/en-my/p/topup/free-fire" target="_blank">/p/topup/free-fire</a></td><td class="num">559</td><td class="num">324</td><td class="num trend-up">+72.53%</td><td class="num">9,836</td><td class="num">3,875</td><td class="num trend-up">+153.83%</td><td class="num posgrp">5.58</td><td class="num posgrp">3.37</td><td class="num posgrp trend-down">-2.21</td></tr>
+                <tr><td>2</td><td><a href="https://gogogo.com/en-my/p/topup/mobile-legends-games-my" target="_blank">/p/topup/mobile-legends-games-my</a></td><td class="num">363</td><td class="num">193</td><td class="num trend-up">+88.08%</td><td class="num">8,062</td><td class="num">7,474</td><td class="num trend-up">+7.87%</td><td class="num posgrp">3.54</td><td class="num posgrp">4.51</td><td class="num posgrp trend-up">+0.97</td></tr>
+                <tr><td>3</td><td><a href="https://gogogo.com/en-my/p/entertainment/poppo-live-coins" target="_blank">/p/entertainment/poppo-live-coins</a></td><td class="num">94</td><td class="num">146</td><td class="num trend-down">-35.62%</td><td class="num">692</td><td class="num">3,744</td><td class="num trend-down">-81.52%</td><td class="num posgrp">8.98</td><td class="num posgrp">7.98</td><td class="num posgrp trend-down">-1.00</td></tr>
+                <tr><td>4</td><td><a href="https://gogogo.com/en-my/p/topup/free-fire-max" target="_blank">/p/topup/free-fire-max</a></td><td class="num">20</td><td class="num">1</td><td class="num trend-up">+1,900%</td><td class="num">654</td><td class="num">7</td><td class="num trend-up">New pool</td><td class="num posgrp">2.51</td><td class="num posgrp">5.43</td><td class="num posgrp trend-up">+2.92</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Branded Queries (Malaysia)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th><th>Query</th>
+                    <th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th>
+                    <th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>gogogo</td><td class="num">2,765</td><td class="num">1,858</td><td class="num trend-up">+48.82%</td><td class="num posgrp">2.47</td><td class="num posgrp">2.29</td><td class="num posgrp trend-down">-0.18</td></tr>
+                <tr><td>2</td><td>gogogo my</td><td class="num">1,096</td><td class="num">889</td><td class="num trend-up">+23.28%</td><td class="num posgrp">1.01</td><td class="num posgrp">1.02</td><td class="num posgrp trend-up">+0.01</td></tr>
+                <tr><td>3</td><td>gogogo malaysia</td><td class="num">409</td><td class="num">495</td><td class="num trend-down">-17.37%</td><td class="num posgrp">1.11</td><td class="num posgrp">1.07</td><td class="num posgrp trend-down">-0.04</td></tr>
+                <tr><td>4</td><td>gogogo top up malaysia</td><td class="num">269</td><td class="num">277</td><td class="num trend-down">-2.89%</td><td class="num posgrp">1.00</td><td class="num posgrp">1.00</td><td class="num posgrp trend-flat">0.00</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ TECHNICAL & DEVELOPMENT ============ -->
+        <h2 class="section-header">Technical and Development Notes</h2>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr><th>#</th><th>Item</th><th>Detail</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>PDP title with in-game currency (ID), Mobile Legends first</strong></td>
+                    <td>The Mobile Legends PDP now holds about 2.17 million impressions at position 4.83 with 2.36% CTR: the biggest single opportunity on the site. Add "Diamond" and improve the how-to and FAQ. Free Fire Max (position 1.4, 0.72% CTR, add "Diamond") and Roblox voucher (position 2.1, add "Robux") remain the highest CTR ceilings.</td>
+                    <td><span style="color: var(--warning-yellow);">Waiting on staging</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>PH: Wesing and Honor of Kings title rewrites</strong></td>
+                    <td>Both rank position 1 with 0.02% to 0.05% CTR on 100k+ impressions each and growing. Title and meta rewrites (currency: Coins, Tokens) are the fastest wins in PH.</td>
+                    <td><span style="color: var(--warning-yellow);">Recommended</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>Roblox page targeting (ID)</strong></td>
+                    <td>The Roblox query cluster is served by the homepage in GSC while the dedicated /p/voucher PDP ranks deeper in Ahrefs. Point the cluster at the PDP (title, internal links). Detail in Target Keyword Performance.</td>
+                    <td><span style="color: var(--warning-yellow);">Recommended</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>Carry-forward technical items</strong></td>
+                    <td>Redirect gogogo.id/topup to /p/topup (now 2,845 clicks, 348k impressions); SSR on the gogogo.id homepage and PDPs; PDP sitemap XML for gogogo.com (MY); BreadcrumbList JSON-LD on PDPs.</td>
+                    <td><span style="color: var(--warning-yellow);">Recommended</span></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ TARGET KEYWORD PERFORMANCE ============ -->
+        <h2 class="section-header">Target Keyword Performance (vs Target Rank)</h2>
+        <div class="callout callout-blue">
+            <h3>How to read this</h3>
+            <p>This tracks the agreed ID and PH target keywords against their target rank (Top 2, 3 or 5), from two position sources:</p>
+            <ul>
+                <li><strong>GSC Pos</strong> is our own July impression-weighted average (1 to 31 July 2026), from the highest-impression page ranking for that query. This drives the row colour.</li>
+                <li><strong>Ahrefs Pos</strong> is the best SERP snapshot position (main organic result only) within July. "&gt;100" means Ahrefs does not have that keyword in its top 100.</li>
+            </ul>
+            <p style="margin-top:8px;">Row colour follows GSC: <span style="background:#dcfce7;padding:2px 8px;border-radius:4px;">On target</span> at or better, <span style="background:#fef9c3;padding:2px 8px;border-radius:4px;">Close</span> up to +3 worse, <span style="background:#fee2e2;padding:2px 8px;border-radius:4px;">Far</span> more than +3 worse, <span style="background:#f3f4f6;padding:2px 8px;border-radius:4px;">No data</span> no GSC impressions. Scorecard (July): Indonesia 4 on target, 24 close, 17 far. Philippines 0 on target, 3 close, 51 far, 7 no data. Saved as a time-series SSOT for quarter-over-quarter charting.</p>
+        </div>
+        <h3 style="margin: 26px 0 12px; font-size: 1.05rem; color: var(--medium-gray);">&#127470;&#127465; Indonesia (gogogo.id)</h3>
+        <p style="font-size:0.85rem;color:#666;margin:0 0 14px;"><strong>Row colour</strong> (status vs target rank): <span style="background:#dcfce7;padding:2px 8px;border-radius:4px;">On target</span> at or better than target &nbsp; <span style="background:#fef9c3;padding:2px 8px;border-radius:4px;">Close</span> up to +3 worse &nbsp; <span style="background:#fee2e2;padding:2px 8px;border-radius:4px;">Far</span> more than +3 worse &nbsp; <span style="background:#f3f4f6;padding:2px 8px;border-radius:4px;">No data</span> no GSC impressions. Colour follows the GSC position.</p>
+        <div class="table-scroll">
+        <table class="data-table">
+            <tbody>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Free Fire</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#fef9c3;"><td>top up ff termurah</td><td class="num">98,000</td><td class="num">Top 3</td><td class="num">4.5</td><td class="num">3</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up ff murah</td><td class="num">32,000</td><td class="num">Top 3</td><td class="num">4.5</td><td class="num">4</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>topup ff</td><td class="num">13,000</td><td class="num">Top 5</td><td class="num">5.2</td><td class="num">4</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>codashop ff murah</td><td class="num">6,700</td><td class="num">Top 5</td><td class="num">5.3</td><td class="num">4</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up ff termurah dana</td><td class="num">7,400</td><td class="num">Top 5</td><td class="num">5.4</td><td class="num">3</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up ff diskon 100</td><td class="num">9,500</td><td class="num">Top 5</td><td class="num">5.5</td><td class="num">4</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up ff</td><td class="num">705,000</td><td class="num">Top 2</td><td class="num">5.5</td><td class="num">4</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up membership ff</td><td class="num">6,100</td><td class="num">Top 5</td><td class="num">5.7</td><td class="num">3</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up diamond ff</td><td class="num">25,000</td><td class="num">Top 3</td><td class="num">6.5</td><td class="num">5</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up game ff</td><td class="num">8,100</td><td class="num">Top 5</td><td class="num">6.8</td><td class="num">5</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up ff diskon 90</td><td class="num">7,000</td><td class="num">Top 5</td><td class="num">7.2</td><td class="num">4</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>dg top up ff</td><td class="num">34,000</td><td class="num">Top 3</td><td class="num">7.8</td><td class="num">8</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up ff termurah pakai pulsa</td><td class="num">6,300</td><td class="num">Top 5</td><td class="num">8.6</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>top up free fire</td><td class="num">8,600</td><td class="num">Top 5</td><td class="num">9.7</td><td class="num">6</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-games" target="_blank">/p/topup/free-fire-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>diamond gratis ff id</td><td class="num">8,700</td><td class="num">Top 5</td><td class="num">13.1</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.id/blog/games/cara-dapat-diamond-ff-gratis-legal-dan-aman" target="_blank">/blog/games/cara-dapat-diamond-ff-gratis-legal-dan-aman</a></td><td>-</td></tr>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Mobile Legends</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#fef9c3;"><td>wdp ml murah</td><td class="num">22,000</td><td class="num">Top 3</td><td class="num">4.8</td><td class="num">7</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up ml murah</td><td class="num">49,000</td><td class="num">Top 3</td><td class="num">5.2</td><td class="num">7</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up ml termurah</td><td class="num">12,000</td><td class="num">Top 5</td><td class="num">5.5</td><td class="num">3</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up ml</td><td class="num">242,000</td><td class="num">Top 2</td><td class="num">5.7</td><td class="num">4</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>topup ml</td><td class="num">13,000</td><td class="num">Top 5</td><td class="num">5.8</td><td class="num">7</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legend-malaysia" target="_blank">/p/topup/mobile-legend-malaysia</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up diamond ml</td><td class="num">18,000</td><td class="num">Top 5</td><td class="num">6.2</td><td class="num">5</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up diamond ml murah</td><td class="num">7,000</td><td class="num">Top 5</td><td class="num">6.5</td><td class="num">5</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>diamond ml</td><td class="num">23,000</td><td class="num">Top 3</td><td class="num">7.3</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td>-</td></tr>
+                <tr style="background:#fef9c3;"><td>top up ml dana murah</td><td class="num">6,200</td><td class="num">Top 5</td><td class="num">7.3</td><td class="num">6</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up ml promo</td><td class="num">4,600</td><td class="num">Top 5</td><td class="num">7.3</td><td class="num">10</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>kode redeem ml</td><td class="num">18,000</td><td class="num">Top 5</td><td class="num">7.9</td><td class="num">11</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/blog/games/cara-redeem-code-mlbb" target="_blank">/blog/games/cara-redeem-code-mlbb</a></td><td><a href="https://gogogo.id/blog/games/cara-redeem-code-mlbb" target="_blank">/blog/games/cara-redeem-code-mlbb</a></td></tr>
+                <tr style="background:#fee2e2;"><td>code redeem ml</td><td class="num">5,500</td><td class="num">Top 5</td><td class="num">8.2</td><td class="num">6</td><td>Far (over +3)</td><td><a href="https://gogogo.id/blog/games/cara-redeem-code-mlbb" target="_blank">/blog/games/cara-redeem-code-mlbb</a></td><td><a href="https://gogogo.id/blog/games/cara-redeem-code-mlbb" target="_blank">/blog/games/cara-redeem-code-mlbb</a></td></tr>
+                <tr style="background:#fee2e2;"><td>kode redeem mlbb</td><td class="num">20,000</td><td class="num">Top 3</td><td class="num">8.6</td><td class="num">11</td><td>Far (over +3)</td><td><a href="https://gogogo.id/blog/games/cara-redeem-code-mlbb" target="_blank">/blog/games/cara-redeem-code-mlbb</a></td><td><a href="https://gogogo.id/blog/games/cara-redeem-code-mlbb" target="_blank">/blog/games/cara-redeem-code-mlbb</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up ml pulsa</td><td class="num">13,000</td><td class="num">Top 5</td><td class="num">11.1</td><td class="num">24</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up ml dana</td><td class="num">6,500</td><td class="num">Top 5</td><td class="num">12.1</td><td class="num">11</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/mobile-legends-games" target="_blank">/p/topup/mobile-legends-games</a></td><td><a href="https://gogogo.id/p/topup/mobile-legend-malaysia" target="_blank">/p/topup/mobile-legend-malaysia</a></td></tr>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Roblox</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#dcfce7;"><td>top up roblox murah</td><td class="num">8,100</td><td class="num">Top 5</td><td class="num">3.7</td><td class="num">&gt;100</td><td>On target</td><td><a href="https://gogogo.id/" target="_blank">/</a></td><td>-</td></tr>
+                <tr style="background:#dcfce7;"><td>topup roblox</td><td class="num">5,700</td><td class="num">Top 5</td><td class="num">4.2</td><td class="num">17</td><td>On target</td><td><a href="https://gogogo.id/" target="_blank">/</a></td><td><a href="https://gogogo.id/p/voucher/voucher-roblox-robux-games" target="_blank">/p/voucher/voucher-roblox-robux-games</a></td></tr>
+                <tr style="background:#dcfce7;"><td>tempat top up roblox</td><td class="num">2,200</td><td class="num">Top 5</td><td class="num">4.7</td><td class="num">&gt;100</td><td>On target</td><td><a href="https://gogogo.id/" target="_blank">/</a></td><td>-</td></tr>
+                <tr style="background:#dcfce7;"><td>top up roblox</td><td class="num">63,000</td><td class="num">Top 5</td><td class="num">5.0</td><td class="num">16</td><td>On target</td><td><a href="https://gogogo.id/" target="_blank">/</a></td><td><a href="https://gogogo.id/p/voucher/voucher-roblox-robux-games" target="_blank">/p/voucher/voucher-roblox-robux-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up robux murah</td><td class="num">20,000</td><td class="num">Top 5</td><td class="num">6.2</td><td class="num">&gt;100</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/" target="_blank">/</a></td><td>-</td></tr>
+                <tr style="background:#fef9c3;"><td>top up robux</td><td class="num">20,000</td><td class="num">Top 5</td><td class="num">6.4</td><td class="num">&gt;100</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/" target="_blank">/</a></td><td>-</td></tr>
+                <tr style="background:#fef9c3;"><td>topup robux</td><td class="num">17,000</td><td class="num">Top 5</td><td class="num">6.5</td><td class="num">&gt;100</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/" target="_blank">/</a></td><td>-</td></tr>
+                <tr style="background:#fef9c3;"><td>topup robux murah</td><td class="num">2,400</td><td class="num">Top 5</td><td class="num">7.1</td><td class="num">17</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/" target="_blank">/</a></td><td><a href="https://gogogo.id/p/voucher/voucher-roblox-robux-games" target="_blank">/p/voucher/voucher-roblox-robux-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>robux adalah</td><td class="num">1,500</td><td class="num">Top 5</td><td class="num">8.5</td><td class="num">21</td><td>Far (over +3)</td><td><a href="https://gogogo.id/blog/games/apa-itu-robux" target="_blank">/blog/games/apa-itu-robux</a></td><td><a href="https://gogogo.id/blog/games/apa-itu-robux" target="_blank">/blog/games/apa-itu-robux</a></td></tr>
+                <tr style="background:#fee2e2;"><td>beli robux murah</td><td class="num">9,600</td><td class="num">Top 5</td><td class="num">11.1</td><td class="num">17</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/voucher/voucher-roblox-robux-games" target="_blank">/p/voucher/voucher-roblox-robux-games</a></td><td><a href="https://gogogo.id/p/voucher/voucher-roblox-robux-games" target="_blank">/p/voucher/voucher-roblox-robux-games</a></td></tr>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Free Fire Max</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#fef9c3;"><td>top up ff max termurah</td><td class="num">2,700</td><td class="num">Top 2</td><td class="num">3.3</td><td class="num">3</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up ff max murah</td><td class="num">250</td><td class="num">Top 2</td><td class="num">3.8</td><td class="num">4</td><td>Close (+3 or less)</td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up ff max</td><td class="num">4,200</td><td class="num">Top 2</td><td class="num">5.3</td><td class="num">3</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up free fire max</td><td class="num">200</td><td class="num">Top 2</td><td class="num">7.0</td><td class="num">6</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td></tr>
+                <tr style="background:#fee2e2;"><td>ff max top up</td><td class="num">200</td><td class="num">Top 2</td><td class="num">7.7</td><td class="num">5</td><td>Far (over +3)</td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td><td><a href="https://gogogo.id/p/topup/free-fire-max-games" target="_blank">/p/topup/free-fire-max-games</a></td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size:0.85rem;color:#666;margin-top:-10px;margin-bottom:20px;"><em>Read: the Mobile Legends and Free Fire clusters mostly sit in "close" territory around position 5 to 6, exactly what the low-hanging-fruit PDP work targets. The Roblox terms rank via the homepage (GSC) rather than the dedicated PDP (Ahrefs at 16 to 17): the page-targeting fix remains a priority.</em></p>
+        <h3 style="margin: 26px 0 12px; font-size: 1.05rem; color: var(--medium-gray);">&#127477;&#127469; Philippines (gogogo.game/en-ph)</h3>
+        <p style="font-size:0.85rem;color:#666;margin:0 0 14px;"><strong>Row colour</strong> (status vs target rank): <span style="background:#dcfce7;padding:2px 8px;border-radius:4px;">On target</span> at or better than target &nbsp; <span style="background:#fef9c3;padding:2px 8px;border-radius:4px;">Close</span> up to +3 worse &nbsp; <span style="background:#fee2e2;padding:2px 8px;border-radius:4px;">Far</span> more than +3 worse &nbsp; <span style="background:#f3f4f6;padding:2px 8px;border-radius:4px;">No data</span> no GSC impressions. Colour follows the GSC position.</p>
+        <div class="table-scroll">
+        <table class="data-table">
+            <tbody>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Mobile Legends</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#fee2e2;"><td>murang recharge sa ml</td><td class="num">200</td><td class="num">Top 5</td><td class="num">10.1</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>mlbb top up</td><td class="num">7,700</td><td class="num">Top 3</td><td class="num">15.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph?product=1328" target="_blank">/en-ph/p/topup/mobile-legends-games-ph?product=1328</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>ml recharge</td><td class="num">27,000</td><td class="num">Top 3</td><td class="num">15.4</td><td class="num">20</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td></tr>
+                <tr style="background:#fee2e2;"><td>ml diamond recharge</td><td class="num">5,600</td><td class="num">Top 3</td><td class="num">19.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph?product=1326" target="_blank">/en-ph/p/topup/mobile-legends-games-ph?product=1326</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>ml recharge diamond</td><td class="num">2,300</td><td class="num">Top 5</td><td class="num">22.5</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph?product=1326" target="_blank">/en-ph/p/topup/mobile-legends-games-ph?product=1326</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>ml diamond</td><td class="num">5,300</td><td class="num">Top 3</td><td class="num">24.3</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>diamond recharge</td><td class="num">3,100</td><td class="num">Top 5</td><td class="num">24.6</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>ml top up</td><td class="num">14,000</td><td class="num">Top 3</td><td class="num">26.7</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>mlbb recharge</td><td class="num">7,100</td><td class="num">Top 3</td><td class="num">28.6</td><td class="num">18</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td></tr>
+                <tr style="background:#fee2e2;"><td>ml dias recharge</td><td class="num">2,100</td><td class="num">Top 5</td><td class="num">30.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph?product=1326" target="_blank">/en-ph/p/topup/mobile-legends-games-ph?product=1326</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>top up ml diamonds</td><td class="num">1,400</td><td class="num">Top 5</td><td class="num">30.8</td><td class="num">28</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td></tr>
+                <tr style="background:#fee2e2;"><td>recharge ml diamonds</td><td class="num">2,600</td><td class="num">Top 5</td><td class="num">36.5</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>top up mobile legends</td><td class="num">6,400</td><td class="num">Top 3</td><td class="num">37.6</td><td class="num">38</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td></tr>
+                <tr style="background:#fee2e2;"><td>mlbb recharge diamonds</td><td class="num">200</td><td class="num">Top 5</td><td class="num">38.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>mobile legends recharge</td><td class="num">3,700</td><td class="num">Top 5</td><td class="num">38.7</td><td class="num">37</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph?product=1328" target="_blank">/en-ph/p/topup/mobile-legends-games-ph?product=1328</a></td></tr>
+                <tr style="background:#fee2e2;"><td>ml diamonds recharge</td><td class="num">3,000</td><td class="num">Top 5</td><td class="num">39.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>weekly diamond pass mlbb</td><td class="num">800</td><td class="num">Top 5</td><td class="num">39.0</td><td class="num">28</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td><a href="https://gogogo.game/topup/mobile-legends-games-ph" target="_blank">/topup/mobile-legends-games-ph</a></td></tr>
+                <tr style="background:#fee2e2;"><td>recharge diamond ml</td><td class="num">3,900</td><td class="num">Top 3</td><td class="num">41.1</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>ml topup</td><td class="num">1,400</td><td class="num">Top 3</td><td class="num">42.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>diamond sa ml</td><td class="num">800</td><td class="num">Top 3</td><td class="num">42.5</td><td class="num">40</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up diamond ml</td><td class="num">1,400</td><td class="num">Top 5</td><td class="num">46.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>top up mobile legends diamonds</td><td class="num">200</td><td class="num">Top 5</td><td class="num">46.5</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>mlbb diamond recharge</td><td class="num">15,000</td><td class="num">Top 3</td><td class="num">50.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>topup ml</td><td class="num">700</td><td class="num">Top 5</td><td class="num">51.5</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>recharge mobile legends</td><td class="num">400</td><td class="num">Top 5</td><td class="num">53.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>ml diamond top up</td><td class="num">500</td><td class="num">Top 5</td><td class="num">64.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph" target="_blank">/en-ph/p/topup/mobile-legends-games-ph</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>mlbb topup</td><td class="num">700</td><td class="num">Top 5</td><td class="num">71.5</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/" target="_blank">/en-ph/</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>top up ml</td><td class="num">19,000</td><td class="num">Top 3</td><td class="num">173.0</td><td class="num">39</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/" target="_blank">/en-ph/</a></td><td><a href="https://gogogo.game/en-ph/p/topup/mobile-legends-games-ph?product=182" target="_blank">/en-ph/p/topup/mobile-legends-games-ph?product=182</a></td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>top up ml diamond</td><td class="num">900</td><td class="num">Top 3</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>recharge diamonds ml</td><td class="num">700</td><td class="num">Top 5</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>how to buy diamonds in ml using gcash</td><td class="num">450</td><td class="num">Top 5</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>topup mobile legend</td><td class="num">150</td><td class="num">Top 5</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Genshin</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>genshin redeem code</td><td class="num">18,000</td><td class="num">Top 3</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>genshin redeem</td><td class="num">4,400</td><td class="num">Top 3</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Poppo Live</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#fef9c3;"><td>poppo live recharge gcash</td><td class="num">2,300</td><td class="num">Top 3</td><td class="num">3.6</td><td class="num">14</td><td>Close (+3 or less)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fef9c3;"><td>top up coins poppo</td><td class="num">800</td><td class="num">Top 3</td><td class="num">3.9</td><td class="num">20</td><td>Close (+3 or less)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fef9c3;"><td>poppo live recharge</td><td class="num">1,800</td><td class="num">Top 3</td><td class="num">5.1</td><td class="num">28</td><td>Close (+3 or less)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>poppo coins</td><td class="num">8,900</td><td class="num">Top 3</td><td class="num">6.0</td><td class="num">12</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>recharge poppo</td><td class="num">3,600</td><td class="num">Top 3</td><td class="num">6.3</td><td class="num">19</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>recharge coins poppo</td><td class="num">5,300</td><td class="num">Top 3</td><td class="num">6.4</td><td class="num">9</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>top up poppo</td><td class="num">1,700</td><td class="num">Top 3</td><td class="num">6.7</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>coins poppo</td><td class="num">2,100</td><td class="num">Top 3</td><td class="num">6.7</td><td class="num">21</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>poppo recharge coins</td><td class="num">11,000</td><td class="num">Top 3</td><td class="num">6.9</td><td class="num">20</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>poppo coins recharge</td><td class="num">6,000</td><td class="num">Top 3</td><td class="num">6.9</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>poppo recharge</td><td class="num">12,000</td><td class="num">Top 3</td><td class="num">7.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>poppo live recharge coins</td><td class="num">8,800</td><td class="num">Top 3</td><td class="num">7.3</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>poppo recharge coins philippines</td><td class="num">2,200</td><td class="num">Top 3</td><td class="num">7.5</td><td class="num">14</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>buy poppo coins</td><td class="num">1,400</td><td class="num">Top 3</td><td class="num">8.1</td><td class="num">26</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>buy cheap poppo coins</td><td class="num">450</td><td class="num">Top 3</td><td class="num">8.3</td><td class="num">17</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>recharge poppo coins</td><td class="num">3,600</td><td class="num">Top 3</td><td class="num">8.4</td><td class="num">15</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>poppo top up coins</td><td class="num">2,000</td><td class="num">Top 3</td><td class="num">8.5</td><td class="num">25</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>poppo top up</td><td class="num">3,400</td><td class="num">Top 3</td><td class="num">10.3</td><td class="num">27</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>poppo live coins</td><td class="num">2,500</td><td class="num">Top 3</td><td class="num">10.6</td><td class="num">33</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>poppo coins seller</td><td class="num">900</td><td class="num">Top 3</td><td class="num">10.7</td><td class="num">17</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>poppo coin recharge</td><td class="num">1,800</td><td class="num">Top 3</td><td class="num">12.3</td><td class="num">32</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>how to buy coins in poppo</td><td class="num">900</td><td class="num">Top 3</td><td class="num">23.5</td><td class="num">31</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#fee2e2;"><td>cocodp poppo coins recharge</td><td class="num">6,600</td><td class="num">Top 3</td><td class="num">30.3</td><td class="num">33</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td><td><a href="https://gogogo.game/en-ph/p/entertainment/poppo-live" target="_blank">/en-ph/p/entertainment/poppo-live</a></td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>poppo recharge coins philippines gcash</td><td class="num">600</td><td class="num">Top 3</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Blood Strike</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#fee2e2;"><td>bloodstrike top up</td><td class="num">3,800</td><td class="num">Top 3</td><td class="num">38.2</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/populer/blood-strike-by-netease" target="_blank">/en-ph/p/populer/blood-strike-by-netease</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>blood strike top up</td><td class="num">3,500</td><td class="num">Top 3</td><td class="num">49.9</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/p/populer/blood-strike-by-netease" target="_blank">/en-ph/p/populer/blood-strike-by-netease</a></td><td>-</td></tr>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Bigo Live</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#fee2e2;"><td>bigo recharge gcash</td><td class="num">900</td><td class="num">Top 3</td><td class="num">67.0</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://gogogo.game/en-ph/" target="_blank">/en-ph/</a></td><td>-</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size:0.85rem;color:#666;margin-top:-10px;margin-bottom:20px;"><em>Read: Philippines non-branded discovery is still weak (the Mobile Legends recharge cluster ranks deep), and Ahrefs is missing many of these terms, so GSC is the reliable signal here. Poppo Live is the closest cluster.</em></p>
+
+        <!-- ============ OPTIMIZATION PLAN ============ -->
+        <h2 class="section-header">Optimization Plan</h2>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr><th>#</th><th>Initiative</th><th>Description</th><th>Reference</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>Low-Hanging-Fruit PDP Optimization</strong></td>
+                    <td>Optimise the high-impression, low-CTR PDPs (Mobile Legends now the priority) on three levers: title tag with the in-game currency, a clear crawlable how-to-top-up section, and an FAQ built from real GSC queries. Implementation will start but is waiting on the staging result before applying to live.</td>
+                    <td><a href="https://docs.google.com/document/d/18HylIgNKszOMN0RFdiKVdX4PZZ_nAdg9U3wUH8kMx_g/edit?tab=t.0#heading=h.9ymkcrk27npz" target="_blank">LHF PDP Optimization (Google Doc)</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>June 2026 Content Quota</strong></td>
+                    <td>The June 2026 article quota is publishing gradually.</td>
+                    <td><a href="https://docs.google.com/spreadsheets/d/1kZeBx3Gz-xdRnRzFsQ5RGPzq9KyDH49yxYmdF0WxxcE/edit?gid=1890231322#gid=1890231322" target="_blank">Content plan (Google Sheet)</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>July and August 2026 Proposals</strong></td>
+                    <td>The July 2026 and August 2026 content proposals will be sent together in one batch.</td>
+                    <td><a href="https://docs.google.com/spreadsheets/d/1kZeBx3Gz-xdRnRzFsQ5RGPzq9KyDH49yxYmdF0WxxcE/edit?gid=1890231322#gid=1890231322" target="_blank">Content plan (Google Sheet)</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>Structured data for homepage and category pages</strong></td>
+                    <td>Add structured data (JSON-LD) to the homepage and the category pages so the key templates are eligible for rich results and clearer entity understanding in search.</td>
+                    <td><span style="color:#999;">Link to be added</span></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ MIGRATION PROCESS ============ -->
+        <h2 class="section-header">Migration Process</h2>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead>
+                <tr><th>#</th><th>Workstream</th><th>Document</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>PDP mapping proposal</strong></td>
+                    <td><a href="https://docs.google.com/spreadsheets/d/14iMnPnzvTspGN8Dx4jFMA33BHdgaczsK-QO5qAGM-0U/edit?gid=1269058026#gid=1269058026" target="_blank">Mapping proposal PDP (Google Sheet)</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Category page migration</strong></td>
+                    <td><a href="https://docs.google.com/document/d/1C33aBjfpLShh13t_-5XV6i_SpoWDy4NaH-V0r5CbYm0/edit?tab=t.0#heading=h.suuaur5hewv" target="_blank">Consolidation of migration process for category pages (Google Doc)</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ QUESTIONS FOR THE TEAM ============ -->
+        <h2 class="section-header">Questions for the Gogogo Team</h2>
+        <div class="callout callout-yellow">
+            <h3>To discuss</h3>
+            <ul>
+                <li><strong>Migration status.</strong> Is there any update or ongoing discussion on the Gogogo migration? The PDP mapping and category-page work depend on the migration plan and timeline.</li>
+                <li><strong>Redeem-code target keywords.</strong> Some target queries are redeem-code terms (for example "genshin redeem code", "kode redeem mlbb"). Is this the keyword set we want to target? Redeem codes originate from the game publisher or supplier, so we should discuss how to angle this content so it stays aligned with Gogogo as a top up marketplace, rather than simply listing codes.</li>
+            </ul>
+        </div>
+
+        <!-- ============ PRIORITIES ============ -->
+        <div class="priorities-section">
+            <h3>Next Month Priorities</h3>
+            <ul>
+                <li><strong>Ship the Mobile Legends PDP optimization once staging clears:</strong> add "Diamond" to the title, improve the how-to and FAQ. It is now the biggest impression pool on the site (about 2.17 million at position ~5).</li>
+                <li><strong>Then Free Fire Max (Diamond) and Roblox voucher (Robux):</strong> the highest CTR ceilings, and fix the Roblox page targeting so the cluster points at the PDP.</li>
+                <li><strong>Fix the PH zero-CTR giants:</strong> Wesing and Honor of Kings rank position 1 on 100k+ impressions each and convert nothing.</li>
+                <li><strong>Keep publishing the June quota</strong> and send the combined July and August proposals.</li>
+                <li><strong>Monitor the ID blog trend</strong> (positions steady, demand easing) and watch the Mobile Legends normalisation once the event fully passes.</li>
+                <li><strong>Redirect gogogo.id/topup to /p/topup:</strong> it now carries 348k impressions.</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Prepared by Novastacks for Gogogo (Flip Group) | Data source: Google Search Console month comparison (July 2026 vs June 2026), pulled via the aeo-novastacks profile | Report generated: 31 July 2026</p>
+        </div>
+    </div>
+
+    <script>
+        const brandColors = {
+            primary: '#01aac1', accent: '#01d7f4', teal: '#017d8e', gray: '#666666',
+            success: '#22c55e', warning: '#eab308', danger: '#ef4444'
+        };
+        const markets = ['Indonesia', 'Philippines', 'Malaysia'];
+
+        new Chart(document.getElementById('clicksByMarket'), {
+            type: 'bar',
+            data: {
+                labels: markets,
+                datasets: [
+                    { label: 'June 2026', data: [278554, 67252, 4718], backgroundColor: brandColors.gray },
+                    { label: 'July 2026', data: [292782, 93888, 6517], backgroundColor: brandColors.primary }
+                ]
+            },
+            options: { responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, ticks: { callback: function(v){ return v.toLocaleString(); } } } } }
+        });
+
+        new Chart(document.getElementById('imprByMarket'), {
+            type: 'bar',
+            data: {
+                labels: markets,
+                datasets: [
+                    { label: 'June 2026', data: [5750779, 195433, 22477], backgroundColor: brandColors.gray },
+                    { label: 'July 2026', data: [5874236, 200799, 30033], backgroundColor: brandColors.success }
+                ]
+            },
+            options: { responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, ticks: { callback: function(v){ return v.toLocaleString(); } } } } }
+        });
+    </script>
+</body>
+</html>
