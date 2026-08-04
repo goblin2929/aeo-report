@@ -260,6 +260,13 @@ HTML = f'''<!DOCTYPE html>
       </table>
       <span class="note" style="display:block; margin-top:4px;">WorkDuo, same non-brand prompts and engine; competitor rates from the mentionedEntities field. GoFreight fell most in points but from the highest base, and still finished at or above the pack (tied with Magaya, above Descartes).</span>
     </div>
+    <div class="takeaway-box win"><b>In plain terms — this is not a GoFreight loss.</b> At the end of July, Google’s AI Overview started putting <b>fewer website links in each answer</b> (mostly on the broad “which freight software should I use?” type questions). We checked what actually changed, and here it is in three simple points:
+      <ul>
+        <li><b>The answers got shorter for everyone.</b> In mid-July, a typical AI Overview answer linked to about <b>14 websites</b>; by the end of the month it linked to only about <b>8</b>. That is roughly <b>40% fewer links per answer</b> — for every brand, not just GoFreight.</li>
+        <li><b>No competitor took our place.</b> GoFreight was not swapped out for a rival — CargoWise, Magaya and Descartes lost links in the very same week, and the <i>types</i> of sites Google cites barely changed. Google is simply citing <b>fewer</b> of them. It is a shrink, not a swap.</li>
+        <li><b>GoFreight is being mentioned more, not less.</b> Our AI visibility actually went <b>up +6 points</b> in July. Google is featuring GoFreight <i>more</i> often; it is just linking out to fewer sites overall, so fewer people click through.</li>
+      </ul>
+      <b>Bottom line:</b> Google changed how it builds its answers (shorter, with fewer links), and it happened to the whole industry at once. It is not something GoFreight did wrong — and GoFreight’s presence in AI answers actually grew.</div>
     <div class="takeaway-box win"><b>The offset:</b> newly published July content is already earning AI referrals across engines — <a href="https://gofreight.com/blog/maritime-disruption" target="_blank">/blog/maritime-disruption</a> (0 → 14 sessions), <a href="https://gofreight.com/blog/freight-forwarding-business-development" target="_blank">/blog/freight-forwarding-business-development</a> (new), and <a href="https://gofreight.com/product/rate-management-quoting" target="_blank">/product/rate-management-quoting</a> — so the content program is expanding AI reach even as ChatGPT’s referral volume compresses.</div>
   </section>
 
