@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Globe Monthly Report - July 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-blue: #01aac1; --accent-blue: #01d7f4; --teal: #017d8e;
+            --dark-gray: #111111; --medium-gray: #333333; --light-gray: #f5f5f5;
+            --success-green: #22c55e; --warning-yellow: #eab308; --danger-red: #ef4444;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: var(--light-gray); color: var(--dark-gray); line-height: 1.6; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%); color: white; padding: 40px; border-radius: 12px; margin-bottom: 30px; }
+        .header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+        .header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 15px; }
+        .header .meta { font-size: 0.9rem; opacity: 0.7; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+        .kpi-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .kpi-card .label { font-size: 0.85rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .kpi-card .value { font-size: 2rem; font-weight: 700; color: var(--dark-gray); margin-bottom: 8px; }
+        .kpi-card .change { font-size: 0.9rem; font-weight: 600; }
+        .trend-up { color: var(--success-green); } .trend-down { color: var(--danger-red); } .trend-flat { color: #666; }
+        .section-header { background: linear-gradient(135deg, var(--primary-blue), var(--teal)); color: white; padding: 16px 24px; border-radius: 8px; margin: 30px 0 20px 0; font-size: 1.2rem; font-weight: 600; }
+        .market-header { display: flex; align-items: center; gap: 12px; margin: 34px 0 18px 0; padding: 14px 22px; border-radius: 8px; background: linear-gradient(135deg, var(--dark-gray), var(--medium-gray)); color: white; }
+        .market-header .flag { font-size: 1.6rem; }
+        .market-header h2 { font-size: 1.35rem; }
+        .market-header .dom { font-size: 0.85rem; opacity: 0.7; margin-left: auto; font-family: 'SF Mono', Monaco, monospace; }
+        .callout { padding: 20px 24px; border-radius: 8px; margin-bottom: 20px; }
+        .callout-blue { background: linear-gradient(135deg, rgba(1, 170, 193, 0.1), rgba(1, 215, 244, 0.05)); border-left: 4px solid var(--primary-blue); }
+        .callout-green { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid var(--success-green); }
+        .callout-yellow { background: linear-gradient(135deg, #fefce8, #fef3c7); border-left: 4px solid var(--warning-yellow); }
+        .callout-red { background: linear-gradient(135deg, #fef2f2, #fee2e2); border-left: 4px solid var(--danger-red); }
+        .callout h3 { margin-bottom: 12px; font-size: 1.1rem; }
+        .callout ul { margin-left: 20px; } .callout li { margin-bottom: 6px; }
+        .table-scroll { overflow-x: auto; margin-bottom: 20px; }
+        .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .table-scroll .data-table { margin-bottom: 0; }
+        .data-table th { background: var(--medium-gray); color: white; padding: 11px 11px; text-align: left; font-weight: 600; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
+        .data-table th.num { text-align: right; }
+        .data-table td { padding: 10px 11px; border-bottom: 1px solid #eee; font-size: 0.88rem; }
+        .data-table td.num { text-align: right; font-family: 'SF Mono', Monaco, monospace; white-space: nowrap; }
+        .data-table tr:hover { background: #f9fafb; }
+        .data-table tr.subtotal { background: #D9EBD9; font-weight: bold; }
+        .data-table tr.na-row td { color: #999; font-style: italic; }
+        .data-table a { color: var(--primary-blue); text-decoration: none; }
+        .data-table a:hover { text-decoration: underline; }
+        .data-table.opp-table th { background: var(--teal); }
+        .data-table td.posgrp { background: rgba(1,170,193,0.06); }
+        .badge { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 20px; background: var(--primary-blue); color: white; letter-spacing: 0.3px; }
+        .chart-container { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        .chart-container h3 { margin-bottom: 20px; font-size: 1.1rem; color: var(--dark-gray); }
+        .chart-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .status-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px; }
+        .status-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 4px solid var(--success-green); }
+        .status-card.warning { border-left-color: var(--warning-yellow); } .status-card.danger { border-left-color: var(--danger-red); }
+        .status-card h4 { font-size: 0.9rem; color: #666; margin-bottom: 8px; }
+        .status-card .value { font-size: 1.4rem; font-weight: 700; }
+        .priorities-section { background: linear-gradient(135deg, var(--dark-gray), var(--medium-gray)); color: white; padding: 30px; border-radius: 12px; margin: 30px 0; }
+        .priorities-section h3 { margin-bottom: 20px; font-size: 1.3rem; }
+        .priorities-section ul { margin-left: 20px; } .priorities-section li { margin-bottom: 12px; }
+        .code-label { font-size: 0.8rem; font-weight: 700; margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 0.4px; }
+        .codeblock { background: #1e1e2e; color: #dfe3ec; border-radius: 8px; padding: 16px 18px; overflow-x: auto; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 0.8rem; line-height: 1.55; margin-bottom: 8px; white-space: pre; }
+        .codeblock .bad { color: #ff9d9d; } .codeblock .good { color: #8ff0a4; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 0.9rem; }
+        @media (max-width: 768px) { .kpi-grid { grid-template-columns: 1fr 1fr; } .chart-grid, .status-grid { grid-template-columns: 1fr; } }
+        @media print { body { background: white; } .container { max-width: 100%; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Flip Globe Monthly Report</h1>
+            <p class="subtitle">Flip Globe, Currency Converter and Globe-Related Blogs (flip.id)</p>
+            <p class="meta">Reporting Period: July 2026 (1 to 31 July) vs June 2026 (1 to 30 June) | Prepared by Novastacks | Client: Flip (Flip Group)</p>
+        </div>
+
+        <!-- Snapshot -->
+        <h2 class="section-header">Snapshot (Globe Scope)</h2>
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Globe + Converter Clicks</div><div class="value">24,457</div><div class="change trend-down">-8,341 (-25.43%) vs June</div></div>
+            <div class="kpi-card"><div class="label">Flip Globe Clicks</div><div class="value">1,333</div><div class="change trend-up">+165 (+14.13%) vs June</div></div>
+            <div class="kpi-card"><div class="label">Globe-Related Blog Clicks</div><div class="value">7,544</div><div class="change trend-up">+1,413 (+23.04%) vs June</div></div>
+            <div class="kpi-card"><div class="label">Converter ID Clicks</div><div class="value">22,128</div><div class="change trend-down">-8,405 (-27.53%), demand not ranking</div></div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #666; margin: -10px 0 20px;"><em>Scope note: this report covers only the Globe engagement, not Flip whole-site. (1) Flip Globe (/globe), (2) Currency Converter (Indonesian /kalkulator-mata-uang and English /currency-converter), and (3) blog articles about sending money abroad only (262 pages identified by slug this month). Flip GSC is pulled automatically (aeo-novastacks profile, flip.id property). One caveat for month over month: July has 31 days and June has 30, so July carries about 3.3% more days inherently. Impressions come from the page dimension; branded and non-branded from the query dimension, so the two views differ.</em></p>
+
+        <div class="chart-grid">
+            <div class="chart-container"><h3>Clicks by Area: July vs June</h3><canvas id="clicksByArea"></canvas></div>
+            <div class="chart-container"><h3>Average Position by Area (lower is better)</h3><canvas id="posByArea"></canvas></div>
+        </div>
+
+        <!-- Executive Summary -->
+        <h2 class="section-header">Executive Summary</h2>
+        <div class="callout callout-blue">
+            <h3>Period in Review: the parts we optimise grew; the converter softened on demand</h3>
+            <p>The headline Globe-scope clicks fell -25.43%, but that is entirely the currency converter (the largest area) softening on demand. The two areas we are actively working, Flip Globe and the globe-related blogs, both grew, and the heading implementation is showing in the priority Globe pages. Reading each area:</p>
+            <ul>
+                <li><strong>Flip Globe grew +14.13%</strong> (1,168 to 1,333 clicks) with its average position improving from 8.67 to 8.47. The priority pages moved up: China improved from position 11.41 to 8.30 (clicks +31.82%), Philippines +78.26% (position 4.99 to 5.27 stable), English Malaysia +26.32% (position 10.92 to 9.90). This is the destination heading work landing at the monthly level.</li>
+                <li><strong>Globe-related blogs grew +23.04%</strong> (6,131 to 7,544 clicks) with positions improving, led by the SWIFT-code cluster (swift-code-bri improved 9.41 to 7.86, +79% clicks).</li>
+                <li><strong>Currency Converter Indonesian fell -27.53% on demand, not ranking.</strong> Impressions dropped -21.14% (June had unusually high currency-search interest) while the average position actually improved from 6.98 to 6.83. When clicks and impressions fall together but the position holds or improves, it is a seasonal or demand swing, not a ranking loss. The USD page still holds about 1.5 million impressions at position 8.4, the standing opportunity.</li>
+                <li><strong>Currency English eased -9.21%</strong> but impressions grew +11.36% and the usd-usa-idr page improved (position 9.20 to 8.83). English remains the biggest untapped ceiling ("usd to idr", 1.83M searches).</li>
+                <li><strong>Net:</strong> the engagement's controllable levers (Globe pages and blogs) are trending up; the converter number is a demand cycle to ride out while we push the big pools into the click zone.</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">This Period Focus Areas</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead><tr><th>Category</th><th>What Was Done</th><th>Status</th></tr></thead>
+            <tbody>
+                <tr><td><strong>1. Globe heading implementation</strong></td><td style="font-size:0.9rem;">&bull; Destination heading and heading title structure implemented; monitoring the impact on priority pages (China, Philippines, Malaysia improving month over month)</td><td><span style="color: var(--success-green);">Monitoring</span></td></tr>
+                <tr><td><strong>2. Converter heading proposal</strong></td><td style="font-size:0.9rem;">&bull; Preparing the heading title structure proposal for the converter pages, starting with the Top 10 ID and Top 10 EN currency pages</td><td><span style="color: var(--warning-yellow);">In progress</span></td></tr>
+                <tr><td><strong>3. Target keyword tracking</strong></td><td style="font-size:0.9rem;">&bull; Globe and Converter target keyword monitor refreshed with July GSC positions and Ahrefs positions</td><td><span style="color: var(--success-green);">Done</span></td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="status-grid">
+            <div class="status-card"><h4>Flip Globe Clicks (July vs June)</h4><div class="value trend-up">+14.13%</div></div>
+            <div class="status-card"><h4>Globe-Related Blog Clicks</h4><div class="value trend-up">+23.04%</div></div>
+            <div class="status-card"><h4>Globe China (priority) Position</h4><div class="value trend-up">11.41 to 8.30</div></div>
+            <div class="status-card warning"><h4>Converter ID Clicks (demand, position improved)</h4><div class="value trend-down">-27.53%</div></div>
+        </div>
+
+        <!-- ============ FLIP GLOBE ============ -->
+        <div class="market-header">
+            <span class="flag">&#127760;</span>
+            <h2>Flip Globe (International Transfer)</h2>
+            <span class="dom">flip.id/id/globe</span>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Globe Clicks</div><div class="value">1,333</div><div class="change trend-up">+165 (+14.13%)</div></div>
+            <div class="kpi-card"><div class="label">Globe Impressions</div><div class="value">86,916</div><div class="change trend-up">+6,317 (+7.84%)</div></div>
+            <div class="kpi-card"><div class="label">Globe CTR</div><div class="value">1.53%</div><div class="change trend-up">+0.08pp (+5.52%)</div></div>
+            <div class="kpi-card"><div class="label">Globe Avg Position</div><div class="value">8.5</div><div class="change trend-up">from 8.7 (improved)</div></div>
+        </div>
+
+        <div class="callout callout-green">
+            <h3>What Moved in Globe</h3>
+            <ul>
+                <li><strong>Priority pages improved (the heading impact):</strong> China +31.82% clicks with position 11.41 to 8.30, Philippines +78.26%, English Malaysia +26.32% (position 10.92 to 9.90), English Philippines +45.00%.</li>
+                <li><strong>The Globe hub grew:</strong> /id/globe +21.94% clicks (position 6.99 to 6.77) and /en/globe +39.39% (16.03 to 14.57).</li>
+                <li><strong>Non-priority corridors rose:</strong> Japan +96.88% (position 5.90 to 4.99), Saudi Arabia +95.65% (6.45 to 4.98), South Korea +13.04%. These are the best opportunities outside the priority list.</li>
+                <li><strong>Query demand is small and brand-led:</strong> "flip globe" (135 clicks) dominates; the non-branded corridor queries carry tens of impressions each. Volume, not ranking, is the constraint, which the destination content build grows.</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Globe Pages (priority countries flagged)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead><tr><th>#</th><th>Globe Page</th><th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th><th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th><th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://flip.id/id/globe" target="_blank">/id/globe (hub)</a></td><td class="num">389</td><td class="num">319</td><td class="num trend-up">+21.94%</td><td class="num">35,709</td><td class="num">29,198</td><td class="num trend-up">+22.30%</td><td class="num posgrp">6.77</td><td class="num posgrp">6.99</td><td class="num posgrp trend-up">+0.22</td></tr>
+                <tr><td>2</td><td><a href="https://flip.id/id/globe/malaysia" target="_blank">/id/globe/malaysia</a> <span class="badge">Priority</span></td><td class="num">105</td><td class="num">110</td><td class="num trend-down">-4.55%</td><td class="num">7,102</td><td class="num">8,331</td><td class="num trend-down">-14.75%</td><td class="num posgrp">5.81</td><td class="num posgrp">5.62</td><td class="num posgrp trend-down">-0.19</td></tr>
+                <tr><td>3</td><td><a href="https://flip.id/en/globe" target="_blank">/en/globe (hub)</a></td><td class="num">92</td><td class="num">66</td><td class="num trend-up">+39.39%</td><td class="num">2,606</td><td class="num">2,143</td><td class="num trend-up">+21.61%</td><td class="num posgrp">14.57</td><td class="num posgrp">16.03</td><td class="num posgrp trend-up">+1.46</td></tr>
+                <tr style="background:#f0fdf4;"><td>4</td><td><a href="https://flip.id/id/globe/philippines" target="_blank">/id/globe/philippines</a> <span class="badge">Priority</span></td><td class="num">82</td><td class="num">46</td><td class="num trend-up">+78.26%</td><td class="num">2,660</td><td class="num">2,130</td><td class="num trend-up">+24.88%</td><td class="num posgrp">5.27</td><td class="num posgrp">4.99</td><td class="num posgrp trend-down">-0.28</td></tr>
+                <tr style="background:#f0fdf4;"><td>5</td><td><a href="https://flip.id/en/globe/malaysia" target="_blank">/en/globe/malaysia</a> <span class="badge">Priority</span></td><td class="num">72</td><td class="num">57</td><td class="num trend-up">+26.32%</td><td class="num">2,461</td><td class="num">2,013</td><td class="num trend-up">+22.25%</td><td class="num posgrp">9.90</td><td class="num posgrp">10.92</td><td class="num posgrp trend-up">+1.02</td></tr>
+                <tr style="background:#f0fdf4;"><td>6</td><td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td><td class="num">63</td><td class="num">32</td><td class="num trend-up">+96.88%</td><td class="num">2,222</td><td class="num">1,821</td><td class="num trend-up">+22.02%</td><td class="num posgrp">4.99</td><td class="num posgrp">5.90</td><td class="num posgrp trend-up">+0.91</td></tr>
+                <tr style="background:#f0fdf4;"><td>7</td><td><a href="https://flip.id/id/globe/saudi-arabia" target="_blank">/id/globe/saudi-arabia</a></td><td class="num">45</td><td class="num">23</td><td class="num trend-up">+95.65%</td><td class="num">1,506</td><td class="num">1,413</td><td class="num trend-up">+6.58%</td><td class="num posgrp">4.98</td><td class="num posgrp">6.45</td><td class="num posgrp trend-up">+1.47</td></tr>
+                <tr style="background:#f0fdf4;"><td>8</td><td><a href="https://flip.id/en/globe/philippines" target="_blank">/en/globe/philippines</a> <span class="badge">Priority</span></td><td class="num">29</td><td class="num">20</td><td class="num trend-up">+45.00%</td><td class="num">2,162</td><td class="num">1,585</td><td class="num trend-up">+36.40%</td><td class="num posgrp">8.16</td><td class="num posgrp">8.31</td><td class="num posgrp trend-up">+0.15</td></tr>
+                <tr style="background:#f0fdf4;"><td>9</td><td><a href="https://flip.id/id/globe/china" target="_blank">/id/globe/china</a> <span class="badge">Priority</span></td><td class="num">29</td><td class="num">22</td><td class="num trend-up">+31.82%</td><td class="num">1,892</td><td class="num">1,558</td><td class="num trend-up">+21.44%</td><td class="num posgrp">8.30</td><td class="num posgrp">11.41</td><td class="num posgrp trend-up">+3.11</td></tr>
+                <tr><td>10</td><td><a href="https://flip.id/id/globe/turkey" target="_blank">/id/globe/turkey</a></td><td class="num">28</td><td class="num">30</td><td class="num trend-down">-6.67%</td><td class="num">1,684</td><td class="num">2,077</td><td class="num trend-down">-18.92%</td><td class="num posgrp">6.70</td><td class="num posgrp">6.48</td><td class="num posgrp trend-down">-0.22</td></tr>
+                <tr><td>11</td><td><a href="https://flip.id/id/globe/thailand" target="_blank">/id/globe/thailand</a></td><td class="num">27</td><td class="num">28</td><td class="num trend-down">-3.57%</td><td class="num">1,196</td><td class="num">1,051</td><td class="num trend-up">+13.80%</td><td class="num posgrp">5.41</td><td class="num posgrp">4.92</td><td class="num posgrp trend-down">-0.49</td></tr>
+                <tr><td>12</td><td><a href="https://flip.id/id/globe/south-korea" target="_blank">/id/globe/south-korea</a></td><td class="num">26</td><td class="num">23</td><td class="num trend-up">+13.04%</td><td class="num">1,341</td><td class="num">1,034</td><td class="num trend-up">+29.69%</td><td class="num posgrp">5.34</td><td class="num posgrp">4.83</td><td class="num posgrp trend-down">-0.51</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;"><em>The priority pages (Malaysia, China, Singapore, Australia, Philippines) are the destination-content focus. China (row 9) improved its position by more than 3 places month over month, the clearest sign that the heading implementation is working.</em></p>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Globe Queries</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead><tr><th>#</th><th>Query</th><th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th><th>Type</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>flip globe</td><td class="num">135</td><td class="num">99</td><td class="num">991</td><td class="num">531</td><td class="num posgrp">1.80</td><td class="num posgrp">1.78</td><td class="num posgrp trend-down">-0.02</td><td>Brand</td></tr>
+                <tr><td>2</td><td>flip global</td><td class="num">22</td><td class="num">27</td><td class="num">74</td><td class="num">42</td><td class="num posgrp">1.27</td><td class="num posgrp">1.36</td><td class="num posgrp trend-up">+0.09</td><td>Brand</td></tr>
+                <tr><td>3</td><td>flip transfer</td><td class="num">12</td><td class="num">7</td><td class="num">258</td><td class="num">196</td><td class="num posgrp">2.11</td><td class="num posgrp">2.12</td><td class="num posgrp trend-up">+0.01</td><td>Brand</td></tr>
+                <tr><td>4</td><td>gcash to idr</td><td class="num">9</td><td class="num">4</td><td class="num">303</td><td class="num">243</td><td class="num posgrp">6.41</td><td class="num posgrp">7.29</td><td class="num posgrp trend-up">+0.88</td><td>Non-Brand</td></tr>
+                <tr><td>5</td><td>cara kirim uang dari indonesia ke jepang</td><td class="num">8</td><td class="num">5</td><td class="num">63</td><td class="num">42</td><td class="num posgrp">2.60</td><td class="num posgrp">3.76</td><td class="num posgrp trend-up">+1.16</td><td>Non-Brand</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ CURRENCY CONVERTER ============ -->
+        <div class="market-header">
+            <span class="flag">&#128181;</span>
+            <h2>Currency Converter</h2>
+            <span class="dom">flip.id/id/kalkulator-mata-uang and /en/currency-converter</span>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Converter ID Clicks</div><div class="value">22,128</div><div class="change trend-down">-8,405 (-27.53%)</div></div>
+            <div class="kpi-card"><div class="label">Converter ID Impressions</div><div class="value">29,404,493</div><div class="change trend-down">-7,885,354 (-21.14%)</div></div>
+            <div class="kpi-card"><div class="label">Converter ID Avg Position</div><div class="value">6.8</div><div class="change trend-up">from 7.0 (improved)</div></div>
+            <div class="kpi-card"><div class="label">Converter EN Clicks</div><div class="value">996</div><div class="change trend-down">-101 (-9.21%)</div></div>
+        </div>
+
+        <div class="callout callout-yellow">
+            <h3>What Moved in the Converter</h3>
+            <ul>
+                <li><strong>Indonesian softened on demand, not ranking.</strong> Clicks -27.53% and impressions -21.14%, but the average position improved from 6.98 to 6.83. June had a higher level of currency-search interest; July normalised. This is a demand cycle, not a ranking loss.</li>
+                <li><strong>The big pools held their ranks:</strong> myr-mys-idr (1.68M impressions, position 7.0), usd-usa-idr (1.55M, position 8.4), sar-sau-idr (917k, position 6.2). The opportunity is unchanged: push these into the top 5.</li>
+                <li><strong>English is mixed but improving in rank:</strong> overall -9.21% clicks, yet impressions +11.36% and the usd-usa-idr page improved to position 8.83 and the idr-sgp-sgd page +133% clicks. "usd to idr" (1.83M searches) is still the largest untapped ceiling.</li>
+                <li><strong>Converter heading proposal in progress</strong> (Top 10 ID and EN pages), see Additional Pursuits.</li>
+            </ul>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Converter Pages, Indonesian (/kalkulator-mata-uang/)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead><tr><th>#</th><th>Page</th><th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th><th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th><th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://flip.id/id/kalkulator-mata-uang/idr-mys-myr" target="_blank">/idr-mys-myr</a></td><td class="num">1,139</td><td class="num">1,893</td><td class="num trend-down">-39.83%</td><td class="num">637,742</td><td class="num">1,062,944</td><td class="num trend-down">-40.00%</td><td class="num posgrp">7.07</td><td class="num posgrp">7.15</td><td class="num posgrp trend-up">+0.08</td></tr>
+                <tr><td>2</td><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/myr-mys-idr</a></td><td class="num">1,006</td><td class="num">1,760</td><td class="num trend-down">-42.84%</td><td class="num">1,675,142</td><td class="num">2,668,539</td><td class="num trend-down">-37.23%</td><td class="num posgrp">7.04</td><td class="num posgrp">6.82</td><td class="num posgrp trend-down">-0.22</td></tr>
+                <tr><td>3</td><td><a href="https://flip.id/id/kalkulator-mata-uang/sar-sau-idr" target="_blank">/sar-sau-idr</a></td><td class="num">720</td><td class="num">1,075</td><td class="num trend-down">-33.02%</td><td class="num">916,673</td><td class="num">1,207,020</td><td class="num trend-down">-24.06%</td><td class="num posgrp">6.24</td><td class="num posgrp">6.04</td><td class="num posgrp trend-down">-0.20</td></tr>
+                <tr><td>4</td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr" target="_blank">/jpy-jpn-idr (amount=1)</a></td><td class="num">558</td><td class="num">514</td><td class="num trend-up">+8.56%</td><td class="num">799,573</td><td class="num">1,011,839</td><td class="num trend-down">-20.98%</td><td class="num posgrp">6.81</td><td class="num posgrp">6.92</td><td class="num posgrp trend-up">+0.11</td></tr>
+                <tr><td>5</td><td><a href="https://flip.id/id/kalkulator-mata-uang" target="_blank">/kalkulator-mata-uang (hub)</a></td><td class="num">468</td><td class="num">574</td><td class="num trend-down">-18.47%</td><td class="num">544,465</td><td class="num">648,417</td><td class="num trend-down">-16.03%</td><td class="num posgrp">7.43</td><td class="num posgrp">7.56</td><td class="num posgrp trend-up">+0.13</td></tr>
+                <tr><td>6</td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/usd-usa-idr</a></td><td class="num">413</td><td class="num">590</td><td class="num trend-down">-30.00%</td><td class="num">1,545,202</td><td class="num">1,677,070</td><td class="num trend-down">-7.86%</td><td class="num posgrp">8.39</td><td class="num posgrp">8.56</td><td class="num posgrp trend-up">+0.17</td></tr>
+                <tr><td>7</td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr" target="_blank">/jpy-jpn-idr</a></td><td class="num">362</td><td class="num">687</td><td class="num trend-down">-47.31%</td><td class="num">721,474</td><td class="num">1,018,455</td><td class="num trend-down">-29.16%</td><td class="num posgrp">6.44</td><td class="num posgrp">6.34</td><td class="num posgrp trend-down">-0.10</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Converter Pages, English (/currency-converter/)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead><tr><th>#</th><th>Page</th><th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th><th class="num">Impr (Jul)</th><th class="num">Impr (Jun)</th><th class="num">Impr &Delta;%</th><th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://flip.id/en/currency-converter/idr-mys-myr" target="_blank">/idr-mys-myr (amount=500000)</a></td><td class="num">69</td><td class="num">54</td><td class="num trend-up">+27.78%</td><td class="num">20,583</td><td class="num">22,093</td><td class="num trend-down">-6.83%</td><td class="num posgrp">5.77</td><td class="num posgrp">5.69</td><td class="num posgrp trend-down">-0.08</td></tr>
+                <tr><td>2</td><td><a href="https://flip.id/en/currency-converter/myr-mys-idr" target="_blank">/myr-mys-idr</a></td><td class="num">60</td><td class="num">63</td><td class="num trend-down">-4.76%</td><td class="num">230,788</td><td class="num">202,275</td><td class="num trend-up">+14.10%</td><td class="num posgrp">9.27</td><td class="num posgrp">9.27</td><td class="num posgrp trend-flat">0.00</td></tr>
+                <tr style="background:#f0fdf4;"><td>3</td><td><a href="https://flip.id/en/currency-converter/usd-usa-idr" target="_blank">/usd-usa-idr</a></td><td class="num">56</td><td class="num">47</td><td class="num trend-up">+19.15%</td><td class="num">181,516</td><td class="num">174,607</td><td class="num trend-up">+3.96%</td><td class="num posgrp">8.83</td><td class="num posgrp">9.20</td><td class="num posgrp trend-up">+0.37</td></tr>
+                <tr style="background:#f0fdf4;"><td>4</td><td><a href="https://flip.id/en/currency-converter/idr-sgp-sgd" target="_blank">/idr-sgp-sgd</a></td><td class="num">42</td><td class="num">18</td><td class="num trend-up">+133.33%</td><td class="num">222,173</td><td class="num">157,576</td><td class="num trend-up">+41.00%</td><td class="num posgrp">8.02</td><td class="num posgrp">8.49</td><td class="num posgrp trend-up">+0.47</td></tr>
+                <tr><td>5</td><td><a href="https://flip.id/en/currency-converter/idr-mys-myr" target="_blank">/idr-mys-myr</a></td><td class="num">36</td><td class="num">39</td><td class="num trend-down">-7.69%</td><td class="num">110,800</td><td class="num">130,504</td><td class="num trend-down">-15.10%</td><td class="num posgrp">9.52</td><td class="num posgrp">9.27</td><td class="num posgrp trend-down">-0.25</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Converter Opportunities, Pages: High Impressions, Low Clicks</h3>
+        <div class="table-scroll">
+        <table class="data-table opp-table">
+            <thead><tr><th>Converter Page</th><th class="num">Impr (Jul)</th><th class="num">Clk (Jul)</th><th class="num">CTR</th><th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th><th>Why it is an opportunity</th></tr></thead>
+            <tbody>
+                <tr><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/id/.../myr-mys-idr</a> (ID)</td><td class="num">1,675,142</td><td class="num">1,006</td><td class="num">0.06%</td><td class="num posgrp">7.04</td><td class="num posgrp">6.82</td><td class="num posgrp trend-down">-0.22</td><td>Largest ID pool (ringgit to rupiah) at position ~7. A top-5 push converts a huge share of the 1.68M impressions.</td></tr>
+                <tr><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/id/.../usd-usa-idr</a> (ID)</td><td class="num">1,545,202</td><td class="num">413</td><td class="num">0.03%</td><td class="num posgrp">8.39</td><td class="num posgrp">8.56</td><td class="num posgrp trend-up">+0.17</td><td>USD to IDR, highest global demand, ranks only 8.4 at 0.03% CTR. The biggest single ceiling on the Indonesian side.</td></tr>
+                <tr><td><a href="https://flip.id/id/kalkulator-mata-uang/sar-sau-idr" target="_blank">/id/.../sar-sau-idr</a> (ID)</td><td class="num">916,673</td><td class="num">720</td><td class="num">0.08%</td><td class="num posgrp">6.24</td><td class="num posgrp">6.04</td><td class="num posgrp trend-down">-0.20</td><td>Riyal to rupiah, best position of the big pools. Closest to breaking into the top 5.</td></tr>
+                <tr><td><a href="https://flip.id/id/kalkulator-mata-uang/krw-kor-idr" target="_blank">/id/.../krw-kor-idr</a> (ID)</td><td class="num">814,174</td><td class="num">347</td><td class="num">0.04%</td><td class="num posgrp">7.00</td><td class="num posgrp">7.01</td><td class="num posgrp trend-flat">+0.01</td><td>Won to rupiah, large pool at position ~7 with 0.04% CTR. Part of the converter heading set.</td></tr>
+                <tr><td><a href="https://flip.id/en/currency-converter/myr-mys-idr" target="_blank">/en/.../myr-mys-idr</a> (EN)</td><td class="num">230,788</td><td class="num">60</td><td class="num">0.03%</td><td class="num posgrp">9.27</td><td class="num posgrp">9.27</td><td class="num posgrp trend-flat">0.00</td><td>Strongest English pool and still only position 9.3. Top of the Top 10 EN converter heading list.</td></tr>
+                <tr><td><a href="https://flip.id/en/currency-converter/usd-usa-idr" target="_blank">/en/.../usd-usa-idr</a> (EN)</td><td class="num">181,516</td><td class="num">56</td><td class="num">0.03%</td><td class="num posgrp">8.83</td><td class="num posgrp">9.20</td><td class="num posgrp trend-up">+0.37</td><td>Target for "usd to idr" (1.83M searches), improving to position 8.8. The highest-ceiling English page.</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ TARGET KEYWORD PERFORMANCE ============ -->
+        <h2 class="section-header">Target Keyword Performance (vs Target Rank)</h2>
+        <div class="callout callout-blue">
+            <h3>How to read this</h3>
+            <p>This tracks the Globe and Currency target keywords against their target rank (Top 3 or 5), in the same format as the Gogogo monitor:</p>
+            <ul>
+                <li><strong>GSC Pos</strong> is our own July impression-weighted average (1 to 31 July 2026), from the highest-impression page ranking for that query. This drives the row colour.</li>
+                <li><strong>Ahrefs Pos</strong> is the best SERP snapshot position (main organic result only) within July, with its ranking page. "&gt;100" means Ahrefs does not have that keyword in its top 100.</li>
+            </ul>
+            <p style="margin-top:8px;">Row colour follows GSC: <span style="background:#dcfce7;padding:2px 8px;border-radius:4px;">On target</span> at or better, <span style="background:#fef9c3;padding:2px 8px;border-radius:4px;">Close</span> up to +3 worse, <span style="background:#fee2e2;padding:2px 8px;border-radius:4px;">Far</span> more than +3 worse, <span style="background:#f3f4f6;padding:2px 8px;border-radius:4px;">No data</span> no GSC impressions. Scorecard (July): 9 on target, 10 close, 16 far, 5 no data. Currency tracks the Top 10 ID and Top 10 EN pages first, matching the converter heading plan. Saved as a time-series SSOT.</p>
+        </div>
+        <h3 style="margin: 26px 0 12px; font-size: 1.05rem; color: var(--medium-gray);">&#127760; Flip Globe (Indonesian target keywords)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <tbody>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Globe</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#dcfce7;"><td>transfer uang ke jepang</td><td class="num">10</td><td class="num">Top 3</td><td class="num">1.0</td><td class="num">&gt;100</td><td>On target</td><td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td><td>-</td></tr>
+                <tr style="background:#dcfce7;"><td>kirim uang ke jepang dari indonesia</td><td class="num">20</td><td class="num">Top 3</td><td class="num">1.0</td><td class="num">&gt;100</td><td>On target</td><td><a href="https://flip.id/id/globe/japan" target="_blank">/id/globe/japan</a></td><td>-</td></tr>
+                <tr style="background:#dcfce7;"><td>transfer uang ke australia</td><td class="num">40</td><td class="num">Top 3</td><td class="num">1.8</td><td class="num">&gt;100</td><td>On target</td><td><a href="https://flip.id/id/globe/australia" target="_blank">/id/globe/australia</a></td><td>-</td></tr>
+                <tr style="background:#dcfce7;"><td>kirim uang ke australia</td><td class="num">10</td><td class="num">Top 3</td><td class="num">2.0</td><td class="num">&gt;100</td><td>On target</td><td><a href="https://flip.id/id/globe/australia" target="_blank">/id/globe/australia</a></td><td>-</td></tr>
+                <tr style="background:#dcfce7;"><td>kirim uang ke singapore</td><td class="num">10</td><td class="num">Top 3</td><td class="num">2.0</td><td class="num">&gt;100</td><td>On target</td><td><a href="https://flip.id/id/globe/singapore" target="_blank">/id/globe/singapore</a></td><td>-</td></tr>
+                <tr style="background:#dcfce7;"><td>kirim uang ke india</td><td class="num">40</td><td class="num">Top 3</td><td class="num">2.4</td><td class="num">&gt;100</td><td>On target</td><td><a href="https://flip.id/id/globe/india" target="_blank">/id/globe/india</a></td><td>-</td></tr>
+                <tr style="background:#dcfce7;"><td>kirim uang ke malaysia</td><td class="num">110</td><td class="num">Top 3</td><td class="num">2.5</td><td class="num">7</td><td>On target</td><td><a href="https://flip.id/id/blog/cara-transfer-uang-ke-malaysia" target="_blank">/id/blog/cara-transfer-uang-ke-malaysia</a></td><td><a href="https://flip.id/id/blog/cara-transfer-uang-ke-malaysia" target="_blank">/id/blog/cara-transfer-uang-ke-malaysia</a></td></tr>
+                <tr style="background:#dcfce7;"><td>transfer uang ke malaysia</td><td class="num">90</td><td class="num">Top 3</td><td class="num">2.9</td><td class="num">7</td><td>On target</td><td><a href="https://flip.id/id/blog/cara-transfer-uang-ke-malaysia" target="_blank">/id/blog/cara-transfer-uang-ke-malaysia</a></td><td><a href="https://flip.id/id/blog/cara-transfer-uang-ke-malaysia" target="_blank">/id/blog/cara-transfer-uang-ke-malaysia</a></td></tr>
+                <tr style="background:#fef9c3;"><td>transfer uang ke luar negeri</td><td class="num">390</td><td class="num">Top 3</td><td class="num">4.7</td><td class="num">6</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/globe" target="_blank">/id/globe</a></td><td><a href="https://flip.id/id/globe" target="_blank">/id/globe</a></td></tr>
+                <tr style="background:#fef9c3;"><td>kirim uang ke luar negeri</td><td class="num">590</td><td class="num">Top 3</td><td class="num">5.2</td><td class="num">8</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/globe" target="_blank">/id/globe</a></td><td><a href="https://flip.id/id/globe" target="_blank">/id/globe</a></td></tr>
+                <tr style="background:#fee2e2;"><td>kirim uang ke thailand</td><td class="num">20</td><td class="num">Top 3</td><td class="num">6.5</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://flip.id/id/globe/thailand" target="_blank">/id/globe/thailand</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>transfer uang ke china</td><td class="num">10</td><td class="num">Top 3</td><td class="num">8.6</td><td class="num">6</td><td>Far (over +3)</td><td><a href="https://flip.id/id/globe/china" target="_blank">/id/globe/china</a></td><td><a href="https://flip.id/id/globe/china" target="_blank">/id/globe/china</a></td></tr>
+                <tr style="background:#fee2e2;"><td>kirim uang ke china</td><td class="num">20</td><td class="num">Top 3</td><td class="num">10.3</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://flip.id/id/blog/cara-transfer-uang-ke-china" target="_blank">/id/blog/cara-transfer-uang-ke-china</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>transfer uang ke thailand</td><td class="num">20</td><td class="num">Top 3</td><td class="num">15.3</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://flip.id/id/blog/transfer-uang-ke-thailand-flip-globe" target="_blank">/id/blog/transfer-uang-ke-thailand-flip-globe</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>kirim uang ke jepang</td><td class="num">10</td><td class="num">Top 3</td><td class="num">26.4</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://flip.id/id/blog/kirim-uang-ke-jepang" target="_blank">/id/blog/kirim-uang-ke-jepang</a></td><td>-</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>transfer uang ke singapore</td><td class="num">10</td><td class="num">Top 3</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>transfer uang ke korea</td><td class="num">20</td><td class="num">Top 3</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>kirim uang ke korea</td><td class="num">10</td><td class="num">Top 3</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>transfer uang ke amerika</td><td class="num">10</td><td class="num">Top 3</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+                <tr style="background:#f3f4f6;color:#888;font-style:italic;"><td>kirim uang ke amerika</td><td class="num">10</td><td class="num">Top 3</td><td class="num">No data</td><td class="num">&gt;100</td><td>No data</td><td>-</td><td>-</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size:0.85rem;color:#666;margin-top:-10px;margin-bottom:20px;"><em>Read: several country corridors already rank at or near position 1 (Australia, and the head terms "transfer uang ke luar negeri" and "kirim uang ke luar negeri" are close to Top 3). The low-volume corridors with no GSC data are the ones the destination content build is meant to activate.</em></p>
+        <h3 style="margin: 26px 0 12px; font-size: 1.05rem; color: var(--medium-gray);">&#128181; Currency Converter (Top 10 ID and EN by volume)</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <tbody>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Converter ID</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#fef9c3;"><td>yen ke rupiah</td><td class="num">90,500</td><td class="num">Top 5</td><td class="num">5.7</td><td class="num">3</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1" target="_blank">/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1" target="_blank">/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1</a></td></tr>
+                <tr style="background:#fef9c3;"><td>bath ke rupiah</td><td class="num">27,100</td><td class="num">Top 5</td><td class="num">5.8</td><td class="num">3</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/thb-tha-idr" target="_blank">/id/kalkulator-mata-uang/thb-tha-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/thb-tha-idr" target="_blank">/id/kalkulator-mata-uang/thb-tha-idr</a></td></tr>
+                <tr style="background:#fef9c3;"><td>won ke rupiah</td><td class="num">49,500</td><td class="num">Top 5</td><td class="num">6.1</td><td class="num">4</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/krw-kor-idr" target="_blank">/id/kalkulator-mata-uang/krw-kor-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/idr-kor-krw" target="_blank">/id/kalkulator-mata-uang/idr-kor-krw</a></td></tr>
+                <tr style="background:#fef9c3;"><td>kurs yen ke rupiah</td><td class="num">33,100</td><td class="num">Top 5</td><td class="num">6.9</td><td class="num">7</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1" target="_blank">/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1" target="_blank">/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1</a></td></tr>
+                <tr style="background:#fee2e2;"><td>ringgit ke rupiah</td><td class="num">135,000</td><td class="num">Top 3</td><td class="num">7.1</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/id/kalkulator-mata-uang/myr-mys-idr</a></td><td>-</td></tr>
+                <tr style="background:#fef9c3;"><td>kurs ringgit ke rupiah</td><td class="num">33,100</td><td class="num">Top 5</td><td class="num">7.3</td><td class="num">6</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/myr-mys-idr" target="_blank">/id/kalkulator-mata-uang/myr-mys-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/idr-mys-myr" target="_blank">/id/kalkulator-mata-uang/idr-mys-myr</a></td></tr>
+                <tr style="background:#fef9c3;"><td>euro ke rupiah</td><td class="num">49,500</td><td class="num">Top 5</td><td class="num">7.7</td><td class="num">11</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/eur-ltu-idr" target="_blank">/id/kalkulator-mata-uang/eur-ltu-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/eur-fra-idr" target="_blank">/id/kalkulator-mata-uang/eur-fra-idr</a></td></tr>
+                <tr style="background:#fee2e2;"><td>dolar ke rupiah</td><td class="num">450,000</td><td class="num">Top 5</td><td class="num">9.2</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/id/kalkulator-mata-uang/usd-usa-idr</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>usd ke rupiah</td><td class="num">49,500</td><td class="num">Top 5</td><td class="num">9.7</td><td class="num">11</td><td>Far (over +3)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/id/kalkulator-mata-uang/usd-usa-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/id/kalkulator-mata-uang/usd-usa-idr</a></td></tr>
+                <tr style="background:#fee2e2;"><td>dollar ke rupiah</td><td class="num">60,500</td><td class="num">Top 5</td><td class="num">10.4</td><td class="num">11</td><td>Far (over +3)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/id/kalkulator-mata-uang/usd-usa-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/id/kalkulator-mata-uang/usd-usa-idr</a></td></tr>
+                <tr style="background:#111;color:#fff;"><td colspan="8" style="font-weight:700;letter-spacing:0.3px;">Converter EN</td></tr>
+                <tr><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Keyword</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Volume</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Target</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">GSC Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;text-align:right;">Ahrefs Pos</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Status</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (GSC)</td><td style="padding:9px 11px;text-align:left;font-weight:600;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.3px;white-space:nowrap;background:var(--medium-gray);color:#fff;">Ranking Page (Ahrefs)</td></tr>
+                <tr style="background:#dcfce7;"><td>euro to idr</td><td class="num">201,000</td><td class="num">Top 5</td><td class="num">1.0</td><td class="num">18</td><td>On target</td><td><a href="https://flip.id/id/kalkulator-mata-uang/eur-cyp-idr?amount=5000" target="_blank">/id/kalkulator-mata-uang/eur-cyp-idr?amount=5000</a></td><td><a href="https://flip.id/en/currency-converter/eur-and-idr" target="_blank">/en/currency-converter/eur-and-idr</a></td></tr>
+                <tr style="background:#fef9c3;"><td>bath to idr</td><td class="num">90,500</td><td class="num">Top 5</td><td class="num">6.8</td><td class="num">4</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/thb-tha-idr" target="_blank">/id/kalkulator-mata-uang/thb-tha-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/thb-tha-idr" target="_blank">/id/kalkulator-mata-uang/thb-tha-idr</a></td></tr>
+                <tr style="background:#fef9c3;"><td>baht to idr</td><td class="num">90,500</td><td class="num">Top 5</td><td class="num">6.9</td><td class="num">&gt;100</td><td>Close (+3 or less)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/thb-tha-idr" target="_blank">/id/kalkulator-mata-uang/thb-tha-idr</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>myr to idr</td><td class="num">90,500</td><td class="num">Top 3</td><td class="num">9.2</td><td class="num">&gt;100</td><td>Far (over +3)</td><td><a href="https://flip.id/en/currency-converter/myr-mys-idr" target="_blank">/en/currency-converter/myr-mys-idr</a></td><td>-</td></tr>
+                <tr style="background:#fee2e2;"><td>gbp to idr</td><td class="num">90,500</td><td class="num">Top 5</td><td class="num">9.5</td><td class="num">9</td><td>Far (over +3)</td><td><a href="https://flip.id/en/currency-converter/gbp-gbr-idr" target="_blank">/en/currency-converter/gbp-gbr-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/gbp-gbr-idr" target="_blank">/id/kalkulator-mata-uang/gbp-gbr-idr</a></td></tr>
+                <tr style="background:#fee2e2;"><td>yen to idr</td><td class="num">246,000</td><td class="num">Top 5</td><td class="num">9.6</td><td class="num">8</td><td>Far (over +3)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr" target="_blank">/id/kalkulator-mata-uang/jpy-jpn-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1" target="_blank">/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1</a></td></tr>
+                <tr style="background:#fee2e2;"><td>sgd to idr</td><td class="num">246,000</td><td class="num">Top 5</td><td class="num">9.8</td><td class="num">8</td><td>Far (over +3)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/sgd-sgp-idr" target="_blank">/id/kalkulator-mata-uang/sgd-sgp-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/sgd-sgp-idr" target="_blank">/id/kalkulator-mata-uang/sgd-sgp-idr</a></td></tr>
+                <tr style="background:#fee2e2;"><td>aud to idr</td><td class="num">165,000</td><td class="num">Top 5</td><td class="num">10.2</td><td class="num">10</td><td>Far (over +3)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/aud-aus-idr" target="_blank">/id/kalkulator-mata-uang/aud-aus-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/aud-aus-idr" target="_blank">/id/kalkulator-mata-uang/aud-aus-idr</a></td></tr>
+                <tr style="background:#fee2e2;"><td>usd to idr</td><td class="num">1,830,000</td><td class="num">Top 5</td><td class="num">10.8</td><td class="num">17</td><td>Far (over +3)</td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/id/kalkulator-mata-uang/usd-usa-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/usd-usa-idr" target="_blank">/id/kalkulator-mata-uang/usd-usa-idr</a></td></tr>
+                <tr style="background:#fee2e2;"><td>jpy to idr</td><td class="num">110,000</td><td class="num">Top 5</td><td class="num">11.3</td><td class="num">8</td><td>Far (over +3)</td><td><a href="https://flip.id/en/currency-converter/jpy-jpn-idr" target="_blank">/en/currency-converter/jpy-jpn-idr</a></td><td><a href="https://flip.id/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1" target="_blank">/id/kalkulator-mata-uang/jpy-jpn-idr?amount=1</a></td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size:0.85rem;color:#666;margin-top:-10px;margin-bottom:20px;"><em>Read: the converter targets mostly sit at position 6 to 11 (the big rate pools below the answer box), which is exactly what the converter heading title structure work targets. English "usd to idr" (1.83M searches) is the biggest untapped ceiling.</em></p>
+
+        <!-- ============ GLOBE-RELATED BLOG ============ -->
+        <div class="market-header">
+            <span class="flag">&#9993;</span>
+            <h2>Blog: Globe-Related Topics</h2>
+            <span class="dom">flip.id/id/blog (overseas transfer only)</span>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="label">Globe-Related Blog Clicks</div><div class="value">7,544</div><div class="change trend-up">+1,413 (+23.04%)</div></div>
+            <div class="kpi-card"><div class="label">Globe-Related Blog Impressions</div><div class="value">734,304</div><div class="change trend-up">+164,559 (+28.88%)</div></div>
+            <div class="kpi-card"><div class="label">Pages Identified</div><div class="value">262</div><div class="change trend-flat">by slug (overseas transfer)</div></div>
+            <div class="kpi-card"><div class="label">vs Whole-Site Blog</div><div class="value trend-up">+23.04%</div><div class="change trend-flat">whole-site blog was +9.00%</div></div>
+        </div>
+
+        <div class="callout callout-green">
+            <h3>Globe-related blogs grew faster than the whole blog</h3>
+            <p>The 262 pages about sending money overseas grew <strong>+23.04%</strong> to 7,544 clicks, well ahead of the whole-site blog (+9.00%). The SWIFT-code cluster led, with positions improving across the board (swift-code-bri 9.41 to 7.86, swift-code-mandiri 10.70 to 9.70). These are the high-intent pages people reach when preparing an international transfer, so a Flip Globe CTA and internal link convert them.</p>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Top Globe-Related Blogs</h3>
+        <div class="table-scroll">
+        <table class="data-table">
+            <thead><tr><th>#</th><th>Blog Page</th><th class="num">Clk (Jul)</th><th class="num">Clk (Jun)</th><th class="num">Clk &Delta;%</th><th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td><a href="https://flip.id/id/blog/cara-top-up-alipay-dari-indonesia" target="_blank">/cara-top-up-alipay-dari-indonesia</a></td><td class="num">575</td><td class="num">545</td><td class="num trend-up">+5.50%</td><td class="num posgrp">4.76</td><td class="num posgrp">4.78</td><td class="num posgrp trend-up">+0.02</td></tr>
+                <tr><td>2</td><td><a href="https://flip.id/id/blog/daftar-bank-indonesia-yang-bisa-digunakan-luar-negeri" target="_blank">/daftar-bank-indonesia-yang-bisa-digunakan-luar-negeri</a></td><td class="num">504</td><td class="num">406</td><td class="num trend-up">+24.14%</td><td class="num posgrp">5.49</td><td class="num posgrp">5.42</td><td class="num posgrp trend-down">-0.07</td></tr>
+                <tr><td>3</td><td><a href="https://flip.id/id/blog/cara-daftar-tng-ewallet" target="_blank">/cara-daftar-tng-ewallet</a></td><td class="num">250</td><td class="num">189</td><td class="num trend-up">+32.28%</td><td class="num posgrp">5.60</td><td class="num posgrp">5.39</td><td class="num posgrp trend-down">-0.21</td></tr>
+                <tr><td>4</td><td><a href="https://flip.id/id/blog/touch-n-go-e-wallet-dan-manfaatnya-untuk-pengguna" target="_blank">/touch-n-go-e-wallet-dan-manfaatnya</a></td><td class="num">241</td><td class="num">259</td><td class="num trend-down">-6.95%</td><td class="num posgrp">6.92</td><td class="num posgrp">6.42</td><td class="num posgrp trend-down">-0.50</td></tr>
+                <tr style="background:#f0fdf4;"><td>5</td><td><a href="https://flip.id/id/blog/swift-code-bni" target="_blank">/swift-code-bni</a></td><td class="num">231</td><td class="num">161</td><td class="num trend-up">+43.48%</td><td class="num posgrp">5.55</td><td class="num posgrp">5.92</td><td class="num posgrp trend-up">+0.37</td></tr>
+                <tr><td>6</td><td><a href="https://flip.id/id/blog/money-changer-jogja" target="_blank">/money-changer-jogja</a></td><td class="num">210</td><td class="num">221</td><td class="num trend-down">-4.98%</td><td class="num posgrp">6.72</td><td class="num posgrp">6.81</td><td class="num posgrp trend-up">+0.09</td></tr>
+                <tr><td>7</td><td><a href="https://flip.id/id/blog/daftar-mata-uang-negara-asia" target="_blank">/daftar-mata-uang-negara-asia</a></td><td class="num">209</td><td class="num">226</td><td class="num trend-down">-7.52%</td><td class="num posgrp">5.94</td><td class="num posgrp">6.30</td><td class="num posgrp trend-up">+0.36</td></tr>
+                <tr><td>8</td><td><a href="https://flip.id/id/blog/cara-beli-barang-dari-luar-negeri-mudah-banget" target="_blank">/cara-beli-barang-dari-luar-negeri</a></td><td class="num">200</td><td class="num">189</td><td class="num trend-up">+5.82%</td><td class="num posgrp">5.74</td><td class="num posgrp">6.07</td><td class="num posgrp trend-up">+0.33</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h3 style="margin: 20px 0 15px; font-size: 1rem; color: var(--medium-gray);">Globe-Related Blog Opportunities: High Impressions, Low Clicks (SWIFT Cluster)</h3>
+        <div class="table-scroll">
+        <table class="data-table opp-table">
+            <thead><tr><th>Blog Page</th><th class="num">Impr (Jul)</th><th class="num">Clk (Jul)</th><th class="num">CTR</th><th class="num posgrp">Pos (Jul)</th><th class="num posgrp">Pos (Jun)</th><th class="num posgrp">Pos &Delta;</th><th>Why it is an opportunity</th></tr></thead>
+            <tbody>
+                <tr><td><a href="https://flip.id/id/blog/swift-code-bri" target="_blank">/swift-code-bri</a></td><td class="num">59,238</td><td class="num">157</td><td class="num">0.27%</td><td class="num posgrp">7.86</td><td class="num posgrp">9.41</td><td class="num posgrp trend-up">+1.55</td><td>Largest SWIFT pool, position improving strongly. People search a bank SWIFT code when about to transfer abroad; a top-5 push plus a Flip Globe CTA converts high-intent traffic.</td></tr>
+                <tr><td><a href="https://flip.id/id/blog/swift-code-seabank" target="_blank">/swift-code-seabank</a></td><td class="num">36,356</td><td class="num">77</td><td class="num">0.21%</td><td class="num posgrp">7.96</td><td class="num posgrp">8.19</td><td class="num posgrp trend-up">+0.23</td><td>36k impressions at 0.21% CTR. Same play: improve the snippet and add a Flip Globe internal link.</td></tr>
+                <tr><td><a href="https://flip.id/id/blog/swift-code-bni" target="_blank">/swift-code-bni</a></td><td class="num">31,051</td><td class="num">231</td><td class="num">0.74%</td><td class="num posgrp">5.55</td><td class="num posgrp">5.92</td><td class="num posgrp trend-up">+0.37</td><td>Best position (5.6) and best converter of the cluster. Push to top 3 and add the Globe CTA.</td></tr>
+                <tr><td><a href="https://flip.id/id/blog/swift-code-bca" target="_blank">/swift-code-bca</a></td><td class="num">26,319</td><td class="num">56</td><td class="num">0.21%</td><td class="num posgrp">9.90</td><td class="num posgrp">10.11</td><td class="num posgrp trend-up">+0.21</td><td>Large pool at position ~10. Improve title and content to climb into the click zone.</td></tr>
+                <tr><td><a href="https://flip.id/id/blog/swift-code-mandiri" target="_blank">/swift-code-mandiri</a></td><td class="num">24,976</td><td class="num">57</td><td class="num">0.23%</td><td class="num posgrp">9.70</td><td class="num posgrp">10.70</td><td class="num posgrp trend-up">+1.00</td><td>Improving on a 25k pool. Continue the climb toward the click zone.</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ============ ADDITIONAL PURSUITS ============ -->
+        <h2 class="section-header">Additional Pursuits (SEO Landing Page Optimization)</h2>
+
+        <div class="callout callout-green">
+            <h3>1. Globe destination heading: implemented, monitoring the impact</h3>
+            <p>The destination heading and heading title structure are implemented on the priority Globe pages. At the monthly level the signal is clearly positive: China improved from position 11.41 to 8.30 (clicks +31.82%), Philippines +78.26%, English Malaysia +26.32% (position 10.92 to 9.90), and the Globe average position improved from 8.67 to 8.47. We will keep tracking these priority pages. Working document: <a href="https://docs.google.com/document/d/158V1GY-qxpUCbN6dHg8Ocqt7rFfjpJ3KPfs0ZIjXM6A/edit?tab=t.0" target="_blank">Globe destination landing page optimization (Google Doc)</a>.</p>
+        </div>
+
+        <div class="callout callout-blue">
+            <h3>2. Converter pages: heading title structure proposal (Top 10 ID and EN first)</h3>
+            <p>We are preparing a heading title structure proposal for the converter pages, applying the destination-and-context approach that is working on Globe. We will start with the <strong>Top 10 ID and Top 10 EN</strong> currency pages by volume (myr-mys-idr, usd-usa-idr, sar-sau-idr, krw-kor-idr and the rest of the target set), which hold the largest impression pools at position 6 to 9. Proposal document: <span style="color:#999;">link to be added</span>.</p>
+        </div>
+
+        <div class="callout callout-yellow">
+            <h3>3. FAQ customization by destination: waiting on CMS access (open question)</h3>
+            <p>The destination-specific FAQ blocks are prepared but still waiting on the seo@flip.id account to edit independently in the CMS. <strong>Open question for the Flip team: are there any updates on our ability to change the FAQ?</strong> Once access is granted, the FAQ blocks can be rolled out across the priority Globe pages, then the converter pages.</p>
+        </div>
+
+        <div class="callout callout-red">
+            <h3>4. Technical hygiene: broken converter hreflang between the ID and EN versions (reminder)</h3>
+            <p>Carried forward. The Indonesian and English converters use different path slugs (<code>/id/kalkulator-mata-uang/</code> vs <code>/en/currency-converter/</code>), but the hreflang alternate tags only swap the <code>/id/</code> and <code>/en/</code> prefix and keep the wrong path, so each language points to a broken URL for the other. The ID page <code>en-US</code> alternate points to a 404, and the EN page <code>id-ID</code> and <code>x-default</code> point to a 301 redirect.</p>
+        </div>
+
+        <div class="code-label" style="color: var(--danger-red);">Current, ID page head (broken)</div>
+        <div class="codeblock"><span class="bad">&lt;link rel="alternate" hreflang="en-US" href="https://flip.id/en/kalkulator-mata-uang/idr-mys-myr"/&gt;  &lt;-- 404 (wrong path)</span></div>
+        <div class="code-label" style="color: var(--success-green);">Fixed, ID page head</div>
+        <div class="codeblock"><span class="good">&lt;link rel="alternate" hreflang="en-US" href="https://flip.id/en/currency-converter/idr-mys-myr"/&gt;</span></div>
+        <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;"><em>The rule: the alternate href must map the language prefix AND the path slug together (id + kalkulator-mata-uang, en + currency-converter), and always point to the final 200 URL. Apply across every currency-pair page.</em></p>
+
+        <!-- ============ PRIORITIES ============ -->
+        <div class="priorities-section">
+            <h3>Next Month Priorities</h3>
+            <ul>
+                <li><strong>Keep monitoring the Globe heading impact</strong> on the priority pages (China, Philippines, Malaysia, Singapore, Australia); the monthly trend is clearly positive.</li>
+                <li><strong>Finalise the converter heading title structure proposal</strong> for the Top 10 ID and Top 10 EN currency pages, led by myr-mys-idr and usd-usa-idr.</li>
+                <li><strong>Unblock the seo@flip.id CMS access</strong> so the destination FAQ blocks can ship.</li>
+                <li><strong>Ship the converter hreflang fix</strong> across all currency-pair pages.</li>
+                <li><strong>Convert the SWIFT-code blog cluster:</strong> improve titles and snippets and add a Flip Globe CTA; positions are already improving, so a push into the top 5 compounds it.</li>
+                <li><strong>Ride out the converter demand cycle:</strong> the ranking is intact and improving, so keep pushing the big pools (usd-usa-idr, myr-mys-idr) toward the top 5 for when demand returns.</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Prepared by Novastacks for Flip (Flip Group) | Scope: Flip Globe, Currency Converter and globe-related blogs | Data source: Google Search Console month comparison (July 2026 vs June 2026), pulled via the aeo-novastacks profile | Report generated: 31 July 2026</p>
+        </div>
+    </div>
+
+    <script>
+        const brandColors = { primary: '#01aac1', teal: '#017d8e', gray: '#666666', success: '#22c55e' };
+        const areas = ['Flip Globe', 'Converter ID', 'Converter EN', 'Globe Blog'];
+        new Chart(document.getElementById('clicksByArea'), {
+            type: 'bar',
+            data: { labels: areas, datasets: [
+                { label: 'June 2026', data: [1168, 30533, 1097, 6131], backgroundColor: brandColors.gray },
+                { label: 'July 2026', data: [1333, 22128, 996, 7544], backgroundColor: brandColors.primary }
+            ]},
+            options: { responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, ticks: { callback: function(v){ return v.toLocaleString(); } } } } }
+        });
+        new Chart(document.getElementById('posByArea'), {
+            type: 'bar',
+            data: { labels: ['Flip Globe', 'Converter ID', 'Converter EN', 'Globe Blog'], datasets: [
+                { label: 'June 2026', data: [8.67, 6.98, 9.06, 7.46], backgroundColor: brandColors.gray },
+                { label: 'July 2026', data: [8.47, 6.83, 9.31, 7.27], backgroundColor: brandColors.teal }
+            ]},
+            options: { responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, reverse: true, title: { display: true, text: 'Avg position (lower is better)' } } } }
+        });
+    </script>
+</body>
+</html>
