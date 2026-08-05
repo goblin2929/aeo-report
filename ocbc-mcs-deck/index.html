@@ -514,6 +514,35 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
 /* print: one slide per page */
 @media print{ html,body{background:#000} }
+
+/* ---------- Indonesia context block (slides 3-6) ----------
+   The SimilarWeb charts are supplied as white-background PNGs, so they sit in
+   the same white-padded frame the deck already uses for light artwork (.shot,
+   .mth .diag img). Nothing is recoloured or re-plotted. */
+/* one auto margin only: .foot already carries margin-top:auto, so a second
+   auto here splits the free space evenly and centres the block. A third auto
+   would push it to a third of the way down. */
+.ctx{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;
+  margin-top:auto;align-items:center}
+.ctx-fig{display:flex;flex-direction:column;min-width:0}
+.ctx-fig .fr{background:#fff;padding:14px 16px;display:block}
+.ctx-fig .fr img{width:100%;height:auto;display:block}
+.ctx-fig .fr.donut{max-width:360px;margin:0 auto;padding:10px}
+.ctx-cap{font-size:15px;line-height:1.42;color:var(--mcs-grey);margin:13px 0 0}
+.ctx-cap strong{color:var(--mcs-white);font-weight:700}
+.ctx-side{display:flex;flex-direction:column;gap:26px;min-width:0}
+.ctx-stats{display:flex;flex-direction:column;border-top:3px solid var(--mcs-white)}
+.ctx-stat{padding:22px 0;border-bottom:1px solid var(--mcs-rule)}
+.ctx-stat:last-child{border-bottom:0}
+.ctx-stat .v{font-size:58px;font-weight:800;font-stretch:88%;line-height:.9;
+  letter-spacing:-.02em;color:var(--mcs-green)}
+.ctx-stat .v.rng{font-size:46px;letter-spacing:-.01em;line-height:1.02}
+.ctx-stat .l{font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--mcs-white);margin-top:13px;line-height:1.35}
+.ctx-stat .c{font-size:16px;line-height:1.4;color:var(--mcs-grey);margin-top:7px}
+/* label for a figure row that is not a table and not a chart */
+.rowlab{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mcs-grey)}
 </style>
 </head>
 <body>
@@ -546,7 +575,137 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   <p class="ds">Search is no longer only a list of links. Buyers ask a question in their own words and act on the answer they are given. OCBC is already in that answer — but as an article about dream meanings, not as a bank with a product to sell.</p>
   <div class="foot">
     <p>60 live buyer questions tested across Google AI Overview, ChatGPT and Gemini — savings and credit card, June 2026</p>
-    <p class="num">02 / 34</p>
+    <p class="num">02 / 38</p>
+  </div>
+</section>
+
+<!-- ============ 3 · INDONESIA CONTEXT: THE MARKET ============ -->
+<section class="s">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Indonesia &middot; The market</p>
+  <h1 class="t">AI is now a mainstream discovery<br>channel in Indonesia.</h1>
+  <p class="sub">ChatGPT visits roughly <strong>doubled since mid-2024</strong>; the AI-assistant category is up <strong>69%</strong> in 18 months.</p>
+
+  <div class="ctx">
+    <div class="ctx-fig">
+      <span class="fr"><img src="assets/similarweb-chatgpt-indonesia-visits.png" alt="chatgpt.com monthly visits and unique visitors, Indonesia, May 2024 to June 2026"></span>
+      <p class="ctx-cap">chatgpt.com &mdash; monthly visits and unique visitors, Indonesia. <strong>95M visits May &rsquo;24 &rarr; 191M visits and 17.8M unique visitors mid-&rsquo;26.</strong></p>
+    </div>
+    <div class="ctx-stats">
+      <div class="ctx-stat">
+        <div class="v">29.2M</div>
+        <div class="l">Monthly users reach the AI Chatbots &amp; Tools category in Indonesia</div>
+      </div>
+      <div class="ctx-stat">
+        <div class="v">+69%</div>
+        <div class="l">Category growth in unique users over 18 months</div>
+      </div>
+      <div class="ctx-stat">
+        <div class="v">~160x</div>
+        <div class="l">Overnight jump in DeepSeek visits at launch</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Source: SimilarWeb &mdash; Traffic &amp; Engagement and Industry Unique Users, Indonesia. Site history from Jun 2024; category history from Jan 2025.</p>
+    <p class="num">03 / 38</p>
+  </div>
+</section>
+
+<!-- ============ 4 · INDONESIA CONTEXT: OCBC TODAY ============ -->
+<section class="s">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Indonesia &middot; OCBC today</p>
+  <h1 class="t">AI already sends real customers<br>to OCBC &mdash; and it&rsquo;s growing.</h1>
+  <p class="sub">Gen AI referral visits roughly <strong>tripled</strong> over the past year; volumes are still modest.</p>
+
+  <div class="ctx">
+    <div class="ctx-fig">
+      <span class="fr"><img src="assets/similarweb-ocbc-genai-referrals.png" alt="ocbc.id monthly Gen AI referral visits, July 2025 to June 2026"></span>
+      <p class="ctx-cap">ocbc.id &mdash; monthly <strong>Gen AI referral visits</strong> (visits AI assistants sent to the site), Jul &rsquo;25 to Jun &rsquo;26.</p>
+    </div>
+    <div class="ctx-side">
+      <div class="ctx-fig">
+        <span class="fr donut"><img src="assets/similarweb-ocbc-ai-sources.png" alt="Donut chart: 77% of OCBC's AI referral traffic comes from ChatGPT"></span>
+        <p class="ctx-cap">Where OCBC&rsquo;s AI traffic comes from &mdash; <strong>ChatGPT sends 77%</strong> of the Gen AI referrals.</p>
+      </div>
+      <div class="ctx-stats">
+        <div class="ctx-stat">
+          <div class="v rng">3.2K &rarr; 9.7K</div>
+          <div class="l">Monthly Gen AI referral visits, Jul &rsquo;25 to Jun &rsquo;26</div>
+          <div class="c">Peak 11.4K in Nov &rsquo;25.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Source: SimilarWeb &mdash; Website Analysis Traffic Channels (Gen AI) and AI Traffic Overview, ocbc.id, Indonesia, Jul 2025&ndash;Jun 2026.</p>
+    <p class="num">04 / 38</p>
+  </div>
+</section>
+
+<!-- ============ 5 · INDONESIA CONTEXT: THE COMPETITIVE GAP ============ -->
+<section class="s">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Indonesia &middot; The competitive gap</p>
+  <h1 class="t">Rivals are winning the AI conversation<br>&mdash; OCBC trails BCA 5 to 1 on referrals.</h1>
+  <p class="sub">BCA captures more than half of <strong>AI-referred traffic</strong> to Indonesian banks; OCBC sits fourth.</p>
+
+  <div class="ctx">
+    <div class="ctx-fig">
+      <span class="fr"><img src="assets/similarweb-banks-ai-referral-share.png" alt="Monthly AI referral visits by Indonesian bank: BCA 31.1K, CIMB Niaga 13.1K, BNI 8.6K, OCBC 5.9K, PermataBank 328"></span>
+      <p class="ctx-cap">AI referral traffic to Indonesian banks &mdash; <strong>avg. monthly visits &amp; share, Jul &rsquo;25&ndash;Jun &rsquo;26</strong>. This is referral traffic &mdash; the visits AI assistants send &mdash; not the share of AI answers that mention each bank, which is measured separately later in this deck.</p>
+    </div>
+    <div class="ctx-stats">
+      <div class="ctx-stat">
+        <div class="v">52.7%</div>
+        <div class="l">Of banking AI referral traffic goes to BCA</div>
+      </div>
+      <div class="ctx-stat">
+        <div class="v">9.96%</div>
+        <div class="l">OCBC&rsquo;s share &mdash; behind BCA, CIMB Niaga and BNI</div>
+      </div>
+      <div class="ctx-stat">
+        <div class="v">5.3x</div>
+        <div class="l">More AI referrals reach BCA than OCBC each month</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Source: SimilarWeb &mdash; Incoming AI Platform traffic, Indonesian bank domains (bca.co.id, cimbniaga.co.id, bni.co.id, ocbc.id, permatabank.com), Jul 2025&ndash;Jun 2026.</p>
+    <p class="num">05 / 38</p>
+  </div>
+</section>
+
+<!-- ============ 6 · INDONESIA CONTEXT: THE OPPORTUNITY ============ -->
+<section class="s">
+  <div class="logos"><img class="ocbc" src="assets/ocbc-logo.webp" alt="OCBC"><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">GEO opportunity <span class="sep">/</span> Indonesia &middot; The opportunity</p>
+  <h1 class="t sm">As AI becomes how Indonesians choose a bank,<br>OCBC needs to be the answer it gives<br>&mdash; not an afterthought.</h1>
+  <p class="sub">GEO makes OCBC <strong>visible, cited and recommended</strong> inside AI assistants &mdash; closing the gap to BCA while the category is still forming.</p>
+
+  <p class="rowlab" style="margin-top:56px">The story in three numbers</p>
+  <div class="stats three" style="margin-top:16px">
+    <div class="stat">
+      <div class="v g">+69%</div>
+      <div class="l">Growth in Indonesia&rsquo;s AI-assistant users in 18 months</div>
+    </div>
+    <div class="stat">
+      <div class="v g">3x</div>
+      <div class="l">Rise in OCBC&rsquo;s own AI referrals in a year</div>
+    </div>
+    <div class="stat">
+      <div class="v g">5.3x</div>
+      <div class="l">BCA&rsquo;s AI referral lead over OCBC</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Source: SimilarWeb &mdash; Traffic &amp; Engagement, Industry Unique Users, Website Analysis Traffic Channels &amp; AI Platform referrals, Indonesia.</p>
+    <p class="num">06 / 38</p>
   </div>
 </section>
 
@@ -567,7 +726,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
       <li>OCBC holds the <strong>#1 organic position</strong> for this query, the strongest classic SEO slot on the page.</li>
       <li>The buyer reads the AI answer and decides <strong>before ever reaching your link.</strong></li>
     </ul>
-    <div class="mf" style="margin-top:auto"><span>Google AI Overview, live Jul 2026</span><span class="num">03 / 34</span></div>
+    <div class="mf" style="margin-top:auto"><span>Google AI Overview, live Jul 2026</span><span class="num">07 / 38</span></div>
   </div>
 </section>
 
@@ -585,7 +744,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
     <h2>On the next question, OCBC does not appear.</h2>
     <div class="shotwrap"><img src="assets/ocbc-chatgpt-notmentioned.png" alt="ChatGPT answer recommending Bank Mega, CIMB Niaga, Jago, SeaBank and Superbank, with no mention of OCBC"></div>
     <p class="cap">ChatGPT, &ldquo;bank yang menyediakan tabungan online tanpa kartu debit.&rdquo; It recommends Mega, CIMB Niaga, Jago, SeaBank and Superbank. OCBC is absent.</p>
-    <div class="mf"><span>Live result, Jul 2026</span><span class="num">04 / 34</span></div>
+    <div class="mf"><span>Live result, Jul 2026</span><span class="num">08 / 38</span></div>
   </div>
 </section>
 
@@ -615,7 +774,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source to be added</p>
-    <p class="num">05 / 34</p>
+    <p class="num">09 / 38</p>
   </div>
 </section>
 
@@ -646,7 +805,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Conductor 2026 (21.9M queries) &middot; SparkToro 2026 clickstream &middot; Adobe Analytics 2026, US retail</p>
-    <p class="num">06 / 34</p>
+    <p class="num">10 / 38</p>
   </div>
 </section>
 
@@ -672,7 +831,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Self-attribution and dark-funnel ranges: Siege Media, 2026 &mdash; GEO ROI attribution framework. Agency-published methodology, not independent research.</p>
-    <p class="num">07 / 34</p>
+    <p class="num">11 / 38</p>
   </div>
 </section>
 
@@ -728,7 +887,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source to be added</p>
-    <p class="num">08 / 34</p>
+    <p class="num">12 / 38</p>
   </div>
 </section>
 
@@ -775,7 +934,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Left: WorkDuo AI brand visibility, product prompts &mdash; top 5 of 10 tracked brands. Right: live testing of 60 real buyer questions</p>
-    <p class="num">09 / 34</p>
+    <p class="num">13 / 38</p>
   </div>
 </section>
 
@@ -817,7 +976,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: 60 live buyer-question tests, Google AI Overview / ChatGPT / Gemini, June 2026</p>
-    <p class="num">10 / 34</p>
+    <p class="num">14 / 38</p>
   </div>
 </section>
 
@@ -842,7 +1001,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: 30 live credit-card buyer questions classified by funnel stage — Google AI Overview, ChatGPT and Gemini, Indonesia, June 2026</p>
-    <p class="num">11 / 34</p>
+    <p class="num">15 / 38</p>
   </div>
 </section>
 
@@ -864,7 +1023,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>AI search visibility, tracked daily 25&ndash;29 July 2026 across ChatGPT and Google AI Overview. Same six brands and same 0&ndash;100 scale on every chart, so the four views are directly comparable</p>
-    <p class="num">12 / 34</p>
+    <p class="num">16 / 38</p>
   </div>
 </section>
 
@@ -886,7 +1045,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>AI search visibility, tracked daily 25&ndash;29 July 2026 across ChatGPT and Google AI Overview. Same six brands and same 0&ndash;100 scale on every chart, so the four views are directly comparable</p>
-    <p class="num">13 / 34</p>
+    <p class="num">17 / 38</p>
   </div>
 </section>
 
@@ -908,7 +1067,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>AI search visibility, tracked daily 25&ndash;29 July 2026 across ChatGPT and Google AI Overview. Same six brands and same 0&ndash;100 scale on every chart, so the four views are directly comparable</p>
-    <p class="num">14 / 34</p>
+    <p class="num">18 / 38</p>
   </div>
 </section>
 
@@ -946,7 +1105,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: Workduo GEO tracking, last 30 days, Google AI Overview and ChatGPT, Indonesia. CIMB Niaga is tagged as a competitor in the tracker.</p>
-    <p class="num">15 / 34</p>
+    <p class="num">19 / 38</p>
   </div>
 </section>
 
@@ -971,7 +1130,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: live buyer-question testing, June 2026 — each row is a question where AI named a competitor and OCBC offers the same product</p>
-    <p class="num">16 / 34</p>
+    <p class="num">20 / 38</p>
   </div>
 </section>
 
@@ -982,7 +1141,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   <p class="ds">OCBC has the product and the reach. What is missing is the work that turns both into the answer AI gives. This is the team that does that work, the disciplines it takes, and the method we run.</p>
   <div class="foot">
     <p>The team is the differentiator</p>
-    <p class="num">17 / 34</p>
+    <p class="num">21 / 38</p>
   </div>
 </section>
 
@@ -1019,7 +1178,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>The team is the differentiator</p>
-    <p class="num">18 / 34</p>
+    <p class="num">22 / 38</p>
   </div>
 </section>
 
@@ -1047,7 +1206,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Positioning &middot; Outcome = being chosen by AI</p>
-    <p class="num">19 / 34</p>
+    <p class="num">23 / 38</p>
   </div>
 </section>
 
@@ -1076,7 +1235,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Method &middot; The Source &amp; Echo Method</p>
-    <p class="num">20 / 34</p>
+    <p class="num">24 / 38</p>
   </div>
 </section>
 
@@ -1115,7 +1274,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: OCBC blog page-level classification, 2,500 pages, Ahrefs traffic June 2026</p>
-    <p class="num">21 / 34</p>
+    <p class="num">25 / 38</p>
   </div>
 </section>
 
@@ -1158,7 +1317,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: live crawl of ocbc.id core product pages, June 2026 — this is on-page work on assets that already exist</p>
-    <p class="num">22 / 34</p>
+    <p class="num">26 / 38</p>
   </div>
 </section>
 
@@ -1196,7 +1355,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Both engines run on pages OCBC already owns — the programme adds structure and message, not volume</p>
-    <p class="num">23 / 34</p>
+    <p class="num">27 / 38</p>
   </div>
 </section>
 
@@ -1244,7 +1403,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Estimates are directional until OCBC's Search Console is connected; from that point they are measured</p>
-    <p class="num">24 / 34</p>
+    <p class="num">28 / 38</p>
   </div>
 </section>
 
@@ -1255,7 +1414,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   <p class="ds">OCBC already has the largest earned reach in Indonesian banking, and the products to match. The programme adds the structure and the message that make them findable &mdash; in search, and in the AI answers where buyers now decide.</p>
   <div class="foot">
     <p>Immediate next step &mdash; connect Search Console, so the estimates in this deck become measured from week one</p>
-    <p class="num">25 / 34</p>
+    <p class="num">29 / 38</p>
   </div>
 </section>
 
@@ -1266,7 +1425,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   <p class="ds">The evidence behind the argument &mdash; the starting position, the commercial-yield gap on the two priority products, and all 60 tested buyer prompts with who was cited on each.</p>
   <div class="foot">
     <p>Executive summary, competitive position, and the full tested prompt set</p>
-    <p class="num">26 / 34</p>
+    <p class="num">30 / 38</p>
   </div>
 </section>
 
@@ -1307,7 +1466,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Sources: Ahrefs (Indonesia), live crawl June 2026, 60 live buyer-question tests across Google AI Overview, ChatGPT and Gemini</p>
-    <p class="num">27 / 34</p>
+    <p class="num">31 / 38</p>
   </div>
 </section>
 
@@ -1345,7 +1504,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: Ahrefs, Indonesia market, June 2026</p>
-    <p class="num">28 / 34</p>
+    <p class="num">32 / 38</p>
   </div>
 </section>
 
@@ -1374,7 +1533,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Source: Ahrefs product-page traffic, Indonesia, June 2026</p>
-    <p class="num">29 / 34</p>
+    <p class="num">33 / 38</p>
   </div>
 </section>
 
@@ -1419,7 +1578,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Sources: Ahrefs, Indonesia; live page crawl of bankmandiri.co.id/tabunganku and ocbc.id TabunganKu, June 2026</p>
-    <p class="num">30 / 34</p>
+    <p class="num">34 / 38</p>
   </div>
 </section>
 
@@ -1451,7 +1610,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage for savings is our classification, applied on the same basis as the credit-card set</p>
-    <p class="num">31 / 34</p>
+    <p class="num">35 / 38</p>
   </div>
 </section>
 
@@ -1483,7 +1642,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage for savings is our classification, applied on the same basis as the credit-card set</p>
-    <p class="num">32 / 34</p>
+    <p class="num">36 / 38</p>
   </div>
 </section>
 
@@ -1515,7 +1674,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage as classified in the source analysis; four servicing queries sit outside the acquisition funnel</p>
-    <p class="num">33 / 34</p>
+    <p class="num">37 / 38</p>
   </div>
 </section>
 
@@ -1547,7 +1706,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Tested live June 2026 via Google AI Overview, ChatGPT and Gemini. Funnel stage as classified in the source analysis; four servicing queries sit outside the acquisition funnel</p>
-    <p class="num">34 / 34</p>
+    <p class="num">38 / 38</p>
   </div>
 </section>
 
