@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merz Aesthetics Singapore: proposed report inserts</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ns-primary': '#01aac1',
+            'ns-accent': '#01d7f4',
+            'ns-teal': '#017d8e',
+            'ns-clay': '#C4A08A',
+            'ns-dark': '#111111',
+            'ns-medium': '#2a2a2a',
+            'ns-light': '#f5f5f5',
+            'ns-success': '#22c55e',
+            'ns-warning': '#eab308',
+            'ns-danger': '#ef4444',
+            'ns-orange': '#f97316',
+          },
+          fontFamily: {
+            'display': ['Space Grotesk', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Gating — v2 partial reveal approach */
+    .gated-section { position: relative; overflow: hidden; }
+    .gated-section .gated-content { pointer-events: none; user-select: none; max-height: 600px; }
+    .gated-section.unlocked .gated-content { pointer-events: auto; user-select: auto; max-height: none; }
+    .gated-section .section-header-visible { position: relative; z-index: 5; }
+    .gated-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 2.5rem; background: linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(15,23,42,0.4) 50%, rgba(15,23,42,0.92) 70%, rgba(15,23,42,0.98) 85%); z-index: 10; transition: opacity 0.3s ease; }
+    .gated-section.unlocked .gated-overlay { opacity: 0; pointer-events: none; }
+    .overlay-card { background: rgba(15,23,42,0.92); backdrop-filter: blur(12px); border: 1px solid rgba(1,170,193,0.3); border-radius: 0.75rem; padding: 2rem 2.5rem; text-align: center; max-width: 520px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    /* Light section gating — white fade instead of dark */
+    .gated-section:has(.section-light) .gated-overlay { background: linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.95) 70%, rgba(255,255,255,0.99) 85%); }
+    .gated-section:has(.section-light) .overlay-card { background: rgba(15,23,42,0.95); }
+
+    /* Scroll animations */
+    .scroll-animate { opacity: 0; transform: translateY(32px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .scroll-animate.animate-in { opacity: 1; transform: translateY(0); }
+
+    /* Score ring animation */
+    @keyframes score-fill { from { stroke-dashoffset: 314; } }
+    .score-ring-animated { animation: score-fill 1.5s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+    /* Grid pattern for cover */
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(1,170,193,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(1,170,193,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #111111; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #01aac1; }
+    html { scroll-behavior: smooth; }
+
+    /* Executive summary HTML content */
+    .exec-summary-content p { margin-bottom: 1rem; }
+    .exec-summary-content p:last-child { margin-bottom: 0; }
+    .exec-summary-content strong { color: #111111; font-weight: 600; }
+
+    /* v2 section classes — reusable styling for cards/tables within dark and light sections */
+    .section-dark .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .section-dark .data-table th { text-align: left; padding: 10px 12px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #888; border-bottom: 1px solid rgba(255,255,255,0.08); white-space: nowrap; }
+    .section-dark .data-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #e0e0e0; }
+    .section-dark .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .section-dark .data-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+    .section-dark .data-table .text-right { text-align: right; }
+    .section-dark .data-table .text-center { text-align: center; }
+
+    .section-dark .stat-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px; }
+    .section-dark .stat-card .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 6px; }
+    .section-dark .stat-card .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #fff; line-height: 1.1; }
+    .section-dark .stat-card .stat-context { font-size: 12px; color: #888; margin-top: 4px; }
+
+    .section-dark .issue-detail { background: #2a2a2a; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .section-dark .issue-title { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: #fff; }
+    .section-dark .issue-body { font-size: 14px; color: #e0e0e0; line-height: 1.7; }
+    .section-dark .issue-body p { margin-bottom: 12px; }
+    .section-dark .issue-body strong { color: #fff; }
+    .section-dark .issue-body .data-table th { color: #888; }
+
+    .section-light .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .section-light .data-table th { text-align: left; padding: 10px 12px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #666; border-bottom: 2px solid #e5e5e5; background: #f5f5f5; white-space: nowrap; }
+    .section-light .data-table td { padding: 10px 12px; border-bottom: 1px solid #eee; color: #333; }
+    .section-light .data-table tr:hover td { background: #fafafa; }
+    .section-light .data-table tr:last-child td { border-bottom: none; }
+    .section-light .data-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+    .section-light .data-table .text-right { text-align: right; }
+    .section-light .data-table .text-center { text-align: center; }
+
+    .section-light .stat-card { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 10px; padding: 20px; }
+    .section-light .stat-card .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 6px; }
+    .section-light .stat-card .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #111; line-height: 1.1; }
+    .section-light .stat-card .stat-context { font-size: 12px; color: #888; margin-top: 4px; }
+
+    .section-light .issue-detail { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .section-light .issue-title { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: #111; }
+    .section-light .issue-body { font-size: 14px; color: #333; line-height: 1.7; }
+    .section-light .issue-body p { margin-bottom: 12px; }
+    .section-light .issue-body strong { color: #111; }
+    .section-light .issue-body .data-table th { color: #666; background: #f5f5f5; }
+
+    /* Readiness insight callout */
+    .readiness-insight { border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.75; }
+    .section-light .readiness-insight { background: #f0fafb; border-left: 4px solid #01aac1; color: #1a1a1a; }
+    .section-light .readiness-insight strong { color: #017d8e; }
+    .section-dark .readiness-insight { background: rgba(1,170,193,0.08); border-left: 4px solid #01aac1; color: #e0e0e0; }
+    .section-dark .readiness-insight strong { color: #01d7f4; }
+
+    /* Color-coded text classes for table cells */
+    .text-success { color: #22c55e; }
+    .text-danger { color: #ef4444; }
+    .text-warning { color: #eab308; }
+    .text-muted { color: #888; }
+    .text-info { color: #01aac1; }
+
+    /* Badge classes */
+    .badge-danger { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(239,68,68,0.15); color: #ef4444; }
+    .badge-warning { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(234,179,8,0.15); color: #eab308; }
+    .badge-success { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(34,197,94,0.15); color: #22c55e; }
+    .badge-info { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(1,170,193,0.15); color: #01aac1; }
+    .badge-orange { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(249,115,22,0.15); color: #f97316; }
+    .badge-muted { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(136,136,136,0.15); color: #888; }
+
+    /* Stat grid */
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+
+    /* Issue border colors */
+    .issue-border-success { border-left: 4px solid #22c55e; }
+    .issue-border-danger { border-left: 4px solid #ef4444; }
+    .issue-border-warning { border-left: 4px solid #eab308; }
+    .issue-border-info { border-left: 4px solid #01aac1; }
+
+    /* Score bubble (readiness section) */
+    .score-bubble { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; }
+    .score-bubble .bubble-score { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; }
+
+    /* Horizon cards (roadmap) */
+    .section-dark .horizon-card { background: #2a2a2a; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .section-dark .rec-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .section-dark .rec-content { font-size: 13px; color: #888; line-height: 1.5; }
+    .section-dark .rec-content strong { color: #fff; }
+
+    .section-light .horizon-card { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .section-light .rec-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eee; }
+    .section-light .rec-content { font-size: 13px; color: #555; line-height: 1.5; }
+    .section-light .rec-content strong { color: #111; }
+
+    .rec-item:last-child { border-bottom: none; }
+    .rec-number { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: #01aac1; min-width: 28px; }
+
+    /* Score impact grid (roadmap) */
+    .score-impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+
+    .section-dark .score-impact-card { background: #2a2a2a; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; }
+    .section-dark .score-impact-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 16px; }
+
+    .section-light .score-impact-card { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 12px; padding: 24px; }
+    .section-light .score-impact-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #111; margin-bottom: 16px; }
+
+    /* Table scroll for mobile */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .table-scroll::-webkit-scrollbar { height: 4px; }
+    .table-scroll::-webkit-scrollbar-thumb { background: #017d8e; border-radius: 2px; }
+
+    /* Gap card */
+    .gap-card { background: rgba(1,170,193,0.04); border: 1px solid rgba(1,170,193,0.15); border-radius: 12px; padding: 24px; }
+
+    /* Footnotes */
+    .footnote { font-size: 11px; color: #888; line-height: 1.6; }
+    .footnote sup { color: #01aac1; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .score-impact-grid { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+<style>
+  .preview-banner { background:#7c2d12; border-bottom:1px solid rgba(255,255,255,.15); padding:14px 20px; text-align:center; }
+  .preview-banner strong { color:#fff; }
+  .preview-banner span { color:#fed7aa; font-size:13px; }
+  .insert-label { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em;
+    text-transform:uppercase; color:#01aac1; border-top:1px solid rgba(1,170,193,.25);
+    padding-top:14px; margin-top:56px; display:block; }
+</style>
+</head>
+<body class="bg-ns-dark text-white font-body antialiased">
+<div class="preview-banner">
+  <strong>PREVIEW, NOT PUBLISHED.</strong>
+  <span>Two proposed sections for the Merz report, rendered in the live report theme.
+  Nothing here is on the client facing URL yet.</span>
+</div>
+<main class="px-4 pb-24">
+  <div class="max-w-5xl mx-auto pt-14">
+    <span class="font-mono text-xs text-ns-teal tracking-[0.2em] uppercase block mb-4">// PROPOSED INSERTS</span>
+    <h1 class="font-display text-3xl md:text-4xl font-bold text-white mb-3">Merz Aesthetics Singapore</h1>
+    <p class="text-gray-400 text-base mb-2">Two sections proposed for the Merz assessment, built from Singapore
+    keyword and organic traffic research pulled on 7 August 2026.</p>
+    <p class="text-gray-500 text-sm mb-4">Insert one goes into section 06 Brand and Positioning.
+    Insert two goes into section 07 Roadmap.</p>
+    <span class="insert-label">Insert 1 &nbsp;/&nbsp; Section 06 Brand and Positioning</span>
+    <h3 class="font-display text-2xl font-bold text-white mb-3 mt-16">The Demand Exists. The Pages Do Not.</h3>
+<p class="text-gray-400 text-base mb-6 max-w-4xl">
+  Merz Aesthetics is a manufacturer, not a treatment provider. That sets a real limit on how far a
+  Merz site can go: it cannot quote treatment prices, it cannot rank clinics, and it cannot market a
+  prescription medicine to the public the way a consumer brand can. A Merz site will never look like
+  a clinic site, and it should not try to.
+</p>
+<p class="text-gray-400 text-base mb-8 max-w-4xl">
+  So we measured the ceiling. We pulled every Singapore search that names Ultherapy, Xeomin, Belotero
+  or Radiesse: <strong class="text-white">159 keywords, 15,650 searches a month</strong>. Then we
+  sorted them by what a manufacturer is genuinely able to answer. The result is the opposite of what
+  the regulatory constraint suggests.
+</p>
+
+<div class="table-scroll mb-6 rounded-xl border border-white/10"><table class="data-table">
+  <thead><tr>
+    <th>Query Type</th>
+    <th class="text-right">Volume</th>
+    <th class="text-right">Share</th>
+    <th class="text-center">Can Merz Own It?</th>
+    <th>Examples</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <td>Bare brand and navigational</td>
+    <td class="text-right mono">7,180</td><td class="text-right mono">45.9%</td>
+    <td class="text-center"><span class="badge-success">Yes</span></td>
+    <td>ultherapy (2,000), ultherapy prime (1,700), ultherapy singapore (1,200)</td>
+  </tr>
+  <tr style="background:rgba(255,255,255,0.02);">
+    <td>Comparison, X versus Y</td>
+    <td class="text-right mono">2,480</td><td class="text-right mono">15.8%</td>
+    <td class="text-center"><span class="badge-warning">Partly</span></td>
+    <td>thermage vs ultherapy (400), ultherapy vs hifu (350), xeomin vs botox</td>
+  </tr>
+  <tr>
+    <td>Definitional, what is</td>
+    <td class="text-right mono">1,870</td><td class="text-right mono">11.9%</td>
+    <td class="text-center"><span class="badge-success">Yes</span></td>
+    <td>ultherapy treatment (200), what is ultherapy (150), how ultherapy works</td>
+  </tr>
+  <tr style="background:rgba(255,255,255,0.02);">
+    <td>Price and cost</td>
+    <td class="text-right mono">1,350</td><td class="text-right mono">8.6%</td>
+    <td class="text-center"><span class="badge-danger">No</span></td>
+    <td>ultherapy singapore price (300), ultherapy cost singapore (200)</td>
+  </tr>
+  <tr>
+    <td>Proof, before and after</td>
+    <td class="text-right mono">690</td><td class="text-right mono">4.4%</td>
+    <td class="text-center"><span class="badge-warning">Partly</span></td>
+    <td>ultherapy before and after (300), ultherapy singapore review</td>
+  </tr>
+  <tr style="background:rgba(255,255,255,0.02);">
+    <td>Outcome and indication</td>
+    <td class="text-right mono">430</td><td class="text-right mono">2.7%</td>
+    <td class="text-center"><span class="badge-success">Yes</span></td>
+    <td>ultherapy to treat droopy eyelids (80), ultherapy to treat sagging jowls (60)</td>
+  </tr>
+  <tr>
+    <td>Safety and experience</td>
+    <td class="text-right mono">420</td><td class="text-right mono">2.7%</td>
+    <td class="text-center"><span class="badge-success">Yes</span></td>
+    <td>ultherapy side effects (60), is ultherapy painful (60), ultherapy downtime</td>
+  </tr>
+  <tr style="background:rgba(255,255,255,0.02);">
+    <td>Clinic finding, neutral</td>
+    <td class="text-right mono">400</td><td class="text-right mono">2.6%</td>
+    <td class="text-center"><span class="badge-success">Yes</span></td>
+    <td>ultherapy clinic singapore (80), ultherapy doctor singapore</td>
+  </tr>
+  <tr>
+    <td>Treatment sought overseas</td>
+    <td class="text-right mono">320</td><td class="text-right mono">2.0%</td>
+    <td class="text-center"><span class="badge-warning">Partly</span></td>
+    <td>ultherapy johor bahru (70), ultherapy bangkok (60), ultherapy korea (50)</td>
+  </tr>
+  <tr style="background:rgba(255,255,255,0.02);">
+    <td>Clinic finding, ranked</td>
+    <td class="text-right mono">200</td><td class="text-right mono">1.3%</td>
+    <td class="text-center"><span class="badge-danger">No</span></td>
+    <td>best ultherapy singapore (80), best ultherapy clinic singapore (50)</td>
+  </tr>
+  <tr>
+    <td>Merz versus Merz</td>
+    <td class="text-right mono">190</td><td class="text-right mono">1.2%</td>
+    <td class="text-center"><span class="badge-success">Yes</span></td>
+    <td>ultherapy vs ultherapy prime (90), ultherapy prime vs ultherapy (90)</td>
+  </tr>
+  <tr style="background:rgba(255,255,255,0.02);">
+    <td>Chinese language</td>
+    <td class="text-right mono">100</td><td class="text-right mono">0.6%</td>
+    <td class="text-center"><span class="badge-success">Yes</span></td>
+    <td>ultherapy in chinese (70), ultherapy 中文 (20), radiesse in chinese (10)</td>
+  </tr>
+  <tr>
+    <td>Brand assets</td>
+    <td class="text-right mono">20</td><td class="text-right mono">0.1%</td>
+    <td class="text-center"><span class="badge-success">Yes</span></td>
+    <td>belotero logo (10), radiesse logo (10)</td>
+  </tr>
+  <tr style="background:rgba(1,170,193,0.06);font-weight:600;">
+    <td>Total</td>
+    <td class="text-right mono">15,650</td><td class="text-right mono">100%</td>
+    <td class="text-center"><span class="badge-info">68% yes</span></td>
+    <td>159 keywords, Singapore, August 2026</td>
+  </tr>
+  </tbody>
+</table></div>
+
+<div class="gap-card mb-8">
+  <p class="text-gray-300 text-sm leading-relaxed mb-0">
+    <strong class="text-white">Read the fourth column, not the second.</strong>
+    10,610 searches a month, <strong class="text-white">67.8% of the market</strong>, sit in query
+    types a manufacturer can answer in full: what the product is, how it works, what it treats,
+    whether it is safe, and which certified clinics provide it. A further 22.3% is partly available,
+    where the factual technology distinction can be published even though a superiority claim cannot.
+    Only <strong class="text-white">9.9%</strong>, price and best-clinic rankings, has to be left to
+    the clinics.
+  </p>
+</div>
+
+<p class="text-gray-400 text-base mb-8 max-w-4xl">
+  Merz is currently absent from most of that 67.8%, and the reason is not regulatory. Every one of
+  these query types is answered today by somebody, usually a Singapore clinic or a forum thread.
+  The queries do not surface a Merz page because <strong class="text-white">the page has not been
+  built</strong>. Sixty-eight percent of the market is available under the rules that already apply
+  to a manufacturer, and the content development to claim it has not been done.
+</p>
+
+<div class="issue-detail issue-border-danger">
+  <div class="issue-header" style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:12px;flex-wrap:wrap;">
+    <h3 class="issue-title">The Proof Is Inside the Estate</h3>
+    <span class="badge-danger">Content coverage</span>
+  </div>
+  <div class="issue-body">
+    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+      merzaesthetics.com.sg carries <strong class="text-white">five pages for Belotero</strong> and
+      captures 43% of Belotero search demand in Singapore. It carries
+      <strong class="text-white">one page for Ultherapy</strong> and ranks
+      <strong class="text-white">15th</strong> for the word "ultherapy", a term searched 2,000 times a
+      month. That single keyword currently returns <strong class="text-white">zero visits</strong> to
+      any Merz property.
+    </p>
+    <p class="text-gray-300 text-sm leading-relaxed mb-0">
+      The relationship is not theoretical. Where Merz has built pages, Merz ranks. Where Merz has not,
+      clinics do. Ultherapy accounts for <strong class="text-white">86.8%</strong> of all Singapore
+      brand demand across the four products and has the least page coverage of any of them.
+    </p>
+  </div>
+</div>
+    <span class="insert-label">Insert 2 &nbsp;/&nbsp; Section 07 Roadmap</span>
+    <h3 class="font-display text-2xl font-bold text-white mb-3 mt-16">The Third Number: Organic Traffic</h3>
+<p class="text-gray-400 text-base mb-8 max-w-4xl">
+  Site Readiness and LLM Visibility describe how machine readable and how quotable the estate is.
+  Neither says what it is worth. Below is the commercial dimension, measured from the two Merz owned
+  Singapore properties as they perform today.
+</p>
+
+<div class="stat-grid mb-10">
+  <div class="stat-card">
+    <div class="stat-value text-warning">1,862</div>
+    <div class="stat-label">Monthly organic visits, Singapore</div>
+    <div class="stat-context">Across merzaesthetics.com.sg and ultherapysg.com combined</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value text-warning">42</div>
+    <div class="stat-label">Ranking keywords</div>
+    <div class="stat-context">Out of 159 in the Singapore brand universe</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value text-warning">11.9%</div>
+    <div class="stat-label">Share of brand demand captured</div>
+    <div class="stat-context">1,862 visits against 15,650 monthly searches</div>
+  </div>
+</div>
+
+<div class="gap-card mb-10">
+  <p class="text-gray-300 text-sm leading-relaxed mb-0">
+    <strong class="text-white">87% of that traffic sits on the wrong site.</strong>
+    ultherapysg.com earns 1,627 visits a month. merzaesthetics.com.sg earns 235. The site that has not
+    been updated since 2019 outperforms the maintained one by seven times, because it holds the content
+    types the market is searching for and the maintained site does not.
+  </p>
+</div>
+
+<h4 class="font-display text-lg font-bold text-white mb-4">Twelve Month Impact</h4>
+
+<div class="table-scroll mb-6 rounded-xl border border-white/10"><table class="data-table">
+  <thead><tr>
+    <th>Measure</th>
+    <th class="text-right">Today</th>
+    <th class="text-right">Conservative</th>
+    <th class="text-right">Base Case</th>
+    <th class="text-right">Upside</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <td>Site Readiness</td>
+    <td class="text-right mono">4.3</td><td class="text-right mono">6.2</td>
+    <td class="text-right mono text-success">7.0</td><td class="text-right mono">7.4</td>
+  </tr>
+  <tr style="background:rgba(255,255,255,0.02);">
+    <td>LLM Visibility</td>
+    <td class="text-right mono">4.7</td><td class="text-right mono">5.6</td>
+    <td class="text-right mono text-success">6.5</td><td class="text-right mono">7.0</td>
+  </tr>
+  <tr>
+    <td>Monthly organic visits</td>
+    <td class="text-right mono">1,862</td><td class="text-right mono">2,760</td>
+    <td class="text-right mono text-success">3,143</td><td class="text-right mono">3,560</td>
+  </tr>
+  <tr style="background:rgba(255,255,255,0.02);">
+    <td>Additional visits per month</td>
+    <td class="text-right mono">0</td><td class="text-right mono">+900</td>
+    <td class="text-right mono text-success">+1,281</td><td class="text-right mono">+1,700</td>
+  </tr>
+  <tr>
+    <td>Ranking keywords</td>
+    <td class="text-right mono">42</td><td class="text-right mono">85</td>
+    <td class="text-right mono text-success">110 to 130</td><td class="text-right mono">140</td>
+  </tr>
+  <tr style="background:rgba(255,255,255,0.02);">
+    <td>Share of brand demand captured</td>
+    <td class="text-right mono">11.9%</td><td class="text-right mono">17.6%</td>
+    <td class="text-right mono text-success">20.1%</td><td class="text-right mono">22.7%</td>
+  </tr>
+  <tr>
+    <td>Equivalent media value per month</td>
+    <td class="text-right mono">$5,981</td><td class="text-right mono">$8,860</td>
+    <td class="text-right mono text-success">$10,090</td><td class="text-right mono">$11,430</td>
+  </tr>
+  </tbody>
+</table></div>
+
+<p class="footnote mb-10">
+  Organic figures from Ahrefs, Singapore, August 2026. Media value calculated at the $3.21 per visit
+  currently observed across the two Merz properties. Projected capture rates are set below the
+  click through rates the Merz sites already achieve at each ranking position, and assume zero capture
+  on price and best-clinic queries, which a manufacturer cannot answer.
+</p>
+
+<div class="gap-card mb-10">
+  <p class="text-gray-300 text-sm leading-relaxed mb-0">
+    <strong class="text-white">Two keywords carry more than half the base case.</strong>
+    "ultherapy" is searched 2,000 times a month and returns nothing to Merz today, because both Merz
+    properties rank outside the click range at 7th and 15th. "ultherapy prime" is searched 1,700 times
+    and sits 4th. Bringing those two into the top three, at the click through rate Merz already
+    achieves elsewhere, accounts for roughly 690 of the 1,281 additional monthly visits. The forecast
+    does not depend on winning 159 keywords. It depends on winning the two largest, then adding
+    coverage.
+  </p>
+</div>
+
+<div class="issue-detail issue-border-danger">
+  <div class="issue-header" style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:12px;flex-wrap:wrap;">
+    <h3 class="issue-title">The Risk We Would Flag Before Signing Anything</h3>
+    <span class="badge-warning">Migration</span>
+  </div>
+  <div class="issue-body">
+    <p class="text-gray-300 text-sm leading-relaxed mb-0">
+      1,627 of the 1,862 monthly visits, <strong class="text-white">87% of all Merz organic traffic in
+      Singapore</strong>, currently sit on ultherapysg.com, a static site with no content management
+      system. Any decision to consolidate that content must be executed with a complete redirect map
+      and rank monitoring, or the programme begins by destroying most of the baseline it is meant to
+      grow. This is manageable, and it is the single item we would want agreed before work starts.
+    </p>
+  </div>
+</div>
+  </div>
+</main>
+</body></html>
