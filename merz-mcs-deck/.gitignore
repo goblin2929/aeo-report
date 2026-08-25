@@ -1,0 +1,15 @@
+# Internal only — never published
+PROGRESS.md
+_verify/
+_slides.py
+_mcs-tokens.css
+_citation/*.py
+_citation/*.log
+_citation/*.jsonl
+_citation/*.raw.json
+_citation/dashboard_data.json
+_citation/*.csv
+_citation/prompts.json
+_citation/pilot.*
+_citation/ctrl.*
+_citation/_smoke.*
