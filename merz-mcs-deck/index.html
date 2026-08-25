@@ -847,6 +847,26 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 .io-out .wo-list{margin:14px 0 0}
 .io-out .wo-eq{margin:14px 0 12px}
 
+
+/* outcome list items match the input-box headline scale so the two sides read as one system */
+.io-out .wo-list li strong{font-size:25px;font-weight:800;font-stretch:88%;text-transform:uppercase;
+  line-height:1.12;letter-spacing:-.005em;color:#fff}
+.io-out .wo-list li{padding:13px 0}
+
+/* the payoff flies in from the right once the slide is shown */
+.flyin{opacity:0;transform:translateX(56px)}
+.flyin.flew{opacity:1;transform:translateX(0);
+  transition:opacity .55s cubic-bezier(.2,.7,.2,1) .25s,transform .55s cubic-bezier(.2,.7,.2,1) .25s}
+@media (prefers-reduced-motion:reduce){
+  .flyin{opacity:1;transform:none}
+  .flyin.flew{transition:none}
+}
+
+
+.funnel th .fh-ex{display:block;font-size:11.5px;line-height:1.45;color:var(--mcs-grey-dim);
+  margin-top:7px;font-weight:400;font-style:italic}
+.funnel th{padding-bottom:14px}
+
 </style>
 </head>
 <body>
@@ -1138,7 +1158,7 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
         <li><strong>Strong brand recommendation in AI</strong></li>
       </ul>
       <div class="wo-eq">is</div>
-      <div class="io-h out big">More pre-sold customers<br>before the appointment is booked</div>
+      <div class="io-h out big flyin" id="preSold">More pre-sold customers<br>before the appointment is booked</div>
     </div>
   </div>
 
@@ -1157,7 +1177,7 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
   <button id="revealCited" class="revealbtn" type="button">Show &ldquo;cited&rdquo; &rarr;</button></p>
 
   <table class="funnel mid-t mid-b hide-cited" id="funnelTable">
-    <thead><tr><th class="fm"></th><th><span class="fh">TOFU</span><span class="fh-s">What is this treatment?</span></th><th><span class="fh">MOFU</span><span class="fh-s">Which one should I have?</span></th><th><span class="fh">BOFU</span><span class="fh-s">Price, clinic, book it</span></th><th class="sub"><span class="fh">All unbranded</span><span class="fh-s">TOFU + MOFU + BOFU</span></th></tr></thead>
+    <thead><tr><th class="fm"></th><th><span class="fh">Top of funnel</span><span class="fh-s">Awareness</span><span class="fh-ex">&ldquo;Best skin tightening treatment in Singapore?&rdquo;<br>&ldquo;音波拉提原理是什麼？&rdquo;</span></th><th><span class="fh">Middle of funnel</span><span class="fh-s">Consideration</span><span class="fh-ex">&ldquo;Ultherapy vs Thermage &mdash; which is better?&rdquo;<br>&ldquo;音波拉提缺點有哪些？&rdquo;</span></th><th><span class="fh">Bottom of funnel</span><span class="fh-s">Decision</span><span class="fh-ex">&ldquo;How much does Ultherapy cost in Singapore?&rdquo;<br>&ldquo;怎麼挑選音波拉提診所？&rdquo;</span></th><th class="sub"><span class="fh">All unbranded</span><span class="fh-s">Every question that never says &ldquo;Ultherapy&rdquo;</span><span class="fh-ex">Top + middle + bottom combined</span></th></tr></thead>
     <tbody><tr><td class="fm"><b>Singapore</b></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">75%</span><div class="fx-b"><i style="width:75%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">54%</span><div class="fx-b"><i style="width:54%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">83%</span><div class="fx-b"><i style="width:83%"></i></div></div><div class="fx-r cited "><span class="fx-p">67%</span><div class="fx-b"><i style="width:67%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">50%</span><div class="fx-b"><i style="width:50%"></i></div></div></div></td><td class="fx sub"><div class="fx-w"><div class="fx-r"><span class="fx-p">83%</span><div class="fx-b"><i style="width:83%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">60%</span><div class="fx-b"><i style="width:60%"></i></div></div></div></td></tr><tr><td class="fm"><b>Taiwan</b></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">67%</span><div class="fx-b"><i style="width:67%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">6%</span><div class="fx-b"><i style="width:6%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">61%</span><div class="fx-b"><i style="width:61%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">24%</span><div class="fx-b"><i style="width:24%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">73%</span><div class="fx-b"><i style="width:73%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">0%</span><div class="fx-b"><i style="width:0%"></i></div></div></div></td><td class="fx sub"><div class="fx-w"><div class="fx-r"><span class="fx-p">65%</span><div class="fx-b"><i style="width:65%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">14%</span><div class="fx-b"><i style="width:14%"></i></div></div></div></td></tr><tr><td class="fm"><b>Hong Kong</b></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">89%</span><div class="fx-b"><i style="width:89%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">44%</span><div class="fx-b"><i style="width:44%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">94%</span><div class="fx-b"><i style="width:94%"></i></div></div><div class="fx-r cited "><span class="fx-p">64%</span><div class="fx-b"><i style="width:64%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">33%</span><div class="fx-b"><i style="width:33%"></i></div></div></div></td><td class="fx sub"><div class="fx-w"><div class="fx-r"><span class="fx-p">93%</span><div class="fx-b"><i style="width:93%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">52%</span><div class="fx-b"><i style="width:52%"></i></div></div></div></td></tr><tr class="fall"><td class="fm"><b>All three</b></td><td class="fx"><div class="fx-all"><span class="fa-n">78%</span><span class="fa-s">named</span><span class="fa-c">38%</span><span class="fa-s">cited</span><span class="fa-t">n=69</span></div></td><td class="fx"><div class="fx-all"><span class="fa-n">79%</span><span class="fa-s">named</span><span class="fa-c">52%</span><span class="fa-s">cited</span><span class="fa-t">n=102</span></div></td><td class="fx"><div class="fx-all"><span class="fa-n">89%</span><span class="fa-s">named</span><span class="fa-c">25%</span><span class="fa-s">cited</span><span class="fa-t">n=36</span></div></td><td class="fx sub"><div class="fx-all"><span class="fa-n">81%</span><span class="fa-s">named</span><span class="fa-c">43%</span><span class="fa-s">cited</span><span class="fa-t">n=207</span></div></td></tr></tbody>
   </table>
 
@@ -1615,6 +1635,34 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
     b.textContent = hidden ? 'Show \u201ccited\u201d \u2192' : 'Hide \u201ccited\u201d';
     b.classList.toggle('done', !hidden);
   });
+})();
+</script>
+<script>
+/* Replay the slide-7 payoff whenever that slide is actually on screen.
+   deck-stage changes the hash via the history API, which does NOT fire hashchange,
+   so watch real visibility instead of the URL. */
+(function(){
+  var el, wasVisible=false;
+  function visible(n){
+    if(!n) return false;
+    var r=n.getBoundingClientRect();
+    return r.width>0 && r.height>0 && getComputedStyle(n).visibility!=='hidden'
+           && getComputedStyle(n).display!=='none';
+  }
+  function tick(){
+    el = el || document.getElementById('preSold');
+    if(!el) return;
+    var sec = el.closest('section.s');
+    var now = visible(sec);
+    if(now && !wasVisible){
+      el.classList.remove('flew'); void el.offsetWidth; el.classList.add('flew');
+    } else if(!now && wasVisible){
+      el.classList.remove('flew');
+    }
+    wasVisible = now;
+  }
+  setInterval(tick, 180);
+  setTimeout(tick, 250);
 })();
 </script>
 </body>
