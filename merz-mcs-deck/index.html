@@ -105,6 +105,45 @@ h1.t em{font-style:normal;color:var(--mcs-green)}
   color:var(--mcs-white);margin-top:16px}
 .stat .c{font-size:17px;line-height:1.4;color:var(--mcs-grey);margin-top:8px}
 /* vertical variant: few metrics, each given a full row — figure left, read right */
+/* echo network — ported from the Novastacks service deck */
+#s-echo .sys{display:grid;grid-template-columns:0.92fr 1.08fr;gap:40px;margin-top:26px;flex:1;min-height:0}
+#s-echo .syscard{background:var(--mcs-panel);border-top:4px solid var(--mcs-green);padding:28px 30px;
+  display:flex;flex-direction:column;min-height:0}
+#s-echo .track{font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mcs-green);margin:0}
+#s-echo .pname{font-size:36px;font-weight:800;font-stretch:88%;text-transform:uppercase;
+  line-height:1.02;margin:10px 0 0;letter-spacing:-.01em;display:flex;align-items:baseline;
+  gap:14px;flex-wrap:wrap}
+#s-echo .pname .chip{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mcs-green);
+  border:1px solid var(--mcs-green);padding:4px 9px;text-transform:uppercase}
+#s-echo .crow{padding:18px 0 0;margin-top:18px;border-top:1px solid var(--mcs-rule)}
+#s-echo .crow .cl{font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mcs-grey);margin:0 0 8px}
+#s-echo .crow .ct{font-size:18px;line-height:1.45;color:#BDBDBD;margin:0}
+#s-echo .crow.us .cl{color:var(--mcs-green)}
+#s-echo .crow.us .ct{color:#E6E6E6}
+#s-echo .crow.us .ct strong{color:#fff}
+#s-echo .fstrip{font-size:13.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--mcs-green);margin:auto 0 0;padding-top:22px;line-height:1.6}
+#s-echo .fstrip .sepdot{color:var(--mcs-grey-dim);margin:0 8px}
+#s-echo .sysviz{display:flex;flex-direction:column;min-width:0;justify-content:center}
+#s-echo .vframe{background:#0A0A0A;border:1px solid var(--mcs-rule);padding:18px 22px}
+#s-echo .vcap{font-size:16.5px;line-height:1.45;color:var(--mcs-grey);margin:16px 0 0}
+#s-echo .vcap strong{color:#fff}
+#s-echo .ctab{width:100%;border-collapse:collapse;font-size:16px}
+#s-echo .ctab th{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mcs-grey);text-align:left;padding:0 0 10px;border-bottom:1px solid var(--mcs-rule)}
+#s-echo .ctab td{padding:14px 0;border-bottom:1px solid var(--mcs-rule);color:#D8D8D8;
+  vertical-align:top;line-height:1.4}
+#s-echo .ctab td:nth-child(3){padding-left:26px;color:var(--mcs-grey);font-size:15px}
+#s-echo .ctab th:nth-child(3){padding-left:26px}
+#s-echo .ctab th:nth-child(2){padding-right:0;white-space:nowrap}
+#s-echo .ctab th.r,#s-echo .ctab td.r{text-align:right;white-space:nowrap;padding-right:0}
+#s-echo .ctab td.r b{color:var(--mcs-green);font-size:22px;font-weight:800}
+#s-echo .ctab tbody tr:last-child td{border-bottom:0}
+#s-echo .ctab .cx{font-size:13.5px;color:var(--mcs-grey-dim)}
+#s-echo .ctab td b{color:#fff}
+
 /* method slide */
 .stats.method{margin-top:34px;flex:1;align-content:center}
 .stats.method .stat{padding:30px 30px 30px 0}
@@ -1082,7 +1121,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 </svg>
   <div class="foot">
     <p>DataForSEO Labs, 6,167 deduplicated queries, re-pulled 25 Aug 2026 &middot; citation rates: ChatGPT, 252 answers, 25 Aug. <strong>Only ChatGPT measured</strong> &mdash; other assistants shown as destinations.</p>
-    <p class="num">02 / 22</p>
+    <p class="num">02 / 21</p>
   </div>
 </section>
 
@@ -1114,16 +1153,16 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Cloudflare Q2 2026 earnings call, Aug 2026, widely reported. Seifert noted his own forecasts have been wrong before &mdash; the 1,000&times; figure is a prediction; the May 2026 crossover is measured.</p>
-    <p class="num">03 / 22</p>
+    <p class="num">03 / 21</p>
   </div>
 </section>
 
 <!-- ============ 4 ============ -->
 <section class="s" id="s-method">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
-  <p class="kicker">The question <span class="sep">/</span> How we measured it</p>
-  <h1 class="t sm">Everything after this slide<br>is <em>measured</em>, not asserted.</h1>
-  <p class="sub">Live engines, five markets, each in its own language. Every number in this deck traces back to one of these four runs &mdash; all pulled in the last 48 hours.</p>
+  <p class="kicker">The question <span class="sep">/</span> Data methodology</p>
+  <h1 class="t sm">Data methodology &mdash; everything<br>is <em>measured</em>, not assumed.</h1>
+  <p class="sub">We fetched the data from live engines in five markets, in local languages. Every number in this deck traces back to one of these four runs &mdash; all pulled in the last 48 hours.</p>
 
   <div class="stats method">
     <div class="stat">
@@ -1161,7 +1200,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>ChatGPT measured at scale via DataForSEO llm_scraper. Google AI Mode captured live, shown as observation. Traffic is estimated &mdash; <strong>no Search Console exists on any Merz property</strong>.</p>
-    <p class="num">04 / 22</p>
+    <p class="num">04 / 21</p>
   </div>
 </section>
 
@@ -1205,7 +1244,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Live answers captured 25 Aug 2026. The ranking changes with the destination, not with the market.</p>
-    <p class="num">05 / 22</p>
+    <p class="num">05 / 21</p>
   </div>
 </section>
 
@@ -1224,7 +1263,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 25 Aug 2026. 207 unbranded answers across Singapore, Taiwan and Hong Kong. BOFU is the smallest cell at n=36 &mdash; directional, not precise.</p>
-    <p class="num">06 / 22</p>
+    <p class="num">06 / 21</p>
   </div>
 </section>
 
@@ -1250,7 +1289,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 25 Aug 2026 &mdash; the same run behind the Echo Network dashboard.</p>
-    <p class="num">07 / 22</p>
+    <p class="num">07 / 21</p>
   </div>
 </section>
 
@@ -1279,7 +1318,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Identical seed structure in all five markets, word-order variants deduplicated on both sides. DataForSEO, 25 Aug 2026; no Search Console exists on any Merz property, so visits are estimates.</p>
-    <p class="num">08 / 22</p>
+    <p class="num">08 / 21</p>
   </div>
 </section>
 
@@ -1310,7 +1349,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>DataForSEO Labs, 24 Aug 2026. Bucket volumes reconcile exactly to market totals in all five markets.</p>
-    <p class="num">09 / 22</p>
+    <p class="num">09 / 21</p>
   </div>
 </section>
 
@@ -1366,7 +1405,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Citation rates: ChatGPT, 207 unbranded answers across Singapore, Taiwan and Hong Kong, 25 Aug 2026.</p>
-    <p class="num">10 / 22</p>
+    <p class="num">10 / 21</p>
   </div>
 </section>
 
@@ -1378,7 +1417,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   The first two are owned media. The third is earned &mdash; and it is where the answer is decided.</p>
   <div class="foot">
     <p>The proposal</p>
-    <p class="num">11 / 22</p>
+    <p class="num">11 / 21</p>
   </div>
 </section>
 
@@ -1401,7 +1440,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>ultherapy-asia.com against drreborn.com, a competing clinic site. Live crawl, 25 Aug 2026, four pages per domain.</p>
-    <p class="num">12 / 22</p>
+    <p class="num">12 / 21</p>
   </div>
 </section>
 
@@ -1434,7 +1473,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Live fetch and source inspection, 25 Aug 2026. Image path dates the table to Feb 2016. Comparison queries measure 92% named, 42% cited.</p>
-    <p class="num">13 / 22</p>
+    <p class="num">13 / 21</p>
   </div>
 </section>
 
@@ -1464,46 +1503,16 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   </div>
   <div class="foot">
     <p>Locale set derived from measured query language per market. Canonical finding: Merz Singapore preliminary analysis, 7 Aug 2026.</p>
-    <p class="num">14 / 22</p>
+    <p class="num">14 / 21</p>
   </div>
 </section>
 
 <!-- ============ 15 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
-  <p class="kicker">Content Architecture <span class="sep">/</span> One answerable destination</p>
-  <h1 class="t">Consolidate four domains into<br>one answerable destination.</h1>
-  <p class="sub">ultherapy-asia.com becomes the regional source of truth &mdash; and we build on it the content engines actually quote: definitional, comparison, safety and indication layers, structured so they <em>can</em> be quoted.</p>
-
-  <div class="stats three mid-t mid-b">
-    <div class="stat">
-      <div class="v g">84,140</div>
-      <div class="l">Searches with no Merz domain ranking</div>
-      <div class="c">Taiwan and Thailand combined, deduplicated. Entirely unclaimed &mdash; and therefore where the migration starts.</div>
-    </div>
-    <div class="stat">
-      <div class="v g">1,600</div>
-      <div class="l">Monthly searches for 超聲刀</div>
-      <div class="c">The term Hong Kong actually uses for this treatment. Merz currently ranks position 43 &mdash; on a certification page.</div>
-    </div>
-    <div class="stat">
-      <div class="v g">7,372</div>
-      <div class="l">Monthly visits to protect</div>
-      <div class="c">Live equity across three country domains. The sequence exists to move it without losing it.</div>
-    </div>
-  </div>
-  <div class="foot">
-    <p>DataForSEO Labs, 24 Aug 2026, estimates. No Search Console baseline exists on any Merz property &mdash; establishing one is a prerequisite.</p>
-    <p class="num">15 / 22</p>
-  </div>
-</section>
-
-<!-- ============ 16 ============ -->
-<section class="s">
-  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Content Architecture <span class="sep">/</span> What to build, in what order</p>
-  <h1 class="t sm">Build a question-and-answer destination<br>on your <em>own</em> domain.</h1>
-  <p class="sub">Not a brochure restructured &mdash; the real questions people ask, clustered and scored on whether a Merz page was the source. <strong>The weakest clusters are the build order.</strong></p>
+  <h1 class="t sm">Build retrievable question-and-answer<br>content on your <em>own</em> domain.</h1>
+  <p class="sub">Not a brochure restructured. The real questions people ask &mdash; answered in text, image and video, and marked up so an engine can lift the answer straight out of the page. <strong>We build in order of weakness: the clusters where a Merz page is least often the cited source come first.</strong></p>
 
   <table class="d tight clusters mid-t mid-b">
     <thead><tr><th>Content cluster &amp; example page</th><th>Example URL</th><th class="r">Named</th><th class="r">Cited</th><th>Why it ranks here</th></tr></thead>
@@ -1522,53 +1531,78 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Cited = a Merz page was the source. ChatGPT, 252 answers, SG/TW/HK, 25 Aug 2026. Price and clinic-ranking clusters excluded by decision.</p>
-    <p class="num">16 / 22</p>
+    <p class="num">15 / 21</p>
   </div>
 </section>
 
-<!-- ============ 17 ============ -->
-<section class="s">
+<!-- ============ 16 ============ -->
+<section class="s" id="s-echo">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Own the Sources AI Cites <span class="sep">/</span> Off-page citation</p>
   <h1 class="t">Earn the citations<br>you cannot own.</h1>
   <p class="sub">Merz is a manufacturer, not a provider. It cannot quote treatment prices and should not chase best-clinic lists. <strong>That is not a limitation &mdash; it defines where the leverage is.</strong></p>
 
-  <div class="two wide-l mid-t mid-b">
-    <div class="col">
-      <h3>Distribution is the citation network</h3>
-      <ul class="pts">
-        <li>Doctors and clinics carry <strong>their own domains and their own authority</strong> &mdash; and are already cited in the answers where Merz is absent.</li>
-        <li>We identify which are being cited today and which are actively promoting the brand, then build the programme around them.</li>
-        <li><strong>Pre-approved, schema-marked material</strong> certified clinics publish with attribution back to Merz. Their authority, carrying your claims.</li>
-      </ul>
+  <div class="sys">
+    <div class="syscard">
+      <p class="track">Echo track</p>
+      <p class="pname">Echo Network <span class="chip">Off-page</span></p>
+      <div class="crow">
+        <p class="cl">Most agencies</p>
+        <p class="ct">Generic digital PR against a standard media list, then a report of placements.</p>
+      </div>
+      <div class="crow us">
+        <p class="cl">Novastacks</p>
+        <p class="ct">Citation mining first. The outreach list is the exact set of domains each engine
+        <strong>already cited for your prompts</strong> &mdash; per market, in language. Your certified
+        clinics and doctors publish pre-approved, schema-marked material that attributes back to Merz:
+        their authority, carrying your claims.</p>
+      </div>
+      <p class="fstrip">Citation mining<span class="sepdot">&middot;</span>Clinic activation<span class="sepdot">&middot;</span>Medical publication<span class="sepdot">&middot;</span>Community listening</p>
     </div>
-    <div class="col">
-      <h3>Echo Network &mdash; listening underneath it</h3>
-      <ul class="pts">
-        <li>Identifies <strong>who to work with</strong>, and reads how consumers actually discuss the treatment in the forums and communities engines cite.</li>
-        <li>Taiwan makes the case concretely: <strong>Dcard carries 1,600 monthly searches</strong> attached to this treatment &mdash; a single community shaping the category conversation.</li>
-        <li>Sentiment split by funnel stage, the publishers AI actually cites, and the content actions that follow.</li>
-      </ul>
+
+    <div class="sysviz">
+      <div class="vframe">
+        <table class="ctab">
+          <thead><tr><th>What the engines cite today</th><th class="r">Citations</th><th>Where the leverage is</th></tr></thead>
+          <tbody>
+            <tr><td><b>Publishers &amp; editorial</b><br><span class="cx">aad.org, academic.oup.com, eyewiki.aao.org</span></td>
+                <td class="r"><b>400</b><br><span class="cx">37%</span></td>
+                <td>Industry and association pages Merz can be quoted in.</td></tr>
+            <tr><td><b>Regulators &amp; journals</b><br><span class="cx">pubmed 165 &middot; pmc 77 &middot; FDA 40</span></td>
+                <td class="r"><b>325</b><br><span class="cx">30%</span></td>
+                <td>Merz&rsquo;s own MFU-V evidence, cited &mdash; but never back to Merz.</td></tr>
+            <tr><td><b>Clinics &amp; providers</b><br><span class="cx">plasticsurgery.org, cutislaserclinics.com</span></td>
+                <td class="r"><b>305</b><br><span class="cx">28%</span></td>
+                <td>Your own distribution network, already being quoted.</td></tr>
+            <tr class="cl-com"><td><b>Communities &amp; forums</b><br><span class="cx">dcard.tw 25 &middot; reddit 19</span></td>
+                <td class="r"><b>44</b><br><span class="cx">4%</span></td>
+                <td>Dcard alone carries 1,600 monthly searches in Taiwan.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="vcap"><strong>1,074 third-party citations across 271 domains.</strong> This is the outreach
+      list &mdash; mined from your own answers, not from a media database.</p>
     </div>
   </div>
+
   <div class="foot">
-    <p>Dcard volume: DataForSEO Labs, Taiwan, 24 Aug 2026. Cited-source measurement begins with the first Prompt Radar run.</p>
-    <p class="num">17 / 22</p>
+    <p>Citation counts: ChatGPT, 252 answers, Singapore, Taiwan and Hong Kong, 25 Aug 2026. Dcard search volume: DataForSEO Labs, Taiwan, 24 Aug 2026.</p>
+    <p class="num">16 / 21</p>
   </div>
 </section>
 
-<!-- ============ 18 ============ -->
+<!-- ============ 17 ============ -->
 <section class="s divider light">
   <p class="dn">Section 03</p>
   <h1>How we work,<br>and what we report</h1>
   <p class="ds">Phased against your 1 April 2027 go-live, with three numbers reported monthly.</p>
   <div class="foot">
     <p>Go-live date per Merz brief, 20 Aug 2026</p>
-    <p class="num">18 / 22</p>
+    <p class="num">17 / 21</p>
   </div>
 </section>
 
-<!-- ============ 19 ============ -->
+<!-- ============ 18 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Roadmap</p>
@@ -1615,11 +1649,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Indicative sequence. Phase 1 assumes crawler access and Search Console are resolved &mdash; both are prerequisites, not tasks.</p>
-    <p class="num">19 / 22</p>
+    <p class="num">18 / 21</p>
   </div>
 </section>
 
-<!-- ============ 20 ============ -->
+<!-- ============ 19 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Reporting</p>
@@ -1645,11 +1679,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   </div>
   <div class="foot">
     <p>Reported monthly. Baselines set in the Foundation phase, before any migration begins.</p>
-    <p class="num">20 / 22</p>
+    <p class="num">19 / 21</p>
   </div>
 </section>
 
-<!-- ============ 21 ============ -->
+<!-- ============ 20 ============ -->
 <section class="s" id="s-price">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Investment</p>
@@ -1724,11 +1758,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>USD, excluding tax, over a six-month term. 30% discount on per-market lines from the third market. Extra pages $80 each. <strong>Additional languages quoted separately.</strong></p>
-    <p class="num">21 / 22</p>
+    <p class="num">20 / 21</p>
   </div>
 </section>
 
-<!-- ============ 22 ============ -->
+<!-- ============ 21 ============ -->
 <section class="s invert">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">How we work <span class="sep">/</span> What we need</p>
@@ -1754,7 +1788,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   </div>
   <div class="foot">
     <p>Crawler finding observed from a single network on 24 Aug 2026 and not yet independently confirmed &mdash; presented as a check to run, not a verdict.</p>
-    <p class="num">22 / 22</p>
+    <p class="num">21 / 21</p>
   </div>
 </section>
 

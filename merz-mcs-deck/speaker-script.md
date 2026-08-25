@@ -12,7 +12,7 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-## ACT 1 — The ground moved (slides 1–4)
+## ACT 1 — The ground moved (slides 1–5)
 
 ### SLIDE 1 — Cover
 
@@ -57,7 +57,22 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-### SLIDE 4 — The new storefront
+### SLIDE 4 — Data methodology
+
+*Beat:* Buy credibility before you spend it. Twenty seconds, then move.
+
+> Before I show you anything about Merz — everything after this slide was fetched from
+> live engines in the last 48 hours. None of it is assumed, and none of it is a template.
+> Six thousand queries across your five markets. Eighty-four real buyer questions, asked
+> in each market's own language. Two hundred and fifty-two answers read and scored one by
+> one. And ten of your own pages crawled against a competitor's.
+> If you disagree with a number later, we can show you the run behind it.
+
+*Bridge:* "So — what does the category look like in those answers?"
+
+---
+
+### SLIDE 5 — The new storefront
 
 *Beat:* Make it visceral and specific. Three live answers, one uncomfortable pattern.
 
@@ -73,9 +88,9 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-## ACT 2 — You are known, but you are not the source (slides 5–8)
+## ACT 2 — You are known, but you are not the source (slides 6–9)
 
-### SLIDE 5 — Decision problem
+### SLIDE 6 — Decision problem
 
 *Beat:* Introduce the one distinction the entire deck runs on: **named** vs **cited**.
 
@@ -94,7 +109,7 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-### SLIDE 6 — The measured gap
+### SLIDE 7 — The measured gap
 
 *Beat:* Show the mechanism. Don't read the table — read two rows.
 
@@ -110,7 +125,7 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-### SLIDE 7 — Thin sites
+### SLIDE 8 — Thin sites
 
 *Beat:* The owned-media problem, stated without blame.
 
@@ -124,7 +139,7 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-### SLIDE 8 — Where the demand is
+### SLIDE 9 — Where the demand is
 
 *Beat:* Close Act 2 by joining the two halves — you lose the unbranded question, and the unbranded question is the market.
 
@@ -139,9 +154,9 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-## ACT 3 — What winning takes (slides 9–10)
+## ACT 3 — What winning takes (slides 10–11)
 
-### SLIDE 9 — Three moves
+### SLIDE 10 — Three moves
 
 *Beat:* The pivot from pain to plan. This is where you say what we do that others don't.
 
@@ -164,7 +179,7 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-### SLIDE 10 — Section divider
+### SLIDE 11 — Section divider
 
 *Beat:* Breath. One line only.
 
@@ -172,9 +187,9 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-## ACT 4 — The proposal (slides 11–16)
+## ACT 4 — The proposal (slides 12–16)
 
-### SLIDE 11 — What the machine finds
+### SLIDE 12 — What the machine finds
 
 *Beat:* Diagnosis, side by side with a competitor so it isn't abstract.
 
@@ -189,7 +204,7 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-### SLIDE 12 — Built in 2016
+### SLIDE 13 — Built in 2016
 
 *Beat:* The proof slide. Slow down — this is the one they will remember.
 
@@ -207,30 +222,20 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ---
 
-### SLIDE 13 — One domain
+### SLIDE 14 — One domain
 
-*Beat:* Technical, so keep it short and concrete.
+*Beat:* Technical, so keep it short — then answer the migration objection before it is asked.
 
 > Five markets, one destination, each with its own localised content.
 > The detail that matters: Singapore and Australia are both in English on one domain.
 > Without correct locale signals they compete with each other. Today your two Singapore
 > domains target the same queries and declare no relationship at all — so you are
 > splitting your own authority.
-
-*Bridge:* "Consolidation is the move. Here's what makes it worth the disruption."
-
----
-
-### SLIDE 14 — The destination
-
-*Beat:* Answer the migration objection before it is asked.
-
-> Eighty-four thousand searches a month in Taiwan and Thailand have no Merz domain
-> ranking at all. That is unclaimed — nothing to lose there, which is where we start.
-> Seven thousand monthly visits do exist across the country domains, and the sequence
-> exists to move them without dropping them.
-> One example of what is being left on the table: 超聲刀 — the term Hong Kong actually
-> uses for this treatment — 1,600 searches a month. Merz ranks 43rd, on a certification page.
+>
+> And on the risk of consolidating — eighty-four thousand searches a month in Taiwan
+> and Thailand have no Merz domain ranking at all. That part is unclaimed, so there is
+> nothing to lose, and that is where we start. The seven thousand monthly visits that
+> do exist get moved deliberately, not dropped.
 
 *Bridge:* "Once there is one destination, the question is what to put on it."
 
@@ -242,7 +247,8 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 > These clusters are not a content plan someone brainstormed. Each one is a real question
 > pattern, scored on whether a Merz page was the source.
-> The cited column is the build order. Concerns and outcomes — where the buyer describes
+> Read the cited column as the running order: the lower the number, the sooner we build it,
+> because that is where you are least often the source. Concerns and outcomes — where the buyer describes
 > a problem instead of a product — is cited 20% of the time. That is where we start.
 > Two worth calling out. Clinical evidence: 165 PubMed citations exist on your own
 > technology and none of them resolve to you — that is a page you are entitled to own
@@ -260,16 +266,18 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 > Merz is a manufacturer, not a provider. You cannot quote prices and you should not be
 > chasing best-clinic lists. That constraint is exactly where the leverage is.
-> Your distribution network is a citation network. Your certified doctors and clinics have
-> their own domains and their own authority, and they are already being cited in the
-> answers where Merz is absent.
-> We know which ones, because we measured it. Not a list of publications to pitch —
-> the specific sources these engines drew from, per market, in language.
-> The programme is: pre-approved, schema-marked material those clinics publish with
-> attribution back to Merz. Their authority, carrying your claims.
-> And underneath it, Echo Network listens to how consumers actually discuss this
-> treatment. In Taiwan, Dcard alone carries 1,600 searches a month attached to this
-> category — one community shaping the conversation the engines then quote.
+> Here is the difference between this and ordinary digital PR. Most agencies would take a
+> standard media list and pitch it. We start from the citations themselves: across your
+> answers there are 1,074 third-party citations spread over 271 domains — and we know
+> which ones, per market, in language.
+> Read the right-hand column. Thirty per cent of them are regulators and journals —
+> that is your own MFU-V evidence being cited, and never back to you.
+> Twenty-eight per cent are clinics and providers. That is your own distribution network,
+> already being quoted while Merz is absent. Those are the people we approach, with
+> pre-approved, schema-marked material they publish and attribute back to Merz.
+> Their authority, carrying your claims.
+> And communities are only four per cent of citations but far more of the conversation —
+> in Taiwan, Dcard alone carries 1,600 searches a month attached to this category.
 
 *Bridge:* "So that is what we would build. Here is how it runs."
 
@@ -357,7 +365,7 @@ nowhere — and the decision now happens inside an answer written by somebody el
 
 ## If you only have ten minutes
 
-Slides **4 → 5 → 12 → 9 → 20**.
+Slides **5 → 6 → 13 → 10 → 20**.
 The storefront, the named-versus-cited gap, the 2016 JPEG, the three moves, the price.
 
 ## Two questions to expect
