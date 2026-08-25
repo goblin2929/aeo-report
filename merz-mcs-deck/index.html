@@ -827,6 +827,12 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 .io-ins.three .io-card{padding:18px 22px}
 .io-ins.three .io-h{font-size:25px;margin:9px 0 9px}
 .io-ins.three .io-card p{font-size:16.5px;line-height:1.4}
+/* slide 6 — label above the three inputs */
+#s-moves .io-lead{display:grid;grid-template-columns:1fr auto 0.92fr;gap:26px;
+  margin-top:28px;align-items:end}
+#s-moves .io-lead p{margin:0 0 8px}
+#s-moves .io{margin-top:6px}
+
 /* slide 6 sits on white */
 .s.invert .io-card{background:#F4F4F4;border-top-color:var(--mcs-green-deep)}
 .s.invert .io-tag{color:var(--mcs-green-deep)}
@@ -1147,10 +1153,76 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 </section>
 
 <!-- ============ 6 ============ -->
-<section class="s invert">
+<section class="s">
+  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">Machine Readable Site</p>
+  <h1 class="t sm">Local official sites are thin and unstructured,<br>capturing under <em>3%</em> of category search.</h1>
+  <p class="sub">Galderma and Allergan each concentrate on a single host. Merz splits across four properties &mdash; <strong>so nothing accumulates, and almost nothing converts to traffic.</strong></p>
+
+  <table class="d tight mid-t mid-b">
+    <thead><tr><th>Market</th><th class="r">Monthly searches</th>
+      <th>Merz property</th><th class="r">Top-10</th><th class="r">Est. visits</th><th class="r">Capture</th></tr></thead>
+    <tbody>
+      <tr><td><b>Australia</b></td><td class="r num">106,040</td><td>ultherapy.com.au</td><td class="r num dim">28</td><td class="r num">2,171</td><td class="r"><span class="cap caplo">2.0%</span></td></tr>
+      <tr class="me"><td><b>Thailand</b></td><td class="r num">56,730</td><td><span class="bad">no Merz domain ranks</span></td><td class="r num dim">0</td><td class="r num">0</td><td class="r"><span class="cap cap0">0.0%</span></td></tr>
+      <tr><td><b>Singapore</b></td><td class="r num">49,840</td><td>ultherapysg.com</td><td class="r num dim">37</td><td class="r num">2,979</td><td class="r"><span class="cap capmid">6.0%</span></td></tr>
+      <tr><td><b>Hong Kong</b></td><td class="r num">36,500</td><td>ultherapy.com.hk</td><td class="r num dim">16</td><td class="r num">2,222</td><td class="r"><span class="cap capmid">6.1%</span></td></tr>
+      <tr class="me"><td><b>Taiwan</b></td><td class="r num">27,410</td><td><span class="bad">no Merz domain ranks</span></td><td class="r num dim">0</td><td class="r num">0</td><td class="r"><span class="cap cap0">0.0%</span></td></tr>
+      <tr class="tot"><td><b>Five markets</b></td><td class="r num"><b>276,520</b></td>
+        <td class="dim">four properties + one empty regional domain</td>
+        <td class="r num dim"><b>81</b></td><td class="r num"><b>7,372</b></td>
+        <td class="r"><span class="cap caplo"><b>2.7%</b></span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="foot">
+    <p>Identical seed structure in all five markets, word-order variants deduplicated on both sides. DataForSEO, 25 Aug 2026; no Search Console exists on any Merz property, so visits are estimates.</p>
+    <p class="num">06 / 22</p>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="s">
+  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">Where you stand <span class="sep">/</span> Why it matters</p>
+  <h1 class="t">And the category question<br>is where the demand is.</h1>
+  <p class="sub">The unbranded question &mdash; the one Ultherapy loses &mdash; is the majority of search volume in three of five markets.</p>
+
+  <div class="stats three mid-t mid-b">
+    <div class="stat">
+      <div class="v g xl">64%</div>
+      <div class="l">Hong Kong</div>
+      <div class="c">Of all category search volume is unbranded. 45,250 monthly searches that never say &ldquo;Ultherapy&rdquo;.</div>
+    </div>
+    <div class="stat">
+      <div class="v g xl">62%</div>
+      <div class="l">Australia</div>
+      <div class="c">66,650 monthly searches for HIFU, skin tightening and non-surgical lifting &mdash; brand-agnostic.</div>
+    </div>
+    <div class="stat">
+      <div class="v g xl">50%</div>
+      <div class="l">Thailand</div>
+      <div class="c">49,500 monthly searches. Taiwan inverts &mdash; 48% is brand-named, so the brand layer must hold there.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>DataForSEO Labs, 24 Aug 2026. Bucket volumes reconcile exactly to market totals in all five markets.</p>
+    <p class="num">07 / 22</p>
+  </div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="s invert" id="s-moves">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
-  <p class="kicker">The question <span class="sep">/</span> What winning takes</p>
+  <p class="kicker">GEO strategy <span class="sep">/</span> What winning takes</p>
   <h1 class="t sm">Winning in AI is not<br>one beautiful website.</h1>
+
+  <div class="io-lead">
+    <p class="io-tag">We help you build</p>
+    <div></div>
+    <div></div>
+  </div>
 
   <div class="io mid-t mid-b">
     <div class="io-ins three">
@@ -1180,7 +1252,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
     </div>
 
     <div class="io-out">
-      <div class="io-tag out">The outcome</div>
+      <div class="io-tag out">Your business outcome</div>
       <ul class="wo-list">
         <li><strong>Higher visibility in AI</strong></li>
         <li><strong>Strong brand recommendation in AI</strong></li>
@@ -1192,66 +1264,6 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Citation rates: ChatGPT, 207 unbranded answers across Singapore, Taiwan and Hong Kong, 25 Aug 2026.</p>
-    <p class="num">06 / 22</p>
-  </div>
-</section>
-
-<!-- ============ 7 ============ -->
-<section class="s">
-  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
-  <p class="kicker">Machine Readable Site</p>
-  <h1 class="t sm">Local official sites are thin and unstructured,<br>capturing under <em>3%</em> of category search.</h1>
-  <p class="sub">Galderma and Allergan each concentrate on a single host. Merz splits across four properties &mdash; <strong>so nothing accumulates, and almost nothing converts to traffic.</strong></p>
-
-  <table class="d tight mid-t mid-b">
-    <thead><tr><th>Market</th><th class="r">Monthly searches</th>
-      <th>Merz property</th><th class="r">Top-10</th><th class="r">Est. visits</th><th class="r">Capture</th></tr></thead>
-    <tbody>
-      <tr><td><b>Australia</b></td><td class="r num">106,040</td><td>ultherapy.com.au</td><td class="r num dim">28</td><td class="r num">2,171</td><td class="r"><span class="cap caplo">2.0%</span></td></tr>
-      <tr class="me"><td><b>Thailand</b></td><td class="r num">56,730</td><td><span class="bad">no Merz domain ranks</span></td><td class="r num dim">0</td><td class="r num">0</td><td class="r"><span class="cap cap0">0.0%</span></td></tr>
-      <tr><td><b>Singapore</b></td><td class="r num">49,840</td><td>ultherapysg.com</td><td class="r num dim">37</td><td class="r num">2,979</td><td class="r"><span class="cap capmid">6.0%</span></td></tr>
-      <tr><td><b>Hong Kong</b></td><td class="r num">36,500</td><td>ultherapy.com.hk</td><td class="r num dim">16</td><td class="r num">2,222</td><td class="r"><span class="cap capmid">6.1%</span></td></tr>
-      <tr class="me"><td><b>Taiwan</b></td><td class="r num">27,410</td><td><span class="bad">no Merz domain ranks</span></td><td class="r num dim">0</td><td class="r num">0</td><td class="r"><span class="cap cap0">0.0%</span></td></tr>
-      <tr class="tot"><td><b>Five markets</b></td><td class="r num"><b>276,520</b></td>
-        <td class="dim">four properties + one empty regional domain</td>
-        <td class="r num dim"><b>81</b></td><td class="r num"><b>7,372</b></td>
-        <td class="r"><span class="cap caplo"><b>2.7%</b></span></td></tr>
-    </tbody>
-  </table>
-
-  <div class="foot">
-    <p>Identical seed structure in all five markets, word-order variants deduplicated on both sides. DataForSEO, 25 Aug 2026; no Search Console exists on any Merz property, so visits are estimates.</p>
-    <p class="num">07 / 22</p>
-  </div>
-</section>
-
-<!-- ============ 8 ============ -->
-<section class="s">
-  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
-  <p class="kicker">Where you stand <span class="sep">/</span> Why it matters</p>
-  <h1 class="t">And the category question<br>is where the demand is.</h1>
-  <p class="sub">The unbranded question &mdash; the one Ultherapy loses &mdash; is the majority of search volume in three of five markets.</p>
-
-  <div class="stats three mid-t mid-b">
-    <div class="stat">
-      <div class="v g xl">64%</div>
-      <div class="l">Hong Kong</div>
-      <div class="c">Of all category search volume is unbranded. 45,250 monthly searches that never say &ldquo;Ultherapy&rdquo;.</div>
-    </div>
-    <div class="stat">
-      <div class="v g xl">62%</div>
-      <div class="l">Australia</div>
-      <div class="c">66,650 monthly searches for HIFU, skin tightening and non-surgical lifting &mdash; brand-agnostic.</div>
-    </div>
-    <div class="stat">
-      <div class="v g xl">50%</div>
-      <div class="l">Thailand</div>
-      <div class="c">49,500 monthly searches. Taiwan inverts &mdash; 48% is brand-named, so the brand layer must hold there.</div>
-    </div>
-  </div>
-
-  <div class="foot">
-    <p>DataForSEO Labs, 24 Aug 2026. Bucket volumes reconcile exactly to market totals in all five markets.</p>
     <p class="num">08 / 22</p>
   </div>
 </section>
@@ -1259,7 +1271,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 <!-- ============ 9 ============ -->
 <section class="s divider">
   <p class="dn">Section 02</p>
-  <h1>Three moves</h1>
+  <h1>Machine-readable<br>official site</h1>
   <p class="ds"><strong>01 Machine-readable site.</strong> <strong>02 Content architecture.</strong> <strong>03 Own the sources AI cites.</strong><br>
   The first two are owned media. The third is earned &mdash; and it is where the answer is decided.</p>
   <div class="foot">
