@@ -1,0 +1,42 @@
+{
+ "SG": {
+  "pulled": 3014,
+  "pulled_vol": 77100,
+  "kept": 3014,
+  "kept_vol": 77100,
+  "uniq": 2746,
+  "dedup_vol": 68520
+ },
+ "AU": {
+  "pulled": 3320,
+  "pulled_vol": 149210,
+  "kept": 3320,
+  "kept_vol": 149210,
+  "uniq": 3040,
+  "dedup_vol": 129500
+ },
+ "TH": {
+  "pulled": 2605,
+  "pulled_vol": 167690,
+  "kept": 2605,
+  "kept_vol": 167690,
+  "uniq": 2078,
+  "dedup_vol": 138010
+ },
+ "TW": {
+  "pulled": 1494,
+  "pulled_vol": 143100,
+  "kept": 1490,
+  "kept_vol": 142090,
+  "uniq": 1004,
+  "dedup_vol": 100890
+ },
+ "HK": {
+  "pulled": 1924,
+  "pulled_vol": 80380,
+  "kept": 1899,
+  "kept_vol": 79460,
+  "uniq": 1370,
+  "dedup_vol": 56170
+ }
+}

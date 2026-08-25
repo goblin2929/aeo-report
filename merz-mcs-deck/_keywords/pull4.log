@@ -1,0 +1,37 @@
+  SG 'ultherapy': 1000 items, unique 1000
+  SG 'ultherapy prime': 57 items, unique 1002
+  SG 'hifu': 1000 items, unique 1957
+  SG 'ultrasound skin lifting': 1 items, unique 1958
+  SG 'skin tightening treatment': 132 items, unique 2051
+  SG 'sagging skin treatment': 28 items, unique 2076
+SG: pulled 2076/58,210 -> kept 2005 -> dedup 1826/49,840
+  AU 'ultherapy': 1000 items, unique 1000
+  AU 'ultherapy prime': 50 items, unique 1007
+  AU 'hifu': 1000 items, unique 1990
+  AU 'ultrasound skin lifting': 1 items, unique 1991
+  AU 'skin tightening treatment': 227 items, unique 2180
+  AU 'sagging skin treatment': 58 items, unique 2238
+AU: pulled 2238/125,410 -> kept 2193 -> dedup 2007/106,040
+  TH 'ultherapy': 276 items, unique 228
+  TH 'ultherapy prime': 25 items, unique 228
+  TH 'hifu': 1000 items, unique 1211
+  TH 'ยกกระชับผิวหน้า': 9 items, unique 1219
+  TH 'กระชับผิว': 13 items, unique 1228
+  TH 'ผิวหย่อนคล้อย': 11 items, unique 1236
+TH: pulled 1236/70,780 -> kept 1182 -> dedup 961/56,730
+  TW 'ultherapy': 75 items, unique 54
+  TW 'ultherapy prime': 13 items, unique 54
+  TW 'hifu': 250 items, unique 182
+  TW '音波拉提': 345 items, unique 448
+  TW '臉部緊緻': 21 items, unique 460
+  TW '臉部鬆弛': 29 items, unique 487
+TW: pulled 487/34,330 -> kept 478 -> dedup 353/25,880
+  HK 'ultherapy': 439 items, unique 312
+  HK 'ultherapy prime': 27 items, unique 312
+  HK 'hifu': 1000 items, unique 1290
+  HK '超聲刀': 145 items, unique 1399
+  HK '面部緊緻': 10 items, unique 1405
+  HK '面部鬆弛': 5 items, unique 1410
+HK: pulled 1410/56,030 -> kept 1346 -> dedup 956/36,500
+
+DONE

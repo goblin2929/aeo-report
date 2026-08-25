@@ -1,0 +1,42 @@
+  SG 'ultherapy': 1000 items, unique 1000
+  SG 'ultherapy prime': 57 items, unique 1002
+  SG 'hifu': 1000 items, unique 1957
+  SG 'thermage': 984 items, unique 2579
+  SG 'ultraformer': 380 items, unique 2802
+  SG 'sofwave': 150 items, unique 2921
+  SG 'skin tightening treatment': 132 items, unique 3014
+SG: pulled 3014 / 77,100 -> filtered 3014 -> dedup 2746 / 68,520
+  AU 'ultherapy': 1000 items, unique 1000
+  AU 'ultherapy prime': 50 items, unique 1007
+  AU 'hifu': 1000 items, unique 1990
+  AU 'thermage': 1000 items, unique 2697
+  AU 'ultraformer': 632 items, unique 3062
+  AU 'sofwave': 84 items, unique 3132
+  AU 'skin tightening treatment': 227 items, unique 3320
+AU: pulled 3320 / 149,210 -> filtered 3320 -> dedup 3040 / 129,500
+  TH 'ultherapy': 276 items, unique 228
+  TH 'ultherapy prime': 25 items, unique 228
+  TH 'hifu': 1000 items, unique 1211
+  TH 'thermage': 628 items, unique 1624
+  TH 'ultraformer': 444 items, unique 2005
+  TH 'ยกกระชับผิวหน้า': 9 items, unique 2013
+  TH 'ร้อยไหม': 750 items, unique 2605
+TH: pulled 2605 / 167,690 -> filtered 2605 -> dedup 2078 / 138,010
+  TW 'ultherapy': 75 items, unique 54
+  TW '音波拉提': 345 items, unique 320
+  TW '電波拉皮': 337 items, unique 360
+  TW '海芙音波': 392 items, unique 692
+  TW '鳳凰電波': 633 items, unique 1265
+  TW '埋線拉提': 190 items, unique 1366
+  TW 'hifu': 250 items, unique 1494
+TW: pulled 1494 / 143,100 -> filtered 1490 -> dedup 1004 / 100,890
+  HK 'ultherapy': 439 items, unique 312
+  HK '超聲刀': 145 items, unique 430
+  HK '美版超聲刀': 27 items, unique 430
+  HK 'hifu': 1000 items, unique 1399
+  HK '熱瑪吉': 76 items, unique 1452
+  HK 'ultraformer': 130 items, unique 1530
+  HK 'thermage': 632 items, unique 1924
+HK: pulled 1924 / 80,380 -> filtered 1899 -> dedup 1370 / 56,170
+
+DONE
