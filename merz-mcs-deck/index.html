@@ -635,6 +635,14 @@ h1.t.blank-h1{min-height:112px}
 .whynote{margin:auto 0 0;padding-top:24px;font-size:19px;line-height:1.45;color:var(--mcs-grey)}
 .whynote strong{color:var(--mcs-white)}
 .dcol{display:flex;min-height:0}
+/* why-now: the quote carries the slide */
+#s-whynow .whynow{grid-template-columns:1fr;gap:0;margin-top:40px;align-content:center}
+#s-whynow .pull{border-left-width:6px;padding-left:40px}
+#s-whynow .pull .q{font-size:84px;line-height:1.03}
+#s-whynow .pull .qs{font-size:25px;margin-top:28px;max-width:1180px}
+#s-whynow .pull .qa{margin-top:28px}
+#s-whynow .crossed{margin-top:58px;grid-template-columns:220px 1fr;max-width:1240px}
+#s-whynow .whynote{margin:58px 0 0;padding-top:0;max-width:1240px}
 .data-slot{flex:1;align-items:center;justify-content:center;text-align:center}
 
 
@@ -1051,6 +1059,38 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 </section>
 
 <!-- ============ 3 ============ -->
+<section class="s" id="s-whynow">
+  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">The question <span class="sep">/</span> Why now</p>
+  <h1 class="t sm">The audience for your website<br>is about to stop being <em>human</em>.</h1>
+
+  <div class="whynow">
+    <div class="qcol">
+      <blockquote class="pull">
+        <p class="q">&ldquo;Humans will be a <em>rounding error</em> on the internet.&rdquo;</p>
+        <p class="qs">Machine and agentic traffic could run <strong>1,000&times; human traffic</strong> within five years.</p>
+        <footer class="qa"><span class="qn">Thomas Seifert</span><span class="qr">Chief Financial Officer, Cloudflare &mdash; Q2 2026 earnings call, August 2026</span></footer>
+      </blockquote>
+
+      <div class="crossed">
+        <div class="cx-n">May 2026</div>
+        <div class="cx-t"><strong>Machine traffic overtook human traffic on Cloudflare&rsquo;s network for the first time.</strong>
+        Cloudflare had previously put that crossover in 2027 &mdash; it arrived a year early.</div>
+      </div>
+
+      <p class="whynote">One person comparing treatments might open five clinic sites. An agent doing it for them
+      opens thousands. <strong>The reader you are optimising for has already changed.</strong></p>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <p>Cloudflare Q2 2026 earnings call, Aug 2026, widely reported. Seifert noted his own forecasts have been wrong before &mdash; the 1,000&times; figure is a prediction; the May 2026 crossover is measured.</p>
+    <p class="num">03 / 22</p>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">The question <span class="sep">/</span> What it looks like</p>
@@ -1090,11 +1130,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Live answers captured 25 Aug 2026. The ranking changes with the destination, not with the market.</p>
-    <p class="num">03 / 22</p>
+    <p class="num">04 / 22</p>
   </div>
 </section>
 
-<!-- ============ 4 ============ -->
+<!-- ============ 5 ============ -->
 <section class="s" id="s-funnel">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Where you stand <span class="sep">/</span> By decision stage</p>
@@ -1109,45 +1149,6 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 25 Aug 2026. 207 unbranded answers across Singapore, Taiwan and Hong Kong. BOFU is the smallest cell at n=36 &mdash; directional, not precise.</p>
-    <p class="num">04 / 22</p>
-  </div>
-</section>
-
-<!-- ============ 5 ============ -->
-<section class="s">
-  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
-  <p class="kicker">The question <span class="sep">/</span> Why now</p>
-  <h1 class="t sm">The audience for your website<br>is about to stop being <em>human</em>.</h1>
-
-  <div class="whynow">
-    <div class="qcol">
-      <blockquote class="pull">
-        <p class="q">&ldquo;Humans will be a <em>rounding error</em> on the internet.&rdquo;</p>
-        <p class="qs">Machine and agentic traffic could run <strong>1,000&times; human traffic</strong> within five years.</p>
-        <footer class="qa"><span class="qn">Thomas Seifert</span><span class="qr">Chief Financial Officer, Cloudflare &mdash; Q2 2026 earnings call, August 2026</span></footer>
-      </blockquote>
-
-      <div class="crossed">
-        <div class="cx-n">May 2026</div>
-        <div class="cx-t"><strong>Machine traffic overtook human traffic on Cloudflare&rsquo;s network for the first time.</strong>
-        Cloudflare had previously put that crossover in 2027 &mdash; it arrived a year early.</div>
-      </div>
-
-      <p class="whynote">One person comparing treatments might open five clinic sites. An agent doing it for them
-      opens thousands. <strong>The reader you are optimising for has already changed.</strong></p>
-    </div>
-
-    <div class="dcol">
-      <div class="ph-box dark-side data-slot">
-        <div class="pb-l">Supporting data &mdash; to be added</div>
-        <p class="pb-t">Paste the chart or figures here.<br>Replace this box with an image at
-        <code>assets/why-now-data.png</code>, or tell me the numbers and I will build it natively.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="foot">
-    <p>Cloudflare Q2 2026 earnings call, Aug 2026, widely reported. Seifert noted his own forecasts have been wrong before &mdash; the 1,000&times; figure is a prediction; the May 2026 crossover is measured.</p>
     <p class="num">05 / 22</p>
   </div>
 </section>
