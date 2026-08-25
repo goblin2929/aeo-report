@@ -691,29 +691,41 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 
 
 /* ---------- pricing ---------- */
-.scopebar{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;margin-top:24px;padding:16px 0;
+.scopebar{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;margin-top:18px;padding:12px 0;
   border-top:2px solid var(--mcs-white);border-bottom:1px solid var(--mcs-rule)}
 .scopebar .sb-l{display:block;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mcs-green)}
 .scopebar .sb-v{display:block;font-size:18px;font-weight:700;color:#fff;margin-top:6px}
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:26px;flex:1;min-height:0}
-.pcol{background:var(--mcs-panel);border-top:4px solid var(--mcs-grey-dim);padding:24px 28px;
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:22px}
+.pcol{background:var(--mcs-panel);border-top:4px solid var(--mcs-grey-dim);padding:18px 24px;
   display:flex;flex-direction:column}
 .pcol.feat{background:var(--mcs-panel-2);border-top-color:var(--mcs-green)}
 .p-tag{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mcs-grey)}
 .pcol.feat .p-tag{color:var(--mcs-green)}
-.p-name{font-size:38px;font-weight:800;font-stretch:88%;text-transform:uppercase;line-height:1;margin:8px 0 6px}
-.p-spec{font-size:16.5px;color:var(--mcs-grey);margin-bottom:14px}
-.ptab{width:100%;border-collapse:collapse;font-size:16.5px}
-.ptab td{padding:11px 0;border-bottom:1px solid var(--mcs-rule);color:#E0E0E0;vertical-align:top}
+.p-name{font-size:32px;font-weight:800;font-stretch:88%;text-transform:uppercase;line-height:1;margin:6px 0 4px}
+.p-spec{font-size:15.5px;color:var(--mcs-grey);margin-bottom:10px}
+.ptab{width:100%;border-collapse:collapse;font-size:15.5px}
+.ptab td{padding:8px 0;border-bottom:1px solid var(--mcs-rule);color:#E0E0E0;vertical-align:top}
 .ptab td.r{text-align:right;white-space:nowrap;font-weight:700;color:#fff}
 .pl-s{font-size:14px;color:var(--mcs-grey)}
-.p-sub{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:14px;
+.p-sub{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:11px;
   border-top:2px solid var(--mcs-white);font-size:15px;font-weight:700;letter-spacing:.16em;
   text-transform:uppercase;color:#fff}
-.p-big{font-size:46px;font-weight:800;font-stretch:88%;letter-spacing:-.02em;color:var(--mcs-green)}
-.p-once{margin-top:12px;font-size:15px;color:var(--mcs-grey)}
-.p-yr{margin-top:auto;padding-top:14px;font-size:16px;color:var(--mcs-grey)}
+.p-big{font-size:40px;font-weight:800;font-stretch:88%;letter-spacing:-.02em;color:var(--mcs-green)}
+.p-once{margin-top:9px;font-size:14.5px;color:var(--mcs-grey)}
+.p-yr{margin-top:8px;padding-top:9px;border-top:1px solid var(--mcs-rule);font-size:15px;color:var(--mcs-grey)}
 .p-yr strong{color:#fff}
+
+
+/* single-market comparison strip */
+.cmpbar{display:grid;grid-template-columns:auto auto auto auto auto 1fr;gap:16px;align-items:center;
+  margin-top:auto;padding:11px 18px;background:var(--mcs-panel);border-left:4px solid var(--mcs-green)}
+.cmp-l{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mcs-grey)}
+.cmp-v{font-size:26px;font-weight:800;font-stretch:88%;color:#fff;letter-spacing:-.02em;white-space:nowrap}
+.cmp-v.feat{color:var(--mcs-green)}
+.cmp-v span{font-size:15px;font-weight:700;color:var(--mcs-grey);margin-left:3px}
+.cmp-arrow{font-size:24px;color:var(--mcs-green)}
+.cmp-n{font-size:16px;line-height:1.4;color:var(--mcs-grey);padding-left:8px}
+.cmp-n strong{color:#fff}
 
 </style>
 </head>
@@ -726,7 +738,7 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
   <div class="cover-l">
     <div class="cover-logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="logo-lg" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
     <div>
-      <h1>Ultherapy Asia<span>Winning the answer</span></h1>
+      <h1>Ultherapy<span>Winning AI answers</span></h1>
       <div class="rule"></div>
     </div>
     <div class="cover-meta">
@@ -1380,15 +1392,15 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
         <tr><td>Technical AEO Foundation<br><span class="pl-s">ongoing technical health, per domain &mdash; all five markets</span></td>
             <td class="r num">$1,000</td></tr>
         <tr><td>Prompt Radar and Novalense: Full AI<br>Visibility and Strategy<br><span class="pl-s">50 &times; 2 platforms &times; $3 &times; 5 markets</span></td>
-            <td class="r num">$1,320</td></tr>
-        <tr><td>Echo Network: Off-page Citation<br>Intelligence and Operation<br><span class="pl-s">$800 &times; 5 markets</span></td>
-            <td class="r num">$3,520</td></tr>
+            <td class="r num">$1,230</td></tr>
+        <tr><td>Echo Network: Off-page Citation<br>Intelligence and Operation<br><span class="pl-s">$700 &times; 5 markets</span></td>
+            <td class="r num">$2,870</td></tr>
         <tr><td>Content architecture<br><span class="pl-s">30 pages, one domain, one language</span></td>
             <td class="r num">$3,000</td></tr>
       </table>
-      <div class="p-sub"><span>Monthly</span><span class="p-big">$8,840</span></div>
+      <div class="p-sub"><span>Monthly</span><span class="p-big">$8,100</span></div>
       <div class="p-once">Plus a one-time <strong>launch fee of $1,000</strong></div>
-      <div class="p-yr">Year one, inclusive of launch &mdash; <strong>$107,080</strong></div>
+      <div class="p-yr">Year one, inclusive of launch &mdash; <strong>$98,200</strong></div>
     </div>
     <div class="pcol feat">
       <div class="p-tag">Recommended</div>
@@ -1398,20 +1410,29 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
         <tr><td>Technical AEO Foundation<br><span class="pl-s">ongoing technical health, per domain &mdash; all five markets</span></td>
             <td class="r num">$1,000</td></tr>
         <tr><td>Prompt Radar and Novalense: Full AI<br>Visibility and Strategy<br><span class="pl-s">100 &times; 2 platforms &times; $3 &times; 5 markets</span></td>
-            <td class="r num">$2,640</td></tr>
-        <tr><td>Echo Network: Off-page Citation<br>Intelligence and Operation<br><span class="pl-s">$800 &times; 5 markets</span></td>
-            <td class="r num">$3,520</td></tr>
+            <td class="r num">$2,460</td></tr>
+        <tr><td>Echo Network: Off-page Citation<br>Intelligence and Operation<br><span class="pl-s">$700 &times; 5 markets</span></td>
+            <td class="r num">$2,870</td></tr>
         <tr><td>Content architecture<br><span class="pl-s">50 pages, one domain, one language &mdash; 20 above base at $80</span></td>
             <td class="r num">$4,600</td></tr>
       </table>
-      <div class="p-sub"><span>Monthly</span><span class="p-big">$11,760</span></div>
+      <div class="p-sub"><span>Monthly</span><span class="p-big">$10,930</span></div>
       <div class="p-once">Plus a one-time <strong>launch fee of $1,000</strong></div>
-      <div class="p-yr">Year one, inclusive of launch &mdash; <strong>$142,120</strong></div>
+      <div class="p-yr">Year one, inclusive of launch &mdash; <strong>$132,160</strong></div>
     </div>
   </div>
 
+
+  <div class="cmpbar">
+    <div class="cmp-l">Growth, single market</div>
+    <div class="cmp-v">$5,000<span>/mo</span></div>
+    <div class="cmp-arrow">&rarr;</div>
+    <div class="cmp-l">Growth, five markets</div>
+    <div class="cmp-v feat">$8,100<span>/mo</span></div>
+    <div class="cmp-n"><strong>$1,620 per market</strong> &mdash; 68% lower than running one market alone. Five times the coverage for 62% more.</div>
+  </div>
   <div class="foot">
-    <p>USD, excluding tax. 20% discount on per-market lines from the third market. Extra pages $80 each. <strong>Additional languages quoted separately.</strong></p>
+    <p>USD, excluding tax. 30% discount on per-market lines from the third market. Extra pages $80 each. <strong>Additional languages quoted separately.</strong></p>
     <p class="num">23 / 24</p>
   </div>
 </section>
