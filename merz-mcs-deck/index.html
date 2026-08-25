@@ -579,6 +579,64 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 .ask p{margin:0;font-size:17px;line-height:1.45;color:var(--mcs-grey)}
 .ask p strong{color:var(--mcs-white)}
 
+
+/* ---------- three-up market screenshots ---------- */
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:30px;flex:1;min-height:0}
+.shotcol{display:flex;flex-direction:column;min-height:0}
+.shot-h{display:flex;align-items:baseline;gap:12px;padding-bottom:11px;margin-bottom:14px;
+  border-bottom:2px solid var(--mcs-white)}
+.shot-h .mk{font-size:27px;font-weight:800;font-stretch:88%;text-transform:uppercase;letter-spacing:-.01em}
+.shot-h .mk-c{font-size:14px;font-weight:700;letter-spacing:.18em;color:var(--mcs-green)}
+.shot-slot{flex:1;min-height:0;align-items:center;justify-content:center;text-align:center}
+.shotcol img{width:100%;height:100%;object-fit:contain;object-position:top;display:block;background:#fff}
+.shot-cap{margin:13px 0 0;font-size:16px;line-height:1.4;color:var(--mcs-grey)}
+/* the headline is intentionally empty on this slide — hold its space so the grid does not jump */
+h1.t.blank-h1{min-height:112px}
+
+
+/* images fill the slot; the dashed placeholder styling no longer applies */
+.shot-slot{flex:1;min-height:0;display:flex;align-items:flex-start;justify-content:center;
+  background:#fff;border:1px solid rgba(255,255,255,.18);overflow:hidden}
+.shot-slot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+
+
+/* market is context; the ENGINE is the variable that changes the answer, so it leads */
+.shot-h{display:block;background:none;padding:0 0 11px;margin-bottom:13px;border:0;border-bottom:2px solid var(--mcs-white)}
+.shot-h .mk{margin:0;font-size:15px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mcs-grey)}
+.shot-h .engname{margin:6px 0 0;font-size:31px;font-weight:800;font-stretch:88%;text-transform:uppercase;
+  line-height:1;letter-spacing:-.01em;color:var(--mcs-green)}
+/* bracket tying the two same-market columns together */
+.tiebar{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:24px}
+.tiebar .tie{grid-column:1 / 3}
+.tie{border-top:2px solid var(--mcs-green);border-left:2px solid var(--mcs-green);
+  border-right:2px solid var(--mcs-green);height:26px;position:relative}
+.tie-l{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--mcs-black);
+  padding:0 16px;font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mcs-green);white-space:nowrap}
+.shots{margin-top:8px}
+
+
+/* ---------- why-now: quote left, data right ---------- */
+.whynow{display:grid;grid-template-columns:1.15fr 1fr;gap:46px;margin-top:30px;flex:1;min-height:0}
+.qcol{display:flex;flex-direction:column;min-height:0}
+.pull{margin:0;border-left:5px solid var(--mcs-green);padding:4px 0 4px 30px}
+.pull .q{margin:0;font-size:46px;font-weight:800;font-stretch:88%;line-height:1.06;letter-spacing:-.015em;color:var(--mcs-white)}
+.pull .q em{font-style:normal;color:var(--mcs-green)}
+.pull .qs{margin:20px 0 0;font-size:22px;line-height:1.4;color:#D8D8D8}
+.pull .qs strong{color:var(--mcs-white);font-weight:700}
+.pull .qa{margin-top:22px;display:flex;flex-direction:column;gap:4px}
+.pull .qn{font-size:17px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mcs-white)}
+.pull .qr{font-size:16px;color:var(--mcs-grey)}
+.crossed{display:grid;grid-template-columns:190px 1fr;gap:26px;align-items:start;margin-top:34px;
+  padding-top:26px;border-top:1px solid var(--mcs-rule)}
+.crossed .cx-n{font-size:40px;font-weight:800;font-stretch:88%;line-height:1;letter-spacing:-.02em;color:var(--mcs-green)}
+.crossed .cx-t{font-size:18.5px;line-height:1.45;color:var(--mcs-grey)}
+.crossed .cx-t strong{color:var(--mcs-white)}
+.whynote{margin:auto 0 0;padding-top:24px;font-size:19px;line-height:1.45;color:var(--mcs-grey)}
+.whynote strong{color:var(--mcs-white)}
+.dcol{display:flex;min-height:0}
+.data-slot{flex:1;align-items:center;justify-content:center;text-align:center}
+
 </style>
 </head>
 <body>
@@ -611,7 +669,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   <p class="ds">Not how to be found. Ultherapy is already known. The question is how to become the authority the answer is assembled from &mdash; across owned media, earned media, and the AI answers that now sit on top of both.</p>
   <div class="foot">
     <p>Five markets: Singapore, Thailand, Australia, Taiwan, Hong Kong</p>
-    <p class="num">02 / 21</p>
+    <p class="num">02 / 23</p>
   </div>
 </section>
 
@@ -619,34 +677,165 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">The question <span class="sep">/</span> Starting position</p>
-  <h1 class="t">You do not have<br>an awareness problem.</h1>
-  <p class="sub">Across five markets, <strong>347,800 people a month</strong> are already searching this category. The brand is known, the product is known, and the demand is already in the room.</p>
+  <h1 class="t sm">You do not have an awareness problem.<br>You have a <em>destination</em> problem.</h1>
+  <svg viewBox="0 0 1712 604" width="100%" style="display:block;margin-top:10px" role="img"
+     aria-label="347,800 monthly searches flowing to six AI assistants, which answer without a click, and to the Google results page, the only path that can reach a Merz domain">
+  <!-- LEFT: measured demand -->
+  <rect x="0" y="186.0" width="300" height="232" rx="8" fill="#0C0C0C" stroke="#00DC00" stroke-width="2"/>
+  <text x="26" y="242.0" fill="#979797" font-size="14" font-weight="700" letter-spacing="2.4">MONTHLY SEARCHES</text>
+  <text x="24" y="320.0" fill="#00DC00" font-size="62" font-weight="800" font-stretch="88%" letter-spacing="-2">347,800</text>
+  <text x="26" y="354.0" fill="#FFFFFF" font-size="17" font-weight="700">SG · TH · AU · TW · HK</text>
+  <text x="26" y="380.0" fill="#979797" font-size="15">3,672 keywords, measured</text>
 
-  <div class="stats three mid-t mid-b">
-    <div class="stat">
-      <div class="v g">347,800</div>
-      <div class="l">Monthly searches, five markets</div>
-      <div class="c">Across 3,672 keywords in SG, TH, AU, TW and HK. Demand already exists at scale in every confirmed market.</div>
-    </div>
-    <div class="stat">
-      <div class="v g">91.5%</div>
-      <div class="l">Addressable by a manufacturer</div>
-      <div class="c">29.3% fully answerable by Merz, a further 62.2% partly. Regulation removes under a tenth of the market, not the market.</div>
-    </div>
-    <div class="stat">
-      <div class="v g">5</div>
-      <div class="l">Markets, one franchise</div>
-      <div class="c">Confirmed in the Merz brief, 20 August 2026. Ultherapy and Ultherapy PRIME only.</div>
-    </div>
-  </div>
+  <path d="M 300 302.0 C 442.5 302.0, 442.5 51.0, 574 51.0" fill="none" stroke="#5E5E5E" stroke-width="1.6" opacity="0.75"/><path d="M 574 51.0 l -9 -5 l 0 10 z" fill="#5E5E5E" opacity="0.75"/><path d="M 300 302.0 C 442.5 302.0, 442.5 131.0, 574 131.0" fill="none" stroke="#5E5E5E" stroke-width="1.6" opacity="0.75"/><path d="M 574 131.0 l -9 -5 l 0 10 z" fill="#5E5E5E" opacity="0.75"/><path d="M 300 302.0 C 442.5 302.0, 442.5 211.0, 574 211.0" fill="none" stroke="#5E5E5E" stroke-width="1.6" opacity="0.75"/><path d="M 574 211.0 l -9 -5 l 0 10 z" fill="#5E5E5E" opacity="0.75"/><path d="M 300 302.0 C 442.5 302.0, 442.5 291.0, 574 291.0" fill="none" stroke="#5E5E5E" stroke-width="1.6" opacity="0.75"/><path d="M 574 291.0 l -9 -5 l 0 10 z" fill="#5E5E5E" opacity="0.75"/><path d="M 300 302.0 C 442.5 302.0, 442.5 371.0, 574 371.0" fill="none" stroke="#5E5E5E" stroke-width="1.6" opacity="0.75"/><path d="M 574 371.0 l -9 -5 l 0 10 z" fill="#5E5E5E" opacity="0.75"/><path d="M 300 302.0 C 442.5 302.0, 442.5 451.0, 574 451.0" fill="none" stroke="#5E5E5E" stroke-width="1.6" opacity="0.75"/><path d="M 574 451.0 l -9 -5 l 0 10 z" fill="#5E5E5E" opacity="0.75"/>
+  <path d="M 300 302.0 C 442.5 302.0, 442.5 531.0, 574 531.0" fill="none" stroke="#00DC00" stroke-width="2.4" opacity="1"/><path d="M 574 531.0 l -9 -5 l 0 10 z" fill="#00DC00" opacity="1"/>
+  <g>
+  <rect x="585" y="16" width="470" height="70" rx="6" fill="#0C0C0C" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+  <text x="607" y="46" fill="#FFFFFF" font-size="25" font-weight="800" font-stretch="88%">Google AI Overview</text>
+  <text x="607" y="69" fill="#979797" font-size="15.5">fires on the majority of category queries</text>
+</g><g>
+  <rect x="585" y="96" width="470" height="70" rx="6" fill="#0C0C0C" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+  <text x="607" y="126" fill="#FFFFFF" font-size="25" font-weight="800" font-stretch="88%">ChatGPT</text>
+  <text x="607" y="149" fill="#979797" font-size="15.5">the engine measured in this deck</text>
+</g><g>
+  <rect x="585" y="176" width="470" height="70" rx="6" fill="#0C0C0C" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+  <text x="607" y="206" fill="#FFFFFF" font-size="25" font-weight="800" font-stretch="88%">Perplexity</text>
+  <text x="607" y="229" fill="#979797" font-size="15.5">answer-first, citation-led</text>
+</g><g>
+  <rect x="585" y="256" width="470" height="70" rx="6" fill="#0C0C0C" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+  <text x="607" y="286" fill="#FFFFFF" font-size="25" font-weight="800" font-stretch="88%">Claude</text>
+  <text x="607" y="309" fill="#979797" font-size="15.5">long-form comparison answers</text>
+</g><g>
+  <rect x="585" y="336" width="470" height="70" rx="6" fill="#0C0C0C" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+  <text x="607" y="366" fill="#FFFFFF" font-size="25" font-weight="800" font-stretch="88%">Gemini</text>
+  <text x="607" y="389" fill="#979797" font-size="15.5">native to Android and Search</text>
+</g><g>
+  <rect x="585" y="416" width="470" height="70" rx="6" fill="#0C0C0C" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+  <text x="607" y="446" fill="#FFFFFF" font-size="25" font-weight="800" font-stretch="88%">Copilot</text>
+  <text x="607" y="469" fill="#979797" font-size="15.5">Windows and Edge default</text>
+</g>
+  <g>
+  <rect x="585" y="496" width="470" height="70" rx="6" fill="#0C0C0C" stroke="#00DC00" stroke-width="2"/>
+  <text x="607" y="526" fill="#FFFFFF" font-size="25" font-weight="800" font-stretch="88%">Google results page</text>
+  <text x="607" y="549" fill="#979797" font-size="15.5">the classic ten blue links</text>
+</g>
 
+  <!-- RIGHT: the outcome bracket over the six assistants -->
+  <path d="M 1073 16 h 26 v 470 h -26" fill="none" stroke="#00DC00" stroke-width="2"/>
+  <path d="M 1099 251.0 h 74" fill="none" stroke="#00DC00" stroke-width="2"/>
+  <path d="M 1207 251.0 l -10 -6 l 0 12 z" fill="#00DC00"/>
+  <rect x="1215" y="16" width="497" height="470" rx="8" fill="#00DC00"/>
+  <text x="1243" y="78" fill="#000000" font-size="36" font-weight="800" font-stretch="88%">ZERO-CLICK</text>
+  <text x="1243" y="124" fill="#000000" font-size="19" font-weight="700">The answer is delivered inside the assistant.</text>
+  <text x="1243" y="156" fill="#0a3d0a" font-size="17.5">A clinic or a journal may be cited inside it —</text>
+  <text x="1243" y="180" fill="#0a3d0a" font-size="17.5">and that source earns the credibility.</text>
+  <line x1="1243" y1="212" x2="1684" y2="212" stroke="#0a3d0a" stroke-width="1.5" opacity=".45"/>
+  <text x="1243" y="248" fill="#000000" font-size="19" font-weight="800">Nothing has to reach a Merz domain</text>
+  <text x="1243" y="274" fill="#000000" font-size="19" font-weight="800">for the decision to be made.</text>
+  <text x="1243" y="322" fill="#0a3d0a" font-size="17">Measured on unbranded questions:</text>
+  <text x="1243" y="364" fill="#000000" font-size="44" font-weight="800" font-stretch="88%">25%</text>
+  <text x="1335" y="364" fill="#000000" font-size="18" font-weight="700">of answers cite</text>
+  <text x="1335" y="388" fill="#000000" font-size="18" font-weight="700">a Merz page at all.</text>
+  <text x="1243" y="428" fill="#0a3d0a" font-size="16">Taiwan is worse: 12%.</text>
+
+  <!-- RIGHT: the one clicking path -->
+  <path d="M 1073 531.0 h 134" fill="none" stroke="#00DC00" stroke-width="2.4"/>
+  <path d="M 1207 531.0 l -10 -6 l 0 12 z" fill="#00DC00"/>
+  <rect x="1215" y="491.0" width="497" height="80" rx="8" fill="#0C0C0C" stroke="#00DC00" stroke-width="2"/>
+  <text x="1243" y="523.0" fill="#00DC00" font-size="21" font-weight="800" font-stretch="88%">THE ONLY CLICKING PATH</text>
+  <text x="1243" y="551.0" fill="#FFFFFF" font-size="17">The one route that can land a visitor on your own domain.</text>
+</svg>
   <div class="foot">
-    <p>DataForSEO Labs keyword_suggestions, pulled 24 Aug 2026, four seeds per market localised to market language. Volumes are estimates &mdash; no Search Console baseline exists.</p>
-    <p class="num">03 / 21</p>
+    <p>DataForSEO Labs, 3,672 keywords, 24 Aug 2026 &middot; citation rates: ChatGPT, 252 answers, 25 Aug. <strong>Only ChatGPT measured</strong> &mdash; other assistants shown as destinations.</p>
+    <p class="num">03 / 23</p>
   </div>
 </section>
 
 <!-- ============ 4 ============ -->
+<section class="s">
+  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">The question <span class="sep">/</span> What it looks like</p>
+  <!-- HEADLINE: left blank deliberately — Tina to write -->
+  <h1 class="t sm blank-h1"></h1>
+
+  <div class="tiebar">
+    <div class="tie"><span class="tie-l">Same market &middot; same question &middot; different engine &mdash; opposite winner</span></div>
+    <div></div>
+  </div>
+
+  <div class="shots">
+    <div class="shotcol">
+      <div class="shot-h">
+        <p class="mk">Taiwan</p>
+        <p class="engname">Google AI Mode</p>
+      </div>
+      <div class="shot-slot"><img src="assets/ai-tw-google.jpg" alt="Google AI Mode answer for a lifting-treatment question in Taiwan"></div>
+      <p class="shot-cap">Ultraformer MPT listed first. Ultherapy appears second, as 美國超聲刀.</p>
+    </div>
+    <div class="shotcol">
+      <div class="shot-h">
+        <p class="mk">Taiwan</p>
+        <p class="engname">ChatGPT</p>
+      </div>
+      <div class="shot-slot"><img src="assets/ai-tw-chatgpt.jpg" alt="ChatGPT answer for a lifting-treatment question in Taiwan"></div>
+      <p class="shot-cap">Ultherapy PRIME ranked #1 — 我首選. Ultraformer second, on value.</p>
+    </div>
+    <div class="shotcol">
+      <div class="shot-h">
+        <p class="mk">Singapore</p>
+        <p class="engname">ChatGPT</p>
+      </div>
+      <div class="shot-slot"><img src="assets/ai-sg-chatgpt.jpg" alt="ChatGPT answer for a lifting-treatment question in Singapore"></div>
+      <p class="shot-cap">Ultherapy PRIME #1, but flagged 貴 — SGD 2,500–5,000. Sofwave third.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Live answers captured 25 Aug 2026. The ranking changes with the destination, not with the market.</p>
+    <p class="num">04 / 23</p>
+  </div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="s">
+  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">The question <span class="sep">/</span> Why now</p>
+  <h1 class="t sm">The audience for your website<br>is about to stop being <em>human</em>.</h1>
+
+  <div class="whynow">
+    <div class="qcol">
+      <blockquote class="pull">
+        <p class="q">&ldquo;Humans will be a <em>rounding error</em> on the internet.&rdquo;</p>
+        <p class="qs">Machine and agentic traffic could run <strong>1,000&times; human traffic</strong> within five years.</p>
+        <footer class="qa"><span class="qn">Thomas Seifert</span><span class="qr">Chief Financial Officer, Cloudflare &mdash; Q2 2026 earnings call, August 2026</span></footer>
+      </blockquote>
+
+      <div class="crossed">
+        <div class="cx-n">May 2026</div>
+        <div class="cx-t"><strong>Machine traffic overtook human traffic on Cloudflare&rsquo;s network for the first time.</strong>
+        Cloudflare had previously put that crossover in 2027 &mdash; it arrived a year early.</div>
+      </div>
+
+      <p class="whynote">One person comparing treatments might open five clinic sites. An agent doing it for them
+      opens thousands. <strong>The reader you are optimising for has already changed.</strong></p>
+    </div>
+
+    <div class="dcol">
+      <div class="ph-box dark-side data-slot">
+        <div class="pb-l">Supporting data &mdash; to be added</div>
+        <p class="pb-t">Paste the chart or figures here.<br>Replace this box with an image at
+        <code>assets/why-now-data.png</code>, or tell me the numbers and I will build it natively.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Cloudflare Q2 2026 earnings call, Aug 2026, widely reported. Seifert noted his own forecasts have been wrong before &mdash; the 1,000&times; figure is a prediction; the May 2026 crossover is measured.</p>
+    <p class="num">05 / 23</p>
+  </div>
+</section>
+
+<!-- ============ 6 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">The question <span class="sep">/</span> The real constraint</p>
@@ -668,11 +857,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>ChatGPT via DataForSEO llm_scraper, 28 Singapore prompts, 3 pulls each, 24 Aug 2026. Brand named in the answer body.</p>
-    <p class="num">04 / 21</p>
+    <p class="num">06 / 23</p>
   </div>
 </section>
 
-<!-- ============ 5 ============ -->
+<!-- ============ 7 ============ -->
 <section class="s invert">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">The question <span class="sep">/</span> Defining the win</p>
@@ -699,11 +888,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>Framework. The measured position on each input follows in Section 02.</p>
-    <p class="num">05 / 21</p>
+    <p class="num">07 / 23</p>
   </div>
 </section>
 
-<!-- ============ 6 ============ -->
+<!-- ============ 8 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">The question <span class="sep">/</span> The shift</p>
@@ -715,22 +904,22 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>Positioning statement &mdash; the evidence for each claim follows.</p>
-    <p class="num">06 / 21</p>
+    <p class="num">08 / 23</p>
   </div>
 </section>
 
-<!-- ============ 7 ============ -->
+<!-- ============ 9 ============ -->
 <section class="s divider light">
   <p class="dn">Section 02</p>
   <h1>Where Ultherapy<br>stands today</h1>
   <p class="ds">Measured across five markets in August 2026 &mdash; demand, rankings, and what the AI engines actually say when asked.</p>
   <div class="foot">
     <p>DataForSEO, 24 Aug 2026 &middot; Merz Singapore preliminary analysis, 7 Aug 2026</p>
-    <p class="num">07 / 21</p>
+    <p class="num">09 / 23</p>
   </div>
 </section>
 
-<!-- ============ 8 ============ -->
+<!-- ============ 10 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Where you stand <span class="sep">/</span> The measured gap</p>
@@ -750,11 +939,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 24 Aug 2026. Singapore and Taiwan measured; Hong Kong, Australia and Thailand not yet run.</p>
-    <p class="num">08 / 21</p>
+    <p class="num">10 / 23</p>
   </div>
 </section>
 
-<!-- ============ 9 ============ -->
+<!-- ============ 11 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Where you stand <span class="sep">/</span> Why it matters</p>
@@ -781,11 +970,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
 
   <div class="foot">
     <p>DataForSEO Labs, 24 Aug 2026. Bucket volumes reconcile exactly to market totals in all five markets.</p>
-    <p class="num">09 / 21</p>
+    <p class="num">11 / 23</p>
   </div>
 </section>
 
-<!-- ============ 10 ============ -->
+<!-- ============ 12 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Where you stand <span class="sep">/</span> The structural cause</p>
@@ -807,22 +996,22 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>DataForSEO Labs ranked_keywords, 24 Aug 2026, estimates. Reference-split figure (81 and 71 across two SG domains) from the Merz Singapore preliminary analysis, 7 Aug 2026, Ahrefs.</p>
-    <p class="num">10 / 21</p>
+    <p class="num">12 / 23</p>
   </div>
 </section>
 
-<!-- ============ 11 ============ -->
+<!-- ============ 13 ============ -->
 <section class="s divider">
   <p class="dn">Section 03</p>
   <h1>Three moves</h1>
   <p class="ds">Make the site readable by machines. Consolidate authority into one answerable domain. Earn the citations a manufacturer cannot own.</p>
   <div class="foot">
     <p>The proposal</p>
-    <p class="num">11 / 21</p>
+    <p class="num">13 / 23</p>
   </div>
 </section>
 
-<!-- ============ 12 ============ -->
+<!-- ============ 14 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Move one <span class="sep">/</span> Machine-readable</p>
@@ -849,11 +1038,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>Estate findings verified by direct HTTP request, 7 Aug 2026, Merz Singapore properties.</p>
-    <p class="num">12 / 21</p>
+    <p class="num">14 / 23</p>
   </div>
 </section>
 
-<!-- ============ 13 ============ -->
+<!-- ============ 15 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Move one <span class="sep">/</span> Reachable</p>
@@ -879,11 +1068,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>Locale set derived from measured query language per market. Canonical finding: Merz Singapore preliminary analysis, 7 Aug 2026.</p>
-    <p class="num">13 / 21</p>
+    <p class="num">15 / 23</p>
   </div>
 </section>
 
-<!-- ============ 14 ============ -->
+<!-- ============ 16 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Move two <span class="sep">/</span> Answer architecture</p>
@@ -909,11 +1098,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>DataForSEO Labs, 24 Aug 2026, estimates. No Search Console baseline exists on any Merz property &mdash; establishing one is a prerequisite.</p>
-    <p class="num">14 / 21</p>
+    <p class="num">16 / 23</p>
   </div>
 </section>
 
-<!-- ============ 15 ============ -->
+<!-- ============ 17 ============ -->
 <section class="s invert">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">Move two <span class="sep">/</span> Migration order</p>
@@ -944,11 +1133,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>301 one-to-one mapping throughout. Old domains held and redirecting for a minimum of 12 months.</p>
-    <p class="num">15 / 21</p>
+    <p class="num">17 / 23</p>
   </div>
 </section>
 
-<!-- ============ 16 ============ -->
+<!-- ============ 18 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Move two <span class="sep">/</span> Measurement</p>
@@ -974,11 +1163,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>Portfolio built 24 Aug 2026. Non-English prompts pending native-speaker review before first client run.</p>
-    <p class="num">16 / 21</p>
+    <p class="num">18 / 23</p>
   </div>
 </section>
 
-<!-- ============ 17 ============ -->
+<!-- ============ 19 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Move three <span class="sep">/</span> Off-site citation</p>
@@ -1005,22 +1194,22 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>Dcard volume: DataForSEO Labs, Taiwan, 24 Aug 2026. Cited-source measurement begins with the first Prompt Radar run.</p>
-    <p class="num">17 / 21</p>
+    <p class="num">19 / 23</p>
   </div>
 </section>
 
-<!-- ============ 18 ============ -->
+<!-- ============ 20 ============ -->
 <section class="s divider light">
   <p class="dn">Section 04</p>
   <h1>How we work,<br>and what we report</h1>
   <p class="ds">Phased against your 1 April 2027 go-live, with three numbers reported monthly.</p>
   <div class="foot">
     <p>Go-live date per Merz brief, 20 Aug 2026</p>
-    <p class="num">18 / 21</p>
+    <p class="num">20 / 23</p>
   </div>
 </section>
 
-<!-- ============ 19 ============ -->
+<!-- ============ 21 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Phasing</p>
@@ -1038,11 +1227,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </table>
   <div class="foot">
     <p>Indicative phasing. Sequence is fixed by equity at risk; the window flexes to the client build schedule.</p>
-    <p class="num">19 / 21</p>
+    <p class="num">21 / 23</p>
   </div>
 </section>
 
-<!-- ============ 20 ============ -->
+<!-- ============ 22 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Reporting</p>
@@ -1068,11 +1257,11 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>Reported monthly. Baselines set in the Foundation phase, before any migration begins.</p>
-    <p class="num">20 / 21</p>
+    <p class="num">22 / 23</p>
   </div>
 </section>
 
-<!-- ============ 21 ============ -->
+<!-- ============ 23 ============ -->
 <section class="s invert">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">How we work <span class="sep">/</span> What we need</p>
@@ -1098,7 +1287,7 @@ ol.plist li .pen{color:var(--mcs-grey);font-style:italic}
   </div>
   <div class="foot">
     <p>Crawler finding observed from a single network on 24 Aug 2026 and not yet independently confirmed &mdash; presented as a check to run, not a verdict.</p>
-    <p class="num">21 / 21</p>
+    <p class="num">23 / 23</p>
   </div>
 </section>
 
