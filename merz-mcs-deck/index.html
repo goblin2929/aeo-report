@@ -815,6 +815,12 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 .revealbtn:hover{background:#00ff00}
 .revealbtn.done{background:transparent;color:var(--mcs-grey);border:1px solid var(--mcs-rule)}
 
+
+/* slide 13 on white — the audit captures are dark, so give them a dark mount that reads
+   as a deliberate frame rather than letting them vanish into the page */
+.s.invert .aud-h{color:var(--mcs-green-deep);border-bottom-color:#000}
+.s.invert .aud-slot{background:#1c1c1c;border-color:rgba(0,0,0,.25)}
+
 </style>
 </head>
 <body>
@@ -1196,41 +1202,34 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Move one <span class="sep">/</span> The starting point</p>
-  <h1 class="t sm">Four thin sites are capturing<br><em>2.7%</em> of your own category.</h1>
+  <h1 class="t sm">Local official sites are thin and unstructured,<br>capturing under <em>3%</em> of category search.</h1>
   <p class="sub">Galderma and Allergan each concentrate on a single host. Merz splits across four properties &mdash; <strong>so nothing accumulates, and almost nothing converts to traffic.</strong></p>
 
   <table class="d tight mid-t mid-b">
-    <thead><tr><th>Market</th><th class="r">Monthly searches</th><th class="r">Share of region</th>
+    <thead><tr><th>Market</th><th class="r">Monthly searches</th>
       <th>Merz property</th><th class="r">Top-10</th><th class="r">Est. visits</th><th class="r">Capture</th></tr></thead>
     <tbody>
-      <tr><td><b>Australia</b></td><td class="r num">106,040</td><td class="r dim num">38.3%</td><td>ultherapy.com.au</td><td class="r num dim">28</td><td class="r num">2,171</td><td class="r"><span class="cap caplo">2.0%</span></td></tr>
-      <tr class="me"><td><b>Thailand</b></td><td class="r num">56,730</td><td class="r dim num">20.5%</td><td><span class="bad">no Merz domain ranks</span></td><td class="r num dim">0</td><td class="r num">0</td><td class="r"><span class="cap cap0">0.0%</span></td></tr>
-      <tr><td><b>Singapore</b></td><td class="r num">49,840</td><td class="r dim num">18.0%</td><td>ultherapysg.com</td><td class="r num dim">37</td><td class="r num">2,979</td><td class="r"><span class="cap capmid">6.0%</span></td></tr>
-      <tr><td><b>Hong Kong</b></td><td class="r num">36,500</td><td class="r dim num">13.2%</td><td>ultherapy.com.hk</td><td class="r num dim">16</td><td class="r num">2,222</td><td class="r"><span class="cap capmid">6.1%</span></td></tr>
-      <tr class="me"><td><b>Taiwan</b></td><td class="r num">27,410</td><td class="r dim num">9.9%</td><td><span class="bad">no Merz domain ranks</span></td><td class="r num dim">0</td><td class="r num">0</td><td class="r"><span class="cap cap0">0.0%</span></td></tr>
-      <tr class="tot"><td><b>Five markets</b></td><td class="r num"><b>276,520</b></td><td class="r dim num">100%</td>
+      <tr><td><b>Australia</b></td><td class="r num">106,040</td><td>ultherapy.com.au</td><td class="r num dim">28</td><td class="r num">2,171</td><td class="r"><span class="cap caplo">2.0%</span></td></tr>
+      <tr class="me"><td><b>Thailand</b></td><td class="r num">56,730</td><td><span class="bad">no Merz domain ranks</span></td><td class="r num dim">0</td><td class="r num">0</td><td class="r"><span class="cap cap0">0.0%</span></td></tr>
+      <tr><td><b>Singapore</b></td><td class="r num">49,840</td><td>ultherapysg.com</td><td class="r num dim">37</td><td class="r num">2,979</td><td class="r"><span class="cap capmid">6.0%</span></td></tr>
+      <tr><td><b>Hong Kong</b></td><td class="r num">36,500</td><td>ultherapy.com.hk</td><td class="r num dim">16</td><td class="r num">2,222</td><td class="r"><span class="cap capmid">6.1%</span></td></tr>
+      <tr class="me"><td><b>Taiwan</b></td><td class="r num">27,410</td><td><span class="bad">no Merz domain ranks</span></td><td class="r num dim">0</td><td class="r num">0</td><td class="r"><span class="cap cap0">0.0%</span></td></tr>
+      <tr class="tot"><td><b>Five markets</b></td><td class="r num"><b>276,520</b></td>
         <td class="dim">four properties + one empty regional domain</td>
         <td class="r num dim"><b>81</b></td><td class="r num"><b>7,372</b></td>
         <td class="r"><span class="cap caplo"><b>2.7%</b></span></td></tr>
     </tbody>
   </table>
 
-  <div class="panel">
-    <p class="pt">What the last column means</p>
-    <p><strong>269,148 searches a month are not reaching a Merz property at all.</strong>
-    Thailand and Taiwan &mdash; 84,140 searches, 30% of the region &mdash; have no Merz domain ranking whatsoever.
-    Singapore, the best market, converts 6.0% &mdash; on a site last updated in 2019.</p>
-  </div>
-
   <div class="foot">
-    <p>Identical seed structure in all five markets: Merz brand, generic modality, and face-lift symptom terms in each market's own language. Competitor-only queries excluded. Word-order variants deduplicated on both sides &mdash; demand and visits. DataForSEO, 25 Aug 2026; no Search Console exists, so visits are estimates.</p>
+    <p>Identical seed structure in all five markets, word-order variants deduplicated on both sides. DataForSEO, 25 Aug 2026; no Search Console exists on any Merz property, so visits are estimates.</p>
     <p class="num">12 / 23</p>
   </div>
 </section>
 
 <!-- ============ 13 ============ -->
-<section class="s">
-  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+<section class="s invert">
+  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">Move one <span class="sep">/</span> Machine-readable</p>
   <h1 class="t sm">This is what the machine<br>finds today.</h1>
 
