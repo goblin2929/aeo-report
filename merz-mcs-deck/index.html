@@ -105,6 +105,19 @@ h1.t em{font-style:normal;color:var(--mcs-green)}
   color:var(--mcs-white);margin-top:16px}
 .stat .c{font-size:17px;line-height:1.4;color:var(--mcs-grey);margin-top:8px}
 /* vertical variant: few metrics, each given a full row — figure left, read right */
+/* method slide */
+.stats.method{margin-top:34px;flex:1;align-content:center}
+.stats.method .stat{padding:30px 30px 30px 0}
+.stats.method .stat:not(:first-child){padding-left:30px}
+.stats.method .v{font-size:88px}
+.stats.method .l{margin-top:16px}
+.stats.method .c{font-size:17px;line-height:1.44;margin-top:10px}
+.stats.method .c strong{color:#fff}
+.mstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin:auto 0 22px;
+  padding-top:24px;border-top:1px solid var(--mcs-rule)}
+.mstrip .ms-l{display:block;font-size:12px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--mcs-green)}
+.mstrip .ms-v{display:block;font-size:17px;font-weight:700;color:#fff;margin-top:6px}
 .stats.vert{grid-template-columns:1fr;margin-top:38px}
 .stats.vert .stat{display:grid;grid-template-columns:440px 1fr;column-gap:52px;
   align-items:center;padding:30px 0;border-right:0;border-bottom:1px solid var(--mcs-rule)}
@@ -1069,7 +1082,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 </svg>
   <div class="foot">
     <p>DataForSEO Labs, 6,167 deduplicated queries, re-pulled 25 Aug 2026 &middot; citation rates: ChatGPT, 252 answers, 25 Aug. <strong>Only ChatGPT measured</strong> &mdash; other assistants shown as destinations.</p>
-    <p class="num">02 / 21</p>
+    <p class="num">02 / 22</p>
   </div>
 </section>
 
@@ -1101,11 +1114,58 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Cloudflare Q2 2026 earnings call, Aug 2026, widely reported. Seifert noted his own forecasts have been wrong before &mdash; the 1,000&times; figure is a prediction; the May 2026 crossover is measured.</p>
-    <p class="num">03 / 21</p>
+    <p class="num">03 / 22</p>
   </div>
 </section>
 
 <!-- ============ 4 ============ -->
+<section class="s" id="s-method">
+  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">The question <span class="sep">/</span> How we measured it</p>
+  <h1 class="t sm">Everything after this slide<br>is <em>measured</em>, not asserted.</h1>
+  <p class="sub">Live engines, five markets, each in its own language. Every number in this deck traces back to one of these four runs &mdash; all pulled in the last 48 hours.</p>
+
+  <div class="stats method">
+    <div class="stat">
+      <div class="v g">6,167</div>
+      <div class="l">Queries analysed</div>
+      <div class="c">Deduplicated across five markets in each market&rsquo;s own language &mdash;
+      <strong>276,520 monthly searches</strong> of category demand.</div>
+    </div>
+    <div class="stat">
+      <div class="v g">84</div>
+      <div class="l">Prompts asked</div>
+      <div class="c">Real buyer questions, 28 per market, branded and unbranded &mdash;
+      <strong>built from ranked-keyword language, not translated</strong>.</div>
+    </div>
+    <div class="stat">
+      <div class="v g">252</div>
+      <div class="l">AI answers read</div>
+      <div class="c">Three independent pulls per prompt, scored on brand named, rival named
+      and <strong>cited source</strong> &mdash; 1,006 citations across 283 domains.</div>
+    </div>
+    <div class="stat">
+      <div class="v g">10</div>
+      <div class="l">Pages crawled live</div>
+      <div class="c">Your regional domain against a competing clinic site, page by page &mdash;
+      plus <strong>four Merz market properties</strong> measured for search capture.</div>
+    </div>
+  </div>
+
+  <div class="mstrip">
+    <div class="ms-i"><span class="ms-l">Markets</span><span class="ms-v">SG &middot; TH &middot; AU &middot; TW &middot; HK</span></div>
+    <div class="ms-i"><span class="ms-l">Languages</span><span class="ms-v">English &middot; Thai &middot; Traditional Chinese</span></div>
+    <div class="ms-i"><span class="ms-l">Engine measured</span><span class="ms-v">ChatGPT, with web search on</span></div>
+    <div class="ms-i"><span class="ms-l">Captured</span><span class="ms-v">24&ndash;25 August 2026</span></div>
+  </div>
+
+  <div class="foot">
+    <p>ChatGPT measured at scale via DataForSEO llm_scraper. Google AI Mode captured live, shown as observation. Traffic is estimated &mdash; <strong>no Search Console exists on any Merz property</strong>.</p>
+    <p class="num">04 / 22</p>
+  </div>
+</section>
+
+<!-- ============ 5 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">The question <span class="sep">/</span> What it looks like</p>
@@ -1145,11 +1205,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Live answers captured 25 Aug 2026. The ranking changes with the destination, not with the market.</p>
-    <p class="num">04 / 21</p>
+    <p class="num">05 / 22</p>
   </div>
 </section>
 
-<!-- ============ 5 ============ -->
+<!-- ============ 6 ============ -->
 <section class="s" id="s-funnel">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Where you stand <span class="sep">/</span> By decision stage</p>
@@ -1164,11 +1224,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 25 Aug 2026. 207 unbranded answers across Singapore, Taiwan and Hong Kong. BOFU is the smallest cell at n=36 &mdash; directional, not precise.</p>
-    <p class="num">05 / 21</p>
+    <p class="num">06 / 22</p>
   </div>
 </section>
 
-<!-- ============ 6 ============ -->
+<!-- ============ 7 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Where you stand <span class="sep">/</span> The measured gap</p>
@@ -1190,11 +1250,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 25 Aug 2026 &mdash; the same run behind the Echo Network dashboard.</p>
-    <p class="num">06 / 21</p>
+    <p class="num">07 / 22</p>
   </div>
 </section>
 
-<!-- ============ 7 ============ -->
+<!-- ============ 8 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Machine Readable Site</p>
@@ -1219,11 +1279,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Identical seed structure in all five markets, word-order variants deduplicated on both sides. DataForSEO, 25 Aug 2026; no Search Console exists on any Merz property, so visits are estimates.</p>
-    <p class="num">07 / 21</p>
+    <p class="num">08 / 22</p>
   </div>
 </section>
 
-<!-- ============ 8 ============ -->
+<!-- ============ 9 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Where you stand <span class="sep">/</span> Why it matters</p>
@@ -1250,11 +1310,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>DataForSEO Labs, 24 Aug 2026. Bucket volumes reconcile exactly to market totals in all five markets.</p>
-    <p class="num">08 / 21</p>
+    <p class="num">09 / 22</p>
   </div>
 </section>
 
-<!-- ============ 9 ============ -->
+<!-- ============ 10 ============ -->
 <section class="s invert" id="s-moves">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">GEO strategy <span class="sep">/</span> What winning takes</p>
@@ -1306,11 +1366,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Citation rates: ChatGPT, 207 unbranded answers across Singapore, Taiwan and Hong Kong, 25 Aug 2026.</p>
-    <p class="num">09 / 21</p>
+    <p class="num">10 / 22</p>
   </div>
 </section>
 
-<!-- ============ 10 ============ -->
+<!-- ============ 11 ============ -->
 <section class="s divider">
   <p class="dn">Section 02</p>
   <h1>Machine-readable<br>official site</h1>
@@ -1318,11 +1378,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   The first two are owned media. The third is earned &mdash; and it is where the answer is decided.</p>
   <div class="foot">
     <p>The proposal</p>
-    <p class="num">10 / 21</p>
+    <p class="num">11 / 22</p>
   </div>
 </section>
 
-<!-- ============ 11 ============ -->
+<!-- ============ 12 ============ -->
 <section class="s invert">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">Machine Readable Site <span class="sep">/</span> What the machine finds</p>
@@ -1341,11 +1401,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>ultherapy-asia.com against drreborn.com, a competing clinic site. Live crawl, 25 Aug 2026, four pages per domain.</p>
-    <p class="num">11 / 21</p>
+    <p class="num">12 / 22</p>
   </div>
 </section>
 
-<!-- ============ 12 ============ -->
+<!-- ============ 13 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Machine Readable Site <span class="sep">/</span> A worked example</p>
@@ -1374,11 +1434,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Live fetch and source inspection, 25 Aug 2026. Image path dates the table to Feb 2016. Comparison queries measure 92% named, 42% cited.</p>
-    <p class="num">12 / 21</p>
+    <p class="num">13 / 22</p>
   </div>
 </section>
 
-<!-- ============ 13 ============ -->
+<!-- ============ 14 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Machine Readable Site <span class="sep">/</span> Reachable in every market</p>
@@ -1404,11 +1464,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   </div>
   <div class="foot">
     <p>Locale set derived from measured query language per market. Canonical finding: Merz Singapore preliminary analysis, 7 Aug 2026.</p>
-    <p class="num">13 / 21</p>
+    <p class="num">14 / 22</p>
   </div>
 </section>
 
-<!-- ============ 14 ============ -->
+<!-- ============ 15 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Content Architecture <span class="sep">/</span> One answerable destination</p>
@@ -1434,11 +1494,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   </div>
   <div class="foot">
     <p>DataForSEO Labs, 24 Aug 2026, estimates. No Search Console baseline exists on any Merz property &mdash; establishing one is a prerequisite.</p>
-    <p class="num">14 / 21</p>
+    <p class="num">15 / 22</p>
   </div>
 </section>
 
-<!-- ============ 15 ============ -->
+<!-- ============ 16 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Content Architecture <span class="sep">/</span> What to build, in what order</p>
@@ -1462,11 +1522,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Cited = a Merz page was the source. ChatGPT, 252 answers, SG/TW/HK, 25 Aug 2026. Price and clinic-ranking clusters excluded by decision.</p>
-    <p class="num">15 / 21</p>
+    <p class="num">16 / 22</p>
   </div>
 </section>
 
-<!-- ============ 16 ============ -->
+<!-- ============ 17 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Own the Sources AI Cites <span class="sep">/</span> Off-page citation</p>
@@ -1493,22 +1553,22 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   </div>
   <div class="foot">
     <p>Dcard volume: DataForSEO Labs, Taiwan, 24 Aug 2026. Cited-source measurement begins with the first Prompt Radar run.</p>
-    <p class="num">16 / 21</p>
+    <p class="num">17 / 22</p>
   </div>
 </section>
 
-<!-- ============ 17 ============ -->
+<!-- ============ 18 ============ -->
 <section class="s divider light">
   <p class="dn">Section 03</p>
   <h1>How we work,<br>and what we report</h1>
   <p class="ds">Phased against your 1 April 2027 go-live, with three numbers reported monthly.</p>
   <div class="foot">
     <p>Go-live date per Merz brief, 20 Aug 2026</p>
-    <p class="num">17 / 21</p>
+    <p class="num">18 / 22</p>
   </div>
 </section>
 
-<!-- ============ 18 ============ -->
+<!-- ============ 19 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Roadmap</p>
@@ -1555,11 +1615,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>Indicative sequence. Phase 1 assumes crawler access and Search Console are resolved &mdash; both are prerequisites, not tasks.</p>
-    <p class="num">18 / 21</p>
+    <p class="num">19 / 22</p>
   </div>
 </section>
 
-<!-- ============ 19 ============ -->
+<!-- ============ 20 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Reporting</p>
@@ -1585,11 +1645,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   </div>
   <div class="foot">
     <p>Reported monthly. Baselines set in the Foundation phase, before any migration begins.</p>
-    <p class="num">19 / 21</p>
+    <p class="num">20 / 22</p>
   </div>
 </section>
 
-<!-- ============ 20 ============ -->
+<!-- ============ 21 ============ -->
 <section class="s" id="s-price">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Investment</p>
@@ -1664,10 +1724,11 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
   <div class="foot">
     <p>USD, excluding tax, over a six-month term. 30% discount on per-market lines from the third market. Extra pages $80 each. <strong>Additional languages quoted separately.</strong></p>
-    <p class="num">20 / 21</p>
+    <p class="num">21 / 22</p>
   </div>
 </section>
 
+<!-- ============ 22 ============ -->
 <section class="s invert">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">How we work <span class="sep">/</span> What we need</p>
@@ -1693,7 +1754,7 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
   </div>
   <div class="foot">
     <p>Crawler finding observed from a single network on 24 Aug 2026 and not yet independently confirmed &mdash; presented as a check to run, not a verdict.</p>
-    <p class="num">21 / 21</p>
+    <p class="num">22 / 22</p>
   </div>
 </section>
 
