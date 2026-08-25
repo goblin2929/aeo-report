@@ -803,6 +803,18 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 .s.invert .wo-eq{color:var(--mcs-green);font-size:30px;font-weight:800;font-stretch:88%;
   text-transform:lowercase;letter-spacing:.02em}
 
+
+/* click-to-reveal: named bars first, cited on demand */
+.funnel.hide-cited .fx-r.cited{opacity:0;transform:translateY(-6px)}
+.funnel.hide-cited .fa-c,.funnel.hide-cited .fa-s:nth-of-type(4),.funnel.hide-cited .fa-t{opacity:0}
+.fx-r.cited{transition:opacity .45s ease,transform .45s ease}
+.fa-c,.fa-s{transition:opacity .45s ease}
+.revealbtn{font:inherit;font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--mcs-green);color:#000;border:0;border-radius:3px;padding:7px 15px;margin-left:14px;
+  cursor:pointer;vertical-align:middle}
+.revealbtn:hover{background:#00ff00}
+.revealbtn.done{background:transparent;color:var(--mcs-grey);border:1px solid var(--mcs-rule)}
+
 </style>
 </head>
 <body>
@@ -1094,25 +1106,20 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 </section>
 
 <!-- ============ 8 ============ -->
-<section class="s">
+<section class="s" id="s-funnel">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Where you stand <span class="sep">/</span> By decision stage</p>
-  <h1 class="t sm">The closer to the decision,<br>the less you are the <em>source</em>.</h1>
-  <p class="sub">Every answer scored twice. <strong class="l-n">Named</strong> &mdash; the brand appears. <strong class="l-c">Cited</strong> &mdash; a Merz page was the source. The gap between the two bars is the problem.</p>
+  <h1 class="t sm">The closer to the consumer decision point,<br>the less you are the <em>source</em>.</h1>
+  <p class="sub">Unbranded questions only. <strong class="l-n">Named</strong> &mdash; the brand appears in the answer.
+  <button id="revealCited" class="revealbtn" type="button">Show &ldquo;cited&rdquo; &rarr;</button></p>
 
-  <table class="funnel mid-t mid-b">
-    <thead><tr><th class="fm"></th><th><span class="fh">Branded</span><span class="fh-s">Asked for by name</span></th><th><span class="fh">TOFU</span><span class="fh-s">What is this treatment?</span></th><th><span class="fh">MOFU</span><span class="fh-s">Which one should I have?</span></th><th><span class="fh">BOFU</span><span class="fh-s">Price, clinic, book it</span></th><th class="sub"><span class="fh">All unbranded</span><span class="fh-s">TOFU + MOFU + BOFU</span></th></tr></thead>
-    <tbody><tr><td class="fm"><b>Singapore</b></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div><div class="fx-r cited "><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">75%</span><div class="fx-b"><i style="width:75%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">54%</span><div class="fx-b"><i style="width:54%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">83%</span><div class="fx-b"><i style="width:83%"></i></div></div><div class="fx-r cited "><span class="fx-p">67%</span><div class="fx-b"><i style="width:67%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">50%</span><div class="fx-b"><i style="width:50%"></i></div></div></div></td><td class="fx sub"><div class="fx-w"><div class="fx-r"><span class="fx-p">83%</span><div class="fx-b"><i style="width:83%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">60%</span><div class="fx-b"><i style="width:60%"></i></div></div></div></td></tr><tr><td class="fm"><b>Taiwan</b></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div><div class="fx-r cited "><span class="fx-p">67%</span><div class="fx-b"><i style="width:67%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">67%</span><div class="fx-b"><i style="width:67%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">6%</span><div class="fx-b"><i style="width:6%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">61%</span><div class="fx-b"><i style="width:61%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">24%</span><div class="fx-b"><i style="width:24%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">73%</span><div class="fx-b"><i style="width:73%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">0%</span><div class="fx-b"><i style="width:0%"></i></div></div></div></td><td class="fx sub"><div class="fx-w"><div class="fx-r"><span class="fx-p">65%</span><div class="fx-b"><i style="width:65%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">14%</span><div class="fx-b"><i style="width:14%"></i></div></div></div></td></tr><tr><td class="fm"><b>Hong Kong</b></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div><div class="fx-r cited "><span class="fx-p">87%</span><div class="fx-b"><i style="width:87%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">89%</span><div class="fx-b"><i style="width:89%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">44%</span><div class="fx-b"><i style="width:44%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">94%</span><div class="fx-b"><i style="width:94%"></i></div></div><div class="fx-r cited "><span class="fx-p">64%</span><div class="fx-b"><i style="width:64%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">33%</span><div class="fx-b"><i style="width:33%"></i></div></div></div></td><td class="fx sub"><div class="fx-w"><div class="fx-r"><span class="fx-p">93%</span><div class="fx-b"><i style="width:93%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">52%</span><div class="fx-b"><i style="width:52%"></i></div></div></div></td></tr><tr class="fall"><td class="fm"><b>All three</b></td><td class="fx"><div class="fx-all"><span class="fa-n">100%</span><span class="fa-s">named</span><span class="fa-c">82%</span><span class="fa-s">cited</span><span class="fa-t">n=45</span></div></td><td class="fx"><div class="fx-all"><span class="fa-n">78%</span><span class="fa-s">named</span><span class="fa-c">38%</span><span class="fa-s">cited</span><span class="fa-t">n=69</span></div></td><td class="fx"><div class="fx-all"><span class="fa-n">79%</span><span class="fa-s">named</span><span class="fa-c">52%</span><span class="fa-s">cited</span><span class="fa-t">n=102</span></div></td><td class="fx"><div class="fx-all"><span class="fa-n">89%</span><span class="fa-s">named</span><span class="fa-c">25%</span><span class="fa-s">cited</span><span class="fa-t">n=36</span></div></td><td class="fx sub"><div class="fx-all"><span class="fa-n">81%</span><span class="fa-s">named</span><span class="fa-c">43%</span><span class="fa-s">cited</span><span class="fa-t">n=207</span></div></td></tr></tbody>
+  <table class="funnel mid-t mid-b hide-cited" id="funnelTable">
+    <thead><tr><th class="fm"></th><th><span class="fh">TOFU</span><span class="fh-s">What is this treatment?</span></th><th><span class="fh">MOFU</span><span class="fh-s">Which one should I have?</span></th><th><span class="fh">BOFU</span><span class="fh-s">Price, clinic, book it</span></th><th class="sub"><span class="fh">All unbranded</span><span class="fh-s">TOFU + MOFU + BOFU</span></th></tr></thead>
+    <tbody><tr><td class="fm"><b>Singapore</b></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">75%</span><div class="fx-b"><i style="width:75%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">54%</span><div class="fx-b"><i style="width:54%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">83%</span><div class="fx-b"><i style="width:83%"></i></div></div><div class="fx-r cited "><span class="fx-p">67%</span><div class="fx-b"><i style="width:67%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">50%</span><div class="fx-b"><i style="width:50%"></i></div></div></div></td><td class="fx sub"><div class="fx-w"><div class="fx-r"><span class="fx-p">83%</span><div class="fx-b"><i style="width:83%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">60%</span><div class="fx-b"><i style="width:60%"></i></div></div></div></td></tr><tr><td class="fm"><b>Taiwan</b></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">67%</span><div class="fx-b"><i style="width:67%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">6%</span><div class="fx-b"><i style="width:6%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">61%</span><div class="fx-b"><i style="width:61%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">24%</span><div class="fx-b"><i style="width:24%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">73%</span><div class="fx-b"><i style="width:73%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">0%</span><div class="fx-b"><i style="width:0%"></i></div></div></div></td><td class="fx sub"><div class="fx-w"><div class="fx-r"><span class="fx-p">65%</span><div class="fx-b"><i style="width:65%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">14%</span><div class="fx-b"><i style="width:14%"></i></div></div></div></td></tr><tr><td class="fm"><b>Hong Kong</b></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">89%</span><div class="fx-b"><i style="width:89%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">44%</span><div class="fx-b"><i style="width:44%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">94%</span><div class="fx-b"><i style="width:94%"></i></div></div><div class="fx-r cited "><span class="fx-p">64%</span><div class="fx-b"><i style="width:64%"></i></div></div></div></td><td class="fx"><div class="fx-w"><div class="fx-r"><span class="fx-p">100%</span><div class="fx-b"><i style="width:100%"></i></div></div><div class="fx-r cited gapbad"><span class="fx-p">33%</span><div class="fx-b"><i style="width:33%"></i></div></div></div></td><td class="fx sub"><div class="fx-w"><div class="fx-r"><span class="fx-p">93%</span><div class="fx-b"><i style="width:93%"></i></div></div><div class="fx-r cited gapmid"><span class="fx-p">52%</span><div class="fx-b"><i style="width:52%"></i></div></div></div></td></tr><tr class="fall"><td class="fm"><b>All three</b></td><td class="fx"><div class="fx-all"><span class="fa-n">78%</span><span class="fa-s">named</span><span class="fa-c">38%</span><span class="fa-s">cited</span><span class="fa-t">n=69</span></div></td><td class="fx"><div class="fx-all"><span class="fa-n">79%</span><span class="fa-s">named</span><span class="fa-c">52%</span><span class="fa-s">cited</span><span class="fa-t">n=102</span></div></td><td class="fx"><div class="fx-all"><span class="fa-n">89%</span><span class="fa-s">named</span><span class="fa-c">25%</span><span class="fa-s">cited</span><span class="fa-t">n=36</span></div></td><td class="fx sub"><div class="fx-all"><span class="fa-n">81%</span><span class="fa-s">named</span><span class="fa-c">43%</span><span class="fa-s">cited</span><span class="fa-t">n=207</span></div></td></tr></tbody>
   </table>
 
-  <div class="panel">
-    <p class="pt">Read the bottom row left to right</p>
-    <p>Asked for by name, Merz is the source <strong>82%</strong> of the time. Across every question that does <em>not</em> say &ldquo;Ultherapy&rdquo;, that falls to <strong>43%</strong> &mdash; and at the decision question it is <strong>25%</strong>, while the brand is still named 89% of the time.
-    <strong>Taiwan is 65% named and 14% cited on unbranded questions, and 0% cited at the decision.</strong></p>
-  </div>
-
   <div class="foot">
-    <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 25 Aug 2026. 252 answers across Singapore, Taiwan and Hong Kong. BOFU is the smallest cell at n=36 &mdash; directional, not precise.</p>
+    <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 25 Aug 2026. 207 unbranded answers across Singapore, Taiwan and Hong Kong. BOFU is the smallest cell at n=36 &mdash; directional, not precise.</p>
     <p class="num">08 / 23</p>
   </div>
 </section>
@@ -1562,5 +1569,17 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 
 </deck-stage>
 <script src="deck-stage.js"></script>
+<script>
+(function(){
+  var b=document.getElementById('revealCited'), t=document.getElementById('funnelTable');
+  if(!b||!t) return;
+  b.addEventListener('click',function(e){
+    e.stopPropagation();
+    var hidden=t.classList.toggle('hide-cited');
+    b.textContent = hidden ? 'Show \u201ccited\u201d \u2192' : 'Hide \u201ccited\u201d';
+    b.classList.toggle('done', !hidden);
+  });
+})();
+</script>
 </body>
 </html>
