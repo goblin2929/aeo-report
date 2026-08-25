@@ -884,11 +884,34 @@ tr.cl-mid td:first-child{box-shadow:inset 3px 0 0 #ffc94d;padding-left:14px}
 tr.cl-ok  td:first-child{box-shadow:inset 3px 0 0 rgba(0,220,0,.5);padding-left:14px}
 
 
-table.clusters td{padding:9px 14px 9px 0}
-.clusters .cl-ex{font-size:13.5px;color:#9a9a9a;font-style:italic}
+table.clusters td{padding:6px 14px 6px 0}
+.clusters .cl-ex{font-size:12.5px;color:#9a9a9a;font-style:italic;line-height:1.35}
 .clusters .cl-note{font-size:14px;max-width:300px}
 .clusters .cl-c{font-size:19px}
-.clusters .cl-url{font-size:15px}
+.clusters .cl-url{font-size:13.5px;white-space:nowrap}
+
+
+/* worked-example proof slide */
+.proof{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;margin-top:24px;flex:1;min-height:0}
+.proof-l{display:flex;flex-direction:column;min-height:0}
+.proof-url{font-family:ui-monospace,Menlo,monospace;font-size:16px;color:var(--mcs-green);
+  padding-bottom:10px;margin-bottom:12px;border-bottom:2px solid var(--mcs-white);word-break:break-all}
+.proof-shot{flex:1;min-height:0;background:#fff;border:1px solid rgba(255,255,255,.2);overflow:hidden;
+  display:flex;align-items:flex-start;justify-content:center}
+.proof-shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+.proof-cap{margin:11px 0 0;font-size:15px;color:var(--mcs-grey);line-height:1.4}
+.proof-cap strong{color:#fff}
+.proof-r{display:flex;flex-direction:column;min-height:0}
+table.proof-tab{font-size:15.5px}
+table.proof-tab td{padding:7px 12px 7px 0}
+table.proof-tab th{font-size:12px}
+tr.fx-bad td.r b{color:#ff6b6b}
+tr.fx-ok td.r b{color:var(--mcs-green)}
+
+
+.faqline{margin:12px 0 0;padding:11px 16px;background:var(--mcs-panel);
+  border-left:4px solid var(--mcs-green);font-size:16px;line-height:1.45;color:var(--mcs-grey)}
+.faqline strong{color:#fff}
 
 </style>
 </head>
@@ -967,29 +990,26 @@ table.clusters td{padding:9px 14px 9px 0}
   <path d="M 1099 251.0 h 74" fill="none" stroke="#00DC00" stroke-width="2"/>
   <path d="M 1207 251.0 l -10 -6 l 0 12 z" fill="#00DC00"/>
   <rect x="1215" y="16" width="497" height="470" rx="8" fill="#00DC00"/>
-  <text x="1243" y="78" fill="#000000" font-size="36" font-weight="800" font-stretch="88%">ZERO-CLICK</text>
-  <text x="1243" y="124" fill="#000000" font-size="19" font-weight="700">The choice is made inside the assistant.</text>
-  <text x="1243" y="156" fill="#0a3d0a" font-size="17.5">Buyers know Ultherapy. What they cannot tell</text>
-  <text x="1243" y="180" fill="#0a3d0a" font-size="17.5">from the answer is whether to choose it.</text>
-  <line x1="1243" y1="212" x2="1684" y2="212" stroke="#0a3d0a" stroke-width="1.5" opacity=".45"/>
-  <text x="1243" y="248" fill="#000000" font-size="19" font-weight="800">Merz is not shaping the comparison</text>
-  <text x="1243" y="274" fill="#000000" font-size="19" font-weight="800">that decides the treatment.</text>
-  <text x="1243" y="322" fill="#0a3d0a" font-size="17">Measured on unbranded questions:</text>
-  <text x="1243" y="364" fill="#000000" font-size="44" font-weight="800" font-stretch="88%">25%</text>
-  <text x="1335" y="364" fill="#000000" font-size="18" font-weight="700">of answers cite</text>
-  <text x="1335" y="388" fill="#000000" font-size="18" font-weight="700">a Merz page at all.</text>
-  <text x="1243" y="428" fill="#0a3d0a" font-size="16">Taiwan is worse: 12%.</text>
-
-  <!-- RIGHT: the one clicking path -->
-  <path d="M 1073 531.0 h 134" fill="none" stroke="#00DC00" stroke-width="2.4"/>
-  <path d="M 1207 531.0 l -10 -6 l 0 12 z" fill="#00DC00"/>
+    <text x="1243" y="74" fill="#000000" font-size="40" font-weight="800" font-stretch="88%">ZERO-CLICK</text>
+  <text x="1243" y="128" fill="#000000" font-size="21" font-weight="700">Buyers already know Ultherapy.</text>
+  <text x="1243" y="162" fill="#0a3d0a" font-size="18.5">But the entire purchase funnel now</text>
+  <text x="1243" y="188" fill="#0a3d0a" font-size="18.5">happens inside the chat.</text>
+  <line x1="1243" y1="222" x2="1684" y2="222" stroke="#0a3d0a" stroke-width="1.5" opacity=".45"/>
+  <text x="1243" y="262" fill="#000000" font-size="20" font-weight="800">Awareness &#183; comparison &#183; objection</text>
+  <text x="1243" y="290" fill="#000000" font-size="20" font-weight="800">price &#183; clinic</text>
+  <text x="1243" y="326" fill="#0a3d0a" font-size="18.5">Every step is answered before</text>
+  <text x="1243" y="352" fill="#0a3d0a" font-size="18.5">a website is ever opened.</text>
+  <line x1="1243" y1="392" x2="1684" y2="392" stroke="#0a3d0a" stroke-width="1.5" opacity=".45"/>
+  <text x="1243" y="432" fill="#000000" font-size="29" font-weight="800" font-stretch="88%">No click is required</text>
+  <text x="1243" y="464" fill="#000000" font-size="29" font-weight="800" font-stretch="88%">for the decision.</text>
+<path d="M 1207 531.0 l -10 -6 l 0 12 z" fill="#00DC00"/>
   <rect x="1215" y="491.0" width="497" height="80" rx="8" fill="#0C0C0C" stroke="#00DC00" stroke-width="2"/>
   <text x="1243" y="523.0" fill="#00DC00" font-size="21" font-weight="800" font-stretch="88%">THE ONLY CLICKING PATH</text>
   <text x="1243" y="551.0" fill="#FFFFFF" font-size="17">The one route that can land a visitor on your own domain.</text>
 </svg>
   <div class="foot">
     <p>DataForSEO Labs, 6,167 deduplicated queries, re-pulled 25 Aug 2026 &middot; citation rates: ChatGPT, 252 answers, 25 Aug. <strong>Only ChatGPT measured</strong> &mdash; other assistants shown as destinations.</p>
-    <p class="num">02 / 22</p>
+    <p class="num">02 / 23</p>
   </div>
 </section>
 
@@ -1034,7 +1054,7 @@ table.clusters td{padding:9px 14px 9px 0}
 
   <div class="foot">
     <p>Live answers captured 25 Aug 2026. The ranking changes with the destination, not with the market.</p>
-    <p class="num">03 / 22</p>
+    <p class="num">03 / 23</p>
   </div>
 </section>
 
@@ -1073,7 +1093,7 @@ table.clusters td{padding:9px 14px 9px 0}
 
   <div class="foot">
     <p>Cloudflare Q2 2026 earnings call, Aug 2026, widely reported. Seifert noted his own forecasts have been wrong before &mdash; the 1,000&times; figure is a prediction; the May 2026 crossover is measured.</p>
-    <p class="num">04 / 22</p>
+    <p class="num">04 / 23</p>
   </div>
 </section>
 
@@ -1126,7 +1146,7 @@ table.clusters td{padding:9px 14px 9px 0}
 
   <div class="foot">
     <p>Framework. Citation figures: ChatGPT, 207 unbranded answers across SG, TW and HK, 25 Aug 2026.</p>
-    <p class="num">05 / 22</p>
+    <p class="num">05 / 23</p>
   </div>
 </section>
 
@@ -1176,7 +1196,7 @@ table.clusters td{padding:9px 14px 9px 0}
 
   <div class="foot">
     <p>Citation rates: ChatGPT, 207 unbranded answers across Singapore, Taiwan and Hong Kong, 25 Aug 2026.</p>
-    <p class="num">06 / 22</p>
+    <p class="num">06 / 23</p>
   </div>
 </section>
 
@@ -1195,7 +1215,7 @@ table.clusters td{padding:9px 14px 9px 0}
 
   <div class="foot">
     <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 25 Aug 2026. 207 unbranded answers across Singapore, Taiwan and Hong Kong. BOFU is the smallest cell at n=36 &mdash; directional, not precise.</p>
-    <p class="num">07 / 22</p>
+    <p class="num">07 / 23</p>
   </div>
 </section>
 
@@ -1224,7 +1244,7 @@ table.clusters td{padding:9px 14px 9px 0}
 
   <div class="foot">
     <p>Identical seed structure in all five markets, word-order variants deduplicated on both sides. DataForSEO, 25 Aug 2026; no Search Console exists on any Merz property, so visits are estimates.</p>
-    <p class="num">08 / 22</p>
+    <p class="num">08 / 23</p>
   </div>
 </section>
 
@@ -1250,7 +1270,7 @@ table.clusters td{padding:9px 14px 9px 0}
 
   <div class="foot">
     <p>ChatGPT via DataForSEO llm_scraper, k=3 pulls per prompt, 25 Aug 2026 &mdash; the same run behind the Echo Network dashboard.</p>
-    <p class="num">09 / 22</p>
+    <p class="num">09 / 23</p>
   </div>
 </section>
 
@@ -1281,7 +1301,7 @@ table.clusters td{padding:9px 14px 9px 0}
 
   <div class="foot">
     <p>DataForSEO Labs, 24 Aug 2026. Bucket volumes reconcile exactly to market totals in all five markets.</p>
-    <p class="num">10 / 22</p>
+    <p class="num">10 / 23</p>
   </div>
 </section>
 
@@ -1293,7 +1313,7 @@ table.clusters td{padding:9px 14px 9px 0}
   The first two are owned media. The third is earned &mdash; and it is where the answer is decided.</p>
   <div class="foot">
     <p>The proposal</p>
-    <p class="num">11 / 22</p>
+    <p class="num">11 / 23</p>
   </div>
 </section>
 
@@ -1316,7 +1336,7 @@ table.clusters td{padding:9px 14px 9px 0}
 
   <div class="foot">
     <p>ultherapy-asia.com against drreborn.com, a competing clinic site. Live crawl, 25 Aug 2026, four pages per domain.</p>
-    <p class="num">12 / 22</p>
+    <p class="num">12 / 23</p>
   </div>
 </section>
 
@@ -1346,7 +1366,7 @@ table.clusters td{padding:9px 14px 9px 0}
   </div>
   <div class="foot">
     <p>Locale set derived from measured query language per market. Canonical finding: Merz Singapore preliminary analysis, 7 Aug 2026.</p>
-    <p class="num">13 / 22</p>
+    <p class="num">13 / 23</p>
   </div>
 </section>
 
@@ -1376,7 +1396,7 @@ table.clusters td{padding:9px 14px 9px 0}
   </div>
   <div class="foot">
     <p>DataForSEO Labs, 24 Aug 2026, estimates. No Search Console baseline exists on any Merz property &mdash; establishing one is a prerequisite.</p>
-    <p class="num">14 / 22</p>
+    <p class="num">14 / 23</p>
   </div>
 </section>
 
@@ -1385,29 +1405,63 @@ table.clusters td{padding:9px 14px 9px 0}
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Content Architecture <span class="sep">/</span> What to build, in what order</p>
   <h1 class="t sm">Build a question-and-answer destination<br>on your <em>own</em> domain.</h1>
-  <p class="sub">Not a brochure restructured. The sections below are the real questions people put to AI and to search, clustered &mdash; then scored on whether a Merz page was the source. <strong>The weakest clusters are the build order.</strong></p>
+  <p class="sub">Not a brochure restructured &mdash; the real questions people ask, clustered and scored on whether a Merz page was the source. <strong>The weakest clusters are the build order.</strong></p>
 
   <table class="d tight clusters mid-t mid-b">
     <thead><tr><th>Content cluster &amp; example page</th><th>Section</th><th class="r">Named</th><th class="r">Cited</th><th>Why it ranks here</th></tr></thead>
     <tbody>
-      <tr class="cl-bad"><td><b>Concerns &amp; outcomes</b><br><span class="cl-ex">&ldquo;Sagging jowls and jawline &mdash; what actually lifts them?&rdquo;</span></td><td><code class="cl-url">/concerns/</code></td><td class="r cl-n">33%</td><td class="r cl-c">20%</td><td class="cl-note">The buyer describes a problem, not a product. Merz has no page.</td></tr>
-      <tr class="cl-bad"><td><b>Category &amp; modality</b><br><span class="cl-ex">&ldquo;音波拉提是什麼？和電波拉皮差在哪？&rdquo;</span></td><td><code class="cl-url">/treatments/</code></td><td class="r cl-n">76%</td><td class="r cl-c">24%</td><td class="cl-note">62&ndash;64% of demand in AU and HK sits here.</td></tr>
-      <tr class="cl-bad"><td><b>Clinical evidence</b><br><span class="cl-ex">&ldquo;MFU-V: 120+ publications, 56 clinical studies&rdquo;</span></td><td><code class="cl-url">/evidence/</code></td><td class="r cl-n">&mdash;</td><td class="r cl-c">&mdash;</td><td class="cl-note"><strong>165 PubMed citations on Merz&rsquo;s own technology &mdash; none to Merz.</strong></td></tr>
-      <tr class="cl-bad"><td><b>Question &amp; answer hub</b><br><span class="cl-ex">&ldquo;Is Ultherapy painful? Downtime and side effects&rdquo;</span></td><td><code class="cl-url">/faq/</code></td><td class="r cl-n">&mdash;</td><td class="r cl-c">&mdash;</td><td class="cl-note"><strong>Zero FAQPage markup. The clinic site has it.</strong></td></tr>
-      <tr class="cl-mid"><td><b>Comparison</b><br><span class="cl-ex">&ldquo;Ultherapy vs Thermage &mdash; which is better?&rdquo;</span></td><td><code class="cl-url">/compare/</code></td><td class="r cl-n">92%</td><td class="r cl-c">42%</td><td class="cl-note"><strong>Today the HK table is a 972&times;642 JPEG. No rival name is text.</strong></td></tr>
-      <tr class="cl-ok"><td><b>Media &amp; proof</b><br><span class="cl-ex">&ldquo;Ultherapy before and after &mdash; realistic results&rdquo;</span></td><td><code class="cl-url">/media/</code></td><td class="r cl-n">81%</td><td class="r cl-c">62%</td><td class="cl-note">Carries traffic on .com.au. Convert video into answers.</td></tr>
-      <tr class="cl-ok"><td><b>Safety &amp; authenticity</b><br><span class="cl-ex">&ldquo;怎麼分辨正版 Ultherapy 和仿冒機器？&rdquo;</span></td><td><code class="cl-url">/safety/</code></td><td class="r cl-n">88%</td><td class="r cl-c">65%</td><td class="cl-note">Holding. Maintain, do not rebuild.</td></tr>
-      <tr class="cl-ok"><td><b>Product</b><br><span class="cl-ex">&ldquo;Ultherapy vs Ultherapy PRIME &mdash; which should I choose?&rdquo;</span></td><td><code class="cl-url">/products/</code></td><td class="r cl-n">100%</td><td class="r cl-c">83%</td><td class="cl-note">Strongest. Merz is already the source.</td></tr>
+      <tr class="cl-bad"><td><b>Concerns &amp; outcomes</b><br><span class="cl-ex">&ldquo;Sagging jowls and jawline &mdash; what actually lifts them?&rdquo;</span></td><td><code class="cl-url">/concerns/sagging-jowls-jawline/</code></td><td class="r cl-n">33%</td><td class="r cl-c">20%</td><td class="cl-note">The buyer describes a problem, not a product.</td></tr>
+      <tr class="cl-bad"><td><b>Category &amp; modality</b><br><span class="cl-ex">&ldquo;音波拉提是什麼？和電波拉皮差在哪？&rdquo;</span></td><td><code class="cl-url">/treatments/ultrasound-lifting/</code></td><td class="r cl-n">76%</td><td class="r cl-c">24%</td><td class="cl-note">62&ndash;64% of demand in AU and HK sits here.</td></tr>
+      <tr class="cl-bad"><td><b>Clinical evidence</b><br><span class="cl-ex">&ldquo;MFU-V: 120+ publications, 56 clinical studies&rdquo;</span></td><td><code class="cl-url">/evidence/mfu-v-clinical-studies/</code></td><td class="r cl-n">&mdash;</td><td class="r cl-c">&mdash;</td><td class="cl-note"><strong>165 PubMed citations on Merz&rsquo;s own technology &mdash; none to Merz.</strong></td></tr>
+      <tr class="cl-mid"><td><b>Comparison</b><br><span class="cl-ex">&ldquo;Ultherapy vs Thermage &mdash; which is better?&rdquo;</span></td><td><code class="cl-url">/compare/ultherapy-vs-thermage/</code></td><td class="r cl-n">92%</td><td class="r cl-c">42%</td><td class="cl-note"><strong>Today the HK table is a 972&times;642 JPEG.</strong></td></tr>
+      <tr class="cl-mid"><td><b>Editorial</b><br><span class="cl-ex">&ldquo;Is Ultherapy painful? Downtime and side effects&rdquo;</span></td><td><code class="cl-url">/blog/is-ultherapy-painful/</code></td><td class="r cl-n">&mdash;</td><td class="r cl-c">&mdash;</td><td class="cl-note">The long-tail questions that do not warrant a product page.</td></tr>
+      <tr class="cl-ok"><td><b>Media &amp; proof</b><br><span class="cl-ex">&ldquo;Ultherapy before and after &mdash; realistic results&rdquo;</span></td><td><code class="cl-url">/media/before-and-after/</code></td><td class="r cl-n">81%</td><td class="r cl-c">62%</td><td class="cl-note">Carries traffic on .com.au. Convert video into answers.</td></tr>
+      <tr class="cl-ok"><td><b>Safety &amp; authenticity</b><br><span class="cl-ex">&ldquo;怎麼分辨正版 Ultherapy 和仿冒機器？&rdquo;</span></td><td><code class="cl-url">/safety/genuine-vs-counterfeit/</code></td><td class="r cl-n">88%</td><td class="r cl-c">65%</td><td class="cl-note">Holding. Maintain, do not rebuild.</td></tr>
+      <tr class="cl-ok"><td><b>Product</b><br><span class="cl-ex">&ldquo;Ultherapy vs Ultherapy PRIME &mdash; which should I choose?&rdquo;</span></td><td><code class="cl-url">/products/ultherapy-prime/</code></td><td class="r cl-n">100%</td><td class="r cl-c">83%</td><td class="cl-note">Strongest. Merz is already the source.</td></tr>
     </tbody>
   </table>
+  <p class="faqline"><strong>FAQ is not a destination.</strong> Question-and-answer blocks sit inside
+  every section above, each carrying FAQPage markup. <strong>Merz has zero today; the competing clinic site has it.</strong></p>
 
   <div class="foot">
     <p>Cited = a Merz page was the source. ChatGPT, 252 answers, SG/TW/HK, 25 Aug 2026. Price and clinic-ranking clusters excluded by decision.</p>
-    <p class="num">15 / 22</p>
+    <p class="num">15 / 23</p>
   </div>
 </section>
 
 <!-- ============ 16 ============ -->
+<section class="s">
+  <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
+  <p class="kicker">Content Architecture <span class="sep">/</span> A worked example</p>
+  <h1 class="t sm">Indexable, and still <em>unreadable</em>.</h1>
+  <p class="sub">The Hong Kong comparison page &mdash; the page that should win &ldquo;Ultherapy vs Thermage&rdquo;. Google can reach it. No engine can read a single fact on it.</p>
+
+  <div class="proof">
+    <div class="proof-l">
+      <div class="proof-url"><code>ultherapy.com.hk/comparison/index.html</code></div>
+      <div class="proof-shot"><img src="assets/hk-comparison.jpg" alt="The Ultherapy Hong Kong comparison page with heading annotations showing three H1 elements, one empty, and the comparison table rendered as a flat image"></div>
+      <p class="proof-cap">The heading overlay shows <strong>three H1s &mdash; the first one empty</strong>. The comparison table below is one flat JPEG: not a single competitor name is text.</p>
+    </div>
+    <div class="proof-r">
+      <table class="d tight proof-tab">
+        <thead><tr><th>What a crawler finds</th><th class="r">Result</th></tr></thead>
+        <tbody><tr class="fx-bad"><td>Comparison table</td><td class="r"><b>A 972&times;642 JPEG, uploaded 2016</b></td></tr><tr class="fx-bad"><td>&lt;table&gt; / &lt;tr&gt; / &lt;td&gt;</td><td class="r"><b>0</b></td></tr><tr class="fx-bad"><td>&ldquo;Thermage&rdquo; / 熱瑪吉 in the HTML</td><td class="r"><b>0</b></td></tr><tr class="fx-bad"><td>&ldquo;超聲刀&rdquo; / &ldquo;Ultraformer&rdquo; / 電波</td><td class="r"><b>0</b></td></tr><tr class="fx-bad"><td>Image alt text</td><td class="r"><b><code>compare-table01a</code> &mdash; the filename</b></td></tr><tr class="fx-bad"><td>Second image alt</td><td class="r"><b>Missing entirely</b></td></tr><tr class="fx-bad"><td>&lt;h1&gt;</td><td class="r"><b>3 &mdash; should be one</b></td></tr><tr class="fx-bad"><td>&lt;h2&gt; / &lt;h3&gt;</td><td class="r"><b>0</b></td></tr><tr class="fx-bad"><td>&lt;p&gt; on a 1MB page</td><td class="r"><b>2</b></td></tr><tr class="fx-bad"><td>Canonical</td><td class="r"><b><code>index.html</code> &mdash; relative, not absolute</b></td></tr><tr class="fx-bad"><td>Structured data</td><td class="r"><b>BreadcrumbList only. No Product, no FAQPage</b></td></tr><tr class="fx-ok"><td>Indexable?</td><td class="r"><b><strong>Yes &mdash; 200, no noindex</strong></b></td></tr></tbody>
+      </table>
+      <div class="panel" style="margin-top:16px">
+        <p class="pt">The consequence, measured</p>
+        <p>Comparison queries: <strong>92% name Ultherapy, 42% cite a Merz page.</strong>
+        The engine knows Ultherapy belongs in the comparison. It sources the facts from clinics who published theirs as text.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Live fetch and source inspection, 25 Aug 2026. Citation rates: ChatGPT, 24 comparison answers across SG, TW and HK.</p>
+    <p class="num">16 / 23</p>
+  </div>
+</section>
+
+<!-- ============ 17 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Content Architecture <span class="sep">/</span> Measured continuously</p>
@@ -1433,11 +1487,11 @@ table.clusters td{padding:9px 14px 9px 0}
   </div>
   <div class="foot">
     <p>Portfolio built 24 Aug 2026. Non-English prompts pending native-speaker review before first client run.</p>
-    <p class="num">16 / 22</p>
+    <p class="num">17 / 23</p>
   </div>
 </section>
 
-<!-- ============ 17 ============ -->
+<!-- ============ 18 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">Own the Sources AI Cites <span class="sep">/</span> Off-page citation</p>
@@ -1464,22 +1518,22 @@ table.clusters td{padding:9px 14px 9px 0}
   </div>
   <div class="foot">
     <p>Dcard volume: DataForSEO Labs, Taiwan, 24 Aug 2026. Cited-source measurement begins with the first Prompt Radar run.</p>
-    <p class="num">17 / 22</p>
+    <p class="num">18 / 23</p>
   </div>
 </section>
 
-<!-- ============ 18 ============ -->
+<!-- ============ 19 ============ -->
 <section class="s divider light">
   <p class="dn">Section 03</p>
   <h1>How we work,<br>and what we report</h1>
   <p class="ds">Phased against your 1 April 2027 go-live, with three numbers reported monthly.</p>
   <div class="foot">
     <p>Go-live date per Merz brief, 20 Aug 2026</p>
-    <p class="num">18 / 22</p>
+    <p class="num">19 / 23</p>
   </div>
 </section>
 
-<!-- ============ 19 ============ -->
+<!-- ============ 20 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Phasing</p>
@@ -1497,11 +1551,11 @@ table.clusters td{padding:9px 14px 9px 0}
   </table>
   <div class="foot">
     <p>Indicative phasing. Sequence is fixed by equity at risk; the window flexes to the client build schedule.</p>
-    <p class="num">19 / 22</p>
+    <p class="num">20 / 23</p>
   </div>
 </section>
 
-<!-- ============ 20 ============ -->
+<!-- ============ 21 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Reporting</p>
@@ -1527,11 +1581,11 @@ table.clusters td{padding:9px 14px 9px 0}
   </div>
   <div class="foot">
     <p>Reported monthly. Baselines set in the Foundation phase, before any migration begins.</p>
-    <p class="num">20 / 22</p>
+    <p class="num">21 / 23</p>
   </div>
 </section>
 
-<!-- ============ 21 ============ -->
+<!-- ============ 22 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Investment</p>
@@ -1594,11 +1648,11 @@ table.clusters td{padding:9px 14px 9px 0}
   </div>
   <div class="foot">
     <p>USD, excluding tax. 30% discount on per-market lines from the third market. Extra pages $80 each. <strong>Additional languages quoted separately.</strong></p>
-    <p class="num">21 / 22</p>
+    <p class="num">22 / 23</p>
   </div>
 </section>
 
-<!-- ============ 22 ============ -->
+<!-- ============ 23 ============ -->
 <section class="s invert">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">How we work <span class="sep">/</span> What we need</p>
@@ -1624,7 +1678,7 @@ table.clusters td{padding:9px 14px 9px 0}
   </div>
   <div class="foot">
     <p>Crawler finding observed from a single network on 24 Aug 2026 and not yet independently confirmed &mdash; presented as a check to run, not a verdict.</p>
-    <p class="num">22 / 22</p>
+    <p class="num">23 / 23</p>
   </div>
 </section>
 
