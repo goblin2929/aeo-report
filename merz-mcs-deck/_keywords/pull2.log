@@ -1,0 +1,27 @@
+  SG 'ultherapy': 1000 items, unique 1000
+  SG 'ultherapy prime': 57 items, unique 1002
+  SG 'hifu treatment': 412 items, unique 1306
+  SG 'skin tightening treatment': 132 items, unique 1398
+SG: raw 1398 / 42,160  ->  dedup 1255 / 36,210
+  TH 'ultherapy': 276 items, unique 228
+  TH 'ultherapy prime': 25 items, unique 228
+  TH 'hifu': 1000 items, unique 1211
+  TH 'ยกกระชับผิวหน้า': 9 items, unique 1219
+TH: raw 1219 / 70,260  ->  dedup 987 / 58,060
+  AU 'ultherapy': 1000 items, unique 1000
+  AU 'ultherapy prime': 50 items, unique 1007
+  AU 'hifu treatment': 579 items, unique 1465
+  AU 'skin tightening treatment': 227 items, unique 1652
+AU: raw 1652 / 69,930  ->  dedup 1495 / 55,380
+  TW 'ultherapy': 75 items, unique 54
+  TW '音波拉提': 345 items, unique 320
+  TW '電波拉皮': 337 items, unique 360
+  TW '超音波拉皮': 15 items, unique 363
+TW: raw 363 / 30,190  ->  dedup 265 / 22,910
+  HK 'ultherapy': 439 items, unique 312
+  HK '超聲刀': 145 items, unique 430
+  HK 'hifu': 1000 items, unique 1399
+  HK '美版超聲刀': 27 items, unique 1399
+HK: raw 1399 / 55,790  ->  dedup 991 / 38,070
+
+DONE

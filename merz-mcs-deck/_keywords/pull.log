@@ -1,0 +1,33 @@
+  SG seed 'ultherapy': 1000 items, running unique 1000
+  SG seed 'ultherapy prime': 57 items, running unique 1002
+  SG seed 'hifu': 1000 items, running unique 1957
+  SG seed 'skin tightening': 1000 items, running unique 2938
+SG: 2938 raw keywords, raw volume 74,060
+  AU seed 'ultherapy': 1000 items, running unique 1000
+  AU seed 'ultherapy prime': 50 items, running unique 1007
+  AU seed 'hifu': 1000 items, running unique 1990
+  AU seed 'skin tightening': 1000 items, running unique 2970
+AU: 2970 raw keywords, raw volume 238,030
+  TH seed 'ultherapy': 276 items, running unique 228
+  TH seed 'ultherapy prime': 25 items, running unique 228
+  TH seed 'hifu': 1000 items, running unique 1211
+  TH seed 'ยกกระชับผิว': 2 items, running unique 1212
+TH: 1212 raw keywords, raw volume 70,120
+  TW seed 'ultherapy': 75 items, running unique 54
+  TW seed '音波拉提': 345 items, running unique 320
+  TW seed '電波拉皮': 337 items, running unique 360
+  TW seed '拉提': 1000 items, running unique 1322
+TW: 1322 raw keywords, raw volume 1,694,790
+  HK seed 'ultherapy': 439 items, running unique 312
+  HK seed '超聲刀': 145 items, running unique 430
+  HK seed 'hifu': 1000 items, running unique 1399
+  HK seed '緊膚': 431 items, running unique 1578
+HK: 1578 raw keywords, raw volume 58,610
+
+MKT   raw kw  raw vol   unique  dedup vol  inflation
+SG     2,938    74,060    2,641     64,440        15%
+TH     1,212    70,120      981     57,950        21%
+AU     2,970   238,030    2,643    192,360        24%
+TW     1,322 1,694,790      906  1,167,930        45%
+HK     1,578    58,610    1,131     39,970        47%
+ALL         2,135,610           1,522,650        40%
