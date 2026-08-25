@@ -703,6 +703,21 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 .scopebar .sb-l{display:block;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mcs-green)}
 .scopebar .sb-v{display:block;font-size:18px;font-weight:700;color:#fff;margin-top:6px}
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:22px}
+/* three-plan quotation */
+.scopebar.four{grid-template-columns:1.6fr 1.1fr 1fr .5fr;gap:26px}
+.plans.three{grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:26px}
+.plans.three .pcol{padding:22px 24px}
+.plans.three .p-name{font-size:32px}
+.plans.three .p-spec{font-size:15.5px;margin-bottom:12px}
+.plans.three .ptab{font-size:15px}
+.plans.three .ptab td{padding:11px 0}
+.plans.three .pl-s{font-size:13.5px}
+.plans.three .p-big{font-size:42px}
+.plans.three .p-once{font-size:14px}
+.p-per{margin-top:9px;padding-top:9px;border-top:1px solid var(--mcs-rule);
+  font-size:14.5px;color:var(--mcs-grey)}
+.p-per strong{color:#fff}
+.p-per.feat strong{color:var(--mcs-green)}
 .pcol{background:var(--mcs-panel);border-top:4px solid var(--mcs-grey-dim);padding:18px 24px;
   display:flex;flex-direction:column}
 .pcol.feat{background:var(--mcs-panel-2);border-top-color:var(--mcs-green)}
@@ -1575,73 +1590,84 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 </section>
 
 <!-- ============ 20 ============ -->
-<section class="s">
+<section class="s" id="s-price">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
   <p class="kicker">How we work <span class="sep">/</span> Investment</p>
   <h1 class="t sm">Regional GEO Solution Quotation</h1>
-  <p class="sub">Two scopes over the same five markets and the same two AI platforms. They differ only on <strong>prompts tracked and pages produced per month</strong>.</p>
+  <p class="sub">Three scopes on the same two AI platforms. They differ on <strong>markets covered, prompts tracked and pages produced per month</strong>.</p>
 
-  <div class="scopebar">
+  <div class="scopebar four">
     <div><span class="sb-l">Core markets</span><span class="sb-v">Singapore &middot; Thailand &middot; Australia &middot; Taiwan &middot; Hong Kong</span></div>
     <div><span class="sb-l">AI platforms tracked</span><span class="sb-v">ChatGPT &middot; Google AI Overview</span></div>
     <div><span class="sb-l">Destination</span><span class="sb-v">One domain, one language</span></div>
+    <div><span class="sb-l">Term</span><span class="sb-v">6 months</span></div>
   </div>
 
-  <div class="plans">
+  <div class="plans three">
     <div class="pcol">
-      <div class="p-tag">Entry</div>
+      <div class="p-tag">Single market</div>
+      <div class="p-name">Growth</div>
+      <div class="p-spec">50 prompts &middot; 30 pages per month</div>
+      <table class="ptab">
+        <tr><td>Technical AEO Foundation<br><span class="pl-s">ongoing technical health, one domain</span></td>
+            <td class="r num">$1,000</td></tr>
+        <tr><td>Prompt Radar and Novalense<br><span class="pl-s">50 &times; 2 platforms &times; $3 &times; 1 market</span></td>
+            <td class="r num">$300</td></tr>
+        <tr><td>Echo Network<br><span class="pl-s">$700 &times; 1 market</span></td>
+            <td class="r num">$700</td></tr>
+        <tr><td>Content architecture<br><span class="pl-s">30 pages, one domain, one language</span></td>
+            <td class="r num">$3,000</td></tr>
+      </table>
+      <div class="p-sub"><span>Monthly</span><span class="p-big">$5,000</span></div>
+      <div class="p-once">Plus a one-time <strong>launch fee of $1,000</strong></div>
+      <div class="p-per">$5,000 per market</div>
+    </div>
+
+    <div class="pcol">
+      <div class="p-tag">Five markets</div>
       <div class="p-name">Growth</div>
       <div class="p-spec">50 prompts per market &middot; 30 pages per month</div>
       <table class="ptab">
         <tr><td>Technical AEO Foundation<br><span class="pl-s">ongoing technical health, per domain &mdash; all five markets</span></td>
             <td class="r num">$1,000</td></tr>
-        <tr><td>Prompt Radar and Novalense: Full AI<br>Visibility and Strategy<br><span class="pl-s">50 &times; 2 platforms &times; $3 &times; 5 markets</span></td>
+        <tr><td>Prompt Radar and Novalense<br><span class="pl-s">50 &times; 2 platforms &times; $3 &times; 5 markets</span></td>
             <td class="r num">$1,230</td></tr>
-        <tr><td>Echo Network: Off-page Citation<br>Intelligence and Operation<br><span class="pl-s">$700 &times; 5 markets</span></td>
+        <tr><td>Echo Network<br><span class="pl-s">$700 &times; 5 markets</span></td>
             <td class="r num">$2,870</td></tr>
         <tr><td>Content architecture<br><span class="pl-s">30 pages, one domain, one language</span></td>
             <td class="r num">$3,000</td></tr>
       </table>
       <div class="p-sub"><span>Monthly</span><span class="p-big">$8,100</span></div>
       <div class="p-once">Plus a one-time <strong>launch fee of $1,000</strong></div>
-      <div class="p-yr">Year one, inclusive of launch &mdash; <strong>$98,200</strong></div>
+      <div class="p-per feat"><strong>$1,620 per market</strong> &mdash; 68% lower</div>
     </div>
+
     <div class="pcol feat">
-      <div class="p-tag">Recommended</div>
+      <div class="p-tag">Five markets &middot; recommended</div>
       <div class="p-name">Accelerate</div>
       <div class="p-spec">100 prompts per market &middot; 50 pages per month</div>
       <table class="ptab">
         <tr><td>Technical AEO Foundation<br><span class="pl-s">ongoing technical health, per domain &mdash; all five markets</span></td>
             <td class="r num">$1,000</td></tr>
-        <tr><td>Prompt Radar and Novalense: Full AI<br>Visibility and Strategy<br><span class="pl-s">100 &times; 2 platforms &times; $3 &times; 5 markets</span></td>
+        <tr><td>Prompt Radar and Novalense<br><span class="pl-s">100 &times; 2 platforms &times; $3 &times; 5 markets</span></td>
             <td class="r num">$2,460</td></tr>
-        <tr><td>Echo Network: Off-page Citation<br>Intelligence and Operation<br><span class="pl-s">$700 &times; 5 markets</span></td>
+        <tr><td>Echo Network<br><span class="pl-s">$700 &times; 5 markets</span></td>
             <td class="r num">$2,870</td></tr>
-        <tr><td>Content architecture<br><span class="pl-s">50 pages, one domain, one language &mdash; 20 above base at $80</span></td>
+        <tr><td>Content architecture<br><span class="pl-s">50 pages &mdash; 20 above base at $80</span></td>
             <td class="r num">$4,600</td></tr>
       </table>
       <div class="p-sub"><span>Monthly</span><span class="p-big">$10,930</span></div>
       <div class="p-once">Plus a one-time <strong>launch fee of $1,000</strong></div>
-      <div class="p-yr">Year one, inclusive of launch &mdash; <strong>$132,160</strong></div>
+      <div class="p-per feat"><strong>$2,186 per market</strong> &mdash; twice the prompts, 20 more pages</div>
     </div>
   </div>
 
-
-  <div class="cmpbar">
-    <div class="cmp-l">Growth, single market</div>
-    <div class="cmp-v">$5,000<span>/mo</span></div>
-    <div class="cmp-arrow">&rarr;</div>
-    <div class="cmp-l">Growth, five markets</div>
-    <div class="cmp-v feat">$8,100<span>/mo</span></div>
-    <div class="cmp-n"><strong>$1,620 per market</strong> &mdash; 68% lower than running one market alone. Five times the coverage for 62% more.</div>
-  </div>
   <div class="foot">
-    <p>USD, excluding tax. 30% discount on per-market lines from the third market. Extra pages $80 each. <strong>Additional languages quoted separately.</strong></p>
+    <p>USD, excluding tax, over a six-month term. 30% discount on per-market lines from the third market. Extra pages $80 each. <strong>Additional languages quoted separately.</strong></p>
     <p class="num">20 / 21</p>
   </div>
 </section>
 
-<!-- ============ 21 ============ -->
 <section class="s invert">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">How we work <span class="sep">/</span> What we need</p>
