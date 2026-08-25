@@ -929,6 +929,21 @@ tr.fx-mid td.r b{color:#ffc94d}
 .codenote strong{color:#fff}
 table.proof-tab td{padding:4.5px 12px 4.5px 0}
 
+
+/* capability roadmap */
+.roadmap{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:30px}
+.rd{background:var(--mcs-panel);border-top:4px solid var(--mcs-green);padding:18px 18px 16px;
+  display:flex;flex-direction:column}
+.rd-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.rd-n{font-size:26px;font-weight:800;font-stretch:88%;color:var(--mcs-green);line-height:1}
+.rd-when{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mcs-grey)}
+.rd-h{font-size:21px;font-weight:800;font-stretch:88%;text-transform:uppercase;line-height:1.08;
+  margin:12px 0 4px;color:#fff;letter-spacing:-.005em}
+.rd-tag{font-size:12.5px;font-style:italic;color:var(--mcs-green);margin-bottom:9px}
+.rd p{margin:0;font-size:14.5px;line-height:1.42;color:var(--mcs-grey)}
+.rd-note{margin-top:auto;padding-top:11px;font-size:13px;color:#fff;
+  border-top:1px solid var(--mcs-rule)}
+
 </style>
 </head>
 <body>
@@ -1499,21 +1514,50 @@ table.proof-tab td{padding:4.5px 12px 4.5px 0}
 <!-- ============ 19 ============ -->
 <section class="s">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance"></div>
-  <p class="kicker">How we work <span class="sep">/</span> Phasing</p>
-  <h1 class="t">Phased against<br>1 April 2027.</h1>
-  <p class="sub">One structural risk to name up front: the migration and the rebuild are currently the same event. If traffic moves, you cannot tell which caused it. <strong>Wave 1 exists to de-risk that.</strong></p>
+  <p class="kicker">How we work <span class="sep">/</span> Roadmap</p>
+  <h1 class="t sm">Sequenced by capability,<br>not by market.</h1>
+  <p class="sub">The architecture is built once and proven in one market before it is repeated. Content and outreach then run in parallel, and <strong>the first measured milestone lands in month 3.</strong></p>
 
-  <table class="d mid-t mid-b">
-    <thead><tr><th>Phase</th><th>Window</th><th>What ships</th><th>What it proves</th></tr></thead>
-    <tbody>
-      <tr><td class="g">Foundation</td><td class="dim">Month 0&ndash;1</td><td>Crawler access resolved, Search Console established, schema and heading layer, baseline Prompt Radar run across all five markets</td><td class="dim">A measurable starting point</td></tr>
-      <tr><td class="g">Wave 1</td><td class="dim">Month 1&ndash;3</td><td>Taiwan and Thailand built on the regional domain &mdash; answer architecture, hreflang, structured content</td><td class="dim">The template works, on zero risk</td></tr>
-      <tr><td class="g">Wave 2&ndash;3</td><td class="dim">Month 3&ndash;6</td><td>Hong Kong then Australia migrated. Clinic citation programme begins. Echo Network listening live.</td><td class="dim">Migration is safe at real equity</td></tr>
-      <tr><td class="g">Wave 4</td><td class="dim">Month 6&ndash;8</td><td>Singapore migrated last, onto a proven domain and a proven template</td><td class="dim">Consolidation complete before go-live</td></tr>
-    </tbody>
-  </table>
+  <div class="roadmap mid-t mid-b">
+      <div class="rd">
+        <div class="rd-top"><span class="rd-n">01</span><span class="rd-when">Month 1</span></div>
+        <div class="rd-h">Site architecture</div>
+        <div class="rd-tag">one market first</div>
+        <p>Machine-readable build on the regional domain, proven in a single market before it is repeated. Semantic HTML, heading hierarchy, product schema, canonicals, hreflang.</p>
+        <div class="rd-note">Fix the base once, then replicate.</div>
+      </div>
+      <div class="rd">
+        <div class="rd-top"><span class="rd-n">02</span><span class="rd-when">Month 1</span></div>
+        <div class="rd-h">Content architecture infrastructure</div>
+        <div class="rd-tag">the inputs</div>
+        <p>Keyword universe, tracked prompt portfolio and the customer pain-point map &mdash; the raw material every page is written from.</p>
+        <div class="rd-note">6,167 queries &middot; 140 prompts &middot; objection map</div>
+      </div>
+      <div class="rd">
+        <div class="rd-top"><span class="rd-n">03</span><span class="rd-when">Months 2&ndash;3</span></div>
+        <div class="rd-h">On-site content expansion</div>
+        <div class="rd-tag">build the clusters</div>
+        <p>The nine clusters, weakest first: concerns, category, clinical evidence, comparison. Written as answers and marked up so an engine can lift them.</p>
+        <div class="rd-note">Starts with the 20% and 24% cited clusters.</div>
+      </div>
+      <div class="rd">
+        <div class="rd-top"><span class="rd-n">04</span><span class="rd-when">Months 2&ndash;3</span></div>
+        <div class="rd-h">Off-page citation outreach</div>
+        <div class="rd-tag">activation</div>
+        <p>Approach the clinics, medical bodies and publications AI already cites, with pre-approved material they can publish and attribute.</p>
+        <div class="rd-note">Targets are already named in the citation data.</div>
+      </div>
+      <div class="rd">
+        <div class="rd-top"><span class="rd-n">05</span><span class="rd-when">Month 3</span></div>
+        <div class="rd-h">First milestone</div>
+        <div class="rd-tag">measured, not asserted</div>
+        <p>Re-run the tracked prompt set against the same engines. Movement in citation share on the clusters built in phase 3 is the test.</p>
+        <div class="rd-note">Baseline exists from 25 Aug 2026.</div>
+      </div>
+  </div>
+
   <div class="foot">
-    <p>Indicative phasing. Sequence is fixed by equity at risk; the window flexes to the client build schedule.</p>
+    <p>Indicative sequence. Phase 1 assumes crawler access and Search Console are resolved &mdash; both are prerequisites, not tasks.</p>
     <p class="num">19 / 22</p>
   </div>
 </section>
