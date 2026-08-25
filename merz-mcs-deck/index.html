@@ -821,6 +821,24 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 .s.invert .aud-h{color:var(--mcs-green-deep);border-bottom-color:#000}
 .s.invert .aud-slot{background:#1c1c1c;border-color:rgba(0,0,0,.25)}
 
+
+/* three inputs instead of two */
+.io-ins.three{grid-template-rows:repeat(3,1fr);gap:16px}
+.io-ins.three .io-card{padding:18px 22px}
+.io-ins.three .io-h{font-size:25px;margin:9px 0 9px}
+.io-ins.three .io-card p{font-size:16.5px;line-height:1.4}
+/* slide 6 sits on white */
+.s.invert .io-card{background:#F4F4F4;border-top-color:var(--mcs-green-deep)}
+.s.invert .io-tag{color:var(--mcs-green-deep)}
+.s.invert .io-h{color:#000}
+.s.invert .io-card p{color:#4A4A4A}
+.s.invert .io-card p strong{color:#000}
+.s.invert .io-out{background:#0C0C0C;border-top-color:var(--mcs-green)}
+.s.invert .io-out .io-tag{color:var(--mcs-green)}
+.s.invert .io-out .io-h{color:#fff}
+.s.invert .io-out p{color:#C8C8C8}
+.s.invert .io-out p strong{color:#fff}
+
 </style>
 </head>
 <body>
@@ -1023,44 +1041,51 @@ table.d tr.tot td{border-top:2px solid var(--mcs-white);border-bottom:0;padding-
 <section class="s invert">
   <div class="logos"><span class="wm">Merz<span class="w2">Aesthetics</span></span><span class="sep-r"></span><img class="mcs" src="assets/mcs-logo-white.svg" alt="M&amp;C Saatchi Performance" style="filter:invert(1)"></div>
   <p class="kicker">The question <span class="sep">/</span> Defining the win</p>
-  <h1 class="t">Winning is<br>share of the answer.</h1>
-  <p class="sub">The AI answer is not a third channel to buy. It is the <strong>output</strong> of two inputs you already own.</p>
+  <h1 class="t sm">Winning is share of the answer.</h1>
+  <p class="sub">The AI answer is not a third channel to buy. It is the <strong>output</strong> of three inputs you already control.</p>
 
   <div class="io mid-t mid-b">
-    <div class="io-ins">
+    <div class="io-ins three">
       <div class="io-card">
         <div class="io-tag">Input one <span>&middot;</span> Owned media</div>
         <div class="io-h">Build a machine-readable official domain</div>
         <p>Semantic HTML, product schema resolving to Merz, one consolidated destination.
-        <strong>Today: four properties, four authority pools</strong>, and a regional domain holding one ranking keyword.</p>
+        <strong>Today: four properties, four authority pools.</strong></p>
       </div>
       <div class="io-card">
-        <div class="io-tag">Input two <span>&middot;</span> Earned media</div>
+        <div class="io-tag">Input two <span>&middot;</span> Owned media</div>
+        <div class="io-h">Content architecture</div>
+        <p>Build definitional, comparison, safety, indication and <strong>clinical publication</strong>
+        content written as answers &mdash; structured so an engine can lift them.</p>
+      </div>
+      <div class="io-card">
+        <div class="io-tag">Input three <span>&middot;</span> Earned media</div>
         <div class="io-h">Own the sources AI cites</div>
-        <p>Clinics, doctors and publishers carry their own authority and are cited today where Merz is not.
-        <strong>Supply the facts they publish</strong> &mdash; and the brand narrative travels with the citation.</p>
+        <p>Clinics, medical bodies and journals carry their own authority and are cited today where
+        Merz is not. <strong>Supply the facts they publish.</strong></p>
       </div>
     </div>
 
     <div class="io-arrow" aria-hidden="true">
-      <svg viewBox="0 0 74 240" width="74" height="240">
-        <path d="M2 76 H44 M2 164 H44" fill="none" stroke="var(--mcs-green-deep)" stroke-width="2.5"/>
-        <path d="M44 76 V116 H60 M44 164 V124 H60" fill="none" stroke="var(--mcs-green-deep)" stroke-width="2.5"/>
-        <path d="M72 120 l-14 -8 v16 z" fill="var(--mcs-green-deep)"/>
+      <svg viewBox="0 0 74 300" width="74" height="300">
+        <path d="M2 52 H40 M2 150 H40 M2 248 H40" fill="none" stroke="var(--mcs-green-deep)" stroke-width="2.5"/>
+        <path d="M40 52 V142 H58 M40 248 V158 H58 M40 150 H58" fill="none" stroke="var(--mcs-green-deep)" stroke-width="2.5"/>
+        <path d="M72 150 l-14 -8 v16 z" fill="var(--mcs-green-deep)"/>
       </svg>
     </div>
 
     <div class="io-out">
       <div class="io-tag out">The output</div>
       <div class="io-h out">AI answers</div>
-      <p>An engine builds its answer from machine-readable owned content and the third-party sources it trusts.
-      <strong>Win both inputs and you are in the answer. Win neither and you are absent at the moment of decision.</strong></p>
-      <div class="io-foot">Measured today: <strong>84%</strong> of answers name Ultherapy, but only <strong>50%</strong> cite a Merz page.</div>
+      <p>An engine builds its answer from machine-readable owned content and the third-party sources
+      it trusts. <strong>Win all three and you are in the answer. Win none and you are absent at the
+      moment of decision.</strong></p>
+      <div class="io-foot">Measured today: <strong>81%</strong> of unbranded answers name Ultherapy, but only <strong>43%</strong> cite a Merz page.</div>
     </div>
   </div>
 
   <div class="foot">
-    <p>Framework. Citation figures: ChatGPT, 252 answers across SG, TW and HK, 25 Aug 2026.</p>
+    <p>Framework. Citation figures: ChatGPT, 207 unbranded answers across SG, TW and HK, 25 Aug 2026.</p>
     <p class="num">06 / 23</p>
   </div>
 </section>
