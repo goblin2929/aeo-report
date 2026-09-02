@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>August 2026 AEO Channel Progress Update for Decube</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --teal:#017d8e; --teal-d:#0e7490; --slate-9:#0f172a; --slate-7:#334155;
+    --slate-5:#64748b; --slate-3:#cbd5e1; --slate-1:#f1f5f9;
+    --green:#16a34a; --amber:#d97706; --red:#dc2626;
+  }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',system-ui,sans-serif;
+    background:#fff; color:var(--slate-9); margin:0; padding:28px 36px; font-size:13.5px; line-height:1.45; }
+  .page { width:1280px; margin:0 auto; }
+  html { min-width:1320px; }
+  header { border-bottom:2px solid var(--teal); padding-bottom:12px; margin-bottom:18px;
+    display:flex; justify-content:space-between; align-items:flex-end; }
+  header h1 { font-size:22px; margin:0; letter-spacing:-0.01em; }
+  header .meta { font-size:12px; color:var(--slate-5); text-align:right; }
+  header .meta strong { color:var(--slate-7); }
+  .hook { background:linear-gradient(90deg,#ecfeff 0%,#f0fdfa 100%); border-left:4px solid var(--teal);
+    padding:12px 16px; border-radius:4px; margin-bottom:18px; font-size:14px; }
+  .hook strong { color:var(--teal-d); }
+  .kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:16px; }
+  .kpi { border:1px solid var(--slate-3); border-radius:6px; padding:10px 14px; background:#fff; }
+  .kpi .label { font-size:11px; color:var(--slate-5); text-transform:uppercase; letter-spacing:0.04em; }
+  .kpi .val { font-size:20px; font-weight:700; margin-top:2px; }
+  .kpi .delta { font-size:12px; margin-top:2px; }
+  .delta.flat { color:var(--amber); } .delta.up { color:var(--green); } .delta.down { color:var(--red); }
+  .chart-row { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:22px; }
+  .chart-card { border:1px solid var(--slate-3); border-radius:6px; padding:12px 14px 10px; background:#fff; }
+  .chart-card h3 { font-size:13px; margin:0 0 2px; }
+  .chart-card .sub { font-size:11px; color:var(--slate-5); margin-bottom:8px; }
+  .chart-canvas-wrap { height:200px; position:relative; }
+  .chart-card .takeaway { margin-top:8px; font-size:11.5px; color:var(--slate-7);
+    background:var(--slate-1); padding:6px 8px; border-radius:4px; }
+  .chart-card .takeaway b { color:var(--slate-9); }
+  section { margin-bottom:22px; }
+  section h2 { font-size:13px; margin:0 0 8px; color:var(--teal-d); text-transform:uppercase;
+    letter-spacing:0.06em; border-bottom:1px solid var(--slate-3); padding-bottom:4px; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  table.t { width:100%; border-collapse:collapse; font-size:12px; background:#fff; }
+  table.t th { text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:0.04em;
+    color:var(--slate-5); border-bottom:1.5px solid var(--slate-3); padding:5px 8px; font-weight:600; }
+  table.t th.num, table.t td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  table.t th.aeo, table.t td.aeo { background:#ecfeff; }
+  table.t th.aeo { color:var(--teal-d); }
+  table.t td { padding:5px 8px; border-bottom:1px solid var(--slate-1); color:var(--slate-7); }
+  table.t td:first-child { color:var(--slate-9); }
+  table.t tr.subtotal td { background:var(--slate-1); font-weight:700; color:var(--slate-9);
+    border-top:1.5px solid var(--slate-3); }
+  table.t a { color:#1a56db; text-decoration:none; }
+  table.t a:hover { text-decoration:underline; }
+  .up { color:var(--green); } .down { color:var(--red); } .flat { color:var(--amber); }
+  .win-row td { background:#f0fdf4; }
+  .pill { display:inline-block; font-size:9px; font-weight:700; text-transform:uppercase;
+    background:#f0fdf4; color:var(--green); border:1px solid #bbf7d0; border-radius:8px; padding:0 5px; }
+  .note { font-size:11px; color:var(--slate-5); margin-top:6px; }
+  .takeaway-box { margin-top:8px; font-size:11.5px; color:var(--slate-7); background:var(--slate-1);
+    padding:8px 10px; border-radius:4px; }
+  .takeaway-box b { color:var(--slate-9); }
+  .takeaway-box.win { background:#f0fdf4; border-left:3px solid var(--green); }
+  .takeaway-box.watch { background:#fffbeb; border-left:3px solid var(--amber); }
+  .takeaway-box ul { margin:4px 0 0; padding-left:18px; }
+  .takeaway-box li { margin-bottom:3px; }
+  .focus-status { font-weight:700; font-size:11px; }
+  .focus-status.done { color:var(--green); } .focus-status.wip { color:var(--amber); }
+  .prio-list { margin:0; padding-left:20px; }
+  .prio-list li { margin-bottom:7px; font-size:12.5px; }
+  .prio-list li b { color:var(--teal-d); }
+  .tag { display:inline-block; font-size:9.5px; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.04em; padding:1px 6px; border-radius:8px; margin-left:6px; vertical-align:middle; }
+  .tag.aeo { background:#ecfeff; color:var(--teal-d); border:1px solid #a5f3fc; }
+  .tag.content { background:#f0fdf4; color:var(--green); border:1px solid #bbf7d0; }
+  .tag.technical { background:#fffbeb; color:var(--amber); border:1px solid #fde68a; }
+  code { background:var(--slate-1); padding:1px 4px; border-radius:3px; font-size:11px; }
+  footer { margin-top:16px; font-size:10.5px; color:var(--slate-5); text-align:center;
+    border-top:1px solid var(--slate-3); padding-top:6px; }
+  @media print { body { padding:16px 20px; font-size:11.5px; }
+    .chart-canvas-wrap { height:160px; } header h1 { font-size:18px; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <h1>August 2026 AEO Channel Progress Update</h1>
+      <div style="font-size:11px; color:var(--slate-5); margin-top:2px;">August 2026 monthly review &middot; Decube &harr; Novastacks</div>
+    </div>
+    <div class="meta">
+      <div><strong>2 September 2026 &middot; Wednesday</strong></div>
+      <div>Monthly tables: 1 to 31 Aug vs 1 to 31 Jul &middot; Weekly trends: 5 Jan to 30 Aug</div>
+    </div>
+  </header>
+
+  <div class="hook">
+    <strong>Headline:</strong> August was the month AI visibility broke out. Decube moved from
+    <strong>0.35% to 2.45%</strong> average visibility across tracked AI answers, a <strong>7 times gain and the
+    largest absolute move of any of the 10 vendors we track</strong>, driven almost entirely by Google AI Overview
+    (0.41% to 4.90%, reaching <strong>8.83% in the final week</strong>). AI citations of Decube pages went from
+    <strong>76 to 367 (+383%)</strong> across <strong>13 to 28 distinct pages</strong>, and AI referred sessions rose for a second
+    consecutive month to <strong>63 (+40.0%)</strong>. Classic search is still working through a decline that
+    started in April, but the parts we touched moved the right way: blog clicks <strong>+8.9%</strong>,
+    governance queries <strong>+75%</strong>, core market impressions <strong>+6.7%</strong>, and the final week of
+    August was the strongest week since early June.
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="label">Total Clicks &middot; August</div>
+      <div class="val">1,010</div>
+      <div class="delta down">-8.7% vs Jul 1,106 &middot; non-brand 84.3% of total</div></div>
+    <div class="kpi"><div class="label">Non-Brand Clicks &middot; August</div>
+      <div class="val">851</div>
+      <div class="delta down">-4.6% vs Jul 892 &middot; impressions +6.7%</div></div>
+    <div class="kpi"><div class="label">AI Visibility &middot; August (WorkDuo)</div>
+      <div class="val">2.45%</div>
+      <div class="delta up">+2.10 pts vs Jul 0.35% &middot; AI Overview 4.90%</div></div>
+    <div class="kpi"><div class="label">AI Sessions &middot; August (GA4)</div>
+      <div class="val">63</div>
+      <div class="delta up">+40.0% vs Jul 45 &middot; second straight monthly rise</div></div>
+  </div>
+
+  <div class="chart-row">
+
+    <div class="chart-card">
+      <h3>&#9312; Total Clicks vs Non-Brand Clicks (Weekly)</h3>
+      <div class="sub">GSC date dimension &middot; adult and piracy queries excluded, Indonesia and India excluded from every week &middot; non-brand = total minus brand-regex queries</div>
+      <div class="chart-canvas-wrap"><canvas id="chart1"></canvas></div>
+      <div class="takeaway"><b>Read:</b> The decline that began in April flattened out in August.
+        The 24 to 30 Aug week delivered <b>265 total and 223 non-brand clicks, the strongest week since 8 June</b>,
+        after a 13 to 19 Jul trough of 218 and 169. Impressions turned positive for the month (+6.7%).
+        <b>Both spam-contaminated markets are excluded from every period</b> so no week is flattered by the link attack.</div>
+    </div>
+
+    <div class="chart-card">
+      <h3>&#9313; AEO Visibility by Engine (Weekly)</h3>
+      <div class="sub">WorkDuo &middot; tracked prompt panel unchanged &middot; tracking began 5 Jul 2026, so no June data exists</div>
+      <div class="chart-canvas-wrap"><canvas id="chart2"></canvas></div>
+      <div class="takeaway"><b>Read:</b> <b>Google AI Overview climbed every week of the second half of August</b>
+        from 0.00% (3 to 9 Aug) to 4.15%, 6.66% and <b>8.83% (24 to 30 Aug)</b>, with a further 10.42% on 31 Aug.
+        <b>Watch: ChatGPT is still at zero</b> and is the single largest open gap, which the September plan addresses.</div>
+    </div>
+
+    <div class="chart-card">
+      <h3>&#9314; AI Traffic Sessions (Weekly &middot; GA4)</h3>
+      <div class="sub">GA4 property 329112721 &middot; sessions where sessionSource is an AI platform (ChatGPT, Gemini, Perplexity, Claude, Copilot)</div>
+      <div class="chart-canvas-wrap"><canvas id="chart3"></canvas></div>
+      <div class="takeaway"><b>Read:</b> AI referred sessions bottomed at <b>3 per week in late June</b> and have
+        recovered to <b>22 per week through the last two weeks of August</b>. Monthly: 36 (Jun), 45 (Jul), 63 (Aug).
+        Top sources for the year: ChatGPT 331, Gemini 176, Perplexity 211, Claude 31.
+        <b>This is the conversion signal:</b> visibility turning into visits.</div>
+    </div>
+
+  </div>
+
+  <div class="two-col">
+    <section>
+      <h2>August Focus Areas: What Was Done</h2>
+      <table class="t">
+        <thead><tr><th>Category</th><th>What was done</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><b>1. Content production</b></td>
+              <td>35 articles published and revised, aimed at both SEO and AI traffic, closing the gap against
+                  competitors and laying the groundwork for the AI governance topic ahead of the AI governance tool.
+                  Articles integrated with the YouTube channel.</td>
+              <td><span class="focus-status done">DONE</span></td></tr>
+          <tr><td><b>2. Technical fixes</b></td>
+              <td>Canonical tags corrected, inconsistent structured data standardised, duplicate H1s removed,
+                  and every broken internal link across the blog repaired.</td>
+              <td><span class="focus-status done">DONE</span></td></tr>
+          <tr><td><b>3. Product page launch support</b></td>
+              <td>Supported the launch of the redesigned product pages with new page context and a new FAQ set.</td>
+              <td><span class="focus-status done">DONE</span></td></tr>
+          <tr><td><b>4. Entity and brand signals</b></td>
+              <td>Recommended adding the YouTube channel URL to Decube's global footer, so the video property is
+                  linked to the brand entity site wide.</td>
+              <td><span class="focus-status wip">WITH CLIENT</span></td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-box win"><b>What the work moved:</b> governance queries <b>+75% clicks and +65.9% impressions</b>,
+        data catalog impressions <b>+38.4%</b>, blog pages earning at least one click <b>152 to 174</b>, and three pages that
+        earned nothing in July now rank (<code>/post/best-data-lineage-tools</code>, <code>/post/ai-governance-tools</code>,
+        <code>/post/understanding-data-warehouse-concepts-definition-and-key-insights</code>).</div>
+    </section>
+
+    <section>
+      <h2>September 2026 Strategy &amp; Priorities (incl. AEO Focus Areas)</h2>
+      <ol class="prio-list">
+        <li><b>Revisit sub-headings and FAQs on the product pages.</b> Now that the August launch has generated a
+          fresh body of tool-related queries, rewrite the sub-headings and FAQ set against what people actually asked.
+          Working doc:
+          <a href="https://docs.google.com/document/d/1axSn123OvbYIfgqf4uOC602AHK04EPzm/edit" style="color:#1a56db;">product page sub-heading and FAQ doc</a>
+          <span class="tag content">Content</span><span class="tag aeo">AEO</span></li>
+        <li><b>Improve the existing YouTube descriptions.</b> Fuller context in every description plus internal links
+          into the matching product pages, so the video library feeds the site rather than sitting beside it
+          <span class="tag content">Content</span><span class="tag aeo">AEO</span></li>
+        <li><b>Backlink profile clean-up.</b> The hypothesis is that some links from past activity point at Decube with
+          irrelevant anchor text, and that some referring domains have an irrelevant history. <b>Needs Decube's team:</b>
+          the list of domains that redirect into decube.io, so we can separate Decube's own domains from the spam operator's
+          before anything is disavowed <span class="tag technical">Technical</span></li>
+        <li><b>Rebuild and re-optimise the comparison pages.</b> Both the high intent head-to-head pages and a universal
+          "Decube vs every tool" page built as the single source of truth, formatted so AI platforms can lift it directly
+          <span class="tag content">Content</span><span class="tag aeo">AEO</span></li>
+      </ol>
+      <div class="takeaway-box watch" style="margin-top:12px;"><b>Items to monitor:</b>
+        ChatGPT visibility is still 0.06% against 4.90% on AI Overview, so the September work should be judged on whether it
+        opens that second engine &middot; <code>data governance</code> slipped 26.1 to 37.1 average position while
+        <code>data catalog platforms</code> gained 50 places, so the head term needs a dedicated look &middot;
+        the adult and piracy query attack was still running through the end of August, and every number in this report
+        excludes it, and the disavow file remains the open action.</div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Query Segment Breakdown (August vs July)</h2>
+    <table class="t">
+      <thead><tr><th>Segment</th><th class="num">Aug Clicks</th><th class="num">Jul Clicks</th>
+        <th class="num">Click &Delta;</th><th class="num">&Delta; %</th>
+        <th class="num">Aug Impressions</th><th class="num">Jul Impressions</th><th class="num">&Delta; %</th></tr></thead>
+      <tbody>
+        <tr><td>Exact &ldquo;decube&rdquo;</td><td class="num">150</td><td class="num">206</td>
+            <td class="num"><span class="num down">-56</span></td><td class="num"><span class="num down">-27.2%</span></td>
+            <td class="num">525</td><td class="num">571</td><td class="num"><span class="num down">-8.1%</span></td></tr>
+        <tr><td>Branded related (decube.io, decube company, dcube&hellip;)</td><td class="num">9</td><td class="num">8</td>
+            <td class="num"><span class="num up">+1</span></td><td class="num"><span class="num up">+12.5%</span></td>
+            <td class="num">1,578</td><td class="num">1,913</td><td class="num"><span class="num down">-17.5%</span></td></tr>
+        <tr><td>Non-branded</td><td class="num">851</td><td class="num">892</td>
+            <td class="num"><span class="num down">-41</span></td><td class="num"><span class="num down">-4.6%</span></td>
+            <td class="num">397,709</td><td class="num">372,295</td>
+            <td class="num"><span class="num up">+6.8%</span></td></tr>
+        <tr class="subtotal"><td>TOTAL</td><td class="num">1,010</td><td class="num">1,106</td>
+            <td class="num"><span class="num down">-96</span></td><td class="num"><span class="num down">-8.7%</span></td>
+            <td class="num">399,812</td><td class="num">374,779</td><td class="num"><span class="num up">+6.7%</span></td></tr>
+      </tbody>
+    </table>
+    <div class="note">Basis: GSC date dimension, adult and piracy queries excluded, Indonesia and India excluded from both months.
+      Brand rows use a query regex (<code>de cube | dcube | decub</code>); non-branded is the total minus that regex, which is why it
+      includes the queries Search Console anonymises.</div>
+    <div class="takeaway-box"><b>Read:</b> Non-brand clicks held far better than brand
+      (-4.6% against -27.2% on exact brand), and
+      <b>non-brand impressions rose +6.8%</b>, so the content
+      published in August is being surfaced, it has not yet converted the surface into clicks. Brand demand softening is a
+      separate signal to watch with the Decube team, not an SEO regression: brand rankings did not move.</div>
+  </section>
+
+  <section>
+    <h2>Non-Brand Topic Clusters (August vs July)</h2>
+    <table class="t">
+      <thead><tr><th>Cluster</th><th class="num">Aug Clicks</th><th class="num">Jul Clicks</th><th class="num">&Delta; %</th>
+        <th class="num">Aug Impressions</th><th class="num">Jul Impressions</th><th class="num">&Delta; %</th></tr></thead>
+      <tbody><tr><td>Brand</td><td class="num">211</td><td class="num">287</td><td class="num"><span class="num down">-26.5%</span></td><td class="num">2,298</td><td class="num">2,682</td><td class="num"><span class="num down">-14.3%</span></td></tr><tr><td>Data catalog &amp; discovery</td><td class="num">10</td><td class="num">10</td><td class="num"><span class="num flat">+0.0%</span></td><td class="num">26,043</td><td class="num">18,823</td><td class="num"><span class="num up">+38.4%</span></td></tr><tr><td>Data governance &amp; AI governance</td><td class="num">28</td><td class="num">16</td><td class="num"><span class="num up">+75.0%</span></td><td class="num">38,888</td><td class="num">23,438</td><td class="num"><span class="num up">+65.9%</span></td></tr><tr><td>Metadata &amp; business glossary</td><td class="num">58</td><td class="num">54</td><td class="num"><span class="num up">+7.4%</span></td><td class="num">13,871</td><td class="num">13,333</td><td class="num"><span class="num up">+4.0%</span></td></tr><tr><td>Data quality &amp; observability</td><td class="num">6</td><td class="num">11</td><td class="num"><span class="num down">-45.5%</span></td><td class="num">29,077</td><td class="num">30,812</td><td class="num"><span class="num down">-5.6%</span></td></tr><tr><td>Data lineage</td><td class="num">1</td><td class="num">2</td><td class="num"><span class="num down">-50.0%</span></td><td class="num">13,713</td><td class="num">9,971</td><td class="num"><span class="num up">+37.5%</span></td></tr><tr><td>Data engineering &amp; tooling</td><td class="num">87</td><td class="num">94</td><td class="num"><span class="num down">-7.4%</span></td><td class="num">78,234</td><td class="num">79,518</td><td class="num"><span class="num down">-1.6%</span></td></tr><tr><td>Other non-brand</td><td class="num">28</td><td class="num">55</td><td class="num"><span class="num down">-49.1%</span></td><td class="num">69,254</td><td class="num">71,903</td><td class="num"><span class="num down">-3.7%</span></td></tr><tr class="subtotal"><td>TOTAL (labeled queries, adult and piracy excluded)</td><td class="num">429</td><td class="num">529</td><td class="num"><span class="num down">-18.9%</span></td><td class="num">271,378</td><td class="num">250,480</td><td class="num"><span class="num up">+8.3%</span></td></tr></tbody>
+    </table>
+    <div class="note">Basis: GSC query dimension, all markets, adult and piracy queries excluded. Query-dimension totals count only the
+      queries Search Console labels, so they sit below the date-dimension totals above; use this table for the mix, not for absolute volume.</div>
+    <div class="takeaway-box"><b>Read:</b> <b>Data governance and AI governance is the one cluster growing on both axes</b>
+      (+75.0% clicks, +65.9% impressions) and it is exactly where August's publishing went. Data catalog and discovery added
+      7,220 impressions (+38.4%) without converting yet, which is the September FAQ and sub-heading job. Data quality and
+      observability is the weak cluster, at 29,077 impressions for 6 clicks.</div>
+  </section>
+
+  <section>
+    <h2>Subfolder Performance (August vs July)</h2>
+    <table class="t">
+      <thead><tr><th>Section</th><th class="num">Aug Clicks</th><th class="num">Jul Clicks</th><th class="num">&Delta;</th>
+        <th class="num">&Delta; %</th><th class="num">Aug Impressions</th><th class="num">Jul Impressions</th>
+        <th class="num">Aug URLs</th><th class="num">Jul URLs</th>
+        <th class="num aeo">Aug Cited by AI</th><th class="num aeo">Jul Cited by AI</th></tr></thead>
+      <tbody><tr><td>Blog (/post/)</td><td class="num">933</td><td class="num">857</td><td class="num"><span class="num up">+76</span></td><td class="num"><span class="num up">+8.9%</span></td><td class="num">539,683</td><td class="num">479,335</td><td class="num">963</td><td class="num">829</td><td class="num aeo">26 (303)</td><td class="num aeo">11 (65)</td></tr><tr><td>Homepage (/)</td><td class="num">761</td><td class="num">1,149</td><td class="num"><span class="num down">-388</span></td><td class="num"><span class="num down">-33.8%</span></td><td class="num">57,638</td><td class="num">73,542</td><td class="num">1</td><td class="num">1</td><td class="num aeo">1 (61)</td><td class="num aeo">0 (0)</td></tr><tr><td>Product &amp; site pages</td><td class="num">48</td><td class="num">59</td><td class="num"><span class="num down">-11</span></td><td class="num"><span class="num down">-18.6%</span></td><td class="num">13,493</td><td class="num">15,601</td><td class="num">33</td><td class="num">29</td><td class="num aeo">0 (0)</td><td class="num aeo">1 (10)</td></tr><tr><td>Comparison pages</td><td class="num">3</td><td class="num">1</td><td class="num"><span class="num up">+2</span></td><td class="num"><span class="num up">+200.0%</span></td><td class="num">1,130</td><td class="num">1,335</td><td class="num">3</td><td class="num">3</td><td class="num aeo">0 (0)</td><td class="num aeo">0 (0)</td></tr><tr><td>Blog index</td><td class="num">0</td><td class="num">2</td><td class="num"><span class="num down">-2</span></td><td class="num"><span class="num down">-100.0%</span></td><td class="num">326</td><td class="num">425</td><td class="num">17</td><td class="num">20</td><td class="num aeo">0 (0)</td><td class="num aeo">0 (0)</td></tr><tr><td>Docs (docs.decube.io)</td><td class="num">0</td><td class="num">0</td><td class="num"><span class="num flat">+0</span></td><td class="num"><span class="num">n/a</span></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num aeo">1 (3)</td><td class="num aeo">1 (1)</td></tr><tr class="subtotal"><td>TOTAL (adult and piracy clicks removed)</td><td class="num">1,745</td><td class="num">2,068</td><td class="num"><span class="num down">-323</span></td><td class="num"><span class="num down">-15.6%</span></td><td class="num">612,270</td><td class="num">570,238</td><td class="num">1,017</td><td class="num">882</td><td class="num aeo">28 (367)</td><td class="num aeo">13 (76)</td></tr></tbody>
+    </table>
+    <div class="note">Basis: GSC page dimension, all markets, with the adult and piracy clicks subtracted. Every one of those clicks landed on
+      the homepage and nowhere else (1,194 in August, 99 in July), verified by a page-dimension pull filtered to the exclusion regex, so the blog rows
+      are clean as published. Page-dimension impressions are counted once per page shown and therefore run above the date-dimension totals used in the
+      charts. The homepage row still carries the residual anonymised adult queries that Search Console never labels, so <b>read the homepage row as
+      indicative and the blog row as exact</b>.</div>
+    <div class="takeaway-box win"><b>Read:</b> <b>The blog is the part of the site that grew:</b> 857 to 933 clicks (+8.9%),
+      479,335 to 539,683 impressions (+12.6%), and 829 to 963 URLs earning impressions. That is the direct output of the 35 articles
+      published and revised in August. The homepage decline is brand-demand and spam-residue, not a ranking loss.</div>
+  </section>
+
+  <section>
+    <h2>Top 30 Blog Pages by Clicks (August vs July)</h2>
+    <table class="t">
+      <thead><tr><th>Page</th><th class="num">Aug Clicks</th><th class="num">Jul Clicks</th><th class="num">&Delta;</th>
+        <th class="num">Aug Impressions</th><th class="num">Aug Avg Position</th></tr></thead>
+      <tbody><tr><td><a href="https://www.decube.io/post/data-dictionary-features">/post/data-dictionary-features</a></td><td class="num">158</td><td class="num">105</td><td class="num up">+53</td><td class="num">15,846</td><td class="num">11.8</td></tr><tr><td><a href="https://www.decube.io/post/apache-spark-4-release">/post/apache-spark-4-release</a></td><td class="num">50</td><td class="num">45</td><td class="num up">+5</td><td class="num">4,686</td><td class="num">8.6</td></tr><tr><td><a href="https://www.decube.io/post/what-is-apache-iceberg-versus-parquet">/post/what-is-apache-iceberg-versus-parquet</a></td><td class="num">30</td><td class="num">28</td><td class="num up">+2</td><td class="num">4,988</td><td class="num">8.8</td></tr><tr><td><a href="https://www.decube.io/post/data-governance-concepts">/post/data-governance-concepts</a></td><td class="num">29</td><td class="num">17</td><td class="num up">+12</td><td class="num">20,982</td><td class="num">34.6</td></tr><tr><td><a href="https://www.decube.io/post/what-is-metadata-tagging-definition-types-and-importance-explained">/post/what-is-metadata-tagging-definition-types-and-importance-explained</a></td><td class="num">28</td><td class="num">17</td><td class="num up">+11</td><td class="num">6,183</td><td class="num">13.2</td></tr><tr><td><a href="https://www.decube.io/post/context-layer-vs-semantic-layer">/post/context-layer-vs-semantic-layer</a></td><td class="num">19</td><td class="num">27</td><td class="num down">-8</td><td class="num">4,432</td><td class="num">12.3</td></tr><tr><td><a href="https://www.decube.io/post/master-fact-and-dimension-table-design-best-practices-for-data-engineers">/post/master-fact-and-dimension-table-design-best-practices-for-data-engineers</a></td><td class="num">18</td><td class="num">22</td><td class="num down">-4</td><td class="num">2,518</td><td class="num">18.1</td></tr><tr><td><a href="https://www.decube.io/post/what-is-data-consistency-definition-examples-and-best-practice">/post/what-is-data-consistency-definition-examples-and-best-practice</a></td><td class="num">18</td><td class="num">13</td><td class="num up">+5</td><td class="num">10,599</td><td class="num">12.2</td></tr><tr><td><a href="https://www.decube.io/post/dagster-prefect-compare">/post/dagster-prefect-compare</a></td><td class="num">16</td><td class="num">17</td><td class="num down">-1</td><td class="num">2,710</td><td class="num">10.0</td></tr><tr><td><a href="https://www.decube.io/post/what-is-ai-data-catalog">/post/what-is-ai-data-catalog</a></td><td class="num">15</td><td class="num">13</td><td class="num up">+2</td><td class="num">5,546</td><td class="num">19.3</td></tr><tr><td><a href="https://www.decube.io/post/data-pipeline-with-rust">/post/data-pipeline-with-rust</a></td><td class="num">14</td><td class="num">16</td><td class="num down">-2</td><td class="num">579</td><td class="num">15.8</td></tr><tr><td><a href="https://www.decube.io/post/dbt-cheat-sheet">/post/dbt-cheat-sheet</a></td><td class="num">14</td><td class="num">16</td><td class="num down">-2</td><td class="num">935</td><td class="num">23.0</td></tr><tr><td><a href="https://www.decube.io/post/open-source-etl-tools">/post/open-source-etl-tools</a></td><td class="num">14</td><td class="num">22</td><td class="num down">-8</td><td class="num">12,738</td><td class="num">22.0</td></tr><tr><td><a href="https://www.decube.io/post/5-best-practices-for-time-series-anomaly-detection-algorithms">/post/5-best-practices-for-time-series-anomaly-detection-algorithms</a></td><td class="num">14</td><td class="num">14</td><td class="num flat">+0</td><td class="num">3,135</td><td class="num">11.2</td></tr><tr><td><a href="https://www.decube.io/post/singlestore-database-concepts-and-importance">/post/singlestore-database-concepts-and-importance</a></td><td class="num">13</td><td class="num">15</td><td class="num down">-2</td><td class="num">13,484</td><td class="num">8.9</td></tr><tr><td><a href="https://www.decube.io/post/business-glossary-best-practices">/post/business-glossary-best-practices</a></td><td class="num">12</td><td class="num">13</td><td class="num down">-1</td><td class="num">1,621</td><td class="num">13.3</td></tr><tr><td><a href="https://www.decube.io/post/mcp-server-concept">/post/mcp-server-concept</a></td><td class="num">11</td><td class="num">16</td><td class="num down">-5</td><td class="num">4,883</td><td class="num">28.1</td></tr><tr><td><a href="https://www.decube.io/post/agentic-ai-data-governance">/post/agentic-ai-data-governance</a></td><td class="num">11</td><td class="num">17</td><td class="num down">-6</td><td class="num">5,803</td><td class="num">21.0</td></tr><tr><td><a href="https://www.decube.io/post/best-data-lineage-tools">/post/best-data-lineage-tools</a> <span class="pill">new</span></td><td class="num">11</td><td class="num">0</td><td class="num up">+11</td><td class="num">1,986</td><td class="num">20.1</td></tr><tr><td><a href="https://www.decube.io/post/10-essential-database-schema-examples-for-data-engineers">/post/10-essential-database-schema-examples-for-data-engineers</a></td><td class="num">10</td><td class="num">4</td><td class="num up">+6</td><td class="num">1,654</td><td class="num">20.0</td></tr><tr><td><a href="https://www.decube.io/post/data-science-concept">/post/data-science-concept</a></td><td class="num">10</td><td class="num">8</td><td class="num up">+2</td><td class="num">3,211</td><td class="num">10.3</td></tr><tr><td><a href="https://www.decube.io/post/what-is-data-context">/post/what-is-data-context</a></td><td class="num">10</td><td class="num">11</td><td class="num down">-1</td><td class="num">3,960</td><td class="num">11.3</td></tr><tr><td><a href="https://www.decube.io/post/4-best-practices-for-effective-data-pipeline-diagrams">/post/4-best-practices-for-effective-data-pipeline-diagrams</a></td><td class="num">9</td><td class="num">6</td><td class="num up">+3</td><td class="num">1,373</td><td class="num">13.9</td></tr><tr><td><a href="https://www.decube.io/post/data-lineage-concepts">/post/data-lineage-concepts</a></td><td class="num">9</td><td class="num">12</td><td class="num down">-3</td><td class="num">11,842</td><td class="num">23.9</td></tr><tr><td><a href="https://www.decube.io/post/understanding-data-warehouse-concepts-definition-and-key-insights">/post/understanding-data-warehouse-concepts-definition-and-key-insights</a></td><td class="num">8</td><td class="num">1</td><td class="num up">+7</td><td class="num">5,341</td><td class="num">17.9</td></tr><tr><td><a href="https://www.decube.io/post/ai-governance-tools">/post/ai-governance-tools</a> <span class="pill">new</span></td><td class="num">8</td><td class="num">0</td><td class="num up">+8</td><td class="num">2,720</td><td class="num">37.4</td></tr><tr><td><a href="https://www.decube.io/post/data-definition-explained">/post/data-definition-explained</a></td><td class="num">8</td><td class="num">15</td><td class="num down">-7</td><td class="num">6,482</td><td class="num">9.4</td></tr><tr><td><a href="https://www.decube.io/post/4-key-differences-between-data-warehouse-fact-and-dimension-tables">/post/4-key-differences-between-data-warehouse-fact-and-dimension-tables</a></td><td class="num">8</td><td class="num">4</td><td class="num up">+4</td><td class="num">2,363</td><td class="num">24.1</td></tr><tr><td><a href="https://www.decube.io/post/master-fact-and-dimension-in-data-warehouse-key-concepts-and-practices">/post/master-fact-and-dimension-in-data-warehouse-key-concepts-and-practices</a></td><td class="num">8</td><td class="num">13</td><td class="num down">-5</td><td class="num">4,393</td><td class="num">23.8</td></tr><tr><td><a href="https://www.decube.io/post/technical-metadata-concepts">/post/technical-metadata-concepts</a></td><td class="num">7</td><td class="num">7</td><td class="num flat">+0</td><td class="num">1,504</td><td class="num">14.6</td></tr><tr class="subtotal"><td>Top 30 subtotal</td><td class="num">590</td><td class="num">514</td><td class="num">+76</td><td class="num">168,497</td><td class="num">n/a</td></tr></tbody>
+    </table>
+    <div class="note">Basis: GSC page dimension, all markets, 1 to 31 Aug vs 1 to 31 Jul. No adult or piracy clicks reached any of these
+      pages. Average position is impression weighted across every query the page appeared for.</div>
+    <div class="takeaway-box"><b>Read:</b> <code>/post/data-dictionary-features</code> alone added 53 clicks (105 to 158) and is now the
+      single strongest page on the site. <b>Three pages went from zero to ranking in one month:</b> best-data-lineage-tools (11),
+      ai-governance-tools (8) and understanding-data-warehouse-concepts (8). <b>Watch:</b> <code>/post/data-governance-concepts</code> holds
+      20,982 impressions at average position 34.6, so it is one ranking step away from a much larger number.</div>
+  </section>
+
+  <section>
+    <h2>Core Keyword Tracking (GSC average position, August vs July)</h2>
+    <table class="t">
+      <thead><tr><th>Keyword</th><th class="num">Aug Position</th><th class="num">Jul Position</th>
+        <th class="num">Places Gained</th><th class="num">Aug Impressions</th><th class="num">Aug Clicks</th></tr></thead>
+      <tbody><tr class="win-row"><td>data catalog platforms</td><td class="num">5.5</td><td class="num">55.5</td><td class="num up">+50.0</td><td class="num">5,137</td><td class="num">0</td></tr><tr class="win-row"><td>data governance software</td><td class="num">28.8</td><td class="num">47.5</td><td class="num up">+18.7</td><td class="num">1,413</td><td class="num">0</td></tr><tr class="win-row"><td>data governance tools</td><td class="num">40.7</td><td class="num">57.3</td><td class="num up">+16.6</td><td class="num">830</td><td class="num">0</td></tr><tr class="win-row"><td>data mesh</td><td class="num">38.7</td><td class="num">59.1</td><td class="num up">+20.4</td><td class="num">984</td><td class="num">0</td></tr><tr class="win-row"><td>agentic ai governance</td><td class="num">45.1</td><td class="num">54.1</td><td class="num up">+9.0</td><td class="num">391</td><td class="num">0</td></tr><tr class="win-row"><td>what is data governance</td><td class="num">13.1</td><td class="num">18.7</td><td class="num up">+5.6</td><td class="num">1,448</td><td class="num">3</td></tr><tr class="win-row"><td>data catalog tools</td><td class="num">64.8</td><td class="num">70.0</td><td class="num up">+5.2</td><td class="num">217</td><td class="num">0</td></tr><tr><td>data dictionary example</td><td class="num">10.2</td><td class="num">13.0</td><td class="num up">+2.8</td><td class="num">913</td><td class="num">4</td></tr><tr><td>agentic ai data governance</td><td class="num">10.9</td><td class="num">12.9</td><td class="num up">+2.0</td><td class="num">243</td><td class="num">4</td></tr><tr><td>data dictionary</td><td class="num">12.9</td><td class="num">14.6</td><td class="num up">+1.7</td><td class="num">1,369</td><td class="num">5</td></tr><tr><td>etl tools</td><td class="num">15.2</td><td class="num">16.9</td><td class="num up">+1.7</td><td class="num">2,147</td><td class="num">1</td></tr><tr><td>metadata tagging</td><td class="num">6.3</td><td class="num">7.1</td><td class="num up">+0.8</td><td class="num">397</td><td class="num">4</td></tr><tr><td>data discovery tools</td><td class="num">5.0</td><td class="num">3.4</td><td class="num down">-1.6</td><td class="num">1,667</td><td class="num">2</td></tr><tr><td>business glossary</td><td class="num">27.0</td><td class="num">23.1</td><td class="num down">-3.9</td><td class="num">25</td><td class="num">0</td></tr><tr><td>data catalog</td><td class="num">72.9</td><td class="num">69.1</td><td class="num down">-3.8</td><td class="num">511</td><td class="num">0</td></tr><tr><td>data lineage</td><td class="num">49.9</td><td class="num">45.6</td><td class="num down">-4.3</td><td class="num">726</td><td class="num">0</td></tr><tr><td>data observability</td><td class="num">46.5</td><td class="num">42.0</td><td class="num down">-4.5</td><td class="num">701</td><td class="num">0</td></tr><tr><td>data contracts</td><td class="num">57.0</td><td class="num">49.8</td><td class="num down">-7.2</td><td class="num">91</td><td class="num">0</td></tr><tr><td>metadata management</td><td class="num">70.4</td><td class="num">62.2</td><td class="num down">-8.2</td><td class="num">425</td><td class="num">0</td></tr><tr><td>data governance</td><td class="num">37.1</td><td class="num">26.1</td><td class="num down">-11.0</td><td class="num">4,982</td><td class="num">3</td></tr></tbody>
+    </table>
+    <div class="note">Source: GSC average position, impression weighted across all markets. GSC blends every impression the query produced,
+      so it reads lower than a single-result rank check; the month-over-month direction and the impression base are the reliable signals.
+      A positive value means the keyword moved up the page. Rows shaded green gained three or more places.</div>
+    <div class="two-col" style="margin-top:10px;">
+      <div class="takeaway-box win"><b>Core keyword wins:</b>
+        <ul>
+          <li><code>data catalog platforms</code> 55.5 to <b>5.5</b>, on 5,137 impressions, the biggest single ranking move of the month</li>
+          <li><code>data governance software</code> 47.5 to 28.8 and <code>data governance tools</code> 57.3 to 40.7, so the commercial governance set moved together</li>
+          <li><code>data mesh</code> 59.1 to 38.7 and <code>agentic ai governance</code> 54.1 to 45.1, so the AI governance groundwork is registering</li>
+        </ul></div>
+      <div class="takeaway-box watch"><b>Watch:</b>
+        <ul>
+          <li><code>data governance</code> lost 11 places (26.1 to 37.1) on 4,982 impressions. The head term needs its own champion page, not another supporting article</li>
+          <li><code>metadata management</code> 62.2 to 70.4 and <code>data catalog</code> 69.1 to 72.9. Both sit outside page 5, where movement is noise until a page is rebuilt</li>
+          <li><code>data discovery tools</code> slipped 3.4 to 5.0 while holding 1,667 impressions. Small, but it is one of the few page-one positions we hold</li>
+        </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>AEO Metrics, Month over Month</h2>
+    <table class="t">
+      <thead><tr><th>Metric</th><th class="num aeo">August</th><th class="num">July</th><th class="num">Change</th><th>Source</th></tr></thead>
+      <tbody><tr><td>AI Visibility, all engines</td><td class="num aeo">2.45%</td><td class="num">0.35%</td><td class="num up">+2.10 pts</td><td>WorkDuo &middot; daily mean across tracked prompts</td></tr><tr><td>AI Visibility on Google AI Overview</td><td class="num aeo">4.90%</td><td class="num">0.41%</td><td class="num up">+4.49 pts</td><td>WorkDuo &middot; platform=google:ai-overview</td></tr><tr><td>AI Visibility on ChatGPT</td><td class="num aeo">0.06%</td><td class="num">0.31%</td><td class="num flat">-0.25 pts</td><td>WorkDuo &middot; platform=openai:chatgpt</td></tr><tr><td>Share of Voice</td><td class="num aeo">1.81%</td><td class="num">0.30%</td><td class="num up">+1.51 pts</td><td>WorkDuo &middot; daily mean</td></tr><tr><td>Brand mentions in AI answers</td><td class="num aeo">75</td><td class="num">9</td><td class="num up">+66 (+733%)</td><td>WorkDuo &middot; sum of daily mentions</td></tr><tr><td>AI platform sessions</td><td class="num aeo">63</td><td class="num">45</td><td class="num up">+18 (+40.0%)</td><td>GA4 property 329112721 &middot; sessionSource</td></tr><tr><td>Rank among 10 tracked vendors</td><td class="num aeo">9th</td><td class="num">9th</td><td class="num flat">held</td><td>WorkDuo &middot; cross-platform mean visibility</td></tr></tbody>
+    </table>
+    <div class="note">WorkDuo tracking for this project began on <b>5 July 2026</b>; no June data exists, so the July figure is a
+      27 day month and August is a full 31 days. The tracked prompt panel did not change between the two months, so the comparison
+      runs on an identical panel.</div>
+    <div class="takeaway-box win"><b>Performance commentary:</b> Every AEO metric moved up. The gain is concentrated in
+      <b>Google AI Overview</b>, which is consistent with what August's work targeted: definitional and governance content, cleaner
+      structured data, and repaired internal links all feed the surface AI Overview draws from. Citations rose almost five times
+      on a panel whose response count grew only 23%, so this is a real gain in how often Decube is quoted, not a sampling effect.
+      <b>ChatGPT is the untouched engine:</b>
+      it answered from Decube once in the whole month. Opening it is a different job (third-party citation sources rather than
+      owned pages) and it belongs on the September list alongside the comparison page rebuild.</div>
+  </section>
+
+  <section>
+    <h2>Top 15 Most-Cited Pages by AI (August vs July)</h2>
+    <table class="t">
+      <thead><tr><th>Page</th><th class="num aeo">Aug Citations</th><th class="num">Jul Citations</th>
+        <th class="num">&Delta;</th><th class="num">Aug Clicks</th><th class="num">In Click Top 30?</th></tr></thead>
+      <tbody><tr><td><a href="https://decube.io/post/best-data-governance-platforms-for-banks">/post/best-data-governance-platforms-for-banks</a></td><td class="num aeo">116</td><td class="num">0</td><td class="num up">+116</td><td class="num">7</td><td class="num">no</td></tr><tr><td><a href="https://decube.io">Homepage (/)</a></td><td class="num aeo">61</td><td class="num">0</td><td class="num up">+61</td><td class="num">761*</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/best-pii-detection-tools">/post/best-pii-detection-tools</a></td><td class="num aeo">35</td><td class="num">0</td><td class="num up">+35</td><td class="num">1</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/open-source-data-catalog-comparison">/post/open-source-data-catalog-comparison</a></td><td class="num aeo">29</td><td class="num">0</td><td class="num up">+29</td><td class="num">3</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/data-catalog-metadata-management-guide">/post/data-catalog-metadata-management-guide</a></td><td class="num aeo">25</td><td class="num">19</td><td class="num up">+6</td><td class="num">0</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/best-data-lineage-tools">/post/best-data-lineage-tools</a></td><td class="num aeo">21</td><td class="num">0</td><td class="num up">+21</td><td class="num">11</td><td class="num">yes</td></tr><tr><td><a href="https://decube.io/post/atlan-alternatives">/post/atlan-alternatives</a></td><td class="num aeo">15</td><td class="num">16</td><td class="num down">-1</td><td class="num">3</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/alation-alternatives">/post/alation-alternatives</a></td><td class="num aeo">13</td><td class="num">0</td><td class="num up">+13</td><td class="num">0</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/compare-6-data-discovery-tools-for-2026-find-your-best-fit">/post/compare-6-data-discovery-tools-for-2026-find-your-best-fit</a></td><td class="num aeo">11</td><td class="num">0</td><td class="num up">+11</td><td class="num">5</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/top-data-catalog-tools">/post/top-data-catalog-tools</a></td><td class="num aeo">5</td><td class="num">0</td><td class="num up">+5</td><td class="num">3</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/best-data-observability-tools">/post/best-data-observability-tools</a></td><td class="num aeo">5</td><td class="num">0</td><td class="num up">+5</td><td class="num">2</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/data-catalog-pricing">/post/data-catalog-pricing</a></td><td class="num aeo">5</td><td class="num">1</td><td class="num up">+4</td><td class="num">5</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/data-catalog-vs-metadata-management-key-differences">/post/data-catalog-vs-metadata-management-key-differences</a></td><td class="num aeo">4</td><td class="num">15</td><td class="num down">-11</td><td class="num">2</td><td class="num">no</td></tr><tr><td><a href="https://docs.decube.io/data-quality/available-monitor-types">docs.decube.io/data-quality/available-monitor-types</a></td><td class="num aeo">3</td><td class="num">1</td><td class="num up">+2</td><td class="num">0</td><td class="num">no</td></tr><tr><td><a href="https://decube.io/post/explore-the-data-quality-tools-market-key-features-and-comparisons">/post/explore-the-data-quality-tools-market-key-features-and-comparisons</a></td><td class="num aeo">3</td><td class="num">0</td><td class="num up">+3</td><td class="num">1</td><td class="num">no</td></tr></tbody>
+    </table>
+    <div class="note">A citation is one appearance of a Decube URL in one tracked AI response. Source: WorkDuo citations endpoint,
+      type OWNED, url dimension, 1 to 31 Aug against 1 to 31 Jul. URLs were deduplicated for scheme, www and trailing slash before counting,
+      which merges <code>decube.io</code> and <code>www.decube.io</code> into one homepage row. Page list, subfolder rollup and total all
+      reconcile to 367 August citations across 28 pages and 76 July citations across 13 pages.
+      *Homepage clicks are the adult-free figure from the subfolder table, not the raw Search Console number.</div>
+    <div class="takeaway-box"><b>Read, and this is the most important table in the report:</b> only
+      <b>7.1% of August's AI citations sit on a page in the click top 30</b>. The pages AI engines quote are the commercial ones:
+      <code>best-data-governance-platforms-for-banks</code> (116 citations from zero), <code>best-pii-detection-tools</code> (35),
+      <code>open-source-data-catalog-comparison</code> (29), <code>alation-alternatives</code> (13). <b>Search winners and AI winners are
+      two different lists</b>, and the list AI quotes is the buying-decision list. That is the case for September's comparison page rebuild:
+      the format that earns citations is the format we have least of.
+      <b>Watch:</b> <code>/pricing</code> carried 10 citations in July and none in August, and
+      <code>data-catalog-vs-metadata-management</code> fell 15 to 4, so citation share on established pages is not automatically sticky.</div>
+  </section>
+
+  <section>
+    <h2>Competitive AI Visibility (August vs July, all engines)</h2>
+    <table class="t">
+      <thead><tr><th>Vendor</th><th class="num aeo">Aug Visibility</th><th class="num">Jul Visibility</th><th class="num">Change</th></tr></thead>
+      <tbody><tr><td>Atlan</td><td class="num">41.43%</td><td class="num">41.27%</td><td class="num up">+0.16 pts</td></tr><tr><td>Alation</td><td class="num">33.98%</td><td class="num">35.50%</td><td class="num down">-1.51 pts</td></tr><tr><td>Monte Carlo</td><td class="num">14.70%</td><td class="num">13.94%</td><td class="num up">+0.76 pts</td></tr><tr><td>Bigeye</td><td class="num">9.36%</td><td class="num">8.05%</td><td class="num up">+1.31 pts</td></tr><tr><td>Metaplane</td><td class="num">7.65%</td><td class="num">7.73%</td><td class="num down">-0.08 pts</td></tr><tr><td>Acceldata</td><td class="num">6.55%</td><td class="num">6.53%</td><td class="num up">+0.01 pts</td></tr><tr><td>Anomalo</td><td class="num">5.24%</td><td class="num">4.99%</td><td class="num up">+0.24 pts</td></tr><tr><td>OvalEdge</td><td class="num">3.79%</td><td class="num">2.39%</td><td class="num up">+1.41 pts</td></tr><tr class="win-row"><td><b>Decube</b></td><td class="num">2.45%</td><td class="num">0.35%</td><td class="num up">+2.10 pts</td></tr><tr><td>Cillibra</td><td class="num">0.00%</td><td class="num">0.00%</td><td class="num flat">+0.00 pts</td></tr></tbody>
+    </table>
+    <div class="note">Source: WorkDuo entity dimension, daily mean visibility across the tracked prompt panel, all engines combined.</div>
+    <div class="takeaway-box"><b>Read:</b> <b>Decube posted the largest absolute gain of the ten tracked vendors (+2.10 points)</b>,
+      ahead of OvalEdge (+1.41) and Bigeye (+1.31), while Alation lost ground. The absolute level is still ninth of ten, and the two
+      leaders sit an order of magnitude away: Atlan 41.43% and Alation 33.98%. <b>The realistic September target is OvalEdge at 3.79%
+      and then Anomalo at 5.24%</b>, both of which are within one more month at August's rate of change.</div>
+  </section>
+
+  <section>
+    <h2>Methodology &amp; Validation</h2>
+    <div class="takeaway-box">
+      <b>Adult and piracy query exclusion.</b> From 22 August a spam network pointed adult and piracy anchor text at 22 Decube pages,
+      and Google Indonesia began returning the Decube homepage for those queries. In raw Search Console data this shows as 2,918 August clicks
+      against 2,161 in July, which would read as growth. It is not. Every figure in this report removes it, in two layers.
+      <b>Layer one:</b> a 112 term regex covering the bokep family and its misspellings, explicit adult vocabulary in English and
+      Bahasa Indonesia, adult streaming and piracy hosts, and the strings Search Console masks with asterisks. The pattern was built from
+      the complete 25,576 row August query export and audited in both directions, so every match was reviewed for false positives and every
+      non-match reviewed for leakage. It removes <b>1,194 of August's clicks and 99 of July's</b>, and a page-dimension check confirms
+      <b>100% of them landed on the homepage</b>. <b>Layer two:</b> Indonesia and India are excluded from every period in the charts and the
+      segment tables. Search Console anonymises rare queries, so a long tail of adult clicks is never labelled and the regex cannot see it;
+      Indonesian clicks went from a 53 to 125 per month baseline to 1,473 in August, and Indian clicks were inflated to 1,182 in June and
+      959 in July by the same network's South Asian arm. Excluding both markets uniformly across all eight months is the only way to compare
+      months honestly. For reference, on the adult-regex-only basis August totals 1,724 clicks against July's 2,062.
+      <br><br>
+      <b>Dimension discipline.</b> Site totals and the charts use the <b>date dimension</b>, which never double counts. Page and query
+      breakdowns use their own dimensions and are labelled as such. Page-dimension impressions are counted once per page shown and so run
+      above the date-dimension totals; page-dimension clicks cross-validate at 1.007 against date-dimension clicks for August and 1.003 for July.
+      <b>A caution recorded for future reports:</b> combining a country filter with the page dimension makes Search Console suppress roughly
+      44% of clicks, so all page-level tables here are pulled unfiltered and corrected by subtraction instead.
+      <br><br>
+      <b>AEO measurement.</b> Visibility is the share of tracked AI responses in which Decube is mentioned, averaged across the days in the
+      month. A response is one engine asked one prompt on one day. WorkDuo re-asks the panel daily; August carries 31 days of data and July
+      carries 27 (tracking started 5 July). The prompt panel is identical across both months, so no part of the gain comes from adding prompts.
+      Google AI Overview and ChatGPT are read with the singular <code>platform=</code> filter, verified against the cross-platform aggregate so
+      the filter is known to apply.
+      <br><br>
+      <b>AI sessions</b> come from GA4 directly, not from a dashboard estimate: sessions whose <code>sessionSource</code> matches the AI platform
+      list (chatgpt, openai, perplexity, gemini, bard, claude, anthropic, copilot, you.com, poe, deepseek, grok, mistral, phind, searchgpt,
+      edgeservices, aimode). The same definition is used for every client and every month.
+    </div>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <table class="t">
+      <thead><tr><th>What</th><th>Source and basis</th><th>Window</th></tr></thead>
+      <tbody><tr><td>Search clicks, impressions, positions</td><td>Google Search Console, property <code>https://www.decube.io/</code>, date dimension</td><td>Pulled 2 Sep 2026 for 1 Jan to 31 Aug 2026</td></tr><tr><td>Page and query detail</td><td>Google Search Console, page and query dimensions, unfiltered</td><td>Pulled 2 Sep 2026 for Jul and Aug 2026</td></tr><tr><td>AEO visibility, share of voice, mentions</td><td>WorkDuo GEO, project <code>cmr76e7vj002x0aqd96b9y1n8</code>, Data API <code>/metrics</code></td><td>Daily rows 5 Jul to 31 Aug 2026, dimension=platform and dimension=entity</td></tr><tr><td>AI citations of Decube pages</td><td>WorkDuo GEO Core API <code>/citations</code>, dimension=url, rows where type is OWNED, url deduplicated</td><td>1 to 31 Aug and 1 to 31 Jul 2026, full pagination (16,176 and 14,619 rows)</td></tr><tr><td>AI platform sessions</td><td>GA4 Data API, property 329112721, dimensions date and sessionSource, metric sessions</td><td>Pulled 2 Sep 2026 for 1 Jan to 31 Aug 2026</td></tr><tr><td>Content shipped in August</td><td>Decube pages registry SSOT (<code>decube-pages-registry.csv</code>)</td><td>42 blog URLs carry an August 2026 last-updated stamp</td></tr><tr><td>Spam link attack diagnosis</td><td><code>2026-08-27_decube-indonesian-spam-query-spike-diagnosis.md</code></td><td>GSC Links export plus Ahrefs referring domains, 27 Aug 2026</td></tr></tbody>
+    </table>
+  </section>
+
+  <footer>Prepared by Novastacks for Decube &middot; 2 September 2026 &middot; All figures independently recounted from source APIs on the date of publication.</footer>
+</div>
+
+<script>
+const C1 = {"labels": ["5 Jan", "12 Jan", "19 Jan", "26 Jan", "2 Feb", "9 Feb", "16 Feb", "23 Feb", "2 Mar", "9 Mar", "16 Mar", "23 Mar", "30 Mar", "6 Apr", "13 Apr", "20 Apr", "27 Apr", "4 May", "11 May", "18 May", "25 May", "1 Jun", "8 Jun", "15 Jun", "22 Jun", "29 Jun", "6 Jul", "13 Jul", "20 Jul", "27 Jul", "3 Aug", "10 Aug", "17 Aug", "24 Aug"], "total": [424, 512, 459, 606, 616, 528, 514, 441, 506, 511, 483, 454, 359, 294, 304, 341, 317, 339, 302, 322, 330, 335, 357, 308, 270, 242, 261, 218, 272, 238, 218, 209, 217, 265], "nonbrand": [365, 443, 409, 502, 559, 493, 484, 406, 460, 474, 452, 430, 334, 274, 285, 294, 280, 289, 258, 287, 302, 284, 305, 263, 227, 205, 202, 169, 228, 189, 173, 175, 190, 223]};
+const C2 = {"labels": ["6 Jul", "13 Jul", "20 Jul", "27 Jul", "3 Aug", "10 Aug", "17 Aug", "24 Aug"], "aio": [0.29, 0.3, 0.29, 1.2, 0.0, 4.15, 6.66, 8.83], "chatgpt": [0.0, 0.57, 0.57, 0.0, 0.0, 0.0, 0.0, 0.0]};
+const C3 = {"labels": ["5 Jan", "12 Jan", "19 Jan", "26 Jan", "2 Feb", "9 Feb", "16 Feb", "23 Feb", "2 Mar", "9 Mar", "16 Mar", "23 Mar", "30 Mar", "6 Apr", "13 Apr", "20 Apr", "27 Apr", "4 May", "11 May", "18 May", "25 May", "1 Jun", "8 Jun", "15 Jun", "22 Jun", "29 Jun", "6 Jul", "13 Jul", "20 Jul", "27 Jul", "3 Aug", "10 Aug", "17 Aug", "24 Aug"], "sessions": [35, 30, 34, 46, 36, 23, 32, 22, 25, 39, 27, 42, 39, 20, 34, 31, 14, 34, 17, 11, 11, 14, 11, 6, 3, 7, 4, 9, 17, 12, 4, 13, 22, 22]};
+const base = {
+  responsive:true, maintainAspectRatio:false,
+  plugins:{ legend:{ display:true, position:'bottom',
+      labels:{ boxWidth:9, boxHeight:9, font:{size:10}, padding:8, usePointStyle:true } } },
+  interaction:{ mode:'index', intersect:false },
+  scales:{ x:{ ticks:{ font:{size:9}, maxRotation:0, autoSkip:true, maxTicksLimit:9 },
+                 grid:{ display:false } },
+            y:{ beginAtZero:true, ticks:{ font:{size:9} },
+                 grid:{ color:'#f1f5f9' } } },
+  elements:{ point:{ radius:0, hoverRadius:4 }, line:{ borderWidth:2, tension:0.3 } }
+};
+new Chart(document.getElementById('chart1'), { type:'line', data:{ labels:C1.labels, datasets:[
+  { label:'Total clicks', data:C1.total, borderColor:'#017d8e', backgroundColor:'rgba(1,125,142,0.10)', fill:true },
+  { label:'Non-brand clicks', data:C1.nonbrand, borderColor:'#0f172a', borderDash:[4,3] }
+]}, options: base });
+new Chart(document.getElementById('chart2'), { type:'line', data:{ labels:C2.labels, datasets:[
+  { label:'Google AI Overview', data:C2.aio, borderColor:'#017d8e', backgroundColor:'rgba(1,125,142,0.10)', fill:true },
+  { label:'ChatGPT', data:C2.chatgpt, borderColor:'#d97706' }
+]}, options: Object.assign({}, base, { scales: Object.assign({}, base.scales, {
+  y:{ beginAtZero:true, ticks:{ font:{size:9}, callback:v=>v+'%' }, grid:{ color:'#f1f5f9' } } }) }) });
+new Chart(document.getElementById('chart3'), { type:'line', data:{ labels:C3.labels, datasets:[
+  { label:'AI platform sessions', data:C3.sessions, borderColor:'#0e7490', backgroundColor:'rgba(14,116,144,0.12)', fill:true }
+]}, options: base });
+</script>
+</body>
+</html>
