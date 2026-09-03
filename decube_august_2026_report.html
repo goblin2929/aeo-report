@@ -218,13 +218,26 @@
           is the moment to be present. Evidence is in the section below: Decube already surfaces for <b>48 competitor comparison
           queries and 861 impressions in August</b> without one page written for them
           <span class="tag content">Content</span><span class="tag aeo">AEO</span></li>
+        <li><b>301 the important 404 pages.</b> Recover the equity sitting on dead URLs by redirecting each to its closest live
+          equivalent instead of leaving it to return a 404. The pattern is already established on the site
+          (<code>/data-catalog</code> redirects to <code>/metadata-management</code>, <code>/copilot</code> to
+          <code>/trusty</code>). <b>What we can already see:</b> of the 1,111 URLs Search Console reported impressions for in July
+          or August, we live-checked all 37 real page URLs absent from the pages registry and found <b>two dead URLs</b>, both at
+          1 impression and 0 clicks, so nothing is bleeding traffic today. <b>What we cannot see, and what we need:</b> the Search
+          Analytics API only returns URLs that still earn impressions, so a 404 that has already lost its rankings is invisible to
+          it, and those are usually the ones worth redirecting. The full list sits in the <b>Page Indexing report under "Not found
+          (404)"</b>, which is a UI export. We will take that export, cross it against broken backlinks, and 301 every URL holding
+          links or historic clicks. Prioritised by links and past traffic, not by 404 count
+          <span class="tag technical">Technical</span></li>
       </ol>
       <div class="takeaway-box watch" style="margin-top:12px;"><b>Items to monitor:</b>
         ChatGPT returned on 31 August after a 41 day absence but is still only 0.06% for the month against 4.90% on AI Overview,
         so judge the September work on whether that second engine stays open &middot; <code>data governance</code> slipped 26.1 to 37.1 average position while
         <code>data catalog platforms</code> gained 50 places, so the head term needs a dedicated look &middot;
         the adult and piracy query attack was still running through the end of August, and every number in this report
-        excludes it, and the disavow file remains the open action.</div>
+        excludes it, and the disavow file remains the open action &middot; the 404 redirect sweep cannot be scoped until we have
+        the Page Indexing "Not found" export, because the Search Analytics API cannot see a URL that has already lost all of its
+        impressions.</div>
     </section>
   </div>
 
