@@ -192,7 +192,7 @@ HTML = f'''<!DOCTYPE html>
   <section>
     <h2>Top 15 Most-Cited Pages by AI — A Different List Than the Click Winners</h2>
     <table class="t"><thead>
-      <tr><th>#</th><th>Page</th><th class="num aeo">AI Citations · July</th><th class="num aeo">AI Citations · August</th><th class="num">Δ</th><th class="num">August Clicks</th><th class="num">In Click Top 30?</th></tr>
+      <tr><th>#</th><th>Page</th><th>NovaStacks Work</th><th class="num aeo">AI Citations · July</th><th class="num aeo">AI Citations · August</th><th class="num">Δ</th><th class="num">August Clicks</th><th class="num">In Click Top 30?</th></tr>
     </thead><tbody>
       {fr['top15']}
     </tbody></table>

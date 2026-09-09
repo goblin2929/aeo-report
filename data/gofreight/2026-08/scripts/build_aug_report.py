@@ -173,7 +173,7 @@ def top15_rows():
     for i,p in enumerate(pages,1):
         cj=p['jul']; cn=p['jun']; d=cj-cn; cn2,cj2=clicks_of(p['url'])
         intop='yes' if norm(p['url']) in top30_norm else '—'
-        rows.append(f'<tr><td class="num">{i}</td><td><a href="{p["url"]}" target="_blank">{shorten(p["url"])}</a></td><td class="num aeo">{f(cn)}</td><td class="num aeo">{f(cj)}</td><td class="num {dcls(d)}">{sgn(d)}</td><td class="num">{f(cj2)}</td><td class="num" style="color:var(--slate-5)">{intop}</td></tr>')
+        rows.append(f'<tr><td class="num">{i}</td><td><a href="{p["url"]}" target="_blank">{shorten(p["url"])}</a></td><td>{recent_work(p["url"])}</td><td class="num aeo">{f(cn)}</td><td class="num aeo">{f(cj)}</td><td class="num {dcls(d)}">{sgn(d)}</td><td class="num">{f(cj2)}</td><td class="num" style="color:var(--slate-5)">{intop}</td></tr>')
     return '\n'.join(rows)
 
 CORE_ORDER=['freight forwarding crm','logistics crm software','best tms software','freight management system','freight management software','freight forwarding software','freight forwarder software','best freight management software','freight software','freight tracking software']
