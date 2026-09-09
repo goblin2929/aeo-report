@@ -146,6 +146,33 @@ HTML = f'''<!DOCTYPE html>
     </section>
 
     <section>
+      <h2>Work Examples — Before &amp; After</h2>
+      <p class="note" style="margin-bottom:8px;">Concrete before/after for two of the August initiatives above.</p>
+
+      <h3 style="margin-top:4px;">1. Title experiment — Solution pages (~20 Aug)</h3>
+      <p class="note" style="margin-bottom:6px;">We moved <b>“AI-Powered” from the front of the title to the end</b>, so the category term buyers and AI engines match on leads the title, while the AI differentiator is kept.</p>
+      <table class="t"><thead>
+        <tr><th>Page</th><th>Previous Title</th><th>New Title (live)</th></tr>
+      </thead><tbody>
+        <tr><td><a href="https://gofreight.com/solutions/ocean-freight" target="_blank">/solutions/ocean-freight</a></td><td><b>AI-Powered</b> Ocean (Sea) Freight Management Software | GoFreight</td><td>Ocean (Sea) Freight Management Software, <b>AI-Powered</b> | GoFreight</td></tr>
+        <tr><td><a href="https://gofreight.com/solutions/air-freight" target="_blank">/solutions/air-freight</a></td><td><b>AI-Powered</b> Air Freight Management Software | GoFreight</td><td>Air Freight Management Software, <b>AI-Powered</b> | GoFreight</td></tr>
+      </tbody></table>
+
+      <h3 style="margin-top:14px;">2. Buyer-question content enhancement — example</h3>
+      <p class="note" style="margin-bottom:6px;">On the pages AI engines cite, we added or rewrote focused single-question sections and their FAQ to answer the exact buyer questions Search Console shows are being asked, closing the gaps mapped in July (implementation timeline, scalability, real-time visibility, accounting). Example from <a href="https://gofreight.com/product/freight-billing-accounting" target="_blank">/product/freight-billing-accounting</a>:</p>
+      <table class="t"><thead>
+        <tr><th style="width:24%">Question</th><th>Before (live)</th><th>After (published)</th></tr>
+      </thead><tbody>
+        <tr>
+          <td><b>What accounting systems does GoFreight connect to?</b></td>
+          <td>“GoFreight has an open API that connects to your existing accounting system, whether that’s QuickBooks, Sage, NetSuite, or an enterprise ERP. QuickBooks users get a native connector with <b>two-way sync</b>.”</td>
+          <td>“<b>QuickBooks Online is the one native connector.</b> Invoices are created in GoFreight and pushed to QuickBooks Online, and payments sync between the two. QuickBooks Desktop and Enterprise are not supported.”</td>
+        </tr>
+      </tbody></table>
+      <div class="takeaway-box" style="margin-top:8px;"><b>Why this question:</b> Search Console shows “how well does GoFreight integrate with Xero / QuickBooks / SAP” ranking <b>position 2.0 on 83 impressions</b> and “gofreight integration with xero” at 2.9, so the page now answers it precisely (the answer was also corrected: invoicing to QuickBooks is one-way, per the product team). The same single-question treatment was applied across the 14 solution and product pages, e.g. real-time visibility, where “does GoFreight provide real-time shipment tracking, e-AWB and EDI support” ranks <b>2.5 on 272 impressions</b>.</div>
+    </section>
+
+    <section>
       <h2>September 2026 — Next Action Items &amp; Priorities</h2>
       <ol class="prio-list">
         <li><b>Blog publishing — September</b> — keep expanding the topics where GoFreight is <b>not yet visible in AI Overview &amp; ChatGPT</b>, and add coverage for <b>popular terminal queries</b> to capture that traffic. <a href="https://docs.google.com/spreadsheets/d/1D7MDm4_4HpuIfjUe2CBTYat2AoTWRFLK2XgGBI8gpUc/edit?gid=1223294981#gid=1223294981" target="_blank">September plan</a>.<span class="tag content">Content</span><span class="tag aeo">AEO</span></li>
