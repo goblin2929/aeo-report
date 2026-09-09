@@ -202,6 +202,25 @@ HTML = f'''<!DOCTYPE html>
     </section>
 
     <section>
+      <h2>Initial Finding — Terminal-Tracking Glossary Pages Are Winning AI Overview <span style="font-weight:400;color:var(--slate-5);font-size:15px;">(hypothesis)</span></h2>
+      <p class="note" style="margin-bottom:8px;">An early signal worth sharing, framed as a hypothesis we will keep validating, not a proven cause.</p>
+      <p style="margin:6px 0 10px;"><a href="https://gofreight.com/glossary/garden-city-terminal-tracking" target="_blank">/glossary/garden-city-terminal-tracking</a> was the <b>single biggest click gainer in August</b>, growing <b>537 → 1,357 clicks (+820, +153%)</b> on 16,013 impressions. In a live Google AI Overview for “garden city terminal tracking”, <b>GoFreight is cited as the source</b> of the answer (the “GoFreight +1” attributions on the Inputs and Information-Displayed lines), while the same page also holds the <b>#1 organic result</b> — average position <b>1.4</b> for “garden city terminal tracking” and 1.4 for “garden city terminal container tracking”.</p>
+      <figure style="margin:10px 0;text-align:center;">
+        <img src="assets/garden-city-ai-overview.png" alt="Google AI Overview for 'garden city terminal tracking' citing GoFreight as the source, with the GoFreight glossary page as the #1 organic result" style="max-width:680px;width:100%;border:1px solid var(--slate-3);border-radius:6px;">
+        <figcaption class="note" style="margin-top:4px;">Live Google AI Overview for “garden city terminal tracking”: GoFreight is cited as the source, and the GoFreight glossary page is the #1 organic result above it.</figcaption>
+      </figure>
+      <table class="t"><thead>
+        <tr><th>Terminal-tracking glossary page</th><th class="num">July Clicks</th><th class="num">August Clicks</th><th class="num">Δ Clicks</th><th class="num">August Impr</th><th class="num">Best Position (Aug)</th></tr>
+      </thead><tbody>
+        <tr class="win-row"><td><a href="https://gofreight.com/glossary/garden-city-terminal-tracking" target="_blank">/glossary/garden-city-terminal-tracking</a></td><td class="num">537</td><td class="num">1,357</td><td class="num up">+820</td><td class="num">16,013</td><td class="num">1.4</td></tr>
+        <tr><td><a href="https://gofreight.com/glossary/savannah-terminal-tracking" target="_blank">/glossary/savannah-terminal-tracking</a></td><td class="num">379</td><td class="num">465</td><td class="num up">+86</td><td class="num">16,711</td><td class="num">4.8</td></tr>
+        <tr><td><a href="https://gofreight.com/glossary/its-terminal-tracking" target="_blank">/glossary/its-terminal-tracking</a></td><td class="num">183</td><td class="num">118</td><td class="num down">-65</td><td class="num">8,938</td><td class="num">3.8</td></tr>
+        <tr><td><a href="https://gofreight.com/glossary/fenix-marine-terminal-tracking" target="_blank">/glossary/fenix-marine-terminal-tracking</a></td><td class="num">90</td><td class="num">75</td><td class="num down">-15</td><td class="num">11,631</td><td class="num">4.7</td></tr>
+      </tbody></table>
+      <div class="takeaway-box" style="margin-top:10px;"><b>Hypothesis:</b> on these terminal-tracking queries GoFreight now <b>co-occupies the Google AI Overview citation and the #1 organic result</b>, and the organic snippet is action-oriented (“enter your container number, bill of lading, or booking reference”). The two reinforcing each other is the most likely driver of the +820 clicks on the garden-city page. Two things make this worth a closer look: the head page jumped to position 1.4 and roughly tripled its clicks in one month, and these pages sit <b>outside the WorkDuo prompt panel</b> (0 tracked citations), so this AI Overview win is <b>incremental to the AEO numbers reported above</b> — the terminal-tracking glossary cluster looks like an under-counted AEO asset. <i>Initial finding on a small sample; next step is to check AI Overview presence across the whole terminal cluster and track whether the citation persists week to week.</i></div>
+    </section>
+
+    <section>
       <h2>September 2026 — Next Action Items &amp; Priorities</h2>
       <ol class="prio-list">
         <li><b>Blog publishing — September</b> — keep expanding the topics where GoFreight is <b>not yet visible in AI Overview &amp; ChatGPT</b>, and add coverage for <b>popular terminal queries</b> to capture that traffic. <a href="https://docs.google.com/spreadsheets/d/1D7MDm4_4HpuIfjUe2CBTYat2AoTWRFLK2XgGBI8gpUc/edit?gid=1223294981#gid=1223294981" target="_blank">September plan</a>.<span class="tag content">Content</span><span class="tag aeo">AEO</span></li>
