@@ -158,24 +158,47 @@ HTML = f'''<!DOCTYPE html>
 
     <section>
       <h2>Buyer-Question Content Enhancement — Before &amp; After</h2>
-      <p class="note" style="margin-bottom:6px;">The July and August NovaStacks refreshes target the pages AI engines cite, to <b>bounce back AI visibility</b>. Each one closes a specific WorkDuo gap, a ChatGPT prompt where a competitor was cited instead of GoFreight, by adding <b>focused single-question sections</b> and leading the FAQ with the exact prompt. Two examples, both now in the Top-15 most-cited above:</p>
+      <p class="note" style="margin-bottom:6px;">The July NovaStacks batch targets the buyer questions AI engines are asked, to <b>bounce back AI visibility</b>. Each item closes a specific WorkDuo gap, a ChatGPT prompt where a competitor was cited instead of GoFreight, either by <b>refreshing an existing page</b> with focused single-question sections and an FAQ led by the exact prompt, or by <b>publishing a new focused article</b> where GoFreight had no page at all. Five examples:</p>
       <table class="t"><thead>
-        <tr><th style="width:19%">Page</th><th>Content gap (ChatGPT prompt not citing GoFreight)</th><th>Before</th><th>After</th></tr>
+        <tr><th style="width:18%">Page</th><th style="width:10%">Type</th><th>Content gap (ChatGPT prompt not citing GoFreight)</th><th>Before</th><th>After</th></tr>
       </thead><tbody>
         <tr>
           <td><a href="https://gofreight.com/blog/solution/blog-customer-portal.html" target="_blank">/blog/solution/blog-customer-portal</a></td>
-          <td>“What are the capabilities of the customer-facing portal for shipment tracking and communication?” and “Which TMS systems offer the best customer visibility portal?”</td>
+          <td>Refresh</td>
+          <td>“What are the capabilities of the customer-facing portal for shipment tracking and communication?” and “Which TMS offers the best customer visibility portal?”</td>
           <td>No FAQ section, zero named capabilities or vendors, two loose benefit lists.</td>
           <td>13-question FAQ with the two gap prompts answered verbatim as Q2 and Q3; nine named single-question capability sections; a named FMS customer-portal comparison table.</td>
         </tr>
         <tr>
           <td><a href="https://gofreight.com/blog/freight-tracking-software-comparison" target="_blank">/blog/freight-tracking-software-comparison</a></td>
+          <td>Refresh</td>
           <td>“Which freight management software provides real-time shipment tracking and visibility?” and “Which TMS offers the best customer visibility portal for shipment tracking?”</td>
           <td>5-question FAQ; real-time and AI covered only as a single bullet; 4 platforms compared.</td>
           <td>14-question FAQ led by the two gap prompts; new focused sections “Real Time vs Near Real Time” and “AI &amp; Predictive Freight Tracking”; 8 platforms compared.</td>
         </tr>
+        <tr>
+          <td><a href="https://gofreight.com/blog/multi-modal-freight-software" target="_blank">/blog/multi-modal-freight-software</a></td>
+          <td>New article</td>
+          <td>“How does freight management software handle multi-modal shipments, including air, ocean, and ground freight?”</td>
+          <td>No GoFreight page on multi-modal handling — ChatGPT answered the prompt with competitors.</td>
+          <td>New focused article; 10-question FAQ led by the gap prompt; single-question sections on unified booking, MAWB/BL across modes, mode switching, and cross-mode cost allocation.</td>
+        </tr>
+        <tr>
+          <td><a href="https://gofreight.com/blog/freight-software-audit-trail" target="_blank">/blog/freight-software-audit-trail</a></td>
+          <td>New article</td>
+          <td>“For freight management software, what’s auditability like? Can finance trace every adjustment and approval?”</td>
+          <td>No GoFreight page on the FMS audit trail / finance-compliance question.</td>
+          <td>New focused article; 12-question FAQ led by the gap prompt; single-question sections on SOX vs SOC 2, per-shipment / per-user / per-period auditor exports, and retention.</td>
+        </tr>
+        <tr>
+          <td><a href="https://gofreight.com/blog/reduce-customs-penalties" target="_blank">/blog/reduce-customs-penalties</a></td>
+          <td>New article</td>
+          <td>“Does the software reduce customs penalties or entry rejections?”</td>
+          <td>No GoFreight page tying the FMS to CBP penalty prevention.</td>
+          <td>New focused article; 12-question FAQ led by the gap prompt; single-question sections on ISF timing, HTS auto-classification, and pre-submission entry validation.</td>
+        </tr>
       </tbody></table>
-      <div class="takeaway-box win" style="margin-top:8px;"><b>Early payback:</b> the customer-portal refresh went from <b>96 → 280 AI citations (+184)</b> July to August, the #2 citation gainer in the Top-15 above, and both refreshed pages now sit inside the most-cited set. This is the AI-visibility bounce-back these July and August refreshes were built for.</div>
+      <div class="takeaway-box win" style="margin-top:8px;"><b>Early payback:</b> the customer-portal refresh went from <b>96 → 280 AI citations (+184)</b> July to August, the #2 citation gainer in the Top-15 above, and both refreshed pages now sit inside the most-cited set. This is the AI-visibility bounce-back this July batch was built for.</div>
     </section>
 
     <section>
