@@ -182,11 +182,11 @@ HTML = f'''<!DOCTYPE html>
   <section>
     <h2>Top 30 Pages by Clicks (August vs July) — with AI Citations per Page</h2>
     <table class="t"><thead>
-      <tr><th>#</th><th>Page</th><th>Recent Work</th><th class="num">July Clicks</th><th class="num">August Clicks</th><th class="num">Δ Clicks</th><th class="num">August Impr</th><th class="num aeo">AI Citations · July</th><th class="num aeo">AI Citations · August</th></tr>
+      <tr><th>#</th><th>Page</th><th>NovaStacks Work</th><th class="num">July Clicks</th><th class="num">August Clicks</th><th class="num">Δ Clicks</th><th class="num">August Impr</th><th class="num aeo">AI Citations · July</th><th class="num aeo">AI Citations · August</th></tr>
     </thead><tbody>
       {fr['top30']}
     </tbody></table>
-    <p class="note"><b>Recent Work</b> tags carried forward from prior reports (historical NovaStacks work markers); August’s specific refreshed / new-article URLs are not individually tagged here. <b>AI Citations</b> = WorkDuo-tracked AI responses citing this page as a source in the month.</p>
+    <p class="note"><b>NovaStacks Work</b> flags each blog / glossary page from the content-delivery tracker: <span style="background:#eafaf0;color:#15803d;padding:1px 5px;border-radius:4px;font-size:11px;font-weight:600">🆕 NS · Created</span> = a new NovaStacks article (month it went live), <span style="background:#e6f4f1;color:#0f766e;padding:1px 5px;border-radius:4px;font-size:11px;font-weight:600">🔄 NS · Updated</span> = an existing page NovaStacks last refreshed (latest update month; hover for the exact date). Pages with no flag are legacy GoFreight content NovaStacks has not touched. <b>AI Citations</b> = WorkDuo-tracked AI responses citing this page as a source in the month.</p>
   </section>
 
   <section>

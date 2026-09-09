@@ -121,7 +121,42 @@ def shorten(url):
 top30=G['topPages'][:30]
 top30_norm=set(norm(p['url']) for p in top30)
 _rw_norm={norm(u):t for u,t in RW.items()}
-def recent_work(url): return RW.get(url) or _rw_norm.get(norm(url),'')
+
+# ---- data-driven NovaStacks flag from the blog/glossary SSOT ----
+import csv as _csv, re as _re
+_SS={}
+_DATE=_re.compile(r'^\d{4}-\d{2}-\d{2}')
+def _dt(v):
+    v=(v or '').strip(); return v[:10] if _DATE.match(v) else ''
+with open('/Users/ekiriandra/seo-projects/novastacks/clients/gofreight/input/ssot-blog-database-set/GoFreight_blog_glossary_ssot.csv',encoding='utf-8') as _f:
+    for _x in _csv.DictReader(_f):
+        _SS[norm(_x['Address'])]={k:(_x.get(k) or '').strip() for k in ['last_authored_at','last_batch','live_verified_at','hubspot_publish_date']}
+_MON=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+def _mlabel(d): return f"{_MON[int(d[5:7])]} {d[:4]}" if d else ''
+def _badge(kind,when):
+    bg,fg=('#eafaf0','#15803d') if kind=='Created' else ('#e6f4f1','#0f766e')
+    icon='🆕' if kind=='Created' else '🔄'
+    return (f'<span style="background:{bg};color:{fg};padding:1px 6px;border-radius:4px;'
+            f'font-size:11px;white-space:nowrap;font-weight:600" title="Latest: {when}">'
+            f'{icon} NS · {kind} {_mlabel(when)}</span>')
+_TF=json.load(open('/Users/ekiriandra/tmp/gf_tracker_flags.json',encoding='utf-8'))  # url(norm) -> {kind,when} from the content-delivery tracker
+def recent_work(url):
+    tf=_TF.get(norm(url))
+    if tf: return _badge(tf['kind'],tf['when'])
+    s=_SS.get(norm(url))
+    if s and (s['last_authored_at'] or s['hubspot_publish_date'] or s['last_batch']):
+        batch=s['last_batch'].lower(); auth=_dt(s['last_authored_at']); pub=_dt(s['hubspot_publish_date'])
+        latest=max([d for d in (auth,pub,_dt(s['live_verified_at'])) if d] or [''])
+        if 'refresh' in batch:                 kind,when='Updated', (auth or latest)
+        elif pub and (not auth or auth==pub):  kind,when='Created', pub
+        elif auth:                             kind,when='Updated', auth
+        else:                                  kind,when='Updated', latest
+        return _badge(kind,when)
+    # fallback: normalise a manual "NS · <Mon>" tag (month = creation month) into the same format
+    man=RW.get(url) or _rw_norm.get(norm(url),'')
+    m=_re.search(r'NS\s*·\s*(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)',_re.sub('<[^>]+>','',man))
+    if m: return _badge('Created', f"2026-{_MON.index(m.group(1)):02d}-01")
+    return ''
 def top30_rows():
     rows=[]; scj=scn=sdc=scan=scaj=0
     for i,p in enumerate(top30,1):
