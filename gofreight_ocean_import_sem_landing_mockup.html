@@ -73,6 +73,20 @@ a{color:var(--brand-700)}
 .visual-ph .tag{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-300);font-weight:700;margin-bottom:10px}
 .visual-ph .desc{font-size:.9375rem;max-width:26em;margin:0}
 
+/* friction */
+.friction{background:#fff}
+.friction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.friction-card{border:1px solid var(--gray-200);border-left:3px solid var(--brand-400);border-radius:10px;padding:28px 26px;background:var(--gray-50)}
+.friction-card .num{display:block;font-size:.8125rem;font-weight:700;letter-spacing:.12em;color:var(--brand-500);margin-bottom:12px}
+.friction-card h5{font-size:1.0625rem;margin-bottom:8px}
+.friction-card p{font-size:.9375rem;color:var(--text-muted);margin:0}
+
+/* proof strip */
+.proof{background:var(--brand-900);color:#fff;padding:44px 0}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center}
+.proof-item .figure{display:block;font-size:2.25rem;font-weight:700;color:var(--brand-300);line-height:1.1;margin-bottom:8px}
+.proof-item p{margin:0;font-size:.9375rem;color:rgba(255,255,255,.8);max-width:22em;margin-inline:auto}
+
 /* pillars */
 .pillar-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:44px}
 .pillar{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:28px 22px;transition:box-shadow .15s ease,transform .15s ease}
@@ -133,7 +147,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
   h1{font-size:2.25rem}h2{font-size:1.875rem}
   .hero-grid,.showcase-grid,.cta-grid{grid-template-columns:1fr;gap:36px}
   .pillar-grid{grid-template-columns:repeat(2,1fr)}
-  .quote-grid{grid-template-columns:1fr}
+  .quote-grid,.friction-grid,.proof-grid{grid-template-columns:1fr}
   .wrap{padding:0 24px}
   .section{padding:56px 0}
   .showcase-grid{padding:28px}
@@ -147,7 +161,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 </head>
 <body>
 
-<div class="ribbon">MOCKUP for review &nbsp;·&nbsp; GoFreight SEM landing page &nbsp;·&nbsp; target queries: <b>ISF filing software · AMS filing software · HBL software · ocean import documentation · freight forwarding accounting with QuickBooks</b></div>
+<div class="ribbon">MOCKUP for review &nbsp;·&nbsp; GoFreight SEM landing page: compliance and charges &nbsp;·&nbsp; spine: <b>filing friction &rsaquo; filings in the product &rsaquo; demurrage and detention early warning &rsaquo; demo CTA</b> &nbsp;·&nbsp; structure modelled on /ppc-cargowise-alternative</div>
 
 <!-- HEADER -->
 <header class="site-header">
@@ -161,13 +175,13 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">US Ocean Import Software</span>
-      <h1>One Import File. AMS, ISF, the HBL, and the Invoice.</h1>
-      <p class="lede">GoFreight runs the whole ocean import desk on one web platform. File AMS and ISF from the shipment your team is already working, generate the house bill and the arrival notice from that same record, then send the invoice to QuickBooks Online without retyping a single charge.</p>
+      <span class="eyebrow">Ocean Import Compliance and Charges</span>
+      <h1>File the ISF and Ocean AMS From the Shipment, Not a Second Portal</h1>
+      <p class="lede">Most import desks key the same house bill twice: once into the operating file, once into a standalone filing account. GoFreight keeps the ISF and the ocean AMS inside the product, puts the last free day in front of your team while there is still time to act, and carries the charges from quote to invoice into QuickBooks Online.</p>
       <ul class="check-list">
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3333 4L5.99996 11.3333L2.66663 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>ISF-10 and ISF-5 filing</span></li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3333 4L5.99996 11.3333L2.66663 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>HBL and MBL generated in platform</span></li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3333 4L5.99996 11.3333L2.66663 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Native QuickBooks Online sync</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3333 4L5.99996 11.3333L2.66663 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ocean AMS against the HBL you issued</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3333 4L5.99996 11.3333L2.66663 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>D&amp;D early warning on the file</span></li>
       </ul>
       <a href="#demo" class="btn btn--primary">Get a Demo</a>
     </div>
@@ -177,20 +191,47 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
   </div>
 </section>
 
+<!-- FRICTION -->
+<section class="section friction">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Where the Import File Loses Time</h2>
+      <p>Three places the ocean import desk pays for software that does not talk to itself</p>
+    </div>
+    <div class="friction-grid">
+      <div class="friction-card">
+        <span class="num">01</span>
+        <h5>The filing lives somewhere else</h5>
+        <p>The ISF and the ocean AMS get keyed a second time into a standalone customs portal, from importer, consignee, and container data already sitting on the shipment. Two records, two chances to get it wrong.</p>
+      </div>
+      <div class="friction-card">
+        <span class="num">02</span>
+        <h5>Charges land after the window closes</h5>
+        <p>Demurrage and detention show up on an invoice weeks later. By then the last free day is long gone, and the milestone history needed to work the dispute is scattered across email threads.</p>
+      </div>
+      <div class="friction-card">
+        <span class="num">03</span>
+        <h5>The books are a month behind the file</h5>
+        <p>Invoices get retyped into accounting from the operating system, so nobody sees what a file actually earned until the close. Margin questions arrive too late to change anything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SHOWCASE TABS -->
 <section class="section showcase">
   <div class="wrap">
     <div class="showcase-header">
-      <h2>Everything the Import File Needs</h2>
-      <p>Five jobs that usually take five systems. Here is how each one runs on a single shipment record.</p>
+      <h2>Filings, Charges, and Billing Inside One Product</h2>
+      <p>The compliance work, the container clock, and the invoice all read from the same shipment record.</p>
     </div>
 
     <div class="tab-nav">
       <button class="tab-btn active" data-tab="t1">ISF Filing</button>
-      <button class="tab-btn" data-tab="t2">AMS Filing</button>
-      <button class="tab-btn" data-tab="t3">HBL and MBL</button>
-      <button class="tab-btn" data-tab="t4">Import Documentation</button>
-      <button class="tab-btn" data-tab="t5">Accounting and QuickBooks</button>
+      <button class="tab-btn" data-tab="t2">Ocean AMS Filing</button>
+      <button class="tab-btn" data-tab="t3">D&amp;D Early Warning</button>
+      <button class="tab-btn" data-tab="t4">HBL and Import Documents</button>
+      <button class="tab-btn" data-tab="t5">Quote to Invoice</button>
     </div>
 
     <div class="tab-pane active" id="t1">
@@ -198,10 +239,10 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
         <div>
           <span class="showcase-label">ISF Filing Software</span>
           <h3>File ISF-10 and ISF-5 Without Leaving the Shipment</h3>
-          <p>The ISF pulls from the booking and the house bill already on the file, so your team is not rekeying importer, consignee, and container data into a separate portal. Both ISF-10 and ISF-5 are supported in product through integrated filing partners, and the filing status lands back on the shipment where operations can see it.</p>
+          <p>The ISF pulls from the booking and the house bill already on the file, so your team is not keying importer, consignee, and container data into a separate portal. Both ISF-10 and ISF-5 are supported inside the product through integrated filing partners, and the filing status comes back onto the shipment where operations can see it.</p>
           <ul>
             <li>ISF data sourced from the shipment record, not a spreadsheet</li>
-            <li>Filing response visible on the file, not in a separate inbox</li>
+            <li>Filing status on the file, not in a separate inbox</li>
             <li>Smart To-Do Lists flag the files where the ISF is still open</li>
           </ul>
         </div>
@@ -216,17 +257,17 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
       <div class="showcase-grid">
         <div>
           <span class="showcase-label">AMS Filing Software</span>
-          <h3>Ocean AMS Filing Tied to the House Bill You Issued</h3>
-          <p>Transmit ocean AMS through an integrated filing partner from inside GoFreight. The manifest references the same house bill the platform generated, so the filed data and the issued document never drift apart. Carrier and terminal movements flow in through the CargoSmart integration, so the file stays current after the manifest goes out.</p>
+          <h3>Ocean AMS Filed Against the House Bill You Issued</h3>
+          <p>Transmit the ocean AMS through an integrated filing partner from inside GoFreight. The manifest references the same house bill the platform generated, so the filed data and the issued document cannot drift apart. Carrier and terminal movements flow back in through the CargoSmart integration, which keeps the file current after the manifest goes out.</p>
           <ul>
-            <li>Ocean AMS submitted against the house bill on the file</li>
-            <li>EDI sets 300, 301, 304, 315, and 997 supported in EDIFACT, X.12, XML, and JSON</li>
-            <li>AES for US ocean and air exports through AESDirect on the export side</li>
+            <li>Ocean AMS submitted against the HBL on the file</li>
+            <li>Manifest and document built from one shipment record</li>
+            <li>Carrier and terminal movements return to the same file</li>
           </ul>
         </div>
         <div class="visual-ph">
           <span class="tag">Visual to produce</span>
-          <p class="desc">Screen recording: AMS transmission from the house bill screen, with the manifest status timeline and the linked HBL number both in frame.</p>
+          <p class="desc">Screen recording: ocean AMS transmission from the house bill screen, with the manifest status timeline and the linked HBL number both in frame.</p>
         </div>
       </div>
     </div>
@@ -234,18 +275,18 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
     <div class="tab-pane" id="t3">
       <div class="showcase-grid">
         <div>
-          <span class="showcase-label">HBL Software</span>
-          <h3>Generate HBL and MBL PDFs From the Shipment Record</h3>
-          <p>GoFreight produces both house and master bill PDFs from data already on the file, so the bill your customer receives matches the manifest you filed. Memos attach to the HBL, the MBL, the container, or the trade partner, and stay visible from the HBL list, the MBL list, and the container list in one place.</p>
+          <span class="showcase-label">Demurrage and Detention</span>
+          <h3>See the Last Free Day While You Can Still Do Something About It</h3>
+          <p>GoFreight tracks container milestones from ocean carriers, railroads, terminals, and AIS, so the free time on a container is visible on the file rather than reconstructed after the charge arrives. When a charge does land, the shipment holds the dated milestone history your team needs to check the invoice against what actually happened and to work the dispute inside the timeline you are given.</p>
           <ul>
-            <li>House and master bill PDFs generated in platform</li>
-            <li>Memo system across HBL, MBL, container, and trade partner</li>
-            <li>One HBL list view for the whole desk, not one folder per operator</li>
+            <li>Container milestones from four sources on one file</li>
+            <li>Smart To-Do Lists trigger by shipment type and customer condition</li>
+            <li>Dated milestone history behind every charge you question</li>
           </ul>
         </div>
         <div class="visual-ph">
           <span class="tag">Visual to produce</span>
-          <p class="desc">Screen recording: HBL list view, opening one house bill, generating the PDF, and a memo appearing against the same HBL.</p>
+          <p class="desc">Screen recording: container view with last free day countdown, a Smart To-Do List item firing on the MBL status change, then the milestone history panel used to check a D&amp;D invoice.</p>
         </div>
       </div>
     </div>
@@ -253,18 +294,18 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
     <div class="tab-pane" id="t4">
       <div class="showcase-grid">
         <div>
-          <span class="showcase-label">Ocean Import Documentation</span>
-          <h3>Arrival Notice, Delivery Order, and the Rest of the Import Pack</h3>
-          <p>Arrival notice, delivery and pickup order, commercial invoice, packing list, and booking documents all generate from the same shipment. Smart To-Do Lists trigger by shipment type and customer condition, so the arrival notice goes out when the MBL status updates rather than when somebody remembers. Tracking comes from ocean carriers, railroads, terminals, and AIS, and the customer portal gives unlimited tracking users their own view.</p>
+          <span class="showcase-label">HBL Software and Ocean Import Documentation</span>
+          <h3>House Bill, Arrival Notice, and Delivery Order From One Record</h3>
+          <p>GoFreight generates both house and master bill PDFs from data already on the file, along with the arrival notice, the delivery and pickup order, the commercial invoice, the packing list, and the booking documents. Memos attach to the HBL, the MBL, the container, or the trade partner, and stay visible from the HBL list, the MBL list, and the container list in one place.</p>
           <ul>
-            <li>Arrival notice, delivery order, commercial invoice, packing list, booking</li>
-            <li>Smart To-Do Lists trigger by shipment type and customer condition</li>
-            <li>Up to 53% reduction in demurrage and detention fees</li>
+            <li>HBL and MBL PDFs generated in the platform</li>
+            <li>Arrival notice, delivery order, commercial invoice, packing list</li>
+            <li>Memo system across HBL, MBL, container, and trade partner</li>
           </ul>
         </div>
         <div class="visual-ph">
           <span class="tag">Visual to produce</span>
-          <p class="desc">Screen recording: document tab of an import file, arrival notice generated and sent, Smart To-Do List on the right updating as the MBL status changes.</p>
+          <p class="desc">Screen recording: HBL list view, opening one house bill, generating the PDF, then the arrival notice going out from the same file.</p>
         </div>
       </div>
     </div>
@@ -273,11 +314,11 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
       <div class="showcase-grid">
         <div>
           <span class="showcase-label">Freight Forwarding Accounting with QuickBooks</span>
-          <h3>Every Charge Tied to Its File, Synced to QuickBooks Online</h3>
-          <p>Charges carry from quote to shipment to invoice automatically, so nothing is retyped between operations and accounting. GoFreight uses shipment based accounting, which means every charge stays attached to the file that created it and margin per file is visible before month end. The native QuickBooks Online integration closes the loop, and multi entity operations get separate GLs, billing codes, currencies, and bank configurations.</p>
+          <h3>One Flow From Quote to Invoice, Synced to QuickBooks Online</h3>
+          <p>Charges carry from quote to shipment to invoice automatically, so operations and accounting are not retyping each other's work. GoFreight uses shipment based accounting, which keeps every charge attached to the file that created it and makes margin per file readable before the close. The native QuickBooks Online integration closes the loop, and multi entity operations get separate GLs, billing codes, currencies, and bank configurations.</p>
           <ul>
             <li>Native QuickBooks Online integration</li>
-            <li>Shipment based accounting, margin visible per file</li>
+            <li>Shipment based accounting, margin readable per file</li>
             <li>Overdue AR, over credit limit, and customer ranking reports built in</li>
           </ul>
         </div>
@@ -290,28 +331,46 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
   </div>
 </section>
 
+<!-- PROOF STRIP -->
+<section class="proof">
+  <div class="wrap proof-grid">
+    <div class="proof-item">
+      <span class="figure">53%</span>
+      <p>lower demurrage and detention fees at United Cargo Management</p>
+    </div>
+    <div class="proof-item">
+      <span class="figure">Up to 50%</span>
+      <p>reduction in quote time</p>
+    </div>
+    <div class="proof-item">
+      <span class="figure">4 to 8 weeks</span>
+      <p>typical implementation</p>
+    </div>
+  </div>
+</section>
+
 <!-- PILLARS -->
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2>Why the Import Desk Moves Faster</h2>
-      <p>Five things that change when filing, documents, and billing share one record</p>
+      <h2>Why It Holds Up on a Busy Import Desk</h2>
+      <p>Five things that change when the filing, the container, and the invoice share one record</p>
     </div>
     <div class="pillar-grid">
       <div class="pillar">
         <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
         <h5>One Shipment Record</h5>
-        <p>Filing, documents, and billing read from the same file, so the data is entered once.</p>
+        <p>Filings, documents, and billing read from the same file, so the data is entered once.</p>
       </div>
       <div class="pillar">
         <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.67 0 3.23.45 4.57 1.24"/></svg></div>
-        <h5>Filing Inside the Workflow</h5>
-        <p>ISF and ocean AMS go out through integrated partners from the shipment, not a second portal.</p>
+        <h5>Filing Partners Built In</h5>
+        <p>ISF-10, ISF-5, and ocean AMS go out through integrated partners, not a second login.</p>
       </div>
       <div class="pillar">
-        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg></div>
-        <h5>Documents That Match</h5>
-        <p>The HBL, the arrival notice, and the delivery order are built from the data you filed.</p>
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h5>Milestones From Four Sources</h5>
+        <p>Ocean carriers, railroads, terminals, and AIS feed the container clock your team works to.</p>
       </div>
       <div class="pillar">
         <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
@@ -321,7 +380,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
       <div class="pillar">
         <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <h5>100% Web Based</h5>
-        <p>Open the desk from any browser, with guided onboarding in four to eight weeks.</p>
+        <p>Open the desk from any browser, with implementation typically 4 to 8 weeks.</p>
       </div>
     </div>
   </div>
@@ -331,8 +390,8 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 <section class="section compare">
   <div class="wrap">
     <div class="section-head">
-      <h2>One Platform, or Five Disconnected Tools</h2>
-      <p>The same five jobs, run two different ways</p>
+      <h2>Inside the Product, or Across Five Logins</h2>
+      <p>The same import file, run two different ways</p>
     </div>
     <div class="table-scroll">
       <table>
@@ -340,34 +399,34 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
           <tr>
             <th scope="col">The job</th>
             <th scope="col">GoFreight</th>
-            <th scope="col">Point tools and spreadsheets</th>
+            <th scope="col">Separate filing portal and spreadsheets</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">ISF filing</th>
-            <td>ISF-10 and ISF-5 filed in product through integrated partners, prefilled from the shipment.</td>
-            <td>A separate customs portal, with importer and container data retyped from email.</td>
+            <td>ISF-10 and ISF-5 filed through integrated partners, prefilled from the shipment.</td>
+            <td>A standalone customs portal, with importer and container data keyed a second time.</td>
           </tr>
           <tr>
-            <th scope="row">AMS filing</th>
-            <td>Ocean AMS transmitted through an integrated filing partner against the house bill on file.</td>
-            <td>A standalone filing account with no link back to the operating file.</td>
+            <th scope="row">Ocean AMS filing</th>
+            <td>Transmitted through an integrated filing partner against the house bill already on the file.</td>
+            <td>A separate filing account with no link back to the operating file.</td>
           </tr>
           <tr>
-            <th scope="row">House bill and documents</th>
-            <td>HBL and MBL PDFs, arrival notice, delivery order, commercial invoice, and packing list generated from the shipment.</td>
-            <td>Word and Excel templates, and version drift between the filed manifest and the issued bill.</td>
+            <th scope="row">Demurrage and detention</th>
+            <td>Container milestones from ocean carriers, railroads, terminals, and AIS, with the free time visible on the file.</td>
+            <td>The charge is the first warning, and the backup has to be rebuilt from email.</td>
           </tr>
           <tr>
-            <th scope="row">Import operations</th>
-            <td>Smart To-Do Lists trigger by shipment type and customer condition, with tracking from ocean carriers, railroads, terminals, and AIS.</td>
-            <td>Manual checklists, with container status chased by phone and email.</td>
+            <th scope="row">HBL and import documents</th>
+            <td>HBL and MBL PDFs, arrival notice, delivery order, commercial invoice, and packing list from the shipment record.</td>
+            <td>Word and Excel templates, with version drift between the filed manifest and the issued bill.</td>
           </tr>
           <tr>
             <th scope="row">Accounting</th>
-            <td>Shipment based accounting, native QuickBooks Online sync, and separate GLs, currencies, and bank configurations per entity.</td>
-            <td>Invoices retyped into the accounting system, with margin per file unclear until month end.</td>
+            <td>Charges carry from quote to invoice, shipment based accounting, native QuickBooks Online sync.</td>
+            <td>Invoices retyped into the accounting system, with margin per file unreadable until the close.</td>
           </tr>
         </tbody>
       </table>
@@ -380,7 +439,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
   <div class="wrap">
     <div class="section-head">
       <h2>What Our Customers Say</h2>
-      <p>Forwarders running their operations on GoFreight today</p>
+      <p>Forwarders running their import desk on GoFreight today</p>
     </div>
     <div class="quote-grid">
       <div class="quote">
@@ -414,8 +473,8 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 <section class="section cta" id="demo">
   <div class="wrap cta-grid">
     <div>
-      <h2>Ready to Run the Import Desk on One Platform?</h2>
-      <p>Book a demo and we will walk one of your own ocean import files through it, from the ISF and the AMS transmission to the arrival notice and the QuickBooks Online invoice.</p>
+      <h2>Bring the Filings Back Into the File</h2>
+      <p>Book a demo and we will walk one of your own ocean import files through it, from the ISF and the ocean AMS transmission to the last free day, the arrival notice, and the QuickBooks Online invoice.</p>
     </div>
     <div class="form-card">
       <h4>Book your demo</h4>
