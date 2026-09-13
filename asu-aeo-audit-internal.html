@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Arizona State University AEO Assessment Report by Novastacks AI</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>tailwind.config={theme:{extend:{colors:{'ns-dark':'#111111','novastacks':'#01aac1','campaign-clay':'#C4A08A'}}}}</script>
+<style>
+
+    body { font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Gating — v2 partial reveal approach */
+    .gated-section { position: relative; overflow: hidden; }
+    .gated-section .gated-content { pointer-events: none; user-select: none; max-height: 600px; }
+    .gated-section.unlocked .gated-content { pointer-events: auto; user-select: auto; max-height: none; }
+    .gated-section .section-header-visible { position: relative; z-index: 5; }
+    .gated-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 2.5rem; background: linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(15,23,42,0.4) 50%, rgba(15,23,42,0.92) 70%, rgba(15,23,42,0.98) 85%); z-index: 10; transition: opacity 0.3s ease; }
+    .gated-section.unlocked .gated-overlay { opacity: 0; pointer-events: none; }
+    .overlay-card { background: rgba(15,23,42,0.92); backdrop-filter: blur(12px); border: 1px solid rgba(1,170,193,0.3); border-radius: 0.75rem; padding: 2rem 2.5rem; text-align: center; max-width: 520px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    /* Light section gating — white fade instead of dark */
+    .gated-section:has(.section-light) .gated-overlay { background: linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.95) 70%, rgba(255,255,255,0.99) 85%); }
+    .gated-section:has(.section-light) .overlay-card { background: rgba(15,23,42,0.95); }
+
+    /* Scroll animations */
+    .scroll-animate { opacity: 0; transform: translateY(32px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .scroll-animate.animate-in { opacity: 1; transform: translateY(0); }
+
+    /* Score ring animation */
+    @keyframes score-fill { from { stroke-dashoffset: 314; } }
+    .score-ring-animated { animation: score-fill 1.5s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+    /* Grid pattern for cover */
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(1,170,193,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(1,170,193,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #111111; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #01aac1; }
+    html { scroll-behavior: smooth; }
+
+    /* Executive summary HTML content */
+    .exec-summary-content p { margin-bottom: 1rem; }
+    .exec-summary-content p:last-child { margin-bottom: 0; }
+    .exec-summary-content strong { color: #111111; font-weight: 600; }
+
+    /* v2 section classes — reusable styling for cards/tables within dark and light sections */
+    .section-dark .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .section-dark .data-table th { text-align: left; padding: 10px 12px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #888; border-bottom: 1px solid rgba(255,255,255,0.08); white-space: nowrap; }
+    .section-dark .data-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #e0e0e0; }
+    .section-dark .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .section-dark .data-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+    .section-dark .data-table .text-right { text-align: right; }
+    .section-dark .data-table .text-center { text-align: center; }
+
+    .section-dark .stat-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px; }
+    .section-dark .stat-card .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 6px; }
+    .section-dark .stat-card .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #fff; line-height: 1.1; }
+    .section-dark .stat-card .stat-context { font-size: 12px; color: #888; margin-top: 4px; }
+
+    .section-dark .issue-detail { background: #2a2a2a; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .section-dark .issue-title { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: #fff; }
+    .section-dark .issue-body { font-size: 14px; color: #e0e0e0; line-height: 1.7; }
+    .section-dark .issue-body p { margin-bottom: 12px; }
+    .section-dark .issue-body strong { color: #fff; }
+    .section-dark .issue-body .data-table th { color: #888; }
+
+    .section-light .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .section-light .data-table th { text-align: left; padding: 10px 12px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #666; border-bottom: 2px solid #e5e5e5; background: #f5f5f5; white-space: nowrap; }
+    .section-light .data-table td { padding: 10px 12px; border-bottom: 1px solid #eee; color: #333; }
+    .section-light .data-table tr:hover td { background: #fafafa; }
+    .section-light .data-table tr:last-child td { border-bottom: none; }
+    .section-light .data-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+    .section-light .data-table .text-right { text-align: right; }
+    .section-light .data-table .text-center { text-align: center; }
+
+    .section-light .stat-card { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 10px; padding: 20px; }
+    .section-light .stat-card .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-bottom: 6px; }
+    .section-light .stat-card .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #111; line-height: 1.1; }
+    .section-light .stat-card .stat-context { font-size: 12px; color: #888; margin-top: 4px; }
+
+    .section-light .issue-detail { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .section-light .issue-title { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; color: #111; }
+    .section-light .issue-body { font-size: 14px; color: #333; line-height: 1.7; }
+    .section-light .issue-body p { margin-bottom: 12px; }
+    .section-light .issue-body strong { color: #111; }
+    .section-light .issue-body .data-table th { color: #666; background: #f5f5f5; }
+
+    /* Readiness insight callout */
+    .readiness-insight { border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.75; }
+    .section-light .readiness-insight { background: #f0fafb; border-left: 4px solid #01aac1; color: #1a1a1a; }
+    .section-light .readiness-insight strong { color: #017d8e; }
+    .section-dark .readiness-insight { background: rgba(1,170,193,0.08); border-left: 4px solid #01aac1; color: #e0e0e0; }
+    .section-dark .readiness-insight strong { color: #01d7f4; }
+
+    /* Color-coded text classes for table cells */
+    .text-success { color: #22c55e; }
+    .text-danger { color: #ef4444; }
+    .text-warning { color: #eab308; }
+    .text-muted { color: #888; }
+    .text-info { color: #01aac1; }
+
+    /* Badge classes */
+    .badge-danger { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(239,68,68,0.15); color: #ef4444; }
+    .badge-warning { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(234,179,8,0.15); color: #eab308; }
+    .badge-success { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(34,197,94,0.15); color: #22c55e; }
+    .badge-info { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(1,170,193,0.15); color: #01aac1; }
+    .badge-orange { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(249,115,22,0.15); color: #f97316; }
+    .badge-muted { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(136,136,136,0.15); color: #888; }
+
+    /* Stat grid */
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+
+    /* Issue border colors */
+    .issue-border-success { border-left: 4px solid #22c55e; }
+    .issue-border-danger { border-left: 4px solid #ef4444; }
+    .issue-border-warning { border-left: 4px solid #eab308; }
+    .issue-border-info { border-left: 4px solid #01aac1; }
+
+    /* Score bubble (readiness section) */
+    .score-bubble { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; }
+    .score-bubble .bubble-score { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; }
+
+    /* Horizon cards (roadmap) */
+    .section-dark .horizon-card { background: #2a2a2a; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .section-dark .rec-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .section-dark .rec-content { font-size: 13px; color: #888; line-height: 1.5; }
+    .section-dark .rec-content strong { color: #fff; }
+
+    .section-light .horizon-card { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .section-light .rec-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eee; }
+    .section-light .rec-content { font-size: 13px; color: #555; line-height: 1.5; }
+    .section-light .rec-content strong { color: #111; }
+
+    .rec-item:last-child { border-bottom: none; }
+    .rec-number { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: #01aac1; min-width: 28px; }
+
+    /* Score impact grid (roadmap) */
+    .score-impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+
+    .section-dark .score-impact-card { background: #2a2a2a; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; }
+    .section-dark .score-impact-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 16px; }
+
+    .section-light .score-impact-card { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 12px; padding: 24px; }
+    .section-light .score-impact-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #111; margin-bottom: 16px; }
+
+    /* Table scroll for mobile */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .table-scroll::-webkit-scrollbar { height: 4px; }
+    .table-scroll::-webkit-scrollbar-thumb { background: #017d8e; border-radius: 2px; }
+
+    /* Gap card */
+    .gap-card { background: rgba(1,170,193,0.04); border: 1px solid rgba(1,170,193,0.15); border-radius: 12px; padding: 24px; }
+
+    /* Footnotes */
+    .footnote { font-size: 11px; color: #888; line-height: 1.6; }
+    .footnote sup { color: #01aac1; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .score-impact-grid { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+  
+
+    .mega-menu-trigger:hover .mega-menu-dropdown,
+    .mega-menu-trigger:focus-within .mega-menu-dropdown {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .mega-menu-dropdown {
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    }
+    .mega-menu-trigger:hover .chevron-rotate,
+    .mega-menu-trigger:focus-within .chevron-rotate {
+      transform: rotate(180deg);
+    }
+    .chevron-rotate { transition: transform 0.2s ease; }
+    .mini-dropdown-trigger:hover .mini-dropdown,
+    .mini-dropdown-trigger:focus-within .mini-dropdown {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .mini-dropdown-trigger:hover .chevron-rotate,
+    .mini-dropdown-trigger:focus-within .chevron-rotate {
+      transform: rotate(180deg);
+    }
+    .mini-dropdown {
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    }
+    /* Dropdown text must wrap normally and panels must never leave the viewport */
+    .mini-dropdown, .mega-menu-dropdown { white-space: normal; max-width: calc(100vw - 1.5rem); }
+    .tool-card { transition: all 0.2s ease; }
+    .tool-card:hover { background: rgba(1,170,193,0.05); border-color: rgba(1,170,193,0.3); }
+    #mobile-menu-toggle { display: none; }
+    #mobile-menu-toggle:checked ~ .mobile-menu-panel { transform: translateX(0); }
+    #mobile-menu-toggle:checked ~ .mobile-menu-overlay { display: block; }
+    .mobile-menu-panel { transform: translateX(-100%); transition: transform 0.3s ease; }
+    #tools-accordion { display: none; }
+    #tools-accordion:checked ~ .tools-submenu { max-height: 800px; }
+    #tools-accordion:checked ~ .tools-header .chevron-rotate { transform: rotate(180deg); }
+    .tools-submenu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #industries-accordion { display: none; }
+    #industries-accordion:checked ~ .industries-submenu { max-height: 800px; }
+    #industries-accordion:checked ~ .industries-header .chevron-rotate { transform: rotate(180deg); }
+    .industries-submenu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    /* Brand color fallbacks so the header renders identically on pages that do not
+       load the compiled Tailwind build (e.g. audit reports on CDN Tailwind). */
+    .text-novastacks { color: #01aac1; }
+    .hover\:text-novastacks:hover { color: #01aac1; }
+    .bg-novastacks { background-color: #01aac1; }
+    .hover\:bg-novastacks\/80:hover { background-color: rgba(1,170,193,0.8); }
+    .bg-novastacks\/10 { background-color: rgba(1,170,193,0.1); }
+    .group:hover .group-hover\:bg-novastacks\/20 { background-color: rgba(1,170,193,0.2); }
+    .group:hover .group-hover\:text-novastacks { color: #01aac1; }
+    .text-campaign-clay { color: #C4A08A; }
+    .text-campaign-clay\/80 { color: rgba(196,160,138,0.8); }
+    .hover\:text-campaign-clay\/80:hover { color: rgba(196,160,138,0.8); }
+    .bg-campaign-clay\/15 { background-color: rgba(196,160,138,0.15); }
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+  
+.badge-danger,.badge-warning,.badge-success,.badge-info,.badge-muted,.badge-orange{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.badge-danger{background:rgba(239,68,68,.14);color:#ef4444;border:1px solid rgba(239,68,68,.3)}
+.badge-warning{background:rgba(245,158,11,.14);color:#d97706;border:1px solid rgba(245,158,11,.3)}
+.badge-success{background:rgba(16,185,129,.14);color:#059669;border:1px solid rgba(16,185,129,.3)}
+.badge-info{background:rgba(1,170,193,.14);color:#01aac1;border:1px solid rgba(1,170,193,.3)}
+.badge-muted{background:rgba(148,163,184,.14);color:#64748b;border:1px solid rgba(148,163,184,.3)}
+.section-dark .badge-warning{color:#fbbf24} .section-dark .badge-success{color:#34d399} .section-dark .badge-muted{color:#94a3b8}
+.bubble-score{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;line-height:1;color:#fff}
+.bubble-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#94a3b8;margin-top:8px}
+</style></head>
+<body class="bg-ns-dark text-white font-body antialiased">
+
+<header class="bg-slate-950/95 border-b border-white/10 sticky top-0 z-50">
+  <div class="container mx-auto px-6 flex items-center justify-between h-[72px]">
+    <a href="https://www.novastacks-ai.com" class="font-display font-bold text-white text-lg">novastacks<span class="text-novastacks">.</span></a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-gray-300">
+      <a href="#s01" class="hover:text-novastacks transition-colors">Summary</a>
+      <a href="#s02" class="hover:text-novastacks transition-colors">AI Visibility</a>
+      <a href="#s04" class="hover:text-novastacks transition-colors">Infrastructure</a>
+      <a href="#s07" class="hover:text-novastacks transition-colors">Roadmap</a>
+      <a href="https://www.novastacks-ai.com/contact" class="bg-novastacks hover:bg-novastacks/80 text-white font-semibold px-4 py-2 rounded-lg transition-colors">Talk to us</a>
+    </div>
+  </div>
+</header>
+
+<section class="grid-pattern py-20 md:py-28 border-b border-white/10">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="flex flex-col items-center text-center">
+      <span class="block font-mono text-xs text-novastacks tracking-widest uppercase mb-4">AEO Assessment Report <span class="badge-success">Internal copy &middot; all sections open</span></span>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Arizona State University</h1>
+      <p class="font-mono text-sm text-gray-400 mb-12">asu.edu &nbsp;&middot;&nbsp; United States &nbsp;&middot;&nbsp; September 2026</p>
+      <div class="flex flex-wrap items-center justify-center gap-10 mb-6">
+        <div class="flex flex-col items-center"><div class="bubble-score">5.7</div><div class="bubble-label">Site Readiness</div></div>
+        <div class="flex flex-col items-center px-10 border-x border-white/10">
+          <div class="bubble-score text-novastacks" style="font-size:64px">6.0</div>
+          <div class="bubble-label">Combined AEO score</div>
+        </div>
+        <div class="flex flex-col items-center"><div class="bubble-score">6.2</div><div class="bubble-label">AI Visibility</div></div>
+      </div>
+      <span class="badge-warning">Partially AI-Ready</span>
+    </div>
+  </div>
+</section>
+
+
+<section id="s01" class="section-light bg-white py-20 md:py-28 ">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="section-header-visible scroll-animate">
+      <span class="block font-mono text-xs text-novastacks tracking-widest uppercase mb-2">01 &nbsp;/&nbsp; Executive Summary</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ns-dark mb-8 leading-tight">AI Knows ASU. It Does Not Reach For ASU.</h2>
+    </div>
+    <div class="gated-content">
+<div class="exec-summary-content text-gray-700 text-lg leading-relaxed max-w-4xl mb-10">
+<p>AI assistants already know Arizona State University. Ask any of them about ASU by name and the answer is accurate, favourable and cites asu.edu directly. We tested that across Google AI Overview, ChatGPT, Gemini and Perplexity and ASU was cited in <strong>every single branded question</strong>.</p>
+<p>The problem appears the moment a student stops naming the university. When someone describes what they actually want, "a bachelor's degree I can finish online while working full time", or "the strongest nursing programmes", ASU is cited in only <strong>2 of 7</strong> of those conversations. Across all thirty questions we tested, just <strong>8.4 percent</strong> of everything the assistants cited belonged to ASU. Reddit was quoted more often than asu.edu, and the University of Arizona was quoted more often than ASU Online.</p>
+<p>The site is the reason. ASU has more degree pages than any university we compared, yet the degree site hands Google an unlimited supply of duplicate copies of itself, the highest value commercial pages carry none of the code that tells Google and AI what they offer, and three pages that still bring 13,981 visits a month now open on an error. None of this is a content problem. It is a plumbing problem sitting underneath a genuinely strong estate.</p>
+</div>
+<div class="overflow-x-auto"><table class="data-table">
+<thead><tr><th>University</th><th class="text-right">Organic traffic</th><th class="text-right">Ranking pages</th><th class="text-right">Non branded traffic</th><th>Position</th></tr></thead>
+<tbody>
+<tr><td><strong>Arizona State</strong></td><td class="text-right mono">1,098,437</td><td class="text-right mono">13,543</td><td class="text-right mono">94,649</td><td><span class="badge-warning">2nd on traffic, 5th on discovery</span></td></tr>
+<tr><td>Florida</td><td class="text-right mono">2,943,166</td><td class="text-right mono">29,208</td><td class="text-right mono">174,939</td><td><span class="badge-muted">Largest estate</span></td></tr>
+<tr><td>Michigan</td><td class="text-right mono">1,181,295</td><td class="text-right mono">25,992</td><td class="text-right mono">864,609</td><td><span class="badge-danger">Leads discovery</span></td></tr>
+<tr><td>Ohio State</td><td class="text-right mono">1,160,739</td><td class="text-right mono">20,581</td><td class="text-right mono">457,041</td><td><span class="badge-muted">Health content engine</span></td></tr>
+<tr><td>Illinois</td><td class="text-right mono">671,590</td><td class="text-right mono">19,819</td><td class="text-right mono">272,271</td><td><span class="badge-muted">Extension content engine</span></td></tr>
+<tr><td>Northern Arizona</td><td class="text-right mono">112,053</td><td class="text-right mono">2,100</td><td class="text-right mono">2,071</td><td><span class="badge-muted">In state rival</span></td></tr>
+</tbody></table></div>
+<p class="text-xs text-gray-500 mt-4">Ahrefs, United States, September 2026. Non branded traffic means visits from searches that do not contain the university name. It is the traffic that comes from people who have not chosen a university yet.</p>
+</div>
+  </div>
+</section>
+<section id="s02" class="section-dark bg-ns-dark py-20 md:py-28 ">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="section-header-visible scroll-animate">
+      <span class="block font-mono text-xs text-novastacks tracking-widest uppercase mb-2">02 &nbsp;/&nbsp; AI Visibility</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">Five of Five When You Say the Name. Two of Seven When You Do Not.</h2>
+    </div>
+    <div class="gated-content">
+<div class="grid md:grid-cols-4 gap-4 mb-10">
+  <div class="stat-card"><div class="stat-label">Questions where ASU is cited</div><div class="stat-value">18 / 30</div><div class="stat-context">60 percent</div></div>
+  <div class="stat-card"><div class="stat-label">Named questions</div><div class="stat-value">5 / 5</div><div class="stat-context">100 percent, ASU owns its own name</div></div>
+  <div class="stat-card"><div class="stat-label">Discovery questions</div><div class="stat-value">2 / 7</div><div class="stat-context">29 percent, the gap</div></div>
+  <div class="stat-card"><div class="stat-label">Citations that are ASU</div><div class="stat-value">8.4%</div><div class="stat-context">88 of 1,045 sources</div></div>
+</div>
+<div class="overflow-x-auto mb-8"><table class="data-table">
+<thead><tr><th>Question type</th><th>What the student is doing</th><th class="text-center">ASU cited</th><th>Read</th></tr></thead>
+<tbody>
+<tr><td>Named questions</td><td>Already knows ASU, checking it out</td><td class="text-center mono">5 / 5</td><td><span class="badge-success">Owned</span></td></tr>
+<tr><td>Decision questions</td><td>Cost, deadlines, entry requirements</td><td class="text-center mono">4 / 6</td><td><span class="badge-success">Strong</span></td></tr>
+<tr><td>Evaluation questions</td><td>Comparing programmes without naming a school</td><td class="text-center mono">5 / 8</td><td><span class="badge-warning">Mixed</span></td></tr>
+<tr><td>Discovery questions</td><td>Has not chosen a university yet</td><td class="text-center mono">2 / 7</td><td><span class="badge-danger">Losing</span></td></tr>
+<tr><td>Reputation probes</td><td>Checking for problems</td><td class="text-center mono">2 / 4</td><td><span class="badge-warning">Mixed</span></td></tr>
+</tbody></table></div>
+<div class="issue-detail">
+  <div class="issue-title mb-3">Who the assistants quote instead</div>
+  <div class="issue-body">
+    <p>Across all thirty answers the assistants returned 1,045 sources. Only 88 of them were ASU pages. The most quoted source of all was Reddit.</p>
+    <div class="overflow-x-auto"><table class="data-table">
+    <thead><tr><th>Source</th><th class="text-right">Times quoted</th><th>What it is</th></tr></thead>
+    <tbody>
+    <tr><td class="mono">reddit.com</td><td class="text-right mono">54</td><td>Student discussion</td></tr>
+    <tr><td class="mono">asu.edu</td><td class="text-right mono">36</td><td><strong>ASU</strong></td></tr>
+    <tr><td class="mono">usnews.com</td><td class="text-right mono">29</td><td>Rankings</td></tr>
+    <tr><td class="mono">collegevine.com</td><td class="text-right mono">28</td><td>Admissions advice</td></tr>
+    <tr><td class="mono">niche.com</td><td class="text-right mono">26</td><td>Reviews</td></tr>
+    <tr><td class="mono">arizona.edu</td><td class="text-right mono">22</td><td>University of Arizona</td></tr>
+    <tr><td class="mono">asuonline.asu.edu</td><td class="text-right mono">19</td><td><strong>ASU Online</strong></td></tr>
+    </tbody></table></div>
+    <p class="mt-3">The line that matters: the in state rival is quoted more often than ASU Online.</p>
+  </div>
+</div>
+<p class="text-xs text-gray-500 mt-4">Thirty questions written in the voice of a prospective student or a parent, run across Google AI Overview, ChatGPT, Gemini and Perplexity in September 2026. Only seven of the thirty name ASU, so a citation means the assistant reached for ASU on its own.</p>
+</div>
+  </div>
+</section>
+<section id="s03" class="section-light bg-white py-20 md:py-28 ">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="section-header-visible scroll-animate">
+      <span class="block font-mono text-xs text-novastacks tracking-widest uppercase mb-2">03 &nbsp;/&nbsp; Site Readiness</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ns-dark mb-8 leading-tight">The Pages That Win Students Are the Weakest Ones</h2>
+    </div>
+    <div class="gated-content">
+<p class="text-gray-600 mb-8 max-w-3xl">Whether each type of page a student needs exists, and whether it is built so Google and AI can read it.</p>
+<div class="overflow-x-auto mb-8"><table class="data-table">
+<thead><tr><th>Page type</th><th class="text-center">Exists</th><th class="text-center">Description for search</th><th class="text-center">Code that describes it</th><th class="text-center">Questions and answers</th><th class="text-center">Verdict</th></tr></thead>
+<tbody>
+<tr><td>Homepage</td><td class="text-center">&check;</td><td class="text-center">&#10007;</td><td class="text-center">Partial</td><td class="text-center">&#10007;</td><td class="text-center"><span class="badge-danger">Weak</span></td></tr>
+<tr><td>Degree detail</td><td class="text-center">&check;</td><td class="text-center">&check;</td><td class="text-center">&check;</td><td class="text-center">&check;</td><td class="text-center"><span class="badge-success">Strong</span></td></tr>
+<tr><td>Degree search and lists</td><td class="text-center">&check;</td><td class="text-center">&#10007;</td><td class="text-center">&#10007;</td><td class="text-center">&#10007;</td><td class="text-center"><span class="badge-danger">Weak</span></td></tr>
+<tr><td>ASU Online programme</td><td class="text-center">&check;</td><td class="text-center">&check;</td><td class="text-center">&#10007;</td><td class="text-center">&#10007;</td><td class="text-center"><span class="badge-danger">Weak</span></td></tr>
+<tr><td>Admissions and apply</td><td class="text-center">&check;</td><td class="text-center">&check;</td><td class="text-center">&check;</td><td class="text-center">&check;</td><td class="text-center"><span class="badge-success">Strong</span></td></tr>
+<tr><td>Tuition and cost</td><td class="text-center">&check;</td><td class="text-center">&check;</td><td class="text-center">&#10007;</td><td class="text-center">&#10007;</td><td class="text-center"><span class="badge-warning">Partial</span></td></tr>
+<tr><td>News and editorial</td><td class="text-center">&check;</td><td class="text-center">&check;</td><td class="text-center">&#10007;</td><td class="text-center">&#10007;</td><td class="text-center"><span class="badge-warning">Partial</span></td></tr>
+<tr><td>Evergreen topic guides</td><td class="text-center">Partial</td><td class="text-center">Mixed</td><td class="text-center">&#10007;</td><td class="text-center">&#10007;</td><td class="text-center"><span class="badge-danger">Missing as a system</span></td></tr>
+</tbody></table></div>
+<div class="bg-slate-100 border-l-4 border-novastacks rounded-r-xl p-6">
+  <div class="font-mono text-[10px] tracking-widest uppercase text-novastacks mb-2">The pattern</div>
+  <p class="text-gray-700">The pages that are built properly are the ones a student reaches <strong>after</strong> they already know about ASU. The pages that decide whether they ever hear about ASU, the degree lists, the online programme pages and the topic guides, are the weakest on the estate.</p>
+</div>
+</div>
+  </div>
+</section>
+<section id="s04" class="section-dark bg-ns-dark py-20 md:py-28 ">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="section-header-visible scroll-animate">
+      <span class="block font-mono text-xs text-novastacks tracking-widest uppercase mb-2">04 &nbsp;/&nbsp; Site Infrastructure</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">Three Plumbing Faults Are Doing Most of the Damage</h2>
+    </div>
+    <div class="gated-content">
+<p class="text-gray-400 mb-8 max-w-3xl">Three things in the plumbing are doing most of the damage. Each is a build task, not a content task.</p>
+<div class="issue-detail">
+  <div class="flex gap-3 items-start mb-3"><span class="badge-danger">Critical</span><div class="issue-title">The degree site invents pages that do not exist</div></div>
+  <div class="issue-body">
+    <p>We asked the degree site for an address that has never existed. Instead of an error it returned the normal degree homepage, and told Google to save it as a real page. A capital letter is enough to trigger it: <span class="mono">degrees.asu.edu/Undergraduate</span> and <span class="mono">degrees.asu.edu/</span> are stored as two different pages with the same title.</p>
+    <p><strong>Why it costs money:</strong> Google collects an unlimited number of copies of the degree homepage, splits the strength of the real page between them, and spends its crawling time on copies instead of on real degrees. This is also the reason so many degree pages share one title.</p>
+  </div>
+</div>
+<div class="issue-detail">
+  <div class="flex gap-3 items-start mb-3"><span class="badge-danger">Critical</span><div class="issue-title">Pages that still bring visitors now open on an error</div></div>
+  <div class="issue-body">
+    <p>Three addresses still rank in Google and still receive visitors, but now return an error page. The largest, the online bachelors page, still brings 4,530 visits a month and holds 609 search terms.</p>
+    <p><strong>Why it costs money:</strong> 13,981 visits a month click a Google result and land on a broken page. The error page then tells Google to save it and claims it is a copy of the ASU Online homepage, so the problem spreads instead of clearing.</p>
+  </div>
+</div>
+<div class="issue-detail">
+  <div class="flex gap-3 items-start mb-3"><span class="badge-warning">High</span><div class="issue-title">The most valuable pages do not describe themselves</div></div>
+  <div class="issue-body">
+    <p>There is a piece of hidden code that tells Google and AI assistants what a page offers. ASU has it, and it is well built, on degree detail pages. It is missing entirely from ASU Online programme pages, from news articles, and from the explainer library.</p>
+    <div class="overflow-x-auto"><table class="data-table">
+    <thead><tr><th>Template</th><th class="text-right">Monthly visits</th><th class="text-center">Describes itself?</th></tr></thead>
+    <tbody>
+    <tr><td class="mono">degrees.asu.edu degree pages</td><td class="text-right mono">41,835</td><td class="text-center"><span class="badge-success">Yes, complete</span></td></tr>
+    <tr><td class="mono">admission.asu.edu</td><td class="text-right mono">23,831</td><td class="text-center"><span class="badge-success">Yes</span></td></tr>
+    <tr><td class="mono">asuonline.asu.edu programmes</td><td class="text-right mono">166,002</td><td class="text-center"><span class="badge-danger">No</span></td></tr>
+    <tr><td class="mono">news.asu.edu articles</td><td class="text-right mono">32,848</td><td class="text-center"><span class="badge-danger">No</span></td></tr>
+    <tr><td class="mono">askabiologist.asu.edu</td><td class="text-right mono">91,363</td><td class="text-center"><span class="badge-danger">No</span></td></tr>
+    </tbody></table></div>
+    <p class="mt-3"><strong>Why it costs money:</strong> ASU Online is the single largest commercial asset on the estate and gives Google and AI nothing machine readable to work with.</p>
+  </div>
+</div>
+<div class="grid md:grid-cols-3 gap-4 mt-8">
+  <div class="stat-card"><div class="stat-label">Degree list load time</div><div class="stat-value">23.5s</div><div class="stat-context">on a phone, good is under 4s</div></div>
+  <div class="stat-card"><div class="stat-label">Apply page load time</div><div class="stat-value">15.7s</div><div class="stat-context">measured in the lab, confirm in Search Console</div></div>
+  <div class="stat-card"><div class="stat-label">Subdomains in the estate</div><div class="stat-value">273</div><div class="stat-context">each with its own rules and quality</div></div>
+</div>
+</div>
+  </div>
+</section>
+<section id="s05" class="section-light bg-white py-20 md:py-28 ">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="section-header-visible scroll-animate">
+      <span class="block font-mono text-xs text-novastacks tracking-widest uppercase mb-2">05 &nbsp;/&nbsp; Content Competitiveness</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ns-dark mb-8 leading-tight">More Degree Pages Than Anyone, Half the Traffic Per Page</h2>
+    </div>
+    <div class="gated-content">
+<p class="text-gray-600 mb-8 max-w-3xl">ASU publishes more degree pages than anyone in this comparison. The gap is not volume, it is depth on the topics that bring new people in.</p>
+<div class="grid md:grid-cols-2 gap-6 mb-10">
+  <div class="stat-card" style="background:#f8fafc;border-color:#e5e7eb">
+    <div class="stat-label" style="color:#666">ASU degree pages</div>
+    <div class="stat-value" style="color:#111">1,491</div>
+    <div class="stat-context" style="color:#666">earning 28 visits each</div>
+  </div>
+  <div class="stat-card" style="background:#f8fafc;border-color:#e5e7eb">
+    <div class="stat-label" style="color:#666">Florida degree pages</div>
+    <div class="stat-value" style="color:#111">883</div>
+    <div class="stat-context" style="color:#666">earning 96 visits each</div>
+  </div>
+</div>
+<p class="text-gray-700 mb-8 max-w-3xl">Florida earns twice the degree traffic from 41 percent fewer pages. ASU already has the bigger catalogue. The duplicates, the repeated titles and the missing descriptions are what hold the average down.</p>
+<div class="bg-slate-100 border-l-4 border-novastacks rounded-r-xl p-6 mb-10">
+  <div class="font-mono text-[10px] tracking-widest uppercase text-novastacks mb-2">The bigger gap</div>
+  <p class="text-gray-700 mb-4">Every competitor owns one deep evergreen topic that has nothing to do with admissions, and each earns more from that one topic than ASU earns from all its non branded content combined.</p>
+  <div class="overflow-x-auto"><table class="data-table">
+  <thead><tr><th>University</th><th>Topic they own</th><th class="text-right">Monthly visits</th></tr></thead>
+  <tbody>
+  <tr><td>Michigan</td><td>How to write a cover letter</td><td class="text-right mono">174,833</td></tr>
+  <tr><td>Ohio State</td><td>Consumer health questions</td><td class="text-right mono">50,512</td></tr>
+  <tr><td>Florida</td><td>Weather, plants and hazards</td><td class="text-right mono">36,495</td></tr>
+  <tr><td>Illinois</td><td>Home gardening</td><td class="text-right mono">15,487</td></tr>
+  <tr><td><strong>ASU</strong></td><td>One 2020 news article about the 19th Amendment</td><td class="text-right mono">24,527</td></tr>
+  </tbody></table></div>
+  <p class="text-gray-700 mt-4">Michigan's cover letter pages alone earn <strong>1.8 times ASU's entire non branded traffic</strong>. ASU's best equivalents are single pages with nothing behind them, so nothing compounds.</p>
+</div>
+<div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl p-6">
+  <div class="font-mono text-[10px] tracking-widest uppercase text-emerald-700 mb-2">Bright spot</div>
+  <p class="text-gray-700">ASU already half owns one: <span class="mono">askabiologist.asu.edu</span> earns 91,363 visits a month and is already shaped like a proper topic library. It is written for school science and links to no degree. Pointing it at the biology degrees is the cheapest large win in this report.</p>
+</div>
+</div>
+  </div>
+</section>
+<section id="s06" class="section-dark bg-ns-dark py-20 md:py-28 ">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="section-header-visible scroll-animate">
+      <span class="block font-mono text-xs text-novastacks tracking-widest uppercase mb-2">06 &nbsp;/&nbsp; Brand and Positioning</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">Nine In Ten Visits Already Knew the Name</h2>
+    </div>
+    <div class="gated-content">
+<p class="text-gray-400 mb-8 max-w-3xl">Splitting each university's traffic into searches that contain the university name and searches that do not.</p>
+<div class="overflow-x-auto mb-8"><table class="data-table">
+<thead><tr><th>University</th><th class="text-right">Total</th><th class="text-right">Searched by name</th><th class="text-right">Did not name them</th><th class="text-right">Share by name</th></tr></thead>
+<tbody>
+<tr><td><strong>Arizona State</strong></td><td class="text-right mono">1,098,437</td><td class="text-right mono">1,003,788</td><td class="text-right mono">94,649</td><td class="text-right"><span class="badge-danger">91%</span></td></tr>
+<tr><td>Northern Arizona</td><td class="text-right mono">112,053</td><td class="text-right mono">109,982</td><td class="text-right mono">2,071</td><td class="text-right"><span class="badge-danger">98%</span></td></tr>
+<tr><td>Florida</td><td class="text-right mono">2,943,166</td><td class="text-right mono">2,768,227</td><td class="text-right mono">174,939</td><td class="text-right"><span class="badge-warning">94%</span></td></tr>
+<tr><td>Ohio State</td><td class="text-right mono">1,160,739</td><td class="text-right mono">703,698</td><td class="text-right mono">457,041</td><td class="text-right"><span class="badge-warning">61%</span></td></tr>
+<tr><td>Illinois</td><td class="text-right mono">671,590</td><td class="text-right mono">399,319</td><td class="text-right mono">272,271</td><td class="text-right"><span class="badge-warning">59%</span></td></tr>
+<tr><td>Michigan</td><td class="text-right mono">1,181,295</td><td class="text-right mono">316,686</td><td class="text-right mono">864,609</td><td class="text-right"><span class="badge-success">27%</span></td></tr>
+</tbody></table></div>
+<div class="issue-detail">
+  <div class="issue-title mb-3">The question this raises, and the answer</div>
+  <div class="issue-body">
+    <p>ASU leads this group on searches that do not name a university in <strong>every recruitment category</strong>: degree discovery, online degrees, admissions and news. So why is it fifth overall?</p>
+    <div class="overflow-x-auto"><table class="data-table">
+    <thead><tr><th>University</th><th class="text-right">Did not name them</th><th class="text-right">From recruitment pages</th><th class="text-right">From everything else</th></tr></thead>
+    <tbody>
+    <tr><td>Michigan</td><td class="text-right mono">864,609</td><td class="text-right mono">2,114</td><td class="text-right mono">862,495</td></tr>
+    <tr><td>Ohio State</td><td class="text-right mono">457,041</td><td class="text-right mono">17,884</td><td class="text-right mono">439,157</td></tr>
+    <tr><td>Illinois</td><td class="text-right mono">272,271</td><td class="text-right mono">5,433</td><td class="text-right mono">266,838</td></tr>
+    <tr><td>Florida</td><td class="text-right mono">174,939</td><td class="text-right mono">35,604</td><td class="text-right mono">139,335</td></tr>
+    <tr><td><strong>Arizona State</strong></td><td class="text-right mono">94,649</td><td class="text-right mono">78,816</td><td class="text-right mono">15,833</td></tr>
+    </tbody></table></div>
+    <p class="mt-3"><strong>83 percent</strong> of ASU's non branded traffic comes from recruitment pages. For Michigan the figure is <strong>0.2 percent</strong>. The entire gap is the last column, and it sits outside the recruitment estate altogether. ASU is not losing in the funnel. It is missing a content engine beside it.</p>
+  </div>
+</div>
+<p class="text-xs text-gray-500 mt-4">The branded split uses Ahrefs' own intent classification on each domain's highest traffic search terms, applied identically to all six universities. It under counts long tails for everyone, and slightly more so for ASU, so treat the ASU figure as a floor.</p>
+</div>
+  </div>
+</section>
+<section id="s07" class="section-light bg-white py-20 md:py-28 ">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="section-header-visible scroll-animate">
+      <span class="block font-mono text-xs text-novastacks tracking-widest uppercase mb-2">07 &nbsp;/&nbsp; Roadmap and Impact</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ns-dark mb-8 leading-tight">Roadmap: From 60 to 77</h2>
+    </div>
+    <div class="gated-content">
+<p class="text-gray-600 mb-10 max-w-3xl">Three horizons. The first two are fixes to what already exists. Only the third asks for something new to be built.</p>
+<div class="grid md:grid-cols-3 gap-6 mb-10">
+  <div class="bg-white border border-gray-200 rounded-xl p-6">
+    <div class="font-mono text-[10px] tracking-widest uppercase text-novastacks mb-3">Horizon 1 &middot; 0 to 60 days</div>
+    <h4 class="font-display text-lg font-bold text-ns-dark mb-3">Stop the leaks</h4>
+    <ul class="text-sm text-gray-700 space-y-2 list-disc pl-4">
+      <li>Make the degree site return a real error page, and stop it inventing copies of itself</li>
+      <li>Redirect the three pages that still bring 13,981 visits a month</li>
+      <li>Stop the error page telling Google to save it</li>
+      <li>Make the homepage degree link one permanent jump, and drop the print tracking it adds</li>
+      <li>Name the site map in robots.txt, and fix the file that fails on my.asu.edu</li>
+    </ul>
+  </div>
+  <div class="bg-white border border-gray-200 rounded-xl p-6">
+    <div class="font-mono text-[10px] tracking-widest uppercase text-novastacks mb-3">Horizon 2 &middot; 60 to 120 days</div>
+    <h4 class="font-display text-lg font-bold text-ns-dark mb-3">Make the money pages readable</h4>
+    <ul class="text-sm text-gray-700 space-y-2 list-disc pl-4">
+      <li>Copy the degree page code onto every ASU Online programme page</li>
+      <li>Add article code to news and to the explainer library</li>
+      <li>Write descriptions for the homepage and every page above 3,000 visits a month</li>
+      <li>Give each degree search page a title built from what the student searched</li>
+      <li>Point ASU's identity code at the right address and add Wikipedia and Wikidata</li>
+    </ul>
+  </div>
+  <div class="bg-white border border-gray-200 rounded-xl p-6">
+    <div class="font-mono text-[10px] tracking-widest uppercase text-novastacks mb-3">Horizon 3 &middot; 120 days and beyond</div>
+    <h4 class="font-display text-lg font-bold text-ns-dark mb-3">Build the engine</h4>
+    <ul class="text-sm text-gray-700 space-y-2 list-disc pl-4">
+      <li>Pick two or three topics ASU is genuinely expert in with a degree behind each</li>
+      <li>Build 15 to 30 linked pages per topic rather than one page</li>
+      <li>Start with askabiologist, which already earns 91,363 visits and needs depth plus a route to the degrees</li>
+      <li>Create the internal linking map that points every topic page at its matching degree</li>
+      <li>Publish llms.txt while none of the five competitors has one</li>
+    </ul>
+  </div>
+</div>
+<div class="overflow-x-auto"><table class="data-table">
+<thead><tr><th>Score</th><th class="text-center">Today</th><th class="text-center">After Horizon 1 and 2</th><th class="text-center">After Horizon 3</th></tr></thead>
+<tbody>
+<tr><td>Site Readiness</td><td class="text-center mono">57</td><td class="text-center mono">72</td><td class="text-center mono">79</td></tr>
+<tr><td>AI Visibility</td><td class="text-center mono">62</td><td class="text-center mono">66</td><td class="text-center mono">74</td></tr>
+<tr><td><strong>Combined</strong></td><td class="text-center mono"><strong>60</strong></td><td class="text-center mono"><strong>69</strong></td><td class="text-center mono"><strong>77</strong></td></tr>
+</tbody></table></div>
+<p class="text-xs text-gray-500 mt-4">Projected, not guaranteed. The Horizon 1 and 2 movement comes from work that is already specified and needs no new content. Horizon 3 is where the discovery score moves, because that is the only work that changes what a student finds before they know the name.</p>
+</div>
+  </div>
+</section>
+
+<section class="bg-slate-900 text-white py-16">
+  <div class="container mx-auto px-6 max-w-4xl text-center">
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Ready to fix the plumbing?</h2>
+    <p class="text-gray-400 mb-8">Novastacks builds agentic marketing systems for organisations that are already known and are not yet found. We start with the leaks, then the engine.</p>
+    <a href="https://www.novastacks-ai.com/contact" class="inline-block bg-novastacks hover:bg-novastacks/80 text-white font-semibold px-8 py-4 rounded-lg transition-colors">Book a 30 minute review</a>
+  </div>
+</section>
+
+<footer class="bg-slate-950 border-t border-white/10 py-10">
+  <div class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
+    <span class="font-mono text-[10px] text-gray-500 tracking-widest uppercase">Novastacks AI &middot; AEO Assessment &middot; September 2026</span>
+    <span class="font-mono text-[10px] text-gray-500 tracking-widest uppercase">Sources: Ahrefs, Google AI Overview, ChatGPT, Gemini, Perplexity, Lighthouse</span>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('animate-in')}),{threshold:.08});
+document.querySelectorAll('.scroll-animate').forEach(el=>io.observe(el));
+</script>
+</body></html>
