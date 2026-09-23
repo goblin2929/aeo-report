@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gogogo ID Blog Performance, January to September 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root {
+  --primary-blue:#01aac1; --accent-blue:#01d7f4; --teal:#017d8e;
+  --dark-gray:#111111; --medium-gray:#333333; --light-gray:#f5f5f5;
+  --success-green:#22c55e; --warning-yellow:#eab308; --danger-red:#ef4444;
+  --s-unt:#2563eb; --s-new:#059669; --s-ref:#d97706;
+  --ink:#111111; --ink-2:#555555; --ink-3:#777777; --surface:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;
+ background:var(--light-gray);color:var(--ink);line-height:1.6}
+.container{max-width:1240px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,var(--dark-gray) 0%,var(--medium-gray) 100%);color:#fff;
+ padding:40px;border-radius:12px;margin-bottom:30px}
+.header h1{font-size:2.1rem;margin-bottom:8px}
+.header .subtitle{font-size:1.05rem;opacity:.92;margin-bottom:14px}
+.header .meta{font-size:.88rem;opacity:.72}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:26px}
+.kpi-card{background:var(--surface);border-radius:12px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.kpi-card .label{font-size:.8rem;color:var(--ink-2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.kpi-card .value{font-size:1.9rem;font-weight:700;margin-bottom:6px}
+.kpi-card .change{font-size:.86rem;font-weight:600}
+.kpi-card .note{font-size:.78rem;color:var(--ink-3);margin-top:4px}
+.trend-up{color:#15803d} .trend-down{color:#b91c1c} .trend-flat{color:var(--ink-2)}
+.section-header{background:linear-gradient(135deg,var(--primary-blue),var(--teal));color:#fff;
+ padding:15px 24px;border-radius:8px;margin:34px 0 18px 0;font-size:1.15rem;font-weight:600}
+.callout{padding:20px 24px;border-radius:8px;margin-bottom:20px}
+.callout-blue{background:linear-gradient(135deg,rgba(1,170,193,.1),rgba(1,215,244,.05));border-left:4px solid var(--primary-blue)}
+.callout-green{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-left:4px solid var(--success-green)}
+.callout-yellow{background:linear-gradient(135deg,#fefce8,#fef3c7);border-left:4px solid var(--warning-yellow)}
+.callout h3{margin-bottom:10px;font-size:1.05rem}
+.callout ul{margin-left:20px} .callout li{margin-bottom:6px}
+.callout p{margin-bottom:8px} .callout p:last-child{margin-bottom:0}
+.table-scroll{overflow-x:auto;margin-bottom:20px;max-height:none}
+.data-table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:8px;overflow:hidden;
+ box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.data-table th{background:var(--medium-gray);color:#fff;padding:11px 12px;text-align:left;font-weight:600;
+ font-size:.74rem;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+.data-table th.num{text-align:right}
+.data-table td{padding:10px 12px;border-bottom:1px solid #eee;font-size:.88rem}
+.data-table td.num{text-align:right;font-family:'SF Mono',Monaco,monospace;white-space:nowrap}
+.data-table tr:hover{background:#f9fafb}
+.data-table tr.subtotal{background:#D9EBD9;font-weight:700}
+.data-table a{color:var(--primary-blue);text-decoration:none}
+.data-table a:hover{text-decoration:underline}
+.chart-container{background:var(--surface);border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:20px}
+.chart-container h3{margin-bottom:6px;font-size:1.05rem}
+.chart-container .chart-note{font-size:.84rem;color:var(--ink-2);margin-bottom:16px}
+.chart-box{position:relative;height:330px}
+.chart-box.tall{height:380px}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px;font-size:.85rem;color:var(--ink-2)}
+.legend span.key{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:13px;height:13px;border-radius:3px;display:inline-block}
+.badge{display:inline-block;padding:2px 9px;border-radius:11px;font-size:.72rem;font-weight:700;color:#fff;white-space:nowrap}
+.badge-new{background:#059669} .badge-ref{background:#d97706}
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:22px}
+.seg-card{background:var(--surface);border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.08);border-top:4px solid #ccc}
+.seg-card.unt{border-top-color:#2563eb} .seg-card.new{border-top-color:#059669} .seg-card.ref{border-top-color:#d97706}
+.seg-card .t{font-size:.82rem;color:var(--ink-2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+.seg-card .v{font-size:1.65rem;font-weight:700;margin-bottom:4px}
+.seg-card .d{font-size:.84rem;color:var(--ink-2)}
+.method{background:var(--surface);border-radius:12px;padding:26px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:22px}
+.method h3{font-size:1.05rem;margin-bottom:12px}
+.method dl{display:grid;grid-template-columns:200px 1fr;gap:9px 20px;font-size:.9rem}
+.method dt{font-weight:700} .method dd{color:#333}
+.footer{text-align:center;padding:30px;color:var(--ink-2);font-size:.88rem}
+h2.blk{font-size:1.25rem;margin:26px 0 12px}
+p.lead{margin-bottom:14px}
+@media (max-width:900px){.kpi-grid{grid-template-columns:repeat(2,1fr)}.seg-grid{grid-template-columns:1fr}
+.method dl{grid-template-columns:1fr;gap:2px 0}.method dt{margin-top:10px}}
+</style>
+</head>
+<body data-palette="#059669,#2563eb,#d97706">
+<div class="container">
+
+<div class="header">
+  <h1>Gogogo ID Blog Performance</h1>
+  <div class="subtitle">1 January to 20 September 2026. Daily and weekly search performance, split into the pages NovaStacks created or refreshed and the pages NovaStacks has never touched.</div>
+  <div class="meta">Source: Google Search Console, property <strong>https://gogogo.id/</strong>, web search, pages containing <strong>/blog/</strong>. Content attribution source: the Flip content planner sheet, Gogogo tab, read live on 23 September 2026. Data pulled 23 September 2026. Latest day available in Search Console: 20 September 2026.</div>
+</div>
+
+<div class="section-header">1. How to read this report</div>
+<div class="method">
+  <h3>Definitions used everywhere below</h3>
+  <dl>
+    <dt>Blog</dt><dd>Every gogogo.id URL containing <strong>/blog/</strong>. 1,385 distinct blog URLs received at least one impression in the window.</dd>
+    <dt>New</dt><dd>An article NovaStacks wrote and Gogogo published at a URL that did not exist before. 102 rows are live in the content planner, 94 of them have Search Console data.</dd>
+    <dt>Refreshed</dt><dd>An existing article NovaStacks rewrote. 20 rows are live in the content planner, 19 of them have Search Console data.</dd>
+    <dt>Never touched</dt><dd>Every other blog URL: the legacy library that existed before the engagement and that NovaStacks has not edited. 1,272 URLs. It also holds all traffic earned <em>before</em> 29 July 2026 by the pages we later created or refreshed, for the reason in the next row.</dd>
+    <dt>The cutoff</dt><dd><strong>29 July 2026</strong>. That is the first day any NovaStacks page recorded an impression in Search Console, so it is the honest boundary between before and after. The contractual start is the July content month.</dd>
+    <dt>How a page is credited</dt><dd>A page counts as New or Refreshed <strong>only from 29 July 2026 onward</strong>. Anything it earned before that date is credited to never touched, because on those days NovaStacks had not touched it yet. That is why the New and Refreshed columns are zero in every week up to 26 July and first carry a value in the week of 27 July to 2 August. Crediting a refreshed page's old traffic to us would overstate our contribution and understate the legacy library.</dd>
+    <dt>Weekly buckets</dt><dd>Monday to Sunday. 37 complete weeks, 5 January to 20 September 2026. The 4 days from 1 to 4 January fall in an incomplete week and appear only in the daily charts and the monthly table.</dd>
+  </dl>
+</div>
+
+<div class="callout callout-yellow">
+  <h3>Read the two comparisons together, not one of them alone</h3>
+  <p>Against the whole January to July baseline the blog is up sharply. Against the 54 days immediately before our content went live it is down. Both are true, and the reason is that the legacy blog peaked in June, before NovaStacks content existed. The rest of this report separates the two stories: what the legacy library is doing on its own, and what our pages are adding on top.</p>
+</div>
+
+<div class="section-header">2. Headline numbers</div>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="label">Blog clicks, whole window</div>
+    <div class="value">257,124</div>
+    <div class="change trend-flat">13,776,413 impressions</div>
+    <div class="note">1 Jan to 20 Sep 2026, 263 days</div>
+  </div>
+  <div class="kpi-card">
+    <div class="label">NovaStacks page clicks</div>
+    <div class="value">6,086</div>
+    <div class="change trend-up">368,573 impressions</div>
+    <div class="note">113 pages, all of it earned after 29 July</div>
+  </div>
+  <div class="kpi-card">
+    <div class="label">Our share of blog clicks, latest week</div>
+    <div class="value">24.0%</div>
+    <div class="change trend-up">2,609 of 10,883 clicks</div>
+    <div class="note">14 to 20 Sep 2026, from 0% before 29 July</div>
+  </div>
+  <div class="kpi-card">
+    <div class="label">Blog share of all gogogo.id clicks</div>
+    <div class="value">12.3%</div>
+    <div class="change trend-up">was 6.9% in Jan to Jul</div>
+    <div class="note">29 Jul to 20 Sep 2026</div>
+  </div>
+</div>
+
+<div class="callout callout-green">
+  <h3>The three findings this data supports</h3>
+  <ul>
+    <li><strong>NovaStacks pages are the only growing part of the blog.</strong> They went from 0 clicks before 29 July to 2,609 clicks in the week of 14 to 20 September, which is 24.0% of all blog clicks. Every other segment is flat or falling.</li>
+    <li><strong>The legacy library peaked in June and is declining on demand, not on ranking.</strong> Never touched impressions fell from 2,817,184 in June to 2,192,884 in August while their CTR held between 2.21% and 2.24%. Positions and click rate are steady, the searches themselves have thinned out after the Indonesian school holidays.</li>
+    <li><strong>The blog is taking a bigger share of the site.</strong> Blog clicks are 12.3% of all gogogo.id clicks since 29 July against 6.9% across January to July, because site wide clicks grew only +5.1% per day while blog clicks grew +87.1% per day over the same baseline.</li>
+  </ul>
+</div>
+
+<div class="section-header">3. Before and after NovaStacks, two windows</div>
+<p class="lead">Daily averages are used so windows of different length can be compared directly. The after window is 54 days, 29 July to 20 September 2026.</p>
+
+<h2 class="blk">3a. Against the full January to July baseline</h2>
+<div class="table-scroll">
+<table class="data-table">
+<thead><tr><th>Segment</th><th class="num">Before, clicks/day</th><th class="num">After, clicks/day</th><th class="num">Change</th>
+<th class="num">Before, impressions/day</th><th class="num">After, impressions/day</th><th class="num">Change</th>
+<th class="num">Before CTR</th><th class="num">After CTR</th></tr></thead>
+<tbody>
+<tr class="subtotal"><td>Whole blog</td>
+<td class="num">829.4</td><td class="num">1,551.6</td>
+<td class="num trend-up">+87.1%</td>
+<td class="num">46,774</td><td class="num">74,087</td>
+<td class="num trend-up">+58.4%</td>
+<td class="num">1.77%</td>
+<td class="num">2.09%</td></tr><tr><td>Never touched</td>
+<td class="num">829.4</td><td class="num">1,438.9</td>
+<td class="num trend-up">+73.5%</td>
+<td class="num">46,774</td><td class="num">67,262</td>
+<td class="num trend-up">+43.8%</td>
+<td class="num">1.77%</td>
+<td class="num">2.14%</td></tr><tr><td>NovaStacks new</td>
+<td class="num">0.0</td><td class="num">97.9</td>
+<td class="num trend-up">n/a</td>
+<td class="num">0</td><td class="num">4,865</td>
+<td class="num trend-up">n/a</td>
+<td class="num">0.00%</td>
+<td class="num">2.01%</td></tr><tr><td>NovaStacks refreshed</td>
+<td class="num">0.0</td><td class="num">14.8</td>
+<td class="num trend-up">n/a</td>
+<td class="num">0</td><td class="num">1,960</td>
+<td class="num trend-up">n/a</td>
+<td class="num">0.00%</td>
+<td class="num">0.76%</td></tr><tr><td>Whole gogogo.id site</td>
+<td class="num">12,015.0</td><td class="num">12,625.7</td>
+<td class="num trend-up">+5.1%</td>
+<td class="num">122,619</td><td class="num">213,284</td>
+<td class="num trend-up">+73.9%</td>
+<td class="num">9.80%</td>
+<td class="num">5.92%</td></tr>
+</tbody></table></div>
+<p class="lead" style="font-size:.88rem;color:#555">Before window: 1 January to 28 July 2026, 209 days. After window: 29 July to 20 September 2026, 54 days.</p>
+
+<h2 class="blk">3b. Against the matched 54 days immediately before</h2>
+<div class="table-scroll">
+<table class="data-table">
+<thead><tr><th>Segment</th><th class="num">5 Jun to 28 Jul, clicks</th><th class="num">29 Jul to 20 Sep, clicks</th><th class="num">Change</th>
+<th class="num">5 Jun to 28 Jul, impressions</th><th class="num">29 Jul to 20 Sep, impressions</th><th class="num">Change</th></tr></thead>
+<tbody>
+<tr class="subtotal"><td>Whole blog</td>
+<td class="num">99,204</td><td class="num">83,789</td>
+<td class="num trend-down">-15.5%</td>
+<td class="num">4,509,753</td><td class="num">4,000,715</td>
+<td class="num trend-down">-11.3%</td></tr><tr><td>Never touched</td>
+<td class="num">99,204</td><td class="num">77,703</td>
+<td class="num trend-down">-21.7%</td>
+<td class="num">4,509,753</td><td class="num">3,632,142</td>
+<td class="num trend-down">-19.5%</td></tr><tr><td>NovaStacks new</td>
+<td class="num">0</td><td class="num">5,286</td>
+<td class="num trend-up">n/a</td>
+<td class="num">0</td><td class="num">262,730</td>
+<td class="num trend-up">n/a</td></tr><tr><td>NovaStacks refreshed</td>
+<td class="num">0</td><td class="num">800</td>
+<td class="num trend-up">n/a</td>
+<td class="num">0</td><td class="num">105,843</td>
+<td class="num trend-up">n/a</td></tr><tr><td>Whole gogogo.id site</td>
+<td class="num">512,396</td><td class="num">681,789</td>
+<td class="num trend-up">+33.1%</td>
+<td class="num">10,434,475</td><td class="num">11,517,349</td>
+<td class="num trend-up">+10.4%</td></tr>
+</tbody></table></div>
+<div class="callout callout-blue">
+  <p>The matched window is the harder test and it is the one to explain to the client first. The whole blog lost 15,415 clicks, and all of that loss sits in the never touched pages, which lost 21,501. Our pages added 6,086 clicks in the same window from a base of zero, so they offset 28.3% of the legacy decline. Without them the blog would have finished the window on 77,703 clicks instead of 83,789.</p>
+</div>
+
+<div class="section-header">4. Daily performance</div>
+
+<div class="chart-container">
+  <h3>Daily blog clicks, whole blog</h3>
+  <div class="chart-note">Every gogogo.id /blog/ URL combined, 1 January to 20 September 2026. The vertical marker is 29 July 2026, the first day a NovaStacks page recorded an impression.</div>
+  <div class="chart-box tall"><canvas id="cDayTotal"></canvas></div>
+</div>
+
+<div class="chart-container">
+  <h3>Daily blog impressions, whole blog</h3>
+  <div class="chart-note">Same URL set and same window as the chart above.</div>
+  <div class="chart-box tall"><canvas id="cDayImpr"></canvas></div>
+</div>
+
+<div class="chart-container">
+  <h3>Daily clicks on NovaStacks pages only</h3>
+  <div class="chart-note">Pages NovaStacks created or refreshed. The two bands are stacked, so the top edge is our daily total. The series is zero until 29 July 2026 by design: before that date these pages are credited to never touched. Plotted on its own scale because the legacy library is roughly 15 times larger, which would flatten this series to the axis in a combined chart.</div>
+  <div class="legend">
+    <span class="key"><i style="background:#059669"></i>New, written by NovaStacks</span>
+    <span class="key"><i style="background:#d97706"></i>Refreshed by NovaStacks</span>
+  </div>
+  <div class="chart-box tall"><canvas id="cDayNS"></canvas></div>
+</div>
+
+<div class="section-header">5. Weekly performance, touched against never touched</div>
+
+<div class="chart-container">
+  <h3>Weekly blog clicks by segment</h3>
+  <div class="chart-note">37 complete Monday to Sunday weeks, 5 January to 20 September 2026. Bars are stacked, so the full bar height is the whole blog.</div>
+  <div class="legend">
+    <span class="key"><i style="background:#059669"></i>New, written by NovaStacks</span>
+    <span class="key"><i style="background:#2563eb"></i>Never touched by NovaStacks</span>
+    <span class="key"><i style="background:#d97706"></i>Refreshed by NovaStacks</span>
+  </div>
+  <div class="chart-box tall"><canvas id="cWkClicks"></canvas></div>
+</div>
+
+<div class="chart-container">
+  <h3>Weekly blog impressions by segment</h3>
+  <div class="chart-note">Same weeks and same stacking order as the chart above.</div>
+  <div class="legend">
+    <span class="key"><i style="background:#059669"></i>New, written by NovaStacks</span>
+    <span class="key"><i style="background:#2563eb"></i>Never touched by NovaStacks</span>
+    <span class="key"><i style="background:#d97706"></i>Refreshed by NovaStacks</span>
+  </div>
+  <div class="chart-box tall"><canvas id="cWkImpr"></canvas></div>
+</div>
+
+<div class="chart-container">
+  <h3>Weekly clicks on NovaStacks pages only</h3>
+  <div class="chart-note">The same two segments, each plotted separately rather than stacked, so the labelled end value of each line sits at its own height. New and refreshed together reach 2,609 clicks in the final week, from zero in the week of 20 to 26 July.</div>
+  <div class="legend">
+    <span class="key"><i style="background:#059669"></i>New, written by NovaStacks</span>
+    <span class="key"><i style="background:#d97706"></i>Refreshed by NovaStacks</span>
+  </div>
+  <div class="chart-box tall"><canvas id="cWkNS"></canvas></div>
+</div>
+
+<div class="chart-container">
+  <h3>NovaStacks pages as a share of weekly blog clicks</h3>
+  <div class="chart-note">Our clicks divided by all blog clicks, per week. 0% until the week of 27 July 2026.</div>
+  <div class="chart-box"><canvas id="cWkShare"></canvas></div>
+</div>
+
+<div class="section-header">6. Month by month</div>
+<div class="table-scroll">
+<table class="data-table">
+<thead><tr><th>Month</th><th class="num">Days</th><th class="num">Blog clicks</th><th class="num">Never touched</th>
+<th class="num">New</th><th class="num">Refreshed</th><th class="num">NovaStacks total</th><th class="num">Our share</th>
+<th class="num">Blog impressions</th><th class="num">Blog CTR</th></tr></thead>
+<tbody><tr><td>January</td><td class="num">31</td><td class="num">8,435</td>
+<td class="num">8,435</td><td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td><td class="num">770,535</td>
+<td class="num">1.09%</td></tr><tr><td>February</td><td class="num">28</td><td class="num">9,157</td>
+<td class="num">9,157</td><td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td><td class="num">846,258</td>
+<td class="num">1.08%</td></tr><tr><td>March</td><td class="num">31</td><td class="num">11,757</td>
+<td class="num">11,757</td><td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td><td class="num">1,099,812</td>
+<td class="num">1.07%</td></tr><tr><td>April</td><td class="num">30</td><td class="num">13,206</td>
+<td class="num">13,206</td><td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td><td class="num">912,810</td>
+<td class="num">1.45%</td></tr><tr><td>May</td><td class="num">31</td><td class="num">25,820</td>
+<td class="num">25,820</td><td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td><td class="num">1,370,660</td>
+<td class="num">1.88%</td></tr><tr><td>June</td><td class="num">30</td><td class="num">62,511</td>
+<td class="num">62,511</td><td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td><td class="num">2,846,218</td>
+<td class="num">2.20%</td></tr><tr><td>July</td><td class="num">31</td><td class="num">46,679</td>
+<td class="num">46,653</td><td class="num">13</td><td class="num">13</td>
+<td class="num"><strong>26</strong></td><td class="num">0.1%</td><td class="num">2,123,005</td>
+<td class="num">2.20%</td></tr><tr><td>August</td><td class="num">31</td><td class="num">51,263</td>
+<td class="num">49,069</td><td class="num">1,844</td><td class="num">350</td>
+<td class="num"><strong>2,194</strong></td><td class="num">4.3%</td><td class="num">2,349,271</td>
+<td class="num">2.18%</td></tr><tr><td>September (1 to 20)</td><td class="num">20</td><td class="num">28,296</td>
+<td class="num">24,430</td><td class="num">3,429</td><td class="num">437</td>
+<td class="num"><strong>3,866</strong></td><td class="num">13.7%</td><td class="num">1,457,844</td>
+<td class="num">1.94%</td></tr></tbody></table></div>
+<div class="callout callout-blue">
+  <p>September covers only 20 days. At the September pace the blog is running at about 42,444 clicks for a 30 day month, of which about 5,799 would come from NovaStacks pages.</p>
+</div>
+
+<div class="section-header">7. NovaStacks pages, performance since 29 July 2026</div>
+<div class="seg-grid">
+  <div class="seg-card new"><div class="t">New articles</div><div class="v">5,286 clicks</div>
+    <div class="d">262,730 impressions, CTR 2.01%. 94 pages with data, 76 of them earning clicks.</div></div>
+  <div class="seg-card ref"><div class="t">Refreshed articles</div><div class="v">800 clicks</div>
+    <div class="d">105,843 impressions, CTR 0.76%. 19 pages with data, 15 of them earning clicks.</div></div>
+  <div class="seg-card unt"><div class="t">Never touched, for contrast</div><div class="v">77,703 clicks</div>
+    <div class="d">3,632,142 impressions, CTR 2.14%. 1,272 pages.</div></div>
+</div>
+
+<h2 class="blk">7a. Top 25 NovaStacks pages by clicks</h2>
+<div class="table-scroll">
+<table class="data-table">
+<thead><tr><th>Page</th><th>Type</th><th>Content month</th><th class="num">Clicks, 29 Jul to 20 Sep</th><th class="num">Impressions, 29 Jul to 20 Sep</th>
+<th class="num">CTR</th><th class="num">Avg position</th><th class="num">First impression</th></tr></thead>
+<tbody><tr><td><a href="https://gogogo.id/blog/games/nama-couple-pasangan-aesthetic-ml" target="_blank">/blog/games/nama-couple-pasangan-aesthetic-ml</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">816</td><td class="num">9,288</td><td class="num">8.79%</td>
+<td class="num">3.9</td><td class="num">2026-08-19</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/wdp-ml-dapat-berapa-dm" target="_blank">/blog/games/mobile-legends/wdp-ml-dapat-berapa-dm</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">718</td><td class="num">55,786</td><td class="num">1.29%</td>
+<td class="num">3.9</td><td class="num">2026-08-19</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/nama-ml-inggris-keren" target="_blank">/blog/games/mobile-legends/nama-ml-inggris-keren</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">524</td><td class="num">6,626</td><td class="num">7.91%</td>
+<td class="num">5.8</td><td class="num">2026-08-25</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/spasi-ff-pendek-buat-nickname-keren" target="_blank">/blog/games/free-fire/spasi-ff-pendek-buat-nickname-keren</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">519</td><td class="num">20,109</td><td class="num">2.58%</td>
+<td class="num">6.9</td><td class="num">2026-08-24</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/mlbb-x-jujutsu-kaisen-premium-supply-phase-2" target="_blank">/blog/games/mobile-legends/mlbb-x-jujutsu-kaisen-premium-supply-phase-2</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">460</td><td class="num">18,615</td><td class="num">2.47%</td>
+<td class="num">3.2</td><td class="num">2026-08-16</td></tr><tr><td><a href="https://gogogo.id/blog/games/daftar-skin-zodiac-mobile-legends" target="_blank">/blog/games/daftar-skin-zodiac-mobile-legends</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">290</td><td class="num">65,917</td><td class="num">0.44%</td>
+<td class="num">6.3</td><td class="num">2026-01-01</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/nama-ml-jepang-aesthetic" target="_blank">/blog/games/mobile-legends/nama-ml-jepang-aesthetic</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">258</td><td class="num">6,128</td><td class="num">4.21%</td>
+<td class="num">5.3</td><td class="num">2026-08-25</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/mod-combo-ff" target="_blank">/blog/games/free-fire/mod-combo-ff</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">254</td><td class="num">22,703</td><td class="num">1.12%</td>
+<td class="num">3.6</td><td class="num">2026-08-25</td></tr><tr><td><a href="https://gogogo.id/blog/games/roblox/roblox-gift-card-50k-berapa-robux-ini-hitungan-dan-cara-redeem-nya" target="_blank">/blog/games/roblox/roblox-gift-card-50k-berapa-robux-ini-hitungan-dan-cara-redeem-nya</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">190</td><td class="num">12,203</td><td class="num">1.56%</td>
+<td class="num">5.4</td><td class="num">2026-07-30</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/simbol-mahkota-ff-dan-cara-memasangnya-di-nickname" target="_blank">/blog/games/free-fire/simbol-mahkota-ff-dan-cara-memasangnya-di-nickname</a></td>
+<td><span class="badge badge-new">New</span></td><td>July</td>
+<td class="num">173</td><td class="num">7,705</td><td class="num">2.25%</td>
+<td class="num">5.4</td><td class="num">2026-07-30</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/verifikasi-ff-kipas" target="_blank">/blog/games/free-fire/verifikasi-ff-kipas</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">142</td><td class="num">12,607</td><td class="num">1.13%</td>
+<td class="num">5.7</td><td class="num">2026-08-22</td></tr><tr><td><a href="https://gogogo.id/blog/games/roblox/cara-main-roblox-di-browser" target="_blank">/blog/games/roblox/cara-main-roblox-di-browser</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">111</td><td class="num">3,467</td><td class="num">3.20%</td>
+<td class="num">7.1</td><td class="num">2026-08-13</td></tr><tr><td><a href="https://gogogo.id/blog/games/roblox/cara-melihat-password-roblox-yang-tersimpan-cepat-dan-aman" target="_blank">/blog/games/roblox/cara-melihat-password-roblox-yang-tersimpan-cepat-dan-aman</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">107</td><td class="num">10,601</td><td class="num">1.01%</td>
+<td class="num">7.5</td><td class="num">2026-08-02</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/nama-ff-couple" target="_blank">/blog/games/free-fire/nama-ff-couple</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">101</td><td class="num">1,736</td><td class="num">5.82%</td>
+<td class="num">3.8</td><td class="num">2026-08-25</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/skin-collector-balmond-titan-cara-dapat-dan-tips-hematnya" target="_blank">/blog/games/mobile-legends/skin-collector-balmond-titan-cara-dapat-dan-tips-hematnya</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">88</td><td class="num">4,121</td><td class="num">2.14%</td>
+<td class="num">3.7</td><td class="num">2026-08-02</td></tr><tr><td><a href="https://gogogo.id/blog/games/nama-ff-jepang" target="_blank">/blog/games/nama-ff-jepang</a></td>
+<td><span class="badge badge-new">New</span></td><td>September</td>
+<td class="num">76</td><td class="num">2,655</td><td class="num">2.86%</td>
+<td class="num">5.2</td><td class="num">2026-09-16</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/mlbb-creator-base-manfaat-dan-cara-bergabung-untuk-content-creator" target="_blank">/blog/games/mobile-legends/mlbb-creator-base-manfaat-dan-cara-bergabung-untuk-content-creator</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">72</td><td class="num">924</td><td class="num">7.79%</td>
+<td class="num">3.4</td><td class="num">2026-08-08</td></tr><tr><td><a href="https://gogogo.id/blog/games/daftar-karakter-free-fire" target="_blank">/blog/games/daftar-karakter-free-fire</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">71</td><td class="num">10,361</td><td class="num">0.69%</td>
+<td class="num">5.9</td><td class="num">2026-01-01</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/cara-top-up-diamond-ml-di-dana" target="_blank">/blog/games/mobile-legends/cara-top-up-diamond-ml-di-dana</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">71</td><td class="num">7,407</td><td class="num">0.96%</td>
+<td class="num">7.8</td><td class="num">2026-08-03</td></tr><tr><td><a href="https://gogogo.id/blog/games/blox-fruits-roblox-terbaik" target="_blank">/blog/games/blox-fruits-roblox-terbaik</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">70</td><td class="num">6,021</td><td class="num">1.16%</td>
+<td class="num">5.7</td><td class="num">2026-08-09</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/lose-streak-ml-kenapa-terus-kalah-dan-cara-menghentikannya" target="_blank">/blog/games/mobile-legends/lose-streak-ml-kenapa-terus-kalah-dan-cara-menghentikannya</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">61</td><td class="num">7,315</td><td class="num">0.83%</td>
+<td class="num">5.7</td><td class="num">2026-08-09</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/mlbb-the-exorcist-jadwal-cara-dapat-skin" target="_blank">/blog/games/mobile-legends/mlbb-the-exorcist-jadwal-cara-dapat-skin</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">59</td><td class="num">1,796</td><td class="num">3.29%</td>
+<td class="num">3.3</td><td class="num">2026-08-25</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/bio-ff-keren-singkat" target="_blank">/blog/games/free-fire/bio-ff-keren-singkat</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">55</td><td class="num">2,180</td><td class="num">2.52%</td>
+<td class="num">5.2</td><td class="num">2026-08-25</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/urutan-hero-ml-dari-pertama-rilis-sampai-terbaru" target="_blank">/blog/games/mobile-legends/urutan-hero-ml-dari-pertama-rilis-sampai-terbaru</a></td>
+<td><span class="badge badge-new">New</span></td><td>July</td>
+<td class="num">52</td><td class="num">5,684</td><td class="num">0.91%</td>
+<td class="num">5.1</td><td class="num">2026-07-30</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/mlbb-x-jujutsu-kaisen-revamp-premium-supply-phase-1-jadwal-dan-tips-hemat" target="_blank">/blog/games/mobile-legends/mlbb-x-jujutsu-kaisen-revamp-premium-supply-phase-1-jadwal-dan-tips-hemat</a></td>
+<td><span class="badge badge-new">New</span></td><td>August</td>
+<td class="num">52</td><td class="num">2,242</td><td class="num">2.32%</td>
+<td class="num">4.2</td><td class="num">2026-08-08</td></tr></tbody></table></div>
+
+<h2 class="blk">7b. All 19 refreshed pages</h2>
+<p class="lead">The refreshed set earns impressions but converts them far worse than either the new articles or the legacy library: CTR 0.76% against 2.01% for new pages and 2.14% for never touched pages, at comparable average positions. One page, /blog/games/daftar-skin-zodiac-mobile-legends, holds 65,917 of the 105,843 impressions and converts 0.44% of them.</p>
+<div class="table-scroll">
+<table class="data-table">
+<thead><tr><th>Page</th><th>Type</th><th>Content month</th><th class="num">Clicks, 29 Jul to 20 Sep</th><th class="num">Impressions, 29 Jul to 20 Sep</th>
+<th class="num">CTR</th><th class="num">Avg position</th><th class="num">First impression</th></tr></thead>
+<tbody><tr><td><a href="https://gogogo.id/blog/games/daftar-skin-zodiac-mobile-legends" target="_blank">/blog/games/daftar-skin-zodiac-mobile-legends</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">290</td><td class="num">65,917</td><td class="num">0.44%</td>
+<td class="num">6.3</td><td class="num">2026-01-01</td></tr><tr><td><a href="https://gogogo.id/blog/games/roblox/roblox-gift-card-50k-berapa-robux-ini-hitungan-dan-cara-redeem-nya" target="_blank">/blog/games/roblox/roblox-gift-card-50k-berapa-robux-ini-hitungan-dan-cara-redeem-nya</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">190</td><td class="num">12,203</td><td class="num">1.56%</td>
+<td class="num">5.4</td><td class="num">2026-07-30</td></tr><tr><td><a href="https://gogogo.id/blog/games/roblox/cara-melihat-password-roblox-yang-tersimpan-cepat-dan-aman" target="_blank">/blog/games/roblox/cara-melihat-password-roblox-yang-tersimpan-cepat-dan-aman</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">107</td><td class="num">10,601</td><td class="num">1.01%</td>
+<td class="num">7.5</td><td class="num">2026-08-02</td></tr><tr><td><a href="https://gogogo.id/blog/games/daftar-karakter-free-fire" target="_blank">/blog/games/daftar-karakter-free-fire</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">71</td><td class="num">10,361</td><td class="num">0.69%</td>
+<td class="num">5.9</td><td class="num">2026-01-01</td></tr><tr><td><a href="https://gogogo.id/blog/games/rekomendasi-100-nama-ml-keren" target="_blank">/blog/games/rekomendasi-100-nama-ml-keren</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">26</td><td class="num">1,576</td><td class="num">1.65%</td>
+<td class="num">8.0</td><td class="num">2026-07-28</td></tr><tr><td><a href="https://gogogo.id/blog/games/roblox/apa-itu-roblox-gift-card-ini-cara-kerja-dan-bedanya-dengan-top-up" target="_blank">/blog/games/roblox/apa-itu-roblox-gift-card-ini-cara-kerja-dan-bedanya-dengan-top-up</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">11</td><td class="num">1,448</td><td class="num">0.76%</td>
+<td class="num">6.3</td><td class="num">2026-08-02</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/nama-ff-keren-untuk-cowok-cewek-dengan-simbol-unik" target="_blank">/blog/games/free-fire/nama-ff-keren-untuk-cowok-cewek-dengan-simbol-unik</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">37</td><td class="num">1,429</td><td class="num">2.59%</td>
+<td class="num">7.1</td><td class="num">2026-08-08</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/auto-headshot-ff-itu-mitos-ini-trik-sensitivitas-dan-drag-shoot-asli" target="_blank">/blog/games/free-fire/auto-headshot-ff-itu-mitos-ini-trik-sensitivitas-dan-drag-shoot-asli</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>July</td>
+<td class="num">19</td><td class="num">769</td><td class="num">2.47%</td>
+<td class="num">5.5</td><td class="num">2026-07-29</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/cara-pasang-ff-beta-lewat-advance-server-resmi-garena" target="_blank">/blog/games/free-fire/cara-pasang-ff-beta-lewat-advance-server-resmi-garena</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">38</td><td class="num">499</td><td class="num">7.62%</td>
+<td class="num">6.6</td><td class="num">2026-08-08</td></tr><tr><td><a href="https://gogogo.id/blog/games/roblox/cara-update-roblox-di-laptop-solusi-error-loop-yang-bikin-kesel" target="_blank">/blog/games/roblox/cara-update-roblox-di-laptop-solusi-error-loop-yang-bikin-kesel</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">1</td><td class="num">269</td><td class="num">0.37%</td>
+<td class="num">6.7</td><td class="num">2026-07-30</td></tr><tr><td><a href="https://gogogo.id/blog/games/roblox/nama-roblox-keren-rekomendasi-aesthetic-sampai-edgy-plus-cara-cek" target="_blank">/blog/games/roblox/nama-roblox-keren-rekomendasi-aesthetic-sampai-edgy-plus-cara-cek</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">0</td><td class="num">217</td><td class="num">0.00%</td>
+<td class="num">7.4</td><td class="num">2026-07-30</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/diamond-ff-advance-server-fakta-dan-cara-mendapatkannya" target="_blank">/blog/games/free-fire/diamond-ff-advance-server-fakta-dan-cara-mendapatkannya</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">1</td><td class="num">150</td><td class="num">0.67%</td>
+<td class="num">3.5</td><td class="num">2026-07-31</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/avatar-ff-season-1-bertema-sakura-yang-melegenda" target="_blank">/blog/games/free-fire/avatar-ff-season-1-bertema-sakura-yang-melegenda</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">4</td><td class="num">123</td><td class="num">3.25%</td>
+<td class="num">3.7</td><td class="num">2026-08-08</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/kode-redeem-batu-sg-lumut-ff" target="_blank">/blog/games/free-fire/kode-redeem-batu-sg-lumut-ff</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">3</td><td class="num">92</td><td class="num">3.26%</td>
+<td class="num">6.4</td><td class="num">2026-07-31</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/mentahan-logo-guild-ff-kumpulan-desain-siap-pakai-buat-turnamen" target="_blank">/blog/games/free-fire/mentahan-logo-guild-ff-kumpulan-desain-siap-pakai-buat-turnamen</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">1</td><td class="num">70</td><td class="num">1.43%</td>
+<td class="num">6.6</td><td class="num">2026-08-03</td></tr><tr><td><a href="https://gogogo.id/blog/games/roblox/dunia-games-roblox-dari-roleplay-horor-sampai-genre-anime" target="_blank">/blog/games/roblox/dunia-games-roblox-dari-roleplay-horor-sampai-genre-anime</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">0</td><td class="num">65</td><td class="num">0.00%</td>
+<td class="num">7.0</td><td class="num">2026-07-30</td></tr><tr><td><a href="https://gogogo.id/blog/games/kode-redeem-ml-hari-ini-1-menit-yang-lalu" target="_blank">/blog/games/kode-redeem-ml-hari-ini-1-menit-yang-lalu</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">1</td><td class="num">42</td><td class="num">2.38%</td>
+<td class="num">6.8</td><td class="num">2026-07-30</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/awas-akun-ff-sultan-gratis-di-tiktok-sering-berujung-phising" target="_blank">/blog/games/free-fire/awas-akun-ff-sultan-gratis-di-tiktok-sering-berujung-phising</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>July</td>
+<td class="num">0</td><td class="num">12</td><td class="num">0.00%</td>
+<td class="num">4.0</td><td class="num">2026-08-03</td></tr><tr><td><a href="https://gogogo.id/blog/games/cara-main-roblox-di-laptop" target="_blank">/blog/games/cara-main-roblox-di-laptop</a></td>
+<td><span class="badge badge-ref">Refreshed</span></td><td>August</td>
+<td class="num">0</td><td class="num">0</td><td class="num">0.00%</td>
+<td class="num">0.0</td><td class="num">2026-01-01</td></tr></tbody></table></div>
+
+<div class="section-header">8. Why the never touched pages are falling</div>
+<div class="callout callout-yellow">
+  <h3>Demand, not ranking</h3>
+  <p>The never touched library lost 21.7% of its clicks between the two matched 54 day windows. That is a demand movement, not a ranking loss, and the CTR column is the proof: never touched CTR ran 2.22% in June, 2.21% in July, 2.24% in August and 1.96% in the first 20 days of September, while impressions fell from 2,817,184 in June to 1,248,058 across 20 days of September. When positions slip, CTR falls first. Here CTR held and impressions moved, which means the searches thinned out.</p>
+  <p>The June peak was broad, not a single viral page. The ten largest May to June gains were all existing Free Fire and Mobile Legends nickname, cheat and sensitivity pages, which is the standard Indonesian school holiday pattern for gaming content. Those same pages are now back near their pre holiday level.</p>
+</div>
+<div class="chart-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div>
+<h2 class="blk">8a. Never touched pages that grew most</h2>
+<div class="table-scroll">
+<table class="data-table"><thead><tr><th>Page</th><th class="num">Before, clicks/day</th><th class="num">After, clicks/day</th><th class="num">Change</th></tr></thead>
+<tbody><tr><td><a href="https://gogogo.id/blog/games/profil-nick-ff-cewek" target="_blank">/blog/games/profil-nick-ff-cewek</a></td>
+<td class="num">46.7</td><td class="num">102.3</td>
+<td class="num trend-up">+119.2%</td></tr><tr><td><a href="https://gogogo.id/blog/games/kode-warna-free-fire" target="_blank">/blog/games/kode-warna-free-fire</a></td>
+<td class="num">24.0</td><td class="num">67.4</td>
+<td class="num trend-up">+180.5%</td></tr><tr><td><a href="https://gogogo.id/blog/games/cara-masuk-advance-server-ml-2025-terbaru-resmi" target="_blank">/blog/games/cara-masuk-advance-server-ml-2025-terbaru-resmi</a></td>
+<td class="num">15.6</td><td class="num">58.3</td>
+<td class="num trend-up">+272.7%</td></tr><tr><td><a href="https://gogogo.id/blog/games/cheat-ml-damage" target="_blank">/blog/games/cheat-ml-damage</a></td>
+<td class="num">13.1</td><td class="num">42.2</td>
+<td class="num trend-up">+223.4%</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/panel-free-fire" target="_blank">/blog/games/free-fire/panel-free-fire</a></td>
+<td class="num">42.5</td><td class="num">64.8</td>
+<td class="num trend-up">+52.4%</td></tr><tr><td><a href="https://gogogo.id/blog/games/cheat-ff-mod-menu" target="_blank">/blog/games/cheat-ff-mod-menu</a></td>
+<td class="num">42.0</td><td class="num">61.9</td>
+<td class="num trend-up">+47.5%</td></tr><tr><td><a href="https://gogogo.id/blog/games/nama-roblox-perempuan" target="_blank">/blog/games/nama-roblox-perempuan</a></td>
+<td class="num">14.1</td><td class="num">31.6</td>
+<td class="num trend-up">+123.6%</td></tr><tr><td><a href="https://gogogo.id/blog/games/cara-login-ff-dengan-id" target="_blank">/blog/games/cara-login-ff-dengan-id</a></td>
+<td class="num">4.4</td><td class="num">21.6</td>
+<td class="num trend-up">+390.2%</td></tr><tr><td><a href="https://gogogo.id/blog/games/spasi-kosong-nama-free-fire" target="_blank">/blog/games/spasi-kosong-nama-free-fire</a></td>
+<td class="num">102.3</td><td class="num">119.3</td>
+<td class="num trend-up">+16.6%</td></tr><tr><td><a href="https://gogogo.id/blog/games/cara-cek-id-ml-akun-sendiri-dan-teman-dengan-mudah" target="_blank">/blog/games/cara-cek-id-ml-akun-sendiri-dan-teman-dengan-mudah</a></td>
+<td class="num">0.7</td><td class="num">17.6</td>
+<td class="num trend-up">+2340.1%</td></tr></tbody></table></div>
+</div>
+<div>
+<h2 class="blk">8b. Never touched pages that fell most</h2>
+<div class="table-scroll">
+<table class="data-table"><thead><tr><th>Page</th><th class="num">Before, clicks/day</th><th class="num">After, clicks/day</th><th class="num">Change</th></tr></thead>
+<tbody><tr><td><a href="https://gogogo.id/blog/games/poki-games-free-fire" target="_blank">/blog/games/poki-games-free-fire</a></td>
+<td class="num">21.6</td><td class="num">15.3</td>
+<td class="num trend-down">-29.2%</td></tr><tr><td><a href="https://gogogo.id/blog/games/cara-spin-ff-gratis" target="_blank">/blog/games/cara-spin-ff-gratis</a></td>
+<td class="num">26.2</td><td class="num">20.9</td>
+<td class="num trend-down">-20.1%</td></tr><tr><td><a href="https://gogogo.id/blog/games/mobile-legends/season-ml-berapa-hari-lagi-cek-tanggal-reset-terbarunya" target="_blank">/blog/games/mobile-legends/season-ml-berapa-hari-lagi-cek-tanggal-reset-terbarunya</a></td>
+<td class="num">7.0</td><td class="num">1.8</td>
+<td class="num trend-down">-73.9%</td></tr><tr><td><a href="https://gogogo.id/blog/games/level-up-pass-free-fire" target="_blank">/blog/games/level-up-pass-free-fire</a></td>
+<td class="num">6.8</td><td class="num">2.1</td>
+<td class="num trend-down">-68.2%</td></tr><tr><td><a href="https://gogogo.id/blog/games/sensitivitas-ruok-ff" target="_blank">/blog/games/sensitivitas-ruok-ff</a></td>
+<td class="num">24.1</td><td class="num">20.1</td>
+<td class="num trend-down">-16.6%</td></tr><tr><td><a href="https://gogogo.id/blog/games/litomplo-free-fire" target="_blank">/blog/games/litomplo-free-fire</a></td>
+<td class="num">4.9</td><td class="num">1.4</td>
+<td class="num trend-down">-70.6%</td></tr><tr><td><a href="https://gogogo.id/blog/games/cara-edit-nama-ff" target="_blank">/blog/games/cara-edit-nama-ff</a></td>
+<td class="num">11.6</td><td class="num">8.3</td>
+<td class="num trend-down">-28.5%</td></tr><tr><td><a href="https://gogogo.id/blog/games/free-fire/7-cara-dapat-diamond-ff-gratis-legal-dan-aman-2025" target="_blank">/blog/games/free-fire/7-cara-dapat-diamond-ff-gratis-legal-dan-aman-2025</a></td>
+<td class="num">3.0</td><td class="num">0.0</td>
+<td class="num trend-down">-100.0%</td></tr><tr><td><a href="https://gogogo.id/blog/games/jenis-item-mobile-legends" target="_blank">/blog/games/jenis-item-mobile-legends</a></td>
+<td class="num">9.0</td><td class="num">6.1</td>
+<td class="num trend-down">-32.5%</td></tr><tr><td><a href="https://gogogo.id/blog/games/naruto-premium-supply-phase-2-ml" target="_blank">/blog/games/naruto-premium-supply-phase-2-ml</a></td>
+<td class="num">2.5</td><td class="num">0.0</td>
+<td class="num trend-down">-98.5%</td></tr></tbody></table></div>
+</div>
+</div>
+<p class="lead" style="font-size:.88rem;color:#555">Before is the daily average across 1 January to 28 July 2026, after is the daily average across 29 July to 20 September 2026. Only pages that already existed before 29 July are listed.</p>
+
+<div class="section-header">9. Full weekly data table</div>
+<div class="table-scroll" style="max-height:620px;overflow-y:auto">
+<table class="data-table">
+<thead><tr><th>Week, Monday to Sunday</th><th class="num">Blog clicks</th><th class="num">Never touched</th>
+<th class="num">New</th><th class="num">Refreshed</th><th class="num">NovaStacks total</th><th class="num">Our share</th>
+<th class="num">Blog impressions</th></tr></thead>
+<tbody><tr><td>5 Jan to 11 Jan</td>
+<td class="num">2,048</td><td class="num">2,048</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">169,717</td></tr><tr><td>12 Jan to 18 Jan</td>
+<td class="num">1,879</td><td class="num">1,879</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">173,828</td></tr><tr><td>19 Jan to 25 Jan</td>
+<td class="num">1,596</td><td class="num">1,596</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">167,040</td></tr><tr><td>26 Jan to 1 Feb</td>
+<td class="num">2,182</td><td class="num">2,182</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">185,031</td></tr><tr><td>2 Feb to 8 Feb</td>
+<td class="num">2,358</td><td class="num">2,358</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">192,440</td></tr><tr><td>9 Feb to 15 Feb</td>
+<td class="num">2,230</td><td class="num">2,230</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">200,045</td></tr><tr><td>16 Feb to 22 Feb</td>
+<td class="num">2,299</td><td class="num">2,299</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">239,828</td></tr><tr><td>23 Feb to 1 Mar</td>
+<td class="num">2,233</td><td class="num">2,233</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">218,121</td></tr><tr><td>2 Mar to 8 Mar</td>
+<td class="num">2,261</td><td class="num">2,261</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">207,640</td></tr><tr><td>9 Mar to 15 Mar</td>
+<td class="num">2,421</td><td class="num">2,421</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">244,749</td></tr><tr><td>16 Mar to 22 Mar</td>
+<td class="num">3,177</td><td class="num">3,177</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">297,112</td></tr><tr><td>23 Mar to 29 Mar</td>
+<td class="num">2,948</td><td class="num">2,948</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">268,054</td></tr><tr><td>30 Mar to 5 Apr</td>
+<td class="num">2,314</td><td class="num">2,314</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">178,462</td></tr><tr><td>6 Apr to 12 Apr</td>
+<td class="num">3,000</td><td class="num">3,000</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">211,559</td></tr><tr><td>13 Apr to 19 Apr</td>
+<td class="num">3,616</td><td class="num">3,616</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">232,348</td></tr><tr><td>20 Apr to 26 Apr</td>
+<td class="num">3,237</td><td class="num">3,237</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">220,532</td></tr><tr><td>27 Apr to 3 May</td>
+<td class="num">2,807</td><td class="num">2,807</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">215,349</td></tr><tr><td>4 May to 10 May</td>
+<td class="num">2,537</td><td class="num">2,537</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">195,939</td></tr><tr><td>11 May to 17 May</td>
+<td class="num">4,306</td><td class="num">4,306</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">258,826</td></tr><tr><td>18 May to 24 May</td>
+<td class="num">7,094</td><td class="num">7,094</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">342,031</td></tr><tr><td>25 May to 31 May</td>
+<td class="num">10,748</td><td class="num">10,748</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">478,179</td></tr><tr><td>1 Jun to 7 Jun</td>
+<td class="num">10,845</td><td class="num">10,845</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">484,762</td></tr><tr><td>8 Jun to 14 Jun</td>
+<td class="num">14,544</td><td class="num">14,544</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">662,479</td></tr><tr><td>15 Jun to 21 Jun</td>
+<td class="num">17,302</td><td class="num">17,302</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">836,750</td></tr><tr><td>22 Jun to 28 Jun</td>
+<td class="num">15,416</td><td class="num">15,416</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">677,307</td></tr><tr><td>29 Jun to 5 Jul</td>
+<td class="num">13,567</td><td class="num">13,567</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">583,564</td></tr><tr><td>6 Jul to 12 Jul</td>
+<td class="num">12,625</td><td class="num">12,625</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">557,099</td></tr><tr><td>13 Jul to 19 Jul</td>
+<td class="num">9,449</td><td class="num">9,449</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">425,555</td></tr><tr><td>20 Jul to 26 Jul</td>
+<td class="num">8,889</td><td class="num">8,889</td>
+<td class="num">0</td><td class="num">0</td>
+<td class="num"><strong>0</strong></td><td class="num">0.0%</td>
+<td class="num">434,570</td></tr><tr><td>27 Jul to 2 Aug</td>
+<td class="num">10,424</td><td class="num">10,363</td>
+<td class="num">27</td><td class="num">34</td>
+<td class="num"><strong>61</strong></td><td class="num">0.6%</td>
+<td class="num">473,222</td></tr><tr><td>3 Aug to 9 Aug</td>
+<td class="num">12,498</td><td class="num">12,284</td>
+<td class="num">120</td><td class="num">94</td>
+<td class="num"><strong>214</strong></td><td class="num">1.7%</td>
+<td class="num">536,777</td></tr><tr><td>10 Aug to 16 Aug</td>
+<td class="num">10,905</td><td class="num">10,572</td>
+<td class="num">247</td><td class="num">86</td>
+<td class="num"><strong>333</strong></td><td class="num">3.0%</td>
+<td class="num">495,042</td></tr><tr><td>17 Aug to 23 Aug</td>
+<td class="num">10,823</td><td class="num">10,330</td>
+<td class="num">426</td><td class="num">67</td>
+<td class="num"><strong>493</strong></td><td class="num">4.6%</td>
+<td class="num">518,451</td></tr><tr><td>24 Aug to 30 Aug</td>
+<td class="num">11,813</td><td class="num">10,785</td>
+<td class="num">960</td><td class="num">68</td>
+<td class="num"><strong>1,028</strong></td><td class="num">8.7%</td>
+<td class="num">560,517</td></tr><tr><td>31 Aug to 6 Sep</td>
+<td class="num">9,991</td><td class="num">9,385</td>
+<td class="num">503</td><td class="num">103</td>
+<td class="num"><strong>606</strong></td><td class="num">6.1%</td>
+<td class="num">509,754</td></tr><tr><td>7 Sep to 13 Sep</td>
+<td class="num">8,775</td><td class="num">8,033</td>
+<td class="num">606</td><td class="num">136</td>
+<td class="num"><strong>742</strong></td><td class="num">8.5%</td>
+<td class="num">461,876</td></tr><tr><td>14 Sep to 20 Sep</td>
+<td class="num">10,883</td><td class="num">8,274</td>
+<td class="num">2,397</td><td class="num">212</td>
+<td class="num"><strong>2,609</strong></td><td class="num">24.0%</td>
+<td class="num">558,613</td></tr></tbody></table></div>
+
+<div class="section-header">10. Data notes and limits</div>
+<div class="method">
+  <dl>
+    <dt>Attribution source</dt><dd>Which pages count as ours comes only from the Flip content planner sheet, Gogogo tab, and only rows whose URL Production cell is filled. A row with no production URL is treated as not live and is excluded.</dd>
+    <dt>Rows not counted</dt><dd>Of 122 live rows, 8 valid gogogo.id URLs have no Search Console data yet, so they carry no clicks or impressions here: /blog/games/free-fire/jadwal-mystery-shop-free-fire, /blog/games/free-fire/tips-bermain-solo-ranked-ff, /blog/games/hero-terkuat-di-mobile-legends, /blog/games/alpha-ml-mobile-legends, /blog/games/coa-ml-mobile-legends, /blog/games/cara-hapus-akun-ml-mobile-legends, /blog/games/nama-ff-rumit and /blog/games/inspirasi-simbol-cina-ff-keren. One further row, an August new article, has a Google Docs draft link in the URL Production column instead of a live URL, so it cannot be matched to Search Console at all.</dd>
+    <dt>Refresh dates are not tracked</dt><dd>The planner records a contractual month, not the date a page went live or was rewritten. Because of that, 29 July 2026 is used as the single credit date for every NovaStacks page rather than a per page go live date, which is the conservative choice: a page refreshed in September is still credited from 29 July, so its August performance counts as ours even though we had not rewritten it yet. 16 of the 19 refreshed pages first appear in Search Console between 28 July and 8 August 2026, which points to a URL change at rewrite rather than an edit in place.</dd>
+    <dt>Five pages predate the engagement</dt><dd>Three refreshed pages carry impressions from 1 January 2026 (/blog/games/cara-main-roblox-di-laptop, /blog/games/daftar-karakter-free-fire and /blog/games/daftar-skin-zodiac-mobile-legends), and two pages labelled New already existed: /blog/games/nama-ff-elite-cees from 8 February 2026 and /blog/games/kenapa-ff-tidak-bisa-login from 26 April 2026. Everything those five earned before 29 July 2026 is credited to never touched, not to us. The First Impression column in section 7 shows the true first date for every page, so a date earlier than 29 July there means the URL predates our work on it.</dd>
+    <dt>September is partial</dt><dd>20 of 30 days. Every September figure in this report is the 20 day actual unless it is explicitly labelled as a 30 day pace.</dd>
+    <dt>Search Console lag</dt><dd>Roughly 3 days. 20 September 2026 is the latest complete day at the time of the pull.</dd>
+    <dt>Market scope</dt><dd>Indonesia only. gogogo.game/en-ph and gogogo.com/en-my have no blog, so there is nothing to compare there.</dd>
+  </dl>
+</div>
+
+<div class="footer">
+  NovaStacks for Flip Group. Gogogo ID blog performance, 1 January to 20 September 2026.<br>
+  All figures from Google Search Console, property https://gogogo.id/, pulled 23 September 2026.
+</div>
+</div>
+
+<script>
+const DATA = {"days": ["2026-01-01", "2026-01-02", "2026-01-03", "2026-01-04", "2026-01-05", "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-10", "2026-01-11", "2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-17", "2026-01-18", "2026-01-19", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-24", "2026-01-25", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-01-31", "2026-02-01", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-14", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-28", "2026-03-29", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-05", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20"], "daytotal": [267, 282, 276, 259, 282, 284, 329, 270, 297, 335, 251, 294, 242, 275, 288, 282, 285, 213, 184, 208, 211, 228, 265, 279, 221, 225, 277, 250, 285, 344, 447, 354, 363, 340, 317, 299, 342, 359, 338, 281, 302, 285, 309, 326, 385, 342, 380, 322, 306, 316, 324, 361, 290, 280, 247, 319, 311, 380, 379, 317, 326, 287, 315, 324, 374, 373, 262, 306, 265, 343, 338, 361, 408, 400, 406, 584, 462, 456, 397, 429, 443, 450, 442, 421, 405, 417, 465, 348, 303, 330, 347, 366, 320, 343, 305, 362, 436, 349, 512, 494, 492, 355, 372, 433, 524, 585, 613, 615, 474, 474, 545, 453, 387, 436, 519, 423, 472, 347, 379, 474, 410, 375, 350, 325, 343, 356, 299, 329, 436, 449, 498, 535, 601, 667, 589, 725, 691, 763, 666, 629, 784, 1146, 1561, 1545, 1539, 1530, 1530, 1463, 1532, 1531, 1623, 1437, 1481, 1425, 1413, 1523, 1914, 1652, 1710, 1694, 1878, 2015, 2255, 2594, 2398, 2785, 2694, 2629, 2285, 2231, 2279, 2399, 2414, 2227, 2150, 2067, 2160, 2127, 2271, 2195, 2209, 1962, 1898, 1772, 1750, 1781, 1912, 1830, 1705, 2025, 2020, 1769, 1364, 1265, 1241, 1154, 1213, 1521, 1742, 1313, 1094, 1266, 1228, 1249, 1400, 1497, 1155, 1164, 1159, 1236, 1436, 1558, 2076, 1795, 1891, 1707, 1596, 1629, 1907, 2128, 1640, 1644, 1655, 1423, 1228, 1576, 1755, 1624, 1598, 1519, 1451, 1457, 1699, 1679, 1420, 1727, 1601, 1750, 1711, 1859, 1815, 1350, 1353, 1467, 1363, 1395, 1573, 1582, 1258, 1227, 1135, 1160, 1211, 1278, 1433, 1331, 1357, 1201, 1414, 1553, 1835, 1909, 1614], "daytotali": [25808, 27585, 27002, 22850, 22312, 22925, 22893, 23163, 26432, 28285, 23707, 23725, 23173, 23672, 25715, 26575, 27974, 22994, 22801, 23355, 21487, 22975, 25019, 26471, 24932, 22533, 21851, 22564, 26607, 29343, 33807, 28326, 27439, 26425, 25731, 26083, 29965, 30916, 25881, 25172, 24673, 25420, 27128, 30128, 32520, 35004, 36064, 34460, 33521, 36392, 32280, 38567, 28544, 26418, 27397, 28309, 30612, 35113, 37770, 32502, 31643, 30230, 26415, 28149, 30757, 31305, 29141, 36852, 34062, 33835, 32623, 35851, 35197, 36329, 35927, 57191, 37761, 41730, 37721, 42902, 43880, 39998, 40983, 40191, 40029, 39774, 37784, 29295, 25393, 24362, 25062, 27551, 27228, 26417, 22449, 28463, 30206, 27858, 29192, 34125, 34777, 26938, 28409, 31083, 32425, 33451, 36230, 39314, 31436, 34188, 32195, 29995, 29283, 31303, 34058, 29510, 30917, 28701, 26922, 33124, 34004, 32747, 28934, 27018, 25904, 25038, 24364, 28663, 34003, 30949, 31739, 33199, 37213, 39612, 38879, 40343, 37841, 40284, 37876, 36201, 44952, 53327, 64240, 65151, 66026, 67372, 68158, 66444, 67434, 71507, 71238, 67544, 64095, 66840, 67391, 71205, 76796, 70891, 73814, 74084, 81641, 91059, 111286, 115668, 114927, 141165, 139584, 124298, 107209, 107795, 108794, 107905, 103992, 96480, 98412, 94245, 96536, 94019, 93623, 93395, 91525, 89128, 79933, 78099, 75505, 75979, 82422, 79320, 77856, 87545, 90715, 77952, 61289, 57354, 54370, 53258, 53829, 70186, 77933, 58625, 54285, 69132, 61206, 58948, 64715, 69851, 56433, 57059, 56478, 57408, 64922, 71270, 88052, 78033, 77468, 72029, 70714, 73065, 81364, 88285, 73852, 75018, 72153, 64528, 56430, 70645, 78342, 77926, 73625, 69759, 67071, 69252, 80769, 83942, 74033, 82251, 77646, 76018, 79447, 84594, 88255, 72306, 72399, 75562, 70245, 66231, 74423, 79895, 70999, 69365, 62598, 59563, 60857, 67049, 74124, 68320, 72385, 68852, 81791, 74608, 89471, 93630, 77876], "daynew": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 6, 4, 10, 23, 21, 16, 5, 4, 9, 42, 64, 47, 24, 15, 18, 15, 64, 47, 52, 43, 50, 82, 86, 66, 89, 156, 190, 174, 152, 126, 73, 77, 105, 84, 73, 64, 42, 58, 42, 48, 56, 58, 73, 130, 199, 239, 239, 330, 404, 460, 405, 320], "dayref": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 7, 15, 6, 12, 12, 7, 10, 11, 19, 23, 27, 16, 8, 11, 8, 9, 7, 9, 7, 6, 9, 7, 13, 16, 14, 8, 7, 4, 16, 7, 12, 14, 17, 7, 9, 14, 19, 23, 18, 14, 20, 21, 18, 26, 19, 27, 22, 27, 28, 39, 35, 34], "wklabels": ["5 Jan", "12 Jan", "19 Jan", "26 Jan", "2 Feb", "9 Feb", "16 Feb", "23 Feb", "2 Mar", "9 Mar", "16 Mar", "23 Mar", "30 Mar", "6 Apr", "13 Apr", "20 Apr", "27 Apr", "4 May", "11 May", "18 May", "25 May", "1 Jun", "8 Jun", "15 Jun", "22 Jun", "29 Jun", "6 Jul", "13 Jul", "20 Jul", "27 Jul", "3 Aug", "10 Aug", "17 Aug", "24 Aug", "31 Aug", "7 Sep", "14 Sep"], "weeks": ["2026-01-05", "2026-01-12", "2026-01-19", "2026-01-26", "2026-02-02", "2026-02-09", "2026-02-16", "2026-02-23", "2026-03-02", "2026-03-09", "2026-03-16", "2026-03-23", "2026-03-30", "2026-04-06", "2026-04-13", "2026-04-20", "2026-04-27", "2026-05-04", "2026-05-11", "2026-05-18", "2026-05-25", "2026-06-01", "2026-06-08", "2026-06-15", "2026-06-22", "2026-06-29", "2026-07-06", "2026-07-13", "2026-07-20", "2026-07-27", "2026-08-03", "2026-08-10", "2026-08-17", "2026-08-24", "2026-08-31", "2026-09-07", "2026-09-14"], "wkunt": [2048, 1879, 1596, 2182, 2358, 2230, 2299, 2233, 2261, 2421, 3177, 2948, 2314, 3000, 3616, 3237, 2807, 2537, 4306, 7094, 10748, 10845, 14544, 17302, 15416, 13567, 12625, 9449, 8889, 10363, 12284, 10572, 10330, 10785, 9385, 8033, 8274], "wknew": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 120, 247, 426, 960, 503, 606, 2397], "wkref": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 94, 86, 67, 68, 103, 136, 212], "wkunti": [169717, 173828, 167040, 185031, 192440, 200045, 239828, 218121, 207640, 244749, 297112, 268054, 178462, 211559, 232348, 220532, 215349, 195939, 258826, 342031, 478179, 484762, 662479, 836750, 677307, 583564, 557099, 425555, 434570, 465324, 518062, 470114, 479600, 498925, 457912, 406863, 448879], "wknewi": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2176, 5868, 13443, 23732, 47731, 39689, 39961, 90130], "wkrefi": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5722, 12847, 11485, 15119, 13861, 12153, 15052, 19604], "wkshare": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.59, 1.71, 3.05, 4.56, 8.7, 6.07, 8.46, 23.97]};
+const C_UNT='#2563eb', C_NEW='#059669', C_REF='#d97706';
+const INK='#111111', INK2='#555555', GRID='#e8e8e8';
+Chart.defaults.font.family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif";
+Chart.defaults.color=INK2;
+
+const nf=n=>n.toLocaleString('en-US');
+const dayLabel=s=>{const d=new Date(s+'T00:00:00');return d.getDate()+' '+d.toLocaleString('en-US',{month:'short'});};
+const CUT_IDX=DATA.days.indexOf('2026-07-29');
+
+const cutLine={
+  id:'cutLine',
+  afterDatasetsDraw(chart){
+    const {ctx,chartArea:{top,bottom},scales:{x}}=chart;
+    if(CUT_IDX<0)return;
+    const px=x.getPixelForValue(CUT_IDX);
+    ctx.save();
+    ctx.setLineDash([5,4]); ctx.lineWidth=2; ctx.strokeStyle='#b91c1c';
+    ctx.beginPath(); ctx.moveTo(px,top); ctx.lineTo(px,bottom); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle='#b91c1c'; ctx.font='600 11px -apple-system,sans-serif'; ctx.textAlign='left';
+    ctx.fillText('29 Jul: first NovaStacks page live', px+7, top+14);
+    ctx.restore();
+  }
+};
+
+const endLabel={
+  id:'endLabel',
+  afterDatasetsDraw(chart){
+    if(!chart.options.plugins.endLabel||!chart.options.plugins.endLabel.on)return;
+    const ctx=chart.ctx;
+    chart.data.datasets.forEach((ds,i)=>{
+      const meta=chart.getDatasetMeta(i); if(meta.hidden)return;
+      const pts=meta.data; if(!pts||!pts.length)return;
+      const last=pts[pts.length-1]; const v=ds.data[ds.data.length-1];
+      if(!v)return;
+      ctx.save();
+      const txt=nf(v);
+      ctx.font='700 11.5px -apple-system,sans-serif'; ctx.textAlign='right';
+      const w=ctx.measureText(txt).width;
+      ctx.fillStyle=ds.borderColor;
+      ctx.beginPath(); ctx.arc(last.x-w-11, last.y-9, 4, 0, 6.2832); ctx.fill();
+      ctx.fillStyle=INK; ctx.fillText(txt, last.x-4, last.y-5);
+      ctx.restore();
+    });
+  }
+};
+
+const baseOpts=(yTitle)=>({
+  responsive:true, maintainAspectRatio:false,
+  interaction:{mode:'index',intersect:false},
+  plugins:{
+    legend:{display:false},
+    tooltip:{backgroundColor:'rgba(17,17,17,.94)',padding:11,titleFont:{size:12.5},bodyFont:{size:12.5},
+      callbacks:{label:c=>' '+c.dataset.label+': '+nf(c.parsed.y)}}
+  },
+  scales:{
+    x:{grid:{display:false},ticks:{maxRotation:0,autoSkipPadding:26,font:{size:11}}},
+    y:{beginAtZero:true,title:{display:true,text:yTitle,font:{size:11.5}},
+      grid:{color:GRID,drawTicks:false},border:{display:false},
+      ticks:{padding:8,font:{size:11},callback:v=>nf(v)}}
+  }
+});
+
+// 4. Daily blog clicks
+new Chart(document.getElementById('cDayTotal'),{
+  type:'line',
+  data:{labels:DATA.days.map(dayLabel),
+    datasets:[{label:'Blog clicks',data:DATA.daytotal,borderColor:C_UNT,backgroundColor:'rgba(37,99,235,.10)',
+      borderWidth:2,pointRadius:0,pointHoverRadius:5,tension:.25,fill:true}]},
+  options:baseOpts('Clicks per day'), plugins:[cutLine]
+});
+
+// Daily impressions
+new Chart(document.getElementById('cDayImpr'),{
+  type:'line',
+  data:{labels:DATA.days.map(dayLabel),
+    datasets:[{label:'Blog impressions',data:DATA.daytotali,borderColor:C_UNT,backgroundColor:'rgba(37,99,235,.10)',
+      borderWidth:2,pointRadius:0,pointHoverRadius:5,tension:.25,fill:true}]},
+  options:baseOpts('Impressions per day'), plugins:[cutLine]
+});
+
+// Daily NovaStacks only
+new Chart(document.getElementById('cDayNS'),{
+  type:'line',
+  data:{labels:DATA.days.map(dayLabel),
+    datasets:[
+      {label:'New',data:DATA.daynew,borderColor:C_NEW,backgroundColor:'rgba(5,150,105,.22)',borderWidth:2,
+        pointRadius:0,pointHoverRadius:5,tension:.25,fill:'origin',stack:'ns'},
+      {label:'Refreshed',data:DATA.dayref,borderColor:C_REF,backgroundColor:'rgba(217,119,6,.30)',borderWidth:2,
+        pointRadius:0,pointHoverRadius:5,tension:.25,fill:'-1',stack:'ns'}
+    ]},
+  options:(()=>{const o=baseOpts('Clicks per day');o.scales.y.stacked=true;return o;})(), plugins:[cutLine]
+});
+
+// 5. Weekly clicks stacked
+const stackOpts=(yTitle)=>{
+  const o=baseOpts(yTitle);
+  o.scales.x.stacked=true; o.scales.y.stacked=true;
+  o.plugins.tooltip.callbacks.footer=items=>'Total: '+nf(items.reduce((a,b)=>a+b.parsed.y,0));
+  o.plugins.tooltip.callbacks.title=items=>{
+    const w=DATA.weeks[items[0].dataIndex]; const a=new Date(w+'T00:00:00');
+    const b=new Date(a.getTime()+6*864e5);
+    return a.getDate()+' '+a.toLocaleString('en-US',{month:'short'})+' to '+b.getDate()+' '+b.toLocaleString('en-US',{month:'short'})+' 2026';
+  };
+  return o;
+};
+new Chart(document.getElementById('cWkClicks'),{
+  type:'bar',
+  data:{labels:DATA.wklabels,datasets:[
+    {label:'New',data:DATA.wknew,backgroundColor:C_NEW,borderColor:'#ffffff',borderWidth:{top:2,bottom:0,left:0,right:0},borderSkipped:false},
+    {label:'Never touched',data:DATA.wkunt,backgroundColor:C_UNT,borderColor:'#ffffff',borderWidth:{top:2,bottom:0,left:0,right:0},borderSkipped:false},
+    {label:'Refreshed',data:DATA.wkref,backgroundColor:C_REF,borderRadius:{topLeft:4,topRight:4},borderColor:'#ffffff',borderWidth:{top:2,bottom:0,left:0,right:0},borderSkipped:false}
+  ]},
+  options:stackOpts('Clicks per week')
+});
+
+new Chart(document.getElementById('cWkImpr'),{
+  type:'bar',
+  data:{labels:DATA.wklabels,datasets:[
+    {label:'New',data:DATA.wknewi,backgroundColor:C_NEW,borderColor:'#ffffff',borderWidth:{top:2,bottom:0,left:0,right:0},borderSkipped:false},
+    {label:'Never touched',data:DATA.wkunti,backgroundColor:C_UNT,borderColor:'#ffffff',borderWidth:{top:2,bottom:0,left:0,right:0},borderSkipped:false},
+    {label:'Refreshed',data:DATA.wkrefi,backgroundColor:C_REF,borderRadius:{topLeft:4,topRight:4},borderColor:'#ffffff',borderWidth:{top:2,bottom:0,left:0,right:0},borderSkipped:false}
+  ]},
+  options:stackOpts('Impressions per week')
+});
+
+// NovaStacks only weekly
+const nsOpts=stackOpts('Clicks per week');
+nsOpts.scales.y.stacked=false; nsOpts.scales.x.stacked=false;
+delete nsOpts.plugins.tooltip.callbacks.footer;
+nsOpts.plugins.endLabel={on:true};
+new Chart(document.getElementById('cWkNS'),{
+  type:'line',
+  data:{labels:DATA.wklabels,datasets:[
+    {label:'New',data:DATA.wknew,borderColor:C_NEW,backgroundColor:'rgba(5,150,105,.16)',borderWidth:2.5,
+      pointRadius:0,pointHoverRadius:6,tension:.2,fill:'origin'},
+    {label:'Refreshed',data:DATA.wkref,borderColor:C_REF,backgroundColor:'rgba(217,119,6,.16)',borderWidth:2.5,
+      pointRadius:0,pointHoverRadius:6,tension:.2,fill:'origin'}
+  ]},
+  options:nsOpts, plugins:[endLabel]
+});
+
+// share
+const shOpts=baseOpts('Share of blog clicks, %');
+shOpts.scales.y.ticks.callback=v=>v+'%';
+shOpts.plugins.tooltip.callbacks.label=c=>' NovaStacks share: '+c.parsed.y.toFixed(1)+'%';
+shOpts.plugins.endLabel={on:false};
+new Chart(document.getElementById('cWkShare'),{
+  type:'line',
+  data:{labels:DATA.wklabels,datasets:[
+    {label:'NovaStacks share',data:DATA.wkshare,borderColor:C_NEW,backgroundColor:'rgba(5,150,105,.14)',
+      borderWidth:2.5,pointRadius:0,pointHoverRadius:6,tension:.2,fill:true}
+  ]},
+  options:shOpts
+});
+</script>
+</body>
+</html>
