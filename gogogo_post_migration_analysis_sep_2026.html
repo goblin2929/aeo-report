@@ -159,6 +159,26 @@
 <tr><td>26 Sep</td><td class="num">397</td><td class="num">112</td><td class="num">509</td></tr>
 </tbody></table></div>
 
+  <h2 class="section-header">4. Technical signals: redirects, response codes and indexing</h2>
+  <div class="callout callout-green">
+    <h3>The redirect setup is correct: gogogo.id points one to one at gogogo.com/id-id</h3>
+    <p style="margin-bottom:10px;">Verified live on 29 September: every gogogo.id URL now returns an HTTP 308 permanent redirect to the exact matching gogogo.com/id-id URL, with the path preserved.</p>
+    <div class="table-scroll"><table class="data-table"><thead><tr><th>Old URL</th><th>Response</th><th>Redirects to</th></tr></thead><tbody>
+      <tr><td>gogogo.id/</td><td>308 permanent</td><td>gogogo.com/id-id</td></tr>
+      <tr><td>gogogo.id/p/topup/free-fire-games</td><td>308 permanent</td><td>gogogo.com/id-id/p/topup/free-fire-games</td></tr>
+      <tr><td>gogogo.id/blog/</td><td>308 permanent</td><td>gogogo.com/id-id/blog/</td></tr>
+    </tbody></table></div>
+    <p style="margin-bottom:0;">A one to one permanent redirect is the correct way to migrate: Google consolidates the old page signals onto the new URL. This is exactly what we want to see, and it explains the response code pattern below.</p>
+  </div>
+  <div class="callout callout-blue">
+    <h3>Response codes and indexing (Search Console)</h3>
+    <ul>
+      <li><strong>gogogo.id 200 responses dropping toward zero:</strong> expected and healthy. Because gogogo.id now redirects (308) instead of serving pages, Search Console records fewer 200 responses on the old domain. This confirms the redirects are live.</li>
+      <li><strong>gogogo.com 200 responses increasing:</strong> expected and healthy. Google is crawling and serving the new domain more, a positive sign that the migration is being picked up.</li>
+      <li><strong>Page Indexing report not yet updated:</strong> Search Console has not generated an updated Page Indexing report for the new state since 21 September. This is normal this soon after a migration; we are waiting for Google to process and populate it, and will review it once available.</li>
+    </ul>
+  </div>
+
   <h2 class="section-header">What to watch closely and action items</h2>
   <div class="callout callout-yellow">
     <h3>This is the migration transition we need to watch closely over the next one to two weeks</h3>
