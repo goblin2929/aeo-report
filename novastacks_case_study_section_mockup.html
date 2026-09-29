@@ -27,7 +27,10 @@
 
     /* Section styles (ship these with the section) */
     .cs-stat-arrow{color:#01aac1;font-weight:500;margin:0 .15em}
-        .cs-quote{font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em}
+        .cs-band{padding:4rem 0}
+    .cs-num{min-width:9.5rem}
+    @media (min-width:1024px){.cs-band{aspect-ratio:16/9;max-height:100vh;display:flex;align-items:center;padding:3rem 0}.cs-band>.container{width:100%}}
+    .cs-quote{font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em}
   </style>
 </head>
 <body>
@@ -48,45 +51,49 @@
 </div></div>
 <div class="mk-ghost">↑ WE PUBLISH OUR OWN GEO RESEARCH</div>
 
-<section class="py-16 md:py-20 bg-white">
+<section class="cs-band bg-white">
       <div class="container mx-auto px-8 md:px-6">
-        <div class="max-w-5xl">
-          <div class="flex flex-wrap items-center gap-4 mb-6">
-            <p class="font-mono text-novastacks-dark text-sm tracking-wider">// CASE STUDY</p>
-            <img src="https://www.novastacks-ai.com/assets/case-studies/gofreight-logo.svg" alt="GoFreight logo" width="150" height="40" style="height:26px;width:auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="flex flex-wrap items-center gap-4 mb-6">
+              <p class="font-mono text-novastacks-dark text-sm tracking-wider">// CASE STUDY</p>
+              <img src="https://www.novastacks-ai.com/assets/case-studies/gofreight-logo.svg" alt="GoFreight logo" width="150" height="40" style="height:26px;width:auto">
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">From 5th to 1st in AI Answers</h2>
+            <p class="text-xl text-slate-900 font-semibold mb-3">Named first by AI, ahead of bigger rivals.</p>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">GoFreight competes with vendors that have more market share and brand awareness. We mapped how the brand is described on its own site, review platforms, forums and inside AI answers, set that against its growth strategy, and published content that gives every engine the same account of GoFreight.</p>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a href="https://www.novastacks-ai.com/case-studies/saas-website-migration-ai-visibility" class="inline-flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 font-semibold px-6 py-3 rounded-lg">Read the GoFreight case study <span aria-hidden="true">→</span></a>
+              <a href="https://www.novastacks-ai.com/free-tools/free-aeo-audit" class="text-novastacks-dark font-semibold hover:underline">Get a free AI visibility audit</a>
+            </div>
           </div>
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-10 leading-tight">From 5th to 1st in AI Answers</h2>
-
-          <div class="grid md:grid-cols-3 gap-px bg-slate-200 mb-12">
-          <div class="bg-white p-8 text-center">
-            <div class="font-mono text-5xl font-bold text-novastacks mb-4">5th<span class="text-slate-400 font-normal">→</span>1st</div>
-            <p class="text-slate-600 leading-relaxed mb-4">of 8 tracked vendors in AI buying answers</p>
-            <p class="text-xs text-slate-400 font-mono">Novastacks AI answer tracking</p>
-          </div>
-          <div class="bg-white p-8 text-center">
-            <div class="font-mono text-5xl font-bold text-novastacks mb-4">6%<span class="text-slate-400 font-normal">→</span>35%</div>
-            <p class="text-slate-600 leading-relaxed mb-4">of tracked ChatGPT answers name GoFreight</p>
-            <p class="text-xs text-slate-400 font-mono">Novastacks AI answer tracking</p>
-          </div>
-          <div class="bg-white p-8 text-center">
-            <div class="font-mono text-5xl font-bold text-novastacks mb-4">+632%</div>
-            <p class="text-slate-600 leading-relaxed mb-4">monthly visits referred by AI assistants</p>
-            <p class="text-xs text-slate-400 font-mono">GA4, since the engagement began</p>
-          </div>
-          </div>
-
-          <div class="grid lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <p class="text-xl text-slate-900 font-semibold mb-4">Named first by AI, ahead of bigger rivals.</p>
-              <p class="text-lg text-slate-600 leading-relaxed mb-6">GoFreight competes with vendors that have more market share and brand awareness. We mapped how the brand is described on its own site, review platforms, forums and inside AI answers, set that against its growth strategy, and published content that gives every engine the same account of GoFreight.</p>
-              <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
-                <a href="https://www.novastacks-ai.com/case-studies/saas-website-migration-ai-visibility" class="inline-flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 font-semibold px-6 py-3 rounded-lg">Read the GoFreight case study <span aria-hidden="true">→</span></a>
-                <a href="https://www.novastacks-ai.com/free-tools/free-aeo-audit" class="text-novastacks-dark font-semibold hover:underline">Get a free AI visibility audit</a>
+          <div>
+            <div class="grid gap-px bg-slate-200 mb-6">
+              <div class="bg-white py-5 flex items-center gap-6">
+                <div class="font-mono text-4xl font-bold text-novastacks shrink-0 cs-num">5th<span class="text-slate-400 font-normal">→</span>1st</div>
+                <div>
+                  <p class="text-slate-600 leading-snug">of 8 tracked vendors in AI buying answers</p>
+                  <p class="text-xs text-slate-400 font-mono mt-1">Novastacks AI answer tracking</p>
+                </div>
+              </div>
+              <div class="bg-white py-5 flex items-center gap-6">
+                <div class="font-mono text-4xl font-bold text-novastacks shrink-0 cs-num">6%<span class="text-slate-400 font-normal">→</span>35%</div>
+                <div>
+                  <p class="text-slate-600 leading-snug">of tracked ChatGPT answers name GoFreight</p>
+                  <p class="text-xs text-slate-400 font-mono mt-1">Novastacks AI answer tracking</p>
+                </div>
+              </div>
+              <div class="bg-white py-5 flex items-center gap-6">
+                <div class="font-mono text-4xl font-bold text-novastacks shrink-0 cs-num">+632%</div>
+                <div>
+                  <p class="text-slate-600 leading-snug">monthly visits referred by AI assistants</p>
+                  <p class="text-xs text-slate-400 font-mono mt-1">GA4, since the engagement began</p>
+                </div>
               </div>
             </div>
-            <figure class="bg-slate-50 border border-slate-200 rounded-lg p-8">
-              <blockquote class="cs-quote text-2xl text-slate-900 leading-snug mb-6">“I dug into a conversation with AI… it narrowed it down to like a top five… you guys were a top two.”</blockquote>
-              <figcaption class="text-sm text-slate-500 border-slate-200 border-t pt-4">Enterprise buyer from our client · B2B SaaS</figcaption>
+            <figure class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+              <blockquote class="cs-quote text-xl text-slate-900 leading-snug mb-4">“I dug into a conversation with AI… it narrowed it down to like a top five… you guys were a top two.”</blockquote>
+              <figcaption class="text-sm text-slate-500 border-slate-200 border-t pt-3">Enterprise buyer from our client · B2B SaaS</figcaption>
             </figure>
           </div>
         </div>
@@ -105,45 +112,49 @@
 </div></div>
 <div class="mk-ghost">↑ WE PUBLISH OUR OWN AEO RESEARCH</div>
 
-<section class="py-16 md:py-20 bg-white">
+<section class="cs-band bg-white">
       <div class="container mx-auto px-8 md:px-6">
-        <div class="max-w-5xl">
-          <div class="flex flex-wrap items-center gap-4 mb-6">
-            <p class="font-mono text-novastacks-dark text-sm tracking-wider">// CASE STUDY</p>
-            <img src="https://www.novastacks-ai.com/assets/case-studies/gofreight-logo.svg" alt="GoFreight logo" width="150" height="40" style="height:26px;width:auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="flex flex-wrap items-center gap-4 mb-6">
+              <p class="font-mono text-novastacks-dark text-sm tracking-wider">// CASE STUDY</p>
+              <img src="https://www.novastacks-ai.com/assets/case-studies/gofreight-logo.svg" alt="GoFreight logo" width="150" height="40" style="height:26px;width:auto">
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">Google AI Mode Lists GoFreight First</h2>
+            <p class="text-xl text-slate-900 font-semibold mb-3">Built around the questions real buyers ask.</p>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">CRM records and sales calls showed four buyer segments, each asking different questions. We gave them product pages to evaluate, comparison pages to shortlist and one glossary for the basics, then carried the site&#39;s search history through three site migrations.</p>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a href="https://www.novastacks-ai.com/case-studies/saas-website-migration-ai-visibility" class="inline-flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 font-semibold px-6 py-3 rounded-lg">Read the GoFreight case study <span aria-hidden="true">→</span></a>
+              <a href="https://www.novastacks-ai.com/free-tools/free-aeo-audit" class="text-novastacks-dark font-semibold hover:underline">Get a free AEO audit</a>
+            </div>
           </div>
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-10 leading-tight">Google AI Mode Lists GoFreight First</h2>
-
-          <div class="grid md:grid-cols-3 gap-px bg-slate-200 mb-12">
-          <div class="bg-white p-8 text-center">
-            <div class="font-mono text-5xl font-bold text-novastacks mb-4">+632%</div>
-            <p class="text-slate-600 leading-relaxed mb-4">monthly visits referred by AI assistants</p>
-            <p class="text-xs text-slate-400 font-mono">GA4, since the engagement began</p>
-          </div>
-          <div class="bg-white p-8 text-center">
-            <div class="font-mono text-5xl font-bold text-novastacks mb-4">6%<span class="text-slate-400 font-normal">→</span>35%</div>
-            <p class="text-slate-600 leading-relaxed mb-4">of tracked ChatGPT answers name GoFreight</p>
-            <p class="text-xs text-slate-400 font-mono">Novastacks AI answer tracking</p>
-          </div>
-          <div class="bg-white p-8 text-center">
-            <div class="font-mono text-5xl font-bold text-novastacks mb-4">19<span class="text-slate-400 font-normal">→</span>8</div>
-            <p class="text-slate-600 leading-relaxed mb-4">average Google ranking position</p>
-            <p class="text-xs text-slate-400 font-mono">Google Search Console</p>
-          </div>
-          </div>
-
-          <div class="grid lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <p class="text-xl text-slate-900 font-semibold mb-4">Built around the questions real buyers ask.</p>
-              <p class="text-lg text-slate-600 leading-relaxed mb-6">CRM records and sales calls showed four buyer segments, each asking different questions. We gave them product pages to evaluate, comparison pages to shortlist and one glossary for the basics, then carried the site&#39;s search history through three site migrations.</p>
-              <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
-                <a href="https://www.novastacks-ai.com/case-studies/saas-website-migration-ai-visibility" class="inline-flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 font-semibold px-6 py-3 rounded-lg">Read the GoFreight case study <span aria-hidden="true">→</span></a>
-                <a href="https://www.novastacks-ai.com/free-tools/free-aeo-audit" class="text-novastacks-dark font-semibold hover:underline">Get a free AEO audit</a>
+          <div>
+            <div class="grid gap-px bg-slate-200 mb-6">
+              <div class="bg-white py-5 flex items-center gap-6">
+                <div class="font-mono text-4xl font-bold text-novastacks shrink-0 cs-num">+632%</div>
+                <div>
+                  <p class="text-slate-600 leading-snug">monthly visits referred by AI assistants</p>
+                  <p class="text-xs text-slate-400 font-mono mt-1">GA4, since the engagement began</p>
+                </div>
+              </div>
+              <div class="bg-white py-5 flex items-center gap-6">
+                <div class="font-mono text-4xl font-bold text-novastacks shrink-0 cs-num">6%<span class="text-slate-400 font-normal">→</span>35%</div>
+                <div>
+                  <p class="text-slate-600 leading-snug">of tracked ChatGPT answers name GoFreight</p>
+                  <p class="text-xs text-slate-400 font-mono mt-1">Novastacks AI answer tracking</p>
+                </div>
+              </div>
+              <div class="bg-white py-5 flex items-center gap-6">
+                <div class="font-mono text-4xl font-bold text-novastacks shrink-0 cs-num">19<span class="text-slate-400 font-normal">→</span>8</div>
+                <div>
+                  <p class="text-slate-600 leading-snug">average Google ranking position</p>
+                  <p class="text-xs text-slate-400 font-mono mt-1">Google Search Console</p>
+                </div>
               </div>
             </div>
-            <figure class="bg-slate-50 border border-slate-200 rounded-lg p-8">
-              <blockquote class="cs-quote text-2xl text-slate-900 leading-snug mb-6">“I dug into a conversation with AI… it narrowed it down to like a top five… you guys were a top two.”</blockquote>
-              <figcaption class="text-sm text-slate-500 border-slate-200 border-t pt-4">Enterprise buyer from our client · B2B SaaS</figcaption>
+            <figure class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+              <blockquote class="cs-quote text-xl text-slate-900 leading-snug mb-4">“I dug into a conversation with AI… it narrowed it down to like a top five… you guys were a top two.”</blockquote>
+              <figcaption class="text-sm text-slate-500 border-slate-200 border-t pt-3">Enterprise buyer from our client · B2B SaaS</figcaption>
             </figure>
           </div>
         </div>
@@ -156,50 +167,54 @@
 <!-- VARIANT 3 · /industries/b2b                                    -->
 <!-- ============================================================= -->
 <div id="v-b2b" class="mk-note" style="margin-top:56px"><div class="in">
-  <b>Variant 3 · <a href="https://www.novastacks-ai.com/industries/b2b" style="color:#b45309">novastacks-ai.com/industries/b2b</a></b>. Angle: B2B pipeline, the right buyers instead of more traffic. Dark, to match the page. Layout follows the pages&#39; existing "The Visibility Split" section.
+  <b>Variant 3 · <a href="https://www.novastacks-ai.com/industries/b2b" style="color:#b45309">novastacks-ai.com/industries/b2b</a></b>. Angle: B2B pipeline, the right buyers instead of more traffic. Dark, to match the page. Section is a 16:9 band on desktop.
   Slot: directly after <b>"Measured against the engines, not asserted in slides"</b>. Remove that section's anonymous <i>"A freight software company…"</i> card (same client) and its line <i>"Client names withheld by agreement"</i>.
 </div></div>
 <div class="mk-ghost">↑ MEASURED AGAINST THE ENGINES, NOT ASSERTED IN SLIDES</div>
 
-<section class="py-16 md:py-20 bg-slate-950">
+<section class="cs-band bg-slate-950">
       <div class="container mx-auto px-8 md:px-6">
-        <div class="max-w-5xl">
-          <div class="flex flex-wrap items-center gap-4 mb-6">
-            <p class="font-mono text-novastacks text-sm tracking-wider">// CASE_STUDY</p>
-            <span class="inline-flex items-center bg-white rounded-md px-3 py-1.5"><img src="https://www.novastacks-ai.com/assets/case-studies/gofreight-logo.svg" alt="GoFreight logo" width="150" height="40" style="height:20px;width:auto"></span>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="flex flex-wrap items-center gap-4 mb-6">
+              <p class="font-mono text-novastacks text-sm tracking-wider">// CASE_STUDY</p>
+              <span class="inline-flex items-center bg-white rounded-md px-3 py-1.5"><img src="https://www.novastacks-ai.com/assets/case-studies/gofreight-logo.svg" alt="GoFreight logo" width="150" height="40" style="height:20px;width:auto"></span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white font-display mb-6 leading-tight">Rebuilt around the four buyers who actually sign</h2>
+            <p class="text-xl text-white font-semibold mb-3">Refocused on freight forwarders, the buyers who sign.</p>
+            <p class="text-lg text-slate-400 leading-relaxed mb-8">GoFreight&#39;s content library spoke to the whole supply chain. CRM data and sales calls revealed four buyer segments, from growing forwarders replacing spreadsheets to enterprises leaving legacy platforms. We rebuilt the site around them and protected years of search equity through three site migrations, without ad spend.</p>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a href="https://www.novastacks-ai.com/case-studies/saas-website-migration-ai-visibility" class="inline-flex items-center gap-2 bg-novastacks text-slate-950 hover:opacity-90 font-semibold px-6 py-3 rounded-lg">Read the GoFreight case study <span aria-hidden="true">→</span></a>
+              <a href="https://www.novastacks-ai.com/free-tools/free-aeo-audit" class="text-novastacks font-semibold hover:underline">Get a free AI visibility audit</a>
+            </div>
           </div>
-          <h2 class="text-4xl md:text-5xl font-bold text-white font-display mb-10 leading-tight">Rebuilt around the four buyers who actually sign</h2>
-
-          <div class="grid md:grid-cols-3 gap-px bg-white/10 mb-12">
-          <div class="bg-slate-950 p-8 text-center">
-            <div class="font-mono text-5xl font-bold text-novastacks mb-4">+241%</div>
-            <p class="text-slate-400 leading-relaxed mb-4">Google clicks from the low point when the engagement began</p>
-            <p class="text-xs text-slate-500 font-mono">Google Search Console</p>
-          </div>
-          <div class="bg-slate-950 p-8 text-center">
-            <div class="font-mono text-5xl font-bold text-novastacks mb-4">5th<span class="text-slate-400 font-normal">→</span>1st</div>
-            <p class="text-slate-400 leading-relaxed mb-4">of 8 tracked vendors in AI buying answers</p>
-            <p class="text-xs text-slate-500 font-mono">Novastacks AI answer tracking</p>
-          </div>
-          <div class="bg-slate-950 p-8 text-center">
-            <div class="font-mono text-5xl font-bold text-novastacks mb-4">+632%</div>
-            <p class="text-slate-400 leading-relaxed mb-4">monthly visits referred by AI assistants</p>
-            <p class="text-xs text-slate-500 font-mono">GA4, since the engagement began</p>
-          </div>
-          </div>
-
-          <div class="grid lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <p class="text-xl text-white font-semibold mb-4">Refocused on freight forwarders, the buyers who sign.</p>
-              <p class="text-lg text-slate-400 leading-relaxed mb-6">GoFreight&#39;s content library spoke to the whole supply chain. CRM data and sales calls revealed four buyer segments, from growing forwarders replacing spreadsheets to enterprises leaving legacy platforms. We rebuilt the site around them and protected years of search equity through three site migrations, without ad spend.</p>
-              <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
-                <a href="https://www.novastacks-ai.com/case-studies/saas-website-migration-ai-visibility" class="inline-flex items-center gap-2 bg-novastacks text-slate-950 hover:opacity-90 font-semibold px-6 py-3 rounded-lg">Read the GoFreight case study <span aria-hidden="true">→</span></a>
-                <a href="https://www.novastacks-ai.com/free-tools/free-aeo-audit" class="text-novastacks font-semibold hover:underline">Get a free AI visibility audit</a>
+          <div>
+            <div class="grid gap-px bg-white/10 mb-6">
+              <div class="bg-slate-950 py-5 flex items-center gap-6">
+                <div class="font-mono text-4xl font-bold text-novastacks shrink-0 cs-num">+241%</div>
+                <div>
+                  <p class="text-slate-400 leading-snug">Google clicks from the low point when the engagement began</p>
+                  <p class="text-xs text-slate-500 font-mono mt-1">Google Search Console</p>
+                </div>
+              </div>
+              <div class="bg-slate-950 py-5 flex items-center gap-6">
+                <div class="font-mono text-4xl font-bold text-novastacks shrink-0 cs-num">5th<span class="text-slate-400 font-normal">→</span>1st</div>
+                <div>
+                  <p class="text-slate-400 leading-snug">of 8 tracked vendors in AI buying answers</p>
+                  <p class="text-xs text-slate-500 font-mono mt-1">Novastacks AI answer tracking</p>
+                </div>
+              </div>
+              <div class="bg-slate-950 py-5 flex items-center gap-6">
+                <div class="font-mono text-4xl font-bold text-novastacks shrink-0 cs-num">+632%</div>
+                <div>
+                  <p class="text-slate-400 leading-snug">monthly visits referred by AI assistants</p>
+                  <p class="text-xs text-slate-500 font-mono mt-1">GA4, since the engagement began</p>
+                </div>
               </div>
             </div>
-            <figure class="bg-slate-900 border border-white/10 rounded-lg p-8">
-              <blockquote class="cs-quote text-2xl text-white leading-snug mb-6">“I dug into a conversation with AI… it narrowed it down to like a top five… you guys were a top two.”</blockquote>
-              <figcaption class="text-sm text-slate-500 border-white/10 border-t pt-4">Enterprise buyer from our client · B2B SaaS</figcaption>
+            <figure class="bg-slate-900 border border-white/10 rounded-lg p-6">
+              <blockquote class="cs-quote text-xl text-white leading-snug mb-4">“I dug into a conversation with AI… it narrowed it down to like a top five… you guys were a top two.”</blockquote>
+              <figcaption class="text-sm text-slate-500 border-white/10 border-t pt-3">Enterprise buyer from our client · B2B SaaS</figcaption>
             </figure>
           </div>
         </div>
