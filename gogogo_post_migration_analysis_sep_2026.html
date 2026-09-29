@@ -49,27 +49,26 @@
 <div class="container">
   <div class="header">
     <h1>Gogogo Post Migration Analysis</h1>
-    <p class="subtitle">gogogo.id migrated to gogogo.com on 21 September 2026 (Indonesia market)</p>
-    <p class="meta">Data source: Google Search Console (aeo-novastacks profile), gogogo.id and gogogo.com properties | Window: 14 to 26 September 2026 | Prepared by Novastacks | Client: Gogogo (Flip Group)</p>
+    <p class="subtitle">gogogo.id migrated to gogogo.com/id-id on 21 September 2026 (Indonesia market)</p>
+    <p class="meta">Data source: Google Search Console (aeo-novastacks profile) | Window: 14 to 26 September 2026 | Prepared by Novastacks | Client: Gogogo (Flip Group)</p>
   </div>
 
   <h2 class="section-header">How this is measured</h2>
   <div class="callout callout-blue">
-    <p style="margin-bottom:10px;">On 21 September the Indonesian site moved from <strong>gogogo.id</strong> to <strong>gogogo.com/id-id</strong>. During a domain migration Google keeps showing the old URLs in search for a while, then swaps to the new domain page by page as it reindexes, so traffic splits across both properties. To read the true Indonesian condition we combine both: <strong>gogogo.id (old) plus the gogogo.com /id-id section (new)</strong>.</p>
-    <p style="margin-bottom:0;">The new domain figures use the gogogo.com domain property filtered to the /id-id section, which correctly includes the /id-id homepage (a URL prefix property would miss it). Latest fully settled day is 26 September; the last day or two can still rise slightly.</p>
+    <p style="margin-bottom:10px;">On 21 September the Indonesian site moved from <strong>gogogo.id</strong> to <strong>gogogo.com/id-id</strong>. During a migration Google keeps the old URLs in search for a while, then swaps to the new pages one by one as it reindexes, so traffic splits across both. We read the true Indonesian condition by combining <strong>gogogo.id (old) plus gogogo.com/id-id (new)</strong>.</p>
+    <p style="margin-bottom:0;"><strong>Scope check:</strong> the new side is strictly the <strong>/id-id</strong> locale only, never /en-my, /th-th or the domain root. We verified this directly: every gogogo.com click counted starts with gogogo.com/id-id, with zero leakage from other locales. The /id-id figure correctly includes the /id-id homepage. Latest fully settled day is 26 September.</p>
   </div>
 
   <h2 class="section-header">1. Combined traffic condition: is there a decline?</h2>
   <div class="callout callout-green">
-    <h3>No decline. Combined Indonesian clicks grew +15.3% across the migration.</h3>
-    <p style="margin-bottom:10px;">Comparing the six days before the migration (14 to 19 September, all on gogogo.id) with the six days from migration day (21 to 26 September, gogogo.id plus gogogo.com/id-id combined):</p>
+    <h3>No decline in clicks yet. Combined Indonesian clicks are +15.3% across the migration.</h3>
     <div class="status-grid">
       <div class="status-card"><h4>Pre migration (14 to 19 Sep)</h4><div class="value">104,818</div></div>
       <div class="status-card"><h4>Post migration (21 to 26 Sep, combined)</h4><div class="value">120,847</div></div>
       <div class="status-card"><h4>Change</h4><div class="value trend-up">+15.3%</div></div>
       <div class="status-card"><h4>New domain, 26 Sep</h4><div class="value trend-up">3,657/day</div></div>
     </div>
-    <p style="margin-bottom:0;">The migration has not cost traffic so far. gogogo.id alone is still +8.3% vs the pre week (113,484 clicks), and the new domain adds another 7,363 and is climbing daily (8 clicks on 20 Sep to 3,657 on 26 Sep) as Google reindexes to gogogo.com. The underlying demand kept rising through the migration rather than dropping.</p>
+    <p style="margin-bottom:0;">Combined clicks held up because the old gogogo.id URLs still ranked through most of the window. gogogo.id alone is still +8.3% vs the pre week, and gogogo.com/id-id adds 7,363 and is climbing (8 clicks on 20 Sep to 3,657 on 26 Sep). Read this together with the position finding in section 2 before concluding the migration is safe.</p>
   </div>
   <div class="chart-container"><h3>Daily Indonesian clicks: gogogo.id and gogogo.com/id-id (stacked)</h3><canvas id="mig"></canvas></div>
   <h3 style="margin:20px 0 12px;font-size:1rem;color:var(--medium-gray);">Daily detail</h3>
@@ -88,88 +87,94 @@
 <tr><td>25 Sep</td><td class="num">26,542</td><td class="num">2,751</td><td class="num">29,293</td></tr>
 <tr><td>26 Sep</td><td class="num">15,354</td><td class="num">3,657</td><td class="num">19,011</td></tr>
 </tbody></table></div>
+
+  <h2 class="section-header">2. PDP condition: the three champion pages and their top five non-branded keywords</h2>
   <div class="callout callout-yellow">
-    <h3>Important caveat: it is early</h3>
-    <p style="margin-bottom:0;">The migration is only six days old and Google is still reassigning URLs page by page. Migrations often show a delayed dip in the following two to four weeks before recovering. The site wide picture is healthy today, but this needs weekly monitoring until the new domain fully replaces the old one in the index.</p>
+    <h3>The new URLs are indexed and starting to rank, but the head keywords are entering at much weaker positions than the old URLs</h3>
+    <p style="margin-bottom:10px;">This is the real signal to watch. Combined clicks held (section 1) mainly because the old URLs were still ranking. As Google swaps to the new gogogo.com/id-id pages (already happening for Free Fire and Mobile Legends around 25 to 26 September), the new pages are currently ranking well below where the old pages sat for the money keywords. They must climb back to the old positions for traffic to hold once the old URLs fully drop out.</p>
+    <p style="margin-bottom:0;">Old position = gogogo.id over 14 to 24 September (when the old URL was still ranking). New position = gogogo.com/id-id over 21 to 26 September (impression weighted). Lower is better.</p>
   </div>
 
-  <h2 class="section-header">2. PDP condition and signs of recovery: Free Fire, Mobile Legends, Roblox</h2>
+  <h3 style="margin:22px 0 10px;font-size:1.05rem;color:var(--medium-gray);">Top Up FF (Free Fire)</h3>
+  <div class="table-scroll"><table class="data-table"><thead><tr><th>Non-branded keyword</th><th class="num">Old position (gogogo.id)</th><th class="num">New position (gogogo.com/id-id)</th><th>Read</th></tr></thead><tbody>
+<tr><td>top up ff</td><td class="num">5.1</td><td class="num">30.8</td><td>far below old, must climb</td></tr>
+<tr><td>codashop ff</td><td class="num">5.1</td><td class="num">11.2</td><td>recovering, below old</td></tr>
+<tr><td>top up ff termurah</td><td class="num">5.6</td><td class="num">20.7</td><td>far below old, must climb</td></tr>
+<tr><td>top up</td><td class="num">7.8</td><td class="num">64.0</td><td>far below old, must climb</td></tr>
+<tr><td>top up ff murah</td><td class="num">5.0</td><td class="num">20.0</td><td>far below old, must climb</td></tr>
+</tbody></table></div>
+  <p style="font-size:0.9rem;color:#555;margin:8px 0 0;">The new Free Fire URL is currently at page two to six for the head terms ("top up ff" 5.1 to 31), so it is early in the transition and must recover toward the old page one positions.</p>
+
+  <h3 style="margin:22px 0 10px;font-size:1.05rem;color:var(--medium-gray);">Top Up ML (Mobile Legends)</h3>
+  <div class="table-scroll"><table class="data-table"><thead><tr><th>Non-branded keyword</th><th class="num">Old position (gogogo.id)</th><th class="num">New position (gogogo.com/id-id)</th><th>Read</th></tr></thead><tbody>
+<tr><td>top up ml</td><td class="num">6.7</td><td class="num">19.0</td><td>far below old, must climb</td></tr>
+<tr><td>codashop ml</td><td class="num">6.3</td><td class="num">26.1</td><td>far below old, must climb</td></tr>
+<tr><td>top up ml murah</td><td class="num">6.3</td><td class="num">31.9</td><td>far below old, must climb</td></tr>
+<tr><td>topup mlbb</td><td class="num">4.7</td><td class="num">20.0</td><td>far below old, must climb</td></tr>
+<tr><td>top up ml termurah</td><td class="num">6.4</td><td class="num">26.5</td><td>far below old, must climb</td></tr>
+</tbody></table></div>
+  <p style="font-size:0.9rem;color:#555;margin:8px 0 0;">Same pattern as Free Fire: the new Mobile Legends URL is entering at position 19 to 32 for the head terms versus roughly 5 to 7 on the old URL. Watch it climb.</p>
+
+  <h3 style="margin:22px 0 10px;font-size:1.05rem;color:var(--medium-gray);">Top Up Roblox</h3>
+  <div class="table-scroll"><table class="data-table"><thead><tr><th>Non-branded keyword</th><th class="num">Old position (gogogo.id)</th><th class="num">New position (gogogo.com/id-id)</th><th>Read</th></tr></thead><tbody>
+<tr><td>top up robux</td><td class="num">6.2</td><td class="num">not indexed yet</td><td>new URL not ranking yet</td></tr>
+<tr><td>top up roblox</td><td class="num">7.8</td><td class="num">9.4</td><td>close to parity</td></tr>
+<tr><td>gorobux</td><td class="num">4.7</td><td class="num">5.4</td><td>close to parity</td></tr>
+<tr><td>robux</td><td class="num">7.2</td><td class="num">not indexed yet</td><td>new URL not ranking yet</td></tr>
+<tr><td>top up robux murah</td><td class="num">5.8</td><td class="num">9.8</td><td>recovering, below old</td></tr>
+</tbody></table></div>
+  <p style="font-size:0.9rem;color:#555;margin:8px 0 0;">Roblox has transferred the best of the three: the new URL positions ("top up roblox" 7.8 to 9.4, "gorobux" 4.7 to 5.4) are close to the old ones, so this page is nearly at parity already.</p>
+
   <div class="callout callout-blue">
-    <h3>The three key PDPs are entering the URL handover, and the new pages are already being indexed and ranked</h3>
-    <p style="margin-bottom:10px;">Through about 24 September the combined clicks for all three PDPs tracked their pre migration levels. Around 25 to 26 September Google began swapping the indexed URL from gogogo.id to gogogo.com/id-id for Free Fire and Mobile Legends, which is the normal page by page handover. The new gogogo.com/id-id pages are climbing day by day at healthy positions, which is the recovery signal, but they have not yet reached the old click volume, so those two show a short transition dip in the last day or two. Roblox has not started its handover yet, so it is still at full strength on the old URL.</p>
-    <p style="margin-bottom:0;"><strong>Verdict:</strong> early signs of recovery are clearly present (the new URLs are indexed and rising with good positions), but Free Fire and Mobile Legends are mid handover and have not yet reached parity, so it is too early to call full recovery on them. Monitor the next one to two weeks for the new URLs to catch up.</p>
+    <h3>So, is it recovering?</h3>
+    <p style="margin-bottom:0;">Early signs yes, but incomplete. The new pages are indexed and appearing, and Roblox is nearly at parity. Free Fire and Mobile Legends are still ranking well below the old URLs on their head keywords, so their recovery has only just started. The single most important thing to watch over the next one to two weeks is whether the new URL positions for "top up ff" and "top up ml" climb back toward page one.</p>
   </div>
 
-  <h3 style="margin:22px 0 10px;font-size:1.05rem;color:var(--medium-gray);">Top Up FF (Free Fire): mid handover, new URL climbing</h3>
-  <p style="font-size:0.9rem;color:#555;margin:0 0 10px;">Pre 14 to 19 Sep: 19,318 clicks. Post 21 to 26 Sep combined: 12,181 (-36.9%). The old URL dropped out on 25 to 26 September and the new gogogo.com/id-id page is climbing (to 399 clicks on 26 Sep at position 5.4), but has not yet replaced the old volume. This is the handover valley in progress.</p>
-  <div class="table-scroll"><table class="data-table"><thead><tr><th>Date</th><th class="num">old clk</th><th class="num">new clk</th><th class="num">Combined</th><th class="num">old pos</th><th class="num">new pos</th></tr></thead><tbody>
-<tr><td>14 Sep</td><td class="num">1,121</td><td class="num">0</td><td class="num">1,121</td><td class="num">5.1</td><td class="num">-</td></tr>
-<tr><td>15 Sep</td><td class="num">1,076</td><td class="num">0</td><td class="num">1,076</td><td class="num">4.9</td><td class="num">-</td></tr>
-<tr><td>16 Sep</td><td class="num">1,499</td><td class="num">0</td><td class="num">1,499</td><td class="num">5.3</td><td class="num">-</td></tr>
-<tr><td>17 Sep</td><td class="num">4,688</td><td class="num">0</td><td class="num">4,688</td><td class="num">4.9</td><td class="num">-</td></tr>
-<tr><td>18 Sep</td><td class="num">5,830</td><td class="num">0</td><td class="num">5,830</td><td class="num">4.6</td><td class="num">-</td></tr>
-<tr><td>19 Sep</td><td class="num">5,104</td><td class="num">0</td><td class="num">5,104</td><td class="num">4.7</td><td class="num">-</td></tr>
-<tr><td>20 Sep</td><td class="num">3,873</td><td class="num">5</td><td class="num">3,878</td><td class="num">4.5</td><td class="num">4.0</td></tr>
-<tr style="border-top:2px solid #111;"><td>21 Sep</td><td class="num">3,130</td><td class="num">55</td><td class="num">3,185</td><td class="num">4.8</td><td class="num">3.6</td></tr>
-<tr><td>22 Sep</td><td class="num">2,939</td><td class="num">38</td><td class="num">2,977</td><td class="num">4.9</td><td class="num">3.6</td></tr>
-<tr><td>23 Sep</td><td class="num">2,775</td><td class="num">26</td><td class="num">2,801</td><td class="num">5.0</td><td class="num">4.1</td></tr>
-<tr><td>24 Sep</td><td class="num">2,497</td><td class="num">74</td><td class="num">2,571</td><td class="num">4.9</td><td class="num">5.5</td></tr>
-<tr><td>25 Sep</td><td class="num">6</td><td class="num">237</td><td class="num">243</td><td class="num">4.6</td><td class="num">7.6</td></tr>
-<tr><td>26 Sep</td><td class="num">5</td><td class="num">399</td><td class="num">404</td><td class="num">4.8</td><td class="num">5.4</td></tr>
-</tbody></table></div>
-
-  <h3 style="margin:22px 0 10px;font-size:1.05rem;color:var(--medium-gray);">Top Up ML (Mobile Legends): handover starting, watch closely</h3>
-  <p style="font-size:0.9rem;color:#555;margin:0 0 10px;">Pre: 10,554 clicks. Post combined: 11,974 (+13.5%, inflated by a demand spike still credited to the old URL on 25 Sep). The old URL handed over on 26 September (5 clicks) and the new page is beginning to rank (to 169 clicks on 26 Sep). Too early to read parity.</p>
-  <div class="table-scroll"><table class="data-table"><thead><tr><th>Date</th><th class="num">old clk</th><th class="num">new clk</th><th class="num">Combined</th><th class="num">old pos</th><th class="num">new pos</th></tr></thead><tbody>
-<tr><td>14 Sep</td><td class="num">692</td><td class="num">0</td><td class="num">692</td><td class="num">5.1</td><td class="num">-</td></tr>
-<tr><td>15 Sep</td><td class="num">801</td><td class="num">0</td><td class="num">801</td><td class="num">5.1</td><td class="num">-</td></tr>
-<tr><td>16 Sep</td><td class="num">1,074</td><td class="num">0</td><td class="num">1,074</td><td class="num">5.7</td><td class="num">-</td></tr>
-<tr><td>17 Sep</td><td class="num">996</td><td class="num">0</td><td class="num">996</td><td class="num">4.2</td><td class="num">-</td></tr>
-<tr><td>18 Sep</td><td class="num">3,538</td><td class="num">0</td><td class="num">3,538</td><td class="num">5.4</td><td class="num">-</td></tr>
-<tr><td>19 Sep</td><td class="num">3,453</td><td class="num">0</td><td class="num">3,453</td><td class="num">5.1</td><td class="num">-</td></tr>
-<tr><td>20 Sep</td><td class="num">2,557</td><td class="num">3</td><td class="num">2,560</td><td class="num">4.6</td><td class="num">6.0</td></tr>
-<tr style="border-top:2px solid #111;"><td>21 Sep</td><td class="num">2,090</td><td class="num">38</td><td class="num">2,128</td><td class="num">5.1</td><td class="num">5.5</td></tr>
-<tr><td>22 Sep</td><td class="num">1,992</td><td class="num">30</td><td class="num">2,022</td><td class="num">5.0</td><td class="num">4.4</td></tr>
-<tr><td>23 Sep</td><td class="num">1,020</td><td class="num">8</td><td class="num">1,028</td><td class="num">4.9</td><td class="num">6.3</td></tr>
-<tr><td>24 Sep</td><td class="num">1,039</td><td class="num">15</td><td class="num">1,054</td><td class="num">4.5</td><td class="num">6.4</td></tr>
-<tr><td>25 Sep</td><td class="num">5,435</td><td class="num">133</td><td class="num">5,568</td><td class="num">5.5</td><td class="num">9.7</td></tr>
-<tr><td>26 Sep</td><td class="num">5</td><td class="num">169</td><td class="num">174</td><td class="num">5.1</td><td class="num">8.6</td></tr>
-</tbody></table></div>
-
-  <h3 style="margin:22px 0 10px;font-size:1.05rem;color:var(--medium-gray);">Top Up Roblox: handover not started, still strong on the old URL</h3>
-  <p style="font-size:0.9rem;color:#555;margin:0 0 10px;">Pre: 3,138 clicks. Post combined: 5,069 (+61.5%). The old gogogo.id page is still ranking and getting clicks through 26 September (position around 4 to 5); the new page is only just appearing. Expect a brief transition like Free Fire when Google swaps this page.</p>
-  <div class="table-scroll"><table class="data-table"><thead><tr><th>Date</th><th class="num">old clk</th><th class="num">new clk</th><th class="num">Combined</th><th class="num">old pos</th><th class="num">new pos</th></tr></thead><tbody>
-<tr><td>14 Sep</td><td class="num">415</td><td class="num">0</td><td class="num">415</td><td class="num">3.1</td><td class="num">-</td></tr>
-<tr><td>15 Sep</td><td class="num">430</td><td class="num">0</td><td class="num">430</td><td class="num">2.9</td><td class="num">-</td></tr>
-<tr><td>16 Sep</td><td class="num">249</td><td class="num">0</td><td class="num">249</td><td class="num">2.4</td><td class="num">-</td></tr>
-<tr><td>17 Sep</td><td class="num">288</td><td class="num">0</td><td class="num">288</td><td class="num">1.8</td><td class="num">-</td></tr>
-<tr><td>18 Sep</td><td class="num">1,098</td><td class="num">0</td><td class="num">1,098</td><td class="num">2.1</td><td class="num">-</td></tr>
-<tr><td>19 Sep</td><td class="num">658</td><td class="num">0</td><td class="num">658</td><td class="num">2.2</td><td class="num">-</td></tr>
-<tr><td>20 Sep</td><td class="num">901</td><td class="num">0</td><td class="num">901</td><td class="num">2.5</td><td class="num">-</td></tr>
-<tr style="border-top:2px solid #111;"><td>21 Sep</td><td class="num">380</td><td class="num">22</td><td class="num">402</td><td class="num">2.2</td><td class="num">4.8</td></tr>
-<tr><td>22 Sep</td><td class="num">277</td><td class="num">14</td><td class="num">291</td><td class="num">2.1</td><td class="num">4.9</td></tr>
-<tr><td>23 Sep</td><td class="num">301</td><td class="num">11</td><td class="num">312</td><td class="num">2.3</td><td class="num">5.7</td></tr>
-<tr><td>24 Sep</td><td class="num">406</td><td class="num">12</td><td class="num">418</td><td class="num">2.0</td><td class="num">5.6</td></tr>
-<tr><td>25 Sep</td><td class="num">1,472</td><td class="num">11</td><td class="num">1,483</td><td class="num">5.4</td><td class="num">4.8</td></tr>
-<tr><td>26 Sep</td><td class="num">2,067</td><td class="num">96</td><td class="num">2,163</td><td class="num">4.4</td><td class="num">3.5</td></tr>
+  <h2 class="section-header">3. Blog condition: gogogo.id/blog vs gogogo.com/id-id/blog</h2>
+  <div class="callout callout-yellow">
+    <h3>The blog is in the clearest transition dip: combined blog clicks -17.5%</h3>
+    <div class="status-grid">
+      <div class="status-card"><h4>Blog pre (14 to 19 Sep)</h4><div class="value">9,269</div></div>
+      <div class="status-card warning"><h4>Blog post (21 to 26 Sep, combined)</h4><div class="value">7,651</div></div>
+      <div class="status-card warning"><h4>Change</h4><div class="value trend-down">-17.5%</div></div>
+      <div class="status-card"><h4>Blog position old to new</h4><div class="value">5.6 to 6.7</div></div>
+    </div>
+    <p style="margin-bottom:0;">The old blog clicks fell sharply on 25 to 26 September (1,289 to 397) as Google began swapping blog URLs, while the new blog is still small (112 on 26 Sep). The new blog position (6.7) is close to the old (5.6), which is encouraging, but the new blog volume has a long way to climb. The blog is the area most visibly mid handover right now.</p>
+  </div>
+  <div class="chart-container"><h3>Daily blog clicks: gogogo.id/blog and gogogo.com/id-id/blog (stacked)</h3><canvas id="blog"></canvas></div>
+  <h3 style="margin:20px 0 12px;font-size:1rem;color:var(--medium-gray);">Daily detail</h3>
+  <div class="table-scroll"><table class="data-table"><thead><tr><th>Date</th><th class="num">gogogo.id/blog</th><th class="num">com/id-id/blog</th><th class="num">Combined</th></tr></thead><tbody>
+<tr><td>14 Sep</td><td class="num">1,357</td><td class="num">0</td><td class="num">1,357</td></tr>
+<tr><td>15 Sep</td><td class="num">1,201</td><td class="num">0</td><td class="num">1,201</td></tr>
+<tr><td>16 Sep</td><td class="num">1,414</td><td class="num">0</td><td class="num">1,414</td></tr>
+<tr><td>17 Sep</td><td class="num">1,553</td><td class="num">0</td><td class="num">1,553</td></tr>
+<tr><td>18 Sep</td><td class="num">1,835</td><td class="num">0</td><td class="num">1,835</td></tr>
+<tr><td>19 Sep</td><td class="num">1,909</td><td class="num">0</td><td class="num">1,909</td></tr>
+<tr><td>20 Sep</td><td class="num">1,614</td><td class="num">0</td><td class="num">1,614</td></tr>
+<tr style="border-top:2px solid #111;"><td>21 Sep (migration)</td><td class="num">1,696</td><td class="num">1</td><td class="num">1,697</td></tr>
+<tr><td>22 Sep</td><td class="num">1,678</td><td class="num">2</td><td class="num">1,680</td></tr>
+<tr><td>23 Sep</td><td class="num">1,540</td><td class="num">6</td><td class="num">1,546</td></tr>
+<tr><td>24 Sep</td><td class="num">1,289</td><td class="num">31</td><td class="num">1,320</td></tr>
+<tr><td>25 Sep</td><td class="num">818</td><td class="num">81</td><td class="num">899</td></tr>
+<tr><td>26 Sep</td><td class="num">397</td><td class="num">112</td><td class="num">509</td></tr>
 </tbody></table></div>
 
   <h2 class="section-header">Summary</h2>
   <div class="callout callout-green">
     <ul>
-      <li><strong>No traffic loss so far.</strong> Combined Indonesian clicks are +15.3% across the migration, and demand kept rising through it.</li>
-      <li><strong>The new domain is being indexed and is ramping</strong> (8 to 3,657 clicks per day in six days), which is the healthy signal that the migration is transferring.</li>
-      <li><strong>Free Fire and Mobile Legends are mid handover</strong> with a short transition dip on the newest days while the new URLs climb; Roblox has not handed over yet and is still at full strength.</li>
-      <li><strong>It is early.</strong> Six days in, the picture is healthy, but migrations can dip in weeks two to four. We will monitor the combined figure and the three PDPs weekly until the new domain fully replaces the old in the index.</li>
+      <li><strong>No click loss yet:</strong> combined Indonesian clicks are +15.3%, because the old URLs still ranked through most of the window.</li>
+      <li><strong>But the leading indicator is weaker:</strong> the new gogogo.com/id-id URLs are entering at much lower positions for the head keywords (Free Fire and Mobile Legends "top up" terms at page two to six versus page one on the old URLs). Roblox has transferred best and is near parity.</li>
+      <li><strong>The blog is mid handover</strong> with a visible dip (-17.5% combined) as old blog URLs drop out and the new blog ramps; the new blog position is close to the old, which is a good sign.</li>
+      <li><strong>What to watch (next one to two weeks):</strong> the new URL positions for "top up ff" and "top up ml" climbing back toward page one, the new blog volume ramping, and the combined daily figure holding. This is the normal migration transition, but recovery is not yet complete.</li>
     </ul>
   </div>
   <div class="footer"><p>Prepared by Novastacks for Gogogo (Flip Group) | Data source: Google Search Console (aeo-novastacks profile), 14 to 26 September 2026 | Report generated: 29 September 2026</p></div>
 </div>
 <script>
 const gray='#666666',blue='#01aac1';
-new Chart(document.getElementById('mig'),{type:'bar',data:{labels:['14 Sep', '15 Sep', '16 Sep', '17 Sep', '18 Sep', '19 Sep', '20 Sep', '21 Sep', '22 Sep', '23 Sep', '24 Sep', '25 Sep', '26 Sep'],datasets:[
- {label:'gogogo.id (old)',data:[10723, 9691, 11896, 18799, 27421, 26288, 19945, 19313, 17728, 15401, 19146, 26542, 15354],backgroundColor:gray},
- {label:'gogogo.com/id-id (new)',data:[0, 0, 0, 0, 0, 0, 8, 124, 126, 136, 569, 2751, 3657],backgroundColor:blue}]},
- options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true,ticks:{callback:v=>v.toLocaleString()}}}}});
-</script>
-</body></html>
+function stacked(id,old,nw,lo,ln){new Chart(document.getElementById(id),{type:'bar',data:{labels:['14 Sep', '15 Sep', '16 Sep', '17 Sep', '18 Sep', '19 Sep', '20 Sep', '21 Sep', '22 Sep', '23 Sep', '24 Sep', '25 Sep', '26 Sep'],datasets:[
+ {label:lo,data:old,backgroundColor:gray},{label:ln,data:nw,backgroundColor:blue}]},
+ options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true,ticks:{callback:v=>v.toLocaleString()}}}}});}
+stacked('mig',[10723, 9691, 11896, 18799, 27421, 26288, 19945, 19313, 17728, 15401, 19146, 26542, 15354],[0, 0, 0, 0, 0, 0, 8, 124, 126, 136, 569, 2751, 3657],'gogogo.id (old)','gogogo.com/id-id (new)');
+stacked('blog',[1357, 1201, 1414, 1553, 1835, 1909, 1614, 1696, 1678, 1540, 1289, 818, 397],[0, 0, 0, 0, 0, 0, 0, 1, 2, 6, 31, 81, 112],'gogogo.id/blog (old)','com/id-id/blog (new)');
+</script></body></html>
