@@ -91,7 +91,7 @@
   <h2 class="section-header">2. PDP condition: the three champion pages and their top five non-branded keywords</h2>
   <div class="callout callout-yellow">
     <h3>The new URLs are indexed and starting to rank, but the head keywords are entering at much weaker positions than the old URLs</h3>
-    <p style="margin-bottom:10px;">This is the real signal to watch. Combined clicks held (section 1) mainly because the old URLs were still ranking. As Google swaps to the new gogogo.com/id-id pages (already happening for Free Fire and Mobile Legends around 25 to 26 September), the new pages are currently ranking well below where the old pages sat for the money keywords. They must climb back to the old positions for traffic to hold once the old URLs fully drop out.</p>
+    <p style="margin-bottom:10px;">This is the real signal to watch. Combined clicks held (section 1) mainly because the old URLs were still ranking. As Google swaps to the new gogogo.com/id-id pages (already happening for Free Fire and Mobile Legends around 25 to 26 September), the new pages are currently ranking well below where the old pages sat for the money keywords. They are still being reindexed on the new domain and their positions are still settling, which takes time after a domain move, and this needs to progress for traffic to hold once the old URLs fully drop out.</p>
     <p style="margin-bottom:0;">Old position = gogogo.id over 14 to 24 September (when the old URL was still ranking). New position = gogogo.com/id-id over 21 to 26 September (impression weighted). Lower is better.</p>
   </div>
 
@@ -103,7 +103,7 @@
 <tr><td>top up</td><td class="num">7.8</td><td class="num">64.0</td><td>far below old, must climb</td></tr>
 <tr><td>top up ff murah</td><td class="num">5.0</td><td class="num">20.0</td><td>far below old, must climb</td></tr>
 </tbody></table></div>
-  <p style="font-size:0.9rem;color:#555;margin:8px 0 0;">The new Free Fire URL is currently at page two to six for the head terms ("top up ff" 5.1 to 31), so it is early in the transition and must recover toward the old page one positions.</p>
+  <p style="font-size:0.9rem;color:#555;margin:8px 0 0;">The new Free Fire URL is currently at page two to six for the head terms ("top up ff" 5.1 to 31), so it is early in the transition: the new URL is still being reindexed and positions take time to settle after a domain move.</p>
 
   <h3 style="margin:22px 0 10px;font-size:1.05rem;color:var(--medium-gray);">Top Up ML (Mobile Legends)</h3>
   <div class="table-scroll"><table class="data-table"><thead><tr><th>Non-branded keyword</th><th class="num">Old position (gogogo.id)</th><th class="num">New position (gogogo.com/id-id)</th><th>Read</th></tr></thead><tbody>
@@ -113,7 +113,7 @@
 <tr><td>topup mlbb</td><td class="num">4.7</td><td class="num">20.0</td><td>far below old, must climb</td></tr>
 <tr><td>top up ml termurah</td><td class="num">6.4</td><td class="num">26.5</td><td>far below old, must climb</td></tr>
 </tbody></table></div>
-  <p style="font-size:0.9rem;color:#555;margin:8px 0 0;">Same pattern as Free Fire: the new Mobile Legends URL is entering at position 19 to 32 for the head terms versus roughly 5 to 7 on the old URL. Watch it climb.</p>
+  <p style="font-size:0.9rem;color:#555;margin:8px 0 0;">Same pattern as Free Fire: the new Mobile Legends URL is entering at position 19 to 32 for the head terms versus roughly 5 to 7 on the old URL. It is still being reindexed on the new domain and needs time to settle.</p>
 
   <h3 style="margin:22px 0 10px;font-size:1.05rem;color:var(--medium-gray);">Top Up Roblox</h3>
   <div class="table-scroll"><table class="data-table"><thead><tr><th>Non-branded keyword</th><th class="num">Old position (gogogo.id)</th><th class="num">New position (gogogo.com/id-id)</th><th>Read</th></tr></thead><tbody>
@@ -127,7 +127,7 @@
 
   <div class="callout callout-blue">
     <h3>So, is it recovering?</h3>
-    <p style="margin-bottom:0;">Early signs yes, but incomplete. The new pages are indexed and appearing, and Roblox is nearly at parity. Free Fire and Mobile Legends are still ranking well below the old URLs on their head keywords, so their recovery has only just started. The single most important thing to watch over the next one to two weeks is whether the new URL positions for "top up ff" and "top up ml" climb back toward page one.</p>
+    <p style="margin-bottom:0;">Early signs yes, but incomplete. The new pages are indexed and appearing, and Roblox is nearly at parity. Free Fire and Mobile Legends are still ranking well below the old URLs on their head keywords, so their recovery has only just started. The single most important thing to watch over the next one to two weeks is the new gogogo.com/id-id URLs completing reindexing, since moving from the old domain to the new one takes time for the head keyword positions to settle.</p>
   </div>
 
   <h2 class="section-header">3. Blog condition: gogogo.id/blog vs gogogo.com/id-id/blog</h2>
@@ -162,10 +162,12 @@
   <h2 class="section-header">4. Technical signals: redirects, response codes and indexing</h2>
   <div class="callout callout-green">
     <h3>The redirect setup is correct: gogogo.id points one to one at gogogo.com/id-id</h3>
-    <p style="margin-bottom:10px;">Verified live on 29 September: every gogogo.id URL now returns an HTTP 308 permanent redirect to the exact matching gogogo.com/id-id URL, with the path preserved.</p>
+    <p style="margin-bottom:10px;">The redirects were put in place at the 21 September migration and remain correctly configured. We verified them again live on 29 September: every gogogo.id URL returns an HTTP 308 permanent redirect to the exact matching gogogo.com/id-id URL, with the path preserved, including the three champion PDPs.</p>
     <div class="table-scroll"><table class="data-table"><thead><tr><th>Old URL</th><th>Response</th><th>Redirects to</th></tr></thead><tbody>
       <tr><td>gogogo.id/</td><td>308 permanent</td><td>gogogo.com/id-id</td></tr>
       <tr><td>gogogo.id/p/topup/free-fire-games</td><td>308 permanent</td><td>gogogo.com/id-id/p/topup/free-fire-games</td></tr>
+      <tr><td>gogogo.id/p/topup/mobile-legends-games</td><td>308 permanent</td><td>gogogo.com/id-id/p/topup/mobile-legends-games</td></tr>
+      <tr><td>gogogo.id/p/topup/voucher-roblox-robux-games</td><td>308 permanent</td><td>gogogo.com/id-id/p/topup/voucher-roblox-robux-games</td></tr>
       <tr><td>gogogo.id/blog/</td><td>308 permanent</td><td>gogogo.com/id-id/blog/</td></tr>
     </tbody></table></div>
     <p style="margin-bottom:0;">A one to one permanent redirect is the correct way to migrate: Google consolidates the old page signals onto the new URL. This is exactly what we want to see, and it explains the response code pattern below.</p>
@@ -184,7 +186,7 @@
     <h3>This is the migration transition we need to watch closely over the next one to two weeks</h3>
     <p style="margin-bottom:10px;">Combined clicks are holding, but the new gogogo.com/id-id URLs are still ranking below the old ones on the head keywords, so the migration is not yet fully settled. We are watching these signals weekly:</p>
     <ul>
-      <li>The new URL positions for "top up ff" and "top up ml" climbing back toward page one.</li>
+      <li>The new gogogo.com/id-id URLs for "top up ff" and "top up ml" completing reindexing and their positions settling, since a move from the old domain (.id) to the new domain (.com) takes time.</li>
       <li>The new blog volume ramping as the old blog URLs hand over, and the new blog position holding.</li>
       <li>The combined daily Indonesian clicks holding as gogogo.id fully swaps to gogogo.com/id-id.</li>
     </ul>
@@ -197,7 +199,7 @@
       <li><strong>No click loss yet:</strong> combined Indonesian clicks are +15.3%, because the old URLs still ranked through most of the window.</li>
       <li><strong>But the leading indicator is weaker:</strong> the new gogogo.com/id-id URLs are entering at much lower positions for the head keywords (Free Fire and Mobile Legends "top up" terms at page two to six versus page one on the old URLs). Roblox has transferred best and is near parity.</li>
       <li><strong>The blog is mid handover</strong> with a visible dip (-17.5% combined) as old blog URLs drop out and the new blog ramps; the new blog position is close to the old, which is a good sign.</li>
-      <li><strong>What to watch (next one to two weeks):</strong> the new URL positions for "top up ff" and "top up ml" climbing back toward page one, the new blog volume ramping, and the combined daily figure holding. This is the normal migration transition, but recovery is not yet complete.</li>
+      <li><strong>What to watch (next one to two weeks):</strong> the new gogogo.com/id-id URLs for "top up ff" and "top up ml" still being reindexed and their positions settling, the new blog volume ramping, and the combined daily figure holding. Moving a site from the old domain (.id) to the new domain (.com) takes time for Google to fully reindex, so this is the normal migration transition and is not yet complete.</li>
     </ul>
   </div>
   <div class="footer"><p>Prepared by Novastacks for Gogogo (Flip Group) | Data source: Google Search Console (aeo-novastacks profile), 14 to 26 September 2026 | Report generated: 29 September 2026</p></div>
