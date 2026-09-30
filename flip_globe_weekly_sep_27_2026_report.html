@@ -73,14 +73,14 @@
             <h3>Period in Review: Globe reached its best weekly position; converter eased on small numbers</h3>
             <ul>
                 <li><strong>Flip Globe position improved 7.58 to 7.14,</strong> its best weekly level since we took charge, beating the 7.31 of the week ending 13 September. Clicks were near flat at -3.0% (303 to 294).</li>
-                <li><strong>Whole-site blog +3.7%</strong> (27,842 to 28,859), with position improving (7.14 to 6.98).</li>
+                <li><strong>Globe-related blog -1.98%</strong> (1,716 to 1,682 clicks across 290 overseas transfer articles), position 7.18 to 6.76.</li>
                 <li><strong>Converter Indonesian -4.6%</strong> (4,061 to 3,875), the largest area by volume, with its position unchanged (7.00), so this is softer demand rather than a ranking loss.</li>
                 <li><strong>Converter English -17.7%</strong> (220 to 181) on small absolute numbers, position flat (8.93 to 8.94).</li>
             </ul>
         </div>
         <div class="status-grid">
             <div class="status-card"><h4>Globe Avg Position</h4><div class="value trend-up">7.58 to 7.14</div></div>
-            <div class="status-card"><h4>Whole-Site Blog Clicks</h4><div class="value trend-up">+3.65%</div></div>
+            <div class="status-card"><h4>Globe-Related Blog Clicks</h4><div class="value trend-down">-1.98%</div></div>
             <div class="status-card warning"><h4>Converter ID Clicks</h4><div class="value trend-down">-4.58%</div></div>
             <div class="status-card warning"><h4>Converter EN Clicks</h4><div class="value trend-down">-17.73%</div></div>
         </div>
@@ -328,8 +328,9 @@
             <div class="kpi-card"><div class="label">Globe-Related Blog Clicks</div><div class="value">1,682</div><div class="change trend-down">-1.98%</div></div>
             <div class="kpi-card"><div class="label">Globe-Related Blog Impressions</div><div class="value">166,097</div><div class="change trend-up">+8.73%</div></div>
             <div class="kpi-card"><div class="label">Pages Identified</div><div class="value">290</div><div class="change trend-flat">by slug (overseas transfer)</div></div>
-            <div class="kpi-card"><div class="label">Whole-Site Blog</div><div class="value trend-up">+3.65%</div><div class="change trend-flat">position 6.98</div></div>
+            <div class="kpi-card"><div class="label">Globe-Related Blog Position</div><div class="value">6.76</div><div class="change trend-up">from 7.18 (improved)</div></div>
         </div>
+        <p style="font-size:0.82rem;color:#888;margin:-8px 0 16px;"><em>For context only: whole-site blog clicks went 27,842 to 28,859 (+3.65%), position 7.14 to 6.98. This report focuses on the globe-related articles above.</em></p>
         <h3 style="margin:20px 0 15px;font-size:1rem;color:var(--medium-gray);">Top Globe-Related Blogs</h3>
         <p style="font-size:0.82rem;color:#666;margin:0 0 12px;"><strong>Novastacks</strong> column flags blogs we produced that are live in production: <span class="badge" style="background:#22c55e;">New - Month</span> created new, <span class="badge" style="background:#eab308;">Refreshed - Month</span> existing blog we refreshed. Blank = not a Novastacks content-plan blog (or not yet live). Source: content-plan SSOT.</p>
         <div class="table-scroll">
@@ -417,7 +418,7 @@
     <script>
         const gray='#666666',blue='#01aac1',teal='#017d8e';
         new Chart(document.getElementById('cba'),{type:'bar',data:{labels:['Flip Globe','Converter ID','Converter EN','Globe Blog'],datasets:[{label:'Previous',data:[303,4061,220,1716],backgroundColor:gray},{label:'Current',data:[294,3875,181,1682],backgroundColor:blue}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,ticks:{callback:v=>v.toLocaleString()}}}}});
-        new Chart(document.getElementById('pba'),{type:'bar',data:{labels:['Flip Globe','Converter ID','Converter EN','Globe Blog'],datasets:[{label:'Previous',data:[7.58,7.00,8.93,7.14],backgroundColor:gray},{label:'Current',data:[7.14,7.00,8.94,6.98],backgroundColor:teal}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,reverse:true,title:{display:true,text:'Avg position (lower is better)'}}}}});
+        new Chart(document.getElementById('pba'),{type:'bar',data:{labels:['Flip Globe','Converter ID','Converter EN','Globe Blog'],datasets:[{label:'Previous',data:[7.58,7.00,8.93,7.18],backgroundColor:gray},{label:'Current',data:[7.14,7.00,8.94,6.76],backgroundColor:teal}]},options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,reverse:true,title:{display:true,text:'Avg position (lower is better)'}}}}});
     </script>
 </body>
 </html>
