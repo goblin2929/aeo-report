@@ -77,11 +77,6 @@ def build():
       <div class="takeaway-box win"><b>✓ Improved (US, main page)</b><ul>{li(ups)}</ul></div>
       <div class="takeaway-box watch"><b>⚠ Watch (US, main page)</b><ul>{li(downs) or '<li>No material declines this month.</li>'}</ul></div>
     </div>
-    <h3 style="margin-top:16px;">Freight management cluster: listicle vs homepage</h3>
-    <table class="t"><thead><tr><th>Keyword</th><th class="num">Listicle · Aug</th><th class="num">Listicle · Sep</th><th class="num">Homepage · Aug</th><th class="num">Homepage · Sep</th><th class="num">Listicle impr Aug / Sep</th><th class="num">Homepage impr Aug / Sep</th></tr></thead><tbody>
-      {cluster_rows()}
-    </tbody></table>
-    <p class="note">Monthly average US position of the <a href="{LIST}" target="_blank">Best Freight Management Software listicle</a> and the <a href="{HOME}" target="_blank">homepage</a> for the same keyword. Lower = better.</p>
     <div class="takeaway-box" style="margin-top:8px;"><b>Read (hypothesis): the search intent is shifting from listicles toward vendor pages.</b> In August Google answered these freight management queries mainly with the listicle; in September it showed the homepage instead, and the solution pages also climbed (for example /solutions/ocean-freight for “ocean freight management software”, 29.2 to 18.5 monthly average). For ocean and sea freight management software the shift is a net gain: <b>8.5 → 8.0</b> and <b>9.3 → 5.2</b>, shifted from listicle to homepage. For the broad terms it is a net loss: “freight management software” <b>3.1 → 12.2</b> and “freight management system software” <b>5.4 → 10.6</b>, also shifted from listicle to homepage. If the SERP keeps favouring vendor pages, the October solution and product page work is the lever, because those are the pages Google now wants to show for this cluster. The listicle is live and Google can still index it; we keep tracking both pages.</div>
     <h3 style="margin-top:16px;">Emerging Keywords (candidate terms: CRM / TMS / tracking)</h3>
     <table class="t"><thead>{hdr('Emerging Keyword')}</thead><tbody>
