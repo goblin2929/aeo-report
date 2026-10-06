@@ -106,7 +106,7 @@ HTML = f'''<!DOCTYPE html>
   </header>
 
   <div class="hook">
-    <strong>Headline:</strong> September was GoFreight's best organic month of 2026 so far. Total clicks grew <strong>{d_tot_p:+.1f}% to {f(CL_J)}</strong>, non brand clicks grew <strong>{d_nb_p:+.1f}% to {f(NB_J)}</strong> (now <strong>{nbsh_j:.1f}%</strong> of all clicks), and average position improved from <strong>{POS_N} to {POS_J}</strong> while CTR rose from <strong>{CTR_N:.2f}% to {CTR_J:.2f}%</strong>. AI referred sessions kept climbing, <strong>{f(AIS_N)} to {f(AIS_J)} ({ais_p:+.1f}%)</strong>, led by ChatGPT. {vis_hook} One item to watch: the Best Freight Management Software listicle lost its top 5 Google position on 5 to 6 September (see Core Keyword Tracking).
+    <strong>Headline:</strong> September was GoFreight's best organic month of 2026 so far. Total clicks grew <strong>{d_tot_p:+.1f}% to {f(CL_J)}</strong>, non brand clicks grew <strong>{d_nb_p:+.1f}% to {f(NB_J)}</strong> (now <strong>{nbsh_j:.1f}%</strong> of all clicks), and average position improved from <strong>{POS_N} to {POS_J}</strong> while CTR rose from <strong>{CTR_N:.2f}% to {CTR_J:.2f}%</strong>. AI referred sessions kept climbing, <strong>{f(AIS_N)} to {f(AIS_J)} ({ais_p:+.1f}%)</strong>, led by ChatGPT. {vis_hook} One item to watch: for the broad freight management keywords Google shifted from the listicle to the homepage, which ranks lower (for “freight management software” 3.1 → 12.2 monthly average; see Core Keyword Tracking).
   </div>
 
   <div class="kpi-row">
@@ -165,7 +165,7 @@ HTML = f'''<!DOCTYPE html>
         <li><b>[SEO] Implement the new content for the Solution &amp; Product pages</b>: publish the approved H2 and FAQ rewrite across the 14 solution and product pages once verification is complete.<span class="tag product">Product</span><span class="tag aeo">AEO</span></li>
       </ol>
       <div class="takeaway-box" style="margin-top:12px;"><b>Why this matters for AI visibility:</b> for software selection prompts, AI assistants lean on a vendor's own solution pages. In the last 30 days, ChatGPT used a GoFreight page as a source in 159 answers without naming GoFreight, while it named Descartes 40 times and CargoWise 32 times in those same answers. Most of Descartes' citations land on its /solutions/ pages; most of GoFreight's land on blog posts. Stronger solution and product pages give assistants a GoFreight claim they can repeat.</div>
-      <div class="takeaway-box watch" style="margin-top:8px;"><b>Watch:</b> the <a href="https://gofreight.com/blog/best-freight-management-software" target="_blank">Best Freight Management Software</a> listicle lost its top 5 position for “freight management software” on 5 to 6 September: its average US position went from 3.1 in August to 15.8 in September, and Google now ranks the homepage for that group of keywords instead. The page is live and Google can still index it; the cause is still open and we are tracking it.</div>
+      <div class="takeaway-box watch" style="margin-top:8px;"><b>Watch:</b> the <a href="https://gofreight.com/blog/best-freight-management-software" target="_blank">Best Freight Management Software</a> listicle lost its top 5 position for “freight management software”: its monthly average US position went from 3.1 in August to 15.8 in September, and Google now shows the homepage for that group of keywords instead (12.2 in September). The page is live and Google can still index it; the cause is still open and we are tracking it.</div>
     </section>
   </div>
 
