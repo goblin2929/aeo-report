@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>NEK 606 Offshore Cables category page (concept mockup)</title>
+<style>
+:root{--navy:#1a356d;--navy2:#13274f;--green:#57B957;--ink:#181B31;--grey:#5B6670;--line:#DCE2EA;--bg:#F5F7FA;--note:#FFF4D6;--noteb:#E0A23B;--notet:#6B4A0F}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{color:var(--navy)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* mockup bar */
+.mbar{background:#0F172A;color:#E2E8F0;font-size:13px;position:sticky;top:0;z-index:50}
+.mbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+.mbar b{color:#fff}
+.mbar label{display:inline-flex;align-items:center;gap:6px;cursor:pointer;background:#1E293B;border:1px solid #334155;border-radius:6px;padding:4px 10px}
+.example{background:#FEF3C7;color:#78350F;font-size:13px;border-bottom:1px solid #FCD34D}
+.example .wrap{padding-top:8px;padding-bottom:8px}
+
+/* notes */
+.note{display:block;background:var(--note);border:1px dashed var(--noteb);color:var(--notet);border-radius:8px;padding:9px 12px;font-size:12.5px;line-height:1.5;margin:12px 0}
+.note b{color:#4A3207}
+body.hide-notes .note{display:none}
+.seo{background:var(--note);border:1px dashed var(--noteb);border-radius:10px;padding:14px 16px;margin:18px 0;font-size:13px;color:var(--notet)}
+.seo table{border-collapse:collapse;width:100%}
+.seo td{padding:4px 8px;vertical-align:top;border-top:1px solid #F1D9A6}
+.seo td:first-child{font-weight:700;white-space:nowrap;width:150px}
+body.hide-notes .seo{display:none}
+
+/* site header */
+.site{border-bottom:1px solid var(--line);background:#fff}
+.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:19px;color:var(--navy);letter-spacing:.2px}
+.logo small{display:block;font-weight:500;font-size:11px;color:var(--grey);letter-spacing:.3px}
+.nav{display:flex;gap:20px;font-size:14.5px;flex-wrap:wrap}
+.nav a{text-decoration:none;color:var(--ink)}
+.nav a.on{color:var(--navy);font-weight:700}
+.btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;border-radius:6px;padding:10px 16px;font-size:14.5px;border:0;cursor:pointer}
+.btn.alt{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.btn.sm{padding:7px 12px;font-size:13px}
+
+/* breadcrumb + hero */
+.crumb{font-size:13px;color:var(--grey);padding:16px 0 4px}
+.crumb a{color:var(--grey)}
+.hero{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;padding:6px 0 26px}
+h1{font-size:36px;line-height:1.15;margin:6px 0 12px;color:var(--navy2)}
+.lead{font-size:17px;margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.chip{background:#EEF2F8;color:var(--navy);border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:600}
+.facts{list-style:none;padding:0;margin:0 0 18px;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;font-size:14.5px}
+.facts li{padding-left:22px;position:relative}
+.facts li:before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:3px;background:var(--green)}
+.paths{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px}
+.paths h2{font-size:17px;margin:0 0 10px;color:var(--navy2)}
+.path{background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 14px;margin-bottom:10px}
+.path h3{margin:0 0 4px;font-size:15px}
+.path p{margin:0 0 9px;font-size:13.5px;color:var(--grey)}
+
+/* listing */
+.sec{padding:30px 0;border-top:1px solid var(--line)}
+.sec h2{font-size:24px;margin:0 0 6px;color:var(--navy2)}
+.sec .sub{color:var(--grey);margin:0 0 16px}
+.listing{display:grid;grid-template-columns:250px 1fr;gap:24px}
+.filters{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;align-self:start;position:sticky;top:60px}
+.filters h3{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--grey);margin:14px 0 6px}
+.filters h3:first-child{margin-top:0}
+.filters label{display:flex;gap:8px;align-items:center;font-size:14px;margin:4px 0;cursor:pointer}
+.count{font-size:13.5px;color:var(--grey);margin:0 0 10px}
+.prod{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:16px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:#fff}
+.ph{width:96px;height:96px;border-radius:8px;background:repeating-linear-gradient(45deg,#E8ECF2,#E8ECF2 8px,#F2F5F9 8px,#F2F5F9 16px);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--grey);text-align:center}
+.prod h3{margin:0 0 3px;font-size:16.5px}
+.prod h3 a{text-decoration:none;color:var(--navy2)}
+.prod .spec{font-size:13.5px;color:var(--grey);margin:0 0 7px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:5px;padding:1px 7px;color:#334155}
+.stock{font-size:12.5px;font-weight:700;color:#1E7B34}
+.acts{display:flex;flex-direction:column;gap:7px;align-items:stretch;min-width:150px}
+.prod.hidden{display:none}
+
+/* tables + cards */
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t th{background:var(--navy);color:#fff;text-align:left;padding:9px 10px;font-weight:600}
+table.t td{border-bottom:1px solid var(--line);padding:9px 10px;vertical-align:top}
+.tablewrap{overflow-x:auto}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff}
+.card h3{margin:0 0 6px;font-size:16px;color:var(--navy2)}
+.card p{margin:0;font-size:14px;color:#334155}
+.card ul{margin:6px 0 0;padding-left:18px;font-size:14px;color:#334155}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.logos{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.logos span{border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-size:13px;color:var(--grey);background:var(--bg)}
+details{border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;background:#fff}
+summary{font-weight:700;cursor:pointer;color:var(--navy2)}
+details p{margin:8px 0 0;font-size:14.5px}
+.related{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.related a{display:block;border:1px solid var(--line);border-radius:10px;padding:14px;text-decoration:none;color:var(--navy2);font-weight:700;font-size:14px;background:var(--bg)}
+.related a span{display:block;font-weight:400;color:var(--grey);font-size:12.5px;margin-top:4px}
+.cta{background:var(--navy);color:#fff;border-radius:14px;padding:26px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.cta h2{color:#fff;margin:0 0 4px}
+.cta p{margin:0;color:#D6DEEC}
+footer{background:var(--navy2);color:#C9D3E6;font-size:13px;margin-top:34px}
+footer .wrap{padding-top:22px;padding-bottom:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#fff}
+
+@media (max-width:900px){
+  .hero,.listing,.two{grid-template-columns:minmax(0,1fr)}
+  .seo td{display:block;border-top:0;padding:2px 0}
+  .seo td:first-child{width:auto;white-space:normal;padding-top:8px}
+  .seo td{word-break:break-word}
+  .three{grid-template-columns:1fr}
+  .related{grid-template-columns:1fr 1fr}
+  .filters{position:static}
+  .facts{grid-template-columns:1fr}
+  h1{font-size:28px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .prod{grid-template-columns:64px minmax(0,1fr)}
+  .ph{width:64px;height:64px}
+  .acts{grid-column:1/-1;flex-direction:row;min-width:0}
+  .acts .btn{flex:1;text-align:center}
+  .nav{display:none}
+  .related{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="mbar"><div class="wrap">
+  <div><b>Concept mockup</b> · Category page · NEK 606 offshore cables · Prepared by Novastacks AI for Cables International, 3 November 2026</div>
+  <label><input type="checkbox" id="tog" checked> Show Novastacks notes</label>
+</div></div>
+<div class="example"><div class="wrap">Layout example. Product rows, sizes and stock labels are sample data to show the structure; Cables International supplies the real range, sizes and stock. Manufacturer names are left out until Communications approves them.</div></div>
+
+<header class="site"><div class="wrap">
+  <div class="logo">Cables International<small>A Jebsen &amp; Jessen company · Singapore</small></div>
+  <nav class="nav">
+    <a class="on" href="#">Products</a><a href="#">Industries</a><a href="#">Services</a><a href="#">Projects</a><a href="#">Insights</a><a href="#">Contact</a>
+  </nav>
+  <a class="btn" href="#quote">Request a quote</a>
+</div></header>
+
+<main class="wrap">
+
+<div class="seo">
+  <b>Page brief (not shown on the live page)</b>
+  <table>
+    <tr><td>Address</td><td>cablesinternational.com/products/offshore-marine-cables/nek-606-offshore-cables</td></tr>
+    <tr><td>Title tag</td><td>NEK 606 Offshore Cables, Stocked in Singapore | Cables International</td></tr>
+    <tr><td>Meta description</td><td>Halogen free, mud resistant NEK 606 power and instrumentation cables in stock in Singapore. Order to shipment within 24 hours for offshore projects and repairs.</td></tr>
+    <tr><td>Main heading (H1)</td><td>NEK 606 Offshore Cables</td></tr>
+    <tr><td>Searches targeted</td><td>nek 606 cable · offshore cable · instrumentation cable · offshore cable supplier singapore (homepage ranks #9 today) · marine and offshore cable stockist</td></tr>
+    <tr><td>AI questions targeted</td><td>"Who stocks NEK 606 cable in Singapore?" · "Which cable types are used on offshore platforms?" (Cables International absent today) · "Who can supply shipboard cable from stock for an urgent repair?" (absent today)</td></tr>
+    <tr><td>Why this page first</td><td>NEK 606 is the main offshore revenue line (William, 3 November). Google searches for it are almost zero, so the page is built to be the one AI assistants quote, with the standard, the cable types and the stock promise in plain text.</td></tr>
+    <tr><td>Structured data</td><td>BreadcrumbList · CollectionPage with ItemList of the product pages · FAQPage matching the questions below word for word · Organization (Jebsen &amp; Jessen Singapore Pte Ltd, trading as Cables International)</td></tr>
+    <tr><td>Fixes findings</td><td>6.1 No category pages · 6.2 No real product pages (each row links to one) · 4.2 No main heading on /products/ · 5.4 No buyer questions</td></tr>
+  </table>
+</div>
+
+<div class="crumb"><a href="#">Home</a> › <a href="#">Products</a> › <a href="#">Offshore and Marine Cables</a> › NEK 606 Offshore Cables</div>
+
+<section class="hero">
+  <div>
+    <h1>NEK 606 Offshore Cables</h1>
+    <p class="lead">Halogen free, mud resistant power, control and instrumentation cables built to NEK 606, held in stock in Singapore for offshore projects and urgent repairs. We supply operators, shipyards, EPC contractors and vessel owners on offshore projects around the world, with test reports and documentation on every order.</p>
+    <div class="chips"><span class="chip">NEK 606</span><span class="chip">IEC 60092</span><span class="chip">Flame retardant IEC 60332-3</span><span class="chip">Fire resistant IEC 60331</span><span class="chip">Low smoke IEC 61034</span><span class="chip">Halogen free IEC 60754</span></div>
+    <ul class="facts">
+      <li>In stock in our 150,000 sq ft Singapore facility</li>
+      <li>Order to shipment within 24 hours, 7 days a week</li>
+      <li>Cut lengths, staged call off and interim storage for projects</li>
+      <li>Test reports and documentation with each order</li>
+    </ul>
+    <span class="note"><b>Note.</b> The first 200 words answer what the cable is, who it is for and how fast it ships: the Discoverability Journey "answer in the first 200 words" measure. Stock, 24 hour turnaround, storage and test reports are already on the current site; the facility size is from the business profile.</span>
+  </div>
+  <aside class="paths">
+    <h2>Supplying a project or restocking?</h2>
+    <div class="path"><h3>Project supply</h3><p>Send your cable schedule. We confirm stock, cut lengths and delivery stages against your project plan, and hold the balance in storage until you call it off.</p><a class="btn sm" href="#quote">Send a cable schedule</a></div>
+    <div class="path"><h3>Restock or urgent repair</h3><p>Tell us the cable type, size and length. Stocked items leave Singapore within 24 hours of order, any day of the week.</p><a class="btn sm alt" href="#quote">Check stock</a></div>
+    <span class="note"><b>Note.</b> Two paths because William wants both project buyers and buyers who restock regularly, and names "projects plus stock in Singapore" as the key strength.</span>
+  </aside>
+</section>
+
+<section class="sec" id="range">
+  <h2>Choose your NEK 606 cable</h2>
+  <p class="sub">Filter by use, fire performance, screening and stock. Each cable type has its own page with the full size table and data sheet.</p>
+  <span class="note"><b>Note.</b> Filter and row layout follow the Allied Wire &amp; Cable SOOW Cord category page (preliminary, 6.1). Each row links to a product page (6.2). A manufacturer filter can be added once brand names are approved.</span>
+  <div class="listing">
+    <aside class="filters" id="filters">
+      <h3>Use</h3>
+      <label><input type="checkbox" data-f="use" value="power"> Power and control</label>
+      <label><input type="checkbox" data-f="use" value="instr"> Instrumentation</label>
+      <h3>Fire performance</h3>
+      <label><input type="checkbox" data-f="fire" value="fr"> Flame retardant</label>
+      <label><input type="checkbox" data-f="fire" value="fire"> Fire resistant</label>
+      <h3>Screening</h3>
+      <label><input type="checkbox" data-f="scr" value="none"> None</label>
+      <label><input type="checkbox" data-f="scr" value="c"> Collective screen</label>
+      <label><input type="checkbox" data-f="scr" value="i"> Individual and collective</label>
+      <h3>Voltage</h3>
+      <label><input type="checkbox" data-f="v" value="1kv"> 0.6/1 kV</label>
+      <label><input type="checkbox" data-f="v" value="250"> 250 V</label>
+      <h3>Availability</h3>
+      <label><input type="checkbox" data-f="stock" value="sg"> In stock in Singapore</label>
+    </aside>
+    <div>
+      <p class="count" id="count">Showing 6 cable types</p>
+
+      <div class="prod" data-use="power" data-fire="fr" data-scr="none" data-v="1kv" data-stock="sg">
+        <div class="ph">Product photo</div>
+        <div><h3><a href="#">RFOU 0.6/1 kV power cable</a></h3>
+          <p class="spec">Flame retardant, halogen free, mud resistant sheath, braided armour. 1 to 4 cores, 1.5 to 240 mm².</p>
+          <div class="tags"><span class="tag">NEK 606</span><span class="tag">IEC 60332-3</span><span class="tag">Power and control</span></div>
+          <div class="stock">● In stock in Singapore (sample)</div></div>
+        <div class="acts"><a class="btn sm" href="#quote">Add to quote</a><a class="btn sm alt" href="#">Sizes and data sheet</a></div>
+      </div>
+
+      <div class="prod" data-use="power" data-fire="fire" data-scr="none" data-v="1kv" data-stock="sg">
+        <div class="ph">Product photo</div>
+        <div><h3><a href="#">BFOU 0.6/1 kV fire resistant power cable</a></h3>
+          <p class="spec">Keeps the circuit working during a fire, for emergency and safety systems. Halogen free, mud resistant, braided armour.</p>
+          <div class="tags"><span class="tag">NEK 606</span><span class="tag">IEC 60331</span><span class="tag">Power and control</span></div>
+          <div class="stock">● In stock in Singapore (sample)</div></div>
+        <div class="acts"><a class="btn sm" href="#quote">Add to quote</a><a class="btn sm alt" href="#">Sizes and data sheet</a></div>
+      </div>
+
+      <div class="prod" data-use="instr" data-fire="fr" data-scr="c" data-v="250" data-stock="sg">
+        <div class="ph">Product photo</div>
+        <div><h3><a href="#">RFOU(c) 250 V instrumentation cable</a></h3>
+          <p class="spec">Collectively screened pairs, triples or quads for signal and control. Flame retardant, halogen free, mud resistant.</p>
+          <div class="tags"><span class="tag">NEK 606</span><span class="tag">IEC 60332-3</span><span class="tag">Instrumentation</span></div>
+          <div class="stock">● In stock in Singapore (sample)</div></div>
+        <div class="acts"><a class="btn sm" href="#quote">Add to quote</a><a class="btn sm alt" href="#">Sizes and data sheet</a></div>
+      </div>
+
+      <div class="prod" data-use="instr" data-fire="fr" data-scr="i" data-v="250" data-stock="sg">
+        <div class="ph">Product photo</div>
+        <div><h3><a href="#">RFOU(i) 250 V instrumentation cable</a></h3>
+          <p class="spec">Each pair individually screened plus an overall screen, for sensitive signals. Flame retardant, halogen free, mud resistant.</p>
+          <div class="tags"><span class="tag">NEK 606</span><span class="tag">IEC 60332-3</span><span class="tag">Instrumentation</span></div>
+          <div class="stock">● In stock in Singapore (sample)</div></div>
+        <div class="acts"><a class="btn sm" href="#quote">Add to quote</a><a class="btn sm alt" href="#">Sizes and data sheet</a></div>
+      </div>
+
+      <div class="prod" data-use="instr" data-fire="fire" data-scr="c" data-v="250" data-stock="">
+        <div class="ph">Product photo</div>
+        <div><h3><a href="#">BFOU(c) 250 V fire resistant instrumentation cable</a></h3>
+          <p class="spec">Collectively screened, keeps fire and gas detection and shutdown signals working during a fire.</p>
+          <div class="tags"><span class="tag">NEK 606</span><span class="tag">IEC 60331</span><span class="tag">Instrumentation</span></div>
+          <div class="stock" style="color:#8A5A00">● Supplied to order (sample)</div></div>
+        <div class="acts"><a class="btn sm" href="#quote">Add to quote</a><a class="btn sm alt" href="#">Sizes and data sheet</a></div>
+      </div>
+
+      <div class="prod" data-use="instr" data-fire="fire" data-scr="i" data-v="250" data-stock="sg">
+        <div class="ph">Product photo</div>
+        <div><h3><a href="#">BFOU(i) 250 V fire resistant instrumentation cable</a></h3>
+          <p class="spec">Individually and collectively screened, for safety critical signals that must survive a fire.</p>
+          <div class="tags"><span class="tag">NEK 606</span><span class="tag">IEC 60331</span><span class="tag">Instrumentation</span></div>
+          <div class="stock">● In stock in Singapore (sample)</div></div>
+        <div class="acts"><a class="btn sm" href="#quote">Add to quote</a><a class="btn sm alt" href="#">Sizes and data sheet</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <h2>RFOU or BFOU: which one do you need?</h2>
+  <p class="sub">The two families share the halogen free, mud resistant construction. The difference is how they behave in a fire.</p>
+  <div class="tablewrap"><table class="t">
+    <tr><th></th><th>RFOU (flame retardant)</th><th>BFOU (fire resistant)</th></tr>
+    <tr><td><b>In a fire</b></td><td>Limits the spread of flame along the cable run</td><td>Keeps the circuit working for a set time during a fire</td></tr>
+    <tr><td><b>Test standard</b></td><td>IEC 60332-3</td><td>IEC 60331, plus IEC 60332-3</td></tr>
+    <tr><td><b>Typical use</b></td><td>General power, lighting, control and instrumentation</td><td>Emergency power, fire and gas detection, shutdown and alarm systems</td></tr>
+    <tr><td><b>Screening options (instrumentation)</b></td><td>(c) collective screen · (i) individual and collective</td><td>(c) collective screen · (i) individual and collective</td></tr>
+  </table></div>
+  <span class="note"><b>Note.</b> Answers the AI question "which cable types are used on offshore platforms", where Cables International is absent today. Technical wording to be confirmed by the Cables International technical team before going live.</span>
+</section>
+
+<section class="sec">
+  <h2>Built for projects and for restocking</h2>
+  <div class="two">
+    <div class="card"><h3>For offshore projects</h3><ul>
+      <li>Cable schedules priced and checked against stock</li>
+      <li>Cut lengths and drum management to your installation plan</li>
+      <li>Interim storage and staged call off in Singapore</li>
+      <li>Supply to multiple yards and locations</li>
+      <li>Test reports and documentation packs for handover</li></ul></div>
+    <div class="card"><h3>For restocking and repairs</h3><ul>
+      <li>Common NEK 606 types and sizes held in Singapore</li>
+      <li>Order to shipment within 24 hours, 7 days a week</li>
+      <li>Customer inventory management for regular buyers</li>
+      <li>Shipboard and platform repair supply, including urgent orders</li></ul></div>
+  </div>
+  <span class="note"><b>Note.</b> Project services come from the current Services page and now sit next to the product they support. The repair line and "common types held in Singapore" are new wording for Cables International to confirm. Answers "who can supply shipboard cable from stock for an urgent repair", where Cables International is absent today.</span>
+</section>
+
+<section class="sec">
+  <h2>Where our offshore cables are working</h2>
+  <p class="sub">FPSO, FDPSO, FSRU, semisubmersibles, drillships, jack ups, pipe layers and support vessels.</p>
+  <div class="three">
+    <div class="card"><h3>Heerema, Sleipnir</h3><p>Extra high temperature cable rated to 200°C for a crane vessel, with Lloyd's Register approval.</p><p style="margin-top:8px"><a href="#">Read the case study</a></p></div>
+    <div class="card"><h3>Maersk, Culzean (North Sea)</h3><p>Cable supply with fire safety testing for a North Sea gas field development.</p><p style="margin-top:8px"><a href="#">Read the case study</a></p></div>
+    <div class="card"><h3>Total E&amp;P Danmark, Tyra (North Sea)</h3><p>Project managed cable supply for the Tyra field redevelopment.</p><p style="margin-top:8px"><a href="#">Read the case study</a></p></div>
+  </div>
+  <div class="logos"><span>Petronas</span><span>ExxonMobil</span><span>Sarawak Shell</span><span>Modec</span><span>SBM Offshore</span><span>Transocean</span><span>Seadrill</span><span>Petrofac</span></div>
+  <span class="note"><b>Note.</b> Case studies link both ways, so each project page passes relevance to the range it used (finding 5.2). Customer logos carry the customer's name as their image description, not a file name (finding 4.5). Case study summaries to be checked against the full case studies.</span>
+</section>
+
+<section class="sec">
+  <h2>Questions buyers ask about NEK 606 cables</h2>
+  <details open><summary>What is a NEK 606 cable?</summary><p>A NEK 606 cable is a halogen free, flame retardant or fire resistant cable built to NEK 606, the Norwegian standard for offshore cables. Its sheath resists drilling mud and oil. It is used for power, control and instrumentation on fixed platforms, FPSOs, drilling units and offshore vessels.</p></details>
+  <details><summary>Who stocks NEK 606 cable in Singapore?</summary><p>Cables International holds NEK 606 power and instrumentation cables in its 150,000 sq ft Singapore facility. Stocked items leave within 24 hours of order, 7 days a week, for offshore projects around the world.</p></details>
+  <details><summary>What is the difference between RFOU and BFOU cable?</summary><p>RFOU cable is flame retardant: it limits the spread of fire along the cable (IEC 60332-3). BFOU cable is fire resistant: it keeps the circuit working for a set time during a fire (IEC 60331), so it is used for emergency and safety systems.</p></details>
+  <details><summary>What do (i) and (c) mean in an instrumentation cable name?</summary><p>(c) means the pairs share one collective screen. (i) means each pair has its own screen plus an overall screen, which protects sensitive signals from interference between pairs.</p></details>
+  <details><summary>Can you supply NEK 606 cable for an urgent vessel or platform repair?</summary><p>Yes. Send the cable type, size and length. Stocked items ship from Singapore within 24 hours of order, any day of the week, with test reports and documentation.</p></details>
+  <span class="note"><b>Note.</b> Question headings in the buyer's words, each answered in the first sentence (finding 5.4). The FAQPage structured data must match these questions and answers exactly.</span>
+</section>
+
+<section class="sec">
+  <h2>Related ranges</h2>
+  <div class="related">
+    <a href="#">Marine power and instrumentation cables<span>For shipyards and vessel owners</span></a>
+    <a href="#">Telecommunication cables<span>Offshore and shipyard networks</span></a>
+    <a href="#">Cable glands<span>Industrial and explosion proof</span></a>
+    <a href="#">Cable cleats<span>Short circuit protection for cable runs</span></a>
+    <a href="#">Termination kits<span>MV and HV connections</span></a>
+  </div>
+  <span class="note"><b>Note.</b> Links follow William's priority lines: the other offshore revenue line (telecommunication cables), the offshore line to grow (marine power and instrumentation), and the onshore growth lines (glands, cleats, MV and HV).</span>
+</section>
+
+<section class="sec" id="quote">
+  <div class="cta">
+    <div><h2>Need NEK 606 cable this week?</h2><p>Send a cable schedule or a single line item. A cable specialist replies the same working day.</p></div>
+    <a class="btn" href="#">Request a quote</a>
+  </div>
+  <span class="note"><b>Note.</b> "Same working day" reply is a placeholder; Cables International to confirm the response time it can commit to.</span>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  <div>Cables International, trading name of Jebsen &amp; Jessen Singapore Pte Ltd, part of the Jebsen &amp; Jessen Group.</div>
+  <div><a href="#">Products</a> · <a href="#">Projects</a> · <a href="#">Contact</a> · <a href="#">Privacy Policy</a> · <a href="#">Site Terms</a></div>
+</div></footer>
+
+<script>
+document.getElementById('tog').addEventListener('change', function(e){ document.body.classList.toggle('hide-notes', !e.target.checked); });
+var boxes = document.querySelectorAll('#filters input');
+function apply(){
+  var sel = {};
+  boxes.forEach(function(b){ if(b.checked){ (sel[b.dataset.f] = sel[b.dataset.f] || []).push(b.value); } });
+  var n = 0;
+  document.querySelectorAll('.prod').forEach(function(p){
+    var ok = Object.keys(sel).every(function(f){ return sel[f].indexOf(p.dataset[f]) > -1; });
+    p.classList.toggle('hidden', !ok); if(ok) n++;
+  });
+  document.getElementById('count').textContent = 'Showing ' + n + ' cable type' + (n === 1 ? '' : 's');
+}
+boxes.forEach(function(b){ b.addEventListener('change', apply); });
+</script>
+</body>
+</html>
