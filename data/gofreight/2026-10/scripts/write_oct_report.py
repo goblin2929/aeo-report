@@ -24,6 +24,9 @@ sav_n,sav_j=gc_n+sv_n,gc_j+sv_j
 rest_n,rest_j=CL_N-sav_n,CL_J-sav_j; rest_p=(rest_j-rest_n)/rest_n*100
 brand_n,brand_j=CL_N-NB_N,CL_J-NB_J; br_p=(brand_j-brand_n)/brand_n*100
 last_wk=fr['clicks_tot'][-1]
+_SB=json.load(open('/Users/ekiriandra/tmp/oct/gf_savannah_brand_split.json'))
+_snb=lambda m:sum(v['clicks']-v['brand'] for v in _SB[m].values())
+nbx_n,nbx_j=NB_N-_snb('sep'),NB_J-_snb('oct'); nbx_p=(nbx_j-nbx_n)/nbx_n*100
 _CD=json.load(open('/Users/ekiriandra/tmp/oct/ga4_chatgpt_direct_daily.json'))['chatgpt_daily']
 def _avg(a,b,n): return sum(v for k,v in _CD.items() if a<=k<=b)/n
 cg_short=(_avg('20261001','20261007',7)-_avg('20261008','20261015',8))*8
@@ -157,9 +160,11 @@ HTML = f'''<!DOCTYPE html>
 
   <div class="kpi-row">
     <div class="kpi"><div class="label">Total Clicks · October</div><div class="val">{f(CL_J)}</div>
-      <div class="delta {dcls(d_tot)}">{sgn(d_tot)} ({d_tot_p:+.1f}%) vs September · excl. Savannah pages {rest_p:+.1f}%</div></div>
+      <div class="delta {dcls(d_tot)}">{sgn(d_tot)} ({d_tot_p:+.1f}%) vs September</div>
+      <div class="delta up" style="font-weight:600;">excl. Savannah pages {rest_p:+.1f}% ({f(rest_n)} to {f(rest_j)})</div></div>
     <div class="kpi"><div class="label">Non Brand Clicks · October</div><div class="val">{f(NB_J)}</div>
-      <div class="delta {dcls(d_nb)}">{sgn(d_nb)} ({d_nb_p:+.1f}%) MoM · {nbsh_j:.1f}% of clicks</div></div>
+      <div class="delta {dcls(d_nb)}">{sgn(d_nb)} ({d_nb_p:+.1f}%) MoM · {nbsh_j:.1f}% of clicks</div>
+      <div class="delta up" style="font-weight:600;">excl. Savannah pages {nbx_p:+.1f}% ({f(nbx_n)} to {f(nbx_j)})</div></div>
     <div class="kpi"><div class="label">AI Sessions · October (GA4)</div><div class="val">{f(AIS_J)}</div>
       <div class="delta {dcls(AIS_J-AIS_N)}">{ais_p:+.1f}% vs September {f(AIS_N)} · ChatGPT {f(fr['cg_jun'])} to {f(fr['cg_jul'])}</div></div>
     <div class="kpi"><div class="label">AI Visibility · October (WorkDuo)</div><div class="val">{VIS_J:.1f}%</div>
