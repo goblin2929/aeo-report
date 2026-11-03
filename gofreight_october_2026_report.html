@@ -407,7 +407,7 @@ new Chart(document.getElementById('chart2'), { type:'line', data:{ labels:weekLa
   {label:'Google AI Overview', data:googleAi, borderColor:'#0891b2', backgroundColor:'rgba(8,145,178,0.08)', borderWidth:2.2, tension:0.3, pointRadius:1.8},
   {label:'Perplexity', data:perplexity, borderColor:'#16a34a', backgroundColor:'rgba(22,163,74,0.08)', borderWidth:2.2, tension:0.3, pointRadius:1.8},
   {label:'ChatGPT', data:chatGpt, borderColor:'#d97706', backgroundColor:'rgba(217,119,6,0.08)', borderWidth:2.2, tension:0.3, pointRadius:1.8}
-]}, options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:10,padding:6}}, tooltip:{callbacks:{label:(c)=>`${c.dataset.label}: ${c.parsed.y.toFixed(1)}%`}}}, scales:{y:{beginAtZero:true,max:45,ticks:{font:{size:10},callback:(v)=>v+'%'},grid:{color:'#f1f5f9'}}, x:{ticks:{font:{size:10},maxRotation:0,autoSkip:true,maxTicksLimit:8},grid:{display:false}}}}});
+]}, options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:10,padding:6}}, tooltip:{callbacks:{label:(c)=>`${c.dataset.label}: ${c.parsed.y.toFixed(1)}%`}}}, scales:{y:{beginAtZero:true,max:50,ticks:{font:{size:10},callback:(v)=>v+'%'},grid:{color:'#f1f5f9'}}, x:{ticks:{font:{size:10},maxRotation:0,autoSkip:true,maxTicksLimit:8},grid:{display:false}}}}});
 
 new Chart(document.getElementById('chart3'), { type:'line', data:{ labels:weekLabels, datasets:[
   {label:'AI sessions', data:aiSessions, borderColor:'#7c3aed', backgroundColor:'rgba(124,58,237,0.15)', borderWidth:2.5, tension:0.3, fill:true, pointRadius:2.5, pointBackgroundColor:'#7c3aed', spanGaps:false}
