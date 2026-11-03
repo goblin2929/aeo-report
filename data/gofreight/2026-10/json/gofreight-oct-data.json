@@ -1,0 +1,557 @@
+{
+  "julTot": {
+    "clicks": 8235,
+    "impressions": 1790808,
+    "avgPos": 8.179932187035126,
+    "ctr": 0.4598482919441951
+  },
+  "junTot": {
+    "clicks": 9134,
+    "impressions": 1530371,
+    "avgPos": 8.047248020251299,
+    "ctr": 0.5968487379857563
+  },
+  "julSeg": {
+    "exact": {
+      "c": 835,
+      "i": 2290
+    },
+    "brandedRelated": {
+      "c": 155,
+      "i": 3429
+    },
+    "nonBranded": {
+      "c": 1971,
+      "i": 744846
+    }
+  },
+  "junSeg": {
+    "exact": {
+      "c": 944,
+      "i": 2044
+    },
+    "brandedRelated": {
+      "c": 172,
+      "i": 2694
+    },
+    "nonBranded": {
+      "c": 3030,
+      "i": 686253
+    }
+  },
+  "subfolders": [
+    {
+      "name": "Blog",
+      "julClicks": 4263,
+      "junClicks": 3471,
+      "julImpr": 1305192,
+      "junImpr": 1107080
+    },
+    {
+      "name": "Glossary",
+      "julClicks": 2176,
+      "junClicks": 3731,
+      "julImpr": 369958,
+      "junImpr": 305193
+    },
+    {
+      "name": "Homepage",
+      "julClicks": 1220,
+      "junClicks": 1422,
+      "julImpr": 42386,
+      "junImpr": 47412
+    },
+    {
+      "name": "Other",
+      "julClicks": 476,
+      "junClicks": 392,
+      "julImpr": 48060,
+      "junImpr": 39224
+    },
+    {
+      "name": "Product",
+      "julClicks": 59,
+      "junClicks": 53,
+      "julImpr": 11176,
+      "junImpr": 10231
+    },
+    {
+      "name": "Pricing",
+      "julClicks": 27,
+      "junClicks": 39,
+      "julImpr": 4038,
+      "junImpr": 4211
+    },
+    {
+      "name": "Solutions",
+      "julClicks": 14,
+      "junClicks": 26,
+      "julImpr": 9998,
+      "junImpr": 17020
+    }
+  ],
+  "topPages": [
+    {
+      "url": "https://gofreight.com/",
+      "julClicks": 1220,
+      "julImpr": 42386,
+      "julPos": 9.301089982541406,
+      "junClicks": 1422,
+      "junImpr": 47412
+    },
+    {
+      "url": "https://gofreight.com/glossary/what-is-incoterms",
+      "julClicks": 612,
+      "julImpr": 32194,
+      "julPos": 4.287662297322482,
+      "junClicks": 676,
+      "junImpr": 28869
+    },
+    {
+      "url": "https://gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-incoterms",
+      "julClicks": 383,
+      "julImpr": 116166,
+      "julPos": 4.348225814782294,
+      "junClicks": 159,
+      "junImpr": 60315
+    },
+    {
+      "url": "https://gofreight.com/blog/freights-snap/global-top-freight-forwarders",
+      "julClicks": 295,
+      "julImpr": 25131,
+      "julPos": 5.046874378257929,
+      "junClicks": 206,
+      "junImpr": 24442
+    },
+    {
+      "url": "https://gofreight.com/glossary/its-terminal-tracking",
+      "julClicks": 243,
+      "julImpr": 16080,
+      "julPos": 4.847139303482587,
+      "junClicks": 201,
+      "junImpr": 10074
+    },
+    {
+      "url": "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html",
+      "julClicks": 229,
+      "julImpr": 131115,
+      "julPos": 6.294009076001983,
+      "junClicks": 162,
+      "junImpr": 84163
+    },
+    {
+      "url": "https://gofreight.com/blog/education/top-freight-forwarding-training-courses",
+      "julClicks": 213,
+      "julImpr": 8670,
+      "julPos": 5.526643598615917,
+      "junClicks": 225,
+      "junImpr": 9153
+    },
+    {
+      "url": "https://gofreight.com/blog/customs-clearance-timeline",
+      "julClicks": 170,
+      "julImpr": 41429,
+      "julPos": 5.4242197494508675,
+      "junClicks": 106,
+      "junImpr": 25134
+    },
+    {
+      "url": "https://gofreight.com/glossary/garden-city-terminal-tracking",
+      "julClicks": 163,
+      "julImpr": 10736,
+      "julPos": 5.098826378539493,
+      "junClicks": 1594,
+      "junImpr": 23597
+    },
+    {
+      "url": "https://gofreight.com/blog/customs-clearance-status-codes",
+      "julClicks": 144,
+      "julImpr": 39973,
+      "julPos": 6.717008981062217,
+      "junClicks": 104,
+      "junImpr": 33501
+    },
+    {
+      "url": "https://gofreight.com/glossary/scfi",
+      "julClicks": 142,
+      "julImpr": 16124,
+      "julPos": 5.615542049119325,
+      "junClicks": 170,
+      "junImpr": 30021
+    },
+    {
+      "url": "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid.html",
+      "julClicks": 127,
+      "julImpr": 30796,
+      "julPos": 3.8494934407065853,
+      "junClicks": 105,
+      "junImpr": 31210
+    },
+    {
+      "url": "https://gofreight.com/glossary/fenix-marine-terminal-tracking",
+      "julClicks": 117,
+      "julImpr": 13437,
+      "julPos": 6.014214482399345,
+      "junClicks": 114,
+      "junImpr": 13706
+    },
+    {
+      "url": "https://gofreight.com/blog/education/how-to-do-custom-clearance-in-usa-for-goods.html",
+      "julClicks": 116,
+      "julImpr": 50271,
+      "julPos": 6.140160331005948,
+      "junClicks": 123,
+      "junImpr": 93842
+    },
+    {
+      "url": "https://gofreight.com/blog/education/understanding-ex-works-in-international-trade.html",
+      "julClicks": 116,
+      "julImpr": 44149,
+      "julPos": 7.023284785612359,
+      "junClicks": 49,
+      "junImpr": 19555
+    },
+    {
+      "url": "https://gofreight.com/blog/education/what-is-the-profit-margin-for-freight-forwarders.html",
+      "julClicks": 104,
+      "julImpr": 8403,
+      "julPos": 4.158038795668213,
+      "junClicks": 109,
+      "junImpr": 8478
+    },
+    {
+      "url": "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade",
+      "julClicks": 94,
+      "julImpr": 78586,
+      "julPos": 6.833583589952409,
+      "junClicks": 48,
+      "junImpr": 66654
+    },
+    {
+      "url": "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-does-it-work.html",
+      "julClicks": 90,
+      "julImpr": 32901,
+      "julPos": 8.252758274824473,
+      "junClicks": 73,
+      "junImpr": 23608
+    },
+    {
+      "url": "https://gofreight.com/blog/education/unpacking-the-telex-release-in-shipping.html",
+      "julClicks": 89,
+      "julImpr": 21587,
+      "julPos": 4.85597813498865,
+      "junClicks": 113,
+      "junImpr": 23232
+    },
+    {
+      "url": "https://gofreight.com/blog/industry-insights/top-10-reasons-of-shipping-delays.html",
+      "julClicks": 86,
+      "julImpr": 22390,
+      "julPos": 5.720366234926306,
+      "junClicks": 91,
+      "junImpr": 18761
+    },
+    {
+      "url": "https://gofreight.com/blog/education/shipping-container-dimensions-everything-you-need-to-know.html",
+      "julClicks": 82,
+      "julImpr": 57693,
+      "julPos": 9.422876258818228,
+      "junClicks": 78,
+      "junImpr": 45279
+    },
+    {
+      "url": "https://gofreight.com/blog/industry-insights/your-ultimate-guide-to-commercial-invoice-customs-costs.html",
+      "julClicks": 76,
+      "julImpr": 16334,
+      "julPos": 5.54083506795641,
+      "junClicks": 93,
+      "junImpr": 19297
+    },
+    {
+      "url": "https://gofreight.com/glossary/everport-terminal-tracking",
+      "julClicks": 75,
+      "julImpr": 15429,
+      "julPos": 4.741849763432498,
+      "junClicks": 22,
+      "junImpr": 4692
+    },
+    {
+      "url": "https://gofreight.com/knowledge/check-bond-status-importer-bond-details-overview",
+      "julClicks": 66,
+      "julImpr": 1068,
+      "julPos": 4.795880149812734,
+      "junClicks": 64,
+      "junImpr": 957
+    },
+    {
+      "url": "https://gofreight.com/blog/education/10-best-books-on-freight-forwarding-to-read.html",
+      "julClicks": 63,
+      "julImpr": 2903,
+      "julPos": 6.40406476059249,
+      "junClicks": 97,
+      "junImpr": 1574
+    },
+    {
+      "url": "https://gofreight.com/blog/maritime-disruption",
+      "julClicks": 59,
+      "julImpr": 15834,
+      "julPos": 6.519830743968675,
+      "junClicks": 23,
+      "junImpr": 19210
+    },
+    {
+      "url": "https://gofreight.com/glossary/air-waybill.html",
+      "julClicks": 59,
+      "julImpr": 9991,
+      "julPos": 6.51466319687719,
+      "junClicks": 31,
+      "junImpr": 5974
+    },
+    {
+      "url": "https://gofreight.com/blog/freights-snap/is-it-true-dsv-to-become-the-worlds-largest-forwarder.html",
+      "julClicks": 53,
+      "julImpr": 12568,
+      "julPos": 4.436107574793125,
+      "junClicks": 73,
+      "junImpr": 13633
+    },
+    {
+      "url": "https://gofreight.com/blog/education/how-to-apply-for-nvocc-license.html",
+      "julClicks": 52,
+      "julImpr": 6322,
+      "julPos": 6.413160392280924,
+      "junClicks": 44,
+      "junImpr": 7721
+    },
+    {
+      "url": "https://gofreight.com/glossary/cbp-form-7507",
+      "julClicks": 52,
+      "julImpr": 2456,
+      "julPos": 4.803338762214984,
+      "junClicks": 5,
+      "junImpr": 518
+    }
+  ],
+  "weekly": [
+    {
+      "week": "2025-12-29",
+      "total": 86,
+      "nonBrand": 30
+    },
+    {
+      "week": "2026-01-05",
+      "total": 459,
+      "nonBrand": 175
+    },
+    {
+      "week": "2026-01-12",
+      "total": 496,
+      "nonBrand": 218
+    },
+    {
+      "week": "2026-01-19",
+      "total": 672,
+      "nonBrand": 417
+    },
+    {
+      "week": "2026-01-26",
+      "total": 816,
+      "nonBrand": 544
+    },
+    {
+      "week": "2026-02-02",
+      "total": 909,
+      "nonBrand": 664
+    },
+    {
+      "week": "2026-02-09",
+      "total": 967,
+      "nonBrand": 730
+    },
+    {
+      "week": "2026-02-16",
+      "total": 940,
+      "nonBrand": 728
+    },
+    {
+      "week": "2026-02-23",
+      "total": 1130,
+      "nonBrand": 825
+    },
+    {
+      "week": "2026-03-02",
+      "total": 1102,
+      "nonBrand": 806
+    },
+    {
+      "week": "2026-03-09",
+      "total": 1047,
+      "nonBrand": 750
+    },
+    {
+      "week": "2026-03-16",
+      "total": 1047,
+      "nonBrand": 782
+    },
+    {
+      "week": "2026-03-23",
+      "total": 1028,
+      "nonBrand": 748
+    },
+    {
+      "week": "2026-03-30",
+      "total": 795,
+      "nonBrand": 533
+    },
+    {
+      "week": "2026-04-06",
+      "total": 718,
+      "nonBrand": 449
+    },
+    {
+      "week": "2026-04-13",
+      "total": 755,
+      "nonBrand": 456
+    },
+    {
+      "week": "2026-04-20",
+      "total": 674,
+      "nonBrand": 441
+    },
+    {
+      "week": "2026-04-27",
+      "total": 804,
+      "nonBrand": 524
+    },
+    {
+      "week": "2026-05-04",
+      "total": 762,
+      "nonBrand": 468
+    },
+    {
+      "week": "2026-05-11",
+      "total": 817,
+      "nonBrand": 564
+    },
+    {
+      "week": "2026-05-18",
+      "total": 879,
+      "nonBrand": 630
+    },
+    {
+      "week": "2026-05-25",
+      "total": 948,
+      "nonBrand": 717
+    },
+    {
+      "week": "2026-06-01",
+      "total": 1104,
+      "nonBrand": 824
+    },
+    {
+      "week": "2026-06-08",
+      "total": 1138,
+      "nonBrand": 800
+    },
+    {
+      "week": "2026-06-15",
+      "total": 994,
+      "nonBrand": 747
+    },
+    {
+      "week": "2026-06-22",
+      "total": 1172,
+      "nonBrand": 909
+    },
+    {
+      "week": "2026-06-29",
+      "total": 993,
+      "nonBrand": 780
+    },
+    {
+      "week": "2026-07-06",
+      "total": 1213,
+      "nonBrand": 971
+    },
+    {
+      "week": "2026-07-13",
+      "total": 1487,
+      "nonBrand": 1249
+    },
+    {
+      "week": "2026-07-20",
+      "total": 1613,
+      "nonBrand": 1342
+    },
+    {
+      "week": "2026-07-27",
+      "total": 1680,
+      "nonBrand": 1396
+    },
+    {
+      "week": "2026-08-03",
+      "total": 1702,
+      "nonBrand": 1452
+    },
+    {
+      "week": "2026-08-10",
+      "total": 1684,
+      "nonBrand": 1435
+    },
+    {
+      "week": "2026-08-17",
+      "total": 1779,
+      "nonBrand": 1529
+    },
+    {
+      "week": "2026-08-24",
+      "total": 1980,
+      "nonBrand": 1705
+    },
+    {
+      "week": "2026-08-31",
+      "total": 1980,
+      "nonBrand": 1708
+    },
+    {
+      "week": "2026-09-07",
+      "total": 2027,
+      "nonBrand": 1774
+    },
+    {
+      "week": "2026-09-14",
+      "total": 2107,
+      "nonBrand": 1817
+    },
+    {
+      "week": "2026-09-21",
+      "total": 2181,
+      "nonBrand": 1955
+    },
+    {
+      "week": "2026-09-28",
+      "total": 1991,
+      "nonBrand": 1772
+    },
+    {
+      "week": "2026-10-05",
+      "total": 1793,
+      "nonBrand": 1565
+    },
+    {
+      "week": "2026-10-12",
+      "total": 1847,
+      "nonBrand": 1617
+    },
+    {
+      "week": "2026-10-19",
+      "total": 1971,
+      "nonBrand": 1725
+    },
+    {
+      "week": "2026-10-26",
+      "total": 2117,
+      "nonBrand": 1895
+    }
+  ]
+}

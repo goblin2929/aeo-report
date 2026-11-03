@@ -1,0 +1,5865 @@
+{
+ "monthly": {
+  "2026-08": {
+   "ai": 255898,
+   "all": 1388642
+  },
+  "2026-09": {
+   "ai": 379213,
+   "all": 1448906
+  },
+  "2026-10": {
+   "ai": 543010,
+   "all": 1695822
+  }
+ },
+ "weekly": {
+  "2026-08-03": {
+   "ai": 54875,
+   "all": 306082
+  },
+  "2026-08-10": {
+   "ai": 60308,
+   "all": 348484
+  },
+  "2026-08-17": {
+   "ai": 56818,
+   "all": 337857
+  },
+  "2026-08-24": {
+   "ai": 66092,
+   "all": 304917
+  },
+  "2026-08-31": {
+   "ai": 73461,
+   "all": 334081
+  },
+  "2026-09-07": {
+   "ai": 76619,
+   "all": 359050
+  },
+  "2026-09-14": {
+   "ai": 86680,
+   "all": 332484
+  },
+  "2026-09-21": {
+   "ai": 96275,
+   "all": 308522
+  },
+  "2026-09-28": {
+   "ai": 103987,
+   "all": 310874
+  },
+  "2026-10-05": {
+   "ai": 112225,
+   "all": 352897
+  },
+  "2026-10-12": {
+   "ai": 118739,
+   "all": 374222
+  },
+  "2026-10-19": {
+   "ai": 128483,
+   "all": 429763
+  },
+  "2026-10-26": {
+   "ai": 150861,
+   "all": 435345
+  }
+ },
+ "top_pages_3mo": [
+  {
+   "url": "https://gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-incoterms",
+   "ai": 115170,
+   "all": 214978
+  },
+  {
+   "url": "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html",
+   "ai": 87237,
+   "all": 289396
+  },
+  {
+   "url": "https://gofreight.com/blog/education/how-to-do-custom-clearance-in-usa-for-goods.html",
+   "ai": 65162,
+   "all": 260001
+  },
+  {
+   "url": "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterms.html",
+   "ai": 61963,
+   "all": 106043
+  },
+  {
+   "url": "https://gofreight.com/blog/education/shipping-container-dimensions-everything-you-need-to-know.html",
+   "ai": 52509,
+   "all": 187652
+  },
+  {
+   "url": "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid.html",
+   "ai": 45661,
+   "all": 95162
+  },
+  {
+   "url": "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade",
+   "ai": 43056,
+   "all": 153315
+  },
+  {
+   "url": "https://gofreight.com/blog/freights-snap/global-top-freight-forwarders",
+   "ai": 39342,
+   "all": 80075
+  },
+  {
+   "url": "https://gofreight.com/glossary/fob-shipping-point-vs-fob-destination",
+   "ai": 34368,
+   "all": 80006
+  },
+  {
+   "url": "https://gofreight.com/",
+   "ai": 31718,
+   "all": 148773
+  }
+ ],
+ "note": "GSC UI export 2026-11-03, sc-domain:gofreight.com, Web, last 3 months (2026-08-02 to 2026-11-01), date basis",
+ "compare_pages": {
+  "https://gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-incoterms": {
+   "sep": 30738,
+   "oct": 67874
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html": {
+   "sep": 24462,
+   "oct": 46234
+  },
+  "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade": {
+   "sep": 16178,
+   "oct": 25204
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-vs-fob-destination": {
+   "sep": 8701,
+   "oct": 22382
+  },
+  "https://gofreight.com/blog/education/how-to-do-custom-clearance-in-usa-for-goods.html": {
+   "sep": 23325,
+   "oct": 20762
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid.html": {
+   "sep": 15820,
+   "oct": 17116
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterms.html": {
+   "sep": 24046,
+   "oct": 17114
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-you-need-to-know.html": {
+   "sep": 17794,
+   "oct": 16844
+  },
+  "https://gofreight.com/glossary/what-is-incoterms": {
+   "sep": 11753,
+   "oct": 14355
+  },
+  "https://gofreight.com/blog/freights-snap/global-top-freight-forwarders": {
+   "sep": 11960,
+   "oct": 13975
+  },
+  "https://gofreight.com/blog/education/understanding-ex-works-in-international-trade.html": {
+   "sep": 5396,
+   "oct": 13575
+  },
+  "https://gofreight.com/": {
+   "sep": 8395,
+   "oct": 13050
+  },
+  "https://gofreight.com/blog/customs-clearance-timeline": {
+   "sep": 4559,
+   "oct": 12159
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-shipping.html": {
+   "sep": 9464,
+   "oct": 10239
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-does-it-work.html": {
+   "sep": 5027,
+   "oct": 8646
+  },
+  "https://gofreight.com/blog/customs-clearance-status-codes": {
+   "sep": 8998,
+   "oct": 7449
+  },
+  "https://gofreight.com/blog/education/a-guide-to-verified-gross-mass-vgm.html": {
+   "sep": 6411,
+   "oct": 7357
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-to-commercial-invoice-customs-costs.html": {
+   "sep": 6299,
+   "oct": 7156
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-freight-cfr.html": {
+   "sep": 9594,
+   "oct": 7149
+  },
+  "https://gofreight.com/blog/industry-insights/top-10-reasons-of-shipping-delays.html": {
+   "sep": 4319,
+   "oct": 6505
+  },
+  "https://gofreight.com/blog/freights-snap/is-it-true-dsv-to-become-the-worlds-largest-forwarder.html": {
+   "sep": 5520,
+   "oct": 6482
+  },
+  "https://gofreight.com/glossary/terminal-handling-charges-thc": {
+   "sep": 3090,
+   "oct": 6422
+  },
+  "https://gofreight.com/blog/customs-duty-import-tax-guide": {
+   "sep": 3825,
+   "oct": 6339
+  },
+  "https://gofreight.com/blog/education/what-is-sea-freight.html": {
+   "sep": 4034,
+   "oct": 4882
+  },
+  "https://gofreight.com/blog/education/bill-of-lading-vs-packing-slip.html": {
+   "sep": 4387,
+   "oct": 4854
+  },
+  "https://gofreight.com/glossary/its-terminal-tracking": {
+   "sep": 1559,
+   "oct": 4567
+  },
+  "https://gofreight.com/blog/education/what-is-the-profit-margin-for-freight-forwarders.html": {
+   "sep": 3545,
+   "oct": 4188
+  },
+  "https://gofreight.com/blog/largest-ocean-carriers": {
+   "sep": 4228,
+   "oct": 4094
+  },
+  "https://gofreight.com/glossary/scfi": {
+   "sep": 3301,
+   "oct": 3953
+  },
+  "https://gofreight.com/glossary/garden-city-terminal-tracking": {
+   "sep": 6663,
+   "oct": 3923
+  },
+  "https://gofreight.com/blog/best-customs-brokerage-software": {
+   "sep": 1301,
+   "oct": 3600
+  },
+  "https://gofreight.com/glossary/demurrage": {
+   "sep": 545,
+   "oct": 3346
+  },
+  "https://gofreight.com/glossary/container-freight-station-cfs": {
+   "sep": 998,
+   "oct": 3344
+  },
+  "https://gofreight.com/glossary/air-waybill.html": {
+   "sep": 2349,
+   "oct": 3329
+  },
+  "https://gofreight.com/glossary/co-loader": {
+   "sep": 2817,
+   "oct": 3317
+  },
+  "https://gofreight.com/blog/education/top-freight-forwarding-training-courses": {
+   "sep": 2566,
+   "oct": 3255
+  },
+  "https://gofreight.com/glossary/savannah-terminal-tracking": {
+   "sep": 7532,
+   "oct": 3112
+  },
+  "https://gofreight.com/blog/solution/complete-guide-aes": {
+   "sep": 2369,
+   "oct": 3009
+  },
+  "https://gofreight.com/blog/maritime-disruption": {
+   "sep": 1401,
+   "oct": 3000
+  },
+  "https://gofreight.com/blog/education/5-data-analytics-tools-for-logistics-and-transportation.html": {
+   "sep": 1519,
+   "oct": 2731
+  },
+  "https://gofreight.com/glossary/everport-terminal-tracking": {
+   "sep": 904,
+   "oct": 2676
+  },
+  "https://gofreight.com/glossary/mpf-consolidation": {
+   "sep": 1907,
+   "oct": 2648
+  },
+  "https://gofreight.com/glossary/what-is-the-automated-manifest-system-ams-simple-ams-filing-guide.html": {
+   "sep": 1382,
+   "oct": 2437
+  },
+  "https://gofreight.com/solutions/ocean-freight": {
+   "sep": 1666,
+   "oct": 2437
+  },
+  "https://gofreight.com/glossary/ics2": {
+   "sep": 957,
+   "oct": 2399
+  },
+  "https://gofreight.com/blog/education/top-freight-forwarding-industry-news-websites-to-follow": {
+   "sep": 638,
+   "oct": 2209
+  },
+  "https://gofreight.com/blog/education/3-things-you-need-to-know-pierpass-2-0.html": {
+   "sep": 1451,
+   "oct": 2171
+  },
+  "https://gofreight.com/glossary/fenix-marine-terminal-tracking": {
+   "sep": 880,
+   "oct": 2171
+  },
+  "https://gofreight.com/glossary/telex-release": {
+   "sep": 1438,
+   "oct": 2136
+  },
+  "https://gofreight.com/glossary/bayport-container-terminal": {
+   "sep": 1227,
+   "oct": 2076
+  },
+  "https://gofreight.com/blog/air-freight-software-solutions": {
+   "sep": 688,
+   "oct": 1932
+  },
+  "https://gofreight.com/blog/ectn-requirements-by-country-complete-guide-for-shippers": {
+   "sep": 1690,
+   "oct": 1913
+  },
+  "https://gofreight.com/glossary/ocean-carrier-alliances": {
+   "sep": 1932,
+   "oct": 1865
+  },
+  "https://gofreight.com/blog/education/your-guide-to-ocean-freight-transit-times.html": {
+   "sep": 99,
+   "oct": 1862
+  },
+  "https://gofreight.com/glossary/isf-importer-security-filing": {
+   "sep": 361,
+   "oct": 1823
+  },
+  "https://gofreight.com/blog/temperature-controlled-freight": {
+   "sep": 1698,
+   "oct": 1796
+  },
+  "https://gofreight.com/blog/education/how-to-apply-for-nvocc-license.html": {
+   "sep": 1593,
+   "oct": 1694
+  },
+  "https://gofreight.com/blog/h2-2026-ocean-freight-forecast": {
+   "sep": 1419,
+   "oct": 1666
+  },
+  "https://gofreight.com/glossary/standard-carrier-alpha-code": {
+   "sep": 1569,
+   "oct": 1647
+  },
+  "https://gofreight.com/blog/solution/how-to-track-freight-shipment.html": {
+   "sep": 389,
+   "oct": 1616
+  },
+  "https://gofreight.com/blog/solution/unveiling-logistics-technology-trends-in-supply-chain-management.html": {
+   "sep": 548,
+   "oct": 1610
+  },
+  "https://gofreight.com/blog/supply-chain-forecasting-methods": {
+   "sep": 671,
+   "oct": 1605
+  },
+  "https://gofreight.com/blog/shipping-from-india-to-usa": {
+   "sep": 862,
+   "oct": 1604
+  },
+  "https://gofreight.com/blog/gofreight-platform-overview": {
+   "sep": 1134,
+   "oct": 1581
+  },
+  "https://gofreight.com/blog/cargowise-alternative": {
+   "sep": 747,
+   "oct": 1533
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-freight-cfr": {
+   "sep": 407,
+   "oct": 1490
+  },
+  "https://gofreight.com/blog/3pl-vs-freight-forwarder": {
+   "sep": 917,
+   "oct": 1485
+  },
+  "https://gofreight.com/blog/shipping-to-middle-east": {
+   "sep": 407,
+   "oct": 1422
+  },
+  "https://gofreight.com/blog/transparent-freight-software-pricing": {
+   "sep": 1500,
+   "oct": 1420
+  },
+  "https://gofreight.com/blog/shipping-from-china-to-usa": {
+   "sep": 256,
+   "oct": 1360
+  },
+  "https://gofreight.com/glossary/cargo-insurance": {
+   "sep": 3,
+   "oct": 1298
+  },
+  "https://gofreight.com/blog/cargowise-pricing-2025": {
+   "sep": 1285,
+   "oct": 1293
+  },
+  "https://gofreight.com/glossary/apl-terminal-tracking": {
+   "sep": 245,
+   "oct": 1252
+  },
+  "https://gofreight.com/blog/what-is-nvocc": {
+   "sep": 812,
+   "oct": 1249
+  },
+  "https://gofreight.com/blog/freight-logistics-analytics-tools-kpis-and-best-practices": {
+   "sep": 776,
+   "oct": 1159
+  },
+  "https://gofreight.com/blog/general/earn-more-with-more-by-joining-the-best-freight-forwarder-networks.html": {
+   "sep": 1130,
+   "oct": 1139
+  },
+  "https://gofreight.com/blog/cross-border-shipping-guide": {
+   "sep": 543,
+   "oct": 1137
+  },
+  "https://gofreight.com/blog/how-to-reduce-freight-costs": {
+   "sep": 304,
+   "oct": 1137
+  },
+  "https://www.gofreight.com/": {
+   "sep": 949,
+   "oct": 1081
+  },
+  "https://gofreight.com/blog/industry-insights/road-haulage-what-is-it-how-is-it-different-from-freight.html": {
+   "sep": 634,
+   "oct": 1070
+  },
+  "https://gofreight.com/glossary/split-shipment": {
+   "sep": 732,
+   "oct": 1047
+  },
+  "https://gofreight.com/blog/cargo-management-software": {
+   "sep": 349,
+   "oct": 1043
+  },
+  "https://gofreight.com/blog/port-strikes-freight": {
+   "sep": 1429,
+   "oct": 1015
+  },
+  "https://gofreight.com/glossary/what-is-the-gross-margin-of-freight-forwarders.html": {
+   "sep": 1096,
+   "oct": 1011
+  },
+  "https://gofreight.com/blog/education/peak-season-logistics-calendar-2026": {
+   "sep": 998,
+   "oct": 1003
+  },
+  "https://gofreight.com/glossary/electronic-bill-of-lading": {
+   "sep": 1102,
+   "oct": 990
+  },
+  "https://gofreight.com/blog/education/free-trade-agreement-the-importance-of-certificate-of-origin.html": {
+   "sep": 963,
+   "oct": 966
+  },
+  "https://gofreight.com/blog/best-logistics-crm-software": {
+   "sep": 822,
+   "oct": 956
+  },
+  "https://gofreight.com/blog/general/digital-freight-forwarder.html": {
+   "sep": 957,
+   "oct": 956
+  },
+  "https://gofreight.com/blog/general/freight-forwarding-insurance.html": {
+   "sep": 616,
+   "oct": 948
+  },
+  "https://gofreight.com/knowledge/ams-": {
+   "sep": 26,
+   "oct": 888
+  },
+  "https://gofreight.com/blog/best-supply-chain-optimization-software": {
+   "sep": 0,
+   "oct": 878
+  },
+  "https://gofreight.com/glossary/cbp-form-7507": {
+   "sep": 96,
+   "oct": 834
+  },
+  "https://gofreight.com/blog/cargowise-vs-gofreight": {
+   "sep": 429,
+   "oct": 819
+  },
+  "https://gofreight.com/product/freight-billing-accounting/": {
+   "sep": 659,
+   "oct": 808
+  },
+  "https://gofreight.com/blog/industry-insights/the-ultimate-guide-to-freight-forwarders.html": {
+   "sep": 699,
+   "oct": 747
+  },
+  "https://gofreight.com/blog/education/5-sales-strategies-for-freight-forwarding-company.html": {
+   "sep": 755,
+   "oct": 745
+  },
+  "https://gofreight.com/glossary/cfr-incoterm": {
+   "sep": 159,
+   "oct": 737
+  },
+  "https://gofreight.com/glossary/lcl-less-than-container-load": {
+   "sep": 155,
+   "oct": 732
+  },
+  "https://gofreight.com/blog/nvocc-software-top-solutions": {
+   "sep": 854,
+   "oct": 719
+  },
+  "https://gofreight.com/blog/best-freight-customer-portal-software": {
+   "sep": 296,
+   "oct": 685
+  },
+  "https://gofreight.com/blog/education/end-to-end-shipment-management": {
+   "sep": 489,
+   "oct": 669
+  },
+  "https://gofreight.com/glossary/freight-audit": {
+   "sep": 123,
+   "oct": 651
+  },
+  "https://gofreight.com/blog/tms-software-guide": {
+   "sep": 458,
+   "oct": 650
+  },
+  "https://gofreight.com/product/integrations/": {
+   "sep": 500,
+   "oct": 641
+  },
+  "https://gofreight.com/blog/best-warehouse-management-systems-for-freight-operations": {
+   "sep": 703,
+   "oct": 634
+  },
+  "https://gofreight.com/blog/eco-friendly-freight-forwarding": {
+   "sep": 310,
+   "oct": 627
+  },
+  "https://gofreight.com/glossary/everything-freight-forwarders-need-know-about-eawb.html": {
+   "sep": 677,
+   "oct": 621
+  },
+  "https://gofreight.com/knowledge/customer-prepayments-recording-deposits-as-liabilities-g-l-method": {
+   "sep": 147,
+   "oct": 621
+  },
+  "https://gofreight.com/blog/education/10-best-books-on-freight-forwarding-to-read.html": {
+   "sep": 369,
+   "oct": 612
+  },
+  "https://gofreight.com/knowledge/how-to-generate-an-atme-for-air-import-shipments-to-the-us": {
+   "sep": 460,
+   "oct": 607
+  },
+  "https://gofreight.com/blog/tms-vs-wms": {
+   "sep": 189,
+   "oct": 604
+  },
+  "https://gofreight.com/blog/demand-forecasting-supply-chain": {
+   "sep": 23,
+   "oct": 602
+  },
+  "https://gofreight.com/glossary/bill-of-lading.html": {
+   "sep": 327,
+   "oct": 599
+  },
+  "https://gofreight.com/blog/cross-border-freight-documentation": {
+   "sep": 184,
+   "oct": 552
+  },
+  "https://gofreight.com/blog/freight-forwarding-business-development": {
+   "sep": 504,
+   "oct": 541
+  },
+  "https://gofreight.com/blog/container-loss-at-sea": {
+   "sep": 612,
+   "oct": 533
+  },
+  "https://gofreight.com/blog/industry-insights/shipping-forecasting.html": {
+   "sep": 510,
+   "oct": 527
+  },
+  "https://gofreight.com/knowledge/check-bond-status-importer-bond-details-overview": {
+   "sep": 430,
+   "oct": 527
+  },
+  "https://gofreight.com/blog/freight-forwarding-compliance-guide": {
+   "sep": 315,
+   "oct": 521
+  },
+  "https://gofreight.com/product/rate-management-quoting/": {
+   "sep": 324,
+   "oct": 517
+  },
+  "https://gofreight.com/blog/education/digital-marketing-strategy-for-freight-forwarding-company.html": {
+   "sep": 372,
+   "oct": 484
+  },
+  "https://gofreight.com/blog/logistics-planning-guide": {
+   "sep": 56,
+   "oct": 460
+  },
+  "https://gofreight.com/blog/generative-ai-freight-forwarding": {
+   "sep": 76,
+   "oct": 448
+  },
+  "https://gofreight.com/knowledge/how-to-offset-accounts-receivable-with-accounts-payable-invoices-from-one-party-in-one-payment": {
+   "sep": 318,
+   "oct": 436
+  },
+  "https://gofreight.com/glossary/dap-incoterm": {
+   "sep": 250,
+   "oct": 416
+  },
+  "https://gofreight.com/blog/supply-chain-network-optimization": {
+   "sep": 214,
+   "oct": 410
+  },
+  "https://gofreight.com/blog/freight-broker-vs-freight-forwarder": {
+   "sep": 52,
+   "oct": 406
+  },
+  "https://gofreight.com/knowledge/responsibility-differences-between-isf-and-ams": {
+   "sep": 80,
+   "oct": 394
+  },
+  "https://gofreight.com/blog/digital-freight-brokerage": {
+   "sep": 6,
+   "oct": 388
+  },
+  "https://gofreight.com/blog/solution/blog-customer-portal.html": {
+   "sep": 328,
+   "oct": 388
+  },
+  "https://gofreight.com/blog/solution/sustainable-logistics.html": {
+   "sep": 154,
+   "oct": 386
+  },
+  "https://gofreight.com/blog/operational-metrics-for-freight-forwarder-performance": {
+   "sep": 136,
+   "oct": 370
+  },
+  "https://gofreight.com/glossary/modernized-ace-portal": {
+   "sep": 101,
+   "oct": 368
+  },
+  "https://gofreight.com/glossary/everything-freight-forwarders-need-to-know-about-the-electronic-cargo-tracking-note.html": {
+   "sep": 195,
+   "oct": 367
+  },
+  "https://gofreight.com/blog/freight-forwarder-bi-kpis": {
+   "sep": 125,
+   "oct": 359
+  },
+  "https://gofreight.com/glossary/deq-delivered-ex-quay": {
+   "sep": 270,
+   "oct": 347
+  },
+  "https://gofreight.com/glossary/isf-filing-software-guide": {
+   "sep": 338,
+   "oct": 346
+  },
+  "https://gofreight.com/blog/general/blog-forwading-management-software-as-service.html": {
+   "sep": 374,
+   "oct": 337
+  },
+  "https://gofreight.com/blog/gofreight-vs-magaya": {
+   "sep": 226,
+   "oct": 336
+  },
+  "https://gofreight.com/blog/rotterdam-port-automation": {
+   "sep": 154,
+   "oct": 336
+  },
+  "https://gofreight.com/knowledge/how-to-submit-ams-filing-via-crimsonlogic": {
+   "sep": 385,
+   "oct": 328
+  },
+  "https://gofreight.com/blog/freight-forwarding-industry-outlook": {
+   "sep": 356,
+   "oct": 325
+  },
+  "https://gofreight.com/blog/best-tms-trucking-companies": {
+   "sep": 842,
+   "oct": 323
+  },
+  "https://gofreight.com/product/customer-portal/": {
+   "sep": 197,
+   "oct": 319
+  },
+  "https://gofreight.com/blog/education/quote-faster-win-more-speed-to-lead": {
+   "sep": 262,
+   "oct": 309
+  },
+  "https://gofreight.com/glossary/hs-code": {
+   "sep": 50,
+   "oct": 305
+  },
+  "https://gofreight.com/blog/common-challenges-in-freight-forwarding-operations": {
+   "sep": 81,
+   "oct": 299
+  },
+  "https://gofreight.com/glossary/fcl-full-container-load": {
+   "sep": 187,
+   "oct": 290
+  },
+  "https://gofreight.com/blog/solution/blog-how-to-file-isf.html": {
+   "sep": 164,
+   "oct": 285
+  },
+  "https://gofreight.com/glossary/what-does-deq-mean-a-deep-dive-into-quay-terminology.html": {
+   "sep": 321,
+   "oct": 284
+  },
+  "https://gofreight.com/blog/freight-rate-update-framework": {
+   "sep": 52,
+   "oct": 279
+  },
+  "https://gofreight.com/glossary/what-is-tms": {
+   "sep": 86,
+   "oct": 277
+  },
+  "https://gofreight.com/glossary/bill-of-lading": {
+   "sep": 804,
+   "oct": 276
+  },
+  "https://gofreight.com/blog/gofreight-reviews-testimonials": {
+   "sep": 283,
+   "oct": 274
+  },
+  "https://gofreight.com/blog/air-cargo-digitalization": {
+   "sep": 49,
+   "oct": 273
+  },
+  "https://gofreight.com/solutions/air-freight": {
+   "sep": 268,
+   "oct": 265
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-security-endorsement-tsa-letter": {
+   "sep": 179,
+   "oct": 257
+  },
+  "https://gofreight.com/blog/industry-insights/navigating-us-import-export-license-essentials.html": {
+   "sep": 173,
+   "oct": 247
+  },
+  "https://gofreight.com/glossary/ectn-electronic-cargo-tracking-note": {
+   "sep": 4,
+   "oct": 247
+  },
+  "https://gofreight.com/glossary/logistics-service-tiers": {
+   "sep": 178,
+   "oct": 237
+  },
+  "https://gofreight.com/glossary/what-is-co-loading-freight.html": {
+   "sep": 231,
+   "oct": 233
+  },
+  "https://gofreight.com/blog/customs-brokerage-compliance-workflows": {
+   "sep": 170,
+   "oct": 232
+  },
+  "https://gofreight.com/glossary/what-is-dap-in-international-trade.html": {
+   "sep": 268,
+   "oct": 223
+  },
+  "https://gofreight.com/pricing": {
+   "sep": 145,
+   "oct": 223
+  },
+  "https://gofreight.com/product/shipment-tracking-operations/": {
+   "sep": 133,
+   "oct": 221
+  },
+  "https://gofreight.com/knowledge/how-to-receive-a-payment-full-receive-or-partial-receive-": {
+   "sep": 115,
+   "oct": 207
+  },
+  "https://gofreight.com/blog/gofreight-vs-descartes": {
+   "sep": 117,
+   "oct": 205
+  },
+  "https://gofreight.com/blog/education/ocean-import-bottlenecks": {
+   "sep": 165,
+   "oct": 202
+  },
+  "https://gofreight.com/blog/freight-rate-rfp-playbook": {
+   "sep": 60,
+   "oct": 198
+  },
+  "https://gofreight.com/blog/general/customer-relationship-management-in-logistics.html": {
+   "sep": 106,
+   "oct": 197
+  },
+  "https://gofreight.com/blog/general/things-to-consider-when-starting-a-freight-forwarding-business.html": {
+   "sep": 86,
+   "oct": 194
+  },
+  "https://gofreight.com/blog/top-logistics-technology-trends": {
+   "sep": 33,
+   "oct": 194
+  },
+  "https://gofreight.com/blog/freight-software-audit-trail": {
+   "sep": 46,
+   "oct": 190
+  },
+  "https://gofreight.com/blog/general/career-paths-in-freight-forwarding.html": {
+   "sep": 112,
+   "oct": 190
+  },
+  "https://gofreight.com/blog/industry-insights/harmonized-system-hs-codes-explained-the-global-trades-language.html": {
+   "sep": 48,
+   "oct": 189
+  },
+  "https://gofreight.com/blog/multi-modal-freight-software": {
+   "sep": 46,
+   "oct": 182
+  },
+  "https://gofreight.com/blog/education/how-to-sell-freight-forwarding-services.html": {
+   "sep": 121,
+   "oct": 179
+  },
+  "https://gofreight.com/knowledge/what-is-post-invoice-and-how-does-it-work": {
+   "sep": 53,
+   "oct": 179
+  },
+  "https://gofreight.com/knowledge/how-to-submit-ams-filing-via-efreight": {
+   "sep": 0,
+   "oct": 177
+  },
+  "https://gofreight.com/blog/why-freight-forwarders-need-specialized-software": {
+   "sep": 91,
+   "oct": 170
+  },
+  "https://gofreight.com/blog/education/how-to-start-a-freight-forwarding-business-in-the-us.html": {
+   "sep": 124,
+   "oct": 169
+  },
+  "https://gofreight.com/glossary/hugh-leatherman-terminal-tracking": {
+   "sep": 57,
+   "oct": 169
+  },
+  "https://gofreight.com/company": {
+   "sep": 113,
+   "oct": 167
+  },
+  "https://gofreight.com/blog/carrier-peak-season-surcharges": {
+   "sep": 1,
+   "oct": 164
+  },
+  "https://gofreight.com/product/workflow-automation/": {
+   "sep": 118,
+   "oct": 160
+  },
+  "https://gofreight.com/blog/industry-insights/reducing-detention-demurrage-fees.html": {
+   "sep": 110,
+   "oct": 157
+  },
+  "https://gofreight.com/blog/solution/supply-chain-forecasting-how-to-weather-disruptions.html": {
+   "sep": 36,
+   "oct": 157
+  },
+  "https://gofreight.com/blog/education/effective-supply-chain-and-logistics-planning.html": {
+   "sep": 35,
+   "oct": 154
+  },
+  "https://gofreight.com/glossary/ieepa-tariffs": {
+   "sep": 69,
+   "oct": 150
+  },
+  "https://gofreight.com/blog/technology-transforming-freight-forwarding": {
+   "sep": 87,
+   "oct": 147
+  },
+  "https://gofreight.com/blog/education/how-to-find-freight-shippers-for-freight-forwarders.html": {
+   "sep": 83,
+   "oct": 142
+  },
+  "https://gofreight.com/blog/solution/supply-chain-optimization-what-is-it-best-practices.html": {
+   "sep": 145,
+   "oct": 142
+  },
+  "https://gofreight.com/glossary/decoding-ddp-incoterms-import-clearance-shipping-costs.html": {
+   "sep": 30,
+   "oct": 140
+  },
+  "https://gofreight.com/blog/freight-software-for-mac": {
+   "sep": 116,
+   "oct": 138
+  },
+  "https://gofreight.com/blog/general/blog-freight-forwarding-best-practice.html": {
+   "sep": 105,
+   "oct": 136
+  },
+  "https://gofreight.com/blog/industry-insights/10-ways-freight-forwarders-can-boost-efficiency-and-productivity.html": {
+   "sep": 78,
+   "oct": 133
+  },
+  "https://gofreight.com/glossary/customs-clearance": {
+   "sep": 20,
+   "oct": 130
+  },
+  "https://gofreight.com/blog/cbsa-emanifest-automation": {
+   "sep": 56,
+   "oct": 128
+  },
+  "https://gofreight.com/blog/general/features-you-should-look-for-in-a-freight-logistics-software-system.html": {
+   "sep": 57,
+   "oct": 127
+  },
+  "https://gofreight.com/knowledge/how-to-create-debit/credit-notes": {
+   "sep": 70,
+   "oct": 127
+  },
+  "https://gofreight.com/knowledge/how-to-search-for-hb-l-shipments": {
+   "sep": 92,
+   "oct": 121
+  },
+  "https://archive.gofreight.com/solutions/container-tracking": {
+   "sep": 91,
+   "oct": 119
+  },
+  "https://gofreight.com/knowledge/getting-started-with-gofreight-tracking": {
+   "sep": 63,
+   "oct": 118
+  },
+  "https://gofreight.com/product/freight-analytics/": {
+   "sep": 97,
+   "oct": 118
+  },
+  "https://gofreight.com/blog/freight-software-quickbooks-integration": {
+   "sep": 101,
+   "oct": 114
+  },
+  "https://gofreight.com/glossary/drop-and-pick": {
+   "sep": 27,
+   "oct": 112
+  },
+  "https://gofreight.com/product/customs-management": {
+   "sep": 113,
+   "oct": 112
+  },
+  "https://gofreight.com/blog/education/why-does-your-freight-forwarding-business-need-workflow-automation.html": {
+   "sep": 85,
+   "oct": 110
+  },
+  "https://gofreight.com/knowledge/ams-\u7cfb\u7edf\u7b80\u4ecbefreight": {
+   "sep": 105,
+   "oct": 110
+  },
+  "https://gofreight.com/blog/kuehne-nagel-ai-productivity-earnings": {
+   "sep": 127,
+   "oct": 109
+  },
+  "https://gofreight.com/blog/freight-forwarder-cybersecurity-guide": {
+   "sep": 24,
+   "oct": 107
+  },
+  "https://gofreight.com/knowledge/how-to-properly-trigger-tracking-edi-for-real-time-shipment-updates": {
+   "sep": 100,
+   "oct": 107
+  },
+  "https://gofreight.com/knowledge/understanding-the-complete-shipment-function-in-the-tracking-system": {
+   "sep": 64,
+   "oct": 105
+  },
+  "https://gofreight.com/blog/shipment-tracking-software-features": {
+   "sep": 29,
+   "oct": 102
+  },
+  "https://gofreight.com/freight-forwarding-software": {
+   "sep": 38,
+   "oct": 99
+  },
+  "https://gofreight.com/glossary/freight-forwarder": {
+   "sep": 0,
+   "oct": 97
+  },
+  "https://gofreight.com/blog/gofreight-ai-pre-alert-to-shipment": {
+   "sep": 0,
+   "oct": 96
+  },
+  "https://gofreight.com/blog/industry-insights/advancements-in-warehouse-automation-systems.html": {
+   "sep": 51,
+   "oct": 89
+  },
+  "https://gofreight.com/blog/switch-from-cargowise": {
+   "sep": 74,
+   "oct": 89
+  },
+  "https://gofreight.com/knowledge/how-to-submit-isf-filing-in-gofreight": {
+   "sep": 4,
+   "oct": 89
+  },
+  "https://gofreight.com/blog/freight-forwarder-perishables-cold-chain-software": {
+   "sep": 35,
+   "oct": 86
+  },
+  "https://gofreight.com/blog/founders-insight/accelerate-your-quote-turnaround-the-hidden-costs-and-solutions-in-freight-forwarding.html": {
+   "sep": 58,
+   "oct": 85
+  },
+  "https://gofreight.com/knowledge/how-to-apply-for-eawb-with-gofreight": {
+   "sep": 81,
+   "oct": 84
+  },
+  "https://gofreight.com/knowledge/how-to-record-a-har-file-when-you-encounter-a-gofreight-system-issue": {
+   "sep": 74,
+   "oct": 84
+  },
+  "https://gofreight.com/blog/education/how-to-increase-freight-forwarding-profit-margins.html": {
+   "sep": 53,
+   "oct": 83
+  },
+  "https://gofreight.com/knowledge/how-to-file-afr-in-gofreight": {
+   "sep": 68,
+   "oct": 83
+  },
+  "https://gofreight.com/blog/education/how-to-maximize-roi-in-freight-forwarding-logistics.html": {
+   "sep": 81,
+   "oct": 82
+  },
+  "https://gofreight.com/blog/education/freight-forwarding-software-demo-checklist": {
+   "sep": 32,
+   "oct": 81
+  },
+  "https://gofreight.com/blog/founders-insight/strategies-to-scale-your-small-and-medium-freight-forwarding-business-and-achieve-sustainable-growth.html": {
+   "sep": 48,
+   "oct": 79
+  },
+  "https://gofreight.com/blog/solution/how-having-an-excellent-accounting-module-in-your-freight-forwarding-software-helps-your-business.html": {
+   "sep": 61,
+   "oct": 79
+  },
+  "https://gofreight.com/knowledge/gofreight-quickbooks-accounting-integration-getting-started-user-guide": {
+   "sep": 51,
+   "oct": 74
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-dock-receipt-list-in-tracking-portal": {
+   "sep": 68,
+   "oct": 73
+  },
+  "https://gofreight.com/blog/freight-forwarder-data-migration-playbook": {
+   "sep": 79,
+   "oct": 72
+  },
+  "https://gofreight.com/blog/tpm-conference-recap": {
+   "sep": 3,
+   "oct": 72
+  },
+  "https://gofreight.com/knowledge/how-to-resolve-microsoft-need-admin-approval-error-during-email-verification": {
+   "sep": 40,
+   "oct": 70
+  },
+  "https://gofreight.com/blog/freight-forwarder-compliance-calendar": {
+   "sep": 37,
+   "oct": 69
+  },
+  "https://gofreight.com/knowledge/how-to-generate-an-arrival-notice-with-canada-rail-information": {
+   "sep": 47,
+   "oct": 67
+  },
+  "https://gofreight.com/glossary/economic-operator-registration-identification": {
+   "sep": 19,
+   "oct": 65
+  },
+  "https://gofreight.com/knowledge/how-to-generate-and-manage-pre-alert-documents-in-ocean-export": {
+   "sep": 52,
+   "oct": 65
+  },
+  "https://gofreight.com/why-gofreight": {
+   "sep": 55,
+   "oct": 65
+  },
+  "https://api.gofreight.com/": {
+   "sep": 37,
+   "oct": 64
+  },
+  "https://gofreight.com/blog/education/creating-your-freight-forwarding-business-plan-in-2021.html": {
+   "sep": 27,
+   "oct": 64
+  },
+  "https://gofreight.com/blog/freight-giants-dsv-chrobinson-expeditors-kuehnenagel-q22026-earnings-reports": {
+   "sep": 34,
+   "oct": 63
+  },
+  "https://gofreight.com/knowledge/how-to-submit-e-awb-in-gofreight": {
+   "sep": 65,
+   "oct": 62
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-volume-and-profit-report": {
+   "sep": 72,
+   "oct": 60
+  },
+  "https://gofreight.com/knowledge/what-is-quick-link-and-how-can-i-use-it": {
+   "sep": 23,
+   "oct": 60
+  },
+  "https://gofreight.com/solutions/air-export": {
+   "sep": 38,
+   "oct": 60
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-consolidated-manifest": {
+   "sep": 49,
+   "oct": 57
+  },
+  "https://gofreight.com/glossary/landed-cost-calculation": {
+   "sep": 1,
+   "oct": 56
+  },
+  "https://gofreight.com/knowledge/how-to-submit-ams-direct-in-gofreight-efreight-vision": {
+   "sep": 29,
+   "oct": 56
+  },
+  "https://gofreight.com/blog/freight-software-tco-calculator": {
+   "sep": 28,
+   "oct": 55
+  },
+  "https://gofreight.com/glossary/freight-bill-explained": {
+   "sep": 25,
+   "oct": 55
+  },
+  "https://gofreight.com/knowledge/gofreight-guides": {
+   "sep": 38,
+   "oct": 55
+  },
+  "https://gofreight.com/blog/freights-snap/china-monopolized-over-80-of-shipping-containers.html": {
+   "sep": 30,
+   "oct": 54
+  },
+  "https://gofreight.com/knowledge/how-to-make-a-payment-with-petty-cash": {
+   "sep": 17,
+   "oct": 54
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-general-ledger-report-in-gofreight": {
+   "sep": 14,
+   "oct": 53
+  },
+  "https://gofreight.com/knowledge/how-to-generate-delivery-orders-and-other-air-import-documents-in-gofreight": {
+   "sep": 53,
+   "oct": 52
+  },
+  "https://gofreight.com/knowledge/welcome-to-the-gofreight-knowledge-center": {
+   "sep": 43,
+   "oct": 52
+  },
+  "https://gofreight.com/blog/customer-facing-capabilities-freight-management-software": {
+   "sep": 25,
+   "oct": 51
+  },
+  "https://gofreight.com/knowledge/how-to-handle-a-pre-alert-and-create-a-new-air-import-shipment": {
+   "sep": 7,
+   "oct": 51
+  },
+  "https://gofreight.com/blog/industry-insights/how-freight-forwarders-can-overcome-port-congestion-challenges.html": {
+   "sep": 17,
+   "oct": 49
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-freight-statement-in-gofreight": {
+   "sep": 43,
+   "oct": 47
+  },
+  "https://developers.gofreight.com/": {
+   "sep": 24,
+   "oct": 46
+  },
+  "https://gofreight.com/knowledge/how-to-assign-hbl-to-multiple-containers": {
+   "sep": 14,
+   "oct": 46
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-quotation-efficiently-in-simple-steps": {
+   "sep": 32,
+   "oct": 46
+  },
+  "https://gofreight.com/blog/education/what-are-the-best-ways-for-freight-forwarders-to-save-demurrage-and-detention-fees.html": {
+   "sep": 11,
+   "oct": 45
+  },
+  "https://gofreight.com/glossary/fulfillment-as-a-service": {
+   "sep": 5,
+   "oct": 45
+  },
+  "https://gofreight.com/knowledge/how-to-manage-users-in-gofreight": {
+   "sep": 0,
+   "oct": 45
+  },
+  "https://gofreight.com/blog/freight-software-migration-guide": {
+   "sep": 38,
+   "oct": 44
+  },
+  "https://gofreight.com/blog/founders-insight/freight-forwarding-mastery-from-beginner-to-pro-in-7-steps.html": {
+   "sep": 23,
+   "oct": 41
+  },
+  "https://gofreight.com/blog/freight-software-rail-intermodal-terminal-operators": {
+   "sep": 11,
+   "oct": 41
+  },
+  "https://gofreight.com/knowledge/how-to-perform-year-end-closing-in-accounting": {
+   "sep": 6,
+   "oct": 41
+  },
+  "https://gofreight.com/knowledge/how-to-use-color-remark-for-payment-status-tracking": {
+   "sep": 43,
+   "oct": 41
+  },
+  "https://gofreight.com/blog/education/peak-shipping-season.html": {
+   "sep": 23,
+   "oct": 39
+  },
+  "https://gofreight.com/knowledge/quick-guide-extracting-freight-codes-analyzing-profits": {
+   "sep": 15,
+   "oct": 38
+  },
+  "https://gofreight.com/service-level-agreement": {
+   "sep": 25,
+   "oct": 38
+  },
+  "https://gofreight.com/blog/modern-freight-operations": {
+   "sep": 26,
+   "oct": 36
+  },
+  "https://gofreight.com/customers/straight-forwarding-inc": {
+   "sep": 9,
+   "oct": 36
+  },
+  "https://gofreight.com/knowledge/how-to-set-up-and-use-it-numbers-it-no.-for-import-shipments": {
+   "sep": 18,
+   "oct": 36
+  },
+  "https://gofreight.com/solutions/ocean-import": {
+   "sep": 13,
+   "oct": 36
+  },
+  "https://gofreight.com/solutions/scale-without-more-headcount": {
+   "sep": 9,
+   "oct": 36
+  },
+  "https://gofreight.com/blog/freight-payment-software-guide": {
+   "sep": 8,
+   "oct": 35
+  },
+  "https://gofreight.com/knowledge/how-to-apply-filing-in-gofreight-efreight-ver": {
+   "sep": 20,
+   "oct": 35
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-booking-confirmation-for-ocean-export-shipments": {
+   "sep": 16,
+   "oct": 35
+  },
+  "https://gofreight.com/knowledge/how-to-import-shipments-into-gofreight-for-status-tracking": {
+   "sep": 16,
+   "oct": 35
+  },
+  "https://gofreight.com/blog/industry-insights/why-should-a-freight-forwarder-provide-temperature-controlled-shipping.html": {
+   "sep": 31,
+   "oct": 34
+  },
+  "https://gofreight.com/knowledge/how-to-generate-the-agent-local-statement": {
+   "sep": 33,
+   "oct": 34
+  },
+  "https://gofreight.com/blog/founders-insight/unlocking-success-in-freight-forwarding-essential-kpis-to-keep-you-ahead.html": {
+   "sep": 36,
+   "oct": 33
+  },
+  "https://gofreight.com/blog/freights-snap/10-freight-forward-facts.html": {
+   "sep": 34,
+   "oct": 33
+  },
+  "https://gofreight.com/blog/reduce-customs-penalties": {
+   "sep": 3,
+   "oct": 33
+  },
+  "https://gofreight.com/knowledge/how-to-use-color-remarks-for-invoice-status": {
+   "sep": 16,
+   "oct": 33
+  },
+  "https://archive.gofreight.com/tracking-portal": {
+   "sep": 51,
+   "oct": 32
+  },
+  "https://gofreight.com/blog/education/blog-freight-forwarders-linkedin.html": {
+   "sep": 24,
+   "oct": 32
+  },
+  "https://gofreight.com/get-demo": {
+   "sep": 18,
+   "oct": 32
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-booking-in-ocean-export": {
+   "sep": 29,
+   "oct": 32
+  },
+  "https://gofreight.com/knowledge/how-to-effectively-manage-cargo-status-using-my-containers": {
+   "sep": 38,
+   "oct": 32
+  },
+  "https://gofreight.com/blog/freights-snap/detention-and-demurrage-charges.html": {
+   "sep": 15,
+   "oct": 31
+  },
+  "https://gofreight.com/knowledge/how-to-file-ics2-ens-in-gofreight": {
+   "sep": 32,
+   "oct": 31
+  },
+  "https://gofreight.com/knowledge/how-to-use-color-remarks-to-track-shipment-status": {
+   "sep": 11,
+   "oct": 31
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-billing-code": {
+   "sep": 17,
+   "oct": 30
+  },
+  "https://gofreight.com/knowledge/how-to-share-profits-with-your-overseas-agent-using-debit-and-credit-notes": {
+   "sep": 30,
+   "oct": 30
+  },
+  "https://gofreight.com/solutions/air-import": {
+   "sep": 367,
+   "oct": 30
+  },
+  "https://gofreight.com/blog/education/how-to-execute-sales-and-marketing-as-a-freight-forwarder.html": {
+   "sep": 14,
+   "oct": 29
+  },
+  "https://gofreight.com/blog/education/what-are-the-best-go-to-market-strategies-for-a-freight-forwarding-business.html": {
+   "sep": 11,
+   "oct": 29
+  },
+  "https://gofreight.com/knowledge/how-to-batch-import-journal-entries": {
+   "sep": 8,
+   "oct": 29
+  },
+  "https://gofreight.com/knowledge/how-to-create-accounts-payable-ap-invoices-in-invoice-mode": {
+   "sep": 20,
+   "oct": 29
+  },
+  "https://gofreight.com/knowledge/how-to-manage-shipment-documents": {
+   "sep": 27,
+   "oct": 29
+  },
+  "https://gofreight.com/blog/general/top-10-busiest-terminals-in-america.html": {
+   "sep": 14,
+   "oct": 28
+  },
+  "https://gofreight.com/knowledge/how-to-complete-container-information": {
+   "sep": 22,
+   "oct": 28
+  },
+  "https://gofreight.com/knowledge/how-to-file-aci/emanifest-in-gofreight": {
+   "sep": 2,
+   "oct": 28
+  },
+  "https://gofreight.com/solutions/pain-points": {
+   "sep": 12,
+   "oct": 28
+  },
+  "https://gofreight.com/blog/flexports-new-ai-doesnt-talk-to-customers": {
+   "sep": 0,
+   "oct": 27
+  },
+  "https://gofreight.com/blog/industry-insights/freight-rates-and-the-current-freight-market.html": {
+   "sep": 20,
+   "oct": 27
+  },
+  "https://gofreight.com/knowledge/how-to-change-the-ship-mode-of-your-shipment": {
+   "sep": 20,
+   "oct": 27
+  },
+  "https://gofreight.com/knowledge/invoice-list": {
+   "sep": 1,
+   "oct": 27
+  },
+  "https://gofreight.com/blog/the-ai-premium-for-freight-forwarders": {
+   "sep": 0,
+   "oct": 26
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-manifest-in-gofreight": {
+   "sep": 11,
+   "oct": 26
+  },
+  "https://gofreight.com/knowledge/profit-loss-reconciliation-report-tutorial": {
+   "sep": 18,
+   "oct": 26
+  },
+  "https://gofreight.com/solutions/ocean-export": {
+   "sep": 31,
+   "oct": 26
+  },
+  "https://www.gofreight.com/blog/education/unpacking-the-telex-release-in-shipping.html": {
+   "sep": 36,
+   "oct": 26
+  },
+  "https://gofreight.com/blog/education/us-customs-clearance-process": {
+   "sep": 13,
+   "oct": 25
+  },
+  "https://gofreight.com/knowledge/how-to-save-an-invoice-as-template-and-how-to-load-the-templates-next-time-for-billing-based": {
+   "sep": 20,
+   "oct": 25
+  },
+  "https://gofreight.com/knowledge/receiving-a-pre-alert-in-ocean-import": {
+   "sep": 8,
+   "oct": 25
+  },
+  "https://gofreight.com/knowledge/tracking-dashboard": {
+   "sep": 21,
+   "oct": 25
+  },
+  "https://gofreight.com/glossary": {
+   "sep": 25,
+   "oct": 24
+  },
+  "https://gofreight.com/knowledge": {
+   "sep": 15,
+   "oct": 24
+  },
+  "https://gofreight.com/knowledge/getting-started": {
+   "sep": 13,
+   "oct": 24
+  },
+  "https://gofreight.com/knowledge/how-to-apply-for-esi-with-gofreight": {
+   "sep": 1,
+   "oct": 24
+  },
+  "https://gofreight.com/knowledge/how-to-make-a-payment-full-paid-partial-paid": {
+   "sep": 18,
+   "oct": 24
+  },
+  "https://gofreight.com/knowledge/how-to-print-a-package-label-for-air-export-shipments": {
+   "sep": 4,
+   "oct": 24
+  },
+  "https://gofreight.com/knowledge/how-to-search-for-an-invoice-in-the-invoice-and-cost-list-feature": {
+   "sep": 100,
+   "oct": 24
+  },
+  "https://gofreight.com/glossary/federal-maritime-commission-fmc": {
+   "sep": 24,
+   "oct": 23
+  },
+  "https://gofreight.com/knowledge/how-to-block-or-unblock-an-invoice": {
+   "sep": 13,
+   "oct": 23
+  },
+  "https://gofreight.com/knowledge/how-to-reset-your-gofreight-account-password": {
+   "sep": 6,
+   "oct": 23
+  },
+  "https://gofreight.com/knowledge/how-to-create-accounts-receivable-ar-invoices-in-invoice-mode": {
+   "sep": 9,
+   "oct": 22
+  },
+  "https://gofreight.com/knowledge/mawb-stock-list-management-user-guide": {
+   "sep": 15,
+   "oct": 22
+  },
+  "https://gofreight.com/customers": {
+   "sep": 18,
+   "oct": 21
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-vessel-schedule-in-ocean-export": {
+   "sep": 7,
+   "oct": 21
+  },
+  "https://gofreight.com/terms-of-service": {
+   "sep": 15,
+   "oct": 21
+  },
+  "https://gofreight.com/knowledge/multi-tax-user-guide-streamlining-tax-calculations": {
+   "sep": 13,
+   "oct": 20
+  },
+  "https://gofreight.com/blog/education/3-ways-technology-assist-with-freight-forwarding-risk-mitigation.html": {
+   "sep": 8,
+   "oct": 19
+  },
+  "https://gofreight.com/blog/freight-workflow-management": {
+   "sep": 1,
+   "oct": 19
+  },
+  "https://gofreight.com/blog/industry-insights/efficient-third-party-logistics-providers.html": {
+   "sep": 17,
+   "oct": 19
+  },
+  "https://gofreight.com/blog/industry-insights/optimizing-with-warehouse-management-system-software.html": {
+   "sep": 31,
+   "oct": 19
+  },
+  "https://gofreight.com/customers/seamax-freight-international": {
+   "sep": 0,
+   "oct": 19
+  },
+  "https://gofreight.com/knowledge/configuring-invoice-remarks-in-bank-list": {
+   "sep": 7,
+   "oct": 19
+  },
+  "https://gofreight.com/knowledge/how-to-use-aesdirect-in-the-gofreight-system": {
+   "sep": 21,
+   "oct": 19
+  },
+  "https://gofreight.com/knowledge/how-to-generate-shipping-instructions-for-ocean-export": {
+   "sep": 18,
+   "oct": 18
+  },
+  "https://gofreight.com/knowledge/how-to-make-a-payment-without-an-invoice-for-salary-and-bank-charges": {
+   "sep": 23,
+   "oct": 18
+  },
+  "https://gofreight.com/knowledge/locking-behavior-in-the-gofreight-system": {
+   "sep": 17,
+   "oct": 18
+  },
+  "https://gofreight.com/blog/best-tms-software": {
+   "sep": 45,
+   "oct": 17
+  },
+  "https://gofreight.com/blog/freight-software-evaluation-checklist": {
+   "sep": 13,
+   "oct": 17
+  },
+  "https://gofreight.com/blog/solution/why-is-integrating-a-modern-freight-forwarding-erp-software-crucial-for-your-business-growth.html?hs_amp=true": {
+   "sep": 0,
+   "oct": 17
+  },
+  "https://gofreight.com/knowledge/how-to-manage-and-merge-dummy-trade-partners-tps-in-gofreight": {
+   "sep": 7,
+   "oct": 17
+  },
+  "https://gofreight.com/knowledge/lesson-7-2-2-offset-ar-with-ap-in-one-payment": {
+   "sep": 1,
+   "oct": 17
+  },
+  "https://www.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html": {
+   "sep": 22,
+   "oct": 17
+  },
+  "https://gofreight.com/blog/freights-snap/higher-transportation-costs-more-inflated-prices-right-heres-why-youre-wrong.html": {
+   "sep": 2,
+   "oct": 16
+  },
+  "https://gofreight.com/blog/industry-insights/freight-forwarding-technology-is-it-worth-the-cost-to-adopt-new-technologies.html": {
+   "sep": 17,
+   "oct": 16
+  },
+  "https://gofreight.com/knowledge/how-to-add-a-specific-port-in-gofreight": {
+   "sep": 9,
+   "oct": 16
+  },
+  "https://gofreight.com/knowledge/how-to-attach-bl-clauses-when-generating-a-house-bill-of-lading-hbl": {
+   "sep": 5,
+   "oct": 16
+  },
+  "https://gofreight.com/knowledge/how-to-file-aes-in-gofreight": {
+   "sep": 18,
+   "oct": 16
+  },
+  "https://gofreight.com/knowledge/how-to-set-up-customized-shipment-report-for-tracking-user": {
+   "sep": 12,
+   "oct": 16
+  },
+  "https://gofreight.com/knowledge/how-to-set-up-your-gofreight-account-email-address": {
+   "sep": 8,
+   "oct": 16
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-document-package-feature-for-air-export-documents": {
+   "sep": 3,
+   "oct": 16
+  },
+  "https://developers.gofreight.com/docs/api/quickstart/": {
+   "sep": 11,
+   "oct": 15
+  },
+  "https://gofreight.com/blog/general/8-benefits-of-having-a-container-tracking-system-for-your-business.html": {
+   "sep": 9,
+   "oct": 15
+  },
+  "https://gofreight.com/customers/tg-cargo-inc": {
+   "sep": 4,
+   "oct": 15
+  },
+  "https://gofreight.com/customers/united-cargo-management": {
+   "sep": 10,
+   "oct": 15
+  },
+  "https://gofreight.com/knowledge/how-to-batch-reconcile-with-bank-reconciliation-sheet": {
+   "sep": 4,
+   "oct": 15
+  },
+  "https://gofreight.com/knowledge/how-to-exchange-shipment-data-using-gofreight-to-gofreight-edi": {
+   "sep": 2,
+   "oct": 15
+  },
+  "https://gofreight.com/knowledge/how-to-perform-an-internal-bank-transfer": {
+   "sep": 8,
+   "oct": 15
+  },
+  "https://gofreight.com/knowledge/how-to-search-in-the-aging-report": {
+   "sep": 32,
+   "oct": 15
+  },
+  "https://gofreight.com/blog/education/top-7-freight-forwarding-seminars-for-air-and-ocean-freight.html": {
+   "sep": 8,
+   "oct": 14
+  },
+  "https://gofreight.com/blog/founders-insight/how-gofreight-became-the-modern-technology-freight-forwarders-need-today.html": {
+   "sep": 15,
+   "oct": 14
+  },
+  "https://gofreight.com/blog/general/how-do-freight-forwarders-work-from-home.html": {
+   "sep": 13,
+   "oct": 14
+  },
+  "https://gofreight.com/glossary/certificate-of-origin": {
+   "sep": 4,
+   "oct": 14
+  },
+  "https://gofreight.com/knowledge/customer-prepayments-handling-deposits-as-ar-credits-credit-note-method": {
+   "sep": 0,
+   "oct": 14
+  },
+  "https://gofreight.com/knowledge/how-does-the-load-and-link/match-work-": {
+   "sep": 1,
+   "oct": 14
+  },
+  "https://gofreight.com/knowledge/how-to-block-unblock-shipments": {
+   "sep": 15,
+   "oct": 14
+  },
+  "https://gofreight.com/knowledge/how-to-manage-obl-received-in-ocean-import": {
+   "sep": 12,
+   "oct": 14
+  },
+  "https://gofreight.com/knowledge/lesson-15-1-how-to-set-up-qbo-adaptor-for-the-first-time": {
+   "sep": 0,
+   "oct": 14
+  },
+  "https://developers.gofreight.com/docs/api/": {
+   "sep": 11,
+   "oct": 13
+  },
+  "https://gofreight.com/blog/education/how-is-the-operating-efficiency-of-a-freight-forwarder-measured.html": {
+   "sep": 11,
+   "oct": 13
+  },
+  "https://gofreight.com/customers/csl-express-line": {
+   "sep": 12,
+   "oct": 13
+  },
+  "https://gofreight.com/knowledge/how-to-check-ar-ap-status-through-the-volume-profit-report": {
+   "sep": 16,
+   "oct": 13
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-air-export-shipment-for-e-awb": {
+   "sep": 1,
+   "oct": 13
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-shipment-from-an-existing-quotation": {
+   "sep": 3,
+   "oct": 13
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-revenue-cost-report": {
+   "sep": 16,
+   "oct": 13
+  },
+  "https://gofreight.com/knowledge/how-to-set-up-auto-generation-of-check-numbers": {
+   "sep": 2,
+   "oct": 13
+  },
+  "https://www.gofreight.com/blog/general/what-is-freight-forwarding-and-how-does-it-work.html": {
+   "sep": 8,
+   "oct": 13
+  },
+  "https://document.gofreight.com/": {
+   "sep": 5,
+   "oct": 12
+  },
+  "https://gofreight.com/blog/ai-for-freight-forwarders-key-takeaways-from-our-live-webinar": {
+   "sep": 0,
+   "oct": 12
+  },
+  "https://gofreight.com/blog/descartes-alternatives": {
+   "sep": 8,
+   "oct": 12
+  },
+  "https://gofreight.com/blog/freight-tracking-software-comparison": {
+   "sep": 51,
+   "oct": 12
+  },
+  "https://gofreight.com/blog/freights-snap/newest-top-7-global-rankings-for-air-forwarders.html": {
+   "sep": 12,
+   "oct": 12
+  },
+  "https://gofreight.com/blog/solution/how-a-powerful-invoicing-function-in-your-freight-forwarding-software-helps-your-business.html": {
+   "sep": 6,
+   "oct": 12
+  },
+  "https://gofreight.com/blog/solution/why-is-integrating-a-modern-freight-forwarding-erp-software-crucial-for-your-business-growth.html": {
+   "sep": 0,
+   "oct": 12
+  },
+  "https://gofreight.com/blog/tms-evaluation-checklist": {
+   "sep": 0,
+   "oct": 12
+  },
+  "https://gofreight.com/knowledge/gofreight-account-security-measures": {
+   "sep": 9,
+   "oct": 12
+  },
+  "https://gofreight.com/knowledge/how-to-assign-containers-to-different-hb/l": {
+   "sep": 3,
+   "oct": 12
+  },
+  "https://gofreight.com/knowledge/how-to-check-bank-book-balance": {
+   "sep": 1,
+   "oct": 12
+  },
+  "https://gofreight.com/knowledge/how-to-input-bank-beginning-balance": {
+   "sep": 8,
+   "oct": 12
+  },
+  "https://gofreight.com/knowledge/how-to-quickly-maintain-container-information-by-importing-containers": {
+   "sep": 8,
+   "oct": 12
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-to-do-list-on-the-dashboard-in-gofreight": {
+   "sep": 5,
+   "oct": 12
+  },
+  "https://developers.gofreight.com/docs/edi_315/": {
+   "sep": 20,
+   "oct": 11
+  },
+  "https://gofreight.com/blog/education/freight-forwarding-software-warning-signs": {
+   "sep": 7,
+   "oct": 11
+  },
+  "https://gofreight.com/blog/freights-snap/freight-forwarding-pandemic.html": {
+   "sep": 10,
+   "oct": 11
+  },
+  "https://gofreight.com/knowledge/how-to-check-ar-ap-status-invoice-cost-list": {
+   "sep": 19,
+   "oct": 11
+  },
+  "https://gofreight.com/knowledge/how-to-create-an-ar-invoice-from-an-existing-quotation": {
+   "sep": 6,
+   "oct": 11
+  },
+  "https://gofreight.com/knowledge/how-to-set-up-an-account-group-for-trade-partners": {
+   "sep": 11,
+   "oct": 11
+  },
+  "https://gofreight.com/knowledge/how-to-switch-display-language-in-gofreight": {
+   "sep": 6,
+   "oct": 11
+  },
+  "https://gofreight.com/knowledge/how-to-use-edi-history-in-ocean-import": {
+   "sep": 9,
+   "oct": 11
+  },
+  "https://gofreight.com/knowledge/ocean-import-shipment-entry-page": {
+   "sep": 10,
+   "oct": 11
+  },
+  "https://developers.gofreight.com/docs/webhooks/using_webhooks/": {
+   "sep": 10,
+   "oct": 10
+  },
+  "https://gofreight.com/blog/7-day-freight-software-implementation": {
+   "sep": 8,
+   "oct": 10
+  },
+  "https://gofreight.com/blog/magaya-migration-guide": {
+   "sep": 0,
+   "oct": 10
+  },
+  "https://gofreight.com/customers/headwin-logistics": {
+   "sep": 13,
+   "oct": 10
+  },
+  "https://gofreight.com/glossary/fuel-surcharge-fee": {
+   "sep": 5,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/generating-a-commercial-invoice-in-ocean-export": {
+   "sep": 9,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/how-to-generate-pickup/delivery-orders-for-ocean-export-shipments-in-gofreight": {
+   "sep": 4,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/how-to-make-a-payment-for-ga-expenses-general-and-administrative-without-creating-an-accounts-payable-ap-invoice": {
+   "sep": 6,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/how-to-print-a-voucher-for-journal-entry": {
+   "sep": 12,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/how-to-print-hbl-in-the-ocean-import-module": {
+   "sep": 11,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/how-to-reset-tracking-user-password": {
+   "sep": 7,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/how-to-set-up-default-freight-rates-for-a-specific-module": {
+   "sep": 5,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/how-to-use-shipment-memos-for-important-notes-and-attachments": {
+   "sep": 7,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/how-to-write-off-invoices-as-bad-debts": {
+   "sep": 9,
+   "oct": 10
+  },
+  "https://gofreight.com/knowledge/which-user-permissions-can-be-customized-in-gofreight": {
+   "sep": 0,
+   "oct": 10
+  },
+  "https://gofreight.com/blog": {
+   "sep": 0,
+   "oct": 9
+  },
+  "https://gofreight.com/blog/best-freight-management-software": {
+   "sep": 4,
+   "oct": 9
+  },
+  "https://gofreight.com/blog/dhl-says-ai-will-help-it-beat-digital-first-competitors": {
+   "sep": 10,
+   "oct": 9
+  },
+  "https://gofreight.com/blog/freights-snap/amazon-walmart-and-coca-cola-are-seeking-alternatives-to-maintain-the-flow-of-merchandise-from-asia.html": {
+   "sep": 11,
+   "oct": 9
+  },
+  "https://gofreight.com/blog/industry-insights/blog-e-commerce-logistics-changing-freight-forwarding-industry.html": {
+   "sep": 11,
+   "oct": 9
+  },
+  "https://gofreight.com/blog/industry-insights/top-logistics-technologies-trends-2023.html": {
+   "sep": 43,
+   "oct": 9
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-ga-invoice-expense": {
+   "sep": 23,
+   "oct": 9
+  },
+  "https://gofreight.com/knowledge/how-to-create-and-manage-trade-partners": {
+   "sep": 7,
+   "oct": 9
+  },
+  "https://gofreight.com/knowledge/how-to-file-ebooking-in-gofreight-booking-request/-esi/-evgm": {
+   "sep": 12,
+   "oct": 9
+  },
+  "https://gofreight.com/knowledge/how-to-use-gofreights-dashboard-for-performance-analysis": {
+   "sep": 3,
+   "oct": 9
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-complete-shipment-function-in-gofreight": {
+   "sep": 11,
+   "oct": 9
+  },
+  "https://developers.gofreight.com/docs/api/more-examples/": {
+   "sep": 6,
+   "oct": 8
+  },
+  "https://developers.gofreight.com/docs/api/use-cases/agent-shipment-submission/": {
+   "sep": 12,
+   "oct": 8
+  },
+  "https://gofreight.com/blog/sustainable-supply-chain-management": {
+   "sep": 24,
+   "oct": 8
+  },
+  "https://gofreight.com/customers/transmodal-group": {
+   "sep": 5,
+   "oct": 8
+  },
+  "https://gofreight.com/glossary/chassis": {
+   "sep": 0,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-access-the-billing-usage-report": {
+   "sep": 5,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-shipping-from-the-warehouse-module": {
+   "sep": 1,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-create-charges-in-billing-based-mode": {
+   "sep": 0,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-delivery-order-do-for-ocean-import-shipments-in-gofreight": {
+   "sep": 12,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-trial-balance-in-gofreight-gofreight-help-center": {
+   "sep": 5,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-print-an-ar-invoice": {
+   "sep": 12,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-run-the-mtr.exe-file": {
+   "sep": 4,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-use-list-views-in-gofreight": {
+   "sep": 1,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-invoice-cost-list-ga-invoice-expense-list-in-gofreight": {
+   "sep": 2,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-item-list-for-warehouse-operations": {
+   "sep": 4,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/ocean-export-batch-generation-of-hbl-booking-confirmation-and-pickup/delivery-orders": {
+   "sep": 4,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/tracking-system-supports-automatic-correction-of-shipment-information": {
+   "sep": 2,
+   "oct": 8
+  },
+  "https://gofreight.com/knowledge/where-to-input-the-lfd-date-for-ocean-shipments": {
+   "sep": 13,
+   "oct": 8
+  },
+  "https://www.gofreight.com/blog/education/understanding-ex-works-in-international-trade.html": {
+   "sep": 6,
+   "oct": 8
+  },
+  "https://gofreight.com/blog/detention-demurrage-tms-savings": {
+   "sep": 1,
+   "oct": 7
+  },
+  "https://gofreight.com/blog/education/how-do-freight-forwarders-acquire-customers.html": {
+   "sep": 6,
+   "oct": 7
+  },
+  "https://gofreight.com/blog/freights-snap/increase-of-up-to-10000-msc-has-announced-price-changes.html": {
+   "sep": 1,
+   "oct": 7
+  },
+  "https://gofreight.com/blog/industry-insights/finding-the-right-freight-forwarding-software.html": {
+   "sep": 8,
+   "oct": 7
+  },
+  "https://gofreight.com/glossary/transloading": {
+   "sep": 0,
+   "oct": 7
+  },
+  "https://gofreight.com/glossary/unraveling-demurrage-detention-charges.html": {
+   "sep": 12,
+   "oct": 7
+  },
+  "https://gofreight.com/knowledge/how-to-block-unblock-a-payment": {
+   "sep": 4,
+   "oct": 7
+  },
+  "https://gofreight.com/knowledge/how-to-calculate-sales-commission-using-volume-and-profit-report": {
+   "sep": 2,
+   "oct": 7
+  },
+  "https://gofreight.com/knowledge/how-to-convert-a-draft-invoice-to-a-normal-invoice": {
+   "sep": 8,
+   "oct": 7
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-receiving-in-the-warehouse-module": {
+   "sep": 1,
+   "oct": 7
+  },
+  "https://gofreight.com/knowledge/how-to-send-emails-weekly-automatically-in-the-aging-report-to-your-team": {
+   "sep": 5,
+   "oct": 7
+  },
+  "https://gofreight.com/knowledge/how-to-use-trade-partner-aliases-for-faster-searches": {
+   "sep": 7,
+   "oct": 7
+  },
+  "https://gofreight.com/knowledge/lesson-4-8-2-ams-create": {
+   "sep": 1,
+   "oct": 7
+  },
+  "http://gofreight.com/": {
+   "sep": 0,
+   "oct": 6
+  },
+  "https://developers.gofreight.com/docs/api/troubleshooting/": {
+   "sep": 6,
+   "oct": 6
+  },
+  "https://gofreight.com/blog/founders-insight/why-a-modern-saas-is-necessary-for-any-freight-forwarder-to-grow.html": {
+   "sep": 5,
+   "oct": 6
+  },
+  "https://gofreight.com/blog/industry-insights/here-are-the-top-logistics-technology-trends-freight-forwarders-can-expect-to-see-in-2021.html": {
+   "sep": 2,
+   "oct": 6
+  },
+  "https://gofreight.com/blog/solution/how-to-impress-your-customers-through-your-freight-logistics-software.html": {
+   "sep": 5,
+   "oct": 6
+  },
+  "https://gofreight.com/blog/solution/streamline-with-a-transportation-management-system.html": {
+   "sep": 2,
+   "oct": 6
+  },
+  "https://gofreight.com/customers/global-gateway": {
+   "sep": 5,
+   "oct": 6
+  },
+  "https://gofreight.com/glossary/incoterm-free-on-board": {
+   "sep": 0,
+   "oct": 6
+  },
+  "https://gofreight.com/gofreight-software-as-a-service-agreement-sh": {
+   "sep": 3,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/air-export-booking-management": {
+   "sep": 2,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-batch-send-download-or-print-arrival-notices": {
+   "sep": 2,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-block-or-unblock-accounting-in-batch-by-date": {
+   "sep": 6,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-create-quotations-by-using-rate-finder": {
+   "sep": 6,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-generate-documents-from-the-warehouse-receipt": {
+   "sep": 6,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-generate-the-singapore-gst-report-for-singaporean-companies-only": {
+   "sep": 1,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-import-contracts-into-gofreight": {
+   "sep": 11,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-make-a-payment-with-a-credit-card-in-gofreight": {
+   "sep": 7,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-set-up-trade-parties-for-trade-partners": {
+   "sep": 3,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-sync-documents-with-tracking-users-efficiently": {
+   "sep": 3,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-update-or-remove-a-trade-partners-account-group": {
+   "sep": 2,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/how-to-update-status-requirements-in-the-customer-portal": {
+   "sep": 11,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/latest-retrieval-time-of-tracking-edi": {
+   "sep": 1,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/lesson-3-3-6-shipment-create-d-c-note": {
+   "sep": 4,
+   "oct": 6
+  },
+  "https://gofreight.com/knowledge/vendor-prepayments-how-to-pay-partners-in-advance-ap-method": {
+   "sep": 17,
+   "oct": 6
+  },
+  "https://gofreight.com/webinars": {
+   "sep": 0,
+   "oct": 6
+  },
+  "https://www.gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid.html": {
+   "sep": 1,
+   "oct": 6
+  },
+  "https://developers.gofreight.com/docs/api/tutorial/match-billing-code/": {
+   "sep": 1,
+   "oct": 5
+  },
+  "https://developers.gofreight.com/docs/api/tutorial/retrieve-shipment-refs/": {
+   "sep": 6,
+   "oct": 5
+  },
+  "https://gofreight.com/blog/automate-vs-offshore-freight-data-entry": {
+   "sep": 0,
+   "oct": 5
+  },
+  "https://gofreight.com/blog/freight-forwarder-ai-readiness": {
+   "sep": 0,
+   "oct": 5
+  },
+  "https://gofreight.com/blog/freight-forwarder-tech-stack": {
+   "sep": 5,
+   "oct": 5
+  },
+  "https://gofreight.com/blog/freight-workflow-automation": {
+   "sep": 1,
+   "oct": 5
+  },
+  "https://gofreight.com/blog/industry-insights/democratizing-access-to-software-for-forwarders-a-conversation-with-gofreight-ceo-trenton-chen-and-eric-johnson.html": {
+   "sep": 2,
+   "oct": 5
+  },
+  "https://gofreight.com/customers/gc-logistics": {
+   "sep": 4,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/how-to-check-ar-ap-status-using-the-b-l-list": {
+   "sep": 14,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/how-to-configure-the-to-do-list-in-gofreight": {
+   "sep": 0,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/how-to-export-shipment-lists-in-gofreight": {
+   "sep": 3,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/how-to-manage-the-currency-table-in-accounting-settings": {
+   "sep": 2,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/how-to-manage-your-shipment-tracking-email-notifications": {
+   "sep": 2,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/how-to-send-a-document-via-email-in-gofreight": {
+   "sep": 10,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/how-to-track-carbon-footprint-co2e-on-tracking-portal": {
+   "sep": 1,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/how-to-use-global-search-in-gofreight": {
+   "sep": 2,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/lesson-3-9-1-delivery-order-do": {
+   "sep": 1,
+   "oct": 5
+  },
+  "https://gofreight.com/knowledge/lesson-5-3-1-arrival-notice": {
+   "sep": 2,
+   "oct": 5
+  },
+  "https://developers.gofreight.com/docs/api/tutorial/manage-trade-partners/": {
+   "sep": 8,
+   "oct": 4
+  },
+  "https://developers.gofreight.com/docs/api/use-cases/digitize-invoice-via-ocr/": {
+   "sep": 6,
+   "oct": 4
+  },
+  "https://developers.gofreight.com/docs/webhooks/securing_webhooks/": {
+   "sep": 3,
+   "oct": 4
+  },
+  "https://developers.gofreight.com/docs/webhooks/webhook_events/": {
+   "sep": 0,
+   "oct": 4
+  },
+  "https://gofreight.com/blog/customer-story/how-do-you-compete-with-larger-forwarders-with-more-resources.html": {
+   "sep": 1,
+   "oct": 4
+  },
+  "https://gofreight.com/blog/founders-insight/nurturing-customer-loyalty-how-large-freight-forwarders-can-utilize-po-management-software-to-enhance-client-relations.html": {
+   "sep": 5,
+   "oct": 4
+  },
+  "https://gofreight.com/blog/general/freight-forwarder-regulations-challenges-and-solutions-when-complying-with-regulations.html": {
+   "sep": 0,
+   "oct": 4
+  },
+  "https://gofreight.com/blog/industry-insights/guiding-you-through-freight-forwarding-software-with-the-current-logtech-landscape.html": {
+   "sep": 8,
+   "oct": 4
+  },
+  "https://gofreight.com/blog/industry-insights/navigating-economic-instability-for-small-medium-freight-forwarders.html": {
+   "sep": 0,
+   "oct": 4
+  },
+  "https://gofreight.com/blog/industry-insights/top-10-reasons-of-shipping-delails.html": {
+   "sep": 13,
+   "oct": 4
+  },
+  "https://gofreight.com/customers/whale-logistics-usa": {
+   "sep": 1,
+   "oct": 4
+  },
+  "https://gofreight.com/get-demo-ai": {
+   "sep": 2,
+   "oct": 4
+  },
+  "https://gofreight.com/glossary/cif-cost-insurance-and-freight.html": {
+   "sep": 0,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/batch-update-container": {
+   "sep": 2,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/guide-to-the-enhanced-air-export-copy-charges-feature": {
+   "sep": 3,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-does-gofreight-calculate-volume-weight-in-an-air-shipment": {
+   "sep": 3,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-block-charges-in-billing-based-mode": {
+   "sep": 0,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-configure-accounting-settings-for-trade-partners": {
+   "sep": 2,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-g-l-code-in-gofreight": {
+   "sep": 6,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-delete-a-payment-in-gofreight": {
+   "sep": 1,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-balance-sheet-in-gofreight": {
+   "sep": 6,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-load-warehouse-inventory-item-to-a-house-bill-of-lading": {
+   "sep": 7,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-offset-multiple-ar-and-ap-invoices-from-different-parties-under-one-payment": {
+   "sep": 2,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-quickly-review-shipment-status-in-house-b-l-list": {
+   "sep": 2,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-rearrange-the-table-column-configuration": {
+   "sep": 2,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-reload-revise-the-agent-local-statement": {
+   "sep": 1,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-search-for-a-received-payment": {
+   "sep": 4,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/how-to-search-for-ocean-export-and-ocean-import-shipments-in-the-master-b-l-list": {
+   "sep": 2,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/koverly-payment-portal-on-invoice-cost-list": {
+   "sep": 0,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/lesson-4-3-1-booking": {
+   "sep": 0,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/lesson-4-5-1-pickup-delivery-order": {
+   "sep": 0,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/lesson-5-4-1-atme": {
+   "sep": 4,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/lesson-6-2-1-mawb-stock-list": {
+   "sep": 7,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/mark-off-stackable-haz-/-dg-on-quotation": {
+   "sep": 1,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/set-different-print-addresses-for-accounting-forms": {
+   "sep": 2,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/terms-and-condition-on-arrival-notice": {
+   "sep": 4,
+   "oct": 4
+  },
+  "https://gofreight.com/knowledge/try-our-easy-search-find-your-answers-instantly-in-our-knowledge-center": {
+   "sep": 2,
+   "oct": 4
+  },
+  "https://support.gofreight.com/hc/en-us/sections/6461434190479-Lesson-7-Accounting-Training": {
+   "sep": 3,
+   "oct": 4
+  },
+  "https://developers.gofreight.com/docs/api/tutorial/": {
+   "sep": 3,
+   "oct": 3
+  },
+  "https://developers.gofreight.com/docs/custom_fields/": {
+   "sep": 3,
+   "oct": 3
+  },
+  "https://gofreight.com/blog/education/a-guide-to-verified-gross-mass-vgm": {
+   "sep": 71,
+   "oct": 3
+  },
+  "https://gofreight.com/blog/founders-insight/skyrocketing-your-bottom-line-unleashing-the-power-of-embedded-quotation-and-advanced-crm-in-freight-management.html": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/blog/freight-broker-load-cancellation": {
+   "sep": 5,
+   "oct": 3
+  },
+  "https://gofreight.com/blog/freights-snap/shipping-between-china-and-the-us-has-just-become-cheaper.html": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/blog/freights-snap/what-is-overcapacity-in-the-shipping-market.html": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/blog/general/freight-forwarding-trends-to-watch-out-for-in-2023.html": {
+   "sep": 3,
+   "oct": 3
+  },
+  "https://gofreight.com/blog/ocean-freight-management-software": {
+   "sep": 2,
+   "oct": 3
+  },
+  "https://gofreight.com/blog/solution/how-your-competitiveness-in-2021-is-dependent-on-freight-forwarding-tms.html": {
+   "sep": 4,
+   "oct": 3
+  },
+  "https://gofreight.com/customers/allround-forwarding": {
+   "sep": 8,
+   "oct": 3
+  },
+  "https://gofreight.com/glossary/teu-twenty-foot-equivalent-unit?hs_amp=true": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/enhanced-air-export-module-overview": {
+   "sep": 3,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-add-fixed-charges-for-each-trade-partner": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-batch-update-shipments": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-block-accounting-data-in-batch-by-files": {
+   "sep": 3,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-check-negative-profit-shipments-in-gofreight": {
+   "sep": 2,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-shipment-in-air-import": {
+   "sep": 2,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-disable-a-user-account": {
+   "sep": 3,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-journal-report-in-gofreight": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-generate-an-hb-l-charge-report-in-excel": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-get-your-warehouse-partner-to-use-the-dock-receipt-list-in-the-tracking-portal": {
+   "sep": 6,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-make-or-receive-payment-with-multiple-statements-in-agent-local-statement": {
+   "sep": 1,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-perform-bank-reconciliation-in-gofreight": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-preview-memos-and-documents-without-opening-shipments": {
+   "sep": 3,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-quickly-calculate-volume-weight-in-air-export": {
+   "sep": 1,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-search-for-a-payment-made": {
+   "sep": 1,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-update-pier-passpp-traffic-mitigation-feetmf-charge-amount-when-creating-accounts-payableap": {
+   "sep": 7,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-filter-function-on-the-quotation-list": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/how-to-void-a-payment": {
+   "sep": 9,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/lesson-1-1-1-dashboard": {
+   "sep": 1,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/lesson-13-0-0-gofreight-tracking-introduction": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/lesson-2-8-1-internal-edi": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/lesson-3-2-1-isf-filing": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/lesson-3-5-1-arrival-notice": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/lesson-4-8-3-ams-amend-cancel": {
+   "sep": 4,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/module-owner-coverage": {
+   "sep": 0,
+   "oct": 3
+  },
+  "https://gofreight.com/knowledge/quotation-list": {
+   "sep": 6,
+   "oct": 3
+  },
+  "https://gofreight.com/webinars/elevating-customer-experience-in-freight": {
+   "sep": 1,
+   "oct": 3
+  },
+  "https://gofreight.com/whitepapers": {
+   "sep": 1,
+   "oct": 3
+  },
+  "https://developers.gofreight.com/docs/webhooks/": {
+   "sep": 2,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/best-tms-small-business": {
+   "sep": 3,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/case-study-multi-regional-forwarder": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/education/a-guide-to-verified-gross-mass-vgm-solas-compliance-for-freight": {
+   "sep": 24,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/education/how-do-you-choose-the-right-freight-forwarding-software.html": {
+   "sep": 5,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/education/how-to-operate-a-freight-forwarding-business.html": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/founders-insight/navigating-post-pandemic-waters-the-new-normal-in-freight-forwarding-and-adaptation-strategies.html": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/freight-software-prevents-duplicate-bl-wrong-entries": {
+   "sep": 2,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/freights-snap/hapag-lloyd-cant-handle-it-anymore.html": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/freights-snap/us-fourth-largest-post-sees-congestion.html": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/industry-insights/how-to-maximize-business-opportunities-in-the-freight-forwarding-industry-in-2023.html": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide": {
+   "sep": 81,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/solution/how-can-freight-forwarders-and-nvoccs-lower-costs-and-increase-operational-efficiencies-with-gofreight.html": {
+   "sep": 2,
+   "oct": 2
+  },
+  "https://gofreight.com/blog/tag/industry-insights": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/customers/ardent-global-logistics": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/glossary/container-tracking": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/glossary/fulfillment-by-amazon": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/glossary/non-vessel-operating-common-carrier": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/\u5982\u4f55\u8fd0\u884cmtr.exe\u6587\u4ef6-": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/clear-check-by-excel": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/employee-performance-report-user-manual": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/enable-dummy-trade-partner": {
+   "sep": 6,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/faq-what-to-do-when-your-customer-vendor-can-not-receive-email-from-gofreight-or-open-gofreights-pdf-documents": {
+   "sep": 2,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/gofreight-api-faq": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-change-the-op-in-batch-for-multiple-shipments": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-check-all-created-quotations": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-configure-the-quotation-list-": {
+   "sep": 3,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-journal-entry-in-gofreight": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-payment-on-the-invoice-cost-list": {
+   "sep": 3,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-payment-on-the-payment-made-list": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-generate-and-print-quotation-documents": {
+   "sep": 2,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-generate-financial-report-cn-version-in-gofreight-": {
+   "sep": 4,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-get-your-trade-partners-to-use-the-tracking-portal": {
+   "sep": 9,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-insert-templates-into-your-document-preview-page": {
+   "sep": 4,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-link-a-full-quantity-of-warehouse-items-to-a-specific-shipment": {
+   "sep": 3,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-load-recipients-to-cc-and-bcc-from-previous-emails-in-gofreight": {
+   "sep": 4,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-manage-contact-information-for-trade-partners": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-merge-trade-partners-tp": {
+   "sep": 4,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-output-the-quotation-list-as-excel": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-quickly-assign-op-to-handle-shipments": {
+   "sep": 2,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-review-profit-reports-for-specific-shipments-under-list-view": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-search-for-a-journal-entry-in-the-accounting-module": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/how-to-verify-your-gmail-account-on-gofreight": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-1-3-1-shipment-entry": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-13-6-5-hbl-list-shipment-status-check": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-13-7-1-trigger-air-edi-field": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-14-2-1-customer-portal-list-view": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-15.2-how-to-set-up-qbo-adaptor-for-the-first-time": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-3-3-3-shipment-create-ar-ap": {
+   "sep": 5,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-4-1-2-receiving-shipping": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-4-9-1-finalize-shipment": {
+   "sep": 1,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-6-8-1-pre-alert-air-export": {
+   "sep": 5,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-7-10-4-currency-table": {
+   "sep": 2,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-7-4-2-agent-local-statement-update-enhancement": {
+   "sep": 4,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-7-5-1-chase-up-payment-from-customers-aging-report": {
+   "sep": 2,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/lesson-9-1-2-quotation-create-new-quotation": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/knowledge/tracking-portal-ocean-shipment-list-view": {
+   "sep": 4,
+   "oct": 2
+  },
+  "https://gofreight.com/product/customer-portal": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://gofreight.com/solutions/handle-more-shipments": {
+   "sep": 2,
+   "oct": 2
+  },
+  "https://support.gofreight.com/hc/en-us/categories/6375773605263-GoFreight-Guides": {
+   "sep": 8,
+   "oct": 2
+  },
+  "https://support.gofreight.com/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCI/0JgZGCzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCI9oX2KOCzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJML2hjL2VuLXVzL2FydGljbGVzLzEyMzk1Mzc4ODMyNTI3LUhvdy10by1TdWJtaXQtQU1TLUZpbGluZy12aWEtZUZyZWlnaHQGOwhUOglyYW5raQk%3D--d2dd7f1a30bc6474cc0f002ea5ffb300e264f079": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://support.gofreight.com/hc/zh-hk": {
+   "sep": 0,
+   "oct": 2
+  },
+  "https://www.gofreight.com/blog/education/how-to-do-custom-clearance-in-usa-for-goods.html": {
+   "sep": 24,
+   "oct": 2
+  },
+  "https://www.gofreight.com/blog/education/shipping-container-dimensions-everything-you-need-to-know.html": {
+   "sep": 3,
+   "oct": 2
+  },
+  "https://www.gofreight.com/blog/industry-insights/your-ultimate-guide-to-commercial-invoice-customs-costs.html": {
+   "sep": 19,
+   "oct": 2
+  },
+  "https://www.gofreight.com/container-tracking": {
+   "sep": 0,
+   "oct": 2
+  },
+  "http://www.gofreight.com/": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://blog.gofreight.com/zh-tw/\u65b0\u978b\u5b50-\u6d77\u904b-\u6982\u5ff5/": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://en.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/author/trenton": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/best-customs-brokerage-software-2026-compliance-workflow/": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/best-customs-compliance-thought": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/best-supply-chain-planning-solutions": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/best-supply-chain-planning-solutions-reviews-2026": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/blue-yonder-wms": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/business-case-replace-freight-software": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/education/bill-of-lading-vs-packing-slip": {
+   "sep": 13,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/education/how-to-do-customs-clearance-in-usa-for-goods.html": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-you-need-to-known.html": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-ddu/": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/education/top-freight-forwarding-training-courses/": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/education/understanding-ex-works-international-trade.html": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/education/understanding-exw-incoterms-2026:complete-guide-for-freight": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-tradefinanceglobal.com/freight-forwarding/telex-release/": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/education/what-is-the-profit-margin-for-freight-forwarders.": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/fish-bowl": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/freight-forwarder-vs-3pl-which-model-fits-your-business": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/freights-snap/americas-everything-shortage-is-caused-by-americans.html": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/freights-snap/can-airlines-keep-up-with-strong-air-cargo-demand.html": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/freights-snap/global-top-freight-for-warders": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/freights-snap/port-of-la-lb-to-charge-100-per-container-per-day.html": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/freights-snap/ports-of-la-and-long-beach-almost-break-records.html": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/freights-snap/shipping-giants-surrender-long-held-dominating-position.html": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/general/tips-for-choosing-the-ideal-freight-forwarding-software.html": {
+   "sep": 12,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide/": {
+   "sep": 103,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/industry-insights/top-10-resons-of-shipping-delays.html": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/last-name-first-name": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/magaya-alternatives": {
+   "sep": 3,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/page/17": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/page/41": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/page/7": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/solution/how-real-time-container-tracking-is-a-life-enhancing-technology-for-freight-forwarders-2.html": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/blog/tag/general": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/freight-forwarding-software?__hstc=69355471.2f3f33a24b44870ec4a577029c49e44b.1680566405334.1680566405335.1680566405336.1&__hssc=69355471.1.1680566405337&__hsfp=2753084298": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/glossary/author/bella-johnson": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/glossary/cif-incoterm": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/glossary/co-loader/": {
+   "sep": 11,
+   "oct": 1
+  },
+  "https://gofreight.com/glossary/container-freight-station-cfs/": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/glossary/fenix-marine-services-pier-300-los-angeles-ca-usa/": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/glossary/fob-free-on-board/": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/glossary/what-is-inco-terms": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/go-get-demo-ppc": {
+   "sep": 4,
+   "oct": 1
+  },
+  "https://gofreight.com/hubfs/Imported_Blog_Media/Industry-Insights_Your-Ultimate-Guide-to-Commercial-Invoice-Customs-Costs.png": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/auto-saved-generated-documents-to-the-doc-center": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-add-a-new-receipt-from-the-warehouse-module": {
+   "sep": 4,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-batch-change-the-sales-in-charge": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-block-invoices-in-the-agent-local-statement": {
+   "sep": 6,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-check-the-number-of-active-users-on-gofreight": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-new-payment-on-payment-received-list": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-create-and-complete-manual-to-do-tasks": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-finalize-a-shipment-in-ocean-export": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-generate-1099-report-in-gofreight": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-general-ledger-report-in-gofreight/": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-packing-list-in-ocean-export": {
+   "sep": 3,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-manage-carrier-contract-number-by-trade-partner": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-print-checks-with-or-without-a-rider-in-gofreight": {
+   "sep": 4,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-set-up-a-french-or-mandarin-remark-on-ar-invoices": {
+   "sep": 2,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-settle-payment-in-main-currency": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-use-inventory-management-in-the-warehouse-module": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-add-to-favorite-button-on-the-volume-profit-report": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-use-the-house-bill-of-lading-house-b-l-list-in-ocean-shipment": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-verify-accounting-block-history-": {
+   "sep": 2,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/how-to-whitelist-the-gofreight-domain-in-your-email-server": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-1-10-1-shipment-memo": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-1-11-1-insert-template-for-entries": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-1-7-2-trade-partner-contact-person-information": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-1-7-6-trade-partner-alias": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-1-9-1-color-remarks-shipment": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-13-5-1-setting-shipment-report-template": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-13-8-1-how-to-import-shipment": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-14-1-1-customer-portal-my-profile": {
+   "sep": 2,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-2-4-2-batch-change-op-list-view": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-2-5-1-port-management": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-2-6-1-freight-default-value-setting": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-3-3-2-shipment-create-container": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-3-3-5-shipment-create-log": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-4-2-1-vessel-schedule": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-4-6-1-shipping-instruction": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-4-7-1-cargo-manifest": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-5-2-1-create-new-shipment": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-5-2-2-new-shipment-receive-pre-alert": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-6-3-1-booking-air-export": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-7-1-1-invoice-cost-list": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-7-10-1-gl-code": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-7-10-2-billing-code": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-7-2-3-make-receive-payment-in-1-transaction-for-invoices-of-different-parties": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-7-3-1-deposit-clear-payment": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-7-7-3-accounting-reports-general-ledger-report": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-7-7-4-accounting-reports-income-statement": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-7-7-5-bank-book-balance": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-7-8-2-accounting-block-unblock": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-8-1-1-basic-volume-profit-report": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-8-1-2-advance-volume-profit-report": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-8-1-4-profit-loss-reconciliation-report": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/lesson-8-1-6-employee-performance-report": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/set-up-canadian-eft-banking-fields-for-trade-partners": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/shipment-memo-auto-load-settings": {
+   "sep": 3,
+   "oct": 1
+  },
+  "https://gofreight.com/knowledge/what-tools-are-available-in-the-mb-l-section": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://gofreight.com/product/shipment-tracking-operations": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/solutions/win-more-business": {
+   "sep": 2,
+   "oct": 1
+  },
+  "https://gofreight.com/webinars/mastering-digital-transformation-in-freight-forwarding": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://support.gofreight.com/": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://support.gofreight.com/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCI8R7ekdCzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCA9jRYQsCzoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJyL2hjL2VuLXVzL2FydGljbGVzLzEyMjIzMTA2NTg0OTc1LUhvdy10by1HZW5lcmF0ZS1hLURlbGl2ZXJ5LU9yZGVyLURPLWZvci1PY2Vhbi1JbXBvcnQtU2hpcG1lbnRzLWluLUdvRnJlaWdodAY7CFQ6CXJhbmtpCA%3D%3D--48d9994cc80c04913bf4edebe4f8ad61bcb9edc1": {
+   "sep": 5,
+   "oct": 1
+  },
+  "https://support.gofreight.com/hc/en-us/sections/6455087968655-Accounting": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://www.gofreight.com/blog/best-customs-brokerage-software": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://www.gofreight.com/blog/education/5-data-analytics-tools-for-logistics-and-transportation.html": {
+   "sep": 2,
+   "oct": 1
+  },
+  "https://www.gofreight.com/blog/freight-forwarding-trends-2025": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://www.gofreight.com/blog/freights-snap/is-it-true-dsv-to-become-the-worlds-largest-forwarder.html": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://www.gofreight.com/blog/general/blog-forwading-management-software-as-service.html": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://www.gofreight.com/blog/industry-insights/the-ultimate-guide-to-freight-forwarders.html": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://www.gofreight.com/blog/industry-insights/top-10-reasons-of-shipping-delays.html": {
+   "sep": 1,
+   "oct": 1
+  },
+  "https://www.gofreight.com/blog/solution/complete-guide-aes": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://www.gofreight.com/glossary/co-loader": {
+   "sep": 6,
+   "oct": 1
+  },
+  "https://www.gofreight.com/glossary/understanding-cpt-meaning-in-incoterms.html": {
+   "sep": 66,
+   "oct": 1
+  },
+  "https://www.gofreight.com/tw/about-us": {
+   "sep": 0,
+   "oct": 1
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-freight-cfr/": {
+   "sep": 110,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fuel-surcharge-fee?hs_amp=true": {
+   "sep": 58,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-you-need-to-know": {
+   "sep": 47,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/shipping-from-india-to-usa?hs_amp=true": {
+   "sep": 44,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-freight-cfr.": {
+   "sep": 40,
+   "oct": 0
+  },
+  "https://www.gofreight.com/glossary/what-is-incoterms": {
+   "sep": 33,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-to-know.html": {
+   "sep": 30,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-change-package-details-of-the-bill-of-lading-after-ams-submission": {
+   "sep": 30,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-conterms.html": {
+   "sep": 25,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-ex-works-in-international-trade": {
+   "sep": 23,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/split-shipment?hs_amp=true": {
+   "sep": 22,
+   "oct": 0
+  },
+  "https://www.gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-incoterms": {
+   "sep": 22,
+   "oct": 0
+  },
+  "https://www.gofreight.com/glossary/understanding-cost-and-freight-cfr.html": {
+   "sep": 21,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-guide.html": {
+   "sep": 20,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/how-to-do-custom-clearance-in-usa-for-goods": {
+   "sep": 19,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-ddu-and-delivery-duty-unpaid.html": {
+   "sep": 19,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid": {
+   "sep": 18,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/terminal-handling-charges-thc-explained-2026": {
+   "sep": 18,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-software.html": {
+   "sep": 17,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/what-is-sea-freight": {
+   "sep": 17,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-similar-shipping-a-complete-guide.html": {
+   "sep": 15,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fuel-surcharge": {
+   "sep": 14,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/a-guide-to-verified-gross-mass-vgm/": {
+   "sep": 13,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/federal-maritime-commission": {
+   "sep": 13,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-reset-your-password": {
+   "sep": 13,
+   "oct": 0
+  },
+  "https://www.gofreight.com/blog/education/understanding-exw-meaning-in-international-trade": {
+   "sep": 13,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-security.html": {
+   "sep": 10,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/apl-terminal-tracking?hs_amp=true": {
+   "sep": 9,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/terminal-handling-charges": {
+   "sep": 9,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/terminal-handling-charge-thc": {
+   "sep": 8,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterms/": {
+   "sep": 8,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/a-guide-to-verified-gross-mass-vgm.": {
+   "sep": 7,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-do-it-work.html": {
+   "sep": 7,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-does-it-work": {
+   "sep": 7,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/bill-of-lading?hs_amp=true": {
+   "sep": 7,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point": {
+   "sep": 7,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-vs-fob-destination-key-differences-explained": {
+   "sep": 7,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-the-automated-manifest-system-ams-simple-ams-filing-guide": {
+   "sep": 7,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-add-tax-to-freight-invoices": {
+   "sep": 7,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-does-it-work/": {
+   "sep": 6,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/air-waybill": {
+   "sep": 6,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/federal-maritime-commission-fmc?hs_amp=true": {
+   "sep": 6,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterms": {
+   "sep": 6,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/quickbooks-online-integration-faq": {
+   "sep": 6,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-you-need-to-know/": {
+   "sep": 5,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid/": {
+   "sep": 5,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.": {
+   "sep": 5,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-vs-destination": {
+   "sep": 5,
+   "oct": 0
+  },
+  "https://support.gofreight.com/hc/en-us/articles/6731690120079-How-to-Create-a-New-Bank-in-GoFreight": {
+   "sep": 5,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pays-freico-costs-unraveling-fca-incoterms": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-html": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-shipping": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-to-commercial-invoice-costs.html": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/sustainable-supply-chain-management?hs_amp=true": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-automated-manifest-system-ams-simple-ams-filing-guide.html": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-incoterms-in-2026-all-11-codes-explained": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/lesson-4-10-1-pre-alert": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://www.gofreight.com/blog/general/customer-relationship-management-in-logistics.html": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://www.gofreight.com/glossary/ocean-carrier-alliances": {
+   "sep": 4,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/blog/customs-clearance-status-codes": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/bill-of-lading-vs-packing-list.html": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/how-to-do-custom-clearance-in-usa-for-goods/": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-sizes-dimensions/": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-and-delivery-duty-unpaid.html": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-shipping/": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/what-is-sea-freight.": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freight-forwarder-data-migration-playbook?hs_amp=true": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freights-snap/is-it-true-dsv-to-worlds-largest-forwarder.html": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freights-snap/santa-needs-to-worry-about-port-congestion-too.html": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/career-paths-in-freight-forwarding": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarder.html": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-share-a-complete-guide": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-guide/": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-to-commercial-invoice-customs.html": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/why-freight-forwarders-need-specialized-software?hs_amp=true": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/airway-bill.html": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-destination": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-v-fob-destination": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/terminal-handling-charges-thc/": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-cpt.html": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-use-insert-templates-for-data-entry": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://www.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide": {
+   "sep": 3,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/3pl-vs-freight-forwarder/": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/customs-status-codes": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/3-things-to-know-pierpass-2-0.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/5-common-mistakes-that-freight-forwarders-make-when-choosing-a-trade-partner.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/5-data-analytics-tools-for-logistics-and-transportation": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pays-freient-costs-unraveling-fca-incoterms": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-incoterms/": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/container-dimensions-everything-you-need-to-know.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-to-know/": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-type-you-need-to-know.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-you-need-to-know.": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-fishing.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-health.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/what-is-sea-freight/": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freights-snap/freight-prices-between-us-and-china-exceed-20000-breaking-the-record.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/10-ways-freight-forwarders-to-boost-efficiency-and-productivity.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-guide": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-steel-a-complete-guide.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-in-shipping-a-complete-guide.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/the-ultimate-guide-to-freight-forwarders": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/top-10-of-shipping-delays.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-commercial-invoice-customs-costs.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-to-commercial-invoice-customs-costs.": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-to-customs-costs.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/cfs-container-freight-station-cfs/": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/cfs-container-freight-station-what-it-is-and-how-it-works": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/everything-freight-forwarders-need-know-about-eawb": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-fob-destination": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/garden-city-terminal": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/ocean-alliance": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/ocean-alliance-alliances": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/scac-code": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/split-shipment/": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-firm-cfr.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-fred-cfr.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-origin.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-automated-manifest-system-ams-simple-ams-filing-guide": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-automated-manifest-system-ams-simple-ams-filing-guide/": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-the-automated-manifest-system-ams-simple-ams-filing-guide/": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-the-automated-manifest-system-simple-ams-filing-guide.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/customer-portal-display-settings": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-generate-an-air-import-shipments-to-the-us": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/lesson-3-8-1-freight-release": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/welcome-to-the-go-freight-knowledge-center": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/blog/air-freight-software-solutions": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/blog/education/5-sales-strategies-for-freight-forwarding-company.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/blog/education/a-guide-to-verified-gross-mass-vgm.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/blog/freights-snap/global-top-freight-forwarders": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/blog/temperature-controlled-freight": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/glossary/air-waybill.html": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/glossary/electronic-bill-of-lading": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/glossary/fob-shipping-point-vs-fob-destination": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/glossary/telex-release": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/glossary/understanding-cost-and-freight-cfr": {
+   "sep": 2,
+   "oct": 0
+  },
+  "https://www.gofreight.com/solutions/ocean-freight": {
+   "sep": 2,
+   "oct": 0
+  },
+  "http://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "http://gofreight.com/glossary/what-is-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://blog.gofreight.com/blog/industry-insights/your-ultimate-guide-to-commercial-invoice-customs-costs/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://en.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://en.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://en.gofreight.com/glossary/what-is-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog-education/unpacking-the-telex-release-in-shipping.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/3PL-vs-transitario-\u00bfqu\u00e9-modelo-se-adapta-mejor-a-su-...": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/3p-vs-freight-forwarder": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/3pl-vs-freight-forwarder-which-model-fits-your-business/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/3pl-vs-freight-forwarder-which-model-fits-your-business": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/air-freight-software": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/best-customs-software-for-logistics-companies": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/best-logistics-software/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/blog/customs-clearance-timeline": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/cargo-exam-ats-triggers": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/cargo-loss-at-sea": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/cargwose-alternative": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/con-customs-duty-import-tax-guide": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/costom-duty-import-tax-guide": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/customs-clearance-timeline-us-timelines-explained/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/customs-clock-status-codes": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/customs-status-codes/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/dhl-says-ai--will-help-it-beat-digital-first-competitors": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/ectn-requirements-by-count-for-shippers": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/ectn-requirements-by-countr-for-shippers": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/ectn-requirements-by-countr/-for-shippers": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/ectn-requirements-by-countrie-complete-guide-for-shippers": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/ectn-requirements-by-country-complete-guide-for-shippers/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/ectn-requirements-by-country/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/ectn-requirements-by-countrys": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/ectn-requirements-by-destination-country": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/5-data-analytics-tools-for-transportation-and-logistics.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/5-data-analytics-tools-for-transportation.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/a-guide-to-verified-gross-mass-vgm-": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/a-guide-to-verified-gross-mass-vgm-for-freight-forwarders": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/bill-of-lading-type-of-good": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/bill-of_lading-vs-packing-slip.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/build-vs-buy-freight-forwarding-software": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pay-freight-costs-unraveling-fca-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pays-freight-costs-under-fca-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pays-freight-costs-unpacking-fca-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-inconterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-incorerms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pays-freight-costs-unrivaling-fca-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pays-freight-costs-up-fca-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-pras-freight-costs-unraveling-fca-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/buyer-provenance-fca-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/container-dimensions-complete-size-reference-for-shipping-containers": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/container-dimensions-everything-you-need-to-know": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/container-shipping-dimensions-everything-you-need-to-know": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/education/digital-marketing-strategy-for-freight-forwarding-company.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/education/end-to-end-shipment-management": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/free-trade-agreement-the-importance-of-certificate-of-origin": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/free-trade-agreement-the-importance-of-certificate-of-origin.": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/how-to-apply-for-nvocc-license": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/how-to-do-cross-clearance-in-usa-for-goods.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/how-to-do-customs-clearance-for-goods.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/how-to-maximize-roi-in-freight-forwarding-logistics": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/ocean-import-bottlenecks/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-to-know": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-type-and-size-to-know": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-type-you-need-to-know": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-dimensions-everything-you-number-to-know.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-sizes-dimensions-everything-you-need-to-know": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/shipping-container-sizes-everything-you-need-to-know": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/sizing/shipping-container-dimensions-everything-you-need-to-know": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-2/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-ddu": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-ddu-meaning-in-shipping/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid.": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-duty-unpaid.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/the-complete-guide-up-to-ddu-and-delivery-duty-unpaid.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/top-freight-industry-news-websites-to-follow": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-ex-works-in-international-trade.": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-ex-works-in-international-trade/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-ex-works-meaning-in-incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-ex-works-meaning-in-international-trade": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-exw-in-international-trade": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-exw-meaning-in-buyer-risks": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade-2/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-exw-meaning-in-origin-price-risks": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-exw-meaning-international-trade": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/understanding-gofreight-meaning-in-international-trade": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-addition.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-express-b-l/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-shipper.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-smith.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release-in-swan.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/unpacking-the-telex-release.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/what-is-sea-financial.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/what-is-the-profit-margin-for-freight-forwarders": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/education/what-type-of-profit-margin-do-freight-forwarders-make.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/ekte-requirements-by-country-complete-guide-for-shippers": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/founders-insight/freight-forwarding-mastery-for-beginners.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freight-logistics-analytics-tools-kpis-and-dashboards-and-best-practices": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freight-management-software-api-capabilities": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freights-snap/10-freight-forward-facts": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freights-snap/is-it-true-dsv-to-become-the-worlds-biggest-forwarder.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freights-snap/is-it-true-dsv-to-become-worlds-largest-forwarder.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freights-snap/is-it-truth-dsv-to-become-the-worlds-largest-forwarder.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freights-snap/latest-freight-rates-updates.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/freights-snap/shipping-hazardous-goods-here-are-some-quick-facts.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/freight-forwarder-insurance": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/freight-forwarding-insurance": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/freight-forwarding-insurance/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/top-things-to-consider-when-choose-forwarding-software.html?hs_amp=true": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-freight-forwarding-and-how-does-it-work.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-do-i-work.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-following-it-work.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-it-works.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-to-its-work.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-how-what-is-freight-forwarding-and-how-it-work.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/general/what-is-freight-forwarding-and-not-owning-the-vessels-itself": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/go-freight-vs-magaya": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/gofreight-blog/3pl-vs-freight-forwarder": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/h2-2026-ocean-freight-forecast/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/h2-2026-ocean-freight-rate-forecast": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/h2-2026-octan-freight-forecast": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/how-long-does-customs-clearance-take-us-timelines-explained": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/how-freight-forwarders-overcome-port-congestion-challenges.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-authentic-guide-for-importers/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-ethics-a-complete-guide-for-importers--freight-destination-a-risk-and-title-transfer-guide/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-express-fob-incoterms-explained/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-insurance-a-complete-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-international-shipping-a-complete-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-nitters-a-complete-guide": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-sales-a-complete-guide": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-science-a-complete-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-share-a-complete-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-client-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-client-guide/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-board.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-graph.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide-": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-label-or-fob": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-review.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-general-guide": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-teaching-a-complete-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-fob-in-transit-a-complete-guide": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/mastering-in-shipping-a-complete-guide": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/road-haulage-what-is-how-is-it-different-from-freight.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/road-haulage-what-is-how-it-differs-from-freight.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/road-haulage-what-is-it-how-is-it-differs-from-freight.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/the-ultimate-guide-to-freight-forwarder.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/top-10-causes-of-delays-in-sea-freight-shipments-how-to-reduce-.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/top-10-causes-of-shipping-delays/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/top-10-reasons-of-shipping-delains.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/top-10-reasons-of-shipping-delays": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/top-10-red-causes-of-shipping-delays.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-glass-commercial-invoice-customs-costs.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-code-commercial-invoice-customs-costs.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-for-commercial-invoice-customs-costs.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-to-commercial-invoice-customs-costs": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/industry-insights/your-ultimate-guide-to-commercial-invoice-customs-costs/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/insights/top-10-reasons-of-shipping-delays.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/insurance-fob-shipping-point": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/last-mile-execution": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/port-strike-freight": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/supply-chain-methods": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/blog/transparent-freight-software-pricing-2026-every-model...": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/air-waybill-awb": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/air-waybill-the-complete-guide-for-freight-forwarders": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/awb-air-waybill.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/awb-glossary.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/bill-of-lading-(b-l)-explained-types-functions-and-how...": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/bill-of-lading-bol": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/bill-of-lading-explained": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/bill-of-lading-explained-types-functions-and-how-freight": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/bill-of-lading/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/bl-general-information": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/cfs-cfs-shipping-definition-logistics/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/cfs-container-freight-station-cfs": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/container-freight-station": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/demurrage/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/everything-freight-forwarders-need-know-access-eawb": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/everything-freight-forwarders-need-know-as-eawb": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/everything-freight-forwarders-need-know-awb.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fcl-full-container-load-sole-use-by-one-shipper": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fcl-full-container-load/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-mean": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-vs-destination-interactive-blog-post-and-destination-key-differences": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-vs-destination-revenue-recognition": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-vs-fob-destination-key-differences": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-vs-fob-revenue-recognition": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/fob-shipping-point-warehouse": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/garden-city-terminal/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/house-bill-of-lading-vs-master-bill-of-lading": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/importer-security-filing-isf": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/incoterms": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/isf-importer-security-filing-": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/isf-importer-security-filing/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/ocean-carrier_alliances": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/savannah-port-container": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/scifi": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/split-sheet": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/telex-release-what-it-means-in-shipping": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/telex-release/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/terminal-handling-charge": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cfr-incoterm.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cfr-incoterms-explained/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-Freight-cfr.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-fence-cfr.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-freiancht-cfr.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-freift-cfr.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-freight-cfr-": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-freiight-cfr.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-freirt-cfr.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cost-and-frihgt-cfr.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-cpt-air.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-cpt-destination.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-cpt-incoterms-carriage-paid-to-87a0ad5436/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterm.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterms.": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/understanding-cpt-meaning-incoterms.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-a-co-loader-l-c-l-consolidation": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-ams-meaning-full-form-filing-and-aside-fees": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-automated-manifest-system-simple-ams-filing-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-co-loader": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-d-the-automated-manifest-system-ams-simple-ams-filing-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-dap-in-international-trade/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-desired-ams-filing-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-inco-terms-all-11-codes-explained": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-incoterms-2026": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-incoterms-in-2026": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-the-automated-manifest-system-ams-simple-AMS-filing-guide.html": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-the-automated-manifest-system-ams-simple-ams-filing-guide.": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-the-automated-manifest-system-ams-simple-manifest-guide-import-definition/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-the-automated-manifest-system-simple-ams-filing-guide/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/glossary/what-is-the-gross-margin-of-freight-forwarders": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/help/incoterms/fob": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/insights/en/guides/incoterms-2020-who-pays-what": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/ams-\u7cfb\u7edf\u7b80\u4ecbefreight/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/community": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/freight-release-process-in-the-ocean-import": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/getting-started-with-go-freight-tracking": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/gofreight-disaster-recovery-and-network-intrusion-virus-incident-plan": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-create-a-pier-pass": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-create-accounts-receivable-ar-invoices-in-invoice-mode/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-create-ga-invoice-expense/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-customize-shipment-journey-milestones-in-gofreight-gofreight-help-center": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-file-ics2-ens-gofreight": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-freight-statement": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-generate-a-journal-report-gofreight": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-generate-an-atme-for-air-import-schements-to-the-us": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-generate-an-atme-for-air-import-shadows...": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-import-shipments-for-status-tracking": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-offset-accounts-receivable-with-accounts-payable-invoices-from-one-party": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-offset-accounts-receivable-with-ap-invoices-from-one-party-in-one-payment": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-print-checks-in-batch": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-receive-payment-full-receive-or-partial-receive-": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-share-profits-with-overseas-agent-using-debit-and-credit-notes": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-submit-ams-direct-in-gofreight-efreight-vision/": {
+   "sep": 1,
+   "oct": 0
+  },
+  "https://gofreight.com/knowledge/how-to-submit-ams-filing-by-crimsonlogic": {
+   "sep": 1,
+   "oct": 0
+  }
+ },
+ "compare_countries": {
+  "United States": {
+   "sep": 159438,
+   "oct": 212612
+  },
+  "India": {
+   "sep": 39363,
+   "oct": 54294
+  },
+  "United Kingdom": {
+   "sep": 15572,
+   "oct": 25271
+  },
+  "Canada": {
+   "sep": 12985,
+   "oct": 21392
+  },
+  "Philippines": {
+   "sep": 9890,
+   "oct": 15943
+  },
+  "Singapore": {
+   "sep": 9099,
+   "oct": 13912
+  },
+  "Malaysia": {
+   "sep": 8669,
+   "oct": 13231
+  },
+  "United Arab Emirates": {
+   "sep": 7464,
+   "oct": 11153
+  },
+  "Australia": {
+   "sep": 6682,
+   "oct": 10125
+  },
+  "South Africa": {
+   "sep": 5210,
+   "oct": 8067
+  },
+  "Germany": {
+   "sep": 5065,
+   "oct": 7164
+  },
+  "Pakistan": {
+   "sep": 4659,
+   "oct": 6680
+  },
+  "Indonesia": {
+   "sep": 3803,
+   "oct": 5556
+  },
+  "Netherlands": {
+   "sep": 3049,
+   "oct": 4693
+  },
+  "Italy": {
+   "sep": 2937,
+   "oct": 4687
+  },
+  "Mexico": {
+   "sep": 3639,
+   "oct": 4643
+  },
+  "Hong Kong": {
+   "sep": 3297,
+   "oct": 4515
+  },
+  "Vietnam": {
+   "sep": 3230,
+   "oct": 4459
+  },
+  "Thailand": {
+   "sep": 3393,
+   "oct": 4321
+  },
+  "Brazil": {
+   "sep": 3075,
+   "oct": 3992
+  },
+  "Taiwan": {
+   "sep": 2572,
+   "oct": 3470
+  },
+  "Bangladesh": {
+   "sep": 2368,
+   "oct": 3096
+  },
+  "France": {
+   "sep": 1678,
+   "oct": 3089
+  },
+  "Poland": {
+   "sep": 1902,
+   "oct": 3083
+  },
+  "Denmark": {
+   "sep": 1955,
+   "oct": 3080
+  },
+  "Spain": {
+   "sep": 1858,
+   "oct": 3051
+  },
+  "Saudi Arabia": {
+   "sep": 1979,
+   "oct": 2945
+  },
+  "Turkey": {
+   "sep": 1773,
+   "oct": 2727
+  },
+  "Japan": {
+   "sep": 1883,
+   "oct": 2716
+  },
+  "Nigeria": {
+   "sep": 1918,
+   "oct": 2666
+  },
+  "Belgium": {
+   "sep": 1502,
+   "oct": 2506
+  },
+  "Sri Lanka": {
+   "sep": 1574,
+   "oct": 2494
+  },
+  "Sweden": {
+   "sep": 1460,
+   "oct": 2424
+  },
+  "New Zealand": {
+   "sep": 1743,
+   "oct": 2418
+  },
+  "Colombia": {
+   "sep": 1719,
+   "oct": 2346
+  },
+  "Ireland": {
+   "sep": 1349,
+   "oct": 2339
+  },
+  "Switzerland": {
+   "sep": 1229,
+   "oct": 2263
+  },
+  "South Korea": {
+   "sep": 1478,
+   "oct": 2176
+  },
+  "Kenya": {
+   "sep": 1311,
+   "oct": 2096
+  },
+  "Egypt": {
+   "sep": 1204,
+   "oct": 1960
+  },
+  "Greece": {
+   "sep": 1078,
+   "oct": 1909
+  },
+  "Romania": {
+   "sep": 954,
+   "oct": 1873
+  },
+  "Russia": {
+   "sep": 1448,
+   "oct": 1867
+  },
+  "Peru": {
+   "sep": 1467,
+   "oct": 1849
+  },
+  "Norway": {
+   "sep": 848,
+   "oct": 1604
+  },
+  "Portugal": {
+   "sep": 756,
+   "oct": 1534
+  },
+  "Austria": {
+   "sep": 792,
+   "oct": 1518
+  },
+  "Finland": {
+   "sep": 840,
+   "oct": 1388
+  },
+  "Hungary": {
+   "sep": 678,
+   "oct": 1356
+  },
+  "Czechia": {
+   "sep": 708,
+   "oct": 1335
+  },
+  "Argentina": {
+   "sep": 905,
+   "oct": 1270
+  },
+  "Oman": {
+   "sep": 753,
+   "oct": 1245
+  },
+  "Qatar": {
+   "sep": 722,
+   "oct": 1034
+  },
+  "Ghana": {
+   "sep": 605,
+   "oct": 1005
+  },
+  "Bulgaria": {
+   "sep": 507,
+   "oct": 974
+  },
+  "Israel": {
+   "sep": 640,
+   "oct": 968
+  },
+  "Ukraine": {
+   "sep": 692,
+   "oct": 944
+  },
+  "Chile": {
+   "sep": 654,
+   "oct": 937
+  },
+  "Cambodia": {
+   "sep": 779,
+   "oct": 904
+  },
+  "Lebanon": {
+   "sep": 506,
+   "oct": 740
+  },
+  "Lithuania": {
+   "sep": 462,
+   "oct": 722
+  },
+  "Ethiopia": {
+   "sep": 434,
+   "oct": 709
+  },
+  "Serbia": {
+   "sep": 456,
+   "oct": 705
+  },
+  "Kuwait": {
+   "sep": 404,
+   "oct": 685
+  },
+  "Uganda": {
+   "sep": 437,
+   "oct": 658
+  },
+  "China": {
+   "sep": 399,
+   "oct": 635
+  },
+  "Tanzania": {
+   "sep": 371,
+   "oct": 630
+  },
+  "Slovakia": {
+   "sep": 400,
+   "oct": 627
+  },
+  "Morocco": {
+   "sep": 386,
+   "oct": 596
+  },
+  "Ecuador": {
+   "sep": 489,
+   "oct": 593
+  },
+  "Croatia": {
+   "sep": 372,
+   "oct": 566
+  },
+  "Zimbabwe": {
+   "sep": 356,
+   "oct": 558
+  },
+  "Nepal": {
+   "sep": 458,
+   "oct": 540
+  },
+  "Jamaica": {
+   "sep": 342,
+   "oct": 517
+  },
+  "Jordan": {
+   "sep": 341,
+   "oct": 508
+  },
+  "Georgia": {
+   "sep": 241,
+   "oct": 499
+  },
+  "Trinidad & Tobago": {
+   "sep": 277,
+   "oct": 498
+  },
+  "Slovenia": {
+   "sep": 288,
+   "oct": 458
+  },
+  "Bahrain": {
+   "sep": 284,
+   "oct": 457
+  },
+  "Mauritius": {
+   "sep": 286,
+   "oct": 456
+  },
+  "Latvia": {
+   "sep": 290,
+   "oct": 446
+  },
+  "Dominican Republic": {
+   "sep": 303,
+   "oct": 410
+  },
+  "Myanmar (Burma)": {
+   "sep": 274,
+   "oct": 384
+  },
+  "Azerbaijan": {
+   "sep": 260,
+   "oct": 378
+  },
+  "Zambia": {
+   "sep": 226,
+   "oct": 375
+  },
+  "Kazakhstan": {
+   "sep": 242,
+   "oct": 370
+  },
+  "Estonia": {
+   "sep": 215,
+   "oct": 369
+  },
+  "Guatemala": {
+   "sep": 295,
+   "oct": 364
+  },
+  "Iraq": {
+   "sep": 237,
+   "oct": 364
+  },
+  "Costa Rica": {
+   "sep": 261,
+   "oct": 349
+  },
+  "Algeria": {
+   "sep": 236,
+   "oct": 346
+  },
+  "Uzbekistan": {
+   "sep": 195,
+   "oct": 343
+  },
+  "Venezuela": {
+   "sep": 239,
+   "oct": 340
+  },
+  "Panama": {
+   "sep": 316,
+   "oct": 333
+  },
+  "Bolivia": {
+   "sep": 182,
+   "oct": 330
+  },
+  "Cyprus": {
+   "sep": 269,
+   "oct": 326
+  },
+  "Puerto Rico": {
+   "sep": 173,
+   "oct": 308
+  },
+  "Papua New Guinea": {
+   "sep": 198,
+   "oct": 307
+  },
+  "Armenia": {
+   "sep": 185,
+   "oct": 292
+  },
+  "El Salvador": {
+   "sep": 229,
+   "oct": 275
+  },
+  "Belarus": {
+   "sep": 177,
+   "oct": 273
+  },
+  "Tunisia": {
+   "sep": 193,
+   "oct": 264
+  },
+  "Malta": {
+   "sep": 131,
+   "oct": 248
+  },
+  "Maldives": {
+   "sep": 121,
+   "oct": 237
+  },
+  "Macedonia": {
+   "sep": 128,
+   "oct": 237
+  },
+  "Fiji": {
+   "sep": 174,
+   "oct": 236
+  },
+  "Mongolia": {
+   "sep": 121,
+   "oct": 232
+  },
+  "Guyana": {
+   "sep": 162,
+   "oct": 229
+  },
+  "Albania": {
+   "sep": 144,
+   "oct": 225
+  },
+  "Syria": {
+   "sep": 133,
+   "oct": 219
+  },
+  "Moldova": {
+   "sep": 128,
+   "oct": 216
+  },
+  "Bosnia & Herzegovina": {
+   "sep": 106,
+   "oct": 212
+  },
+  "Uruguay": {
+   "sep": 142,
+   "oct": 208
+  },
+  "Namibia": {
+   "sep": 153,
+   "oct": 201
+  },
+  "Rwanda": {
+   "sep": 119,
+   "oct": 197
+  },
+  "Honduras": {
+   "sep": 164,
+   "oct": 188
+  },
+  "Iceland": {
+   "sep": 109,
+   "oct": 169
+  },
+  "Cameroon": {
+   "sep": 142,
+   "oct": 162
+  },
+  "Palestine": {
+   "sep": 92,
+   "oct": 159
+  },
+  "Luxembourg": {
+   "sep": 157,
+   "oct": 156
+  },
+  "Paraguay": {
+   "sep": 132,
+   "oct": 154
+  },
+  "Brunei": {
+   "sep": 82,
+   "oct": 134
+  },
+  "Libya": {
+   "sep": 80,
+   "oct": 134
+  },
+  "Guam": {
+   "sep": 55,
+   "oct": 129
+  },
+  "Bahamas": {
+   "sep": 81,
+   "oct": 126
+  },
+  "C\u00f4te d\u2019Ivoire": {
+   "sep": 101,
+   "oct": 122
+  },
+  "Nicaragua": {
+   "sep": 81,
+   "oct": 119
+  },
+  "Angola": {
+   "sep": 74,
+   "oct": 117
+  },
+  "Barbados": {
+   "sep": 95,
+   "oct": 110
+  },
+  "Botswana": {
+   "sep": 75,
+   "oct": 110
+  },
+  "Mozambique": {
+   "sep": 75,
+   "oct": 109
+  },
+  "Congo - Kinshasa": {
+   "sep": 62,
+   "oct": 106
+  },
+  "Somalia": {
+   "sep": 64,
+   "oct": 96
+  },
+  "Senegal": {
+   "sep": 56,
+   "oct": 95
+  },
+  "Malawi": {
+   "sep": 40,
+   "oct": 91
+  },
+  "Kosovo": {
+   "sep": 46,
+   "oct": 90
+  },
+  "Belize": {
+   "sep": 39,
+   "oct": 89
+  },
+  "Suriname": {
+   "sep": 46,
+   "oct": 83
+  },
+  "Madagascar": {
+   "sep": 52,
+   "oct": 78
+  },
+  "Yemen": {
+   "sep": 64,
+   "oct": 78
+  },
+  "Kyrgyzstan": {
+   "sep": 51,
+   "oct": 71
+  },
+  "Laos": {
+   "sep": 31,
+   "oct": 65
+  },
+  "Seychelles": {
+   "sep": 32,
+   "oct": 62
+  },
+  "Burkina Faso": {
+   "sep": 44,
+   "oct": 52
+  },
+  "St. Lucia": {
+   "sep": 32,
+   "oct": 52
+  },
+  "Montenegro": {
+   "sep": 43,
+   "oct": 52
+  },
+  "Sierra Leone": {
+   "sep": 28,
+   "oct": 52
+  },
+  "Grenada": {
+   "sep": 32,
+   "oct": 51
+  },
+  "Afghanistan": {
+   "sep": 49,
+   "oct": 50
+  },
+  "Djibouti": {
+   "sep": 38,
+   "oct": 50
+  },
+  "Iran": {
+   "sep": 40,
+   "oct": 50
+  },
+  "Macau": {
+   "sep": 41,
+   "oct": 50
+  },
+  "Benin": {
+   "sep": 39,
+   "oct": 48
+  },
+  "Turkmenistan": {
+   "sep": 21,
+   "oct": 46
+  },
+  "Liberia": {
+   "sep": 40,
+   "oct": 45
+  },
+  "US Virgin Islands": {
+   "sep": 26,
+   "oct": 44
+  },
+  "Unknown Region": {
+   "sep": 29,
+   "oct": 43
+  },
+  "Antigua & Barbuda": {
+   "sep": 18,
+   "oct": 42
+  },
+  "Swaziland": {
+   "sep": 27,
+   "oct": 41
+  },
+  "Guinea": {
+   "sep": 33,
+   "oct": 40
+  },
+  "Togo": {
+   "sep": 37,
+   "oct": 39
+  },
+  "Cayman Islands": {
+   "sep": 28,
+   "oct": 38
+  },
+  "St. Kitts & Nevis": {
+   "sep": 8,
+   "oct": 35
+  },
+  "Sudan": {
+   "sep": 25,
+   "oct": 35
+  },
+  "South Sudan": {
+   "sep": 30,
+   "oct": 34
+  },
+  "St. Vincent & Grenadines": {
+   "sep": 12,
+   "oct": 31
+  },
+  "Gabon": {
+   "sep": 15,
+   "oct": 29
+  },
+  "Bhutan": {
+   "sep": 28,
+   "oct": 28
+  },
+  "Mali": {
+   "sep": 39,
+   "oct": 28
+  },
+  "Aruba": {
+   "sep": 17,
+   "oct": 26
+  },
+  "Cura\u00e7ao": {
+   "sep": 23,
+   "oct": 26
+  },
+  "Gambia": {
+   "sep": 16,
+   "oct": 26
+  },
+  "Lesotho": {
+   "sep": 11,
+   "oct": 23
+  },
+  "Congo - Brazzaville": {
+   "sep": 19,
+   "oct": 22
+  },
+  "Dominica": {
+   "sep": 16,
+   "oct": 22
+  },
+  "Faroe Islands": {
+   "sep": 13,
+   "oct": 22
+  },
+  "Turks & Caicos Islands": {
+   "sep": 16,
+   "oct": 22
+  },
+  "Tajikistan": {
+   "sep": 11,
+   "oct": 22
+  },
+  "Burundi": {
+   "sep": 5,
+   "oct": 21
+  },
+  "Northern Mariana Islands": {
+   "sep": 9,
+   "oct": 21
+  },
+  "Solomon Islands": {
+   "sep": 13,
+   "oct": 21
+  },
+  "Timor-Leste": {
+   "sep": 5,
+   "oct": 21
+  },
+  "Jersey": {
+   "sep": 11,
+   "oct": 20
+  },
+  "Bermuda": {
+   "sep": 19,
+   "oct": 19
+  },
+  "Haiti": {
+   "sep": 12,
+   "oct": 19
+  },
+  "Samoa": {
+   "sep": 11,
+   "oct": 19
+  },
+  "Cape Verde": {
+   "sep": 7,
+   "oct": 18
+  },
+  "Gibraltar": {
+   "sep": 10,
+   "oct": 18
+  },
+  "Mauritania": {
+   "sep": 13,
+   "oct": 18
+  },
+  "Vanuatu": {
+   "sep": 14,
+   "oct": 18
+  },
+  "Tonga": {
+   "sep": 9,
+   "oct": 14
+  },
+  "\u00c5land Islands": {
+   "sep": 6,
+   "oct": 12
+  },
+  "Cuba": {
+   "sep": 7,
+   "oct": 12
+  },
+  "Eritrea": {
+   "sep": 5,
+   "oct": 12
+  },
+  "Monaco": {
+   "sep": 9,
+   "oct": 11
+  },
+  "R\u00e9union": {
+   "sep": 5,
+   "oct": 11
+  },
+  "British Virgin Islands": {
+   "sep": 9,
+   "oct": 11
+  },
+  "Andorra": {
+   "sep": 1,
+   "oct": 10
+  },
+  "Antarctica": {
+   "sep": 1,
+   "oct": 10
+  },
+  "Palau": {
+   "sep": 10,
+   "oct": 10
+  },
+  "Sint Maarten": {
+   "sep": 7,
+   "oct": 10
+  },
+  "American Samoa": {
+   "sep": 5,
+   "oct": 9
+  },
+  "Micronesia": {
+   "sep": 4,
+   "oct": 9
+  },
+  "Guernsey": {
+   "sep": 7,
+   "oct": 9
+  },
+  "Isle of Man": {
+   "sep": 15,
+   "oct": 9
+  },
+  "Chad": {
+   "sep": 10,
+   "oct": 9
+  },
+  "Caribbean Netherlands": {
+   "sep": 4,
+   "oct": 8
+  },
+  "Equatorial Guinea": {
+   "sep": 18,
+   "oct": 8
+  },
+  "Liechtenstein": {
+   "sep": 2,
+   "oct": 8
+  },
+  "French Polynesia": {
+   "sep": 6,
+   "oct": 8
+  },
+  "Cook Islands": {
+   "sep": 6,
+   "oct": 7
+  },
+  "Greenland": {
+   "sep": 6,
+   "oct": 7
+  },
+  "Niger": {
+   "sep": 4,
+   "oct": 7
+  },
+  "Guadeloupe": {
+   "sep": 7,
+   "oct": 6
+  },
+  "Anguilla": {
+   "sep": 0,
+   "oct": 5
+  },
+  "Western Sahara": {
+   "sep": 2,
+   "oct": 5
+  },
+  "Martinique": {
+   "sep": 5,
+   "oct": 5
+  },
+  "Kiribati": {
+   "sep": 8,
+   "oct": 4
+  },
+  "Marshall Islands": {
+   "sep": 5,
+   "oct": 4
+  },
+  "Nauru": {
+   "sep": 0,
+   "oct": 4
+  },
+  "Comoros": {
+   "sep": 3,
+   "oct": 3
+  },
+  "Guinea-Bissau": {
+   "sep": 2,
+   "oct": 3
+  },
+  "French Guiana": {
+   "sep": 4,
+   "oct": 3
+  },
+  "St. Martin": {
+   "sep": 1,
+   "oct": 3
+  },
+  "New Caledonia": {
+   "sep": 4,
+   "oct": 3
+  },
+  "Svalbard & Jan Mayen": {
+   "sep": 1,
+   "oct": 3
+  },
+  "S\u00e3o Tom\u00e9 & Pr\u00edncipe": {
+   "sep": 1,
+   "oct": 3
+  },
+  "Tuvalu": {
+   "sep": 1,
+   "oct": 3
+  },
+  "Central African Republic": {
+   "sep": 4,
+   "oct": 2
+  },
+  "British Indian Ocean Territory": {
+   "sep": 0,
+   "oct": 2
+  },
+  "St. Helena": {
+   "sep": 1,
+   "oct": 2
+  },
+  "San Marino": {
+   "sep": 8,
+   "oct": 2
+  },
+  "St. Barth\u00e9lemy": {
+   "sep": 0,
+   "oct": 1
+  },
+  "Falkland Islands": {
+   "sep": 0,
+   "oct": 1
+  },
+  "Montserrat": {
+   "sep": 0,
+   "oct": 1
+  },
+  "Mayotte": {
+   "sep": 0,
+   "oct": 1
+  },
+  "Niue": {
+   "sep": 2,
+   "oct": 0
+  },
+  "Christmas Island": {
+   "sep": 1,
+   "oct": 0
+  }
+ },
+ "incoterm_cluster": {
+  "pages": [
+   "https://gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-incoterms",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html",
+   "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade",
+   "https://gofreight.com/glossary/fob-shipping-point-vs-fob-destination",
+   "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid.html",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterms.html",
+   "https://gofreight.com/glossary/what-is-incoterms",
+   "https://gofreight.com/blog/education/understanding-ex-works-in-international-trade.html",
+   "https://gofreight.com/glossary/understanding-cost-and-freight-cfr.html",
+   "https://gofreight.com/glossary/understanding-cost-and-freight-cfr",
+   "https://www.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html",
+   "https://www.gofreight.com/blog/education/understanding-ex-works-in-international-trade.html",
+   "https://www.gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid.html",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide",
+   "https://en.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html",
+   "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-ddu/",
+   "https://gofreight.com/blog/education/understanding-ex-works-international-trade.html",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide/",
+   "https://www.gofreight.com/glossary/understanding-cpt-meaning-in-incoterms.html",
+   "https://gofreight.com/glossary/understanding-cost-and-freight-cfr/",
+   "https://gofreight.com/glossary/understanding-cost-and-freight-cfr.",
+   "https://www.gofreight.com/glossary/what-is-incoterms",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-conterms.html",
+   "https://gofreight.com/blog/education/understanding-ex-works-in-international-trade",
+   "https://www.gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-incoterms",
+   "https://www.gofreight.com/glossary/understanding-cost-and-freight-cfr.html",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-guide.html",
+   "https://gofreight.com/blog/education/the-complete-guide-ddu-and-delivery-duty-unpaid.html",
+   "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid",
+   "https://www.gofreight.com/blog/education/understanding-exw-meaning-in-international-trade",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterms/",
+   "https://gofreight.com/glossary/fob-shipping-point-vs-fob-destination-key-differences-explained",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterms",
+   "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid/",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.",
+   "https://gofreight.com/glossary/what-is-incoterms-in-2026-all-11-codes-explained",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-guide/",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-cpt.html",
+   "https://www.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide",
+   "https://gofreight.com/blog/education/buyer-pays-freight-costs-unraveling-fca-incoterms/",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-guide",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-origin.html",
+   "https://www.gofreight.com/glossary/fob-shipping-point-vs-fob-destination",
+   "https://www.gofreight.com/glossary/understanding-cost-and-freight-cfr",
+   "http://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide.html",
+   "http://gofreight.com/glossary/what-is-incoterms",
+   "https://en.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide",
+   "https://en.gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide/",
+   "https://en.gofreight.com/glossary/what-is-incoterms",
+   "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-",
+   "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-2/",
+   "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-ddu",
+   "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid-ddu-meaning-in-shipping/",
+   "https://gofreight.com/blog/education/the-complete-guide-to-ddu-and-delivery-duty-unpaid.",
+   "https://gofreight.com/blog/education/the-complete-guide-up-to-ddu-and-delivery-duty-unpaid.html",
+   "https://gofreight.com/blog/education/understanding-ex-works-in-international-trade.",
+   "https://gofreight.com/blog/education/understanding-ex-works-in-international-trade/",
+   "https://gofreight.com/blog/education/understanding-ex-works-meaning-in-incoterms",
+   "https://gofreight.com/blog/education/understanding-ex-works-meaning-in-international-trade",
+   "https://gofreight.com/blog/education/understanding-exw-meaning-in-buyer-risks",
+   "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade-2/",
+   "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade.html",
+   "https://gofreight.com/blog/education/understanding-exw-meaning-in-international-trade/",
+   "https://gofreight.com/blog/education/understanding-exw-meaning-in-origin-price-risks",
+   "https://gofreight.com/blog/education/understanding-exw-meaning-international-trade",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-client-guide.html",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-client-guide/",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-board.html",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-graph.html",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-guide-",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-label-or-fob",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-complete-review.html",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping-a-general-guide",
+   "https://gofreight.com/blog/industry-insights/mastering-fob-in-shipping.html",
+   "https://gofreight.com/glossary/fob-shipping-point-vs-fob-destination-key-differences",
+   "https://gofreight.com/glossary/understanding-cost-and-freight-cfr-",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-cpt-air.html",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-cpt-destination.html",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-cpt-incoterms-carriage-paid-to-87a0ad5436/",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterm.html",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-in-incoterms.",
+   "https://gofreight.com/glossary/understanding-cpt-meaning-incoterms.html",
+   "https://gofreight.com/glossary/what-is-incoterms-2026",
+   "https://gofreight.com/glossary/what-is-incoterms-in-2026"
+  ],
+  "sep": 147815,
+  "oct": 232531
+ }
+}
