@@ -283,7 +283,7 @@ function designDoc(p, mob) {
   const ctaLabel = (cta.match(/\(([^)]+)\)/) || [, "Enquire now"])[1];
   const ctaLink = /dates/i.test(ctaLabel) ? "/fees-and-dates/" : "/enquire/";
   const datesIdx = p.sections.findIndex(x => /anchor #dates/.test(x.name));
-  const shortWhat = t => esc(t.length > 170 ? t.slice(0, 168).replace(/\s+\S*$/, "") + "…" : t);
+  const shortWhat = t0 => { const t = t0.replace(/^(Table|One table|Two cards[^:]*|Three cards|Title[^:]*):\s*/i, "").replace(/^./, c => c.toUpperCase()); return esc(t.length > 170 ? t.slice(0, 168).replace(/\s+\S*$/, "") + "…" : t) };
   const items = t => t.replace(/\.$/, "").split(/,\s*|;\s*|:\s*/).filter(x => x.length > 2).slice(0, 4);
   const btn = (label, link, cls = "") => `<a class="btn ${cls}" ${link ? `data-nav="${esc(link)}"` : ""}>${esc(label)}</a>`;
   const labels = (t, n) => { const a = t.includes(":") ? t.split(":").slice(1).join(":").replace(/\.$/, "").replace(/\band\s+/g, "").split(/,\s*/).map(x => x.trim()).filter(x => x && x.length < 40) : []; return a.length >= n ? a.slice(0, n).map(x => x[0].toUpperCase() + x.slice(1)) : null; };
