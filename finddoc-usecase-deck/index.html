@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A healthcare use case: Merz Aesthetics (Ultherapy) | FindDoc x Novastacks</title>
+<script>
+/* Phones in portrait get a scrolling reading layout; everything wider gets the 1920x1080 stage. */
+if (window.matchMedia('(max-width: 760px)').matches) document.documentElement.classList.add('m');
+</script>
+<style>
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/IBMPlexSans-05d29bfe.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/IBMPlexSans-118b756c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/IBMPlexSans-05d29bfe.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/IBMPlexSans-118b756c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/IBMPlexSans-05d29bfe.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/IBMPlexSans-118b756c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/IBMPlexSans-05d29bfe.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/IBMPlexSans-118b756c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/SourceSerif4-7fe28733.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/SourceSerif4-554d1c7c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/SourceSerif4-7fe28733.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/SourceSerif4-554d1c7c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* FindDoc tokens: finddoc-tokens.json + finddoc.com.sg capture, 20 Oct 2026 */
+:root{
+  --ink:#14202E;      /* headings */
+  --text:#2B3645;     /* body */
+  --muted:#5B6472;    /* secondary */
+  --blue:#1F5FB0;     /* accent / primary button */
+  --line:#CBD3DE;     /* borders */
+  --line-2:#E3E8EF;   /* light rules */
+  --panel:#F4F7FB;    /* card fill */
+  --bad:#C0392B;
+  --mid:#B7791F;
+  --ok:#1F5FB0;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,'PingFang TC','Microsoft JhengHei',sans-serif;
+  --mono:ui-monospace,Menlo,Consolas,monospace;
+  --mx:104px; --my:72px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:#fff;-webkit-font-smoothing:antialiased}
+html:not(.m) deck-stage:not(:defined){visibility:hidden}
+
+/* ---------- slide shell ---------- */
+.s{height:100%;width:100%;background:#fff;color:var(--text);font-family:var(--sans);
+  padding:var(--my) var(--mx) 44px;display:flex;flex-direction:column;overflow:hidden;position:relative}
+
+.kicker{font-size:18px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 22px}
+h1.t{font-family:var(--serif);font-size:66px;font-weight:600;line-height:1.08;letter-spacing:-.012em;
+  color:var(--ink);margin:0;max-width:1600px}
+h1.t.sm{font-size:60px}
+h1.t em{font-style:normal;color:var(--blue)}
+.sub{font-size:25px;line-height:1.45;color:var(--text);margin:22px 0 0;max-width:1440px}
+.sub strong{color:var(--ink);font-weight:600}
+
+/* ---------- footer ---------- */
+.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:40px;
+  padding-top:18px;border-top:1px solid var(--line)}
+.foot p{margin:0;font-size:16px;line-height:1.4;color:var(--muted);min-width:0}
+.foot .rt{display:flex;align-items:center;gap:26px;flex-shrink:0}
+.lock{display:flex;align-items:center;gap:16px}
+.lock img{display:block;width:auto}
+.lock .fd{height:30px}
+.lock .ns{height:30px}
+.lock .bar{width:1px;height:28px;background:var(--line)}
+.foot .num{font-size:16px;font-weight:600;letter-spacing:.1em;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* ---------- cover ---------- */
+.cover{background:#fff;background-image:radial-gradient(rgba(31,95,176,.16) 1.4px,transparent 1.6px);
+  background-size:26px 26px}
+.cover .lock .fd{height:64px}.cover .lock .ns{height:58px}.cover .lock .bar{height:60px}
+.cover .lock{gap:30px;align-self:flex-start;background:#fff;padding:8px 10px 8px 0}
+.cover-main{margin:auto 0;max-width:1500px}
+.cover h1{font-family:var(--serif);font-size:104px;font-weight:600;line-height:1.02;letter-spacing:-.018em;color:var(--ink);margin:0}
+.cover h1 span{display:block;color:var(--blue)}
+.cover h2{font-family:var(--sans);font-size:31px;font-weight:500;line-height:1.42;color:var(--text);
+  margin:38px 0 0;max-width:1320px;background:#fff}
+.cover-meta{display:flex;gap:64px;padding:22px 0 0;border-top:2px solid var(--ink);background:#fff;margin-bottom:28px}
+.cover-meta div{font-size:21px;color:var(--text);line-height:1.35}
+.cover-meta strong{display:block;color:var(--muted);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:15px;margin-bottom:6px}
+.cover .foot{background:#fff}
+
+/* ---------- divider ---------- */
+.divider{background:var(--panel)}
+.divider .dn{font-size:20px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:auto 0 24px}
+.divider h1{font-family:var(--serif);font-size:120px;font-weight:600;line-height:1;letter-spacing:-.02em;color:var(--ink);margin:0}
+.divider .ds{font-size:30px;line-height:1.5;color:var(--text);margin:40px 0 auto;max-width:1300px;padding-left:26px;border-left:5px solid var(--blue)}
+.divider .ds strong{color:var(--ink);font-weight:600;margin-right:14px}
+
+/* ---------- audit screenshots, two-up ---------- */
+.audit{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:30px;flex:1;min-height:0;margin-bottom:22px}
+.aud-col{display:flex;flex-direction:column;min-height:0}
+.aud-h{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--ink);padding-bottom:12px;margin-bottom:14px;border-bottom:2px solid var(--ink)}
+.aud-slot{flex:1;min-height:0;display:flex;align-items:flex-start;justify-content:center;background:#2a2a2a;
+  border-radius:8px;overflow:hidden;padding:8px}
+.aud-slot img{width:100%;height:100%;object-fit:contain;object-position:top center;display:block}
+
+/* ---------- worked-example proof ---------- */
+.proof{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;margin-top:24px;flex:1;min-height:0;margin-bottom:18px}
+.proof-l,.proof-r{display:flex;flex-direction:column;min-height:0}
+.proof-url{font-family:var(--mono);font-size:17px;color:var(--blue);padding-bottom:10px;margin-bottom:12px;border-bottom:2px solid var(--ink);word-break:break-all}
+.proof-shot{flex:1;min-height:0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;align-items:flex-start;justify-content:center}
+.proof-shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+.proof-cap{margin:11px 0 0;font-size:17px;color:var(--muted);line-height:1.4}
+.proof-cap strong{color:var(--ink)}
+.seelabel{margin:0 0 8px;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.codeblock{margin:0;background:#FBEDEB;border-left:4px solid var(--bad);padding:10px 14px;font-family:var(--mono);
+  font-size:15px;line-height:1.45;color:#8E2A1F;white-space:pre}
+.codenote{margin:10px 0 10px;font-size:16px;line-height:1.42;color:var(--text)}
+.codenote strong{color:var(--ink)}
+
+/* ---------- tables ---------- */
+table.d{width:100%;border-collapse:collapse}
+table.d th{text-align:left;padding:10px 16px 10px 0;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);border-bottom:2px solid var(--ink);white-space:nowrap}
+table.d td{padding:6px 16px 6px 0;border-bottom:1px solid var(--line-2);color:var(--text);vertical-align:middle}
+table.d th.r,table.d td.r{text-align:right}
+table.d th.r:last-child,table.d td.r:last-child{padding-right:0}
+table.proof-tab{font-size:16px}
+table.proof-tab td{padding:4px 12px 4px 0;line-height:1.3}
+.rownote{display:block;font-size:13px;color:var(--muted);font-style:italic;margin-top:1px}
+td.r b{font-size:18px;font-weight:700}
+tr.fx-bad td.r b{color:var(--bad)}
+tr.fx-mid td.r b{color:var(--mid)}
+code{font-family:var(--mono)}
+
+/* ---------- three-up cards ---------- */
+.moves{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.mid-t{margin-top:auto !important}
+.mid-b{margin-bottom:auto !important}
+.mv{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:8px;padding:30px 32px;display:flex;flex-direction:column}
+.mv .mn{font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.mv .mh{font-family:var(--serif);font-size:34px;font-weight:600;line-height:1.12;color:var(--ink);margin:12px 0 14px}
+.mv p{margin:0;font-size:21px;line-height:1.48;color:var(--text)}
+.mv p strong{color:var(--ink);font-weight:600}
+.mv p:not(.ex){margin-bottom:20px}
+.mv .ex{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:18px;color:var(--muted)}
+.mv .ex b{color:var(--ink);font-weight:600}
+
+/* ---------- content-cluster table ---------- */
+.tblwrap{width:100%}
+table.clusters{font-size:17px}
+table.clusters td{vertical-align:top;padding:6px 14px 6px 0;line-height:1.3}
+table.clusters td b{color:var(--ink);font-weight:600}
+.cl-ex{font-size:14px;color:var(--muted);font-style:italic;line-height:1.35}
+.cl-url{font-family:var(--mono);font-size:14px;color:var(--blue);white-space:nowrap}
+.cl-n{font-size:19px;color:var(--muted);font-variant-numeric:tabular-nums}
+.cl-c{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+.cl-note{font-size:15px;color:var(--text);line-height:1.38;max-width:330px}
+.cl-note strong{color:var(--ink);font-weight:600}
+tr.cl-bad .cl-c{color:var(--bad)} tr.cl-mid .cl-c{color:var(--mid)} tr.cl-ok .cl-c{color:var(--ok)}
+tr.cl-bad td:first-child{box-shadow:inset 4px 0 0 var(--bad);padding-left:14px}
+tr.cl-mid td:first-child{box-shadow:inset 4px 0 0 var(--mid);padding-left:14px}
+tr.cl-ok  td:first-child{box-shadow:inset 4px 0 0 var(--ok);padding-left:14px}
+
+/* ---------- closing ---------- */
+.rule-note{margin:26px 0 0;padding:16px 22px;background:var(--panel);border-left:4px solid var(--ink);font-size:21px;line-height:1.45;color:var(--text)}
+.rule-note strong{color:var(--ink);font-weight:600}
+
+/* =========================================================
+   PHONE READING LAYOUT (html.m): deck-stage.js is not loaded,
+   slides stack vertically and reflow to one column.
+   ========================================================= */
+html.m deck-stage{display:block}
+html.m .s{height:auto;min-height:0;overflow:visible;padding:30px 20px 22px;border-bottom:8px solid var(--line-2)}
+html.m .kicker{font-size:12px;margin-bottom:10px}
+html.m h1.t,html.m h1.t.sm{font-size:28px;line-height:1.15}
+html.m h1.t br,html.m .cover h1 br,html.m .divider h1 br{display:none}
+html.m .sub{font-size:16px;margin-top:12px}
+html.m .foot{flex-direction:column;align-items:flex-start;gap:12px;margin-top:22px;padding-top:12px}
+html.m .foot p{font-size:12.5px}
+html.m .foot .rt{width:100%;justify-content:space-between}
+html.m .lock .fd,html.m .lock .ns{height:22px}
+html.m .lock .bar{height:20px}
+html.m .foot .num{font-size:12.5px}
+html.m .cover{background-size:18px 18px}
+html.m .cover .lock{gap:16px}
+html.m .cover .lock .fd{height:36px} html.m .cover .lock .ns{height:32px} html.m .cover .lock .bar{height:34px}
+html.m .cover-main{margin:34px 0 24px}
+html.m .cover h1{font-size:38px}
+html.m .cover h2{font-size:17px;margin-top:18px}
+html.m .cover-meta{flex-direction:column;gap:12px;margin-bottom:0}
+html.m .cover-meta div{font-size:15px}
+html.m .cover-meta strong{font-size:11px}
+html.m .divider .dn{font-size:12px;margin:10px 0 12px}
+html.m .divider h1{font-size:40px}
+html.m .divider .ds{font-size:16px;margin:20px 0 0;padding-left:14px}
+html.m .audit,html.m .proof{grid-template-columns:1fr;gap:22px;margin:18px 0 0}
+html.m .aud-h{font-size:20px}
+html.m .aud-slot,html.m .proof-shot{flex:none;padding:4px}
+html.m .aud-slot img,html.m .proof-shot img{height:auto}
+html.m .proof-url{font-size:12.5px}
+html.m .proof-cap,html.m .codenote{font-size:14px}
+html.m .codeblock{font-size:12px;white-space:pre-wrap}
+html.m table.proof-tab{font-size:14px}
+html.m .rownote{font-size:12px}
+html.m td.r b{font-size:15px}
+html.m .moves{grid-template-columns:1fr;gap:14px;margin-top:20px !important}
+html.m .mv{padding:18px 18px}
+html.m .mv .mn{font-size:11.5px}
+html.m .mv .mh{font-size:21px;margin:8px 0 8px}
+html.m .mv p{font-size:15px}
+html.m .mv .ex{font-size:13.5px;margin-top:12px;padding-top:10px}
+html.m .tblwrap{margin-top:18px !important}
+html.m table.clusters{font-size:15px;border-top:2px solid var(--ink)}
+html.m table.clusters thead{display:none}
+html.m table.clusters tbody,html.m table.clusters tr{display:block}
+html.m table.clusters tr{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;padding:12px 0 12px 14px;border-bottom:1px solid var(--line)}
+html.m table.clusters td{display:block;border:0;padding:0 !important;box-shadow:none !important;text-align:left !important}
+html.m tr.cl-bad{box-shadow:inset 4px 0 0 var(--bad)} html.m tr.cl-mid{box-shadow:inset 4px 0 0 var(--mid)} html.m tr.cl-ok{box-shadow:inset 4px 0 0 var(--ok)}
+html.m table.clusters td:nth-child(1),html.m table.clusters td:nth-child(2),html.m table.clusters td:nth-child(5){grid-column:1 / -1}
+html.m table.clusters td:nth-child(2){margin:4px 0 6px}
+html.m .cl-url{font-size:12px;white-space:normal;word-break:break-all}
+html.m table.clusters td.cl-n::before{content:'Named ';font-size:12px;color:var(--muted);font-weight:400}
+html.m table.clusters td.cl-c::before{content:'Cited ';font-size:12px;color:var(--muted);font-weight:400}
+html.m .cl-n,html.m .cl-c{font-size:17px}
+html.m .cl-note{font-size:14px;max-width:none;margin-top:6px}
+html.m .rule-note{font-size:15px;padding:12px 14px}
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080" no-rail>
+
+<!-- ============ 1 ============ -->
+<section class="s cover">
+  <div class="lock"><img class="fd" src="assets/finddoc-logo.png" alt="FindDoc"><span class="bar"></span><img class="ns" src="assets/novastacks-logo.png" alt="Novastacks"></div>
+  <div class="cover-main">
+    <h1>A healthcare use case: <br><span>Merz Aesthetics (Ultherapy)</span></h1>
+    <h2>In every question cluster we measured, ChatGPT named the brand more often than it cited a Merz page as its source. This deck shows why AI could not read the Ultherapy sites well, and the content plan we proposed to Merz in August 2026.</h2>
+  </div>
+  <div class="cover-meta">
+    <div><strong>Company</strong>Merz Aesthetics, maker of Ultherapy</div>
+    <div><strong>Markets</strong>SG &middot; TH &middot; AU &middot; TW &middot; HK</div>
+    <div><strong>Work</strong>Site audit and content plan, Aug 2026</div>
+    <div><strong>Prepared for</strong>FindDoc, Nov 2026</div>
+  </div>
+  <div class="foot">
+    <p>Named versus cited: ChatGPT, 252 answers, SG/TW/HK, 25 Aug 2026 (slide 06).</p>
+    <div class="rt"><p class="num">01 / 07</p></div>
+  </div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="s divider">
+  <p class="dn">From the Merz proposal, Section 02</p>
+  <h1>Machine-readable <br>official site</h1>
+  <p class="ds"><strong>01 Machine-readable site.</strong> <strong>02 Content architecture.</strong> <strong>03 Own the sources AI cites.</strong><br>
+  The first two are owned media. The third is earned, and it is where the answer is decided. The next four slides cover the first two.</p>
+  <div class="foot">
+    <p>The method</p>
+    <div class="rt"><div class="lock"><img class="fd" src="assets/finddoc-logo.png" alt="FindDoc"><span class="bar"></span><img class="ns" src="assets/novastacks-logo.png" alt="Novastacks"></div><p class="num">02 / 07</p></div>
+  </div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="s">
+  <p class="kicker">01 Machine-readable site</p>
+  <h1 class="t sm">This is what the machine <br>found on Merz&rsquo;s domain.</h1>
+
+  <div class="audit">
+    <div class="aud-col">
+      <div class="aud-h">Content hierarchy and page signals</div>
+      <div class="aud-slot"><img src="assets/audit-hierarchy.jpg" alt="Audit comparison of content hierarchy and page signals: ultherapy-asia.com versus drreborn.com"></div>
+    </div>
+    <div class="aud-col">
+      <div class="aud-h">Structured data</div>
+      <div class="aud-slot"><img src="assets/audit-schema.jpg" alt="Audit comparison of structured data types: ultherapy-asia.com versus drreborn.com"></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>ultherapy-asia.com against drreborn.com, a competing clinic site. Live crawl, 25 Aug 2026, four pages per domain.</p>
+    <div class="rt"><div class="lock"><img class="fd" src="assets/finddoc-logo.png" alt="FindDoc"><span class="bar"></span><img class="ns" src="assets/novastacks-logo.png" alt="Novastacks"></div><p class="num">03 / 07</p></div>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="s">
+  <p class="kicker">01 Machine-readable site</p>
+  <h1 class="t sm">Built in 2016. <br>Unreadable by AI in <em>2026</em>.</h1>
+
+  <div class="proof">
+    <div class="proof-l">
+      <div class="proof-url"><code>ultherapy.com.hk/comparison/index.html</code></div>
+      <div class="proof-shot"><img src="assets/hk-comparison.jpg" alt="The Ultherapy Hong Kong comparison page with heading annotations showing three H1 elements, one empty, above a comparison table rendered as a flat image"></div>
+      <p class="proof-cap"><strong>What a person sees.</strong> Three H1s, the first one empty, and a comparison table.</p>
+    </div>
+    <div class="proof-r">
+      <p class="seelabel">What the machine receives instead</p>
+      <pre class="codeblock">&lt;img src="compare-table01a.jpg"
+     alt="compare-table01a"&gt;</pre>
+      <p class="codenote">A filename and a file reference. The machine never sees
+      <strong>&ldquo;Ultherapy 4.5 / 3.0 / 1.5 毫米 vs 手術拉皮 4.5 毫米 vs 激光 &lt;1.5 毫米&rdquo;</strong>.
+      Those characters exist only as coloured pixels inside a JPEG, nowhere as text in the file.</p>
+
+      <table class="d proof-tab">
+        <thead><tr><th>Counted in the source</th><th class="r">Found</th></tr></thead>
+        <tbody><tr class="fx-bad"><td>Table cell values: depths, temperatures, recovery<span class="rownote">every one is inside the image</span></td><td class="r"><b>0</b></td></tr><tr class="fx-bad"><td>&lt;table&gt; / &lt;tr&gt; / &lt;td&gt;<span class="rownote">there is no table element at all</span></td><td class="r"><b>0</b></td></tr><tr class="fx-bad"><td>Thermage &middot; 熱瑪吉 &middot; Ultraformer &middot; 超聲刀<span class="rownote">no rival name exists as text</span></td><td class="r"><b>0</b></td></tr><tr class="fx-mid"><td>激光 &middot; RF射頻 &middot; 毫米<span class="rownote">intro prose only, never the table</span></td><td class="r"><b>2 each</b></td></tr><tr class="fx-bad"><td>Image alt text<span class="rownote"><code>compare-table01a</code></span></td><td class="r"><b>filename</b></td></tr><tr class="fx-bad"><td>Second image alt<span class="rownote">missing entirely</span></td><td class="r"><b>none</b></td></tr><tr class="fx-bad"><td>&lt;h1&gt;<span class="rownote">one of them empty</span></td><td class="r"><b>3</b></td></tr><tr class="fx-bad"><td>&lt;h2&gt; / &lt;h3&gt;<span class="rownote">no structure beneath</span></td><td class="r"><b>0</b></td></tr><tr class="fx-bad"><td>&lt;p&gt; on a 1MB page<span class="rownote">two paragraphs of prose</span></td><td class="r"><b>2</b></td></tr><tr class="fx-bad"><td>Structured data<span class="rownote">BreadcrumbList, no Product, no FAQPage</span></td><td class="r"><b>1</b></td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Live fetch and source inspection, 25 Aug 2026. Image path dates the table to Feb 2016. Comparison queries measure 92% named, 42% cited.</p>
+    <div class="rt"><div class="lock"><img class="fd" src="assets/finddoc-logo.png" alt="FindDoc"><span class="bar"></span><img class="ns" src="assets/novastacks-logo.png" alt="Novastacks"></div><p class="num">04 / 07</p></div>
+  </div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="s">
+  <p class="kicker">01 Machine-readable site</p>
+  <h1 class="t">The fix: make every Merz market <br>reachable under one domain.</h1>
+  <p class="sub">All five markets served from one domain. Each gets its own localised content, and none competes with the others.</p>
+
+  <div class="moves mid-t mid-b">
+    <div class="mv">
+      <div class="mn">Internal linking</div>
+      <div class="mh">Distribute authority</div>
+      <p>A deliberate link structure so the regional domain passes authority to the market and product pages that need it. Without it, authority stays on the homepage.</p>
+    </div>
+    <div class="mv">
+      <div class="mn">hreflang</div>
+      <div class="mh">Six locale signals</div>
+      <p><strong>en-sg, en-au, en-hk, zh-hk, zh-tw, th-th</strong> plus x-default. Singapore and Australia are both English on one domain. Without this they cannibalise each other.</p>
+    </div>
+    <div class="mv">
+      <div class="mn">Canonicals</div>
+      <div class="mh">One version of truth</div>
+      <p>Self-referencing canonicals with reciprocal return tags. In August 2026 the two Singapore domains targeted the same queries and declared <strong>no relationship at all</strong>.</p>
+    </div>
+  </div>
+  <div class="foot">
+    <p>Locale set derived from measured query language per market. Canonical finding: Merz Singapore preliminary analysis, 7 Aug 2026.</p>
+    <div class="rt"><div class="lock"><img class="fd" src="assets/finddoc-logo.png" alt="FindDoc"><span class="bar"></span><img class="ns" src="assets/novastacks-logo.png" alt="Novastacks"></div><p class="num">05 / 07</p></div>
+  </div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="s">
+  <p class="kicker">02 Content architecture</p>
+  <h1 class="t sm">The fix: build retrievable question-and-answer <br>content on Merz&rsquo;s <em>own</em> domain.</h1>
+  <p class="sub">The real questions people ask, answered in text, image and video, and marked up so an engine can lift the answer straight out of the page. <strong>The plan builds in order of weakness: the clusters where a Merz page is least often the cited source come first.</strong></p>
+
+  <div class="tblwrap mid-t mid-b">
+  <table class="d clusters">
+    <thead><tr><th>Content cluster &amp; example page</th><th>Example URL</th><th class="r">Named</th><th class="r">Cited</th><th>Why it ranks here</th></tr></thead>
+    <tbody>
+      <tr class="cl-bad"><td><b>Concerns &amp; outcomes</b><br><span class="cl-ex">&ldquo;Sagging jowls and jawline: what actually lifts them?&rdquo;</span></td><td><code class="cl-url">/concerns/sagging-jowls-jawline/</code></td><td class="r cl-n">33%</td><td class="r cl-c">20%</td><td class="cl-note">The buyer describes a problem, not a product.</td></tr>
+      <tr class="cl-bad"><td><b>Category &amp; modality</b><br><span class="cl-ex">&ldquo;音波拉提是什麼？和電波拉皮差在哪？&rdquo;</span></td><td><code class="cl-url">/treatments/ultrasound-lifting/</code></td><td class="r cl-n">76%</td><td class="r cl-c">24%</td><td class="cl-note">62&ndash;64% of demand in AU and HK sits here.</td></tr>
+      <tr class="cl-bad"><td><b>Clinical evidence</b><br><span class="cl-ex">&ldquo;MFU-V: 120+ publications, 56 clinical studies&rdquo;</span></td><td><code class="cl-url">/evidence/mfu-v-clinical-studies/</code></td><td class="r cl-n">n/a</td><td class="r cl-c">n/a</td><td class="cl-note"><strong>165 PubMed citations on Merz&rsquo;s own technology; none to Merz.</strong></td></tr>
+      <tr class="cl-mid"><td><b>Comparison</b><br><span class="cl-ex">&ldquo;Ultherapy vs Thermage: which is better?&rdquo;</span></td><td><code class="cl-url">/compare/ultherapy-vs-thermage/</code></td><td class="r cl-n">92%</td><td class="r cl-c">42%</td><td class="cl-note"><strong>In Aug 2026 the HK table was a 972&times;642 JPEG.</strong></td></tr>
+      <tr class="cl-mid"><td><b>Authenticity</b><br><span class="cl-ex">&ldquo;怎麼分辨正版 Ultherapy 和仿冒的音波機器？&rdquo;</span></td><td><code class="cl-url">/how-to-identify-genuine-ultherapy-prime/</code></td><td class="r cl-n">87%</td><td class="r cl-c">67%</td><td class="cl-note">The one claim only a manufacturer can make.</td></tr>
+      <tr class="cl-mid"><td><b>Editorial</b><br><span class="cl-ex">&ldquo;Is Ultherapy painful? Downtime and side effects&rdquo;</span></td><td><code class="cl-url">/blog/is-ultherapy-painful/</code></td><td class="r cl-n">n/a</td><td class="r cl-c">n/a</td><td class="cl-note">Long-tail questions that do not warrant a product page.</td></tr>
+      <tr class="cl-ok"><td><b>Results &amp; proof</b><br><span class="cl-ex">&ldquo;Ultherapy before and after: realistic results&rdquo;</span></td><td><code class="cl-url">/results/ultherapy-before-and-after/</code></td><td class="r cl-n">81%</td><td class="r cl-c">62%</td><td class="cl-note">Carried traffic on .com.au in Aug 2026.</td></tr>
+      <tr class="cl-ok"><td><b>Media &amp; publications</b><br><span class="cl-ex">&ldquo;Ultherapy PRIME in the aesthetic press: coverage and citations&rdquo;</span></td><td><code class="cl-url">/media/press-and-industry-coverage/</code></td><td class="r cl-n">n/a</td><td class="r cl-c">n/a</td><td class="cl-note">Third-party coverage AI can attribute back to Merz.</td></tr>
+      <tr class="cl-ok"><td><b>Product</b><br><span class="cl-ex">&ldquo;Ultherapy vs Ultherapy PRIME: which should I choose?&rdquo;</span></td><td><code class="cl-url">/products/ultherapy-prime/</code></td><td class="r cl-n">100%</td><td class="r cl-c">83%</td><td class="cl-note">Strongest. Merz was already the source.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="foot">
+    <p>Cited = a Merz page was the source. ChatGPT, 252 answers, SG/TW/HK, 25 Aug 2026. Price and clinic-ranking clusters excluded by decision.</p>
+    <div class="rt"><div class="lock"><img class="fd" src="assets/finddoc-logo.png" alt="FindDoc"><span class="bar"></span><img class="ns" src="assets/novastacks-logo.png" alt="Novastacks"></div><p class="num">06 / 07</p></div>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="s">
+  <p class="kicker">What this means for FindDoc</p>
+  <h1 class="t">For a doctor directory, the same method applies <br>to every doctor and clinic page it publishes.</h1>
+  <p class="sub">finddoc.com.sg lists <strong>23,252 MOH-registered doctors</strong> and <strong>5,054 licensed clinics</strong>. Each listing is a page an AI assistant could use as the source of its answer.</p>
+
+  <div class="moves mid-t">
+    <div class="mv">
+      <div class="mn">Machine-readable pages</div>
+      <div class="mh">Doctor and clinic facts as text</div>
+      <p>Specialty, MOH registration, clinic address, opening hours and insurer panels published as page text and as structured data (<strong>Physician</strong>, <strong>MedicalClinic</strong>), never inside images.</p>
+      <p class="ex"><b>Merz case:</b> the HK comparison table was a JPEG with 0 readable values (slide 04).</p>
+    </div>
+    <div class="mv">
+      <div class="mn">Question-and-answer content</div>
+      <div class="mh">Answers to factual patient questions</div>
+      <p>Pages that answer questions asked before a booking, such as which specialist treats a condition, or which clinics in an area are on the CHAS list.</p>
+      <p class="ex"><b>Merz case:</b> the plan ordered work by where a Merz page was least often cited (slide 06).</p>
+    </div>
+    <div class="mv">
+      <div class="mn">Being the source AI cites</div>
+      <div class="mh">Count how often FindDoc is cited</div>
+      <p>Track how often a FindDoc page is the cited source when AI assistants answer Singapore doctor and clinic questions.</p>
+      <p class="ex"><b>Merz case:</b> Product questions named the brand in 100% of answers and cited a Merz page in 83% (slide 06).</p>
+    </div>
+  </div>
+  <p class="rule-note mid-b"><strong>Within MOH rules:</strong> Singapore&rsquo;s MOH rules prohibit rankings, comparisons and patient reviews for clinics. The content covers factual, sourced information only.</p>
+
+  <div class="foot">
+    <p>Counts from the finddoc.com.sg homepage, 20 Oct 2026. We have not audited finddoc.com.sg. This slide describes the method only. It reports no findings or expected results for FindDoc.</p>
+    <div class="rt"><div class="lock"><img class="fd" src="assets/finddoc-logo.png" alt="FindDoc"><span class="bar"></span><img class="ns" src="assets/novastacks-logo.png" alt="Novastacks"></div><p class="num">07 / 07</p></div>
+  </div>
+</section>
+
+</deck-stage>
+<script>
+if (!document.documentElement.classList.contains('m')) {
+  var s = document.createElement('script'); s.src = 'deck-stage.js'; document.body.appendChild(s);
+}
+</script>
+</body>
+</html>
