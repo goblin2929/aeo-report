@@ -250,24 +250,71 @@ const FOOT = [
   ["Contact", [["Enquire", "/enquire/"], ["WhatsApp", ""], ["Singapore", "/"], ["United Kingdom", "/uk/"], ["Hong Kong", "/hk/"]]],
 ];
 const TIMETABLE = /timetable|at a glance|sample week|school day looks|^the week:/i;
-// Timetable: desktop = 5 day table; mobile = day picker (Mon to Fri) showing one day as a list. exc = excursion day indexes, eve = evening row by day.
-const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], TIMES = ["9:00", "10:00", "11:30", "12:00", "2:00", "3:00"], TINT = ["#FFF4D6", "#DDEBFF", "#E3F6E8", "#FBE3E6", "#EFE6FB"];
+// Timetable: desktop = 5 day table; mobile = day picker (Mon to Fri) showing one day as a list.
+// Grids copied cell for cell from the 2027 parent guide p. 5 "Sample Timetable" (updated guide 11 Nov 2026; Eki, 17 Nov 2026:
+// real activities instead of placeholders). Cell codes: "*X" = one cell across all five days; "^" = same as the cell above
+// (merged); "" = empty; "!X" = parent accompanied excursion. w.grid picks the grid (default Pure Mandarin); w.tbc = no grid yet.
+const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+const R5 = x => [x, x, x, x, x];
+const GRID_PM = {note: "Subject to change and varies by school. Topics are for illustration purposes only.", rows: [
+  ["8:30", "9:00 am", ["Orientation", "Morning Welcome", "Morning Welcome", "Morning Welcome", "Morning Welcome"]],
+  ["9:00", "10:00 am", ["Outdoor Play", "Outdoor Play", "Physical Education", "Outdoor Play", "Outdoor Play"]],
+  ["10:00", "10:20 am", "*Morning Snack"],
+  ["10:20", "10:50 am", ["Library Time", "Science", "Music", "Early AI Awareness", "Art"]],
+  ["10:50", "11:10 am", ["Monthly Country", "Group Inquiry", "Group Inquiry", "Group Inquiry", "Group Inquiry"]],
+  ["11:10 am", "12:00 pm", "*Lunch"],
+  ["12:00", "1:00 pm", R5("Nap Time")],
+  ["1:00", "2:00 pm", R5("Guided Chinese Reading")],
+  ["2:00", "2:20 pm", "*Afternoon Snack"],
+  ["2:20", "3:10 pm", R5("Outdoor Play")],
+  ["3:10", "3:30 pm", R5("Graded Reading Extension Practice")],
+  ["3:40", "4:10 pm", ["Group Inquiry", "Literacy", "Mathematics", "Literacy", "Report & Issue of Certificates"]],
+  ["4:20", "5:00 pm", "*Dinner"],
+  ["5:00", "5:30 pm", "*Dismissal"]]};
+const GRID_CI_CHENGDU = {note: "Subject to change.", rows: [
+  ["9:00", "9:40 am", ["Welcome Ceremony", "!Wuhou Shrine", "Outdoor Experiences", "!Chengdu Panda Base", "Outdoor Experiences"]],
+  ["9:40", "10:00 am", ["Outdoor Experiences", "^", "^", "^", "^"]],
+  ["10:00", "10:20 am", ["Morning Snack", "^", "Morning Snack", "^", "Morning Snack"]],
+  ["10:20", "11:20 am", ["Cultural Inquiry: Sichuan Opera Culture", "^", "Cultural Inquiry: Shadow Puppetry", "^", "Cultural Inquiry: Chengdu Traditional Food"]],
+  ["11:30 am", "12:00 pm", ["Lunch", "^", "Lunch", "^", "Lunch"]],
+  ["12:00", "1:00 pm", ["Nap Time", "Lunch", "Nap Time", "Lunch", "Nap Time"]],
+  ["1:00", "2:00 pm", ["Literacy: Stories of the Three Kingdoms", "^", "Literacy: Cultural Relics in the Museum", "^", "Literacy: The Panda in My Eyes"]],
+  ["2:00", "2:30 pm", ["Afternoon Snack", "!Chengdu Museum", "Afternoon Snack", "!Chengdu Panda Base", "Afternoon Snack"]],
+  ["2:30", "3:30 pm", ["Outdoor Experiences", "^", "Outdoor Experiences", "^", "Outdoor Experiences"]],
+  ["3:30", "4:30 pm", ["Chinese Characters Exploration / Ink Painting", "^", "Chinese Characters Exploration / Ink Painting", "^", "Cultural Exchange Celebration"]],
+  ["4:30", "5:00 pm", ["Dinner", "", "Dinner", "", "Dinner"]],
+  ["8:00", "9:30 pm", ["", "", "", "", "!Sichuan Opera Performance"]]]};
+// Cell colours by kind of activity, close to the guide's own colours.
+const TTC = [[/Welcome|Orientation|Ceremony/, "#FFE7A3"], [/Outdoor|Physical/, "#DDF5FA"], [/Snack|Lunch|Dinner/, "#FFF6E3"], [/Nap|Dismissal/, "#EEEEEE"],
+  [/Graded/, "#DCF0CF"], [/Reading|Literacy/, "#F3E7F4"], [/Inquiry|Monthly Country/, "#D6EFEA"], [/Ink|Characters/, "#EEDCC6"],
+  [/Celebration|Certificates/, "#FBDDE0"], [/./, "#E5E8F4"]];
+const ttBg = t => TTC.find(([re]) => re.test(t))[1];
+const ttLabel = t => t[0] === "!" ? `Parent Accompanied Excursion: <b>${esc(t.slice(1))}</b>` : esc(t);
+// Time label: "8:30 to 9:00 am"; a merged block runs from the first row's start to the last row's end.
+const ttTime = (a, b) => `${a} to ${b}`;
 function timetable(mob, w) {
-  const exc = w.exc || [], cell = (r, c) => r === 3 ? "Lunch" : "Activity", bg = (r, c) => r === 3 ? "#FFF4D6" : TINT[(r + c) % 5];
+  if (w.tbc) return "";
+  const g = w.grid || GRID_PM, rows = g.rows, exc = w.exc || [];
+  const cellAt = (r, c) => typeof rows[r][2] === "string" ? rows[r][2] : rows[r][2][c];
+  const span = (r, c) => { let n = 1; while (r + n < rows.length && typeof rows[r + n][2] !== "string" && rows[r + n][2][c] === "^") n++; return n; };
+  const td = (t, extra = "") => t === "" ? `<td${extra}></td>` : `<td${extra} class="${t[0] === "!" ? "exc" : ""}"${t[0] === "!" ? "" : ` style="background:${ttBg(t)}"`}>${ttLabel(t)}</td>`;
+  const dayTag = c => exc.includes(c) ? "Excursion day" : w.exc ? "School day" : "";
+  const note = `<p class="ttnote">${esc(g.note)}</p>`;
   if (!mob) {
-    const rows = TIMES.map((t, r) => `<tr><td class="tm">${t}</td>${!exc.length && r === 3 ? `<td colspan="5" style="background:#FFF4D6">Lunch</td>` : DAYS.map((d, c) => exc.includes(c) ? (r ? "" : `<td rowspan="${TIMES.length}" class="exc">${esc(w.excLabel)}</td>`) : `<td style="background:${bg(r, c)}">${cell(r, c)}</td>`).join("")}</tr>`).join("");
-    const eve = w.eve ? `<tr><td class="tm">Evening</td>${DAYS.map((d, c) => w.eve[c] ? `<td class="exc">${esc(w.eve[c])}</td>` : "<td></td>").join("")}</tr>` : "";
-    return `<table class="tt"><tr><th>Time</th>${DAYS.map((d, c) => `<th>${d}${exc.includes(c) ? "<small>Excursion day</small>" : w.exc ? "<small>School day</small>" : w.tbc ? "<small>School or excursion day</small>" : ""}</th>`).join("")}</tr>${rows}${eve}</table>`;
+    const body = rows.map(([a, b, cells], r) => `<tr><td class="tm">${ttTime(a, b)}</td>${typeof cells === "string"
+      ? `<td colspan="5" style="background:${ttBg(cells.slice(1))}">${esc(cells.slice(1))}</td>`
+      : cells.map((t, c) => t === "^" ? "" : td(t, span(r, c) > 1 ? ` rowspan="${span(r, c)}"` : "")).join("")}</tr>`).join("");
+    return `<table class="tt"><tr><th>Time</th>${DAYS.map((d, c) => `<th>${d}${dayTag(c) ? `<small>${dayTag(c)}</small>` : ""}</th>`).join("")}</tr>${body}</table>${note}`;
   }
   return `<div class="dpick">${DAYS.map((d, c) => `<span data-day="${c}" class="${c ? "" : "on"}">${d.slice(0, 3)}</span>`).join("")}</div>` +
-    DAYS.map((d, c) => `<div class="dlist" data-dayv="${c}"${c ? ' style="display:none"' : ""}><b>${d}${exc.includes(c) ? " · Excursion day" : w.exc ? " · School day" : w.tbc ? " · School or excursion day" : ""}</b>` +
-      (exc.includes(c) ? `<div class="dr"><span>All day</span><em class="exc">${esc(w.excLabel)}</em></div>` : TIMES.map((t, r) => `<div class="dr"><span>${t}</span><em style="background:${bg(r, c)}">${cell(r, c)}</em></div>`).join("")) +
-      (w.eve && w.eve[c] ? `<div class="dr"><span>Evening</span><em class="exc">${esc(w.eve[c])}</em></div>` : "") + `</div>`).join("");
+    DAYS.map((d, c) => `<div class="dlist" data-dayv="${c}"${c ? ' style="display:none"' : ""}><b>${d}${dayTag(c) ? " · " + dayTag(c) : ""}</b>` +
+      rows.map((row, r) => { const t = cellAt(r, c); if (t === "^" || t === "") return ""; const n = span(r, c), raw = t[0] === "*" ? t.slice(1) : t;
+        return `<div class="dr"><span>${ttTime(row[0], rows[r + n - 1][1])}</span><em${raw[0] === "!" ? ' class="exc"' : ` style="background:${ttBg(raw)}"`}>${ttLabel(raw)}</em></div>`; }).join("") + `</div>`).join("") + note;
 }
 // The two weeks (day cards) and the week chooser buttons, shared by the home page, city pages and the week page.
 const WEEKS = [
-  // Tab labels and day lines: Zi En's home page feedback, 14 Nov 2026.
-  {label: "A week of Pure Mandarin", short: "Pure Mandarin week", sub: "Mon to Fri (5 days) in school", days: DAYS.map(() => ["School day", "School day in Mandarin with local classmates: one or two lines about the day."])},
+  // Tab labels and day lines (both weeks): Zi En's home page rewrite, 14 Nov 2026 (home.md); the timetables below hold the hour by hour detail.
+  {label: "A week of Pure Mandarin", short: "Pure Mandarin week", sub: "Mon to Fri (5 days) in school", days: [["School day", "Orientation and welcome, play outdoors, and discover stories in the library."], ["School day", "Explore outdoors and make new discoveries through science and group inquiry."], ["School day", "Get moving, make music and build math skills through fun activities."], ["School day", "Explore outdoors, exchange ideas and build language and literacy skills."], ["School day", "Create art, discover new ideas with group inquiry, and celebrate a special week before saying farewell."]]},
   {label: "A week of Cultural Immersion", short: "Cultural Immersion week", sub: "3 days in school + 2 days of family excursions", days: [["School day", "Orientation and welcome, play outdoors, and cultural activities."], ["Family Excursion Day", "Explore Wuhou Shrine and Chengdu Museum."], ["School day", "Explore outdoors, build language and literacy skills, and cultural activities."], ["Family Excursion Day", "Meet Chengdu's famous giant pandas at the Panda Base."], ["School day", "Create art, participate in group inquiry, and celebrate a special week before saying farewell."]]},
 ];
 // Card copy: " | " starts a new line and a short leading "Label:" is bold (Zi En, 14 Nov 2026: "Where", "Ages", "Fee").
@@ -281,7 +328,7 @@ const HOURS = {Beijing: "9:00 am to 4:00 pm", Chengdu: "9:00 am to 5:00 pm", Suz
 const wsel = (attr, on, subs) => `<div class="wsel">${WEEKS.map((w, t) => `<span ${attr}="${t}" class="${t === on ? "on" : ""}"><b>${w.label}</b><small>${(subs || [])[t] || w.sub}</small></span>`).join("")}</div>`;
 // Sample weeks per city with both pathways (Zi En, 4 Nov 2026). Chengdu Cultural days from the updated 2027 guide; Suzhou to confirm.
 const SAMPLE = {
-  chengdu: [{label: "Pure Mandarin week"}, {label: "Cultural Immersion week", exc: [1, 3], excLabel: "Family excursion, ends 3 to 4 pm", eve: {4: "Sichuan Opera, 8:00 to 9:30 pm"}}],
+  chengdu: [{label: "Pure Mandarin week"}, {label: "Cultural Immersion week", exc: [1, 3], grid: GRID_CI_CHENGDU}],
   suzhou: [{label: "Pure Mandarin week"}, {label: "Cultural Immersion week", tbc: true, note: "School days and excursion days to confirm with EtonHouse."}],
 };
 function designDoc(p, mob) {
@@ -556,9 +603,9 @@ function designDoc(p, mob) {
   .edu{background:#F7F7F7;padding:26px 24px;text-align:center}.edu .eph{width:110px;height:110px;border-radius:50%;background:#DADADA;color:#757575;font:600 13px/110px Arial;margin:0 auto 16px}.edu b{display:block;font-size:17px;color:#181512;margin-bottom:10px}.edu p{margin:0;text-align:left}.edu .tbc{display:block;font-size:14px;line-height:22px;color:#757575;font-style:italic;text-align:left}.quote{background:#F7F7F7;padding:26px 24px;text-align:left}.quote span{color:#DC2826;font:700 54px/0.6 Georgia,serif;display:block;margin-bottom:6px}.quote i{display:block;height:9px;background:#DADADA;border-radius:3px;margin:10px 0;width:95%}.quote i:nth-of-type(3){width:60%}.quote b{display:block;margin-top:16px;font-size:14px;color:#181512}.quote p{font-size:15px;line-height:1.6;margin:0}.cl{text-align:left;max-width:760px;margin:14px auto 0;padding-left:20px;font-size:15px;line-height:1.6}.cl li{margin:6px 0}.sp .cl{margin-left:0}.dtw{overflow-x:auto}.dt.cp td{color:#212121;font-size:14px;line-height:1.5;vertical-align:top}.qa p{margin:0;font-size:15px;line-height:1.6}.age{background:#F7F7F7;text-align:left;display:flex;flex-direction:column}.age .ph{height:210px;margin:0;background-size:cover;background-position:center}.age .ab{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}.age h3{color:#DC2826;font-size:22px;line-height:28px;margin:0 0 10px}.age dl{margin:0 0 14px}.ar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 0;border-top:1px solid #E1E1E1}.ar:last-child{border-bottom:1px solid #E1E1E1}.ar dt{font-size:14px;line-height:20px;color:#212121;font-weight:600}.ar dd{margin:0;font-size:14px;line-height:20px;color:#212121;text-align:right}.pill{display:inline-block;padding:3px 11px;border-radius:13px;font-size:12px;line-height:18px;font-weight:700;background:#E4E4E4;color:#555;white-space:nowrap}.pill.on{background:#DC2826;color:#fff}.age p{font-size:15px;line-height:1.55;margin:0 0 18px;flex:1;text-align:left}.age .btn{align-self:flex-start}
   .strip{max-width:1080px;margin:0 auto;display:flex;justify-content:space-around;gap:20px;flex-wrap:wrap}.strip div{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;max-width:240px}.strip svg{width:30px;height:30px;flex:none}
   .sp{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;text-align:left}.sp.flip .ph{order:2}.ph.tall{height:340px;background-size:cover;background-position:center}.sp h2{font-size:32px}.sp .lead{margin:0 0 22px;max-width:none}
-  table{border-collapse:separate;border-spacing:4px;width:100%;font-size:14px}.tt th{background:#757575;color:#fff;padding:10px}.tt td{padding:12px 6px;text-align:center}.tt td.tm{background:#9E9E9E;color:#fff;font-weight:700}.tt{table-layout:fixed}.tt th:first-child{width:80px}.tt th small{display:block;font-weight:400;font-size:12px;opacity:.9}.tt td.exc,.dr em.exc{background:#DC2826;color:#fff;font-weight:600}
+  table{border-collapse:separate;border-spacing:4px;width:100%;font-size:14px}.tt th{background:#757575;color:#fff;padding:10px}.tt td{padding:12px 6px;text-align:center}.tt td.tm{background:#9E9E9E;color:#fff;font-weight:700}.tt{table-layout:fixed}.tt th:first-child{width:96px}.tt td.tm{font-size:12px}.tt td{font-size:13px;line-height:1.35}.tt th small{display:block;font-weight:400;font-size:12px;opacity:.9}.tt td.exc,.dr em.exc{background:#DC2826;color:#fff;font-weight:600}
   .dpick{display:flex;justify-content:center;gap:6px;margin:0 auto 16px}.dpick span{cursor:pointer;flex:1;max-width:64px;padding:9px 0;border:1px solid #D5D8DC;font-weight:600;font-size:14px}.dpick span.on{background:#181512;color:#fff;border-color:#181512}
-  .dlist{text-align:left;max-width:420px;margin:0 auto}.dlist>b{display:block;color:#DC2826;margin-bottom:10px}.dr{display:flex;gap:6px;margin-bottom:6px}.dr span{flex:none;width:72px;background:#9E9E9E;color:#fff;font-weight:700;font-size:13px;padding:11px 8px}.dr em{flex:1;font-style:normal;font-size:14px;padding:11px 12px}.ttnote{font-size:14px;color:#757575;margin-top:14px}
+  .dlist{text-align:left;max-width:420px;margin:0 auto}.dlist>b{display:block;color:#DC2826;margin-bottom:10px}.dr{display:flex;gap:6px;margin-bottom:6px}.dr span{flex:none;width:96px;background:#9E9E9E;color:#fff;font-weight:700;font-size:13px;padding:11px 8px}.dr em{flex:1;font-style:normal;font-size:14px;padding:11px 12px}.ttnote{font-size:14px;color:#757575;margin-top:14px}
   .dt th{background:#DC2826;color:#fff;padding:12px;text-align:center}.dt td{background:#F5F5F5;padding:14px}.dt i{display:block;height:9px;background:#D6D6D6;border-radius:3px;width:80%}
   .c{margin-top:26px}
   .faq{max-width:900px;margin:0 auto;text-align:left}.q{border:1px solid #E8E8E8;margin-bottom:10px}.qh{color:#DC2826;font-weight:700;padding:14px 18px;cursor:pointer}.qh em{font-style:normal;display:inline-block;width:14px}.qa{padding:0 18px 16px}.qa i{display:block;height:9px;background:#E3E3E3;border-radius:3px;margin:8px 0;width:92%}.qa i+i{width:70%}
