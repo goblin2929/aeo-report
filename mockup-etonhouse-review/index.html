@@ -49,6 +49,8 @@ main{padding-block:18px 40px;padding-left:max(16px,env(safe-area-inset-left,0px)
 .open{font-size:.82rem;color:var(--accent);justify-self:start}
 .cols.four{gap:18px;max-width:none}.cols.four .col{width:332px}.cols.four .chips{gap:4px;flex-wrap:nowrap}.cols.four .chip{font-size:.72rem;padding:2px 6px}
 .col-ZIEN .phone{background:#7a1f1d}
+.col-EV2 .phone{background:#00788a}
+.cols.five{gap:14px}.cols.five .col{width:300px}
 @media (max-width:1400px){
   .cols{justify-content:flex-start;overflow-x:auto;max-width:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px}
   .col{scroll-snap-align:center}
@@ -65,7 +67,7 @@ main{padding-block:18px 40px;padding-left:max(16px,env(safe-area-inset-left,0px)
 </head>
 <body>
 <header class="bar"><div class="bar-in">
-  <div class="top"><h1>China Immersion: copy comparison on mobile</h1><p class="sub">For discussion with EtonHouse · 23 November 2026 · draft copy, not live</p></div>
+  <div class="top"><h1>China Immersion: copy comparison on mobile</h1><p class="sub">For discussion with EtonHouse · 23 November 2026, E-V2 added 25 November · draft copy, not live</p></div>
   <nav class="tabs" role="tablist" aria-label="Page" id="tabs"></nav>
 </div></header>
 <main>
@@ -74,22 +76,24 @@ main{padding-block:18px 40px;padding-left:max(16px,env(safe-area-inset-left,0px)
   <div class="cols" id="cols"></div>
 </main>
 <script>
-const D = {"pages": [{"slug": "k3", "title": "Pure Mandarin", "path": "/pure-mandarin-school-immersion/", "scores": {"C0": {"clarity": 56, "tone": 100, "brand": 85, "flags": 7}, "HB.1": {"clarity": 56, "tone": 83, "brand": 82, "flags": 7}, "E": {"clarity": 56, "tone": 92, "brand": 95, "flags": 6}, "ZIEN": {"clarity": 56, "tone": 100, "brand": 85, "flags": 9}}, "vars": ["C0", "HB.1", "E", "ZIEN"]}, {"slug": "uk", "title": "UK families", "path": "/uk/", "scores": {"C0": {"clarity": 67, "tone": 75, "brand": 62, "flags": 5}, "HB.1": {"clarity": 78, "tone": 83, "brand": 87, "flags": 2}, "E": {"clarity": 67, "tone": 92, "brand": 90, "flags": 6}, "ZIEN": {"clarity": 56, "tone": 58, "brand": 64, "flags": 9}}, "vars": ["C0", "HB.1", "E", "ZIEN"]}, {"slug": "ci", "title": "Cultural Immersion", "path": "/cultural-immersion/", "scores": {"C0": {"clarity": 56, "tone": 92, "brand": 51, "flags": 7}, "HB.1": {"clarity": 56, "tone": 83, "brand": 80, "flags": 8}, "E": {"clarity": 67, "tone": 100, "brand": 92, "flags": 4}}, "vars": ["C0", "HB.1", "E"]}, {"slug": "chengdu", "title": "Chengdu", "path": "/destinations/chengdu/", "scores": {"C0": {"clarity": 67, "tone": 75, "brand": 51, "flags": 5}, "HB.1": {"clarity": 44, "tone": 83, "brand": 74, "flags": 10}, "E": {"clarity": 67, "tone": 100, "brand": 95, "flags": 5}}, "vars": ["C0", "HB.1", "E"]}, {"slug": "guide", "title": "Guide: Is Mandarin hard?", "path": "/guides/is-mandarin-hard-for-young-children/", "scores": {"C0": {"clarity": 56, "tone": 75, "brand": 67, "flags": 6}, "HB.1": {"clarity": 67, "tone": 100, "brand": 82, "flags": 4}, "E": {"clarity": 33, "tone": 92, "brand": 87, "flags": 12}}, "vars": ["C0", "HB.1", "E"]}], "vars": [{"id": "C0", "name": "C0", "desc": "Current draft", "file": "mockup-current.html"}, {"id": "HB.1", "name": "HB.1-ChatGPT", "desc": "Guided edit and review", "file": "mockup-hb1-chatgpt.html"}, {"id": "E", "name": "E", "desc": "Written fresh in your voice", "file": "mockup-e.html"}, {"id": "ZIEN", "name": "Zi En's version", "desc": "Her 20 November rewrite", "file": "mockup-yours.html"}]};
+const D = {"pages": [{"slug": "home", "title": "Home (Singapore)", "path": "/", "scores": {"C0": {"clarity": 56, "tone": 58, "brand": 56, "flags": 7}, "HB.1": {"clarity": 33, "tone": 92, "brand": 80, "flags": 9}}, "vars": ["C0", "HB.1", "EV2"]}, {"slug": "k3", "title": "Pure Mandarin", "path": "/pure-mandarin-school-immersion/", "scores": {"C0": {"clarity": 56, "tone": 100, "brand": 85, "flags": 7}, "HB.1": {"clarity": 56, "tone": 83, "brand": 82, "flags": 7}, "E": {"clarity": 56, "tone": 92, "brand": 95, "flags": 6}, "ZIEN": {"clarity": 56, "tone": 100, "brand": 85, "flags": 9}}, "vars": ["C0", "HB.1", "E", "ZIEN", "EV2"]}, {"slug": "uk", "title": "UK families", "path": "/uk/", "scores": {"C0": {"clarity": 67, "tone": 75, "brand": 62, "flags": 5}, "HB.1": {"clarity": 78, "tone": 83, "brand": 87, "flags": 2}, "E": {"clarity": 67, "tone": 92, "brand": 90, "flags": 6}, "ZIEN": {"clarity": 56, "tone": 58, "brand": 64, "flags": 9}}, "vars": ["C0", "HB.1", "E", "ZIEN", "EV2"]}, {"slug": "ci", "title": "Cultural Immersion", "path": "/cultural-immersion/", "scores": {"C0": {"clarity": 56, "tone": 92, "brand": 51, "flags": 7}, "HB.1": {"clarity": 56, "tone": 83, "brand": 80, "flags": 8}, "E": {"clarity": 67, "tone": 100, "brand": 92, "flags": 4}}, "vars": ["C0", "HB.1", "E", "EV2"]}, {"slug": "chengdu", "title": "Chengdu", "path": "/destinations/chengdu/", "scores": {"C0": {"clarity": 67, "tone": 75, "brand": 51, "flags": 5}, "HB.1": {"clarity": 44, "tone": 83, "brand": 74, "flags": 10}, "E": {"clarity": 67, "tone": 100, "brand": 95, "flags": 5}}, "vars": ["C0", "HB.1", "E", "EV2"]}, {"slug": "guide", "title": "Guide: Is Mandarin hard?", "path": "/guides/is-mandarin-hard-for-young-children/", "scores": {"C0": {"clarity": 56, "tone": 75, "brand": 67, "flags": 6}, "HB.1": {"clarity": 67, "tone": 100, "brand": 82, "flags": 4}, "E": {"clarity": 33, "tone": 92, "brand": 87, "flags": 12}}, "vars": ["C0", "HB.1", "E", "EV2"]}], "vars": [{"id": "C0", "name": "C0", "desc": "Current draft", "file": "mockup-current.html"}, {"id": "HB.1", "name": "HB.1-ChatGPT", "desc": "Guided edit and review", "file": "mockup-hb1-chatgpt.html"}, {"id": "E", "name": "E", "desc": "Written fresh in your voice", "file": "mockup-e.html"}, {"id": "ZIEN", "name": "Zi En's version", "desc": "Her 20 November rewrite", "file": "mockup-yours.html"}, {"id": "EV2", "name": "E-V2", "desc": "E with your 23 November feedback", "file": "mockup-e-v2.html"}]};
 const $ = s => document.querySelector(s);
 function render(slug){
   const p = D.pages.find(x => x.slug === slug) || D.pages[0];
   $("#tabs").innerHTML = D.pages.map(x => `<button class="tab" role="tab" aria-selected="${x.slug === p.slug}" data-s="${x.slug}">${x.title}</button>`).join("");
   document.querySelectorAll(".tab").forEach(b => b.onclick = () => { location.hash = b.dataset.s; });
   const VS = D.vars.filter(v => p.vars.includes(v.id));
-  const best = k => Math.max(...VS.map(v => p.scores[v.id][k]));
-  const least = Math.min(...VS.map(v => p.scores[v.id].flags));
+  const SC = VS.filter(v => p.scores[v.id]);
+  const best = k => Math.max(...SC.map(v => p.scores[v.id][k]));
+  const least = Math.min(...SC.map(v => p.scores[v.id].flags));
   $("#cols").classList.toggle("four", VS.length > 3);
+  $("#cols").classList.toggle("five", VS.length > 4);
   const chip = (lab, val, on) => `<span class="chip${on ? " best" : ""}">${lab} <b>${val}</b></span>`;
   $("#cols").innerHTML = VS.map(v => {
     const s = p.scores[v.id], url = `${v.file}#cmp=${encodeURIComponent(p.path)}`;
     return `<section class="col col-${v.id.replace(".", "")}" id="col-${v.id.replace(".", "")}" aria-label="${v.name}">
       <div class="head"><span class="name">${v.name}</span><span class="desc">${v.desc}</span></div>
-      <div class="chips">${chip("Clarity", s.clarity, s.clarity === best("clarity"))}${chip("Tone", s.tone, s.tone === best("tone"))}${chip("Brand fit", s.brand, s.brand === best("brand"))}${chip("Flagged", s.flags, s.flags === least)}</div>
+      <div class="chips">${s ? chip("Clarity", s.clarity, s.clarity === best("clarity")) + chip("Tone", s.tone, s.tone === best("tone")) + chip("Brand fit", s.brand, s.brand === best("brand")) + chip("Flagged", s.flags, s.flags === least) : `<span class="chip">Not scored yet</span>`}</div>
       <div class="phone"><div class="screen"><iframe title="${v.name}: ${p.title} on mobile" src="${url}"></iframe></div></div>
       <a class="open" href="${url}" target="_blank" rel="noopener">Open this phone view on its own &#8599;</a>
     </section>`;
