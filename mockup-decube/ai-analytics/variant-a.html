@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decube AI Analytics Platform: Ask Your Data in Plain English</title>
+<meta name="description" content="Decube AI Analytics answers revenue, margin and pipeline questions in plain English from approved metrics, in Decube or ChatGPT, Claude and Copilot via MCP.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="./assets/decube-mock.css">
+<style>
+html,body{overflow-x:hidden}
+.sec{padding:96px 0}
+.sec.tint{background:var(--panel)}
+.center{text-align:center}
+.sec-head{max-width:760px;margin:0 auto 56px;text-align:center}
+.sec-head h2{font-size:44px;line-height:1.1;margin:14px 0 16px}
+.sec-head p{font-size:18px;margin:0}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r)}
+/* hero */
+.hero{padding:72px 0 40px;background:linear-gradient(180deg,#fff 0%,var(--blue-softer) 100%)}
+.hero-copy{max-width:860px;margin:0 auto;text-align:center}
+.hero h1{font-size:60px;line-height:1.05;letter-spacing:-1.5px;margin:18px 0 20px}
+.hero .sub{font-size:19px;max-width:640px;margin:0 auto 28px;color:var(--ink2)}
+.hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero .note{font-size:13px;color:var(--muted);margin-top:14px}
+.demo{max-width:1000px;margin:56px auto 0;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 60px rgba(20,55,119,.10);overflow:hidden}
+.demo-top{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line2);background:var(--panel)}
+.demo-top i{width:10px;height:10px;border-radius:50%;background:#d9dee6;display:inline-block}
+.demo-top span{margin-left:8px;font:600 13px var(--b);color:var(--ink2)}
+.demo-top .illus{margin-left:auto}
+.demo-body{padding:28px;display:grid;gap:18px}
+.bubble{justify-self:end;max-width:560px;background:var(--blue);color:#fff;border-radius:16px 16px 4px 16px;padding:14px 18px;font-weight:500}
+.steps{display:flex;gap:10px;flex-wrap:wrap}
+.step{display:inline-flex;align-items:center;gap:8px;font:500 13px var(--b);color:var(--ink2);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:7px 12px}
+.step b{width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;font:700 10px/16px var(--b);text-align:center}
+.answer{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.answer p{margin:0;color:var(--ink);font-size:16px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.kpi{background:var(--panel);border-radius:10px;padding:12px}
+.kpi strong{display:block;font:600 22px/1.1 var(--h);color:var(--ink)}
+.kpi small{font-size:12px;color:var(--muted);line-height:1.3;display:block;margin-top:4px}
+.kpi.up strong{color:var(--green)}
+.chart-t{font:600 13px var(--b);color:var(--ink);margin-bottom:12px}
+.bars{display:flex;gap:10px;padding:0 2px}
+.bar{flex:1;min-width:0;display:flex;flex-direction:column;align-items:stretch;text-align:center}
+.bar .v{font:600 12px/1 var(--b);color:var(--ink);margin-bottom:6px;order:0}
+.bar .b{background:var(--blue-line);border-radius:6px 6px 0 0;margin-top:auto}
+.bar .b.hi{background:var(--blue)}
+.bar .l{font:500 11.5px/1.25 var(--b);color:var(--muted);border-top:1px solid var(--line);padding-top:6px;min-height:34px}
+.bars .bar{height:190px}
+.bar .v{margin-top:auto}
+.bar .b{margin-top:0;flex:none}
+.security{max-width:860px;margin:0 auto;padding:32px;text-align:center}
+.security h2{font-size:32px;line-height:1.15;margin:0 0 16px}
+.security .placeholder{margin:0 0 12px}
+.security p{margin:0}
+.used{margin-top:14px;font:500 12px var(--b);color:var(--ink2);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.used .ok{background:var(--green-soft);color:#14683a;border-radius:6px;padding:4px 8px;font-weight:600}
+.used .tab{border:1px solid var(--line);border-radius:6px;padding:4px 8px}
+.nextq{display:flex;align-items:center;gap:10px;border:1px dashed var(--blue-line);border-radius:12px;padding:12px 16px;color:var(--ink2);font-size:15px}
+.nextq em{font-style:normal;font:600 11px var(--b);letter-spacing:.08em;text-transform:uppercase;color:var(--blue);white-space:nowrap}
+.trusted{padding:28px 0 8px;text-align:center;font:500 14px var(--b);color:var(--muted)}
+/* alternating rows */
+.row{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;margin-top:80px}
+.row:first-of-type{margin-top:0}
+.row.flip .txt{order:2}
+.row>*,.answer>*,.teams>*{min-width:0}
+.txt h3{font-size:30px;line-height:1.15;margin:0 0 14px}
+.txt p{font-size:17px;margin:0 0 14px}
+.panel{background:var(--blue-soft);border-radius:20px;padding:32px}
+.panel.pale{background:var(--panel);border:1px solid var(--line2)}
+.quote{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:12px}
+.quote q{display:block;font:500 18px/1.4 var(--h);color:var(--ink);quotes:"\201C" "\201D"}
+.quote span{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+.mini{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.mini + .mini{margin-top:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{font:500 13px var(--b);background:#fff;border:1px solid var(--blue-line);color:var(--blue-dark);border-radius:999px;padding:6px 12px}
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tool{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;font:600 16px var(--h);color:var(--ink);display:flex;align-items:center;gap:10px}
+.tool i{width:28px;height:28px;border-radius:8px;background:var(--blue-soft);border:1px solid var(--blue-line);display:inline-block;flex:none}
+.tool.main i{background:var(--blue)}
+.hub{margin-top:14px;text-align:center;font:500 13px var(--b);color:var(--ink2);background:#fff;border:1px dashed var(--blue-line);border-radius:12px;padding:10px}
+.foot-note{font-size:12px;color:var(--muted);margin:14px 0 0}
+/* metric card */
+.metric{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.metric-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line2)}
+.metric-h b{font:600 16px var(--h);color:var(--ink)}
+.states{display:flex;gap:6px;flex-wrap:wrap}
+.states span{font:600 11px var(--b);border-radius:6px;padding:4px 8px;background:var(--panel2);color:var(--muted)}
+.states span.on{background:var(--green-soft);color:#14683a}
+.metric dl{margin:0;padding:14px 18px;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14px}
+.metric dt{color:var(--muted)}.metric dd{margin:0;color:var(--ink)}
+.yaml{margin:0;background:#0f1b33;color:#cfe0ff;font:500 13px/1.6 ui-monospace,Menlo,monospace;padding:16px 18px;overflow-x:auto;white-space:pre}
+.yaml .k{color:#8fb7ff}
+.trail{display:grid;gap:10px}
+.trail .mini{display:flex;gap:12px;align-items:flex-start}
+.trail .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font:600 12px/26px var(--b);text-align:center}
+.trail .mini p{margin:0;font-size:14px;color:var(--ink2)}
+.trail .mini strong{display:block;color:var(--ink);font-weight:600;font-size:15px}
+/* teams */
+.teams{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.team{padding:26px}
+.team h3{font-size:21px;line-height:1.2;margin:0 0 14px}
+.team ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.team li{background:var(--panel);border-radius:10px;padding:12px 14px;font-size:14.5px;color:var(--ink2);line-height:1.45}
+.teams-note{text-align:center;margin-top:20px}
+/* cta */
+.cta{background:var(--blue-dark);border-radius:24px;padding:64px 48px;text-align:center;color:#dbe6ff}
+.cta h2{color:#fff;font-size:44px;line-height:1.1;margin:0 0 14px}
+.cta .lead{font:500 20px var(--h);color:#fff;margin:0 0 24px}
+.cta ul{list-style:none;padding:0;margin:0 auto 30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 14px;font-size:14px}
+.cta .btn{background:#fff;color:var(--blue-dark)}
+/* faq */
+.faq{max-width:860px;margin:0 auto}
+.faq details{border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:12px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary h3{font-size:18px;line-height:1.35;font-weight:500}
+.faq summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;background:var(--blue-soft);color:var(--blue);font:500 20px/28px var(--b);text-align:center}
+.faq details[open] summary::after{content:"\2212"}
+.faq summary:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:14px}
+.faq .ans{padding:0 22px 20px;margin:0}
+.faq .placeholder{margin:0 22px 20px}
+.reading{max-width:860px;margin:56px auto 0}
+.reading h2{font-size:28px;margin:0 0 18px;text-align:center}
+.reading ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.reading li{border:1px solid var(--line);border-radius:14px;padding:16px 18px;color:var(--ink);font-weight:500;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.reading li span{flex:none;font:600 10px/1 var(--b);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--panel2);border-radius:999px;padding:5px 8px}
+@media (max-width:960px){
+  .row{grid-template-columns:1fr;gap:28px}
+  .row.flip .txt{order:0}
+  .teams{grid-template-columns:1fr 1fr}
+  .answer{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .dc-nav nav{display:none}
+  .sec{padding:64px 0}
+  .wrap{padding:0 16px}
+  .hero{padding:48px 0 28px}
+  .hero h1{font-size:38px;letter-spacing:-1px}
+  .hero .sub{font-size:17px}
+  .sec-head{margin-bottom:36px}
+  .sec-head h2,.cta h2{font-size:32px}
+  .txt h3{font-size:24px}
+  .row{margin-top:56px}
+  .demo{margin-top:36px;border-radius:16px}
+  .demo-body{padding:16px}
+  .demo-top span{display:none}
+  .answer{padding:16px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .kpi strong{font-size:19px}
+  .nextq{flex-direction:column;align-items:flex-start;gap:4px}
+  .panel{padding:18px}
+  .teams{grid-template-columns:1fr}
+  .tools{grid-template-columns:1fr}
+  .cta{padding:44px 20px;border-radius:18px}
+  .reading ul{grid-template-columns:1fr}
+  .faq summary{padding:16px 18px}
+  .faq .ans{padding:0 18px 18px}
+  .faq .placeholder{margin:0 18px 18px}
+}
+</style>
+</head>
+<body>
+<div class="mk-based">Variant A, format based on Hex's conversational analytics product page (hex.tech/product/threads). Decube copy and brand; structure only.</div>
+<header class="dc-nav">
+  <div class="wrap">
+    <a class="dc-logo" href="#"><i></i>decube</a>
+    <nav><span>Products</span><span>Solutions</span><span>Case studies</span><span>Partners</span><span>Resources</span></nav>
+    <span class="sp"></span>
+    <a class="btn" href="#early-access">Request a Demo</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Stop waiting for reports. Just ask your data.</p>
+      <h1>Conversational <span class="accent">AI analytics</span> on the metrics your team approved</h1>
+      <p class="sub">Get answers on revenue, margin and pipeline in plain English, built on metrics your team has approved.</p>
+      <div class="ctas">
+        <a class="btn" href="#early-access">Get early access</a>
+        <a class="btn ghost" href="#ask">See how it works</a>
+      </div>
+      <p class="note">Early access is open. One month free with all features for sign ups before 31 Dec 2026.</p>
+    </div>
+
+    <div class="demo" aria-label="Product demo: a question, the steps the answer took, and the answer card">
+      <div class="demo-top"><i></i><i></i><i></i><span>Decube AI Analytics</span><em class="illus">Illustrative data</em></div>
+      <div class="demo-body">
+        <div class="bubble">Which marketing channels are actually driving revenue?</div>
+        <div class="steps">
+          <span class="step"><b>&#10003;</b>Searched semantic layer</span>
+          <span class="step"><b>&#10003;</b>Ran SQL query</span>
+        </div>
+        <div class="answer">
+          <div>
+            <p>Paid search drove $428K in revenue. But email delivered the strongest return: $8.40 for every $1 spent.</p>
+            <div class="kpis">
+              <div class="kpi"><strong>$1.24M</strong><small>attributed revenue</small></div>
+              <div class="kpi"><strong>4.8x</strong><small>blended return on spend</small></div>
+              <div class="kpi up"><strong>+18.6%</strong><small>vs previous quarter</small></div>
+            </div>
+          </div>
+          <div>
+            <div class="chart-t">Revenue by acquisition channel, last quarter</div>
+            <div class="bars" role="img" aria-label="Paid search $428K, Organic $386K, Email $260K, Paid social $166K">
+              <div class="bar"><span class="v">$428K</span><div class="b hi" style="height:120px"></div><span class="l">Paid search</span></div>
+              <div class="bar"><span class="v">$386K</span><div class="b" style="height:108px"></div><span class="l">Organic</span></div>
+              <div class="bar"><span class="v">$260K</span><div class="b" style="height:73px"></div><span class="l">Email</span></div>
+              <div class="bar"><span class="v">$166K</span><div class="b" style="height:47px"></div><span class="l">Paid social</span></div>
+            </div>
+            <div class="used"><span class="ok">Approved: attributed_revenue</span><span class="tab">SQL</span><span class="tab">Data</span><span class="tab">Sources</span></div>
+          </div>
+        </div>
+        <div class="nextq"><em>Next question</em>What changes if we only look at first-time customers?</div>
+      </div>
+    </div>
+    <p class="trusted">Trusted by data leaders across Banking, Insurance &amp; Telecom</p>
+  </div>
+</section>
+
+<!-- SECTION 1: ASK -->
+<section class="sec" id="ask">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Know what changed. Decide what comes next.</p>
+      <h2>Conversational analytics: <span class="accent">ask in plain English</span>, from where you work</h2>
+      <p>You don't need another dashboard to check. You need to know where to focus, what to investigate, and which move is worth making. Start with a question in your own words.</p>
+    </div>
+
+    <div class="row">
+      <div class="txt">
+        <h3>See the story behind the number</h3>
+        <p>Revenue is up. Margin is down. Explore the channels, products, or segments behind the change.</p>
+      </div>
+      <div class="panel">
+        <div class="quote"><q>Which products are squeezing our margin?</q><span>Maya R., Head of Finance</span></div>
+        <div class="chips"><span class="chip">Channels</span><span class="chip">Products</span><span class="chip">Segments</span></div>
+      </div>
+    </div>
+
+    <div class="row flip">
+      <div class="txt">
+        <h3>Go deeper while it matters</h3>
+        <p>Change the time frame. Compare a cohort. Slice by region. Keep exploring without another report request.</p>
+      </div>
+      <div class="panel">
+        <div class="quote"><q>Now show me just our first-time customers.</q><span>Daniel K., Growth Lead</span></div>
+        <div class="chips"><span class="chip">Change the time frame</span><span class="chip">Compare a cohort</span><span class="chip">Slice by region</span></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="txt">
+        <h3>Ask in Decube, ChatGPT, Claude or Copilot</h3>
+        <p><strong>Your data stack. Now in the conversation.</strong> Connect your warehouse, ETL, and BI layer. Ask in Decube, ChatGPT, Claude, or Copilot through MCP.</p>
+        <p class="foot-note">Early access product direction. Availability depends on the connector and the assistant's MCP support.</p>
+      </div>
+      <div class="panel pale">
+        <div class="tools">
+          <div class="tool main"><i></i>Decube</div>
+          <div class="tool"><i></i>ChatGPT</div>
+          <div class="tool"><i></i>Claude</div>
+          <div class="tool"><i></i>Copilot</div>
+        </div>
+        <div class="hub">Warehouse · ETL · BI layer, connected through MCP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: TRUST -->
+<section class="sec tint" id="trust">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">One definition. Every answer.</p>
+      <h2>Answers grounded in a <span class="accent">semantic layer</span> of approved metrics</h2>
+      <p>Connect the warehouse, ETL and BI layer. Decube builds a semantic layer: definitions, relationships and business context. Revenue should mean revenue. Everywhere.</p>
+    </div>
+
+    <div class="row">
+      <div class="txt">
+        <h3>Spend the meeting on the decision</h3>
+        <p>Work from the same approved definitions, so your team can discuss what to do instead of whose number is right.</p>
+        <div class="quote"><q>Are we all using the same net revenue?</q><span>Aisha S., Chief Operating Officer</span></div>
+      </div>
+      <div class="metric">
+        <div class="metric-h"><b>Net revenue</b><div class="states"><span>Draft</span><span>Review</span><span class="on">Approved</span></div></div>
+        <dl>
+          <dt>Definition</dt><dd>Gross revenue minus discounts minus refunds</dd>
+          <dt>Dimensions</dt><dd>Product category, Month</dd>
+          <dt>Owner</dt><dd>Finance</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="row flip">
+      <div class="txt">
+        <h3>AI writes the definition. Team approves it.</h3>
+        <p><strong>Business teams, meet plain English.</strong> Describe the metric in a conversation. Refine the logic together and submit it for approval.</p>
+        <p><strong>Data teams, keep your precision.</strong> Define metrics in YAML. Make the calculation, dimensions, and ownership explicit.</p>
+        <p><strong>Define once. Ask everywhere.</strong> Use the same approved definitions in Decube and your connected AI assistants.</p>
+      </div>
+      <div class="panel">
+        <div class="metric">
+          <div class="metric-h"><b>net_revenue</b><div class="states"><span>Draft</span><span class="on">Review</span><span>Approved</span></div></div>
+<pre class="yaml"><span class="k">metric:</span> net_revenue
+<span class="k">calculation:</span> gross_revenue - discounts - refunds
+<span class="k">dimensions:</span>
+  - product_category
+  - month
+<span class="k">owner:</span> finance</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="txt">
+        <h3>Inspect the metric, SQL, data and sources behind each answer</h3>
+        <p>Each answer shows the approved metric it used and the SQL, data and sources behind it.</p>
+        <p>Trusted context: lineage and quality signals behind every answer.</p>
+      </div>
+      <div class="panel pale">
+        <div class="trail">
+          <div class="mini"><span class="n">1</span><p><strong>Searched semantic layer</strong>Approved: attributed_revenue</p></div>
+          <div class="mini"><span class="n">2</span><p><strong>Ran SQL query</strong>SQL · Data · Sources</p></div>
+          <div class="mini"><span class="n">3</span><p><strong>Trusted context</strong>Lineage and quality signals behind every answer</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: TEAMS -->
+<section class="sec" id="teams">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Example questions</p>
+      <h2><span class="accent">Self service analytics</span> for every team that asks for reports</h2>
+      <p>Less "can you pull a report?" More "now we know."</p>
+    </div>
+    <div class="teams">
+      <div class="card team"><h3>AI marketing analytics: campaigns and acquisition cost</h3><ul><li>Which campaigns generated the most revenue, not just leads?</li><li>Where is acquisition cost rising, and which audiences still convert?</li></ul></div>
+      <div class="card team"><h3>Sales analytics: pipeline risk and win rate</h3><ul><li>Which deals are at risk, and how much pipeline is exposed?</li><li>Why did our win rate fall? Break it down by region and deal size.</li></ul></div>
+      <div class="card team"><h3>Ecommerce: product margin and checkout</h3><ul><li>Which products grew revenue but hurt our margin?</li><li>Where are shoppers dropping off between checkout and payment?</li></ul></div>
+      <div class="card team"><h3>Fintech: payment routes and merchant segments</h3><ul><li>Which payment routes have the highest failure rate by market?</li><li>How did transaction volume and net revenue change by merchant segment?</li></ul></div>
+      <div class="card team"><h3>Finance: gross margin and forecast</h3><ul><li>What drove the change in gross margin by region?</li><li>How does actual revenue compare with forecast?</li></ul></div>
+      <div class="card team"><h3>Product: onboarding and retention</h3><ul><li>Where do new users drop off during onboarding?</li><li>Which features are associated with stronger retention?</li></ul></div>
+    </div>
+    <p class="foot-note teams-note">Example questions. Answers depend on your connected data and approved metric definitions.</p>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="sec" id="security" style="padding-top:0">
+  <div class="wrap">
+    <div class="security card">
+      <h2>Data security and permissions</h2>
+      <p class="placeholder">Wording to come from Decube.</p>
+      <p><a href="https://www.decube.io/security">https://www.decube.io/security</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec tint" id="faq">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">FAQ</p><h2>Questions about the Decube <span class="accent">AI analytics platform</span></h2></div>
+    <div class="faq">
+      <details open><summary><h3>What is AI analytics?</h3></summary><p class="ans">AI analytics lets business teams ask questions about company data in plain language and get answers from the data itself, without writing SQL or waiting for a report. Decube AI Analytics answers from metrics your team has approved, so everyone works from the same numbers.</p></details>
+      <details><summary><h3>Do we need a semantic layer before we start?</h3></summary><p class="ans">No. Decube builds the semantic layer from your warehouse, ETL and BI layer. Business teams describe a metric in plain language, Decube AI drafts the definition, and the data team approves it once for every answer.</p></details>
+      <details><summary><h3>How does Decube AI Analytics keep answers consistent?</h3></summary><p class="ans">Every metric has one approved definition with an owner. Every answer in Decube, and in the AI assistants connected through MCP, uses that definition, so the same question gets the same number.</p></details>
+      <details><summary><h3>Can we ask questions in ChatGPT, Claude or Copilot?</h3></summary><p class="ans">Yes, through MCP. Your AI assistant uses Decube's approved metrics, so its answers follow the same definitions. Availability depends on the connector and on your assistant's MCP support.</p></details>
+      <details><summary><h3>How is this different from connecting ChatGPT directly to our warehouse?</h3></summary><p class="ans">An assistant connected straight to a warehouse has to guess what each metric means from table and column names, so two people can get two different numbers. Decube gives the assistant one approved definition for each metric.</p></details>
+      <details><summary><h3>How is Decube AI Analytics different from TrustyAI?</h3></summary><p class="ans">TrustyAI reads metadata: it finds and explains data assets in your catalog. Decube AI Analytics answers business questions from the data itself, on approved metrics.</p></details>
+      <details><summary><h3>How long does setup take?</h3></summary><p class="ans">Onboarding is tailored and takes about 2 to 3 hours, with test datasets for marketing and finance teams.</p></details>
+      <details><summary><h3>How do I get early access?</h3></summary><p class="ans">Sign up with your work email on this page. Teams that sign up before 31 December 2026 get one month free with all features.</p></details>
+      <details><summary><h3>How does Decube handle data security and permissions?</h3></summary><p class="placeholder">Answer to come from Decube: who can see which data, where data is processed and what the AI model receives. <a href="https://www.decube.io/security">decube.io/security</a></p></details>
+    </div>
+
+    <div class="reading">
+      <h2>Further reading</h2>
+      <ul>
+        <li>What Is AI Analytics? A Guide for Business Leaders<span>Coming soon</span></li>
+        <li>Best AI BI Tools in 2026<span>Coming soon</span></li>
+        <li>Augmented Analytics vs AI Analytics<span>Coming soon</span></li>
+        <li>Conversational Analytics: Ask Business Questions in Plain English<span>Coming soon</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- CTA -->
+<section class="sec" id="early-access">
+  <div class="wrap">
+    <div class="cta">
+      <h2>You have the data. Now get the insight.</h2>
+      <p class="lead">Early access is open.</p>
+      <ul>
+        <li>One month free with all features for sign ups before 31 Dec 2026</li>
+        <li>Tailored onboarding, setup in about 2 to 3 hours</li>
+        <li>Test datasets for marketing and finance</li>
+        <li>Work email only</li>
+      </ul>
+      <a class="btn" href="#early-access">Get early access</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="dc-foot"><div class="wrap">decube</div></footer>
+<script src="./assets/mock.js"></script>
+</body>
+</html>

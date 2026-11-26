@@ -1,0 +1,29 @@
+@import url("mockbar.css");
+/* Shared Decube brand base for the AI Analytics mockups (2026-11-26). Fonts load from Decube's own Webflow CDN. */
+@font-face{font-family:"Nohemi Vf";src:url(https://cdn.prod.website-files.com/63ccf2efea97bef692d278ea/6666a9dc107cc807fc173d1a_Nohemi-VF.ttf) format("truetype");font-weight:100 900;font-display:swap}
+@font-face{font-family:Opensauceone;src:url(https://cdn.prod.website-files.com/63ccf2efea97bef692d278ea/66694b5557c5f662e5f62994_OpenSauceOne-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:Opensauceone;src:url(https://cdn.prod.website-files.com/63ccf2efea97bef692d278ea/66694b5bd67a0289607f29c1_OpenSauceOne-Medium.ttf) format("truetype");font-weight:500;font-display:swap}
+@font-face{font-family:Opensauceone;src:url(https://cdn.prod.website-files.com/63ccf2efea97bef692d278ea/66694b553ea79b823c02f84c_OpenSauceOne-SemiBold.ttf) format("truetype");font-weight:600;font-display:swap}
+@font-face{font-family:Opensauceone;src:url(https://cdn.prod.website-files.com/63ccf2efea97bef692d278ea/66694b55f392facbd1eb04f7_OpenSauceOne-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+:root{--ink:#0d0d0d;--ink2:#3a3a3a;--body:#5b636f;--muted:#6d6d6d;--blue:#256ff2;--blue-dark:#143777;--blue-soft:#e9f1fe;--blue-softer:#eff5ff;--blue-line:#bed4fb;
+--bg:#ffffff;--panel:#f7f9fc;--panel2:#f7f7f7;--line:#e4e4e4;--line2:#eaeef3;--green:#1f9d55;--green-soft:#ddf0e5;--amber-soft:#fcf0da;
+--h:"Nohemi Vf",Inter,Arial,sans-serif;--b:Opensauceone,Inter,Arial,sans-serif;--r:16px;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--body);font:400 16px/1.6 var(--b);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--h);color:var(--ink);font-weight:500;letter-spacing:-.5px;margin:0}
+a{color:var(--blue)}img{max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.accent{color:var(--blue)}
+.eyebrow{font:600 12px/1 var(--b);letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:0;border-radius:8px;padding:12px 18px;font:600 15px/1 var(--b);text-decoration:none;cursor:pointer}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.illus{display:inline-block;font:600 10px/1 var(--b);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:5px 8px}
+.placeholder{background:repeating-linear-gradient(45deg,#f3f3f3,#f3f3f3 10px,#fafafa 10px,#fafafa 20px);border:1px dashed #bdbdbd;border-radius:10px;padding:14px 16px;color:#6d6d6d;font-style:italic}
+/* site chrome (simplified Decube header/footer) */
+.dc-nav{position:sticky;top:44px;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2)}
+.dc-nav .wrap{display:flex;align-items:center;gap:28px;height:64px}
+.dc-logo{display:flex;align-items:center;gap:8px;font:700 20px/1 var(--h);color:var(--ink);text-decoration:none}
+.dc-logo i{width:22px;height:18px;background:var(--blue);border-radius:4px 4px 4px 10px;display:inline-block}
+.dc-nav nav{display:flex;gap:22px;font:500 14px var(--b);color:var(--ink2)}.dc-nav nav span{cursor:default}
+.dc-nav .sp{flex:1}
+.dc-foot{border-top:1px solid var(--line2);margin-top:80px;padding:40px 0;font-size:13px;color:var(--muted)}

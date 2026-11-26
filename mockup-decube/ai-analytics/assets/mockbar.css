@@ -1,0 +1,12 @@
+/* mockup bar (not part of the design) */
+.mk-bar{position:sticky;top:0;z-index:100;height:44px;background:#111827;color:#e5e7eb;font:500 13px/1 Inter,Arial,sans-serif;display:flex;align-items:center;gap:14px;padding:0 16px;overflow-x:auto;white-space:nowrap}
+.mk-bar b{color:#fff}.mk-bar a{color:#cbd5e1;text-decoration:none;padding:6px 8px;border-radius:6px}.mk-bar a.on{background:#374151;color:#fff}
+.mk-bar .sp{flex:1}.mk-bar label{display:flex;align-items:center;gap:6px;cursor:pointer;color:#fff}
+.mk-based{background:#fffbeb;border-bottom:1px solid #fde68a;color:#78350f;font:400 13px/1.5 Inter,Arial,sans-serif;padding:8px 16px}
+/* heading outline mode */
+body.show-h h1,body.show-h h2,body.show-h h3{outline:2px dashed #7c3aed;outline-offset:3px;position:relative}
+body.show-h h1::before,body.show-h h2::before,body.show-h h3::before{position:absolute;left:-2px;top:-22px;font:700 11px/1 Inter,Arial,sans-serif;letter-spacing:.03em;background:#7c3aed;color:#fff;padding:4px 6px;border-radius:4px;z-index:5;white-space:nowrap}
+body.show-h h1::before{content:"H1"}body.show-h h2::before{content:"H2"}body.show-h h3::before{content:"H3"}
+.mk-outline{display:none;position:fixed;right:16px;top:60px;width:340px;max-height:75vh;overflow:auto;background:#fff;border:2px solid #7c3aed;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.18);padding:12px 14px;z-index:120;font:400 12.5px/1.4 Inter,Arial,sans-serif;color:#111}
+body.show-h .mk-outline{display:block}.mk-outline div{padding:3px 0}.mk-outline .l2{padding-left:14px}.mk-outline .l3{padding-left:28px;color:#4b5563}
+.mk-outline b{color:#7c3aed;margin-right:6px}
