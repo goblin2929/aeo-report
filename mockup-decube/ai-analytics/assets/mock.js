@@ -1,6 +1,6 @@
 // Mockup bar: links between variants + "Show headings" outline (not part of the proposed design).
 (function(){
-  var pages=[['index.html','Overview'],['annotated.html','Current design + changes'],['variant-a.html','Variant A'],['variant-b.html','Variant B'],['variant-c.html','Variant C']];
+  var pages=[['index.html','Overview'],['annotated.html','Current design + changes'],['variant-a.html','Variant A'],['variant-b.html','Variant B'],['variant-c.html','Variant C'],['team.html','Who is "your team"']];
   var here=location.pathname.split('/').pop()||'index.html';
   var bar=document.createElement('div');bar.className='mk-bar';
   bar.innerHTML='<b>Decube AI Analytics: page mockups</b>'+pages.map(function(p){return '<a href="'+p[0]+'"'+(p[0]===here?' class="on"':'')+'>'+p[1]+'</a>'}).join('')+'<span class="sp"></span><label><input type="checkbox" id="mkH"> Show headings</label>';
