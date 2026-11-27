@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Website Copy Review</title>
+<style>
+:root{--ink:#1f2328;--mute:#5b6470;--line:#e3e6ea;--bg:#f6f7f9;--card:#fff;--red:#c8102e;--hl:#ffd54a;--hlbg:rgba(255,213,74,.22);--ok:#1a7f37;--blue:#0b57d0}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+button,textarea,input{font:inherit}
+.top{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--line)}
+.top .in{max-width:1500px;margin:0 auto;padding:12px 16px 0}
+.top h1{font-size:17px;margin:0 0 2px}
+.top .help{margin:0 0 10px;color:var(--mute);font-size:14px}
+.top .help b{color:var(--ink)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
+.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;cursor:pointer;color:var(--ink);font-size:14px}
+.tab[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab .cnt{display:inline-block;min-width:18px;margin-left:6px;padding:0 5px;border-radius:9px;background:var(--hl);color:var(--ink);font-size:12px;font-weight:600;text-align:center}
+.wrap{max-width:1500px;margin:0 auto;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;align-items:start}
+.stage{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.stage iframe{display:block;width:100%;border:0;height:1400px}
+.side{position:sticky;top:120px;max-height:calc(100vh - 136px);overflow:auto;display:flex;flex-direction:column;gap:12px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.box h2{font-size:15px;margin:0 0 8px}
+.whole{width:100%;border:1px dashed #9aa3ad;background:var(--card);border-radius:8px;padding:9px;cursor:pointer;color:var(--ink)}
+.whole:hover{border-color:var(--ink)}
+.cmp[hidden]{display:none}
+.cmp .what{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--mute);margin-bottom:6px}
+.cmp .quote{border-left:3px solid var(--hl);background:var(--hlbg);padding:6px 9px;border-radius:0 6px 6px 0;font-size:14px;max-height:120px;overflow:auto;margin-bottom:10px;white-space:pre-wrap}
+.cmp .quote img{max-width:100%;max-height:110px;display:block;border-radius:4px}
+.cmp label{display:block;font-size:13px;color:var(--mute);margin:8px 0 4px}
+.cmp textarea{width:100%;min-height:96px;resize:vertical;border:1px solid #c5cbd2;border-radius:8px;padding:8px}
+.cmp input{width:100%;border:1px solid #c5cbd2;border-radius:8px;padding:7px 8px}
+.cmp textarea:focus,.cmp input:focus{outline:2px solid var(--blue);outline-offset:0;border-color:transparent}
+.row{display:flex;gap:8px;margin-top:10px}
+.send{flex:1;background:var(--red);color:#fff;border:0;border-radius:8px;padding:10px;font-weight:600;cursor:pointer}
+.send:disabled{opacity:.5;cursor:default}
+.cancel{background:none;border:1px solid var(--line);border-radius:8px;padding:10px 14px;cursor:pointer;color:var(--ink)}
+.list{display:flex;flex-direction:column;gap:8px}
+.empty{color:var(--mute);font-size:14px;margin:0}
+.c{border:1px solid var(--line);border-radius:8px;padding:9px 10px;cursor:pointer;background:var(--card)}
+.c:hover,.c.on{border-color:var(--hl);box-shadow:0 0 0 2px var(--hlbg)}
+.c .h{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--mute)}
+.num{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:10px;background:var(--hl);color:var(--ink);font-weight:700;font-size:12px;padding:0 5px}
+.c .q{font-size:13px;color:var(--mute);margin:5px 0 3px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.c .thumb{display:block;width:100%;max-height:90px;object-fit:cover;border-radius:6px;margin:6px 0 4px}
+.c .t{white-space:pre-wrap;font-size:14px}
+.c .st{margin-top:6px;font-size:13px;border-radius:6px;padding:5px 8px;background:#eef6f0;color:var(--ok)}
+.c .del{margin-left:auto;background:none;border:0;color:var(--mute);cursor:pointer;font-size:12px;text-decoration:underline}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50}
+.toast.show{opacity:1}
+.note{font-size:12px;color:var(--mute);margin:0}
+.bar,.selbar,.sheethd{display:none}
+.selbar button,.bar button{font:inherit}
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;padding:10px 0}
+  .stage{border-radius:0;border-left:0;border-right:0}
+  .side{position:static;max-height:none;padding:0 16px}
+  .cmp:not([hidden]){position:fixed;left:0;right:0;bottom:0;z-index:40;border-radius:14px 14px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.18);max-height:75vh;overflow:auto}
+  .top{position:static}
+  .tabs{flex-wrap:wrap;overflow:visible}
+  body{padding-bottom:64px}
+  .listbox{display:none}
+  .listbox.open{display:block;position:fixed;left:0;right:0;bottom:0;z-index:35;border-radius:14px 14px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.18);max-height:70vh;overflow:auto;padding-bottom:20px}
+  .listbox.open .sheethd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .listbox.open .sheethd h2{margin:0}
+  .sheethd button{background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer;color:var(--ink)}
+  .listbox.open #listTitle{display:none}
+  .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:8px;padding:10px 16px;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.08)}
+  .bar button{flex:1;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:10px 6px;color:var(--ink);cursor:pointer}
+  .bar .mine{font-weight:600}
+  .selbar:not([hidden]){display:block;position:fixed;left:0;right:0;bottom:0;z-index:38;padding:10px 16px;background:var(--card);border-top:1px solid var(--line)}
+  .selbar button{width:100%;background:var(--ink);color:#fff;border:0;border-radius:8px;padding:12px;font-weight:600}
+  .toast{top:16px;bottom:auto}
+  .top .help{font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="in">
+  <h1>EtonHouse China Immersion: website copy for your review</h1>
+  <p class="help"><b>Click</b> any heading, sentence, button or photo, type your comment and press <b>Send</b>. To comment on a few words, <b>select them</b> first. There are 11 pages; choose one below.</p>
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Pages"></nav>
+</div></div>
+<div class="wrap">
+  <div class="stage"><iframe id="fr" title="Page preview"></iframe></div>
+  <aside class="side">
+    <div class="box cmp" id="cmp" hidden>
+      <div class="what" id="cmpWhat"></div>
+      <div class="quote" id="cmpQuote"></div>
+      <label for="cmpText">Your comment</label>
+      <textarea id="cmpText" placeholder="For example: please change this to ..."></textarea>
+      <label for="cmpName">Your name</label>
+      <input id="cmpName" autocomplete="name">
+      <div class="row"><button class="cancel" id="cmpCancel" type="button">Cancel</button><button class="send" id="cmpSend" type="button">Send comment</button></div>
+    </div>
+    <div class="box listbox" id="listbox">
+      <div class="sheethd"><h2 id="sheetTitle">Comments on this page</h2><button type="button" id="sheetClose">Close</button></div>
+      <h2 id="listTitle">Comments on this page</h2>
+      <div class="list" id="list"></div>
+      <p style="margin:10px 0 0"><button class="whole" id="whole" type="button">Comment on the whole page</button></p>
+    </div>
+    <p class="note" id="mode"></p>
+  </aside>
+</div>
+<div class="bar" id="bar"><button class="mine" id="barList" type="button">My comments (0)</button><button id="barWhole" type="button">Comment on whole page</button></div>
+<div class="selbar" id="selbar" hidden><button id="selBtn" type="button">Comment on the selected words</button></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+/* Set ENDPOINT to the Google Apps Script web app URL. Empty = preview mode (comments kept in this browser only). */
+const ENDPOINT = "";
+const PAGES = [
+  ["home", "Home"], ["pure-mandarin", "Pure Mandarin"], ["uk", "UK families"], ["hk", "Hong Kong families"],
+  ["cultural-immersion", "Cultural Immersion"], ["fees-and-dates", "Fees and dates"], ["destinations", "Destinations"],
+  ["beijing", "Beijing"], ["chengdu", "Chengdu"], ["suzhou", "Suzhou"], ["guide-mandarin-hard", "Guide: Is Mandarin hard?"]];
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const store = {get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } },
+               set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }};
+const toast = t => { const x = $("#toast"); x.textContent = t; x.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(() => x.classList.remove("show"), 2600); };
+
+/* ---------- storage: Google Sheet via Apps Script, or this browser in preview ---------- */
+const API = {
+  async all() {
+    if (!ENDPOINT) return store.get("zc_preview", []);
+    const r = await fetch(ENDPOINT + "?action=list&t=" + Date.now()); const j = await r.json(); return j.comments || [];
+  },
+  async add(c) {
+    if (!ENDPOINT) { const a = store.get("zc_preview", []); a.push(c); store.set("zc_preview", a); return c; }
+    const r = await fetch(ENDPOINT, {method: "POST", headers: {"Content-Type": "text/plain;charset=utf-8"}, body: JSON.stringify({action: "add", comment: c})});
+    const j = await r.json(); if (!j.ok) throw new Error(j.error || "save failed"); return c;
+  },
+  async del(id) {
+    if (!ENDPOINT) { store.set("zc_preview", store.get("zc_preview", []).filter(c => c.id !== id)); return; }
+    const r = await fetch(ENDPOINT, {method: "POST", headers: {"Content-Type": "text/plain;charset=utf-8"}, body: JSON.stringify({action: "delete", id})});
+    const j = await r.json(); if (!j.ok) throw new Error(j.error || "delete failed");
+  }};
+$("#mode").textContent = ENDPOINT ? "" : "Preview mode: comments are kept in this browser only.";
+
+/* ---------- state ---------- */
+let all = [], slug = PAGES[0][0], pending = null, doc = null, mine = store.get("zc_mine", []);
+const pageComments = () => all.filter(c => c.page === slug && !c.deleted).sort((a, b) => a.time.localeCompare(b.time));
+const KIND = {heading: "Heading", paragraph: "Paragraph", item: "List item", button: "Button", image: "Photo",
+              words: "Selected words", text: "Text", page: "Whole page"};
+
+/* ---------- tabs ---------- */
+function tabs() {
+  $("#tabs").innerHTML = PAGES.map(([s, t]) => { const n = all.filter(c => c.page === s && !c.deleted).length;
+    return `<button class="tab" role="tab" aria-selected="${s === slug}" data-s="${s}">${esc(t)}${n ? `<span class="cnt">${n}</span>` : ""}</button>`; }).join("");
+  $("#tabs").querySelectorAll(".tab").forEach(b => b.onclick = () => { location.hash = b.dataset.s; });
+}
+let lastHash = location.hash;
+function route() {
+  if (unsent() && !confirm("You have a comment you have not sent yet. Leave it and open another page?")) { history.replaceState(null, "", lastHash || "#"); return; }
+  lastHash = location.hash; $("#listbox").classList.remove("open");
+  const h = decodeURIComponent(location.hash.slice(1)); slug = PAGES.some(p => p[0] === h) ? h : PAGES[0][0];
+  closeComposer(); tabs(); loadPage();
+}
+
+/* ---------- page in the frame ---------- */
+const narrow = () => window.innerWidth < 760;
+function loadPage() {
+  const fr = $("#fr"); fr.style.height = "1400px";
+  fr.onload = () => { doc = fr.contentDocument; prepare(); paint(); list(); };
+  fr.src = `pages/${slug}${narrow() ? ".m" : ""}.html`;
+}
+window.addEventListener("message", e => { if (e.source === $("#fr").contentWindow && e.data && e.data.h) $("#fr").style.height = (e.data.h + 20) + "px"; });
+
+/* What can be commented on: any visible text (the nearest line or paragraph), buttons, and photos (img or background photos). */
+const BLOCK = "h1,h2,h3,h4,h5,h6,p,li,label,td,th,.qh,.r,a.btn,button,.mt";
+const IMG_SEL = "img,[style*='background-image']";
+const ownText = el => [...el.childNodes].some(n => n.nodeType === 3 && n.data.trim());
+const isPhoto = el => el.matches(IMG_SEL) && !(el.textContent.trim() && el.tagName !== "SECTION" && !el.matches("[class*=hero]") && ownText(el));
+const kindOf = el => isPhoto(el) ? "image" : /^H[1-6]$/.test(el.tagName) || el.matches(".qh") ? "heading" :
+  el.tagName === "P" ? "paragraph" : el.tagName === "LI" || el.matches(".r") ? "item" : el.matches("a.btn,button") ? "button" : "text";
+function pick(t) {
+  if (!t || t === doc.body || t.closest(".zc-b,.zc-sel")) return null;
+  const chip = t.closest(".pk,.cpick > span,.mt > em"); if (chip) return chip;
+  const blk = t.closest(BLOCK); if (blk && blk.textContent.trim()) return blk;
+  if (ownText(t)) { let e = t; while (e.parentElement && e.parentElement !== doc.body && doc.defaultView.getComputedStyle(e).display.startsWith("inline")) e = e.parentElement; return e; }
+  if (t.tagName === "IMG") return t;
+  return t.closest(IMG_SEL);
+}
+const allEls = () => [...doc.body.querySelectorAll("*")];
+const imgUrl = el => { const raw = el.tagName === "IMG" ? el.getAttribute("src") : ((el.style.backgroundImage || "").match(/url\(["']?([^"')]+)/) || [])[1] || ""; try { return new URL(raw, doc.baseURI).href; } catch (e) { return raw; } };
+const textOf = el => (el.innerText || el.textContent).replace(/\s+/g, " ").replace(/^[\u2212+]\s+/, "").trim();
+const snip = el => kindOf(el) === "image" ? "photo:" + imgUrl(el).split("/").pop() : textOf(el).slice(0, 160);
+
+function prepare() {
+  const st = doc.createElement("style");
+  st.textContent = `.n{display:none!important}
+  .zc-hov{outline:2px dashed #0b57d0!important;outline-offset:3px;cursor:pointer}
+  .zc-mark{outline:2px solid #ffd54a!important;outline-offset:3px;background-color:rgba(255,213,74,.18)}
+  .zc-mark.zc-on{outline:3px solid #c8102e!important}
+  mark.zc-w{background:#ffd54a;color:inherit;padding:0 1px}
+  .zc-b{position:absolute;z-index:30;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:#ffd54a;color:#1f2328;
+        font:700 12px/22px -apple-system,Segoe UI,sans-serif;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.3);cursor:pointer}
+  .zc-sel{position:absolute;z-index:31;background:#1f2328;color:#fff;border:0;border-radius:8px;padding:7px 11px;font:600 13px -apple-system,Segoe UI,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+  .qa{display:block!important}`;
+  doc.head.appendChild(st);
+  doc.querySelectorAll(".qh em").forEach(m => m.textContent = "−");
+  doc.querySelectorAll(".q").forEach(q => q.classList.add("open"));
+  let hov = null;
+  doc.addEventListener("mouseover", e => { const el = pick(e.target); if (hov) hov.classList.remove("zc-hov"); hov = el; if (el && !e.target.closest("[data-dd],[data-menu],[data-wsel]")) el.classList.add("zc-hov"); });
+  doc.addEventListener("mouseleave", () => hov && hov.classList.remove("zc-hov"));
+  doc.addEventListener("click", e => {
+    if (e.target.closest(".zc-sel")) return;
+    const b = e.target.closest(".zc-b"); if (b) { e.preventDefault(); e.stopPropagation(); focusComment(b.dataset.id); return; }
+    if (e.target.closest("[data-dd],[data-menu],[data-wsel]")) return;  // menus and week switch still work
+    e.preventDefault(); e.stopImmediatePropagation();
+    const s = doc.getSelection(); if (s && !s.isCollapsed && s.toString().trim()) return;  // handled by the selection button
+    const el = pick(e.target); if (el) openComposer(el, null);
+  }, true);
+  const selBtn = () => doc.querySelector(".zc-sel");
+  const onSel = () => setTimeout(() => {
+    const s = doc.getSelection(); selBtn() && selBtn().remove();
+    if (!s || s.isCollapsed || !s.toString().trim()) { hideSel(); return; }
+    if (narrow()) { showSel(s); return; }
+    const r = s.getRangeAt(0).getBoundingClientRect(), w = doc.defaultView;
+    const btn = doc.createElement("button"); btn.className = "zc-sel"; btn.textContent = "Comment on these words";
+    btn.style.left = Math.max(8, r.left + w.scrollX) + "px"; btn.style.top = (r.bottom + w.scrollY + 8) + "px";
+    btn.onmousedown = ev => ev.preventDefault();
+    btn.onclick = ev => { ev.preventDefault(); ev.stopPropagation(); const words = s.toString().replace(/\s+/g, " ").trim();
+      const node = s.anchorNode.nodeType === 3 ? s.anchorNode.parentElement : s.anchorNode; btn.remove();
+      openComposer(pick(node) || node, words); s.removeAllRanges(); };
+    doc.body.appendChild(btn);
+  }, 10);
+  doc.addEventListener("mouseup", onSel); doc.addEventListener("touchend", onSel);
+  doc.addEventListener("selectionchange", () => { if (narrow()) { clearTimeout(onSel._t); onSel._t = setTimeout(onSel, 250); } });
+}
+
+/* ---------- phone: selected words bar ---------- */
+let selState = null;
+function showSel(s) { const node = s.anchorNode.nodeType === 3 ? s.anchorNode.parentElement : s.anchorNode;
+  selState = {el: pick(node) || node, words: s.toString().replace(/\s+/g, " ").trim()}; $("#selbar").hidden = false; }
+function hideSel() { $("#selbar").hidden = true; selState = null; }
+$("#selBtn").onclick = () => { if (!selState) return; const {el, words} = selState; hideSel(); doc.getSelection().removeAllRanges(); openComposer(el, words); };
+
+/* ---------- composer ---------- */
+function openComposer(el, words) {
+  const kind = words ? "words" : el ? kindOf(el) : "page";
+  pending = {el, kind, words};
+  $("#cmpWhat").textContent = "Comment on: " + KIND[kind];
+  const q = $("#cmpQuote");
+  if (kind === "image") q.innerHTML = `<img src="${esc(imgUrl(el))}" alt="The photo you clicked">`;
+  else if (kind === "page") q.textContent = PAGES.find(p => p[0] === slug)[1] + " page";
+  else q.textContent = words || textOf(el);
+  $("#cmpName").value = store.get("zc_name", "");
+  const kept = !$("#cmp").hidden && $("#cmpText").value.trim();
+  $("#cmp").hidden = false; if (!kept) $("#cmpText").value = ""; else toast("Your typed comment is kept. It now points here.");
+  hideSel(); $("#listbox").classList.remove("open");
+  doc && doc.querySelectorAll(".zc-on").forEach(x => x.classList.remove("zc-on"));
+  if (el) { el.classList.add("zc-mark", "zc-on"); }
+  setTimeout(() => $("#cmpText").focus(), 30);
+  if (!narrow()) $("#cmp").scrollIntoView({block: "nearest"});
+}
+const unsent = () => !$("#cmp").hidden && $("#cmpText").value.trim();
+function closeComposer() { $("#cmpText").value = ""; $("#cmp").hidden = true; pending = null; if (doc) { doc.querySelectorAll(".zc-on").forEach(x => x.classList.remove("zc-on")); paint(); } }
+$("#cmpCancel").onclick = () => { if (!$("#cmpText").value.trim() || confirm("Discard the comment you typed?")) closeComposer(); };
+$("#whole").onclick = () => openComposer(null, null);
+$("#barWhole").onclick = () => openComposer(null, null);
+$("#barList").onclick = () => { $("#listbox").classList.add("open"); };
+$("#sheetClose").onclick = () => $("#listbox").classList.remove("open");
+$("#cmpSend").onclick = async () => {
+  const text = $("#cmpText").value.trim(), name = $("#cmpName").value.trim();
+  if (!text) { $("#cmpText").focus(); toast("Please type your comment first."); return; }
+  if (!name) { $("#cmpName").focus(); toast("Please add your name, so we know who wrote it."); return; }
+  store.set("zc_name", name);
+  const {el, kind, words} = pending, all_t = el ? allEls() : [];
+  const c = {id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), page: slug,
+    pageTitle: PAGES.find(p => p[0] === slug)[1], kind, label: KIND[kind], tag: el ? el.tagName : "", idx: el ? all_t.indexOf(el) : -1,
+    snip: el ? snip(el) : "", words: words || "", image: kind === "image" ? imgUrl(el) : "",
+    text, name, time: new Date().toISOString(), status: "Open", reply: ""};
+  const b = $("#cmpSend"); b.disabled = true; b.textContent = "Sending...";
+  try { await API.add(c); all.push(c); mine.push(c.id); store.set("zc_mine", mine); closeComposer(); tabs(); list(); paint(); toast("Thank you, your comment is saved.");
+  } catch (err) { toast("Could not save. Please check your connection and press Send again."); }
+  b.disabled = false; b.textContent = "Send comment";
+};
+
+/* ---------- markers on the page ---------- */
+function findEl(c) {
+  if (c.idx < 0) return null;
+  const t = allEls(); if (t[c.idx] && snip(t[c.idx]) === c.snip) return t[c.idx];
+  return t.find(x => x.tagName === c.tag && snip(x) === c.snip) || t.find(x => snip(x) === c.snip) || t.find(x => c.snip && !c.snip.startsWith("photo:") && snip(x).startsWith(c.snip.slice(0, 60))) || null;
+}
+function markWords(el, words) {
+  const w = doc.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n;
+  while ((n = w.nextNode())) { const i = n.data.indexOf(words); if (i >= 0) { const r = doc.createRange(); r.setStart(n, i); r.setEnd(n, i + words.length);
+    const m = doc.createElement("mark"); m.className = "zc-w"; r.surroundContents(m); return m; } }
+  return null;
+}
+function paint() {
+  if (!doc || !doc.body) return;
+  doc.querySelectorAll(".zc-b").forEach(x => x.remove());
+  doc.querySelectorAll(".zc-mark").forEach(x => x.classList.remove("zc-mark"));
+  doc.querySelectorAll("mark.zc-w").forEach(m => m.replaceWith(...m.childNodes));
+  const w = doc.defaultView, placed = [];
+  pageComments().forEach((c, i) => {
+    const el = findEl(c); if (!el) return;
+    const tgt = (c.words && markWords(el, c.words)) || el;
+    const bgPhoto = c.kind === "image" && el.tagName !== "IMG" && textOf(el);
+    if (!c.words && !bgPhoto) el.classList.add("zc-mark");
+    const r = tgt.getBoundingClientRect(), b = doc.createElement("span");
+    b.className = "zc-b"; b.dataset.id = c.id; b.textContent = bgPhoto ? `${i + 1} \u00b7 photo` : i + 1; b.title = c.text;
+    let x = bgPhoto ? r.right + w.scrollX - 80 : Math.max(2, r.left + w.scrollX - 12), y = bgPhoto ? r.top + w.scrollY + 10 : Math.max(2, r.top + w.scrollY - 12);
+    while (placed.some(([px, py]) => Math.abs(px - x) < 28 && Math.abs(py - y) < 24)) x += 28;
+    placed.push([x, y]); b.style.left = x + "px"; b.style.top = y + "px";
+    doc.body.appendChild(b);
+  });
+}
+window.addEventListener("resize", () => { clearTimeout(paint._t); paint._t = setTimeout(paint, 200); });
+
+/* ---------- list in the side panel ---------- */
+function list() {
+  const cs = pageComments();
+  $("#listTitle").textContent = $("#sheetTitle").textContent = `Comments on this page (${cs.length})`;
+  $("#barList").textContent = `My comments (${cs.length})`;
+  $("#list").innerHTML = cs.length ? cs.map((c, i) => `<div class="c" data-id="${c.id}">
+    <div class="h"><span class="num">${i + 1}</span><span>${esc(c.label)} · ${esc(c.name)} · ${new Date(c.time).toLocaleDateString("en-SG", {day: "numeric", month: "short"})}</span>
+    ${mine.includes(c.id) && c.status === "Open" ? `<button class="del" data-del="${c.id}" type="button">Delete</button>` : ""}</div>
+    ${c.kind === "page" ? "" : c.kind === "image" ? `<img class="thumb" src="${esc(c.image)}" alt="The photo this comment is about">` : `<div class="q">${esc(c.words || c.snip)}</div>`}
+    <div class="t">${esc(c.text)}</div>
+    ${c.status && c.status !== "Open" ? `<div class="st"><b>${esc(c.status)}</b>${c.reply ? ": " + esc(c.reply) : ""}</div>` : ""}</div>`).join("")
+    : `<p class="empty">No comments yet. Click anything on the page to add one.</p>`;
+  $("#list").querySelectorAll(".c").forEach(x => x.onclick = e => { if (!e.target.closest("[data-del]")) focusComment(x.dataset.id); });
+  $("#list").querySelectorAll("[data-del]").forEach(x => x.onclick = async () => {
+    if (!confirm("Delete this comment?")) return;
+    try { await API.del(x.dataset.del); all = all.filter(c => c.id !== x.dataset.del); tabs(); list(); paint(); toast("Comment deleted."); }
+    catch (e) { toast("Could not delete. Please try again."); } });
+}
+function focusComment(id) {
+  const c = all.find(x => x.id === id); if (!c) return;
+  if (narrow()) $("#listbox").classList.add("open");
+  document.querySelectorAll(".c").forEach(x => x.classList.toggle("on", x.dataset.id === id));
+  const card = document.querySelector(`.c[data-id="${id}"]`); card && card.scrollIntoView({block: "nearest", behavior: "smooth"});
+  const el = doc && findEl(c); if (!el) return;
+  doc.querySelectorAll(".zc-on").forEach(x => x.classList.remove("zc-on")); el.classList.add("zc-on");
+  const fr = $("#fr").getBoundingClientRect(), y = window.scrollY + fr.top + el.getBoundingClientRect().top - 160;
+  window.scrollTo({top: y, behavior: "smooth"});
+}
+
+/* ---------- start ---------- */
+window.addEventListener("hashchange", route);
+(async () => { try { all = await API.all(); } catch (e) { toast("Could not load earlier comments."); } route(); })();
+</script>
+</body>
+</html>
