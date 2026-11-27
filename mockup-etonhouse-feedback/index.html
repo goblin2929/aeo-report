@@ -111,7 +111,7 @@ button,textarea,input{font:inherit}
 <div class="toast" id="toast" role="status"></div>
 <script>
 /* Set ENDPOINT to the Google Apps Script web app URL. Empty = preview mode (comments kept in this browser only). */
-const ENDPOINT = "";
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbwCWFYq54DoLL3dW8AXUdhpjaRVr-wW99wd915O7D-zZbWBV63QHj7li7j0jSv5joAn/exec";
 const PAGES = [
   ["home", "Home"], ["pure-mandarin", "Pure Mandarin"], ["uk", "UK families"], ["hk", "Hong Kong families"],
   ["cultural-immersion", "Cultural Immersion"], ["fees-and-dates", "Fees and dates"], ["destinations", "Destinations"],
@@ -344,7 +344,9 @@ function focusComment(id) {
 
 /* ---------- start ---------- */
 window.addEventListener("hashchange", route);
-(async () => { try { all = await API.all(); } catch (e) { toast("Could not load earlier comments."); } route(); })();
+route(); $("#listTitle").textContent = "Loading comments...";
+(async () => { try { const got = await API.all(); const ids = new Set(got.map(c => c.id)); all = got.concat(all.filter(c => !ids.has(c.id))); }
+  catch (e) { toast("Could not load earlier comments. Please refresh the page."); } tabs(); list(); paint(); })();
 </script>
 </body>
 </html>
