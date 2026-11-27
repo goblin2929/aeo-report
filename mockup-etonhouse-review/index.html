@@ -65,6 +65,60 @@ main{padding-block:18px 40px;padding-left:max(16px,env(safe-area-inset-left,0px)
   .screen{height:calc(100vh - 250px);min-height:440px;border-radius:21px}
   .legend{display:none}
 }
+
+/* Comments on the E-V2 phone (27 Nov 2026) */
+.zc-hint{max-width:1320px;margin:0 auto 12px!important;font-size:.85rem;color:var(--fg);background:#fff6d6;border:1px solid #f1dc8a;border-radius:8px;padding:8px 10px;margin:0}
+.zc-box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.zc-box h3{font:700 .95rem var(--display);margin:0 0 8px}
+.zc-list{display:grid;gap:8px}
+.zc-empty{color:var(--muted);font-size:.82rem;margin:0}
+.zc-c{border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer;background:#fff}
+.zc-c:hover,.zc-c.on{border-color:#e0b400;box-shadow:0 0 0 2px #fff1b8}
+.zc-c .h{display:flex;gap:6px;align-items:center;font-size:.75rem;color:var(--muted)}
+.zc-num{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;border-radius:10px;background:#ffd54a;color:#17242a;font-weight:700;font-size:.75rem;padding:0 5px}
+.zc-c .q{font-size:.8rem;color:var(--muted);margin:4px 0 2px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.zc-c .t{white-space:pre-wrap;font-size:.88rem}
+.zc-c .thumb{display:block;width:100%;max-height:80px;object-fit:cover;border-radius:6px;margin:5px 0 3px}
+.zc-c .st{margin-top:6px;font-size:.8rem;border-radius:6px;padding:4px 8px;background:var(--best-bg);color:var(--best)}
+.zc-c .del{margin-left:auto;background:none;border:0;color:var(--muted);cursor:pointer;font-size:.75rem;text-decoration:underline}
+.zc-whole{width:100%;margin-top:8px;border:1px dashed #9aa3ad;background:#fff;border-radius:8px;padding:8px;cursor:pointer;font:500 .85rem var(--body);color:var(--fg)}
+.zc-cnt{display:inline-block;margin-left:6px;min-width:18px;padding:0 5px;border-radius:9px;background:#ffd54a;color:#17242a;font-size:.72rem;font-weight:700;text-align:center}
+.zc-cmp,.zc-view{position:fixed;left:20px;bottom:20px;width:380px;max-width:calc(100vw - 24px);z-index:50;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.22);padding:14px;max-height:80vh;overflow:auto}
+.zc-cmp[hidden],.zc-sel[hidden],.zc-view[hidden]{display:none}
+.zc-view .h{display:flex;gap:6px;align-items:center;font-size:.8rem;color:var(--muted);margin-bottom:6px}
+.zc-view .t{white-space:pre-wrap;font-size:.92rem}
+.zc-view .st{margin-top:8px;font-size:.85rem;border-radius:6px;padding:5px 8px;background:var(--best-bg);color:var(--best)}
+.zc-view .row{display:flex;justify-content:flex-end;margin-top:10px}
+.zc-top{margin:0 0 8px!important}
+@media (min-width:701px){.tabs{flex-wrap:wrap}}
+.jump{white-space:nowrap;flex:none}
+.jumps{overflow-x:auto;scrollbar-width:none}
+.jump[data-c="col-EV2"]{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (max-width:1640px){.cols.five{justify-content:flex-start;max-width:none}.cols.five .col{width:262px}.cols.five .chips{flex-wrap:wrap}}
+.zc-cmp .what{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:6px}
+.zc-cmp .quote{border-left:3px solid #ffd54a;background:#fff8dc;padding:6px 9px;border-radius:0 6px 6px 0;font-size:.85rem;max-height:110px;overflow:auto;margin-bottom:8px;white-space:pre-wrap}
+.zc-cmp .quote img{max-width:100%;max-height:100px;display:block;border-radius:4px}
+.zc-cmp label{display:block;font-size:.8rem;color:var(--muted);margin:8px 0 4px}
+.zc-cmp textarea{width:100%;min-height:90px;resize:vertical;border:1px solid #c5cbd2;border-radius:8px;padding:8px;font:14px/1.45 var(--body)}
+.zc-cmp input{width:100%;border:1px solid #c5cbd2;border-radius:8px;padding:7px 8px;font:14px var(--body)}
+.zc-cmp .row{display:flex;gap:8px;margin-top:10px}
+.zc-send{flex:1;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px;font:600 .9rem var(--body);cursor:pointer}
+.zc-send:disabled{opacity:.5}
+.zc-cancel{background:none;border:1px solid var(--line);border-radius:8px;padding:10px 14px;cursor:pointer;font:500 .9rem var(--body);color:var(--fg)}
+.zc-sel{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;z-index:45}
+.zc-sel.anch{transform:none}
+.zc-sel button{background:#17242a;color:#fff;border:0;border-radius:10px;padding:12px 18px;font:600 .9rem var(--body);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.zc-toast{position:fixed;left:50%;top:16px;transform:translateX(-50%);background:#17242a;color:#fff;padding:10px 16px;border-radius:8px;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .2s;z-index:60}
+.zc-toast.show{opacity:1}
+@media (max-width:700px){
+  .zc-cmp,.zc-view{left:0;right:0;bottom:0;width:auto;max-width:none;border-radius:14px 14px 0 0;max-height:52vh;padding:12px 14px}
+  .zc-cmp .quote{max-height:52px;font-size:.8rem}
+  .zc-cmp label{margin:6px 0 3px}
+  .zc-cmp textarea{min-height:64px;font-size:16px}
+  .zc-cmp input{font-size:16px}
+  .zc-sel.anch{left:16px!important}
+  .zc-sel{left:16px;right:16px;transform:none}.zc-sel button{width:100%}
+}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
@@ -79,6 +133,15 @@ main{padding-block:18px 40px;padding-left:max(16px,env(safe-area-inset-left,0px)
   <div class="jumps" id="jumps"></div>
   <div class="cols" id="cols"></div>
 </main>
+<div class="zc-cmp" id="zcCmp" hidden role="dialog" aria-label="Your comment">
+  <div class="what" id="zcWhat"></div><div class="quote" id="zcQuote"></div>
+  <label for="zcText">Your comment</label><textarea id="zcText" placeholder="For example: please change this to ..."></textarea>
+  <label for="zcName">Your name</label><input id="zcName" autocomplete="name">
+  <div class="row"><button class="zc-cancel" id="zcCancel" type="button">Cancel</button><button class="zc-send" id="zcSend" type="button">Send comment</button></div>
+</div>
+<div class="zc-view" id="zcView" hidden role="dialog" aria-label="Comment"><div class="h" id="zcViewH"></div><div class="t" id="zcViewT"></div><div id="zcViewS"></div><div class="row"><button class="zc-cancel" id="zcViewClose" type="button">Close</button></div></div>
+<div class="zc-sel" id="zcSel" hidden><button id="zcSelBtn" type="button">Comment on the selected words</button></div>
+<div class="zc-toast" id="zcToast" role="status"></div>
 <script>
 const D = {"pages": [{"slug": "home", "title": "Home (Singapore)", "path": "/", "scores": {"C0": {"clarity": 78, "tone": 58, "brand": 59, "flags": 3}, "HB.1": {"clarity": 67, "tone": 92, "brand": 82, "flags": 6}, "EV2": {"clarity": 56, "tone": 75, "brand": 69, "flags": 8}}, "vars": ["C0", "HB.1", "EV2"]}, {"slug": "k3", "title": "Pure Mandarin", "path": "/pure-mandarin-school-immersion/", "scores": {"C0": {"clarity": 78, "tone": 100, "brand": 92, "flags": 3}, "HB.1": {"clarity": 89, "tone": 92, "brand": 90, "flags": 2}, "E": {"clarity": 78, "tone": 100, "brand": 90, "flags": 3}, "ZIEN": {"clarity": 56, "tone": 83, "brand": 82, "flags": 6}, "EV2": {"clarity": 67, "tone": 92, "brand": 85, "flags": 4}}, "vars": ["C0", "HB.1", "E", "ZIEN", "EV2"]}, {"slug": "uk", "title": "UK families", "path": "/uk/", "scores": {"C0": {"clarity": 78, "tone": 75, "brand": 62, "flags": 4}, "HB.1": {"clarity": 78, "tone": 100, "brand": 90, "flags": 2}, "E": {"clarity": 67, "tone": 92, "brand": 87, "flags": 4}, "ZIEN": {"clarity": 44, "tone": 67, "brand": 64, "flags": 9}, "EV2": {"clarity": 56, "tone": 83, "brand": 69, "flags": 8}}, "vars": ["C0", "HB.1", "E", "ZIEN", "EV2"]}, {"slug": "ci", "title": "Cultural Immersion", "path": "/cultural-immersion/", "scores": {"C0": {"clarity": 56, "tone": 75, "brand": 54, "flags": 8}, "HB.1": {"clarity": 56, "tone": 83, "brand": 85, "flags": 8}, "E": {"clarity": 56, "tone": 100, "brand": 95, "flags": 5}, "EV2": {"clarity": 78, "tone": 83, "brand": 67, "flags": 2}}, "vars": ["C0", "HB.1", "E", "EV2"]}, {"slug": "chengdu", "title": "Chengdu", "path": "/destinations/chengdu/", "scores": {"C0": {"clarity": 56, "tone": 75, "brand": 49, "flags": 6}, "HB.1": {"clarity": 44, "tone": 83, "brand": 77, "flags": 10}, "E": {"clarity": 56, "tone": 100, "brand": 92, "flags": 6}, "EV2": {"clarity": 67, "tone": 83, "brand": 69, "flags": 4}}, "vars": ["C0", "HB.1", "E", "EV2"]}, {"slug": "guide", "title": "Guide: Is Mandarin hard?", "path": "/guides/is-mandarin-hard-for-young-children/", "scores": {"C0": {"clarity": 44, "tone": 75, "brand": 74, "flags": 10}, "HB.1": {"clarity": 56, "tone": 92, "brand": 87, "flags": 7}, "E": {"clarity": 33, "tone": 92, "brand": 85, "flags": 12}, "EV2": {"clarity": 22, "tone": 67, "brand": 72, "flags": 13}}, "vars": ["C0", "HB.1", "E", "EV2"]}, {"slug": "fees", "title": "Fees and dates", "path": "/fees-and-dates/", "scores": {}, "vars": ["C0", "EV2"]}, {"slug": "hk", "title": "Hong Kong families", "path": "/hk/", "scores": {}, "vars": ["C0", "EV2"]}, {"slug": "destinations", "title": "Destinations", "path": "/destinations/", "scores": {}, "vars": ["C0", "EV2"]}, {"slug": "beijing", "title": "Beijing", "path": "/destinations/beijing/", "scores": {}, "vars": ["C0", "EV2"]}, {"slug": "suzhou", "title": "Suzhou", "path": "/destinations/suzhou/", "scores": {}, "vars": ["C0", "EV2"]}], "vars": [{"id": "C0", "name": "C0", "desc": "Current draft", "file": "mockup-current.html"}, {"id": "HB.1", "name": "HB.1-ChatGPT", "desc": "Guided edit and review", "file": "mockup-hb1-chatgpt.html"}, {"id": "E", "name": "E", "desc": "Written fresh in your voice", "file": "mockup-e.html"}, {"id": "ZIEN", "name": "Zi En's version", "desc": "Her 20 November rewrite", "file": "mockup-yours.html"}, {"id": "EV2", "name": "E-V2", "desc": "E with your 23 November feedback", "file": "mockup-e-v2.html"}]};
 const $ = s => document.querySelector(s);
@@ -116,5 +179,6 @@ function render(h){
 window.addEventListener("hashchange", () => render(location.hash.slice(1)));
 render(location.hash.slice(1));
 </script>
+<script src="comments.js"></script>
 </body>
 </html>
