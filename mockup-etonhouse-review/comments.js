@@ -2,7 +2,7 @@
    Click a heading, line, paragraph, button or photo in the E-V2 phone, or select a few words, type and press Send.
    Comments go to the internal Sheet through the Apps Script web app; status and our reply show under the phone. */
 (() => {
-const ENDPOINT = "https://script.google.com/macros/s/AKfycbwCWFYq54DoLL3dW8AXUdhpjaRVr-wW99wd915O7D-zZbWBV63QHj7li7j0jSv5joAn/exec";
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbyUD6fjod-ttHIcy5NP9UYS9CqeaY0a0RuLybS687jQiVN_VZPp8jCcYqIG-7xTW9iX/exec";
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
 const store = {get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } },
